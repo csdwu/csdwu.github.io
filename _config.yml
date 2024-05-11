@@ -1,6 +1,6 @@
 # Basic Information 
-title: Die Wu
-position: Accociate Professor
+title: Dié Wu
+position: Associate Professor
 affiliation: Sichuan Normal University
 affiliation_link: 
 affiliation_logo: 
@@ -10,7 +10,7 @@ email2: dwu.cse (at) gmail.com
 # Search Engine Optimization (SEO)
 keywords: die wu, wu die, 吴迭, wudie
 canonical: https://www.cs.jhu.edu/~yyliu/
-description: Die Wu is an accociate professor at Sichuan Normal University. His research lies Internet of Things, wireless sensing and embedded systems.
+description: Dié Wu is an associate professor at Sichuan Normal University. His research lies Internet of Things, wireless sensing and embedded systems.
 
 # The option is used to enable the Johns Hopkins template.
 enable_hopkins_logo: false
@@ -20,13 +20,13 @@ enable_last_update: True
 
 # Links
 link_type: icon #text/icon
-google_scholar: https://scholar.google.com/citations?user=Uf9GqRsAAAAJ
-github_link: https://github.com/yaoyao-liu/
-linkedin: https://www.linkedin.com/in/liuyaoyao/
-twitter: https://twitter.com/YaoyaoLiu1/
+google_scholar: https://scholar.google.com/citations?user=m674z14AAAAJ
+github_link: https://github.com/
+linkedin: https://www.linkedin.com/
+twitter: https://twitter.com/
 
 # Images 
-avatar: https://img.yliu.me/avatar.jpg
+avatar: ./assets/img/avatar_wd.png
 favicon: ./assets/img/favicon.png
 favicon_dark: ./assets/img/favicon-dark.png
 
