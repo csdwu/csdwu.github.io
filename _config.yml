@@ -9,7 +9,7 @@ email2: dwu.cse (at) gmail.com
 
 # Search Engine Optimization (SEO)
 keywords: die wu, wu die, 吴迭, wudie
-canonical: https://www.cs.jhu.edu/~yyliu/
+canonical: https://cs.sicnu.edu.cn
 description: Dié Wu is an associate professor at Sichuan Normal University. His research lies Internet of Things, wireless sensing and embedded systems.
 
 # The option is used to enable the Johns Hopkins template.
@@ -26,12 +26,12 @@ linkedin: https://www.linkedin.com/
 twitter: https://twitter.com/
 
 # Images 
-avatar: ./assets/img/avatar_wd.png
+avatar: ./assets/img/avatar.png
 favicon: ./assets/img/favicon.png
 favicon_dark: ./assets/img/favicon-dark.png
 
 # Footnotes
-#footnote: Feel free to use my website's source code.
+footnote: copyright &copy; 2024 Dié Wu.
 #footnote_link: https://github.com/yaoyao-liu/minimal-light
 
 # Analytics
