@@ -1,0 +1,49 @@
+# Basic Information 
+title: Die Wu
+position: Accociate Professor
+affiliation: Sichuan Normal University
+affiliation_link: 
+affiliation_logo: 
+email: wd (at) sicnu.edu.cn
+email2: dwu.cse (at) gmail.com
+
+# Search Engine Optimization (SEO)
+keywords: die wu, wu die, 吴迭, wudie
+canonical: https://www.cs.jhu.edu/~yyliu/
+description: Die Wu is an accociate professor at Sichuan Normal University. His research lies Internet of Things, wireless sensing and embedded systems.
+
+# The option is used to enable the Johns Hopkins template.
+enable_hopkins_logo: false
+
+# The option is used to show the last update time.
+enable_last_update: True
+
+# Links
+link_type: icon #text/icon
+google_scholar: https://scholar.google.com/citations?user=Uf9GqRsAAAAJ
+github_link: https://github.com/yaoyao-liu/
+linkedin: https://www.linkedin.com/in/liuyaoyao/
+twitter: https://twitter.com/YaoyaoLiu1/
+
+# Images 
+avatar: https://img.yliu.me/avatar.jpg
+favicon: ./assets/img/favicon.png
+favicon_dark: ./assets/img/favicon-dark.png
+
+# Footnotes
+#footnote: Feel free to use my website's source code.
+#footnote_link: https://github.com/yaoyao-liu/minimal-light
+
+# Analytics
+# Please remove the following lines about analytics services if you fork my project. 
+# Otherwise, the analytics information of your website will be recorded to my ClustrMaps accounts.
+clustrmaps_id: CJD8XwsJhSyQ6sbsU-Gw0cNcUlbah7KW3xvHN2QlwW0
+
+# The following files will be removed from the generated website.
+exclude:
+  - build.sh
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - LICENSE
+  - CNAME
