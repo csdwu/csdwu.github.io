@@ -31,7 +31,7 @@ favicon: ./assets/img/favicon.png
 favicon_dark: ./assets/img/favicon-dark.png
 
 # Footnotes
-footnote: copyright &copy; 2024 Dié Wu.
+footnote: copyright &copy; 2000-2024 Dié Wu. Host by Github Pages.
 #footnote_link: https://github.com/yaoyao-liu/minimal-light
 
 # Analytics

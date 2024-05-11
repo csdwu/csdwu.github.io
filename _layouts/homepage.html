@@ -169,6 +169,12 @@
 
       <br>
 
+      {% if site.clustrmaps_id %}
+      <div style="width:100px; pointer-events: none;">
+      <script type='text/javascript' id='clustrmaps' src='//cdn.clustrmaps.com/map_v2.js?cl=043361&w=153&t=n&d={{ site.clustrmaps_id }}&co=ffffff&cmo=3eb7f0&ct=043361'></script>
+      </div>
+      {% endif %}
+
       {% if site.enable_last_update %}
       <small>Last Update:
             <script>
@@ -182,22 +188,18 @@
       {% endif %}
 
       {% if site.footnote %}
-      <div style="font: 12px/1.2 Crimson Pro, serif">
+      <div style="font: 24px/1.2 Crimson Pro, serif">
         <br>
         <a href="{{ site.footnote_link }}" rel="noopener">{{ site.footnote }}</a>
       </div>
       {% endif %}
 
-      <br>
-      {% if site.clustrmaps_id %}
-      <div style="width:100px; pointer-events: none;">
-      <script type='text/javascript' id='clustrmaps' src='//cdn.clustrmaps.com/map_v2.js?cl=043361&w=153&t=n&d={{ site.clustrmaps_id }}&co=ffffff&cmo=3eb7f0&ct=043361'></script>
-      </div>
-      {% endif %}
+     
+     
       
       </section>
     </div>
     <script src="{{ "/assets/js/scale.fix.js" | relative_url }}"></script>
-    <footer class=“center”>copyright &copy; 2022-2024 Dié Wu. Host by Github Pages</footer>
+
   </body>
 </html>
