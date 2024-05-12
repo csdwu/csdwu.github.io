@@ -4,8 +4,8 @@ position: Associate Professor
 affiliation: Sichuan Normal University
 affiliation_link: 
 affiliation_logo: 
-email: wd (at) sicnu.edu.cn
-email2: dwu.cse (at) gmail.com
+email: wd@sicnu.edu.cn
+email2: dwu.cse@gmail.com
 
 # Search Engine Optimization (SEO)
 keywords: die wu, wu die, 吴迭, wudie
@@ -31,8 +31,8 @@ favicon: ./assets/img/favicon.png
 favicon_dark: ./assets/img/favicon-dark.png
 
 # Footnotes
-footnote: Copyright &copy; 2024 Dié Wu. Host by Github Pages.
-#footnote_link: https://github.com/yaoyao-liu/minimal-light
+footnote: 2024 Dié Wu
+footnote_link: https://csdwu.github.io
 
 # Analytics
 # Please remove the following lines about analytics services if you fork my project. 

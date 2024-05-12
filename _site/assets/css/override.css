@@ -1,0 +1,98 @@
+a {
+    word-break: break-word;
+    overflow: hidden;
+    hyphens: auto;
+}
+header {
+    padding-top: 2.5rem;
+}
+.image.avatar img {
+    width: 100%;
+    padding: 0;
+    margin-bottom: 12px;
+}
+.position {
+    font-size: 28px;
+}
+.topnav {
+    top: 0;
+}
+
+/* Laptop device style here: */
+@media print, screen and (min-width: 961px) {
+    .topnav {
+        display: flex;
+        justify-content: flex-end;
+        min-height: 50px;
+        align-items: center;
+    }
+
+    .topnav #myLinks {
+        margin-right: calc(8vw - 9px);
+    }
+
+    .topnav a.normal {
+        float: none;
+        border-radius: 6px;
+        transition: all ease 0.3s;
+    }
+
+    .wrapper {
+      width: auto;
+      display: flex;
+      margin-left: calc(5vw + 232px + 4vw); /* Avatar box's left margin + avatar box width + space between */
+      margin-right: 8vw;
+      margin-top: 50px;
+    }
+
+    .wrapper header {
+        padding-top: 0;
+        width: 232px;
+        float: none;
+        left: 5vw;
+    }
+
+    .wrapper section {
+        width: auto;
+        float: none;
+        padding-top: 2rem;
+    }
+
+    .footnote_copyright {
+        font-size: 18px;
+        line-height: 1.2;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding-bottom: 50px;
+
+        a {
+            color: #39c;
+        }
+    }
+}
+
+/* Mobile device style here: */
+@media print, screen and (max-width: 960px) {
+    .image.avatar img {
+        width: 50%;
+        padding: 0;
+        margin-bottom: 12px;
+    }
+
+    .topnav {
+        min-height: 42px;
+    }
+    .topnav a.icon {
+        top: 6px;
+    }
+}
+
+.affiliation {
+    /* adjust font-size here..,. */
+}
+
+.email {
+    /* adjust font-size here..,. */
+    font-size: 1.15rem;
+}

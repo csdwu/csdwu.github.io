@@ -28,6 +28,7 @@
     <link rel="stylesheet" href="./assets/css/style.css">
     <link rel="stylesheet" href="./assets/css/pub.css">
     <link rel="stylesheet" href="./assets/css/nav.css">
+    <link rel="stylesheet" href="./assets/css/override.css">
     
     <script src="./assets/js/github-stars.js"></script>
     <script type="text/javascript" src="./assets/js/jquery.js"></script>
@@ -59,8 +60,6 @@
   <body>
     
     <div class="topnav">
-
-      <a href="{{ site.affiliation_link }}"><img width="190" src="{{ site.affiliation_logo }}"></a>
 
       <div id="myLinks">
       {% include navigation.md %}
@@ -102,19 +101,19 @@
         <h1>{{ site.title }}</h1>
 
         {% if site.position %}
-        <position style="font-size:1.10rem;">{{ site.position }}</position>
+        <position class="position">{{ site.position }}</position>
         <br>
         {% endif %}
         {% if site.affiliation %}
-        <a href="{{ site.affiliation_link }}" rel="noopener"><autocolor>{{ site.affiliation }}</autocolor></a>
+        <a class="affiliation" href="{{ site.affiliation_link }}" rel="noopener"><autocolor>{{ site.affiliation }}</autocolor></a>
         <br>
         {% endif %}
         {% if site.email %}
-        <email>{{ site.email }}</email>
+        <a class="email" href="mailto:{{ site.email }}">{{ site.email }}</a>
         {% endif %}
         {% if site.email2 %}
         <br>
-        <email>{{ site.email2 }}</email>
+        <a class="email" href="mailto:{{ site.email2 }}">{{ site.email2 }}</a>
         {% endif %}
         
         <br>
@@ -185,21 +184,18 @@
               document.write(showAs);
             </script>
       </small> 
-      {% endif %}
-
-      {% if site.footnote %}
-      <div style="font: 18px/1.2 Crimson Pro, serif">
-        <br>
-        <a href="{{ site.footnote_link }}" rel="noopener">{{ site.footnote }}</a>
-      </div>
-      {% endif %}
-
-     
-     
-      
+      {% endif %}     
       </section>
     </div>
-    <script src="{{ "/assets/js/scale.fix.js" | relative_url }}"></script>
+
+    {% if site.footnote %}
+    <div class="footnote_copyright">
+      Copyright &copy; &nbsp; <a href="{{ site.footnote_link }}" rel="noopener">{{ site.footnote }}</a>. 
+      Host by &nbsp; <a href="https://pages.github.com/">Github Pages</a>.
+    </div>
+    {% endif %}
+
+      <script src="{{ "/assets/js/scale.fix.js" | relative_url }}"></script>
 
   </body>
 </html>
