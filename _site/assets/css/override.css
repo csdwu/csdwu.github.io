@@ -1,8 +1,15 @@
-a {
+div a {
+    word-break: break-word;
+    overflow: hidden;
+    hyphens:auto;
+}
+
+div {
     word-break: break-word;
     overflow: hidden;
     hyphens: auto;
 }
+
 header {
     padding-top: 2.5rem;
 }
