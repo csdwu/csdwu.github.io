@@ -75,7 +75,7 @@ header {
 /* Mobile device style here: */
 @media print, screen and (max-width: 960px) {
     .image.avatar img {
-        width: 50%;
+        width: 40%;
         padding: 0;
         margin-bottom: 12px;
     }
