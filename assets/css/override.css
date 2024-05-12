@@ -87,9 +87,12 @@ header {
         top: 6px;
     }
 }
+.position{
+    font-size: 1.4rem;
+}
 
 .affiliation {
-    /* adjust font-size here..,. */
+    font-size: 1.3rem;/* adjust font-size here..,. */
 }
 
 .email {
