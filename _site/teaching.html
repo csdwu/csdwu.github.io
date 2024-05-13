@@ -210,8 +210,12 @@
 
     
     <div class="footnote_copyright">
-      Copyright &copy; &nbsp; <a href="https://csdwu.github.io" rel="noopener">2024 Dié Wu</a>. 
+      Copyright &copy; &nbsp; <a id = "year" href="https://csdwu.github.io" rel="noopener"></a>. 
       Host by &nbsp; <a href="https://pages.github.com/">Github Pages</a>.
+      <script>
+        var year = (new Date()).getFullYear()+ ' Dié Wu';
+        document.getElementById("year").textContent = year;
+      </script>
     </div>
     
 

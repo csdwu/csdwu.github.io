@@ -190,8 +190,12 @@
 
     {% if site.footnote %}
     <div class="footnote_copyright">
-      Copyright &copy; &nbsp; <a href="{{ site.footnote_link }}" rel="noopener">{{ site.footnote }}</a>. 
+      Copyright &copy; &nbsp; <a id = "year" href="{{ site.footnote_link }}" rel="noopener"></a>. 
       Host by &nbsp; <a href="https://pages.github.com/">Github Pages</a>.
+      <script>
+        var year = (new Date()).getFullYear()+ ' Dié Wu';
+        document.getElementById("year").textContent = year;
+      </script>
     </div>
     {% endif %}
 
