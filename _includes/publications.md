@@ -3,7 +3,7 @@
 <!-- <temp style="font-size:16px;">[</temp><a href="https://scholar.google.com/citations?user=m674z14AAAAJ" target="_blank" style="font-size:15px;">Google Scholar</a><temp style="font-size:16px;">]</temp><temp style="font-size:15px;">[</temp><a href="https://dblp.uni-trier.de/pid/12/10033-1.html" target="_blank" style="font-size:15px;">DBLP</a><temp style="font-size:15px;">]</temp> -->
 </h2>
 
-<h3>&nbsp;&nbsp;&nbsp; Conference Papers</h3>
+<h3><span style="font-size: auto">&middot;</span>&nbsp;Conference Papers</h3>
 <div class="publications">
 <ol class="bibliography">
 
@@ -48,9 +48,10 @@
 
 {% endfor %}
 
+</ol>
+</div>
 
-
-<h3>&nbsp;&nbsp;&nbsp; Journal Papers</h3>
+<h3><span style="font-size: auto">&middot;</span>&nbsp; Journal Papers</h3>
 
 <div class="publications">
 <ol class="bibliography">
