@@ -18,7 +18,7 @@ conference: # Please list conference papers here:
     authors: Tang Liu, Yuzhuo Ma, Meixuan Ren, Jin Yang, Jian Peng, Jilin Yang, <em>Dié Wu</em><sup><i class="fa-regular fa-envelope fa-xs"></i></sup> 
     article_short: TMC
     article: IEEE/ACM Transactions on Networking <strong>(TMC)</strong>, 2024.
-    pdf: https://openreview.net/pdf?id=XlkN11Xj6J
+    pdf: _data/my_pdfs/TMC-24.pdf
     code: https://github.com/wufeim/DST3D
     page: https://ccvl.jhu.edu/3D-DST/
     bibtex: https://bib.yliu.me/arXiv23_1.txt
