@@ -1,0 +1,18 @@
+@InProceedings{10.1007/978-981-99-7025-4_25,
+author="Meng, Xiong
+and Yang, Jilin
+and Wu, Dié
+and Liu, Tang",
+editor="Liu, Fenrong
+and Sadanandan, Arun Anand
+and Pham, Duc Nghia
+and Mursanto, Petrus
+and Lukose, Dickson",
+title="Approximate Supplement-Based Neighborhood Rough Set Model in Incomplete Hybrid Information Systems",
+booktitle="PRICAI 2023: Trends in Artificial Intelligence",
+year="2024",
+publisher="Springer Nature Singapore",
+address="Singapore",
+pages="281--293",
+isbn="978-981-99-7025-4"
+}

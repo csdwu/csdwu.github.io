@@ -1,0 +1,10 @@
+@INPROCEEDINGS{10228855,
+  author={Ren, Meixuan and Wu, Dié and Xue, Jing and Xu, Wenzheng and Peng, Jian and Liu, Tang},
+  booktitle={IEEE INFOCOM 2023 - IEEE Conference on Computer Communications}, 
+  title={Utilizing the Neglected Back Lobe for Mobile Charging}, 
+  year={2023},
+  volume={},
+  number={},
+  pages={1-10},
+  keywords={Wireless communication;Wireless sensor networks;Schedules;Art;Computational modeling;Directional antennas;Wireless power transfer;Wireless power transfer;directional charging;back lobe;wireless rechargeable sensor networks},
+  doi={10.1109/INFOCOM53939.2023.10228855}}

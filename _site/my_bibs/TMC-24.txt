@@ -1,0 +1,9 @@
+@ARTICLE{10330680,
+  author={Liu, Tang and Ren, Meixuan and Wu, Dié and Xue, Jing and Li, Jingwen and Mao, Sun and Xu, Wenzheng},
+  journal={IEEE Transactions on Mobile Computing}, 
+  title={Utilizing the Neglected Back Lobe for Directional Charging Scheduling}, 
+  year={2024},
+  volume={23},
+  number={6},
+  pages={7408-7421},
+  doi={10.1109/TMC.2023.3334518}}

@@ -1,0 +1,18 @@
+@article{10.1145/3614431,
+author = {You, Wei and Ren, Meixuan and Ma, Yuzhuo and Wu, Die and Yang, Jilin and Liu, Xuxun and Liu, Tang},
+title = {Practical Charger Placement Scheme for Wireless Rechargeable Sensor Networks with Obstacles},
+year = {2023},
+issue_date = {January 2024},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+volume = {20},
+number = {1},
+issn = {1550-4859},
+url = {https://doi.org/10.1145/3614431},
+doi = {10.1145/3614431},
+journal = {ACM Trans. Sen. Netw.},
+month = {oct},
+articleno = {11},
+numpages = {23},
+keywords = {obstacles, wireless rechargeable sensor networks, Charger placement}
+}

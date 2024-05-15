@@ -1,0 +1,9 @@
+@ARTICLE{10436058,
+  author={Liu, Tang and Ma, Yuzhuo and Ren, Meixuan and Yang, Jin and Peng, Jian and Yang, Jilin and Wu, Dié},
+  journal={IEEE/ACM Transactions on Networking}, 
+  title={Concurrent Charging With Wave Interference for Multiple Chargers}, 
+  year={2024},
+  volume={},
+  number={},
+  pages={1-14},
+  doi={10.1109/TNET.2024.3361321}}

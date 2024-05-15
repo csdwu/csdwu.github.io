@@ -15,15 +15,70 @@ conference: # Please list conference papers here:
     
 
   - title: Concurrent Charging With Wave Interference for Multiple Chargers
-    authors: Tang Liu, Yuzhuo Ma, Meixuan Ren, Jin Yang, Jian Peng, Jilin Yang, <em>Dié Wu</em><sup><i class="fa-regular fa-envelope fa-xs"></i></sup> 
+    authors: Tang Liu, Yuzhuo Ma, Meixuan Ren, Jin Yang, Jian Peng, Jilin Yang, <b style="color:#3399cc"><u>Dié Wu</u></b><sup><i class="fa-regular fa-envelope fa-xs"></i></sup> 
     article_short: TON
     article: IEEE/ACM Transactions on Networking <strong>(TON)</strong>, 2024.
-    pdf: _data/my_pdfs/TMC-24.pdf
-    code: https://github.com/wufeim/DST3D
-    page: https://ccvl.jhu.edu/3D-DST/
-    bibtex: https://bib.yliu.me/arXiv23_1.txt
-    image: https://img.yliu.me/teaser/dst.png
+    pdf: ./my_pdfs/ToN-24.pdf
+    # code: https://github.com/wufeim/DST3D
+    # page: https://ccvl.jhu.edu/3D-DST/
+    bibtex: ./my_bibs/ToN-24.txt
+    image: ./my_figs/ToN-24.png
     notes: Early Access
+
+  - title: Utilizing the neglected back lobe for directional charging scheduling
+    authors: Tang Liu, Meixuan Ren, <b style="color:#3399cc"><u>Dié Wu</u></b>, Jing Xue, Jingwen Li, Sun Mao, Wenzheng Xu 
+    article_short: TMC
+    article: IEEE Transactions on Mobile Computing <strong>(TMC)</strong>, 2024.
+    pdf: ./my_pdfs/TMC-24.pdf
+    # code: https://github.com/wufeim/DST3D
+    # page: https://ccvl.jhu.edu/3D-DST/
+    bibtex: ./my_bibs/TMC-24.txt
+    image: ./my_figs/TMC-24.png
+    # notes: 
+
+  - title: Approximate Supplement-Based Neighborhood Rough Set Model in Incomplete Hybrid Information Systems
+    authors: Xiong Meng*, Jilin Yang, <b style="color:#3399cc"><u>Dié Wu</u></b>, Tang Liu
+    article_short: PRCAI
+    article: Pacific Rim International Conference on Artificial Intelligence <strong>(PRICAI)</strong>, 2023.
+    pdf: ./my_pdfs/PRICAI-23.pdf
+    # code: https://github.com/wufeim/DST3D
+    # page: https://ccvl.jhu.edu/3D-DST/
+    bibtex: ./my_bibs/PRICAI-23.txt
+    image: ./my_figs/PRICAI-23.png
+    notes:   
+
+  - title: Practical charger placement scheme for wireless rechargeable sensor networks with obstacles
+    authors: Wei You*, Meixuan Ren, Yuzhuo Ma, <b style="color:#3399cc"><u>Dié Wu</u></b>, Jilin Yang, Xuxun Liu, Tang Liu
+    article_short: TOSN
+    article: ACM Transactions on Sensor Networks <strong>(TOSN)</strong>, 2023.
+    pdf: ./my_pdfs/TOSN-23.pdf
+    # code: https://github.com/wufeim/DST3D
+    # page: https://ccvl.jhu.edu/3D-DST/
+    bibtex: ./my_bibs/TOSN-23.txt
+    image: ./my_figs/TOSN-23.png
+    notes:   
+
+  - title: Utilizing the neglected back lobe for mobile charging
+    authors: Meixuan Ren*, <b style="color:#3399cc"><u>Dié Wu</u></b>, Jing Xue, Wenzheng Xu, Jian Peng, Tang Liu
+    article_short: INFOCOM
+    article: IEEE Conference on Computer Communications <strong>(INFOCOM)</strong>, 2023.
+    pdf: ./my_pdfs/INFOCOM-23-1.pdf
+    # code: https://github.com/wufeim/DST3D
+    # page: https://ccvl.jhu.edu/3D-DST/
+    bibtex: ./my_bibs/INFOCOM-23-1.txt
+    image: ./my_figs/INFOCOM-23-1.png
+    notes:   
+
+  - title: Concurrent charging with wave interference
+    authors: Yuzhuo Ma*, <b style="color:#3399cc"><u>Dié Wu</u></b>, Meixuan Ren, Jian Peng, Jilin Yang, Tang Liu
+    article_short: INFOCOM
+    article: IEEE Conference on Computer Communications <strong>(INFOCOM)</strong>, 2023.
+    pdf: ./my_pdfs/INFOCOM-23-2.pdf
+    # code: https://github.com/wufeim/DST3D
+    # page: https://ccvl.jhu.edu/3D-DST/
+    bibtex: ./my_bibs/INFOCOM-23-2.txt
+    image: ./my_figs/INFOCOM-23-2.png
+    notes:   
 
 journal: # Please list journal papers here:
 

@@ -1,0 +1,10 @@
+@INPROCEEDINGS{10228965,
+  author={Ma, Yuzhuo and Wu, Dié and Ren, Meixuan and Peng, Jian and Yang, Jilin and Liu, Tang},
+  booktitle={IEEE INFOCOM 2023 - IEEE Conference on Computer Communications}, 
+  title={Concurrent Charging with Wave Interference}, 
+  year={2023},
+  volume={},
+  number={},
+  pages={1-10},
+  keywords={Wireless communication;Wireless sensor networks;Computational modeling;Power distribution;Interference;Sensor phenomena and characterization;wave interference;concurrent charging;charger placement;sensor deployment;wireless power transfer},
+  doi={10.1109/INFOCOM53939.2023.10228965}}
