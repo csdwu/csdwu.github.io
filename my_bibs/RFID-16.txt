@@ -1,0 +1,10 @@
+@INPROCEEDINGS{7488004,
+  author={Wu, Die and Hussain, Muhammad Jawad and Li, Songfan and Lu, Li},
+  booktitle={2016 IEEE International Conference on RFID (RFID)}, 
+  title={R2: Over-the-air reprogramming on computational RFIDs}, 
+  year={2016},
+  volume={},
+  number={},
+  pages={1-8},
+  keywords={Protocols;Radiofrequency identification;Image segmentation;Random access memory;Microprogramming;Computational RFID;OTA Reprogramming;Firmware Upgrade;EPC},
+  doi={10.1109/RFID.2016.7488004}}

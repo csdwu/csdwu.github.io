@@ -1,0 +1,18 @@
+@article{10.1145/3070720,
+author = {Wu, Die and Lu, Li and Hussain, Muhammad Jawad and Li, Songfan and Li, Mo and Zhang, Fengli},
+title = {R3: Reliable Over-the-Air Reprogramming on Computational RFIDs},
+year = {2017},
+issue_date = {January 2018},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+volume = {17},
+number = {1},
+issn = {1539-9087},
+url = {https://doi.org/10.1145/3070720},
+doi = {10.1145/3070720},
+journal = {ACM Trans. Embed. Comput. Syst.},
+month = {sep},
+articleno = {9},
+numpages = {25},
+keywords = {firmware upgrade, OTA reprogramming, EPC, Computational RFID}
+}

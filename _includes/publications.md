@@ -2,6 +2,8 @@
 <h2>Selected Publications 
 <!-- <temp style="font-size:16px;">[</temp><a href="https://scholar.google.com/citations?user=m674z14AAAAJ" target="_blank" style="font-size:15px;">Google Scholar</a><temp style="font-size:16px;">]</temp><temp style="font-size:15px;">[</temp><a href="https://dblp.uni-trier.de/pid/12/10033-1.html" target="_blank" style="font-size:15px;">DBLP</a><temp style="font-size:15px;">]</temp> -->
 </h2>
+<!-- (<span style="font-size= 1.5em"> * refers to the students I have advised or co-advised, <i class="fa-regular fa-envelope fa-xs"></i> indicates the corresponding author</span>) -->
+
 (<span style="font-size= 1.5em"> * refers to the students I have advised or co-advised, <i class="fa-regular fa-envelope fa-xs"></i> indicates the corresponding author</span>)
 
 <!-- <h3><span style="font-size: auto">&middot;</span>&nbsp;Conference Papers</h3> -->
@@ -13,7 +15,7 @@
 <li>
 <div class="pub-row">
   <div class="col-sm-3 abbr" style="position: relative;padding-right: 15px;padding-left: 15px;">
-    <img src="{{ link.image }}" class="teaser img-fluid z-depth-1" style="width=100;height=40%">
+    <img src="{{ link.image }}" class="teaser img-fluid z-depth-1" style="width=100;height=40%;object-fit:scale-down">
             <abbr class="badge">{{ link.article_short }}</abbr>
   </div>
   <div class="col-sm-9" style="position: relative;padding-right: 15px;padding-left: 20px;">

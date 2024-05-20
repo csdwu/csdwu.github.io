@@ -1,0 +1,10 @@
+@INPROCEEDINGS{9751583,
+  author={Zhu, Biaokai and Tian, Liyun and Wu, Die and Dong, Meiya and Gao, Sheng and Zhang, Lu and Liu, Sanman and Li, Deng-Ao},
+  booktitle={2021 17th International Conference on Mobility, Sensing and Networking (MSN)}, 
+  title={RF-Vsensing: RFID-based Single Tag Contactless Vibration Sensing and Recognition}, 
+  year={2021},
+  volume={},
+  number={},
+  pages={438-445},
+  keywords={Vibrations;Industries;Employee welfare;Target recognition;Lighting;Real-time systems;Sensors;RFID;Contactless;Sensing;Clockwise and anti-clockwise Recognition},
+  doi={10.1109/MSN53354.2021.00072}}

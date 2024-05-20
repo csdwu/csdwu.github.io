@@ -1,0 +1,10 @@
+@INPROCEEDINGS{10118600,
+  author={Wang, Qiang and Ma, Yuzhuo and Zhang, Chenglong and Liu, Tang and Yang, Jilin and Wu, Dié},
+  booktitle={2023 IEEE Wireless Communications and Networking Conference (WCNC)}, 
+  title={An Effective Deployment Scheme for Elimination of Phase Cancellation in Backscatter-based WPCN}, 
+  year={2023},
+  volume={},
+  number={},
+  pages={1-6},
+  keywords={Greedy algorithms;Network topology;Wireless networks;Throughput;Topology;Reliability;Communication networks;Backscatter communication;phase cancellation;deployment;WPCN},
+  doi={10.1109/WCNC55385.2023.10118600}}

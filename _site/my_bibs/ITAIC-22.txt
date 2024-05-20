@@ -1,0 +1,12 @@
+@INPROCEEDINGS{9836498,
+  author={Wang, Jun and Wang, Ruijie and Wu, Die},
+  booktitle={IEEE Joint International Information Technology and Artificial Intelligence Conference (ITAIC)}, 
+  title={Effects of the local information on the resource-epidemic dynamics on multiplex networks}, 
+  year={2022},
+  volume={10},
+  number={},
+  pages={1665-1669},
+  keywords={Multiplexing;Epidemics;Correlation;Monte Carlo methods;Pandemics;Conferences;Dynamic scheduling;multiplex networks;local information;awareness;resource-epidemic spreading},
+  doi={10.1109/ITAIC54216.2022.9836498}}
+
+

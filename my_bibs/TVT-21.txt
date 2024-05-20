@@ -1,0 +1,10 @@
+@ARTICLE{9516969,
+  author={Mao, Sun and Zhang, Ning and Liu, Lei and Wu, Jinsong and Dong, Mianxiong and Ota, Kaoru and Liu, Tang and Wu, Die},
+  journal={IEEE Transactions on Vehicular Technology}, 
+  title={Computation Rate Maximization for Intelligent Reflecting Surface Enhanced Wireless Powered Mobile Edge Computing Networks}, 
+  year={2021},
+  volume={70},
+  number={10},
+  pages={10820-10831},
+  keywords={Wireless communication;Task analysis;Downlink;Resource management;Edge computing;Uplink;Array signal processing;Mobile edge computing;wireless energy transfer;intelligent reflecting surface;resource management},
+  doi={10.1109/TVT.2021.3105270}}

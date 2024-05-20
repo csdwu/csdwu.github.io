@@ -1,0 +1,11 @@
+@INPROCEEDINGS{7113083,
+  author={Yang, Wenyu and Wu, Die and Hussain, Muhammad Jawad and Lu, Li},
+  booktitle={2015 IEEE International Conference on RFID (RFID)}, 
+  title={Wireless firmware execution control in computational RFID systems}, 
+  year={2015},
+  volume={},
+  number={},
+  pages={129-136},
+  keywords={Switches;Radiofrequency identification;Ash;Protocols;Microprogramming;Decoding;User interfaces;Computational RFID;Execution Flexibility;Firmware Execution;EPC},
+  doi={10.1109/RFID.2015.7113083}}
+
