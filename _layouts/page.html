@@ -47,10 +47,13 @@
    <script>
       function myFunction() {
       var x = document.getElementById("myLinks");
+      var y = document.getElementById("myHeader");
       if (x.style.display === "block") {
         x.style.display = "none";
+        y.style.paddingTop = "2.5rem";
       } else {
         x.style.display = "block";
+        y.style.paddingTop = "13.5rem";
       }
       }
    </script>
@@ -92,75 +95,78 @@
     </style>
     
     <div class="wrapper">
-      <header>
-        
-        {% if site.avatar %}
-        <a class="image avatar"><img src="{{ site.avatar }}" alt="avatar" /></a>
-        {% endif %}
+      <header id="myHeader">
+        <div>
+          <div class="left">
+            {% if site.avatar %}
+            <a class="image avatar"><img src="{{ site.avatar }}" alt="avatar" /></a>
+            {% endif %}
+          </div>
+          <div class="right">
+            <h1>{{ site.title }}</h1>
 
-        <h1>{{ site.title }}</h1>
+            {% if site.position %}
+            <position class="position">{{ site.position }}</position>
+            <br>
+            {% endif %}
+            {% if site.affiliation %}
+            <a class="affiliation" href="{{ site.affiliation_link }}" rel="noopener"><autocolor>{{ site.affiliation }}</autocolor></a>
+            <br>
+            {% endif %}
+            {% if site.email %}
+            <a class="email" href="mailto:{{ site.email }}">{{ site.email }}</a>
+            {% endif %}
+            {% if site.email2 %}
+            <br>
+            <a class="email" href="mailto:{{ site.email2 }}">{{ site.email2 }}</a>
+            {% endif %}
+            
+            <br>
+            <br>
 
-        {% if site.position %}
-        <position class="position">{{ site.position }}</position>
-        <br>
-        {% endif %}
-        {% if site.affiliation %}
-        <a class="affiliation" href="{{ site.affiliation_link }}" rel="noopener"><autocolor>{{ site.affiliation }}</autocolor></a>
-        <br>
-        {% endif %}
-        {% if site.email %}
-        <a class="email" href="mailto:{{ site.email }}">{{ site.email }}</a>
-        {% endif %}
-        {% if site.email2 %}
-        <br>
-        <a class="email" href="mailto:{{ site.email2 }}">{{ site.email2 }}</a>
-        {% endif %}
-        
-        <br>
-        <br>
+            {% if site.link_type == 'text' %}
+            [<a href="{{ site.google_scholar }}">Google Scholar</a>]
+            <br>
+            [<a href="{{ site.cv_link }}">Curriculum Vitae</a>]
+            <br>
+            {% endif %}
 
-        {% if site.link_type == 'text' %}
-        [<a href="{{ site.google_scholar }}">Google Scholar</a>]
-        <br>
-        [<a href="{{ site.cv_link }}">Curriculum Vitae</a>]
-        <br>
-        {% endif %}
+            {% if site.link_type == 'icon' %}
+            <div class="social-icons">
+            {% if site.google_scholar %}
+            <a style="margin: 0 5px 0 0" href="{{ site.google_scholar }}">
+              <i class="ai ai-google-scholar" style="font-size:2rem"></i>
+            </a>  
+            {% endif %}
 
-        {% if site.link_type == 'icon' %}
-        <div class="social-icons">
-        {% if site.google_scholar %}
-        <a style="margin: 0 5px 0 0" href="{{ site.google_scholar }}">
-          <i class="ai ai-google-scholar" style="font-size:2rem"></i>
-        </a>  
-        {% endif %}
+            {% if site.cv_link %}
+            <a style="margin: 0 5px 0 0" href="{{ site.cv_link }}">
+              <i class="ai ai-cv" style="font-size:2rem;"></i>
+            </a>
+            {% endif %}
 
-        {% if site.cv_link %}
-        <a style="margin: 0 5px 0 0" href="{{ site.cv_link }}">
-          <i class="ai ai-cv" style="font-size:2rem;"></i>
-        </a>
-        {% endif %}
+            {% if site.github_link %}
+            <a style="margin: 0 5px 0 0" href="{{ site.github_link }}">
+              <i class="fab fa-github" style="font-size:1.85rem;"></i>
+            </a>
+            {% endif %}
 
-        {% if site.github_link %}
-        <a style="margin: 0 5px 0 0" href="{{ site.github_link }}">
-          <i class="fab fa-github" style="font-size:1.85rem;"></i>
-        </a>
-        {% endif %}
+            {% if site.linkedin %}
+            <a style="margin: 0 5px 0 0" href="{{ site.linkedin }}">
+              <i class="fab fa-linkedin" style="font-size:1.85rem;"></i>
+            </a>
+            {% endif %}
 
-        {% if site.linkedin %}
-        <a style="margin: 0 5px 0 0" href="{{ site.linkedin }}">
-          <i class="fab fa-linkedin" style="font-size:1.85rem;"></i>
-        </a>
-        {% endif %}
-
-        {% if site.twitter %}
-        <a style="margin: 0 0 0 0" href="{{ site.twitter }}">
-          <i class="fab fa-x-twitter" style="font-size:1.85rem;"></i>
-        </a>
-        {% endif %}
+            {% if site.twitter %}
+            <a style="margin: 0 0 0 0" href="{{ site.twitter }}">
+              <i class="fab fa-x-twitter" style="font-size:1.85rem;"></i>
+            </a>
+            {% endif %}
+          </div>
+          {% endif %}
+          <br>
         </div>
-        {% endif %}
-        <br>
-
+       </div>
       </header>
       <section>
 
@@ -175,15 +181,15 @@
       {% endif %}
 
       {% if site.enable_last_update %}
-      <small>Last Update:
+      <p style="font-size:medium;">Last Update:
             <script>
               const monthNames = ["January", "Februray", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"
               ];
               var modiDate = new Date(document.lastModified);
-              var showAs = modiDate.getDate() + ". " + monthNames[modiDate.getMonth()] + " " + modiDate.getFullYear();
+              var showAs = monthNames[modiDate.getMonth()] +' '+ modiDate.getDate() + ", " + modiDate.getFullYear();
               document.write(showAs);
             </script>
-      </small> 
+      </p> 
       {% endif %}     
       </section>
     </div>

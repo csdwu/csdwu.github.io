@@ -47,10 +47,13 @@
    <script>
       function myFunction() {
       var x = document.getElementById("myLinks");
+      var y = document.getElementById("myHeader");
       if (x.style.display === "block") {
         x.style.display = "none";
+        y.style.paddingTop = "2.5rem";
       } else {
         x.style.display = "block";
+        y.style.paddingTop = "13.5rem";
       }
       }
    </script>
@@ -102,72 +105,75 @@
     </style>
     
     <div class="wrapper">
-      <header>
-        
-        
-        <a class="image avatar"><img src="./assets/img/avatar.png" alt="avatar" /></a>
-        
+      <header id="myHeader">
+        <div>
+          <div class="left">
+            
+            <a class="image avatar"><img src="./assets/img/avatar.png" alt="avatar" /></a>
+            
+          </div>
+          <div class="right">
+            <h1>Dié Wu</h1>
 
-        <h1>Dié Wu</h1>
+            
+            <position class="position">Associate Professor</position>
+            <br>
+            
+            
+            <a class="affiliation" href="" rel="noopener"><autocolor>Sichuan Normal University</autocolor></a>
+            <br>
+            
+            
+            <a class="email" href="mailto:wd@sicnu.edu.cn">wd@sicnu.edu.cn</a>
+            
+            
+            <br>
+            <a class="email" href="mailto:dwu.cse@gmail.com">dwu.cse@gmail.com</a>
+            
+            
+            <br>
+            <br>
 
-        
-        <position class="position">Associate Professor</position>
-        <br>
-        
-        
-        <a class="affiliation" href="" rel="noopener"><autocolor>Sichuan Normal University</autocolor></a>
-        <br>
-        
-        
-        <a class="email" href="mailto:wd@sicnu.edu.cn">wd@sicnu.edu.cn</a>
-        
-        
-        <br>
-        <a class="email" href="mailto:dwu.cse@gmail.com">dwu.cse@gmail.com</a>
-        
-        
-        <br>
-        <br>
+            
 
-        
+            
+            <div class="social-icons">
+            
+            <a style="margin: 0 5px 0 0" href="https://scholar.google.com/citations?user=m674z14AAAAJ">
+              <i class="ai ai-google-scholar" style="font-size:2rem"></i>
+            </a>  
+            
 
-        
-        <div class="social-icons">
-        
-        <a style="margin: 0 5px 0 0" href="https://scholar.google.com/citations?user=m674z14AAAAJ">
-          <i class="ai ai-google-scholar" style="font-size:2rem"></i>
-        </a>  
-        
+            
 
-        
+            
+            <a style="margin: 0 5px 0 0" href="https://github.com/">
+              <i class="fab fa-github" style="font-size:1.85rem;"></i>
+            </a>
+            
 
-        
-        <a style="margin: 0 5px 0 0" href="https://github.com/">
-          <i class="fab fa-github" style="font-size:1.85rem;"></i>
-        </a>
-        
+            
+            <a style="margin: 0 5px 0 0" href="https://www.linkedin.com/">
+              <i class="fab fa-linkedin" style="font-size:1.85rem;"></i>
+            </a>
+            
 
-        
-        <a style="margin: 0 5px 0 0" href="https://www.linkedin.com/">
-          <i class="fab fa-linkedin" style="font-size:1.85rem;"></i>
-        </a>
-        
-
-        
-        <a style="margin: 0 0 0 0" href="https://twitter.com/">
-          <i class="fab fa-x-twitter" style="font-size:1.85rem;"></i>
-        </a>
-        
+            
+            <a style="margin: 0 0 0 0" href="https://twitter.com/">
+              <i class="fab fa-x-twitter" style="font-size:1.85rem;"></i>
+            </a>
+            
+          </div>
+          
+          <br>
         </div>
-        
-        <br>
-
+       </div>
       </header>
       <section>
 
       <h1>Biography</h1>
 
-<div style="font: 22px/1.5 Crimson Pro, serif; text-align:justify">
+<div style="text-align:justify">
 Dié Wu is currently an Associate Professor in <a href="https://cs.sicnu.edu.cn/">College</a> <a href="https://cs.sicnu.edu.cn/">of Computer</a> <a href="https://cs.sicnu.edu.cn/">Science</a>, <a href="https://www.sicnu.edu.cn/">Sichuan Normal University</a>. Before serving as a faculty, he obtained his PhD degree in Computer Architecture and BEng degree in Information Security from <a href="https://www.uestc.edu.cn">University of Electronic Science and Technology of China</a> in 2018 and 2011, respectively, where he was supervised by <a href="https://www.scse.uestc.edu.cn/info/1081/12001.htm">Prof. Li Lu</a> and <a href="https://sise.uestc.edu.cn/info/1035/5658.htm">Prof. Fengli Zhang</a>. During the period from 2016 to 2017, he was a visiting student at the School of Computer Science and Engineering in <a href="https://www.ntu.edu.sg/">Nanyang Technological University</a>, under the advisement of <a href="https://cse.hkust.edu.hk/~lim/">Prof. Mo Li</a>. He is now leading the <b>Wire<u>L</u>ess Sens<u>I</u>ng and <u>NE</u>tworking <u>S</u>ystems (LINES)</b> research group and maintains membership in CCF, IEEE, and ACM. His research interests focuses on the Internet of Things, particularly in wireless sensing and networking, backscatter communication, intermittent computing, energy harvesting, and ultra-low-power embedded systems. 
 <br />
 <br />
@@ -952,15 +958,15 @@ Please visit my CN website <a href="https://csdwu.github.io/"> here (<span style
       
 
       
-      <small>Last Update:
+      <p style="font-size:medium;">Last Update:
             <script>
               const monthNames = ["January", "Februray", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"
               ];
               var modiDate = new Date(document.lastModified);
-              var showAs = modiDate.getDate() + ". " + monthNames[modiDate.getMonth()] + " " + modiDate.getFullYear();
+              var showAs = monthNames[modiDate.getMonth()] +' '+ modiDate.getDate() + ", " + modiDate.getFullYear();
               document.write(showAs);
             </script>
-      </small> 
+      </p> 
            
       </section>
     </div>

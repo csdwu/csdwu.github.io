@@ -81,12 +81,23 @@ header {
 
 /* Mobile device style here: */
 @media print, screen and (max-width: 960px) {
+    body{
+        font:20px/1.5 Crimson Pro, serif;
+    }
     .image.avatar img {
-        width: 40%;
+        width: 80%;
         padding: 0;
         margin-bottom: 12px;
     }
-
+    header .left{
+        display: inline-block;
+        width: 30%;
+    }
+    header .right{
+        display: inline-block;
+        width: 69%;
+        margin-top: 20px;
+    }
     .topnav {
         min-height: 42px;
     }

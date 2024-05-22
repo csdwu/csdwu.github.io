@@ -47,10 +47,13 @@
    <script>
       function myFunction() {
       var x = document.getElementById("myLinks");
+      var y = document.getElementById("myHeader");
       if (x.style.display === "block") {
         x.style.display = "none";
+        y.style.paddingTop = "2.5rem";
       } else {
         x.style.display = "block";
+        y.style.paddingTop = "13.5rem";
       }
       }
    </script>
@@ -102,66 +105,69 @@
     </style>
     
     <div class="wrapper">
-      <header>
-        
-        
-        <a class="image avatar"><img src="./assets/img/avatar.png" alt="avatar" /></a>
-        
+      <header id="myHeader">
+        <div>
+          <div class="left">
+            
+            <a class="image avatar"><img src="./assets/img/avatar.png" alt="avatar" /></a>
+            
+          </div>
+          <div class="right">
+            <h1>Dié Wu</h1>
 
-        <h1>Dié Wu</h1>
+            
+            <position class="position">Associate Professor</position>
+            <br>
+            
+            
+            <a class="affiliation" href="" rel="noopener"><autocolor>Sichuan Normal University</autocolor></a>
+            <br>
+            
+            
+            <a class="email" href="mailto:wd@sicnu.edu.cn">wd@sicnu.edu.cn</a>
+            
+            
+            <br>
+            <a class="email" href="mailto:dwu.cse@gmail.com">dwu.cse@gmail.com</a>
+            
+            
+            <br>
+            <br>
 
-        
-        <position class="position">Associate Professor</position>
-        <br>
-        
-        
-        <a class="affiliation" href="" rel="noopener"><autocolor>Sichuan Normal University</autocolor></a>
-        <br>
-        
-        
-        <a class="email" href="mailto:wd@sicnu.edu.cn">wd@sicnu.edu.cn</a>
-        
-        
-        <br>
-        <a class="email" href="mailto:dwu.cse@gmail.com">dwu.cse@gmail.com</a>
-        
-        
-        <br>
-        <br>
+            
 
-        
+            
+            <div class="social-icons">
+            
+            <a style="margin: 0 5px 0 0" href="https://scholar.google.com/citations?user=m674z14AAAAJ">
+              <i class="ai ai-google-scholar" style="font-size:2rem"></i>
+            </a>  
+            
 
-        
-        <div class="social-icons">
-        
-        <a style="margin: 0 5px 0 0" href="https://scholar.google.com/citations?user=m674z14AAAAJ">
-          <i class="ai ai-google-scholar" style="font-size:2rem"></i>
-        </a>  
-        
+            
 
-        
+            
+            <a style="margin: 0 5px 0 0" href="https://github.com/">
+              <i class="fab fa-github" style="font-size:1.85rem;"></i>
+            </a>
+            
 
-        
-        <a style="margin: 0 5px 0 0" href="https://github.com/">
-          <i class="fab fa-github" style="font-size:1.85rem;"></i>
-        </a>
-        
+            
+            <a style="margin: 0 5px 0 0" href="https://www.linkedin.com/">
+              <i class="fab fa-linkedin" style="font-size:1.85rem;"></i>
+            </a>
+            
 
-        
-        <a style="margin: 0 5px 0 0" href="https://www.linkedin.com/">
-          <i class="fab fa-linkedin" style="font-size:1.85rem;"></i>
-        </a>
-        
-
-        
-        <a style="margin: 0 0 0 0" href="https://twitter.com/">
-          <i class="fab fa-x-twitter" style="font-size:1.85rem;"></i>
-        </a>
-        
+            
+            <a style="margin: 0 0 0 0" href="https://twitter.com/">
+              <i class="fab fa-x-twitter" style="font-size:1.85rem;"></i>
+            </a>
+            
+          </div>
+          
+          <br>
         </div>
-        
-        <br>
-
+       </div>
       </header>
       <section>
 
@@ -204,15 +210,15 @@
       
 
       
-      <small>Last Update:
+      <p style="font-size:medium;">Last Update:
             <script>
               const monthNames = ["January", "Februray", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"
               ];
               var modiDate = new Date(document.lastModified);
-              var showAs = modiDate.getDate() + ". " + monthNames[modiDate.getMonth()] + " " + modiDate.getFullYear();
+              var showAs = monthNames[modiDate.getMonth()] +' '+ modiDate.getDate() + ", " + modiDate.getFullYear();
               document.write(showAs);
             </script>
-      </small> 
+      </p> 
            
       </section>
     </div>
