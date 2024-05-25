@@ -92,11 +92,13 @@ header {
     header .left{
         display: inline-block;
         width: 30%;
+        vertical-align: top;
+        text-align: right;
     }
     header .right{
         display: inline-block;
-        width: 69%;
-        margin-top: 20px;
+        width: 50%;
+        margin-top: 5%;
     }
     .topnav {
         min-height: 42px;
