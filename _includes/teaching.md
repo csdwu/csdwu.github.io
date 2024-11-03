@@ -21,11 +21,10 @@
   <li>
   Instructor, Wireless Communication, Semester-1, 2024
   </li>
-  
   <li>
   Instructor, Wireless Sensing, Semester-2, 2020, 2021, 2022, 2023
   </li>
     <li>
-  Instructor, Wireless Communication, Semester-2, 2020, 2021, 2022, 2023, Semester-1, 2024
+  Instructor, Wireless Communication, Semester-2, 2020, 2021, 2022, 2023
   </li>
 </ul>
