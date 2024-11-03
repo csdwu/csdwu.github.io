@@ -4,6 +4,7 @@
 
 <div style="text-align:justify">
 <ul>
+<li><strong>[Sep. 2024]</strong> Selected to be the executive member of CCF Technical Committee of Embedded Systems.🤪</li>
 <li><strong>[Sep. 2024]</strong> Our paper CHAIN is accepted by <a href="https://ieeexplore.ieee.org/abstract/document/10684163">TMC</a>! Congrats to Xuejing. 🎉</li>
 <li><strong>[Aug. 2024]</strong> Our paper CHESS is accepted by <a href="https://attend.ieee.org/icpads/">ICPADS 2024</a>!</li>
 <li><strong>[May. 2024]</strong> I will serve as the TPC member in <a href="https://globecom2024.ieee-globecom.org/">GLOBECOM 2024</a>.</li>
