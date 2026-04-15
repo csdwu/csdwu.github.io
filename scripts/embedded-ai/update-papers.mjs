@@ -465,13 +465,13 @@ function normalizeArxivEntry(entry, sourceDef, query) {
   };
 }
 
-async function fetchArxivEntriesForQuery(sourceDef, query) {
+async function fetchArxivEntriesPage(sourceDef, query, start) {
   const maxAttempts = ARXIV_MAX_ATTEMPTS;
 
   for (let attempt = 1; attempt <= maxAttempts; attempt++) {
     const url = new URL(ARXIV_API_BASE);
     url.searchParams.set("search_query", query);
-    url.searchParams.set("start", "0");
+    url.searchParams.set("start", String(start));
     url.searchParams.set("max_results", String(MAX_RESULTS_PER_QUERY));
     url.searchParams.set("sortBy", "submittedDate");
     url.searchParams.set("sortOrder", "descending");
@@ -490,7 +490,7 @@ async function fetchArxivEntriesForQuery(sourceDef, query) {
       const entries = toArray(parsed?.feed?.entry);
 
       const totalResults = toInt(parsed?.feed?.totalResults, entries.length);
-      const startIndex = toInt(parsed?.feed?.startIndex, 0);
+      const startIndex = toInt(parsed?.feed?.startIndex, start);
       const itemsPerPage = toInt(parsed?.feed?.itemsPerPage, entries.length);
 
       return {
@@ -503,7 +503,6 @@ async function fetchArxivEntriesForQuery(sourceDef, query) {
           startIndex,
           itemsPerPage,
           fetchedCount: entries.length,
-          isComplete: startIndex + entries.length >= totalResults,
         },
       };
     }
@@ -511,7 +510,7 @@ async function fetchArxivEntriesForQuery(sourceDef, query) {
     if (response.status === 429 && attempt < maxAttempts) {
       const backoffMs = REQUEST_DELAY_MS * Math.pow(2, attempt - 1);
       console.warn(
-        `[arXiv] 429 for ${sourceDef.key}, attempt ${attempt}/${maxAttempts}. Retrying in ${backoffMs} ms.`
+        `[arXiv] 429 for ${sourceDef.key}, query="${query}", pageStart=${start}, attempt ${attempt}/${maxAttempts}. Retrying in ${backoffMs} ms.`
       );
       await sleep(backoffMs);
       continue;
@@ -523,7 +522,61 @@ async function fetchArxivEntriesForQuery(sourceDef, query) {
     );
   }
 
-  throw new Error(`arXiv request failed for ${sourceDef.key}: exceeded retry limit`);
+  throw new Error(
+    `arXiv request failed for ${sourceDef.key}, query="${query}", start=${start}: exceeded retry limit`
+  );
+}
+
+async function fetchArxivEntriesForQuery(sourceDef, query) {
+  let start = 0;
+  let totalResults = null;
+  let pagesFetched = 0;
+  const allPapers = [];
+
+  while (true) {
+    const pageResult = await fetchArxivEntriesPage(sourceDef, query, start);
+    const pagePapers = pageResult.papers;
+    const stats = pageResult.stats;
+
+    if (totalResults === null) {
+      totalResults = stats.totalResults;
+    }
+
+    allPapers.push(...pagePapers);
+    pagesFetched += 1;
+
+    console.log(
+      `[arXiv] ${sourceDef.key} | query="${query}" | page=${pagesFetched} | start=${stats.startIndex} | fetched_this_page=${stats.fetchedCount} | total=${stats.totalResults}`
+    );
+
+    if (pagePapers.length === 0) {
+      break;
+    }
+
+    start = stats.startIndex + pagePapers.length;
+
+    if (start >= stats.totalResults) {
+      break;
+    }
+
+    await sleep(REQUEST_DELAY_MS);
+  }
+
+  return {
+    papers: allPapers,
+    stats: {
+      sourceKey: sourceDef.key,
+      sourceTitle: sourceDef.title,
+      query,
+      totalResults: totalResults ?? allPapers.length,
+      startIndex: 0,
+      itemsPerPage: MAX_RESULTS_PER_QUERY,
+      fetchedCount: allPapers.length,
+      pagesFetched,
+      isComplete:
+        totalResults === null ? true : allPapers.length >= totalResults,
+    },
+  };
 }
 
 async function fetchAllCandidates() {
@@ -983,7 +1036,7 @@ async function main() {
   console.log("\n=== arXiv Query Stats ===");
   for (const item of fetchStats) {
     console.log(
-      `[${item.sourceKey}] query="${item.query}" | total=${item.totalResults} | fetched=${item.fetchedCount} | complete=${item.isComplete}`
+      `[${item.sourceKey}] query="${item.query}" | total=${item.totalResults} | fetched=${item.fetchedCount} | pages=${item.pagesFetched} | complete=${item.isComplete}`
     );
   }
 
