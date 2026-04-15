@@ -1,0 +1,249 @@
+conference: # Please list conference papers here:
+
+  #### Conference Template Here ->
+
+  # - title: Generating Images with 3D Annotations Using Diffusion Models
+  #   authors: Wufei Ma*, Qihao Liu*, Jiahao Wang*, Angtian Wang, Xiaoding Yuan, Yi Zhang, Zihao Xiao, Guofeng Zhang, Beijia Lu, Ruxiao Duan, Yongrui Qi, Adam Kortylewski, <strong>Yaoyao Liu<sup><i class="fa-regular fa-envelope fa-xs"></i></sup></strong>, Alan Yuille <br>( <sup><i class="fa-regular fa-envelope fa-xs"></i></sup> Corresponding author)
+  #   article_short: ICLR
+  #   article: International Conference on Learning Representations <strong>(ICLR)</strong>, 2024.
+  #   pdf: https://openreview.net/pdf?id=XlkN11Xj6J
+  #   code: https://github.com/wufeim/DST3D
+  #   page: https://ccvl.jhu.edu/3D-DST/
+  #   bibtex: https://bib.yliu.me/arXiv23_1.txt
+  #   image: https://img.yliu.me/teaser/dst.png
+  #   notes: Spotlight
+
+  - title: "Poster: Towards Backbone-Free VLC Networking via NLOS Optical Channels"
+    authors: Pinpin Zhang, Jiacheng Wu, Yiling Huang, <b style="color:#3399cc"><u>Dié Wu</u></b>, Yanbing Yang, Yimao Sun
+    article_short: MobiCom
+    article: The 31st Annual International Conference on Mobile Computing and Networking <strong>(MobiCom)</strong>, 2025.
+    pdf: ./my_pdfs/MobiCom-25-Poster.pdf
+    bibtex: ./my_bibs/MobiCom-25-Poster.txt
+    image: ./my_figs/MobiCom-25-Poster.png
+    notes: Poster
+
+  - title: Advances in Perovskite Indoor Photovoltaics for Intelligent Internet of Things
+    authors: Yongyun Li, Juncheng Wang, Zhongren Jiang, Yimao Sun, <b style="color:#3399cc"><u>Dié Wu</u></b>, Ayi Bahtiar, Yanbing Yang, Dewei Zhao
+    article_short: Mater. Today
+    article: Materials Today, 2025.
+    pdf: ./my_pdfs/MaterialsToday-25.pdf
+    bibtex: ./my_bibs/MaterialsToday-25.txt
+    image: ./my_figs/MaterialsToday-25.png
+    notes:
+
+  - title: "EMIT: Reflection-Based Charging Jamming Attack"
+    authors: Tang Liu, Jing Gao, Yuan Yin, <b style="color:#3399cc"><u>Dié Wu</u></b>, Jian Peng, Wenzheng Xu, Baijun Wu, Yazhou Tu
+    article_short: TMC
+    article: IEEE Transactions on Mobile Computing <strong>(TMC)</strong>, 2025.
+    pdf: ./my_pdfs/TMC-25-EMIT.pdf
+    bibtex: ./my_bibs/TMC-25-EMIT.txt
+    image: ./my_figs/TMC-25-EMIT.png
+    notes:
+
+  - title: Lightweight Population-based Policy Optimization for Pickup and Delivery Problems
+    authors: Yizhou Liu, Li Li, Yixin Xu, Tang Liu, Rong Cheng, <b style="color:#3399cc"><u>Dié Wu</u></b>, Jilin Yang, Jingwen Li
+    article_short: C&IE
+    article: Computers &amp; Industrial Engineering, 2025.
+    pdf: ./my_pdfs/CIE-25-LPPO.pdf
+    bibtex: ./my_bibs/CIE-25-LPPO.txt
+    image: ./my_figs/CIE-25-LPPO.png
+    notes:
+
+  - title: "SANE: Safe Charging with Wave Interference"
+    authors: Yuan Yin, <b style="color:#3399cc"><u>Dié Wu</u></b>, Jing Gao, Jin Yang, Jilin Yang, Tang Liu
+    article_short: INFOCOM
+    article: IEEE Conference on Computer Communications <strong>(INFOCOM)</strong>, 2025.
+    pdf: ./my_pdfs/INFOCOM-25-SANE.pdf
+    bibtex: ./my_bibs/INFOCOM-25-SANE.txt
+    image: ./my_figs/INFOCOM-25-SANE.png
+    notes:
+
+  - title: Utilizing Multipath Effects for Mobile Charging
+    authors: Jing Gao, <b style="color:#3399cc"><u>Dié Wu</u></b>, Linglin Zhang, Jingwen Li, Jin Yang, Jian Peng, Tang Liu
+    article_short: TMC
+    article: IEEE Transactions on Mobile Computing <strong>(TMC)</strong>, 2025.
+    pdf: ./my_pdfs/TMC-25-Multipath.pdf
+    bibtex: ./my_bibs/TMC-25-Multipath.txt
+    image: ./my_figs/TMC-25-Multipath.png
+    notes:
+
+  - title: Concurrent Charging With Wave Interference for Multiple Chargers
+    # authors: Tang Liu, Yuzhuo Ma, Meixuan Ren, Jin Yang, Jian Peng, Jilin Yang, <b style="color:#3399cc"><u>Dié Wu</u></b><sup><i class="fa-regular fa-envelope fa-xs"></i></sup> 
+    authors: Tang Liu, Yuzhuo Ma, Meixuan Ren, Jin Yang, Jian Peng, Jilin Yang, <b style="color:#3399cc"><u>Dié Wu</u></b><sup><i class="fa-regular fa-envelope fa-xs"></i></sup>
+    article_short: TON
+    article: IEEE/ACM Transactions on Networking <strong>(TON)</strong>, 2024.
+    pdf: ./my_pdfs/ToN-24.pdf
+    bibtex: ./my_bibs/ToN-24.txt
+    image: ./my_figs/ToN-24.png
+
+  - title: Dynamic Power Distribution Controlling for Directional Chargers
+    # authors: Tang Liu, Yuzhuo Ma, Meixuan Ren, Jin Yang, Jian Peng, Jilin Yang, <b style="color:#3399cc"><u>Dié Wu</u></b><sup><i class="fa-regular fa-envelope fa-xs"></i></sup> 
+    authors: Yuzhuo Ma*, <b style="color:#3399cc"><u>Dié Wu</u></b>, Jing Gao, Wen Sun, Jilin Yang, Tang Liu
+    article_short: INFOCOM
+    article: IEEE Conference on Computer Communications <strong>(INFOCOM)</strong>, 2024.
+    pdf: ./my_pdfs/INFOCOM-24.pdf
+    bibtex: ./my_bibs/INFOCOM-24.txt
+    image: ./my_figs/INFOCOM-24.png
+
+  - title: Utilizing the neglected back lobe for directional charging scheduling
+    authors: Tang Liu, Meixuan Ren, <b style="color:#3399cc"><u>Dié Wu</u></b>, Jing Xue, Jingwen Li, Sun Mao, Wenzheng Xu 
+    article_short: TMC
+    article: IEEE Transactions on Mobile Computing <strong>(TMC)</strong>, 2024.
+    pdf: ./my_pdfs/TMC-24.pdf
+    bibtex: ./my_bibs/TMC-24.txt
+    image: ./my_figs/TMC-24.png
+    # notes: 
+
+  - title: Approximate Supplement-Based Neighborhood Rough Set Model in Incomplete Hybrid Information Systems
+    authors: Xiong Meng*, Jilin Yang, <b style="color:#3399cc"><u>Dié Wu</u></b>, Tang Liu
+    article_short: PRICAI
+    article: Pacific Rim International Conference on Artificial Intelligence <strong>(PRICAI)</strong>, 2023.
+    pdf: ./my_pdfs/PRICAI-23.pdf
+    bibtex: ./my_bibs/PRICAI-23.txt
+    image: ./my_figs/PRICAI-23.png
+    notes:   
+
+  - title: Practical Charger Placement Scheme for Wireless Rechargeable Sensor Networks with Obstacles
+    authors: Wei You*, Meixuan Ren, Yuzhuo Ma, <b style="color:#3399cc"><u>Dié Wu</u></b>, Jilin Yang, Xuxun Liu, Tang Liu
+    article_short: TOSN
+    article: ACM Transactions on Sensor Networks <strong>(TOSN)</strong>, 2023.
+    pdf: ./my_pdfs/TOSN-23.pdf
+    bibtex: ./my_bibs/TOSN-23.txt
+    image: ./my_figs/TOSN-23.png
+    notes:   
+
+  - title: Utilizing the Neglected Back Lobe for Mobile Charging
+    authors: Meixuan Ren*, <b style="color:#3399cc"><u>Dié Wu</u></b>, Jing Xue, Wenzheng Xu, Jian Peng, Tang Liu
+    article_short: INFOCOM
+    article: IEEE Conference on Computer Communications <strong>(INFOCOM)</strong>, 2023.
+    pdf: ./my_pdfs/INFOCOM-23-1.pdf
+    bibtex: ./my_bibs/INFOCOM-23-1.txt
+    image: ./my_figs/INFOCOM-23-1.png
+    notes:   
+
+  - title: Concurrent Charging with Wave Interference
+    authors: Yuzhuo Ma*, <b style="color:#3399cc"><u>Dié Wu</u></b>, Meixuan Ren, Jian Peng, Jilin Yang, Tang Liu
+    article_short: INFOCOM
+    article: IEEE Conference on Computer Communications <strong>(INFOCOM)</strong>, 2023.
+    pdf: ./my_pdfs/INFOCOM-23-2.pdf
+    bibtex: ./my_bibs/INFOCOM-23-2.txt
+    image: ./my_figs/INFOCOM-23-2.png
+    notes:   
+
+  - title: An Effective Deployment Scheme for Elimination of Phase Cancellation in Backscatter-based WPCN
+    authors: Qiang Wang*, Yuzhuo Ma, Chenglong Zhang, Tang Liu, Jilin Yang, <b style="color:#3399cc"><u>Dié Wu</u></b><sup><i class="fa-regular fa-envelope fa-xs"></i></sup>
+    article_short: WCNC
+    article: IEEE Wireless Communications and Networking Conference <strong>(WCNC)</strong>, 2023.
+    pdf: ./my_pdfs/WCNC-23.pdf
+    bibtex: ./my_bibs/WCNC-23.txt
+    image: ./my_figs/WCNC-23.png
+    notes:   
+
+  - title: Effects of the Information-driven Awareness on Epidemic Spreading on Multiplex Networks
+    authors: Jun Wang, Weijie Xiong, Ruijie Wang, Shimin Cai, <b style="color:#3399cc"><u>Dié Wu</u></b>, Wei Wang, Xiaolong Chen 
+    article_short: CHAOS
+    article: Chaos <span>:</span> An Interdisciplinary Journal of Nonlinear Science <strong>(CHAOS)</strong>, 2022.
+    pdf: ./my_pdfs/CHAOS-22.pdf
+    bibtex: ./my_bibs/CHAOS-22.txt
+    image: ./my_figs/CHAOS-22.png
+    notes:  
+
+  - title: Effects of the Local Information on the Resource-epidemic Dynamics on Multiplex Networks
+    authors: Jun Wang, Ruijie Wang, <b style="color:#3399cc"><u>Dié Wu</u></b>
+    article_short: ITAIC
+    article: IEEE Joint International Information Technology and Artificial Intelligence Conference <strong>(ITAIC)</strong>, 2022.
+    pdf: ./my_pdfs/ITAIC-22.pdf
+    bibtex: ./my_bibs/ITAIC-22.txt
+    image: ./my_figs/ITAIC-22.png
+    notes:  
+
+  - title: RF-Vsensing<span>:</span> RFID-based Single Tag Contactless Vibration Sensing and Recognition
+    authors: Biaokai Zhu, Liyun Tian, <b style="color:#3399cc"><u>Dié Wu</u></b><sup><i class="fa-regular fa-envelope fa-xs"></i></sup>, Meiya Dong, Sheng Gao, Lu Zhang, Sanman Liu, Deng-Ao Li
+    article_short: MSN
+    article: IEEE International Conference on Mobility, Sensing and Networking <strong>(MSN)</strong>, 2021.
+    pdf: ./my_pdfs/MSN-21.pdf
+    bibtex: ./my_bibs/MSN-21.txt
+    image: ./my_figs/MSN-21.png
+    notes:  
+
+  - title: Improved Optical Camera Communication Systems Using a Freeform Lens
+    authors: Ziwei Liu*, Lin Yang, Yanbing Yang, Rengmao Wu, Lei Zhang, Liangyin Chen, <b style="color:#3399cc"><u>Dié Wu</u></b>, Jun She
+    article_short: OE
+    article: Optics Express <strong>(OE)</strong>, 2021.
+    pdf: ./my_pdfs/OE-21.pdf
+    bibtex: ./my_bibs/OE-21.txt
+    image: ./my_figs/OE-21.png
+    notes:  
+
+  - title: Computation Rate Maximization for Intelligent Reflecting Surface Enhanced Wireless Powered Mobile Edge Computing Networks
+    authors: Sun Mao, Ning Zhang, Lei Liu, Jinsong Wu, Mianxiong Dong, Kaoru Ota, Tang Liu, <b style="color:#3399cc"><u>Dié Wu</u></b>
+    article_short: TVT
+    article: IEEE Transactions on Vehicular Technology <strong>(TVT)</strong>, 2021.
+    pdf: ./my_pdfs/TVT-21.pdf
+    bibtex: ./my_bibs/TVT-21.txt
+    image: ./my_figs/TVT-21.png
+    notes:  
+
+  - title: R<sup>3</sup><span>:</span> Reliable Over-the-Air Reprogramming on Computational RFIDs
+    authors: <b style="color:#3399cc"><u>Dié Wu</u></b>, Li Lu, Muhammad Jawad Hussain, Songfan Li, Mo Li, Fengli Zhang 
+    article_short: TECS
+    article: ACM Transactions on Embedded Computing Systems <strong>(TECS)</strong>, 2018.
+    pdf: ./my_pdfs/TECS-18.pdf
+    bibtex: ./my_bibs/TECS-18.txt
+    image: ./my_figs/TECS-18.png
+    notes:  
+
+  - title: Remote Firmware Execution Control in Computational RFID Systems
+    authors: <b style="color:#3399cc"><u>Dié Wu</u></b>, Li Lu, Muhammad Jawad Hussain, Wenyu Yang 
+    article_short: IEEE Sens. J.
+    article: IEEE Sensors Journal, 2017.
+    pdf: ./my_pdfs/SJ-17.pdf
+    bibtex: ./my_bibs/SJ-17.txt
+    image: ./my_figs/SJ-17.png
+    notes:  
+
+
+  - title: R<sup>2</sup><span>:</span> Over-the-air Reprogramming on Computational RFIDs
+    authors: <b style="color:#3399cc"><u>Dié Wu</u></b>, Muhammad Jawad Hussain, Songfan Li, Li Lu 
+    article_short: RFID
+    article: IEEE International Conference on RFID<strong>(RFID)</strong>, 2016.
+    pdf: ./my_pdfs/RFID-16.pdf
+    bibtex: ./my_bibs/RFID-16.txt
+    image: ./my_figs/RFID-16.png
+    notes:  
+
+  - title: Wireless Firmware Execution Control in Computational RFID Systems
+    authors: Wenyu Yang, <b style="color:#3399cc"><u>Dié Wu</u></b>, Muhammad Jawad Hussain, Li Lu 
+    article_short: RFID
+    article: IEEE International Conference on RFID<strong>(RFID)</strong>, 2015.
+    pdf: ./my_pdfs/RFID-15.pdf
+    bibtex: ./my_bibs/RFID-15.txt
+    image: ./my_figs/RFID-15.png
+    notes:  
+
+
+journal: # Please list journal papers here:
+
+  #### Journal Template Here ->
+  
+  # - title: Generating Images with 3D Annotations Using Diffusion Models
+  #   authors: Wufei Ma*, Qihao Liu*, Jiahao Wang*, Angtian Wang, Xiaoding Yuan, Yi Zhang, Zihao Xiao, Guofeng Zhang, Beijia Lu, Ruxiao Duan, Yongrui Qi, Adam Kortylewski, <strong>Yaoyao Liu<sup><i class="fa-regular fa-envelope fa-xs"></i></sup></strong>, Alan Yuille <br>( <sup><i class="fa-regular fa-envelope fa-xs"></i></sup> Corresponding author)
+  #   article_short: ICLR
+  #   article: International Conference on Learning Representations <strong>(ICLR)</strong>, 2024.
+  #   pdf: https://openreview.net/pdf?id=XlkN11Xj6J
+  #   code: https://github.com/wufeim/DST3D
+  #   page: https://ccvl.jhu.edu/3D-DST/
+  #   bibtex: https://bib.yliu.me/arXiv23_1.txt
+  #   image: https://img.yliu.me/teaser/dst.png
+  #   notes: Spotlight
+    
+
+  - title: "Wakening Past Concepts without Past Data: Class-Incremental Learning from Online Placebos"
+    authors: <strong>Yaoyao Liu</strong>, Yingying Li, Bernt Schiele, and Qianru Sun
+    article_short: WACV
+    article: IEEE/CVF Winter Conference on Applications of Computer Vision <strong>(WACV)</strong>, 2024.
+    pdf: https://openaccess.thecvf.com/content/WACV2024/papers/Liu_Wakening_Past_Concepts_Without_Past_Data_Class-Incremental_Learning_From_Online_WACV_2024_paper.pdf
+    code: https://github.com/yaoyao-liu/online-placebos
+    bibtex: https://bib.yliu.me/WACV2024.txt
+    image: https://img.yliu.me/placebos_wacv24.png
+

@@ -1,0 +1,13 @@
+main:
+  - title: "Home"
+    url: ./
+
+  - title: "Publications"
+    url: ./publications
+
+  - title: "Teaching"
+    url: ./teaching
+
+  - title: "Misc"
+    url: ./misc
+

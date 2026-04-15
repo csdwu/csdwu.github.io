@@ -34,6 +34,7 @@
 <h4 style="margin:0 10px 0;">Journal & Conference Reviewers</h4>
 
 <ul style="margin:0 0 5px;">
+  <li>IEEE Transactions on Mobile Computing</li>
   <li>ACM Transactions on Embedded Computing Systems</li>
   <li>IEEE Transactions on Wireless Communication</li>
   <li>IEEE Sensors Journal</li>
