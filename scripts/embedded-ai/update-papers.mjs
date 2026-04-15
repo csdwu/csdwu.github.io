@@ -910,7 +910,7 @@ async function classifyPapers(ai, papers, cachedMap) {
   for (const paper of papers) {
     const cacheKey = makePaperCacheKey(paper);
     const cached = cachedMap.get(cacheKey);
-
+    console.log(`[classifying] ${paper.source_group} | ${paper.title}`);
     if (
       cached &&
       typeof cached.category === "string" &&
