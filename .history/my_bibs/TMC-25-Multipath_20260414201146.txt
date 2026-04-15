@@ -1,7 +1,0 @@
-@article{gao2025utilizing,
-  title={Utilizing multipath effects for mobile charging},
-  author={Gao, Jing and Wu, Die and Zhang, Linglin and Li, Jingwen and Yang, Jin and Peng, Jian and Liu, Tang},
-  journal={IEEE Transactions on Mobile Computing},
-  year={2025},
-  publisher={IEEE}
-}

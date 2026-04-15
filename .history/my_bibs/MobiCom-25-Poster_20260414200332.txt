@@ -1,7 +1,0 @@
-@inproceedings{zhang2025poster,
-  title={Poster: Towards Backbone-Free VLC Networking via NLOS Optical Channels},
-  author={Zhang, Pinpin and Yang, Yanbing and Sun, Yimao and Wu, Di{\'e} and Huang, Yiling and Wu, Jiacheng},
-  booktitle={Proceedings of the 31st Annual International Conference on Mobile Computing and Networking},
-  pages={1311--1313},
-  year={2025}
-}

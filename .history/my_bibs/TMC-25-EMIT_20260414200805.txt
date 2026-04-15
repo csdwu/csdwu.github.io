@@ -1,7 +1,0 @@
-@article{liu2025emit,
-  title={EMIT: Reflection-Based Charging Jamming Attack},
-  author={Liu, Tang and Gao, Jing and Yin, Yuan and Wu, Die and Peng, Jian and Xu, Wenzheng and Wu, Baijun and Tu, Yazhou},
-  journal={IEEE Transactions on Mobile Computing},
-  year={2025},
-  publisher={IEEE}
-}

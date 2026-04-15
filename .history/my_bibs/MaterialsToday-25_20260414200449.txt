@@ -1,7 +1,0 @@
-@article{li2025advances,
-  title={Advances in perovskite indoor photovoltaics for intelligent Internet of Things},
-  author={Li, Yongyun and Wang, Juncheng and Jiang, Zhongren and Sun, Yimao and Wu, Die and Bahtiar, Ayi and Yang, Yanbing and Zhao, Dewei},
-  journal={Materials Today},
-  year={2025},
-  publisher={Elsevier}
-}
