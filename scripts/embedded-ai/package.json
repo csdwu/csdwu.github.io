@@ -1,0 +1,13 @@
+{
+  "name": "embedded-ai-updater",
+  "version": "1.0.0",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "update-papers": "node update-papers.mjs"
+  },
+  "dependencies": {
+    "@google/genai": "^1.0.0",
+    "fast-xml-parser": "^4.5.0"
+  }
+}

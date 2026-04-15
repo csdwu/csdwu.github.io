@@ -1,0 +1,425 @@
+{
+  "last_updated": "2026-04-15T11:00:51.255Z",
+  "paper_sources": [
+    {
+      "key": "tinyml",
+      "title": "TinyML Papers",
+      "categories": [
+        {
+          "name": "Chip / Hardware",
+          "papers": []
+        },
+        {
+          "name": "Model / Algorithm",
+          "papers": [
+            {
+              "id": "arxiv:2603.04860v1",
+              "arxiv_id": "2603.04860v1",
+              "doi": null,
+              "title": "Rethinking Temporal Models for TinyML: LSTM versus 1D-CNN in Resource-Constrained Devices",
+              "abstract": "Time series classification underpins applications such as human activity recognition, healthcare monitoring, and gesture detection in the IoT domain. Tiny Machine Learning enables models to run directly on low-power microcontroller units, improving efficiency, ensuring privacy, and reducing cost by avoiding reliance on cloud or edge computing. While Long Short-Term Memory networks are widely used for capturing temporal dependencies, their high computational and memory demands make real-time MCU deployment impractical. In this work, we conduct a hardware-aware feasibility study of LSTM versus 1D Convolutional Neural Networks across five benchmark datasets. Results show that 1D-CNN consistently achieves comparable or higher accuracy around 95% than LSTM which is around 89%, while requiring 35% less RAM, approx. 25% less Flash, and enabling real-time inference that is 27.6 ms vs. 2038 ms. Being so lightweight, 1D-CNN is particularly suitable for on-device processing in wearables and other low-power, battery-operated systems, establishing it as a practical and resource-efficient choice for TinyML deployment.",
+              "authors": [
+                "Bidyut Saha",
+                "Riya Samanta"
+              ],
+              "published_at": "2026-03-05T06:34:21Z",
+              "updated_at": "2026-03-05T06:34:21Z",
+              "year": 2026,
+              "month": "March",
+              "pdf_url": "https://arxiv.org/pdf/2603.04860v1",
+              "venue_url": "http://arxiv.org/abs/2603.04860v1",
+              "venue": "arXiv",
+              "journal_ref": null,
+              "comment": null,
+              "source": "arXiv",
+              "source_group": "tinyml",
+              "source_group_title": "TinyML Papers",
+              "source_query": "all:\"tiny machine learning\" AND all:tinyml",
+              "matched_venue": null,
+              "provider_used": "tencent_tokenhub",
+              "category": "Model / Algorithm",
+              "classification_confidence": 0.95,
+              "classification_reason": "The paper focuses on comparing LSTM and 1D-CNN models for time series classification on resource-constrained devices like MCUs, evaluating their computational and memory requirements. This aligns with efficient model design and deployment considerations for TinyML, falling squarely within the 'Model / Algorithm' category."
+            },
+            {
+              "id": "arxiv:2508.15008v4",
+              "arxiv_id": "2508.15008v4",
+              "doi": null,
+              "title": "Neural Network Quantization for Microcontrollers: A Comprehensive Survey of Methods, Platforms, and Applications",
+              "abstract": "The deployment of Quantized Neural Networks (QNNs) on resource-constrained edge devices, such as microcontrollers (MCUs), introduces fundamental challenges in balancing model performance, computational complexity, and memory constraints. Tiny Machine Learning (TinyML) addresses these issues by jointly advancing machine learning algorithms, hardware architectures, and software optimization techniques to enable deep neural network inference on embedded systems. This survey provides a hardware-oriented perspective on neural network quantization, systematically reviewing the quantization methods most relevant to MCUs and extreme-edge devices. Particular emphasis is placed on the critical trade-offs between model performance and the capabilities of MCU-class hardware, including memory hierarchies, numerical representations, and accelerator support. The survey further reviews contemporary MCU hardware platforms, including ARM-based and RISC-V-based designs, as well as MCUs integrating neural processing units (NPUs) for low-precision inference, together with the supporting software stacks. In addition, we analyze real-world deployments of quantized models on MCUs and consolidate the application domains in which such systems are used. Finally, we discuss open challenges and outline promising future directions toward scalable, energy-efficient, and sustainable AI deployment on edge devices.",
+              "authors": [
+                "Hamza A. Abushahla",
+                "Dara Varam",
+                "Ariel Justine N. Panopio",
+                "Mohamed I. AlHajri"
+              ],
+              "published_at": "2025-08-20T18:56:26Z",
+              "updated_at": "2026-01-07T11:09:58Z",
+              "year": 2025,
+              "month": "August",
+              "pdf_url": "https://arxiv.org/pdf/2508.15008v4",
+              "venue_url": "http://arxiv.org/abs/2508.15008v4",
+              "venue": "arXiv",
+              "journal_ref": null,
+              "comment": "40 pages, 16 figures, 8 Tables",
+              "source": "arXiv",
+              "source_group": "tinyml",
+              "source_group_title": "TinyML Papers",
+              "source_query": "all:\"tiny machine learning\" AND all:tinyml",
+              "matched_venue": null,
+              "provider_used": "tencent_tokenhub",
+              "category": "Model / Algorithm",
+              "classification_confidence": 0.95,
+              "classification_reason": "The paper focuses on neural network quantization methods specifically for deployment on microcontrollers and other resource-constrained edge devices, discussing trade-offs between model performance and MCU capabilities. It fits the 'Model / Algorithm' category as it surveys quantization techniques central to efficient model design for embedded AI."
+            }
+          ]
+        },
+        {
+          "name": "System / Deployment",
+          "papers": [
+            {
+              "id": "arxiv:2603.15085v1",
+              "arxiv_id": "2603.15085v1",
+              "doi": null,
+              "title": "Affordable Precision Agriculture: A Deployment-Oriented Review of Low-Cost, Low-Power Edge AI and TinyML for Resource-Constrained Farming Systems",
+              "abstract": "Precision agriculture increasingly integrates artificial intelligence to enhance crop monitoring, irrigation management, and resource efficiency. Nevertheless, the vast majority of the current systems are still mostly cloud-based and require reliable connectivity, which hampers the adoption to smaller scale, smallholder farming and underdeveloped country systems. Using recent literature reviews, ranging from 2023 to 2026, this review covers deployments of Edge AI, focused on the evolution and acceptance of Tiny Machine Learning, in low-cost and low-powered agriculture. A hardware-targeted deployment-oriented study has shown pronounced variation in architecture with microcontroller-class platforms i.e. ESP32, STM32, ATMega dominating the inference options, in parallel with single-board computers and UAV-assisted solutions. Quantitative synthesis shows quantization is the dominant optimization strategy; the approach in many works identified: around 50% of such works are quantized, while structured pruning, multi-objective compression and hardware aware neural architecture search are relatively under-researched. Also, resource profiling practices are not uniform: while model size is occasionally reported, explicit flash, RAM, MAC, latency and millijoule level energy metrics are not well documented, hampering reproducibility and cross-system comparison. Moreoever, to bridge the gap between research prototypes and deployment-ready systems, the review also presents a literature-informed deployment perspective in the form of a privacy-preserving layered Edge AI architecture for agriculture, synthesizing the key system-level design insights emerging from the surveyed works. Overall, the findings demonstrate a clear architectural shift toward localized inference with centralized training asymmetry.",
+              "authors": [
+                "Riya Samanta",
+                "Bidyut Saha"
+              ],
+              "published_at": "2026-03-16T10:38:31Z",
+              "updated_at": "2026-03-16T10:38:31Z",
+              "year": 2026,
+              "month": "March",
+              "pdf_url": "https://arxiv.org/pdf/2603.15085v1",
+              "venue_url": "http://arxiv.org/abs/2603.15085v1",
+              "venue": "arXiv",
+              "journal_ref": null,
+              "comment": null,
+              "source": "arXiv",
+              "source_group": "tinyml",
+              "source_group_title": "TinyML Papers",
+              "source_query": "all:\"tiny machine learning\" AND all:tinyml",
+              "matched_venue": null,
+              "provider_used": "tencent_tokenhub",
+              "category": "System / Deployment",
+              "classification_confidence": 0.95,
+              "classification_reason": "The paper focuses on Edge AI and TinyML deployments in resource-constrained agricultural systems, analyzing hardware choices (e.g., microcontrollers), optimization strategies, and deployment challenges. It provides a deployment-oriented review and proposes a system-level architecture for privacy-preserving Edge AI, making it clearly relevant to embedded AI deployment. The primary emphasis is on system-level design and deployment pipelines rather than solely on hardware or algorithms."
+            },
+            {
+              "id": "arxiv:2603.08047v1",
+              "arxiv_id": "2603.08047v1",
+              "doi": null,
+              "title": "Energy-Aware Multi-Exit TinyML for Smart Zero-Energy Devices",
+              "abstract": "The proliferation of smart and autonomous systems has motivated a shift toward executing intelligence directly on edge devices. This shift becomes particularly challenging for zero-energy devices (ZEDs), where severe constraints on memory, energy availability, and inference accuracy must be addressed simultaneously. In this paper, we present a unified approach to managing these constraints for smart ZEDs. Specifically, we design, train, and deploy a tiny machine learning (TinyML) model for person detection on a ZED. The proposed architecture stores a single model in memory while enabling adaptive inference through multiple exit points, allowing computational effort to scale with input difficulty. As a result, low-energy inference is performed for easy instances, while higher-precision inference is selectively employed for harder cases. This strategy significantly reduces energy consumption without sacrificing detection accuracy. Furthermore, to enhance device autonomy and prevent power failures, we introduce auxiliary energy-aware circuits that dynamically regulate system operation based on available energy. Compared with a state-of-the-art energy-aware single-exit TinyML approach, the proposed method achieves an energy consumption reduction of approximately $29.6\\%$. Overall, the proposed framework is appealing for enabling accurate and energy-efficient intelligence on ZED platforms.",
+              "authors": [
+                "Shahab Jahanbazi",
+                "Mateen Ashraf",
+                "Lieven De Strycker",
+                "Jeroen Famaey",
+                "Onel L. A. Lopez"
+              ],
+              "published_at": "2026-03-09T07:37:20Z",
+              "updated_at": "2026-03-09T07:37:20Z",
+              "year": 2026,
+              "month": "March",
+              "pdf_url": "https://arxiv.org/pdf/2603.08047v1",
+              "venue_url": "http://arxiv.org/abs/2603.08047v1",
+              "venue": "arXiv",
+              "journal_ref": null,
+              "comment": null,
+              "source": "arXiv",
+              "source_group": "tinyml",
+              "source_group_title": "TinyML Papers",
+              "source_query": "all:\"tiny machine learning\" AND all:tinyml",
+              "matched_venue": null,
+              "provider_used": "tencent_tokenhub",
+              "category": "System / Deployment",
+              "classification_confidence": 0.9,
+              "classification_reason": "The paper focuses on deploying TinyML models on zero-energy edge devices, introduces a multi-exit inference mechanism to adapt compute effort based on input difficulty, and includes dynamic regulation of system operation using auxiliary energy-aware circuits. These aspects address deployment strategies, runtime adaptation, and energy management specifically for resource-constrained embedded systems, which falls under System / Deployment."
+            },
+            {
+              "id": "arxiv:2601.07476v1",
+              "arxiv_id": "2601.07476v1",
+              "doi": null,
+              "title": "NanoCockpit: Performance-optimized Application Framework for AI-based Autonomous Nanorobotics",
+              "abstract": "Autonomous nano-drones, powered by vision-based tiny machine learning (TinyML) models, are a novel technology gaining momentum thanks to their broad applicability and pushing scientific advancement on resource-limited embedded systems. Their small form factor, i.e., a few 10s grams, severely limits their onboard computational resources to sub-\\SI{100}{\\milli\\watt} microcontroller units (MCUs). The Bitcraze Crazyflie nano-drone is the \\textit{de facto} standard, offering a rich set of programmable MCUs for low-level control, multi-core processing, and radio transmission. However, roboticists very often underutilize these onboard precious resources due to the absence of a simple yet efficient software layer capable of time-optimal pipelining of multi-buffer image acquisition, multi-core computation, intra-MCUs data exchange, and Wi-Fi streaming, leading to sub-optimal control performances. Our \\textit{NanoCockpit} framework aims to fill this gap, increasing the throughput and minimizing the system's latency, while simplifying the developer experience through coroutine-based multi-tasking. In-field experiments on three real-world TinyML nanorobotics applications show our framework achieves ideal end-to-end latency, i.e. zero overhead due to serialized tasks, delivering quantifiable improvements in closed-loop control performance ($-$30\\% mean position error, mission success rate increased from 40\\% to 100\\%).",
+              "authors": [
+                "Elia Cereda",
+                "Alessandro Giusti",
+                "Daniele Palossi"
+              ],
+              "published_at": "2026-01-12T12:29:38Z",
+              "updated_at": "2026-01-12T12:29:38Z",
+              "year": 2026,
+              "month": "January",
+              "pdf_url": "https://arxiv.org/pdf/2601.07476v1",
+              "venue_url": "http://arxiv.org/abs/2601.07476v1",
+              "venue": "arXiv",
+              "journal_ref": null,
+              "comment": "Source code available on GitHub at https://github.com/idsia-robotics/crazyflie-nanocockpit",
+              "source": "arXiv",
+              "source_group": "tinyml",
+              "source_group_title": "TinyML Papers",
+              "source_query": "all:\"tiny machine learning\" AND all:tinyml",
+              "matched_venue": null,
+              "provider_used": "tencent_tokenhub",
+              "category": "System / Deployment",
+              "classification_confidence": 0.95,
+              "classification_reason": "The paper focuses on NanoCockpit, an application framework designed to optimize performance for AI-based autonomous nanorobotics running TinyML models on resource-constrained MCUs. It addresses runtime challenges such as multi-buffer image acquisition, multi-core computation, intra-MCU data exchange, and task pipelining to minimize latency and maximize throughput. This directly pertains to deployment frameworks and runtime optimization on embedded/edge MCUs, which falls squarely under the System / Deployment category."
+            }
+          ]
+        },
+        {
+          "name": "Sensing / Application",
+          "papers": [
+            {
+              "id": "arxiv:2604.08581v1",
+              "arxiv_id": "2604.08581v1",
+              "doi": null,
+              "title": "Fully Autonomous Z-Score-Based TinyML Anomaly Detection on Resource-Constrained MCUs Using Power Side-Channel Data",
+              "abstract": "This paper presents a fully autonomous Tiny Machine Learning (TinyML) Z-Score-based anomaly detection system deployed on a low-power microcontroller for real-time monitoring of appliance behavior using power side-channel data. Unlike existing Internet of Things (IoT) anomaly detection approaches that rely on offline training or cloud-assisted analytics, the proposed system performs both model training and inference directly on a resource-constrained microcontroller without external computation or connectivity. The system continuously samples current consumption, computes Root Mean Square (RMS) values on-device, and derives statistical parameters during an initial training phase. Anomalies are detected using lightweight Z-Score thresholds, enabling interpretable and computationally efficient inference suitable for embedded deployment. The architecture was implemented on an STM32-based platform and evaluated using a 14-day dataset collected from a household mini-fridge under normal operation and controlled anomaly conditions. Results demonstrate perfect detection performance, with Precision and Recall of 1.00, inference latencies on the order of tens of microseconds, and a total memory footprint of approximately 3.3 KB SRAM and 63 KB Flash. These results confirm that robust and fully autonomous TinyML anomaly detection can be achieved on low-cost microcontrollers. Future work includes extending the framework to incorporate additional lightweight models and multi-device learning scenarios.",
+              "authors": [
+                "Abdulrahman Albaiz",
+                "Fathi Amsaad"
+              ],
+              "published_at": "2026-03-28T20:15:50Z",
+              "updated_at": "2026-03-28T20:15:50Z",
+              "year": 2026,
+              "month": "March",
+              "pdf_url": "https://arxiv.org/pdf/2604.08581v1",
+              "venue_url": "http://arxiv.org/abs/2604.08581v1",
+              "venue": "arXiv",
+              "journal_ref": null,
+              "comment": "SaTC 2026 Conference",
+              "source": "arXiv",
+              "source_group": "tinyml",
+              "source_group_title": "TinyML Papers",
+              "source_query": "all:\"tiny machine learning\" AND all:tinyml",
+              "matched_venue": null,
+              "provider_used": "tencent_tokenhub",
+              "category": "Sensing / Application",
+              "classification_confidence": 0.95,
+              "classification_reason": "The paper focuses on deploying a TinyML anomaly detection system entirely on a resource-constrained microcontroller using power side-channel sensor data for real-time monitoring. It involves on-device training and inference, uses sensor intelligence (power side-channel), and targets embedded deployment, fitting squarely within the Sensing / Application category."
+            },
+            {
+              "id": "10.1109/ICECCME64568.2025.11277514",
+              "arxiv_id": "2603.26135v1",
+              "doi": "10.1109/ICECCME64568.2025.11277514",
+              "title": "TinyML for Acoustic Anomaly Detection in IoT Sensor Networks",
+              "abstract": "Tiny Machine Learning enables real-time, energy-efficient data processing directly on microcontrollers, making it ideal for Internet of Things sensor networks. This paper presents a compact TinyML pipeline for detecting anomalies in environmental sound within IoT sensor networks. Acoustic monitoring in IoT systems can enhance safety and context awareness, yet cloud-based processing introduces challenges related to latency, power usage, and privacy. Our pipeline addresses these issues by extracting Mel Frequency Cepstral Coefficients from sound signals and training a lightweight neural network classifier optimized for deployment on edge devices. The model was trained and evaluated using the UrbanSound8K dataset, achieving a test accuracy of 91% and balanced F1-scores of 0.91 across both normal and anomalous sound classes. These results demonstrate the feasibility and reliability of embedded acoustic anomaly detection for scalable and responsive IoT deployments.",
+              "authors": [
+                "Amar Almaini",
+                "Jakob Folz",
+                "Ghadeer Ashour"
+              ],
+              "published_at": "2026-03-27T07:37:11Z",
+              "updated_at": "2026-03-27T07:37:11Z",
+              "year": 2026,
+              "month": "March",
+              "pdf_url": "https://arxiv.org/pdf/2603.26135v1",
+              "venue_url": "https://doi.org/10.1109/ICECCME64568.2025.11277514",
+              "venue": "2025 5th International Conference on Electrical, Computer, Communications and Mechatronics Engineering (ICECCME), Zanzibar, Tanzania, 2025, pp. 1-5",
+              "journal_ref": "2025 5th International Conference on Electrical, Computer, Communications and Mechatronics Engineering (ICECCME), Zanzibar, Tanzania, 2025, pp. 1-5",
+              "comment": null,
+              "source": "arXiv",
+              "source_group": "tinyml",
+              "source_group_title": "TinyML Papers",
+              "source_query": "all:\"tiny machine learning\" AND all:tinyml",
+              "matched_venue": null,
+              "provider_used": "tencent_tokenhub",
+              "category": "Sensing / Application",
+              "classification_confidence": 0.95,
+              "classification_reason": "The paper focuses on deploying a TinyML pipeline for acoustic anomaly detection on microcontrollers in IoT sensor networks. It explicitly addresses embedded AI deployment for sound-based sensing applications, targeting energy efficiency and low-latency operation on edge devices. The work falls squarely under sensor intelligence and application in IoT contexts."
+            },
+            {
+              "id": "arxiv:2601.13054v1",
+              "arxiv_id": "2601.13054v1",
+              "doi": null,
+              "title": "TinyML-Enabled IoT for Sustainable Precision Irrigation",
+              "abstract": "Small-scale farming communities are disproportionately affected by water scarcity, erratic climate patterns, and a lack of access to advanced, affordable agricultural technologies. To address these challenges, this paper presents a novel, edge-first IoT framework that integrates Tiny Machine Learning (TinyML) for intelligent, offline-capable precision irrigation. The proposed four-layer architecture leverages low-cost hardware, an ESP32 microcontroller as an edge inference node, and a Raspberry Pi as a local edge server to enable autonomous decision-making without cloud dependency. The system utilizes capacitive soil moisture, temperature, humidity, pH, and ambient light sensors for environmental monitoring. A rigorous comparative analysis of ensemble models identified gradient boosting as superior, achieving an R^2 score of 0.9973 and a Mean Absolute Percentage Error (MAPE) of 0.99%, outperforming a random forest model (R^2 = 0.9916, MAPE = 1.81%). This optimized model was converted and deployed as a lightweight TinyML inference engine on the ESP32 and predicts irrigation needs with exceptional accuracy (MAPE < 1%). Local communication is facilitated by an MQTT-based LAN protocol, ensuring reliable operation in areas with limited or no internet connectivity. Experimental validation in a controlled environment demonstrated a significant reduction in water usage compared to traditional methods, while the system's low-power design and offline functionality confirm its viability for sustainable, scalable deployment in resource-constrained rural settings. This work provides a practical, cost-effective blueprint for bridging the technological divide in agriculture and enhancing water-use efficiency through on-device artificial intelligence.",
+              "authors": [
+                "Kamogelo Taueatsoala",
+                "Caitlyn Daniels",
+                "Angelina J. Ramsunar",
+                "Petrus Bronkhorst",
+                "Absalom E. Ezugwu"
+              ],
+              "published_at": "2026-01-19T13:43:28Z",
+              "updated_at": "2026-01-19T13:43:28Z",
+              "year": 2026,
+              "month": "January",
+              "pdf_url": "https://arxiv.org/pdf/2601.13054v1",
+              "venue_url": "http://arxiv.org/abs/2601.13054v1",
+              "venue": "arXiv",
+              "journal_ref": null,
+              "comment": null,
+              "source": "arXiv",
+              "source_group": "tinyml",
+              "source_group_title": "TinyML Papers",
+              "source_query": "all:\"tiny machine learning\" AND all:tinyml",
+              "matched_venue": null,
+              "provider_used": "tencent_tokenhub",
+              "category": "Sensing / Application",
+              "classification_confidence": 0.95,
+              "classification_reason": "The paper focuses on deploying TinyML models on embedded devices (ESP32 microcontroller and Raspberry Pi) for precision irrigation, integrating sensor data (soil moisture, temperature, etc.) for autonomous agricultural decisions without cloud reliance. It clearly addresses AI model deployment in a resource-constrained environment and involves sensor intelligence and application in agriculture, fitting the 'Sensing / Application' category."
+            },
+            {
+              "id": "10.1109/GCAIoT63427.2024.10833526",
+              "arxiv_id": "2601.01065v1",
+              "doi": "10.1109/GCAIoT63427.2024.10833526",
+              "title": "Tiny Machine Learning for Real-Time Aquaculture Monitoring: A Case Study in Morocco",
+              "abstract": "Aquaculture, the farming of aquatic organisms, is a rapidly growing industry facing challenges such as water quality fluctuations, disease outbreaks, and inefficient feed management. Traditional monitoring methods often rely on manual labor and are time consuming, leading to potential delays in addressing issues. This paper proposes the integration of low-power edge devices using Tiny Machine Learning (TinyML) into aquaculture systems to enable real-time automated monitoring and control, such as collecting data and triggering alarms, and reducing labor requirements. The system provides real-time data on the required parameters such as pH levels, temperature, dissolved oxygen, and ammonia levels to control water quality, nutrient levels, and environmental conditions enabling better maintenance, efficient resource utilization, and optimal management of the enclosed aquaculture space. The system enables alerts in case of anomaly detection. The data collected by the sensors over time can serve for important decision-making regarding optimizing water treatment processes, feed distribution, feed pattern analysis and improve feed efficiency, reducing operational costs. This research explores the feasibility of developing TinyML-based solutions for aquaculture monitoring, considering factors such as sensor selection, algorithm design, hardware constraints, and ethical considerations. By demonstrating the potential benefits of TinyML in aquaculture, our aim is to contribute to the development of more sustainable and efficient farming practices.",
+              "authors": [
+                "Achraf Hsain",
+                "Yahya Zaki",
+                "Othman Abaakil",
+                "Hibat-allah Bekkar",
+                "Yousra Chtouki"
+              ],
+              "published_at": "2026-01-03T04:21:00Z",
+              "updated_at": "2026-01-03T04:21:00Z",
+              "year": 2026,
+              "month": "January",
+              "pdf_url": "https://arxiv.org/pdf/2601.01065v1",
+              "venue_url": "https://doi.org/10.1109/GCAIoT63427.2024.10833526",
+              "venue": "2024 IEEE Global Conference on Artificial Intelligence and Internet of Things (GCAIoT), Dubai, UAE, 2024",
+              "journal_ref": "2024 IEEE Global Conference on Artificial Intelligence and Internet of Things (GCAIoT), Dubai, UAE, 2024",
+              "comment": "Published in IEEE GCAIoT 2024",
+              "source": "arXiv",
+              "source_group": "tinyml",
+              "source_group_title": "TinyML Papers",
+              "source_query": "all:\"tiny machine learning\" AND all:tinyml",
+              "matched_venue": null,
+              "provider_used": "tencent_tokenhub",
+              "category": "Sensing / Application",
+              "classification_confidence": 0.95,
+              "classification_reason": "The paper clearly focuses on deploying TinyML on low-power edge devices for real-time aquaculture monitoring, involving sensor data collection, anomaly detection, and automated control in a resource-constrained environment. It addresses practical applications in environmental sensing and agriculture, aligning with the 'Sensing / Application' category."
+            },
+            {
+              "id": "arxiv:2509.08822v1",
+              "arxiv_id": "2509.08822v1",
+              "doi": null,
+              "title": "A Survey of TinyML Applications in Beekeeping for Hive Monitoring and Management",
+              "abstract": "Honey bee colonies are essential for global food security and ecosystem stability, yet they face escalating threats from pests, diseases, and environmental stressors. Traditional hive inspections are labor-intensive and disruptive, while cloud-based monitoring solutions remain impractical for remote or resource-limited apiaries. Recent advances in Internet of Things (IoT) and Tiny Machine Learning (TinyML) enable low-power, real-time monitoring directly on edge devices, offering scalable and non-invasive alternatives. This survey synthesizes current innovations at the intersection of TinyML and apiculture, organized around four key functional areas: monitoring hive conditions, recognizing bee behaviors, detecting pests and diseases, and forecasting swarming events. We further examine supporting resources, including publicly available datasets, lightweight model architectures optimized for embedded deployment, and benchmarking strategies tailored to field constraints. Critical limitations such as data scarcity, generalization challenges, and deployment barriers in off-grid environments are highlighted, alongside emerging opportunities in ultra-efficient inference pipelines, adaptive edge learning, and dataset standardization. By consolidating research and engineering practices, this work provides a foundation for scalable, AI-driven, and ecologically informed monitoring systems to support sustainable pollinator management.",
+              "authors": [
+                "Willy Sucipto",
+                "Jianlong Zhou",
+                "Ray Seung Min Kwon",
+                "Fang Chen"
+              ],
+              "published_at": "2025-09-10T17:53:39Z",
+              "updated_at": "2025-09-10T17:53:39Z",
+              "year": 2025,
+              "month": "September",
+              "pdf_url": "https://arxiv.org/pdf/2509.08822v1",
+              "venue_url": "http://arxiv.org/abs/2509.08822v1",
+              "venue": "arXiv",
+              "journal_ref": null,
+              "comment": "30 pages, 8 figures, 3 tables. Survey of TinyML and IoT applications in beekeeping (datasets, benchmarking, deployment). Submitted to ACM Computing Surveys (under review)",
+              "source": "arXiv",
+              "source_group": "tinyml",
+              "source_group_title": "TinyML Papers",
+              "source_query": "all:\"tiny machine learning\" AND all:tinyml",
+              "matched_venue": null,
+              "provider_used": "tencent_tokenhub",
+              "category": "Sensing / Application",
+              "classification_confidence": 0.95,
+              "classification_reason": "The paper explicitly focuses on TinyML applications in beekeeping for hive monitoring and management, covering real-time monitoring, behavior recognition, pest/disease detection, and swarm forecasting using embedded devices. It discusses lightweight model architectures for embedded deployment and addresses field constraints, fitting squarely within the Sensing / Application category for embedded AI."
+            }
+          ]
+        },
+        {
+          "name": "Security / Reliability",
+          "papers": []
+        }
+      ]
+    },
+    {
+      "key": "embedded_ai",
+      "title": "Embedded AI Papers",
+      "categories": [
+        {
+          "name": "Chip / Hardware",
+          "papers": []
+        },
+        {
+          "name": "Model / Algorithm",
+          "papers": [
+            {
+              "id": "arxiv:2603.26425v2",
+              "arxiv_id": "2603.26425v2",
+              "doi": null,
+              "title": "CPUBone: Efficient Vision Backbone Design for Devices with Low Parallelization Capabilities",
+              "abstract": "Recent research on vision backbone architectures has predominantly focused on optimizing efficiency for hardware platforms with high parallel processing capabilities. This category increasingly includes embedded systems such as mobile phones and embedded AI accelerator modules. In contrast, CPUs do not have the possibility to parallelize operations in the same manner, wherefore models benefit from a specific design philosophy that balances amount of operations (MACs) and hardware-efficient execution by having high MACs per second (MACpS). In pursuit of this, we investigate two modifications to standard convolutions, aimed at reducing computational cost: grouping convolutions and reducing kernel sizes. While both adaptations substantially decrease the total number of MACs required for inference, sustaining low latency necessitates preserving hardware-efficiency. Our experiments across diverse CPU devices confirm that these adaptations successfully retain high hardware-efficiency on CPUs. Based on these insights, we introduce CPUBone, a new family of vision backbone models optimized for CPU-based inference. CPUBone achieves state-of-the-art Speed-Accuracy Trade-offs (SATs) across a wide range of CPU devices and effectively transfers its efficiency to downstream tasks such as object detection and semantic segmentation. Models and code are available at https://github.com/altair199797/CPUBone.",
+              "authors": [
+                "Moritz Nottebaum",
+                "Matteo Dunnhofer",
+                "Christian Micheloni"
+              ],
+              "published_at": "2026-03-27T13:55:06Z",
+              "updated_at": "2026-03-30T14:01:18Z",
+              "year": 2026,
+              "month": "March",
+              "pdf_url": "https://arxiv.org/pdf/2603.26425v2",
+              "venue_url": "http://arxiv.org/abs/2603.26425v2",
+              "venue": "arXiv",
+              "journal_ref": null,
+              "comment": "Accepted at CVPR Findings 2026",
+              "source": "arXiv",
+              "source_group": "embedded_ai",
+              "source_group_title": "Embedded AI Papers",
+              "source_query": "all:\"embedded ai\" AND all:\"embedded systems\"",
+              "matched_venue": "CVPR",
+              "provider_used": "tencent_tokenhub",
+              "category": "Model / Algorithm",
+              "classification_confidence": 0.95,
+              "classification_reason": "The paper proposes a new family of vision backbone models (CPUBone) specifically designed to improve inference efficiency on CPU-based devices, including embedded systems and other resource-constrained environments. It focuses on modifying convolution operations (grouping and kernel size reduction) to reduce computational cost while maintaining accuracy and hardware efficiency on CPUs, which directly aligns with efficient model design for embedded AI contexts."
+            },
+            {
+              "id": "10.1109/TAI.2025.3586238",
+              "arxiv_id": "2402.11322v4",
+              "doi": "10.1109/TAI.2025.3586238",
+              "title": "SpikeNAS: A Fast Memory-Aware Neural Architecture Search Framework for Spiking Neural Network-based Embedded AI Systems",
+              "abstract": "Embedded AI systems are expected to incur low power/energy consumption for solving machine learning tasks, as these systems are usually power constrained (e.g., object recognition task in autonomous mobile agents with portable batteries). These requirements can be fulfilled by Spiking Neural Networks (SNNs), since their bio-inspired spike-based operations offer high accuracy and ultra low-power/energy computation. Currently, most of SNN architectures are derived from Artificial Neural Networks whose neurons' architectures and operations are different from SNNs, and/or developed without considering memory budgets from the underlying processing hardware of embedded platforms. These limitations hinder SNNs from reaching their full potential in accuracy and efficiency. Toward this, we propose SpikeNAS, a novel fast memory-aware neural architecture search (NAS) framework for SNNs that quickly finds an appropriate SNN architecture with high accuracy under the given memory budgets from targeted embedded systems. To do this, our SpikeNAS employs several key steps: analyzing the impacts of network operations on the accuracy, enhancing the network architecture to improve the learning quality, developing a fast memory-aware search algorithm, and performing quantization. The experimental results show that our SpikeNAS improves the searching time and maintains high accuracy compared to state-of-the-art while meeting the given memory budgets (e.g., 29x, 117x, and 3.7x faster search for CIFAR10, CIFAR100, and TinyImageNet200 respectively, using an Nvidia RTX A6000 GPU machine), thereby quickly providing the appropriate SNN architecture for the memory-constrained embedded AI systems.",
+              "authors": [
+                "Rachmad Vidya Wicaksana Putra",
+                "Muhammad Shafique"
+              ],
+              "published_at": "2024-02-17T16:33:54Z",
+              "updated_at": "2025-07-02T15:13:42Z",
+              "year": 2024,
+              "month": null,
+              "pdf_url": "https://arxiv.org/pdf/2402.11322v4",
+              "venue_url": "https://doi.org/10.1109/TAI.2025.3586238",
+              "venue": "arXiv",
+              "journal_ref": null,
+              "comment": "To appear at the IEEE Transactions on Artificial Intelligence (TAI) 2025",
+              "source": "arXiv",
+              "source_group": "embedded_ai",
+              "source_group_title": "Embedded AI Papers",
+              "source_query": "all:\"embedded ai\" AND all:\"embedded systems\"",
+              "matched_venue": "Artificial Intelligence",
+              "provider_used": "tencent_tokenhub",
+              "category": "Model / Algorithm",
+              "classification_confidence": 0.95,
+              "classification_reason": "The paper focuses on neural architecture search (NAS) for Spiking Neural Networks tailored to embedded AI systems with memory constraints. It introduces an efficient model design methodology involving NAS, architecture enhancement, and quantization to meet embedded platform limits, which squarely fits the 'Model / Algorithm' category as it deals with efficient model design and compression for embedded deployment."
+            }
+          ]
+        },
+        {
+          "name": "System / Deployment",
+          "papers": []
+        },
+        {
+          "name": "Sensing / Application",
+          "papers": []
+        },
+        {
+          "name": "Security / Reliability",
+          "papers": []
+        }
+      ]
+    }
+  ]
+}
