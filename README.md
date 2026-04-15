@@ -37,18 +37,21 @@ First, go to the updater folder and install the required dependencies:
 ```bash
 cd scripts/embedded-ai
 npm install
+```
 
 Then configure the API key in the current terminal session only.
 For example, in PowerShell:
-    $env:GEMINI_API_KEY="your_gemini_key"
-    $env:OPENROUTER_API_KEY="your_openrouter_key"
-    $env:TENCENT_TOKENHUB_API_KEY="your_tencent_tokenhub_key"
+```bash
+$env:GEMINI_API_KEY="your_gemini_key"
+$env:OPENROUTER_API_KEY="your_openrouter_key"
+$env:TENCENT_TOKENHUB_API_KEY="your_tencent_tokenhub_key"
 
-    $env:GEMINI_MODEL="gemini-2.5-flash"
-    $env:OPENROUTER_MODEL="openrouter/free"
-    $env:TENCENT_TOKENHUB_MODEL="hunyuan-2.0-instruct-20251111"
-
+$env:GEMINI_MODEL="gemini-2.5-flash"
+$env:OPENROUTER_MODEL="openrouter/free"
+$env:TENCENT_TOKENHUB_MODEL="hunyuan-2.0-instruct-20251111"
+```
 Long-Term Usage：
+```bash
     setx GEMINI_API_KEY "your_gemini_key"
     setx OPENROUTER_API_KEY "your_openrouter_key"
     setx TENCENT_TOKENHUB_API_KEY "your_tencent_tokenhub_key"
@@ -56,10 +59,11 @@ Long-Term Usage：
     setx GEMINI_MODEL "gemini-2.5-flash"
     setx OPENROUTER_MODEL "openrouter/free"
     setx TENCENT_TOKENHUB_MODEL "hunyuan-2.0-instruct-20251111"
-
+```
 After that, run:
+```bash
 npm run update-papers
-
+```
 
 ### Acknowledgements
 
