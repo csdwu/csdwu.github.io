@@ -52,6 +52,7 @@ const CATEGORIES = [
   "System / Deployment",
   "Sensing / Application",
   "Security / Reliability",
+  // "Survey",
 ];
 
 // models may have different filtering needs. This allows configuring them via environment variable without code changes.
@@ -708,7 +709,8 @@ function buildScreeningPrompt(paper) {
     `- Model / Algorithm: efficient models, pruning, quantization, distillation, NAS, compression, algorithm design.\n` +
     `- System / Deployment: runtime, compiler, framework, operator optimization, memory planning, deployment pipeline.\n` +
     `- Sensing / Application: sensor intelligence, in-sensor/near-sensor computing, applications in wearables, vision, audio, robotics, health, industry.\n` +
-    `- Security / Reliability: robustness, privacy, trustworthiness, uncertainty, safety, secure deployment, reliability.\n\n` +
+    `- Security / Reliability: robustness, privacy, trustworthiness, uncertainty, safety, secure deployment, reliability.\n` +
+    `- Survey: literature reviews, benchmarks, comparative studies, and survey papers that summarize or evaluate embedded AI research.\n\n` +
     `Title: ${paper.title}\n\n` +
     `Abstract: ${paper.abstract || "No abstract available."}\n\n` +
     `Venue hint: ${paper.matched_venue || paper.venue || "Unknown"}`

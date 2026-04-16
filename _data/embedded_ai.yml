@@ -6,6 +6,7 @@ intro:
     - "This page collects selected resources and research papers in Embedded AI, with particular attention to TinyML as one of its key subareas. It is intended for researchers, engineers, and developers who build intelligent systems under tight constraints in compute, memory, power, and latency."
     - "The scope of this page covers both TinyML-oriented work and the broader Embedded AI landscape, including efficient models, hardware platforms, deployment systems, sensing-driven intelligence, and trustworthy edge intelligence."
     - "To improve readability, papers are organized into a compact topic taxonomy. This makes it easier to browse the field by research direction instead of only by venue or keyword."
+    - "The paper list on this page is automatically updated every day to reflect newly collected and curated research."
 
 useful_links:
   - title: "Awesome TinyML"
