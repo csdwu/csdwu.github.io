@@ -1,0 +1,72 @@
+name: Update papers daily
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 0 * * *'
+      timezone: 'Asia/Shanghai'   
+
+permissions:
+  contents: write
+
+concurrency:
+  group: update-papers
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: |
+          if [ -f package-lock.json ]; then
+            npm ci
+          else
+            npm install
+          fi
+
+      - name: Run paper updater
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GEMINI_MODEL: ${{ vars.GEMINI_MODEL || 'gemini-2.5-flash' }}
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+          OPENROUTER_MODEL: ${{ vars.OPENROUTER_MODEL || 'openrouter/free' }}
+          TENCENT_TOKENHUB_API_KEY: ${{ secrets.TENCENT_TOKENHUB_API_KEY }}
+          TENCENT_TOKENHUB_MODEL: ${{ vars.TENCENT_TOKENHUB_MODEL || 'hunyuan-2.0-instruct-20251111' }}
+
+          MAX_RESULTS_PER_QUERY: ${{ vars.MAX_RESULTS_PER_QUERY || '10' }}
+          REQUEST_DELAY_MS: ${{ vars.REQUEST_DELAY_MS || '6000' }}
+          LLM_DELAY_MS: ${{ vars.LLM_DELAY_MS || '500' }}
+          ARXIV_MAX_ATTEMPTS: ${{ vars.ARXIV_MAX_ATTEMPTS || '5' }}
+
+          
+          VENUE_FILTER_PRESET: ${{ vars.VENUE_FILTER_PRESET || 'recall_first' }}
+        run: |
+          node scripts/embedded-ai/update-papers.mjs
+
+      - name: Commit changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          git add _data/embedded_ai_papers.json
+
+          if git diff --cached --quiet; then
+            echo "No changes to commit"
+            exit 0
+          fi
+
+          git commit -m "chore: auto update embedded AI papers"
+          git push

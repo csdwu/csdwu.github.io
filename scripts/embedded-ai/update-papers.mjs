@@ -54,12 +54,42 @@ const CATEGORIES = [
   "Security / Reliability",
 ];
 
+// models may have different filtering needs. This allows configuring them via environment variable without code changes.
+const VENUE_FILTER_PRESETS = {
+  recall_first: {
+    default: "none",
+    tinyml: "none",
+    embedded_ai: "none",
+  },
+  strict: {
+    default: "none",
+    tinyml: "none",
+    embedded_ai: "ccf_a_only",
+  },
+};
+
+const DEFAULT_VENUE_FILTER_PRESET = "recall_first";    //recall_first || strict
+
+const ACTIVE_VENUE_FILTER_PRESET =
+  process.env.VENUE_FILTER_PRESET || DEFAULT_VENUE_FILTER_PRESET;
+
+function getEffectiveVenueFilter(sourceKey, fallback = "none") {
+  const preset = VENUE_FILTER_PRESETS[ACTIVE_VENUE_FILTER_PRESET];
+  if (!preset) {
+    throw new Error(
+      `Unknown VENUE_FILTER_PRESET: ${ACTIVE_VENUE_FILTER_PRESET}. ` +
+      `Allowed: ${Object.keys(VENUE_FILTER_PRESETS).join(", ")}`
+    );
+  }
+  return preset[sourceKey] ?? preset.default ?? fallback;
+}
+
 /**
  * TinyML:
- * - does NOT apply CCF-A filtering
+ * - NO CCF-A filtering
  *
  * Embedded AI:
- * - DOES apply CCF-A filtering
+ * - May apply CCF-A filtering
  */
 const SOURCE_DEFINITIONS = [
   {
@@ -72,12 +102,21 @@ const SOURCE_DEFINITIONS = [
     key: "embedded_ai",
     title: "Embedded AI Papers",
     queries: [
-      'all:"embedded ai" AND all:"embedded systems"',
-      'all:"edge ai" AND all:"embedded devices"',
+      '(all:"embedded ai" OR all:"edge ai" OR all:"on-device ai" OR all:"on device ai") AND (all:"embedded system" OR all:"embedded systems" OR all:"embedded device" OR all:"embedded devices" OR all:microcontroller OR all:mcu OR all:"resource-constrained")',
     ],
-    venueFilter: "ccf_a_only",
+    venueFilter: "none", 
   },
 ];
+
+function buildArxivDebugUrl(query, start = 0, maxResults = 50) {
+  const url = new URL(ARXIV_API_BASE);
+  url.searchParams.set("search_query", query);
+  url.searchParams.set("start", String(start));
+  url.searchParams.set("max_results", String(maxResults));
+  url.searchParams.set("sortBy", "submittedDate");
+  url.searchParams.set("sortOrder", "descending");
+  return url.toString();
+}     //for debugging arXiv query construction
 
 /**
  * Only used for embedded_ai filtering.
@@ -251,7 +290,9 @@ const CCF_A_VENUE_RULES = [
   // AI journals
   {
     canonical: "Artificial Intelligence",
-    patterns: [/^artificial intelligence$/i, /\bartificial intelligence\b/i],
+    patterns: [
+      /(^|\|\s*)artificial intelligence(\s*\||$)/i,
+    ],
   },
   {
     canonical: "IEEE TPAMI",
@@ -467,7 +508,7 @@ function normalizeArxivEntry(entry, sourceDef, query) {
 
 async function fetchArxivEntriesPage(sourceDef, query, start) {
   const maxAttempts = ARXIV_MAX_ATTEMPTS;
-
+  // console.log(`[debug][arxiv-url] ${buildArxivDebugUrl(query, start, MAX_RESULTS_PER_QUERY)}`);   //only for debugging arXiv query construction
   for (let attempt = 1; attempt <= maxAttempts; attempt++) {
     const url = new URL(ARXIV_API_BASE);
     url.searchParams.set("search_query", query);
@@ -638,14 +679,19 @@ function matchCcfAVenue(paper) {
 
 function applySourceFilter(paper) {
   const sourceDef = getSourceDefinition(paper.source_group);
-  if (!sourceDef) return { pass: false, matchedVenue: null };
+  if (!sourceDef) {
+    return { pass: false, matchedVenue: null };
+  }
 
-  // TinyML: no CCF-A filter
-  if (sourceDef.venueFilter !== "ccf_a_only") {
+  const effectiveVenueFilter = getEffectiveVenueFilter(
+    sourceDef.key,
+    sourceDef.venueFilter || "none"
+  );
+
+  if (effectiveVenueFilter !== "ccf_a_only") {
     return { pass: true, matchedVenue: null };
   }
 
-  // Only Embedded AI reaches here
   return matchCcfAVenue(paper);
 }
 

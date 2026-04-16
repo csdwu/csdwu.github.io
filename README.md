@@ -41,6 +41,7 @@ npm install
 
 Then configure the API key in the current terminal session only.
 For example, in PowerShell:
+
 ```bash
 $env:GEMINI_API_KEY="your_gemini_key"
 $env:OPENROUTER_API_KEY="your_openrouter_key"
@@ -51,6 +52,7 @@ $env:OPENROUTER_MODEL="openrouter/free"
 $env:TENCENT_TOKENHUB_MODEL="hunyuan-2.0-instruct-20251111"
 ```
 Long-Term Usage：
+
 ```bash
     setx GEMINI_API_KEY "your_gemini_key"
     setx OPENROUTER_API_KEY "your_openrouter_key"
@@ -61,6 +63,7 @@ Long-Term Usage：
     setx TENCENT_TOKENHUB_MODEL "hunyuan-2.0-instruct-20251111"
 ```
 After that, run:
+
 ```bash
 npm run update-papers
 ```
