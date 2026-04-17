@@ -1,13 +1,22 @@
 {
-  "name": "embedded-ai-updater",
-  "version": "1.0.0",
-  "type": "module",
+  "name": "embedded-ai-paper-pipeline",
+  "version": "2.0.0",
   "private": true,
-  "scripts": {
-    "update-papers": "node update-papers.mjs"
+  "type": "module",
+  "description": "Scholar-based embedded AI paper pipeline for search, filtering, classification, download, and site data generation.",
+  "engines": {
+    "node": ">=18.17.0"
   },
-  "dependencies": {
-    "@google/genai": "^1.0.0",
-    "fast-xml-parser": "^4.5.0"
-  }
+  "scripts": {
+    "update-papers": "node update-papers.mjs",
+    "update-papers:heuristic": "node update-papers.mjs --heuristic-only",
+    "update-papers:skip-search": "node update-papers.mjs --skip-search",
+    "update-papers:skip-download": "node update-papers.mjs --skip-download",
+    "update-papers:dry-download": "node update-papers.mjs --download-dry-run",
+    "update-papers:clear-cache": "node update-papers.mjs --clear-cache",
+    "update-papers:ab": "node update-papers.mjs --groups A,B",
+    "update-papers:c": "node update-papers.mjs --groups C"
+  },
+  "dependencies": {},
+  "devDependencies": {}
 }

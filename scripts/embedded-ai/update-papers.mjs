@@ -1,1166 +1,478 @@
-import fs from "node:fs/promises";
-import path from "node:path";
-import { fileURLToPath } from "node:url";
-import { GoogleGenAI } from "@google/genai";
-import { XMLParser } from "fast-xml-parser";
+import path from 'node:path';
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
-const REPO_ROOT = path.resolve(__dirname, "../..");
+import {
+  OUTPUT_JSON_PATH,
+  SCHOLAR_NORMALIZED_PATH,
+  DOWNLOAD_STATE_PATH,
+  DOWNLOAD_QUOTA_PATH,
+  GROUP_ORDER,
+  SCHOLAR_MAX_RESULTS_PER_GROUP,
+  SCHOLAR_REQUEST_SLEEP_SECONDS,
+  SCHOLAR_RETRY_LIMIT,
+} from './config.mjs';
+import {
+  ensureScholarRuntimeDirs,
+  clearScholarCache,
+  loadAllScholarRawGroups,
+  runAllScholarKeywordSearches,
+  saveNormalizedPapers,
+  runDownloadManager,
+  safeReadJson,
+} from './scholar-bridge.mjs';
+import { runSetOperations } from './set-ops.mjs';
+import { applyFilterRulesToSetOps } from './filter-rules.mjs';
+import { classifyPapers } from './classify.mjs';
+import { buildAndWriteOutputJson } from './output-builder.mjs';
+import { generateBibtexArtifacts } from './bibtex-builder.mjs';
 
-const OUTPUT_PATH = path.join(REPO_ROOT, "_data", "embedded_ai_papers.json");
+function unique(values) {
+  return [...new Set((values ?? []).filter(Boolean))];
+}
 
-const GEMINI_API_KEY = process.env.GEMINI_API_KEY || "";
-const GEMINI_MODEL = process.env.GEMINI_MODEL || "gemini-2.5-flash";
+function parseBooleanFlag(args, flag) {
+  return args.includes(flag);
+}
 
-const OPENROUTER_API_KEY = process.env.OPENROUTER_API_KEY || "";
-const OPENROUTER_MODEL = process.env.OPENROUTER_MODEL || "openrouter/free";
-const OPENROUTER_BASE_URL = "https://openrouter.ai/api/v1/chat/completions";
+function parseStringOption(args, flag, defaultValue = null) {
+  const exact = `${flag}=`;
+  const withEquals = args.find((arg) => arg.startsWith(exact));
+  if (withEquals) {
+    return withEquals.slice(exact.length);
+  }
 
-const TENCENT_TOKENHUB_API_KEY =
-  process.env.TENCENT_TOKENHUB_API_KEY || "";
-const TENCENT_TOKENHUB_MODEL =
-  process.env.TENCENT_TOKENHUB_MODEL || "hunyuan-2.0-instruct-20251111";
-const TENCENT_TOKENHUB_BASE_URL =
-  "https://tokenhub.tencentmaas.com/v1/chat/completions";
+  const index = args.indexOf(flag);
+  if (index >= 0 && index + 1 < args.length) {
+    return args[index + 1];
+  }
 
-const ARXIV_API_BASE = "http://export.arxiv.org/api/query";
+  return defaultValue;
+}
 
-const MAX_RESULTS_PER_QUERY = Number.parseInt(
-  process.env.MAX_RESULTS_PER_QUERY || "10",
-  10
-);
+function parseNumberOption(args, flag, defaultValue = null) {
+  const raw = parseStringOption(args, flag, null);
+  if (raw == null || raw === '') return defaultValue;
+  const num = Number(raw);
+  return Number.isFinite(num) ? num : defaultValue;
+}
 
-const REQUEST_DELAY_MS = Number.parseInt(
-  process.env.REQUEST_DELAY_MS || "6000",
-  10
-);
+function parseGroups(raw) {
+  if (!raw) return GROUP_ORDER;
 
-const LLM_DELAY_MS = Number.parseInt(
-  process.env.LLM_DELAY_MS || "500",
-  10
-);
+  const groups = unique(
+    String(raw)
+      .split(',')
+      .map((part) => part.trim().toUpperCase())
+      .filter(Boolean),
+  );
 
-const ARXIV_MAX_ATTEMPTS = Number.parseInt(
-  process.env.ARXIV_MAX_ATTEMPTS || "5",
-  10
-);
-
-const CATEGORIES = [
-  "Chip / Hardware",
-  "Model / Algorithm",
-  "System / Deployment",
-  "Sensing / Application",
-  "Security / Reliability",
-  // "Survey",
-];
-
-// models may have different filtering needs. This allows configuring them via environment variable without code changes.
-const VENUE_FILTER_PRESETS = {
-  recall_first: {
-    default: "none",
-    tinyml: "none",
-    embedded_ai: "none",
-  },
-  strict: {
-    default: "none",
-    tinyml: "none",
-    embedded_ai: "ccf_a_only",
-  },
-};
-
-const DEFAULT_VENUE_FILTER_PRESET = "recall_first";    //recall_first || strict
-
-const ACTIVE_VENUE_FILTER_PRESET =
-  process.env.VENUE_FILTER_PRESET || DEFAULT_VENUE_FILTER_PRESET;
-
-function getEffectiveVenueFilter(sourceKey, fallback = "none") {
-  const preset = VENUE_FILTER_PRESETS[ACTIVE_VENUE_FILTER_PRESET];
-  if (!preset) {
+  const invalid = groups.filter((group) => !GROUP_ORDER.includes(group));
+  if (invalid.length > 0) {
     throw new Error(
-      `Unknown VENUE_FILTER_PRESET: ${ACTIVE_VENUE_FILTER_PRESET}. ` +
-      `Allowed: ${Object.keys(VENUE_FILTER_PRESETS).join(", ")}`
-    );
-  }
-  return preset[sourceKey] ?? preset.default ?? fallback;
-}
-
-/**
- * TinyML:
- * - NO CCF-A filtering
- *
- * Embedded AI:
- * - May apply CCF-A filtering
- */
-const SOURCE_DEFINITIONS = [
-  {
-    key: "tinyml",
-    title: "TinyML Papers",
-    queries: ['all:"tiny machine learning" AND all:tinyml'],
-    venueFilter: "none",
-  },
-  {
-    key: "embedded_ai",
-    title: "Embedded AI Papers",
-    queries: [
-      '(all:"embedded ai" OR all:"edge ai" OR all:"on-device ai" OR all:"on device ai") AND (all:"embedded system" OR all:"embedded systems" OR all:"embedded device" OR all:"embedded devices" OR all:microcontroller OR all:mcu OR all:"resource-constrained")',
-    ],
-    venueFilter: "none", 
-  },
-];
-
-function buildArxivDebugUrl(query, start = 0, maxResults = 50) {
-  const url = new URL(ARXIV_API_BASE);
-  url.searchParams.set("search_query", query);
-  url.searchParams.set("start", String(start));
-  url.searchParams.set("max_results", String(maxResults));
-  url.searchParams.set("sortBy", "submittedDate");
-  url.searchParams.set("sortOrder", "descending");
-  return url.toString();
-}     //for debugging arXiv query construction
-
-/**
- * Only used for embedded_ai filtering.
- */
-const CCF_A_VENUE_RULES = [
-  // Architecture / systems conferences
-  {
-    canonical: "ASPLOS",
-    patterns: [
-      /\basplos\b/i,
-      /architectural support for programming languages and operating systems/i,
-    ],
-  },
-  {
-    canonical: "DAC",
-    patterns: [/\bdac\b/i, /design automation conference/i],
-  },
-  {
-    canonical: "EuroSys",
-    patterns: [/\beurosys\b/i, /european conference on computer systems/i],
-  },
-  {
-    canonical: "HPCA",
-    patterns: [/\bhpca\b/i, /high performance computer architecture/i],
-  },
-  {
-    canonical: "ISCA",
-    patterns: [/\bisca\b/i, /international symposium on computer architecture/i],
-  },
-  {
-    canonical: "MICRO",
-    patterns: [/\bmicro\b/i, /international symposium on microarchitecture/i],
-  },
-
-  // Networking / edge-relevant conferences
-  {
-    canonical: "MobiCom",
-    patterns: [/\bmobicom\b/i, /mobile computing and networking/i],
-  },
-  {
-    canonical: "INFOCOM",
-    patterns: [/\binfocom\b/i, /conference on computer communications/i],
-  },
-  {
-    canonical: "NSDI",
-    patterns: [/\bnsdi\b/i, /networked systems design and implementation/i],
-  },
-  {
-    canonical: "SIGCOMM",
-    patterns: [
-      /\bsigcomm\b/i,
-      /applications,\s*technologies,\s*architectures,\s*and protocols for computer communication/i,
-    ],
-  },
-
-  // Security conferences
-  {
-    canonical: "NDSS",
-    patterns: [/\bndss\b/i, /network and distributed system security symposium/i],
-  },
-  {
-    canonical: "S&P",
-    patterns: [
-      /\bs&p\b/i,
-      /\bieee symposium on security and privacy\b/i,
-      /\bsecurity and privacy\b/i,
-    ],
-  },
-  {
-    canonical: "CCS",
-    patterns: [/\bccs\b/i, /computer and communications security/i],
-  },
-
-  // AI conferences
-  {
-    canonical: "AAAI",
-    patterns: [/\baaai\b/i, /aaai conference on artificial intelligence/i],
-  },
-  {
-    canonical: "NeurIPS",
-    patterns: [
-      /\bneurips\b/i,
-      /\bnips\b/i,
-      /neural information processing systems/i,
-    ],
-  },
-  {
-    canonical: "CVPR",
-    patterns: [/\bcvpr\b/i, /computer vision and pattern recognition/i],
-  },
-  {
-    canonical: "ICCV",
-    patterns: [/\biccv\b/i, /international conference on computer vision/i],
-  },
-  {
-    canonical: "ICML",
-    patterns: [/\bicml\b/i, /international conference on machine learning/i],
-  },
-  {
-    canonical: "IJCAI",
-    patterns: [/\bijcai\b/i, /international joint conference on artificial intelligence/i],
-  },
-
-  // Architecture / systems journals
-  {
-    canonical: "IEEE TCAD",
-    patterns: [
-      /transactions on computer-aided design of integrated circuits and systems/i,
-      /\btcad\b/i,
-    ],
-  },
-  {
-    canonical: "IEEE TC",
-    patterns: [
-      /\bieee transactions on computers\b/i,
-      /\btransactions on computers\b/i,
-    ],
-  },
-  {
-    canonical: "IEEE TPDS",
-    patterns: [
-      /transactions on parallel and distributed systems/i,
-      /\btpds\b/i,
-    ],
-  },
-  {
-    canonical: "ACM TACO",
-    patterns: [
-      /transactions on architecture and code optimization/i,
-      /\btaco\b/i,
-    ],
-  },
-
-  // Networking journals
-  {
-    canonical: "IEEE JSAC",
-    patterns: [
-      /journal on selected areas in communications/i,
-      /\bjsac\b/i,
-    ],
-  },
-  {
-    canonical: "IEEE TMC",
-    patterns: [/\btransactions on mobile computing\b/i, /\btmc\b/i],
-  },
-  {
-    canonical: "IEEE/ACM TON",
-    patterns: [
-      /ieee\/acm transactions on networking/i,
-      /\btransactions on networking\b/i,
-      /\bton\b/i,
-    ],
-  },
-
-  // Security journals
-  {
-    canonical: "IEEE TDSC",
-    patterns: [
-      /transactions on dependable and secure computing/i,
-      /\btdsc\b/i,
-    ],
-  },
-  {
-    canonical: "IEEE TIFS",
-    patterns: [
-      /transactions on information forensics and security/i,
-      /\btifs\b/i,
-    ],
-  },
-
-  // AI journals
-  {
-    canonical: "Artificial Intelligence",
-    patterns: [
-      /(^|\|\s*)artificial intelligence(\s*\||$)/i,
-    ],
-  },
-  {
-    canonical: "IEEE TPAMI",
-    patterns: [
-      /transactions on pattern analysis and machine intelligence/i,
-      /\btpami\b/i,
-    ],
-  },
-  {
-    canonical: "IJCV",
-    patterns: [/\binternational journal of computer vision\b/i, /\bijcv\b/i],
-  },
-  {
-    canonical: "JMLR",
-    patterns: [/\bjournal of machine learning research\b/i, /\bjmlr\b/i],
-  },
-];
-
-const xmlParser = new XMLParser({
-  ignoreAttributes: false,
-  attributeNamePrefix: "@_",
-  removeNSPrefix: true,
-  parseTagValue: true,
-  trimValues: true,
-});
-
-function sleep(ms) {
-  return new Promise((resolve) => setTimeout(resolve, ms));
-}
-
-function toArray(value) {
-  if (!value) return [];
-  return Array.isArray(value) ? value : [value];
-}
-
-function toInt(value, fallback = 0) {
-  const num = Number.parseInt(String(value ?? "").trim(), 10);
-  return Number.isFinite(num) ? num : fallback;
-}
-
-function cleanText(text) {
-  if (!text) return "";
-  return String(text).replace(/\s+/g, " ").trim();
-}
-
-function normalizeTitle(title) {
-  return cleanText(title).toLowerCase();
-}
-
-function buildCategoryBuckets() {
-  return CATEGORIES.map((name) => ({
-    name,
-    papers: [],
-  }));
-}
-
-function buildEmptyOutput() {
-  return {
-    last_updated: null,
-    paper_sources: SOURCE_DEFINITIONS.map((source) => ({
-      key: source.key,
-      title: source.title,
-      categories: buildCategoryBuckets(),
-    })),
-  };
-}
-
-function makePaperCacheKey(paper) {
-  return `${paper.source_group}::${paper.id || normalizeTitle(paper.title)}`;
-}
-
-async function readExistingOutput() {
-  try {
-    const raw = await fs.readFile(OUTPUT_PATH, "utf8");
-    return JSON.parse(raw);
-  } catch {
-    return buildEmptyOutput();
-  }
-}
-
-function flattenExistingPapers(outputJson) {
-  const result = [];
-
-  for (const source of outputJson.paper_sources || []) {
-    for (const category of source.categories || []) {
-      for (const paper of category.papers || []) {
-        result.push({
-          ...paper,
-          source_group: paper.source_group || source.key,
-          source_group_title: paper.source_group_title || source.title,
-          category: paper.category || category.name,
-        });
-      }
-    }
-  }
-
-  return result;
-}
-
-function getSourceDefinition(sourceKey) {
-  return SOURCE_DEFINITIONS.find((item) => item.key === sourceKey) || null;
-}
-
-function getArxivIdFromEntryId(entryId) {
-  const value = cleanText(entryId);
-  if (!value) return "";
-  const match = value.match(/\/abs\/([^/]+)$/);
-  return match ? match[1] : value;
-}
-
-function getPdfUrl(entry) {
-  const links = toArray(entry.link);
-
-  for (const link of links) {
-    const href = link?.["@_href"];
-    const title = cleanText(link?.["@_title"]);
-    const type = cleanText(link?.["@_type"]);
-
-    if (title.toLowerCase() === "pdf" || type === "application/pdf") {
-      return href;
-    }
-  }
-
-  const arxivId = getArxivIdFromEntryId(entry.id);
-  return arxivId ? `https://arxiv.org/pdf/${arxivId}.pdf` : null;
-}
-
-function getVenueUrl(entry) {
-  const doi = cleanText(entry.doi);
-  if (doi) return `https://doi.org/${doi}`;
-
-  const id = cleanText(entry.id);
-  return id || null;
-}
-
-function getVenueDisplay(entry) {
-  const journalRef = cleanText(entry.journal_ref);
-  if (journalRef) return journalRef;
-  return "arXiv";
-}
-
-function shouldShowMonth(dateString) {
-  if (!dateString) return false;
-  const publishedDate = new Date(dateString);
-  if (Number.isNaN(publishedDate.getTime())) return false;
-
-  const now = new Date();
-  const twoYearsAgo = new Date(now);
-  twoYearsAgo.setFullYear(now.getFullYear() - 2);
-
-  return publishedDate >= twoYearsAgo;
-}
-
-function getMonthName(dateString) {
-  if (!dateString) return null;
-  const date = new Date(dateString);
-  if (Number.isNaN(date.getTime())) return null;
-
-  return date.toLocaleString("en-US", {
-    month: "long",
-    timeZone: "UTC",
-  });
-}
-
-function normalizeArxivEntry(entry, sourceDef, query) {
-  const arxivId = getArxivIdFromEntryId(entry.id);
-  const title = cleanText(entry.title);
-  const abstract = cleanText(entry.summary);
-  const publishedAt = cleanText(entry.published);
-  const updatedAt = cleanText(entry.updated);
-  const journalRef = cleanText(entry.journal_ref) || null;
-  const comment = cleanText(entry.comment) || null;
-  const doi = cleanText(entry.doi) || null;
-
-  const authors = toArray(entry.author)
-    .map((author) => cleanText(author?.name))
-    .filter(Boolean);
-
-  const publishedDate = new Date(publishedAt);
-  const year = Number.isNaN(publishedDate.getTime())
-    ? null
-    : publishedDate.getUTCFullYear();
-
-  const month = shouldShowMonth(publishedAt) ? getMonthName(publishedAt) : null;
-
-  return {
-    id: doi || `arxiv:${arxivId || normalizeTitle(title)}`,
-    arxiv_id: arxivId || null,
-    doi,
-    title,
-    abstract,
-    authors,
-    published_at: publishedAt || null,
-    updated_at: updatedAt || null,
-    year,
-    month,
-    pdf_url: getPdfUrl(entry),
-    venue_url: getVenueUrl(entry),
-    venue: getVenueDisplay(entry),
-    journal_ref: journalRef,
-    comment,
-    source: "arXiv",
-    source_group: sourceDef.key,
-    source_group_title: sourceDef.title,
-    source_query: query,
-    matched_venue: null,
-    provider_used: null,
-    category: null,
-    classification_confidence: null,
-    classification_reason: null,
-  };
-}
-
-async function fetchArxivEntriesPage(sourceDef, query, start) {
-  const maxAttempts = ARXIV_MAX_ATTEMPTS;
-  // console.log(`[debug][arxiv-url] ${buildArxivDebugUrl(query, start, MAX_RESULTS_PER_QUERY)}`);   //only for debugging arXiv query construction
-  for (let attempt = 1; attempt <= maxAttempts; attempt++) {
-    const url = new URL(ARXIV_API_BASE);
-    url.searchParams.set("search_query", query);
-    url.searchParams.set("start", String(start));
-    url.searchParams.set("max_results", String(MAX_RESULTS_PER_QUERY));
-    url.searchParams.set("sortBy", "submittedDate");
-    url.searchParams.set("sortOrder", "descending");
-
-    const response = await fetch(url.toString(), {
-      headers: {
-        "User-Agent":
-          "embedded-ai-page-updater/1.0 (contact: guo.qilong.self@gmail.com)",
-        Accept: "application/atom+xml, application/xml, text/xml;q=0.9, */*;q=0.8",
-      },
-    });
-
-    if (response.ok) {
-      const xml = await response.text();
-      const parsed = xmlParser.parse(xml);
-      const entries = toArray(parsed?.feed?.entry);
-
-      const totalResults = toInt(parsed?.feed?.totalResults, entries.length);
-      const startIndex = toInt(parsed?.feed?.startIndex, start);
-      const itemsPerPage = toInt(parsed?.feed?.itemsPerPage, entries.length);
-
-      return {
-        papers: entries.map((entry) => normalizeArxivEntry(entry, sourceDef, query)),
-        stats: {
-          sourceKey: sourceDef.key,
-          sourceTitle: sourceDef.title,
-          query,
-          totalResults,
-          startIndex,
-          itemsPerPage,
-          fetchedCount: entries.length,
-        },
-      };
-    }
-
-    if (response.status === 429 && attempt < maxAttempts) {
-      const backoffMs = REQUEST_DELAY_MS * Math.pow(2, attempt - 1);
-      console.warn(
-        `[arXiv] 429 for ${sourceDef.key}, query="${query}", pageStart=${start}, attempt ${attempt}/${maxAttempts}. Retrying in ${backoffMs} ms.`
-      );
-      await sleep(backoffMs);
-      continue;
-    }
-
-    const body = await response.text().catch(() => "");
-    throw new Error(
-      `arXiv request failed for ${sourceDef.key}: ${response.status} ${response.statusText} ${body}`
+      `Invalid group(s): ${invalid.join(', ')}. Expected subset of ${GROUP_ORDER.join(', ')}.`,
     );
   }
 
-  throw new Error(
-    `arXiv request failed for ${sourceDef.key}, query="${query}", start=${start}: exceeded retry limit`
-  );
+  return groups.length ? groups : GROUP_ORDER;
 }
 
-async function fetchArxivEntriesForQuery(sourceDef, query) {
-  let start = 0;
-  let totalResults = null;
-  let pagesFetched = 0;
-  const allPapers = [];
+function parseProxyMode(raw) {
+  const value = String(raw ?? 'none').trim().toLowerCase();
+  if (['none', 'free', 'single'].includes(value)) {
+    return value;
+  }
+  throw new Error(`Invalid --proxy-mode "${raw}". Expected one of: none, free, single.`);
+}
 
-  while (true) {
-    const pageResult = await fetchArxivEntriesPage(sourceDef, query, start);
-    const pagePapers = pageResult.papers;
-    const stats = pageResult.stats;
+function logStep(message) {
+  console.log(`[embedded-ai] ${message}`);
+}
 
-    if (totalResults === null) {
-      totalResults = stats.totalResults;
+function buildSearchExtraArgs(cliOptions) {
+  const extraArgs = ['--proxy-mode', cliOptions.proxyMode];
+
+  if (cliOptions.proxyMode === 'single') {
+    if (cliOptions.httpProxy) {
+      extraArgs.push('--http-proxy', cliOptions.httpProxy);
     }
-
-    allPapers.push(...pagePapers);
-    pagesFetched += 1;
-
-    console.log(
-      `[arXiv] ${sourceDef.key} | query="${query}" | page=${pagesFetched} | start=${stats.startIndex} | fetched_this_page=${stats.fetchedCount} | total=${stats.totalResults}`
-    );
-
-    if (pagePapers.length === 0) {
-      break;
+    if (cliOptions.httpsProxy) {
+      extraArgs.push('--https-proxy', cliOptions.httpsProxy);
     }
-
-    start = stats.startIndex + pagePapers.length;
-
-    if (start >= stats.totalResults) {
-      break;
-    }
-
-    await sleep(REQUEST_DELAY_MS);
   }
 
+  return extraArgs;
+}
+
+function printHelp() {
+  console.log(`
+Usage:
+  node scripts/embedded-ai/update-papers.mjs [options]
+
+Options:
+  --groups A,B,C             Which groups to process. Default: A,B,C
+  --skip-search              Reuse existing raw Scholar cache instead of running search
+  --skip-download            Skip downloader.py
+  --download-dry-run         Run downloader in dry-run mode
+  --download-max N           Max number of downloads in this run
+  --heuristic-only           Skip Tencent TokenHub and use heuristic classifier only
+  --clear-cache              Remove raw Scholar cache before running
+  --max-results N            Max kept results per group from Scholar (default from config)
+  --sleep-seconds N          Sleep seconds between Scholar requests
+  --retry-limit N            Retry count for Scholar fill()
+  --concurrency N            Classification concurrency
+  --proxy-mode MODE          Proxy mode for scholarly: none | free | single
+  --http-proxy URL           HTTP proxy URL when --proxy-mode single
+  --https-proxy URL          HTTPS proxy URL when --proxy-mode single
+  --output PATH              Output JSON path (default: _data/embedded_ai_papers.json)
+  --help                     Show this help
+
+Examples:
+  node scripts/embedded-ai/update-papers.mjs
+  node scripts/embedded-ai/update-papers.mjs --groups A,B --max-results 80
+  node scripts/embedded-ai/update-papers.mjs --skip-search --skip-download
+  node scripts/embedded-ai/update-papers.mjs --download-dry-run --download-max 5
+  node scripts/embedded-ai/update-papers.mjs --proxy-mode free
+  node scripts/embedded-ai/update-papers.mjs --proxy-mode single --http-proxy http://127.0.0.1:7890 --https-proxy http://127.0.0.1:7890
+`.trim());
+}
+
+function parseCliArgs(argv) {
+  if (parseBooleanFlag(argv, '--help')) {
+    return { help: true };
+  }
+
+  const proxyMode = parseProxyMode(parseStringOption(argv, '--proxy-mode', 'none'));
+
   return {
-    papers: allPapers,
-    stats: {
-      sourceKey: sourceDef.key,
-      sourceTitle: sourceDef.title,
-      query,
-      totalResults: totalResults ?? allPapers.length,
-      startIndex: 0,
-      itemsPerPage: MAX_RESULTS_PER_QUERY,
-      fetchedCount: allPapers.length,
-      pagesFetched,
-      isComplete:
-        totalResults === null ? true : allPapers.length >= totalResults,
-    },
+    help: false,
+    groups: parseGroups(parseStringOption(argv, '--groups', null)),
+    skipSearch: parseBooleanFlag(argv, '--skip-search'),
+    skipDownload: parseBooleanFlag(argv, '--skip-download'),
+    downloadDryRun: parseBooleanFlag(argv, '--download-dry-run'),
+    heuristicOnly: parseBooleanFlag(argv, '--heuristic-only'),
+    clearCache: parseBooleanFlag(argv, '--clear-cache'),
+    maxResults: parseNumberOption(argv, '--max-results', SCHOLAR_MAX_RESULTS_PER_GROUP),
+    sleepSeconds: parseNumberOption(argv, '--sleep-seconds', SCHOLAR_REQUEST_SLEEP_SECONDS),
+    retryLimit: parseNumberOption(argv, '--retry-limit', SCHOLAR_RETRY_LIMIT),
+    concurrency: parseNumberOption(argv, '--concurrency', 3),
+    downloadMax: parseNumberOption(argv, '--download-max', null),
+    outputPath: parseStringOption(argv, '--output', OUTPUT_JSON_PATH),
+    proxyMode,
+    httpProxy: parseStringOption(argv, '--http-proxy', ''),
+    httpsProxy: parseStringOption(argv, '--https-proxy', ''),
   };
 }
 
-async function fetchAllCandidates() {
-  const papers = [];
-  const stats = [];
-
-  for (const sourceDef of SOURCE_DEFINITIONS) {
-    for (const query of sourceDef.queries) {
-      const result = await fetchArxivEntriesForQuery(sourceDef, query);
-      papers.push(...result.papers);
-      stats.push(result.stats);
-      await sleep(REQUEST_DELAY_MS);
-    }
+function ensureGroupedPayloadShape(groupedPayloads = {}, groups = GROUP_ORDER) {
+  const normalized = {};
+  for (const group of groups) {
+    normalized[group] = groupedPayloads[group] ?? [];
   }
-
-  return { papers, stats };
+  return normalized;
 }
 
-function dedupeWithinSource(papers) {
-  const seenIds = new Set();
-  const seenTitles = new Set();
-  const result = [];
-
-  for (const paper of papers) {
-    const idKey = `${paper.source_group}::${paper.id}`;
-    const titleKey = `${paper.source_group}::${normalizeTitle(paper.title)}`;
-
-    if (paper.id && seenIds.has(idKey)) continue;
-    if (paper.title && seenTitles.has(titleKey)) continue;
-
-    if (paper.id) seenIds.add(idKey);
-    if (paper.title) seenTitles.add(titleKey);
-
-    result.push(paper);
-  }
-
-  return result;
+function countRawItems(groupPayload) {
+  if (Array.isArray(groupPayload)) return groupPayload.length;
+  if (groupPayload && Array.isArray(groupPayload.items)) return groupPayload.items.length;
+  if (groupPayload && Array.isArray(groupPayload.papers)) return groupPayload.papers.length;
+  return 0;
 }
 
-function matchCcfAVenue(paper) {
-  const text = cleanText(
-    [paper.journal_ref, paper.comment, paper.venue].filter(Boolean).join(" | ")
-  );
-
-  if (!text) {
-    return { pass: false, matchedVenue: null };
+function summarizeGroupedPayloads(groupedPayloads = {}, groups = GROUP_ORDER) {
+  const summary = {};
+  for (const group of groups) {
+    summary[group] = countRawItems(groupedPayloads[group]);
   }
-
-  for (const rule of CCF_A_VENUE_RULES) {
-    for (const pattern of rule.patterns) {
-      if (pattern.test(text)) {
-        return { pass: true, matchedVenue: rule.canonical };
-      }
-    }
-  }
-
-  return { pass: false, matchedVenue: null };
+  return summary;
 }
 
-function applySourceFilter(paper) {
-  const sourceDef = getSourceDefinition(paper.source_group);
-  if (!sourceDef) {
-    return { pass: false, matchedVenue: null };
-  }
-
-  const effectiveVenueFilter = getEffectiveVenueFilter(
-    sourceDef.key,
-    sourceDef.venueFilter || "none"
-  );
-
-  if (effectiveVenueFilter !== "ccf_a_only") {
-    return { pass: true, matchedVenue: null };
-  }
-
-  return matchCcfAVenue(paper);
-}
-
-function buildScreeningPrompt(paper) {
-  return (
-    `You are screening and classifying research papers for an Embedded AI literature page.\n\n` +
-    `First, decide whether the paper is genuinely relevant to this collection.\n` +
-    `A relevant paper should clearly focus on AI models, systems, deployment, hardware, sensing, or reliability for embedded devices, edge devices, resource-constrained systems, microcontrollers, or TinyML.\n` +
-    `Reject papers that are mainly about generic cloud-edge orchestration, networking without embedded-AI contribution, or broad AI topics with no embedded deployment context.\n\n` +
-    `If the paper is relevant, assign exactly one primary category from the allowed labels.\n\n` +
-    `Allowed categories:\n- ${CATEGORIES.join("\n- ")}\n\n` +
-    `Category guidance:\n` +
-    `- Chip / Hardware: accelerators, chips, ASIC, FPGA, MCU AI hardware, CIM/PIM, neuromorphic hardware.\n` +
-    `- Model / Algorithm: efficient models, pruning, quantization, distillation, NAS, compression, algorithm design.\n` +
-    `- System / Deployment: runtime, compiler, framework, operator optimization, memory planning, deployment pipeline.\n` +
-    `- Sensing / Application: sensor intelligence, in-sensor/near-sensor computing, applications in wearables, vision, audio, robotics, health, industry.\n` +
-    `- Security / Reliability: robustness, privacy, trustworthiness, uncertainty, safety, secure deployment, reliability.\n` +
-    `- Survey: literature reviews, benchmarks, comparative studies, and survey papers that summarize or evaluate embedded AI research.\n\n` +
-    `Title: ${paper.title}\n\n` +
-    `Abstract: ${paper.abstract || "No abstract available."}\n\n` +
-    `Venue hint: ${paper.matched_venue || paper.venue || "Unknown"}`
-  );
-}
-
-function buildDecisionSchema() {
+function buildPipelineSummary({
+  cliOptions,
+  groupedPayloads,
+  setOpsResult,
+  filteredResult,
+  classifiedResult,
+  outputPath,
+  bibtexRun,
+  downloadRun,
+  generatedAt,
+}) {
   return {
-    type: "object",
-    additionalProperties: false,
-    properties: {
-      relevant: {
-        type: "boolean",
-        description: "Whether this paper belongs on the Embedded AI literature page.",
-      },
-      category: {
-        type: ["string", "null"],
-        enum: [...CATEGORIES, null],
-        description: "One primary category if relevant, otherwise null.",
-      },
-      confidence: {
-        type: "number",
-        minimum: 0,
-        maximum: 1,
-        description: "Confidence score between 0 and 1.",
-      },
-      reason: {
-        type: "string",
-        description: "Short explanation for the decision.",
-      },
+    ok: true,
+    generated_at: generatedAt,
+    options: {
+      groups: cliOptions.groups,
+      skip_search: cliOptions.skipSearch,
+      skip_download: cliOptions.skipDownload,
+      download_dry_run: cliOptions.downloadDryRun,
+      heuristic_only: cliOptions.heuristicOnly,
+      max_results: cliOptions.maxResults,
+      sleep_seconds: cliOptions.sleepSeconds,
+      retry_limit: cliOptions.retryLimit,
+      concurrency: cliOptions.concurrency,
+      output_path: outputPath,
+      proxy_mode: cliOptions.proxyMode,
+      http_proxy: cliOptions.httpProxy || null,
+      https_proxy: cliOptions.httpsProxy || null,
     },
-    required: ["relevant", "category", "confidence", "reason"],
+    counts: {
+      raw_search: summarizeGroupedPayloads(groupedPayloads, cliOptions.groups),
+      after_set_ops: setOpsResult?.stats?.after_set_ops ?? {},
+      after_filter: filteredResult?.filtered_papers?.length ?? 0,
+      after_classification: classifiedResult?.papers?.length ?? 0,
+    },
+    classification: classifiedResult?.stats ?? {},
+    bibtex: bibtexRun
+      ? {
+          artifact_paths: bibtexRun.artifactPaths ?? {},
+          counts: bibtexRun.counts ?? {},
+          error: bibtexRun.error ?? null,
+        }
+      : null,
+    download: downloadRun
+      ? {
+          quota: downloadRun.quota ?? {},
+          parsed_stdout: downloadRun.parsedStdout ?? null,
+          error: downloadRun.error ?? null,
+        }
+      : null,
   };
 }
 
-function extractFirstJsonObject(text) {
-  const raw = cleanText(text);
-  if (!raw) {
-    throw new Error("Model returned empty content.");
+async function executeSearchStep(cliOptions) {
+  logStep(`Starting Scholar search for groups: ${cliOptions.groups.join(', ')}`);
+
+  if (cliOptions.skipSearch) {
+    const groupedPayloads = await loadAllScholarRawGroups();
+    const summary = summarizeGroupedPayloads(groupedPayloads, cliOptions.groups);
+    logStep(`Loaded existing raw Scholar cache: ${JSON.stringify(summary)}`);
+    return ensureGroupedPayloadShape(groupedPayloads, cliOptions.groups);
   }
 
-  try {
-    return JSON.parse(raw);
-  } catch {}
-
-  const start = raw.indexOf("{");
-  const end = raw.lastIndexOf("}");
-
-  if (start === -1 || end === -1 || end <= start) {
-    throw new Error(`No JSON object found in model output: ${raw}`);
-  }
-
-  const candidate = raw.slice(start, end + 1);
-  return JSON.parse(candidate);
-}
-
-async function classifyWithGemini(ai, paper) {
-  if (!ai) {
-    throw new Error("Gemini client not initialized.");
-  }
-
-  const response = await ai.models.generateContent({
-    model: GEMINI_MODEL,
-    contents: buildScreeningPrompt(paper),
-    config: {
-      responseMimeType: "application/json",
-      responseJsonSchema: buildDecisionSchema(),
-    },
+  const searchResult = await runAllScholarKeywordSearches({
+    groups: cliOptions.groups,
+    maxResults: cliOptions.maxResults,
+    sleepSeconds: cliOptions.sleepSeconds,
+    retryLimit: cliOptions.retryLimit,
+    extraArgs: buildSearchExtraArgs(cliOptions),
   });
 
-  const parsed = JSON.parse(response.text);
+  const summary = summarizeGroupedPayloads(searchResult.groupedData, cliOptions.groups);
+  logStep(`Scholar search completed: ${JSON.stringify(summary)}`);
 
+  return ensureGroupedPayloadShape(searchResult.groupedData, cliOptions.groups);
+}
+
+function buildFilterStatsPayload(filteredResult) {
   return {
-    provider: "gemini",
-    relevant: Boolean(parsed.relevant),
-    category: parsed.category,
-    confidence: typeof parsed.confidence === "number" ? parsed.confidence : null,
-    reason: cleanText(parsed.reason),
+    after_filter: filteredResult?.filtered_papers?.length ?? 0,
+    filter_breakdown: filteredResult?.stats?.filter_breakdown ?? filteredResult?.stats ?? {},
   };
 }
 
-async function classifyWithOpenRouter(paper) {
-  if (!OPENROUTER_API_KEY) {
-    throw new Error("Missing OPENROUTER_API_KEY for OpenRouter fallback.");
-  }
+async function executeClassificationStep(filteredResult, cliOptions) {
+  const papersToClassify = filteredResult?.filtered_papers ?? [];
 
-  const response = await fetch(OPENROUTER_BASE_URL, {
-    method: "POST",
-    headers: {
-      Authorization: `Bearer ${OPENROUTER_API_KEY}`,
-      "Content-Type": "application/json",
-      "HTTP-Referer": "https://github.com/csdwu/csdwu.github.io",
-      "X-OpenRouter-Title": "Embedded AI Paper Updater",
-    },
-    body: JSON.stringify({
-      model: OPENROUTER_MODEL,
-      messages: [
-        {
-          role: "user",
-          content: buildScreeningPrompt(paper),
-        },
-      ],
-      response_format: {
-        type: "json_schema",
-        json_schema: {
-          name: "paper_decision",
-          strict: true,
-          schema: buildDecisionSchema(),
-        },
+  if (!papersToClassify.length) {
+    return {
+      papers: [],
+      stats: {
+        total: 0,
+        by_category: {},
+        by_tag: {},
+        by_provider: {},
       },
-      temperature: 0,
-    }),
-  });
-
-  if (!response.ok) {
-    const text = await response.text();
-    throw new Error(
-      `OpenRouter request failed: ${response.status} ${response.statusText} :: ${text}`
-    );
+    };
   }
 
-  const data = await response.json();
-  const content = data?.choices?.[0]?.message?.content;
-
-  if (!content) {
-    throw new Error("OpenRouter returned no message content.");
-  }
-
-  const parsed = JSON.parse(content);
-
-  return {
-    provider: "openrouter",
-    relevant: Boolean(parsed.relevant),
-    category: parsed.category,
-    confidence: typeof parsed.confidence === "number" ? parsed.confidence : null,
-    reason: cleanText(parsed.reason),
-  };
-}
-
-async function classifyWithTencentTokenHub(paper) {
-  if (!TENCENT_TOKENHUB_API_KEY) {
-    throw new Error("Missing TENCENT_TOKENHUB_API_KEY for Tencent TokenHub fallback.");
-  }
-
-  const prompt =
-    `${buildScreeningPrompt(paper)}\n\n` +
-    `Return JSON only. Do not use markdown fences.\n` +
-    `The JSON must have exactly these keys:\n` +
-    `{\n` +
-    `  "relevant": boolean,\n` +
-    `  "category": string | null,\n` +
-    `  "confidence": number,\n` +
-    `  "reason": string\n` +
-    `}\n\n` +
-    `Rules:\n` +
-    `- "category" must be one of: ${CATEGORIES.join(", ")}\n` +
-    `- If not relevant, set "category" to null.\n` +
-    `- "confidence" must be between 0 and 1.\n`;
-
-  const response = await fetch(TENCENT_TOKENHUB_BASE_URL, {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-      Authorization: `Bearer ${TENCENT_TOKENHUB_API_KEY}`,
-    },
-    body: JSON.stringify({
-      model: TENCENT_TOKENHUB_MODEL,
-      messages: [
-        {
-          role: "user",
-          content: prompt,
-        },
-      ],
-      temperature: 0,
-      stream: false,
-    }),
-  });
-
-  if (!response.ok) {
-    const text = await response.text();
-    throw new Error(
-      `Tencent TokenHub request failed: ${response.status} ${response.statusText} :: ${text}`
-    );
-  }
-
-  const data = await response.json();
-  const content = data?.choices?.[0]?.message?.content;
-
-  if (!content) {
-    throw new Error("Tencent TokenHub returned no message content.");
-  }
-
-  const parsed = extractFirstJsonObject(content);
-
-  return {
-    provider: "tencent_tokenhub",
-    relevant: Boolean(parsed.relevant),
-    category: parsed.category,
-    confidence: typeof parsed.confidence === "number" ? parsed.confidence : null,
-    reason: cleanText(parsed.reason),
-  };
-}
-
-async function classifyWithFallback(ai, paper) {
-  const errors = [];
-
-  if (ai) {
-    try {
-      return await classifyWithGemini(ai, paper);
-    } catch (error) {
-      errors.push(`Gemini: ${error.message}`);
-      console.warn(
-        `[fallback] Gemini failed for "${paper.title}". Trying OpenRouter / Tencent next. ${error.message}`
-      );
-    }
-  }
-
-  if (OPENROUTER_API_KEY) {
-    try {
-      return await classifyWithOpenRouter(paper);
-    } catch (error) {
-      errors.push(`OpenRouter: ${error.message}`);
-      console.warn(
-        `[fallback] OpenRouter failed for "${paper.title}". Trying Tencent TokenHub next. ${error.message}`
-      );
-    }
-  }
-
-  if (TENCENT_TOKENHUB_API_KEY) {
-    try {
-      return await classifyWithTencentTokenHub(paper);
-    } catch (error) {
-      errors.push(`Tencent TokenHub: ${error.message}`);
-    }
-  }
-
-  throw new Error(
-    `All providers failed for "${paper.title}". ${errors.join(" | ")}`
-  );
-}
-
-async function classifyPapers(ai, papers, cachedMap) {
-  const result = [];
-
-  for (const paper of papers) {
-    const cacheKey = makePaperCacheKey(paper);
-    const cached = cachedMap.get(cacheKey);
-    console.log(`[classifying] ${paper.source_group} | ${paper.title}`);
-    if (
-      cached &&
-      typeof cached.category === "string" &&
-      CATEGORIES.includes(cached.category)
-    ) {
-      result.push({
-        ...paper,
-        category: cached.category,
-        classification_confidence: cached.classification_confidence ?? null,
-        classification_reason: cached.classification_reason ?? null,
-        provider_used: cached.provider_used ?? null,
-      });
-      continue;
-    }
-
-    const decision = await classifyWithFallback(ai, paper);
-
-    if (!decision.relevant || !decision.category) {
-      await sleep(LLM_DELAY_MS);
-      continue;
-    }
-
-    result.push({
-      ...paper,
-      category: decision.category,
-      classification_confidence: decision.confidence,
-      classification_reason: decision.reason,
-      provider_used: decision.provider,
-    });
-
-    await sleep(LLM_DELAY_MS);
-  }
-
-  return result;
-}
-
-function mergePapers(existingPapers, newPapers) {
-  const byKey = new Map();
-
-  for (const paper of existingPapers) {
-    byKey.set(makePaperCacheKey(paper), paper);
-  }
-
-  for (const paper of newPapers) {
-    byKey.set(makePaperCacheKey(paper), paper);
-  }
-
-  return Array.from(byKey.values()).sort((a, b) => {
-    const aTime = new Date(a.published_at || 0).getTime();
-    const bTime = new Date(b.published_at || 0).getTime();
-    return bTime - aTime;
+  return classifyPapers(papersToClassify, {
+    useHeuristicOnly: cliOptions.heuristicOnly,
+    concurrency: cliOptions.concurrency,
   });
 }
 
-function regroupForSite(allPapers) {
-  const output = {
-    last_updated: new Date().toISOString(),
-    paper_sources: SOURCE_DEFINITIONS.map((source) => ({
-      key: source.key,
-      title: source.title,
-      categories: buildCategoryBuckets(),
-    })),
-  };
-
-  const sourceMap = new Map(
-    output.paper_sources.map((source) => [source.key, source])
-  );
-
-  for (const paper of allPapers) {
-    const source = sourceMap.get(paper.source_group);
-    if (!source) continue;
-
-    const category = source.categories.find((item) => item.name === paper.category);
-    if (!category) continue;
-
-    category.papers.push(paper);
+async function executeDownloadStep(cliOptions) {
+  if (cliOptions.skipDownload) {
+    return null;
   }
 
-  for (const source of output.paper_sources) {
-    for (const category of source.categories) {
-      category.papers.sort((a, b) => {
-        const aTime = new Date(a.published_at || 0).getTime();
-        const bTime = new Date(b.published_at || 0).getTime();
-        return bTime - aTime;
-      });
-    }
-  }
-
-  return output;
-}
-
-async function writeOutput(data) {
-  await fs.mkdir(path.dirname(OUTPUT_PATH), { recursive: true });
-  await fs.writeFile(OUTPUT_PATH, JSON.stringify(data, null, 2), "utf8");
+  return runDownloadManager({
+    inputPath: SCHOLAR_NORMALIZED_PATH,
+    dryRun: cliOptions.downloadDryRun,
+    maxDownloads: cliOptions.downloadMax,
+  });
 }
 
 async function main() {
-  if (!GEMINI_API_KEY && !OPENROUTER_API_KEY && !TENCENT_TOKENHUB_API_KEY) {
+  const cliOptions = parseCliArgs(process.argv.slice(2));
+
+  if (cliOptions.help) {
+    printHelp();
+    return;
+  }
+
+  await ensureScholarRuntimeDirs();
+
+  if (cliOptions.clearCache) {
+    await clearScholarCache({ includeNormalized: true });
+  }
+
+  const generatedAt = new Date().toISOString();
+
+  logStep('Starting embedded AI paper update pipeline');
+
+  const groupedPayloads = await executeSearchStep(cliOptions);
+
+  const rawCounts = summarizeGroupedPayloads(groupedPayloads, cliOptions.groups);
+  const totalRawCount = Object.values(rawCounts).reduce((sum, count) => sum + count, 0);
+
+  logStep(`Raw Scholar candidates total: ${totalRawCount}`);
+
+  if (totalRawCount === 0) {
     throw new Error(
-      "At least one of GEMINI_API_KEY, OPENROUTER_API_KEY, or TENCENT_TOKENHUB_API_KEY must be set."
+      'No Scholar results available. Check raw cache or rerun without --skip-search.',
     );
   }
 
-  const ai = GEMINI_API_KEY ? new GoogleGenAI({ apiKey: GEMINI_API_KEY }) : null;
+  logStep('Running set operations and deduplication');
+  const setOpsResult = runSetOperations(groupedPayloads);
+  logStep(`After set operations: ${JSON.stringify(setOpsResult.stats.after_set_ops)}`);
 
-  const existingOutput = await readExistingOutput();
-  const existingPapers = flattenExistingPapers(existingOutput);
+  logStep('Applying TH-CPL / arXiv filter rules');
+  const filteredResult = applyFilterRulesToSetOps(setOpsResult);
+  logStep(`After filtering: ${filteredResult.filtered_papers.length} papers remain`);
 
-  const existingMap = new Map(
-    existingPapers.map((paper) => [makePaperCacheKey(paper), paper])
-  );
-  const existingTitleMap = new Map(
-    existingPapers.map((paper) => [
-      `${paper.source_group}::${normalizeTitle(paper.title)}`,
-      paper,
-    ])
-  );
+  logStep('Classifying papers');
+  const classifiedResult = await executeClassificationStep(filteredResult, cliOptions);
+  logStep(`Classification completed: ${classifiedResult.papers.length} papers classified`);
 
-  const fetchResult = await fetchAllCandidates();
-  const fetchedCandidates = fetchResult.papers;
-  const fetchStats = fetchResult.stats;
+  await saveNormalizedPapers(classifiedResult.papers);
+  logStep(`Saved normalized paper data to ${SCHOLAR_NORMALIZED_PATH}`);
 
-  console.log("\n=== arXiv Query Stats ===");
-  for (const item of fetchStats) {
-    console.log(
-      `[${item.sourceKey}] query="${item.query}" | total=${item.totalResults} | fetched=${item.fetchedCount} | pages=${item.pagesFetched} | complete=${item.isComplete}`
+  const { outputJson, outputPath } = await buildAndWriteOutputJson({
+    classifiedPapers: classifiedResult.papers,
+    setOpsStats: setOpsResult.stats,
+    filterStats: buildFilterStatsPayload(filteredResult),
+    classificationStats: classifiedResult.stats,
+    downloadState: await safeReadJson(DOWNLOAD_STATE_PATH, { papers: {} }),
+    generatedAt,
+    outputPath: cliOptions.outputPath,
+  });
+
+  logStep(`Wrote JSON output to ${outputPath}`);
+
+  logStep('Generating BibTeX artifacts');
+  let bibtexRun = null;
+  try {
+    bibtexRun = await generateBibtexArtifacts(classifiedResult.papers);
+    logStep('BibTeX artifact generation completed');
+  } catch (error) {
+    bibtexRun = {
+      ok: false,
+      error: String(error?.message || error),
+      artifactPaths: {},
+      counts: {},
+    };
+    console.error(
+      JSON.stringify(
+        {
+          ok: false,
+          phase: 'bibtex',
+          error: String(error?.message || error),
+        },
+        null,
+        2,
+      ),
     );
   }
 
-  const uniqueCandidates = dedupeWithinSource(fetchedCandidates);
+  let downloadRun = null;
+  if (!cliOptions.skipDownload) {
+    logStep('Starting PDF download step');
+    try {
+      downloadRun = await executeDownloadStep(cliOptions);
+      logStep('Download step finished');
+    } catch (error) {
+      downloadRun = {
+        ok: false,
+        error: String(error?.message || error),
+      };
+      console.error(
+        JSON.stringify(
+          {
+            ok: false,
+            phase: 'download',
+            error: String(error?.message || error),
+          },
+          null,
+          2,
+        ),
+      );
+    }
+  } else {
+    logStep('Skipping PDF download step (--skip-download)');
+  }
 
-  console.log(`\nFetched raw candidates: ${fetchedCandidates.length}`);
-  console.log(`After dedupe: ${uniqueCandidates.length}`);
+  const downloadState = await safeReadJson(DOWNLOAD_STATE_PATH, { papers: {} });
+  const downloadQuota = await safeReadJson(DOWNLOAD_QUOTA_PATH, {});
 
-  const filteredByVenue = [];
-
-  for (const paper of uniqueCandidates) {
-    const venueCheck = applySourceFilter(paper);
-    if (!venueCheck.pass) continue;
-
-    filteredByVenue.push({
-      ...paper,
-      matched_venue: venueCheck.matchedVenue,
+  if (downloadRun) {
+    await buildAndWriteOutputJson({
+      classifiedPapers: classifiedResult.papers,
+      setOpsStats: setOpsResult.stats,
+      filterStats: buildFilterStatsPayload(filteredResult),
+      classificationStats: classifiedResult.stats,
+      downloadState,
+      generatedAt,
+      outputPath: cliOptions.outputPath,
     });
   }
 
-  console.log(`After CCF-A venue filter: ${filteredByVenue.length}`);
-
-  const prepared = filteredByVenue.map((paper) => {
-    const cacheKey = makePaperCacheKey(paper);
-    const cachedByKey = existingMap.get(cacheKey);
-    const cachedByTitle = existingTitleMap.get(
-      `${paper.source_group}::${normalizeTitle(paper.title)}`
-    );
-    const cached = cachedByKey || cachedByTitle;
-
-    if (!cached) return paper;
-
-    return {
-      ...paper,
-      category: cached.category ?? null,
-      classification_confidence: cached.classification_confidence ?? null,
-      classification_reason: cached.classification_reason ?? null,
-      provider_used: cached.provider_used ?? null,
-      matched_venue: paper.matched_venue || cached.matched_venue || null,
-    };
+  const summary = buildPipelineSummary({
+    cliOptions,
+    groupedPayloads,
+    setOpsResult,
+    filteredResult,
+    classifiedResult,
+    outputPath,
+    bibtexRun,
+    downloadRun: downloadRun
+      ? {
+          ...downloadRun,
+          quota: downloadQuota,
+        }
+      : null,
+    generatedAt,
   });
 
-  const classified = await classifyPapers(ai, prepared, existingMap);
-  console.log(`After relevance + classification: ${classified.length}`);
-
-  const merged = mergePapers(existingPapers, classified);
-
-  const mergedFiltered = merged
-    .map((paper) => {
-      const venueCheck = applySourceFilter(paper);
-      return {
-        paper: {
-          ...paper,
-          matched_venue: paper.matched_venue || venueCheck.matchedVenue || null,
-        },
-        pass: venueCheck.pass,
-      };
-    })
-    .filter((item) => item.pass)
-    .map((item) => item.paper)
-    .filter(
-      (paper) =>
-        typeof paper.category === "string" && CATEGORIES.includes(paper.category)
-    );
-
-  console.log(`Final retained papers: ${mergedFiltered.length}`);
-
-  const output = regroupForSite(mergedFiltered);
-  await writeOutput(output);
-
   console.log(
-    `Updated ${OUTPUT_PATH} with ${mergedFiltered.length} papers at ${output.last_updated}`
+    JSON.stringify(
+      {
+        ...summary,
+        output_preview: {
+          version: outputJson.version,
+          categories: outputJson.categories.map((category) => ({
+            key: category.key,
+            title: category.title,
+            count: category.count,
+          })),
+        },
+      },
+      null,
+      2,
+    ),
   );
 }
 
 main().catch((error) => {
-  console.error(error);
-  process.exit(1);
+  console.error(
+    JSON.stringify(
+      {
+        ok: false,
+        error: String(error?.message || error),
+      },
+      null,
+      2,
+    ),
+  );
+  process.exitCode = 1;
 });

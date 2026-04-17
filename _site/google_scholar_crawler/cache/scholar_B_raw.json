@@ -1,0 +1,61 @@
+{
+  "command": "keyword-search",
+  "group": "B",
+  "generated_at": "2026-04-17T05:32:46.194260+00:00",
+  "queries": [
+    "(\"low power\" OR \"ultra-low-power\") \"embedded ai\"",
+    "(\"energy-efficient\" OR \"power-efficient\" OR \"power-aware\") \"embedded ai\"",
+    "(\"low-power\" OR \"ultra-low-power\") \"embedded machine learning\"",
+    "(\"low-power\" OR \"ultra-low-power\") \"edge ai\""
+  ],
+  "max_results": 120,
+  "sleep_seconds": 3.0,
+  "retry_limit": 3,
+  "stats": {
+    "raw_candidates_seen": 0,
+    "fill_errors": 0,
+    "filtered_out_by_post_filter": 0,
+    "kept_after_post_filter_and_dedupe": 0
+  },
+  "query_stats": [
+    {
+      "query": "(\"low power\" OR \"ultra-low-power\") \"embedded ai\"",
+      "raw_seen": 0,
+      "kept": 0,
+      "filtered": 0,
+      "fill_errors": 0,
+      "search_error": "Cannot Fetch from Google Scholar."
+    },
+    {
+      "query": "(\"energy-efficient\" OR \"power-efficient\" OR \"power-aware\") \"embedded ai\"",
+      "raw_seen": 0,
+      "kept": 0,
+      "filtered": 0,
+      "fill_errors": 0,
+      "search_error": "Cannot Fetch from Google Scholar."
+    },
+    {
+      "query": "(\"low-power\" OR \"ultra-low-power\") \"embedded machine learning\"",
+      "raw_seen": 0,
+      "kept": 0,
+      "filtered": 0,
+      "fill_errors": 0,
+      "search_error": "Cannot Fetch from Google Scholar."
+    },
+    {
+      "query": "(\"low-power\" OR \"ultra-low-power\") \"edge ai\"",
+      "raw_seen": 0,
+      "kept": 0,
+      "filtered": 0,
+      "fill_errors": 0,
+      "search_error": "Cannot Fetch from Google Scholar."
+    }
+  ],
+  "items": [],
+  "proxy": {
+    "requested_mode": "none",
+    "enabled": false,
+    "effective_mode": "none",
+    "message": "Proxy disabled."
+  }
+}
