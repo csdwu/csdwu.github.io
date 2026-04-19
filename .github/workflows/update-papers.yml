@@ -14,8 +14,8 @@ on:
         default: ''
         type: string
   schedule:
-    - cron: '0 0 * * *'
-      timezone: 'Asia/Shanghai'   
+    - cron: '17 9 * * *'
+      timezone: 'Asia/Shanghai'
 
 permissions:
   contents: write
@@ -29,26 +29,32 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout
-        uses: actions/checkout@v5
+      - name: Checkout repository
+        uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
-      - name: Setup Node
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+
+      - name: Install Python dependencies
+        run: pip install -r google_scholar_crawler/requirements.txt
+
+      - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: '20'
           cache: 'npm'
+          cache-dependency-path: scripts/embedded-ai/package-lock.json
 
-      - name: Install dependencies
-        run: |
-          if [ -f package-lock.json ]; then
-            npm ci
-          else
-            npm install
-          fi
+      - name: Install Node.js dependencies
+        working-directory: scripts/embedded-ai
+        run: npm ci
 
       - name: Run paper updater
+        working-directory: scripts/embedded-ai
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           GEMINI_MODEL: ${{ vars.GEMINI_MODEL || 'gemini-2.5-flash' }}
@@ -65,7 +71,7 @@ jobs:
           YEAR_LOW: ${{ github.event.inputs.year_low || '' }}
           YEAR_HIGH: ${{ github.event.inputs.year_high || '' }}
           VENUE_FILTER_PRESET: ${{ vars.VENUE_FILTER_PRESET || 'recall_first' }}
-          SEARCH_SOURCE: ${{ vars.SEARCH_SOURCE || 'arxiv' }}
+          SEARCH_SOURCE: ${{ vars.SEARCH_SOURCE || 'all' }}
         run: |
           ARGS=("--source" "$SEARCH_SOURCE")
           if [ -n "$YEAR_LOW" ]; then
@@ -74,7 +80,7 @@ jobs:
           if [ -n "$YEAR_HIGH" ]; then
             ARGS+=("--year-high" "$YEAR_HIGH")
           fi
-          node scripts/embedded-ai/update-papers.mjs "${ARGS[@]}"
+          node update-papers.mjs "${ARGS[@]}"
 
       - name: Commit changes
         run: |
@@ -82,6 +88,11 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
           git add _data/embedded_ai_papers.json
+          git add google_scholar_crawler/cache/normalized_papers.json
+          git add google_scholar_crawler/state/classification_checkpoint.json
+          git add google_scholar_crawler/state/download_state.json
+          git add google_scholar_crawler/state/download_quota.json
+          git add artifacts/*.bib
 
           if git diff --cached --quiet; then
             echo "No changes to commit"

@@ -245,7 +245,7 @@ function ensureCategoryBuckets(classifiedPapers = []) {
   const buckets = regroupClassifiedPapersByCategory(classifiedPapers);
 
   for (const bucket of buckets) {
-    bucket.papers = ensureArray(bucket.papers).sort(sortPapers);
+    bucket.papers = ensureArray(bucket.papers);
     bucket.count = bucket.papers.length;
   }
 
@@ -267,12 +267,16 @@ export function buildOutputJson({
   const downloadLookup = buildDownloadLookup(downloadState);
   const regrouped = ensureCategoryBuckets(papers);
 
-  const categories = regrouped.map((bucket) => ({
-    key: bucket.key,
-    title: bucket.title,
-    count: bucket.count,
-    papers: bucket.papers.map((paper) => sanitizePaperForOutput(paper, downloadLookup)),
-  }));
+  const categories = regrouped.map((bucket) => {
+    const sanitizedPapers = bucket.papers.map((paper) => sanitizePaperForOutput(paper, downloadLookup));
+    sanitizedPapers.sort(sortPapers);
+    return {
+      key: bucket.key,
+      title: bucket.title,
+      count: bucket.count,
+      papers: sanitizedPapers,
+    };
+  });
 
   return {
     version: OUTPUT_SCHEMA_VERSION,

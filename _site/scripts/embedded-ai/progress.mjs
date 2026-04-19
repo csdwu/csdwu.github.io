@@ -27,6 +27,8 @@ function formatPercent(done, total) {
 
 export function createClassificationProgress(total, options = {}) {
   const stream = options.stream ?? process.stderr;
+  const reusedCount = options.reusedCount ?? 0;
+  const totalCount = options.totalCount ?? total;
   const providerCounts = {
     tencent_tokenhub: 0,
     heuristic: 0,
@@ -36,6 +38,7 @@ export function createClassificationProgress(total, options = {}) {
   const startedAt = Date.now();
   let completed = 0;
   let inFlight = 0;
+  let failed = 0;
   let lastTitle = '';
   let lastProvider = '';
   let lastRenderAt = 0;
@@ -56,7 +59,8 @@ export function createClassificationProgress(total, options = {}) {
         : 0;
 
     const line =
-      `[embedded-ai] Classifying: ${completed}/${total} (${formatPercent(completed, total)})` +
+      `[classify] ${reusedCount}/${totalCount} reused, ${completed}/${total} new (${formatPercent(completed, total)})` +
+      ` | failed ${failed}` +
       ` | in-flight ${inFlight}` +
       ` | provider tencent=${providerCounts.tencent_tokenhub}` +
       ` heuristic=${providerCounts.heuristic}` +
@@ -73,13 +77,8 @@ export function createClassificationProgress(total, options = {}) {
     lastLineLength = line.length;
   }
 
-  function logFallback(index, paper, errorMessage) {
-    stream.write(
-      `\n[embedded-ai] Fallback #${index + 1}: ${truncateText(
-        paper?.title,
-        120,
-      )} | ${truncateText(errorMessage, 160)}\n`,
-    );
+  function logStep(message) {
+    stream.write(`\n${message}\n`);
   }
 
   return {
@@ -102,20 +101,14 @@ export function createClassificationProgress(total, options = {}) {
       lastProvider = provider;
       render();
 
-      if (provider === 'heuristic_fallback') {
-        const fallbackError =
-          classified?.classification_raw_response?.error ??
-          classified?.classification_raw_response?.message ??
-          'unknown fallback reason';
-        logFallback(index, paper, fallbackError);
-        render(true);
-      }
+      logStep(`[classify] done ${index + 1}/${total}: ${truncateText(paper?.title, 120)}`);
     },
 
     onError(index, paper, error) {
       inFlight = Math.max(0, inFlight - 1);
+      failed += 1;
       stream.write(
-        `\n[embedded-ai] Classification error #${index + 1}: ${truncateText(
+        `\n[classify] error ${index + 1}/${total}: ${truncateText(
           paper?.title,
           120,
         )} | ${truncateText(error?.message ?? error, 160)}\n`,
@@ -131,7 +124,7 @@ export function createClassificationProgress(total, options = {}) {
       const totalClassified = finalStats?.total ?? completed;
 
       stream.write(
-        `[embedded-ai] Classification summary: total=${totalClassified}` +
+        `[classify] summary: total=${totalClassified} | reused=${reusedCount} | new=${completed} | failed=${failed}` +
           ` | tencent_tokenhub=${summary.tencent_tokenhub ?? 0}` +
           ` | heuristic=${summary.heuristic ?? 0}` +
           ` | heuristic_fallback=${summary.heuristic_fallback ?? 0}\n`,

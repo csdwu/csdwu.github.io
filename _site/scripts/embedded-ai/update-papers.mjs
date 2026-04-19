@@ -128,8 +128,8 @@ Options:
   --https-proxy URL          HTTPS proxy URL when --proxy-mode single
   --page-size N              Page size for arXiv pagination (default: 50)
   --total-limit N            Total limit for arXiv results (default: no limit)
-  --year-low YYYY           Keep papers with year >= YYYY
-  --year-high YYYY          Keep papers with year <= YYYY
+  --year-low N              Only include papers with year >= N
+  --year-high N             Only include papers with year <= N
   --output PATH              Output JSON path (default: _data/embedded_ai_papers.json)
   --help                     Show this help
 

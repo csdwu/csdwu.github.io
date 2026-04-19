@@ -175,53 +175,248 @@
 
       <h1 id="embedded-ai-paper-discovery-pipeline">Embedded AI Paper Discovery Pipeline</h1>
 
-<h2 id="architecture-overview">Architecture Overview</h2>
+<h2 id="overview">Overview</h2>
 
-<p>The embedded AI paper discovery system automatically searches academic literature, deduplicates results, filters by relevance, and classifies papers into categories. The system supports multiple paper sources (Google Scholar, arXiv) with unified downstream processing.</p>
+<p>This pipeline automates the discovery, filtering, classification, and publication of embedded AI research papers. It supports incremental updates with checkpoint-based resume, ensuring only new papers are processed while preserving historical data.</p>
 
-<h3 id="high-level-data-flow">High-Level Data Flow</h3>
+<h2 id="data-flow">Data Flow</h2>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>┌──────────────────────┐    ┌──────────────────────┐
-│ Google Scholar       │    │ arXiv API            │
-│ (via scholarly)      │    │ (official API)       │
-└──────────────────────┘    └──────────────────────┘
-         │                            │
-         └──────────┬─────────────────┘
-                    │
-                    ▼
-          ┌─────────────────────┐
-          │ Normalize &amp; Dedupe  │  (set-ops.mjs)
-          │ - Extract papers    │
-          │ - Build keys        │
-          │ - Merge duplicates  │
-          └─────────────────────┘
-                    │
-                    ▼
-          ┌─────────────────────┐
-          │ Apply Filter Rules  │  (filter-rules.mjs)
-          │ - TH-CPL signal     │
-          │ - arXiv category    │
-          │ - Post-filter logic │
-          └─────────────────────┘
-                    │
-                    ▼
-          ┌─────────────────────┐
-          │ Classification      │  (classify.mjs)
-          │ - Tencent TokenHub  │
-          │ - Heuristic backup  │
-          │ - Categorize papers │
-          └─────────────────────┘
-                    │
-                    ▼
-          ┌─────────────────────┐
-          │ Output &amp; Artifacts  │
-          │ - JSON for frontend │  (output-builder.mjs)
-          │ - BibTeX files      │  (bibtex-builder.mjs)
-          │ - PDF downloads     │  (downloader.py)
-          └─────────────────────┘
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Search Sources → Normalization → Deduplication → Filtering → Classification → Output Generation
+     ↓              ↓              ↓              ↓              ↓              ↓
+  Scholar/arXiv  set-ops.mjs   set-ops.mjs  filter-rules.mjs classify.mjs  output-builder.mjs
 </code></pre></div></div>
 
-<h2 id="architecture-components">Architecture Components</h2>
+<h3 id="key-features">Key Features</h3>
+
+<ul>
+  <li><strong>Multi-source search</strong>: Google Scholar and arXiv</li>
+  <li><strong>Incremental updates</strong>: Checkpoint-based resume, only process new papers</li>
+  <li><strong>Robust deduplication</strong>: DOI &gt; arXiv ID &gt; title+year &gt; hash fallback</li>
+  <li><strong>Intelligent filtering</strong>: TH-CPL relevance and category-based rules</li>
+  <li><strong>LLM classification</strong>: Tencent TokenHub with heuristic fallback</li>
+  <li><strong>Progress tracking</strong>: Real-time terminal progress with GitHub Actions compatibility</li>
+  <li><strong>Artifact generation</strong>: JSON, BibTeX, PDF downloads</li>
+</ul>
+
+<h2 id="modules">Modules</h2>
+
+<h3 id="update-papersmjs">update-papers.mjs</h3>
+<p>Main orchestrator that runs the full pipeline.</p>
+
+<h3 id="scholar-bridgemjs">scholar-bridge.mjs</h3>
+<p>Handles Google Scholar search via scholarly library, caching, and normalization.</p>
+
+<h3 id="arxiv-bridgemjs">arxiv-bridge.mjs</h3>
+<p>Manages arXiv API queries, pagination, and paper extraction.</p>
+
+<h3 id="set-opsmjs">set-ops.mjs</h3>
+<p>Performs deduplication using stable keys (DOI/arXiv/title+year/hash).</p>
+
+<h3 id="filter-rulesmjs">filter-rules.mjs</h3>
+<p>Applies TH-CPL and arXiv category filters to reduce noise.</p>
+
+<h3 id="classifymjs">classify.mjs</h3>
+<p>Classifies papers into categories/tags using LLM or heuristics, with checkpoint persistence.</p>
+
+<h3 id="output-buildermjs">output-builder.mjs</h3>
+<p>Generates sorted JSON output and BibTeX artifacts.</p>
+
+<h3 id="progressmjs">progress.mjs</h3>
+<p>Provides progress reporting for classification.</p>
+
+<h3 id="bibtex-buildermjs">bibtex-builder.mjs</h3>
+<p>Creates category-specific BibTeX files.</p>
+
+<h3 id="configmjs">config.mjs</h3>
+<p>Central configuration for paths, constants, and queries.</p>
+
+<h2 id="deduplication-logic">Deduplication Logic</h2>
+
+<p>Papers are deduplicated using a hierarchical key system:</p>
+
+<ol>
+  <li><strong>DOI</strong>: <code class="language-plaintext highlighter-rouge">doi:{normalized_doi}</code></li>
+  <li><strong>arXiv ID</strong>: <code class="language-plaintext highlighter-rouge">arxiv:{normalized_id}</code></li>
+  <li><strong>Title + Year</strong>: <code class="language-plaintext highlighter-rouge">title-year:{title}::{year}</code> or <code class="language-plaintext highlighter-rouge">title:{title}</code></li>
+  <li><strong>Fallback Hash</strong>: <code class="language-plaintext highlighter-rouge">hash:{sha1_hash}</code> of title+year+urls</li>
+</ol>
+
+<p>This ensures stable identification across sources and updates.</p>
+
+<h2 id="incremental-update--checkpoint-resume">Incremental Update &amp; Checkpoint Resume</h2>
+
+<h3 id="checkpoint-file">Checkpoint File</h3>
+<ul>
+  <li>Location: <code class="language-plaintext highlighter-rouge">google_scholar_crawler/state/classification_checkpoint.json</code></li>
+  <li>Format: <code class="language-plaintext highlighter-rouge">{ "dedupe_key": { classification_result, dedupe_key, checkpoint_saved_at } }</code></li>
+</ul>
+
+<h3 id="process">Process</h3>
+<ol>
+  <li>Load checkpoint on startup</li>
+  <li>For each filtered paper, check if <code class="language-plaintext highlighter-rouge">dedupe_key</code> exists and result is complete</li>
+  <li>Reuse existing classifications, skip LLM calls</li>
+  <li>Only classify new/missing papers</li>
+  <li>Persist each successful classification immediately (atomic write)</li>
+  <li>Merge reused + new results for output</li>
+</ol>
+
+<h3 id="benefits">Benefits</h3>
+<ul>
+  <li>Avoids re-processing historical papers</li>
+  <li>Reduces API costs and latency</li>
+  <li>Supports interruption recovery</li>
+  <li>Maintains data consistency</li>
+</ul>
+
+<h2 id="classification-progress">Classification Progress</h2>
+
+<p>Terminal output includes:</p>
+<ul>
+  <li>Total papers, reused count, new count</li>
+  <li>Completed/failed counters</li>
+  <li>Provider usage (tencent/heuristic/fallback)</li>
+  <li>Elapsed time and ETA</li>
+  <li>Current paper title</li>
+</ul>
+
+<p>GitHub Actions compatible with line-by-line logs.</p>
+
+<h2 id="local-development">Local Development</h2>
+
+<h3 id="prerequisites">Prerequisites</h3>
+<ul>
+  <li>Node.js 18+</li>
+  <li>Python 3.8+ with scholarly</li>
+  <li>API keys for LLM providers</li>
+</ul>
+
+<h3 id="setup">Setup</h3>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cd </span>scripts/embedded-ai
+npm <span class="nb">install
+</span>pip <span class="nb">install</span> <span class="nt">-r</span> ../../google_scholar_crawler/requirements.txt
+</code></pre></div></div>
+
+<h3 id="run-full-pipeline">Run Full Pipeline</h3>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>node update-papers.mjs <span class="nt">--source</span> arxiv
+</code></pre></div></div>
+
+<h3 id="run-classification-only">Run Classification Only</h3>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>node update-papers.mjs <span class="nt">--skip-search</span> <span class="nt">--skip-download</span>
+</code></pre></div></div>
+
+<h3 id="debug-single-paper">Debug Single Paper</h3>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>node update-papers.mjs <span class="nt">--source</span> arxiv <span class="nt">--groups</span> A <span class="nt">--max-results</span> 5
+</code></pre></div></div>
+
+<h2 id="github-actions-automation">GitHub Actions Automation</h2>
+
+<h3 id="workflow-update-papersyml">Workflow: update-papers.yml</h3>
+<ul>
+  <li>Runs daily at 09:17 Asia/Shanghai</li>
+  <li>Searches all sources (Scholar + arXiv)</li>
+  <li>Uses checkpoint for incremental updates</li>
+  <li>Commits changes to:
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">_data/embedded_ai_papers.json</code></li>
+      <li><code class="language-plaintext highlighter-rouge">google_scholar_crawler/cache/normalized_papers.json</code></li>
+      <li><code class="language-plaintext highlighter-rouge">google_scholar_crawler/state/classification_checkpoint.json</code></li>
+      <li><code class="language-plaintext highlighter-rouge">google_scholar_crawler/state/download_state.json</code></li>
+      <li><code class="language-plaintext highlighter-rouge">google_scholar_crawler/state/download_quota.json</code></li>
+      <li><code class="language-plaintext highlighter-rouge">artifacts/*.bib</code></li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="manual-trigger">Manual Trigger</h3>
+<p>Use workflow_dispatch with year_low/year_high inputs.</p>
+
+<h3 id="only-new-papers-logic">Only New Papers Logic</h3>
+<ul>
+  <li>Compares filtered papers against checkpoint</li>
+  <li>Reuses complete classifications</li>
+  <li>Only calls LLM for new papers</li>
+  <li>Preserves all historical data in output</li>
+</ul>
+
+<h2 id="failure-recovery">Failure Recovery</h2>
+
+<h3 id="single-paper-failure">Single Paper Failure</h3>
+<ul>
+  <li>Logged with title/ID/error</li>
+  <li>Does not stop batch processing</li>
+  <li>Can be retried in next run</li>
+</ul>
+
+<h3 id="checkpoint-corruption">Checkpoint Corruption</h3>
+<ul>
+  <li>Graceful fallback to empty checkpoint</li>
+  <li>Re-classify all papers if needed</li>
+</ul>
+
+<h3 id="networkapi-issues">Network/API Issues</h3>
+<ul>
+  <li>Retries with backoff</li>
+  <li>Fallback to heuristic classification</li>
+</ul>
+
+<h2 id="persisted-files">Persisted Files</h2>
+
+<p>The pipeline updates these files in the repository:</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">_data/embedded_ai_papers.json</code>: Frontend data</li>
+  <li><code class="language-plaintext highlighter-rouge">google_scholar_crawler/cache/normalized_papers.json</code>: Raw normalized papers</li>
+  <li><code class="language-plaintext highlighter-rouge">google_scholar_crawler/state/classification_checkpoint.json</code>: Classification cache</li>
+  <li><code class="language-plaintext highlighter-rouge">google_scholar_crawler/state/download_state.json</code>: Download status</li>
+  <li><code class="language-plaintext highlighter-rouge">google_scholar_crawler/state/download_quota.json</code>: Download limits</li>
+  <li><code class="language-plaintext highlighter-rouge">artifacts/efficient_model_design.bib</code>: BibTeX by category</li>
+  <li><code class="language-plaintext highlighter-rouge">artifacts/novel_architecture_accelerator.bib</code></li>
+  <li><code class="language-plaintext highlighter-rouge">artifacts/embedded_ai_applications.bib</code></li>
+</ul>
+
+<h2 id="common-commands">Common Commands</h2>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Full update</span>
+npm run update-papers
+
+<span class="c"># ArXiv only</span>
+npm run update-papers <span class="nt">--</span> <span class="nt">--source</span> arxiv
+
+<span class="c"># Skip search, re-classify existing</span>
+npm run update-papers <span class="nt">--</span> <span class="nt">--skip-search</span>
+
+<span class="c"># Heuristic only (no LLM)</span>
+npm run update-papers <span class="nt">--</span> <span class="nt">--heuristic-only</span>
+
+<span class="c"># Specific groups</span>
+npm run update-papers <span class="nt">--</span> <span class="nt">--groups</span> A,B
+
+<span class="c"># Year filter</span>
+npm run update-papers <span class="nt">--</span> <span class="nt">--year-low</span> 2024
+
+<span class="c"># Dry run downloads</span>
+npm run update-papers <span class="nt">--</span> <span class="nt">--download-dry-run</span>
+</code></pre></div></div>
+
+<h2 id="debugging">Debugging</h2>
+
+<h3 id="check-logs">Check Logs</h3>
+<ul>
+  <li>Classification progress in stderr</li>
+  <li>Step-by-step logs in stdout</li>
+  <li>Errors include paper titles and reasons</li>
+</ul>
+
+<h3 id="inspect-checkpoint">Inspect Checkpoint</h3>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cat </span>google_scholar_crawler/state/classification_checkpoint.json | jq <span class="s1">'. | length'</span>
+</code></pre></div></div>
+
+<h3 id="manual-classification-test">Manual Classification Test</h3>
+<p>Modify <code class="language-plaintext highlighter-rouge">classify.mjs</code> to add debug logging.</p>
+
+<h3 id="reset-state">Reset State</h3>
+<p>Delete checkpoint/state files to force full re-run (use with caution).</p>
 
 <h3 id="1-source-search-modules">1. Source Search Modules</h3>
 

@@ -1,53 +1,223 @@
 # Embedded AI Paper Discovery Pipeline
 
-## Architecture Overview
+## Overview
 
-The embedded AI paper discovery system automatically searches academic literature, deduplicates results, filters by relevance, and classifies papers into categories. The system supports multiple paper sources (Google Scholar, arXiv) with unified downstream processing.
+This pipeline automates the discovery, filtering, classification, and publication of embedded AI research papers. It supports incremental updates with checkpoint-based resume, ensuring only new papers are processed while preserving historical data.
 
-### High-Level Data Flow
+## Data Flow
 
 ```
-┌──────────────────────┐    ┌──────────────────────┐
-│ Google Scholar       │    │ arXiv API            │
-│ (via scholarly)      │    │ (official API)       │
-└──────────────────────┘    └──────────────────────┘
-         │                            │
-         └──────────┬─────────────────┘
-                    │
-                    ▼
-          ┌─────────────────────┐
-          │ Normalize & Dedupe  │  (set-ops.mjs)
-          │ - Extract papers    │
-          │ - Build keys        │
-          │ - Merge duplicates  │
-          └─────────────────────┘
-                    │
-                    ▼
-          ┌─────────────────────┐
-          │ Apply Filter Rules  │  (filter-rules.mjs)
-          │ - TH-CPL signal     │
-          │ - arXiv category    │
-          │ - Post-filter logic │
-          └─────────────────────┘
-                    │
-                    ▼
-          ┌─────────────────────┐
-          │ Classification      │  (classify.mjs)
-          │ - Tencent TokenHub  │
-          │ - Heuristic backup  │
-          │ - Categorize papers │
-          └─────────────────────┘
-                    │
-                    ▼
-          ┌─────────────────────┐
-          │ Output & Artifacts  │
-          │ - JSON for frontend │  (output-builder.mjs)
-          │ - BibTeX files      │  (bibtex-builder.mjs)
-          │ - PDF downloads     │  (downloader.py)
-          └─────────────────────┘
+Search Sources → Normalization → Deduplication → Filtering → Classification → Output Generation
+     ↓              ↓              ↓              ↓              ↓              ↓
+  Scholar/arXiv  set-ops.mjs   set-ops.mjs  filter-rules.mjs classify.mjs  output-builder.mjs
 ```
 
-## Architecture Components
+### Key Features
+
+- **Multi-source search**: Google Scholar and arXiv
+- **Incremental updates**: Checkpoint-based resume, only process new papers
+- **Robust deduplication**: DOI > arXiv ID > title+year > hash fallback
+- **Intelligent filtering**: TH-CPL relevance and category-based rules
+- **LLM classification**: Tencent TokenHub with heuristic fallback
+- **Progress tracking**: Real-time terminal progress with GitHub Actions compatibility
+- **Artifact generation**: JSON, BibTeX, PDF downloads
+
+## Modules
+
+### update-papers.mjs
+Main orchestrator that runs the full pipeline.
+
+### scholar-bridge.mjs
+Handles Google Scholar search via scholarly library, caching, and normalization.
+
+### arxiv-bridge.mjs
+Manages arXiv API queries, pagination, and paper extraction.
+
+### set-ops.mjs
+Performs deduplication using stable keys (DOI/arXiv/title+year/hash).
+
+### filter-rules.mjs
+Applies TH-CPL and arXiv category filters to reduce noise.
+
+### classify.mjs
+Classifies papers into categories/tags using LLM or heuristics, with checkpoint persistence.
+
+### output-builder.mjs
+Generates sorted JSON output and BibTeX artifacts.
+
+### progress.mjs
+Provides progress reporting for classification.
+
+### bibtex-builder.mjs
+Creates category-specific BibTeX files.
+
+### config.mjs
+Central configuration for paths, constants, and queries.
+
+## Deduplication Logic
+
+Papers are deduplicated using a hierarchical key system:
+
+1. **DOI**: `doi:{normalized_doi}`
+2. **arXiv ID**: `arxiv:{normalized_id}`
+3. **Title + Year**: `title-year:{title}::{year}` or `title:{title}`
+4. **Fallback Hash**: `hash:{sha1_hash}` of title+year+urls
+
+This ensures stable identification across sources and updates.
+
+## Incremental Update & Checkpoint Resume
+
+### Checkpoint File
+- Location: `google_scholar_crawler/state/classification_checkpoint.json`
+- Format: `{ "dedupe_key": { classification_result, dedupe_key, checkpoint_saved_at } }`
+
+### Process
+1. Load checkpoint on startup
+2. For each filtered paper, check if `dedupe_key` exists and result is complete
+3. Reuse existing classifications, skip LLM calls
+4. Only classify new/missing papers
+5. Persist each successful classification immediately (atomic write)
+6. Merge reused + new results for output
+
+### Benefits
+- Avoids re-processing historical papers
+- Reduces API costs and latency
+- Supports interruption recovery
+- Maintains data consistency
+
+## Classification Progress
+
+Terminal output includes:
+- Total papers, reused count, new count
+- Completed/failed counters
+- Provider usage (tencent/heuristic/fallback)
+- Elapsed time and ETA
+- Current paper title
+
+GitHub Actions compatible with line-by-line logs.
+
+## Local Development
+
+### Prerequisites
+- Node.js 18+
+- Python 3.8+ with scholarly
+- API keys for LLM providers
+
+### Setup
+```bash
+cd scripts/embedded-ai
+npm install
+pip install -r ../../google_scholar_crawler/requirements.txt
+```
+
+### Run Full Pipeline
+```bash
+node update-papers.mjs --source arxiv
+```
+
+### Run Classification Only
+```bash
+node update-papers.mjs --skip-search --skip-download
+```
+
+### Debug Single Paper
+```bash
+node update-papers.mjs --source arxiv --groups A --max-results 5
+```
+
+## GitHub Actions Automation
+
+### Workflow: update-papers.yml
+- Runs daily at 09:17 Asia/Shanghai
+- Searches all sources (Scholar + arXiv)
+- Uses checkpoint for incremental updates
+- Commits changes to:
+  - `_data/embedded_ai_papers.json`
+  - `google_scholar_crawler/cache/normalized_papers.json`
+  - `google_scholar_crawler/state/classification_checkpoint.json`
+  - `google_scholar_crawler/state/download_state.json`
+  - `google_scholar_crawler/state/download_quota.json`
+  - `artifacts/*.bib`
+
+### Manual Trigger
+Use workflow_dispatch with year_low/year_high inputs.
+
+### Only New Papers Logic
+- Compares filtered papers against checkpoint
+- Reuses complete classifications
+- Only calls LLM for new papers
+- Preserves all historical data in output
+
+## Failure Recovery
+
+### Single Paper Failure
+- Logged with title/ID/error
+- Does not stop batch processing
+- Can be retried in next run
+
+### Checkpoint Corruption
+- Graceful fallback to empty checkpoint
+- Re-classify all papers if needed
+
+### Network/API Issues
+- Retries with backoff
+- Fallback to heuristic classification
+
+## Persisted Files
+
+The pipeline updates these files in the repository:
+
+- `_data/embedded_ai_papers.json`: Frontend data
+- `google_scholar_crawler/cache/normalized_papers.json`: Raw normalized papers
+- `google_scholar_crawler/state/classification_checkpoint.json`: Classification cache
+- `google_scholar_crawler/state/download_state.json`: Download status
+- `google_scholar_crawler/state/download_quota.json`: Download limits
+- `artifacts/efficient_model_design.bib`: BibTeX by category
+- `artifacts/novel_architecture_accelerator.bib`
+- `artifacts/embedded_ai_applications.bib`
+
+## Common Commands
+
+```bash
+# Full update
+npm run update-papers
+
+# ArXiv only
+npm run update-papers -- --source arxiv
+
+# Skip search, re-classify existing
+npm run update-papers -- --skip-search
+
+# Heuristic only (no LLM)
+npm run update-papers -- --heuristic-only
+
+# Specific groups
+npm run update-papers -- --groups A,B
+
+# Year filter
+npm run update-papers -- --year-low 2024
+
+# Dry run downloads
+npm run update-papers -- --download-dry-run
+```
+
+## Debugging
+
+### Check Logs
+- Classification progress in stderr
+- Step-by-step logs in stdout
+- Errors include paper titles and reasons
+
+### Inspect Checkpoint
+```bash
+cat google_scholar_crawler/state/classification_checkpoint.json | jq '. | length'
+```
+
+### Manual Classification Test
+Modify `classify.mjs` to add debug logging.
+
+### Reset State
+Delete checkpoint/state files to force full re-run (use with caution).
 
 ### 1. Source Search Modules
 

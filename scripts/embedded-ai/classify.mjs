@@ -5,6 +5,7 @@ import {
   applyForcedTags,
   ensureCategory,
   mergeAndNormalizeTags,
+  CLASSIFICATION_CHECKPOINT_PATH,
 } from './config.mjs';
 
 import { createClassificationProgress } from './progress.mjs';
@@ -146,6 +147,42 @@ function safeInt(value) {
   if (value == null) return null;
   const match = String(value).match(/\b(19|20)\d{2}\b/);
   return match ? Number(match[0]) : null;
+}
+
+async function loadClassificationCheckpoint() {
+  try {
+    const fs = await import('node:fs/promises');
+    const content = await fs.readFile(CLASSIFICATION_CHECKPOINT_PATH, 'utf8');
+    const data = JSON.parse(content);
+    return data && typeof data === 'object' ? data : {};
+  } catch (error) {
+    if (error?.code === 'ENOENT') {
+      return {};
+    }
+    console.error(`[classify] Failed to load checkpoint: ${error?.message}`);
+    return {};
+  }
+}
+
+async function saveClassificationCheckpoint(checkpoint) {
+  try {
+    const fs = await import('node:fs/promises');
+    const path = await import('node:path');
+    const tempPath = `${CLASSIFICATION_CHECKPOINT_PATH}.tmp`;
+    await fs.mkdir(path.dirname(CLASSIFICATION_CHECKPOINT_PATH), { recursive: true });
+    await fs.writeFile(tempPath, JSON.stringify(checkpoint, null, 2), 'utf8');
+    await fs.rename(tempPath, CLASSIFICATION_CHECKPOINT_PATH);
+  } catch (error) {
+    console.error(`[classify] Failed to save checkpoint: ${error?.message}`);
+    throw error;
+  }
+}
+
+function isCompleteClassificationResult(result) {
+  return result &&
+    typeof result === 'object' &&
+    toTrimmedString(result.category) &&
+    Array.isArray(result.final_tags);
 }
 
 function normalizeText(value) {
@@ -502,11 +539,44 @@ export async function classifyPaper(paper, options = {}) {
 
 export async function classifyPapers(papers = [], options = {}) {
   const concurrency = Math.max(1, Number(options.concurrency ?? 3) || 3);
-  const queue = papers.map((paper, index) => ({ paper, index }));
-  const results = new Array(papers.length);
 
-  const progress = createClassificationProgress(papers.length, {
+  // Load existing checkpoint
+  const checkpoint = await loadClassificationCheckpoint();
+  console.log(`[classify] Loaded checkpoint with ${Object.keys(checkpoint).length} entries`);
+
+  // Separate papers into new and existing
+  const newPapers = [];
+  const reusedResults = [];
+  const dedupeKeyToIndex = new Map();
+
+  for (let i = 0; i < papers.length; i++) {
+    const paper = papers[i];
+    const dedupeKey = paper.dedupe_key;
+    if (!dedupeKey) {
+      console.warn(`[classify] Paper at index ${i} missing dedupe_key, treating as new`);
+      newPapers.push({ paper, index: i });
+      continue;
+    }
+
+    const existing = checkpoint[dedupeKey];
+    if (existing && isCompleteClassificationResult(existing)) {
+      reusedResults.push({ ...existing, originalIndex: i });
+      console.log(`[classify] Reused ${i + 1}/${papers.length}: ${toTrimmedString(paper.title)}`);
+    } else {
+      newPapers.push({ paper, index: i });
+      dedupeKeyToIndex.set(dedupeKey, i);
+    }
+  }
+
+  console.log(`[classify] ${reusedResults.length} papers reused from checkpoint, ${newPapers.length} new papers to classify`);
+
+  const queue = newPapers.slice();
+  const newResults = new Array(newPapers.length);
+
+  const progress = createClassificationProgress(newPapers.length, {
     stream: process.stderr,
+    reusedCount: reusedResults.length,
+    totalCount: papers.length,
   });
 
   async function worker() {
@@ -514,15 +584,28 @@ export async function classifyPapers(papers = [], options = {}) {
       const job = queue.shift();
       if (!job) return;
 
-      const { paper, index } = job;
-      progress.onStart(index, paper);
+      const { paper, index: localIndex } = job;
+      const globalIndex = job.index;
+      progress.onStart(localIndex, paper);
 
       try {
         const classified = await classifyPaper(paper, options);
-        results[index] = classified;
-        progress.onSuccess(index, paper, classified);
+        newResults[localIndex] = classified;
+
+        // Persist to checkpoint immediately
+        const dedupeKey = paper.dedupe_key;
+        if (dedupeKey) {
+          checkpoint[dedupeKey] = {
+            ...classified,
+            dedupe_key: dedupeKey,
+            checkpoint_saved_at: new Date().toISOString(),
+          };
+          await saveClassificationCheckpoint(checkpoint);
+        }
+
+        progress.onSuccess(localIndex, paper, classified);
       } catch (error) {
-        progress.onError(index, paper, error);
+        progress.onError(localIndex, paper, error);
         throw error;
       }
     }
@@ -535,7 +618,13 @@ export async function classifyPapers(papers = [], options = {}) {
     ),
   );
 
-  const finalResults = results.filter(Boolean);
+  const finalResults = results.map((_, i) => {
+    const reused = reusedResults.find(r => r.originalIndex === i);
+    if (reused) return reused;
+    const newIndex = newPapers.findIndex(n => n.index === i);
+    return newResults[newIndex];
+  }).filter(Boolean);
+
   finalResults.sort(sortByCategoryThenYear);
 
   const stats = summarizeClassificationStats(finalResults);
