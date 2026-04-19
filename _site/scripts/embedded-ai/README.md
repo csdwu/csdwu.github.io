@@ -375,6 +375,11 @@ scripts/embedded-ai/
 
 ## Usage
 
+
+### Example Command
+```bash
+  node scripts/embedded-ai/update-papers.mjs --skip-search --skip-download --source arxiv --year-low 2025  
+```
 ### Display Help
 ```bash
 node scripts/embedded-ai/update-papers.mjs --help
