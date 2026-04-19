@@ -224,7 +224,7 @@ function normalizeIncomingPaper(paper, groupKey) {
 
   return {
     id: makeStableId({ ...paper, doi, arxiv_id: arxivId }),
-    source: 'google_scholar',
+    source: toTrimmedString(paper.source) || 'google_scholar',
     title,
     abstract,
     snippet,

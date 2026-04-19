@@ -9,6 +9,8 @@ import {
   SCHOLAR_MAX_RESULTS_PER_GROUP,
   SCHOLAR_REQUEST_SLEEP_SECONDS,
   SCHOLAR_RETRY_LIMIT,
+  SEARCH_SOURCES,
+  DEFAULT_SEARCH_SOURCE,
 } from './config.mjs';
 import {
   ensureScholarRuntimeDirs,
@@ -19,6 +21,7 @@ import {
   runDownloadManager,
   safeReadJson,
 } from './scholar-bridge.mjs';
+import { runAllArxivKeywordSearches, loadAllArxivRawGroups } from './arxiv-bridge.mjs';
 import { runSetOperations } from './set-ops.mjs';
 import { applyFilterRulesToSetOps } from './filter-rules.mjs';
 import { classifyPapers } from './classify.mjs';
@@ -108,8 +111,9 @@ Usage:
   node scripts/embedded-ai/update-papers.mjs [options]
 
 Options:
+  --source MODE              Paper source: scholar | arxiv | all. Default: ${DEFAULT_SEARCH_SOURCE}
   --groups A,B,C             Which groups to process. Default: A,B,C
-  --skip-search              Reuse existing raw Scholar cache instead of running search
+  --skip-search              Reuse existing raw cache instead of running search
   --skip-download            Skip downloader.py
   --download-dry-run         Run downloader in dry-run mode
   --download-max N           Max number of downloads in this run
@@ -122,17 +126,31 @@ Options:
   --proxy-mode MODE          Proxy mode for scholarly: none | free | single
   --http-proxy URL           HTTP proxy URL when --proxy-mode single
   --https-proxy URL          HTTPS proxy URL when --proxy-mode single
+  --page-size N              Page size for arXiv pagination (default: 50)
+  --total-limit N            Total limit for arXiv results (default: no limit)
+  --year-low YYYY           Keep papers with year >= YYYY
+  --year-high YYYY          Keep papers with year <= YYYY
   --output PATH              Output JSON path (default: _data/embedded_ai_papers.json)
   --help                     Show this help
 
 Examples:
-  node scripts/embedded-ai/update-papers.mjs
+  node scripts/embedded-ai/update-papers.mjs --source arxiv
+  node scripts/embedded-ai/update-papers.mjs --source all
+  node scripts/embedded-ai/update-papers.mjs --source scholar --proxy-mode free
   node scripts/embedded-ai/update-papers.mjs --groups A,B --max-results 80
   node scripts/embedded-ai/update-papers.mjs --skip-search --skip-download
-  node scripts/embedded-ai/update-papers.mjs --download-dry-run --download-max 5
-  node scripts/embedded-ai/update-papers.mjs --proxy-mode free
-  node scripts/embedded-ai/update-papers.mjs --proxy-mode single --http-proxy http://127.0.0.1:7890 --https-proxy http://127.0.0.1:7890
+  node scripts/embedded-ai/update-papers.mjs --source arxiv --page-size 100 --total-limit 500
 `.trim());
+}
+
+function parseSource(raw) {
+  const value = String(raw ?? DEFAULT_SEARCH_SOURCE).trim().toLowerCase();
+  if (!SEARCH_SOURCES.includes(value)) {
+    throw new Error(
+      `Invalid --source "${raw}". Expected one of: ${SEARCH_SOURCES.join(', ')}.`,
+    );
+  }
+  return value;
 }
 
 function parseCliArgs(argv) {
@@ -141,9 +159,11 @@ function parseCliArgs(argv) {
   }
 
   const proxyMode = parseProxyMode(parseStringOption(argv, '--proxy-mode', 'none'));
+  const source = parseSource(parseStringOption(argv, '--source', DEFAULT_SEARCH_SOURCE));
 
   return {
     help: false,
+    source,
     groups: parseGroups(parseStringOption(argv, '--groups', null)),
     skipSearch: parseBooleanFlag(argv, '--skip-search'),
     skipDownload: parseBooleanFlag(argv, '--skip-download'),
@@ -159,6 +179,10 @@ function parseCliArgs(argv) {
     proxyMode,
     httpProxy: parseStringOption(argv, '--http-proxy', ''),
     httpsProxy: parseStringOption(argv, '--https-proxy', ''),
+    pageSize: parseNumberOption(argv, '--page-size', 50),
+    totalLimit: parseNumberOption(argv, '--total-limit', null),
+    yearLow: parseNumberOption(argv, '--year-low', null),
+    yearHigh: parseNumberOption(argv, '--year-high', null),
   };
 }
 
@@ -168,6 +192,26 @@ function ensureGroupedPayloadShape(groupedPayloads = {}, groups = GROUP_ORDER) {
     normalized[group] = groupedPayloads[group] ?? [];
   }
   return normalized;
+}
+
+function extractItemsFromPayload(payload) {
+  if (Array.isArray(payload)) {
+    return payload.filter(Boolean);
+  }
+
+  if (!payload || typeof payload !== 'object') {
+    return [];
+  }
+
+  if (Array.isArray(payload.items)) {
+    return payload.items.filter(Boolean);
+  }
+
+  if (Array.isArray(payload.papers)) {
+    return payload.papers.filter(Boolean);
+  }
+
+  return [];
 }
 
 function countRawItems(groupPayload) {
@@ -213,6 +257,8 @@ function buildPipelineSummary({
       proxy_mode: cliOptions.proxyMode,
       http_proxy: cliOptions.httpProxy || null,
       https_proxy: cliOptions.httpsProxy || null,
+      year_low: cliOptions.yearLow ?? null,
+      year_high: cliOptions.yearHigh ?? null,
     },
     counts: {
       raw_search: summarizeGroupedPayloads(groupedPayloads, cliOptions.groups),
@@ -239,27 +285,86 @@ function buildPipelineSummary({
 }
 
 async function executeSearchStep(cliOptions) {
-  logStep(`Starting Scholar search for groups: ${cliOptions.groups.join(', ')}`);
+  const { source, groups, skipSearch } = cliOptions;
 
-  if (cliOptions.skipSearch) {
-    const groupedPayloads = await loadAllScholarRawGroups();
-    const summary = summarizeGroupedPayloads(groupedPayloads, cliOptions.groups);
-    logStep(`Loaded existing raw Scholar cache: ${JSON.stringify(summary)}`);
-    return ensureGroupedPayloadShape(groupedPayloads, cliOptions.groups);
+  // Determine which sources to search
+  const sourcesToRun =
+    source === 'all' ? ['scholar', 'arxiv'] : [source];
+
+  logStep(`Starting search for source(s): ${sourcesToRun.join(', ')} | groups: ${groups.join(', ')}`);
+
+  if (skipSearch) {
+    // Load from cache for all specified sources
+    let allGroupedPayloads = {};
+
+    for (const src of sourcesToRun) {
+      let groupedPayloads;
+      if (src === 'scholar') {
+        groupedPayloads = await loadAllScholarRawGroups();
+      } else if (src === 'arxiv') {
+        groupedPayloads = await loadAllArxivRawGroups();
+      }
+
+      if (groupedPayloads) {
+        // Merge payloads from different sources
+        for (const group of groups) {
+          const items = extractItemsFromPayload(groupedPayloads[group]);
+          allGroupedPayloads[group] = [
+            ...(allGroupedPayloads[group] ?? []),
+            ...items,
+          ];
+        }
+      }
+    }
+
+    const summary = summarizeGroupedPayloads(allGroupedPayloads, groups);
+    logStep(`Loaded existing raw cache (sources: ${sourcesToRun.join(', ')}): ${JSON.stringify(summary)}`);
+    return ensureGroupedPayloadShape(allGroupedPayloads, groups);
   }
 
-  const searchResult = await runAllScholarKeywordSearches({
-    groups: cliOptions.groups,
-    maxResults: cliOptions.maxResults,
-    sleepSeconds: cliOptions.sleepSeconds,
-    retryLimit: cliOptions.retryLimit,
-    extraArgs: buildSearchExtraArgs(cliOptions),
-  });
+  // Run searches for each source
+  let allGroupedPayloads = {};
 
-  const summary = summarizeGroupedPayloads(searchResult.groupedData, cliOptions.groups);
-  logStep(`Scholar search completed: ${JSON.stringify(summary)}`);
+  for (const src of sourcesToRun) {
+    logStep(`Running ${src} search for groups: ${groups.join(', ')}`);
+    let searchResult;
 
-  return ensureGroupedPayloadShape(searchResult.groupedData, cliOptions.groups);
+    if (src === 'scholar') {
+      searchResult = await runAllScholarKeywordSearches({
+        groups,
+        maxResults: cliOptions.maxResults,
+        sleepSeconds: cliOptions.sleepSeconds,
+        retryLimit: cliOptions.retryLimit,
+        extraArgs: buildSearchExtraArgs(cliOptions),
+        yearLow: cliOptions.yearLow,
+        yearHigh: cliOptions.yearHigh,
+      });
+    } else if (src === 'arxiv') {
+      searchResult = await runAllArxivKeywordSearches({
+        groups,
+        pageSize: cliOptions.pageSize ?? 50,
+        totalLimit: cliOptions.totalLimit,
+        yearLow: cliOptions.yearLow,
+        yearHigh: cliOptions.yearHigh,
+      });
+    }
+
+    if (searchResult?.groupedData) {
+      // Merge results from this source
+      for (const group of groups) {
+        const items = extractItemsFromPayload(searchResult.groupedData[group]);
+        allGroupedPayloads[group] = [
+          ...(allGroupedPayloads[group] ?? []),
+          ...items,
+        ];
+      }
+
+      const summary = summarizeGroupedPayloads(searchResult.groupedData, groups);
+      logStep(`${src} search completed: ${JSON.stringify(summary)}`);
+    }
+  }
+
+  return ensureGroupedPayloadShape(allGroupedPayloads, groups);
 }
 
 function buildFilterStatsPayload(filteredResult) {

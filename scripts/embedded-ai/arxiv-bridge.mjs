@@ -109,7 +109,7 @@ function buildArxivSearchArgs(groupKey, options = {}) {
     throw new Error(`arXiv group "${groupKey}" not found in config.`);
   }
 
-  const { pageSize = 50, totalLimit = null } = options;
+  const { pageSize = 50, totalLimit = null, yearLow = null, yearHigh = null } = options;
 
   const args = [
     ARXIV_SEARCH_PY_PATH,
@@ -123,6 +123,14 @@ function buildArxivSearchArgs(groupKey, options = {}) {
 
   if (totalLimit != null) {
     args.push('--total-limit', String(totalLimit));
+  }
+
+  if (yearLow != null) {
+    args.push('--year-low', String(yearLow));
+  }
+
+  if (yearHigh != null) {
+    args.push('--year-high', String(yearHigh));
   }
 
   return args;

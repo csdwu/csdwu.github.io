@@ -143,12 +143,14 @@ function buildKeywordSearchArgs(groupKey, options = {}) {
     sleepSeconds = SCHOLAR_REQUEST_SLEEP_SECONDS,
     retryLimit = SCHOLAR_RETRY_LIMIT,
     queries = null,
+    yearLow = null,
+    yearHigh = null,
     extraArgs = [],
   } = options;
 
   const finalQueries = buildQueryList(groupKey, queries);
 
-  return [
+  const args = [
     MAIN_PY_PATH,
     'keyword-search',
     '--group',
@@ -163,8 +165,19 @@ function buildKeywordSearchArgs(groupKey, options = {}) {
     String(retryLimit),
     '--queries-json',
     JSON.stringify(finalQueries),
-    ...extraArgs,
   ];
+
+  if (yearLow != null) {
+    args.push('--year-low', String(yearLow));
+  }
+
+  if (yearHigh != null) {
+    args.push('--year-high', String(yearHigh));
+  }
+
+  args.push(...extraArgs);
+
+  return args;
 }
 
 function buildDownloadArgs(options = {}) {
@@ -207,6 +220,31 @@ function buildDownloadArgs(options = {}) {
   return args;
 }
 
+function streamChildLines(stream, prefix, onChunk) {
+  let buffer = '';
+
+  stream.on('data', (chunk) => {
+    const text = String(chunk);
+    onChunk(text);
+    buffer += text;
+
+    const lines = buffer.split(/\r?\n/);
+    buffer = lines.pop() ?? '';
+
+    for (const line of lines) {
+      if (line.trim()) {
+        console.log(`[${prefix}] ${line}`);
+      }
+    }
+  });
+
+  stream.on('end', () => {
+    if (buffer.trim()) {
+      console.log(`[${prefix}] ${buffer}`);
+    }
+  });
+}
+
 function spawnWithCandidate(pythonBin, args, options = {}) {
   const {
     cwd = SCHOLAR_CRAWLER_DIR,
@@ -218,6 +256,7 @@ function spawnWithCandidate(pythonBin, args, options = {}) {
       cwd,
       env: {
         ...process.env,
+        PYTHONUNBUFFERED: '1',
         ...env,
       },
       stdio: ['ignore', 'pipe', 'pipe'],
@@ -226,13 +265,21 @@ function spawnWithCandidate(pythonBin, args, options = {}) {
     let stdout = '';
     let stderr = '';
 
-    child.stdout.on('data', (chunk) => {
-      stdout += String(chunk);
-    });
+    streamChildLines(
+      child.stdout,
+      `scholar:${pythonBin}`,
+      (text) => {
+        stdout += text;
+      },
+    );
 
-    child.stderr.on('data', (chunk) => {
-      stderr += String(chunk);
-    });
+    streamChildLines(
+      child.stderr,
+      `scholar-err:${pythonBin}`,
+      (text) => {
+        stderr += text;
+      },
+    );
 
     child.on('error', (error) => {
       reject(error);
@@ -337,24 +384,19 @@ export async function runScholarKeywordSearch(groupKey, options = {}) {
 
 export async function runAllScholarKeywordSearches(options = {}) {
   await ensureScholarRuntimeDirs();
-
-  const groups = options.groups?.length
-    ? options.groups
-    : GROUP_ORDER;
-
+  const groups = options.groups?.length ? options.groups : GROUP_ORDER;
   const results = [];
   const groupedData = {};
 
   for (const groupKey of groups) {
+    console.log(`[embedded-ai] Scholar group start: ${groupKey}`);
     const result = await runScholarKeywordSearch(groupKey, options);
+    console.log(`[embedded-ai] Scholar group done: ${groupKey}`);
     results.push(result);
     groupedData[groupKey] = result.data;
   }
 
-  return {
-    results,
-    groupedData,
-  };
+  return { results, groupedData };
 }
 
 export async function runDownloadManager(options = {}) {

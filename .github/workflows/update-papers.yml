@@ -2,6 +2,17 @@ name: Update papers daily
 
 on:
   workflow_dispatch:
+    inputs:
+      year_low:
+        description: 'Minimum publication year (inclusive)'
+        required: false
+        default: ''
+        type: string
+      year_high:
+        description: 'Maximum publication year (inclusive)'
+        required: false
+        default: ''
+        type: string
   schedule:
     - cron: '0 0 * * *'
       timezone: 'Asia/Shanghai'   
@@ -51,11 +62,19 @@ jobs:
           LLM_DELAY_MS: ${{ vars.LLM_DELAY_MS || '500' }}
           ARXIV_MAX_ATTEMPTS: ${{ vars.ARXIV_MAX_ATTEMPTS || '5' }}
 
-          
+          YEAR_LOW: ${{ github.event.inputs.year_low || '' }}
+          YEAR_HIGH: ${{ github.event.inputs.year_high || '' }}
           VENUE_FILTER_PRESET: ${{ vars.VENUE_FILTER_PRESET || 'recall_first' }}
           SEARCH_SOURCE: ${{ vars.SEARCH_SOURCE || 'arxiv' }}
         run: |
-          node scripts/embedded-ai/update-papers.mjs --source "$SEARCH_SOURCE"
+          ARGS=("--source" "$SEARCH_SOURCE")
+          if [ -n "$YEAR_LOW" ]; then
+            ARGS+=("--year-low" "$YEAR_LOW")
+          fi
+          if [ -n "$YEAR_HIGH" ]; then
+            ARGS+=("--year-high" "$YEAR_HIGH")
+          fi
+          node scripts/embedded-ai/update-papers.mjs "${ARGS[@]}"
 
       - name: Commit changes
         run: |

@@ -1,7 +1,7 @@
 {
   "command": "keyword-search",
   "group": "B",
-  "generated_at": "2026-04-17T05:32:46.194260+00:00",
+  "generated_at": "2026-04-19T02:51:35.273770+00:00",
   "queries": [
     "(\"low power\" OR \"ultra-low-power\") \"embedded ai\"",
     "(\"energy-efficient\" OR \"power-efficient\" OR \"power-aware\") \"embedded ai\"",

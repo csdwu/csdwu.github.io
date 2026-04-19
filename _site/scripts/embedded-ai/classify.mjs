@@ -7,6 +7,8 @@ import {
   mergeAndNormalizeTags,
 } from './config.mjs';
 
+import { createClassificationProgress } from './progress.mjs';
+
 const TENCENT_TOKENHUB_API_KEY =
   process.env.TENCENT_TOKENHUB_API_KEY || '';
 const TENCENT_TOKENHUB_MODEL =
@@ -500,16 +502,29 @@ export async function classifyPaper(paper, options = {}) {
 
 export async function classifyPapers(papers = [], options = {}) {
   const concurrency = Math.max(1, Number(options.concurrency ?? 3) || 3);
-  const queue = [...papers];
-  const results = [];
+  const queue = papers.map((paper, index) => ({ paper, index }));
+  const results = new Array(papers.length);
+
+  const progress = createClassificationProgress(papers.length, {
+    stream: process.stderr,
+  });
 
   async function worker() {
     while (queue.length > 0) {
-      const paper = queue.shift();
-      if (!paper) return;
+      const job = queue.shift();
+      if (!job) return;
 
-      const classified = await classifyPaper(paper, options);
-      results.push(classified);
+      const { paper, index } = job;
+      progress.onStart(index, paper);
+
+      try {
+        const classified = await classifyPaper(paper, options);
+        results[index] = classified;
+        progress.onSuccess(index, paper, classified);
+      } catch (error) {
+        progress.onError(index, paper, error);
+        throw error;
+      }
     }
   }
 
@@ -520,11 +535,15 @@ export async function classifyPapers(papers = [], options = {}) {
     ),
   );
 
-  results.sort(sortByCategoryThenYear);
+  const finalResults = results.filter(Boolean);
+  finalResults.sort(sortByCategoryThenYear);
+
+  const stats = summarizeClassificationStats(finalResults);
+  progress.finish(stats);
 
   return {
-    papers: results,
-    stats: summarizeClassificationStats(results),
+    papers: finalResults,
+    stats,
   };
 }
 

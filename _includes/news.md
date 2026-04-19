@@ -4,12 +4,12 @@
 
 <div style="text-align:justify">
 <ul>
-<li><strong>[Nov. 2025]</strong> Our paper Poster is accepted by <a href="https://dl.acm.org/doi/epdf/10.1145/3680207.3765670">qMobiCom 2025</a>!</li>
-<li><strong>[Nov. 2025]</strong> Our paper PIPVs is accepted by <a href="https://www.sciencedirect.com/science/article/abs/pii/S1369702125003669">Materials Today</a>！</li>
-<li><strong>[Aug. 2025]</strong> Our paper EMIT is accepted by <a href="https://doi.org/10.1109/TMC.2025.3600093">TMC</a>！</li>
-<li><strong>[Jul. 2025]</strong> Our paper LPPO is accepted by <a href="https://www.sciencedirect.com/science/article/pii/S0360835225005224">Computers &amp; Industrial Engineering</a>！</li>
-<li><strong>[May. 2025]</strong> Our paper SANE is accepted by <a href="https://doi.org/10.1109/INFOCOM55648.2025.11044512">INFOCOM 2025</a>!</li>
-<li><strong>[Apr. 2025]</strong> Our paper GETS is accepted by <a href="https://doi.org/10.1109/TMC.2025.3557899">TMC</a>！</li>
+<li><strong>[Nov. 2025]</strong> Our Poster is accepted by <a href="https://dl.acm.org/doi/epdf/10.1145/3680207.3765670">MobiCom 2025</a>!🎉</li>
+<li><strong>[Nov. 2025]</strong> Our paper PIPVs is accepted by <a href="https://www.sciencedirect.com/science/article/abs/pii/S1369702125003669">Materials Today</a>！🎉</li>
+<li><strong>[Aug. 2025]</strong> Our paper EMIT is accepted by <a href="https://doi.org/10.1109/TMC.2025.3600093">TMC</a>！🎉</li>
+<li><strong>[Jul. 2025]</strong> Our paper LPPO is accepted by <a href="https://www.sciencedirect.com/science/article/pii/S0360835225005224">Computers &amp; Industrial Engineering</a>！🎉</li>
+<li><strong>[May. 2025]</strong> Our paper SANE is accepted by <a href="https://doi.org/10.1109/INFOCOM55648.2025.11044512">INFOCOM 2025</a>!🎉</li>
+<li><strong>[Apr. 2025]</strong> Our paper GETS is accepted by <a href="https://doi.org/10.1109/TMC.2025.3557899">TMC</a>！🎉</li>
 <li><strong>[Sep. 2024]</strong> Selected to be the executive member of CCF Technical Committee of Embedded Systems.🤪</li>
 <li><strong>[Sep. 2024]</strong> Our paper CHAIN is accepted by <a href="https://ieeexplore.ieee.org/abstract/document/10684163">TMC</a>! Congrats to Xuejing. 🎉</li>
 <li><strong>[Aug. 2024]</strong> Our paper CHESS is accepted by <a href="https://attend.ieee.org/icpads/">ICPADS 2024</a>!</li>

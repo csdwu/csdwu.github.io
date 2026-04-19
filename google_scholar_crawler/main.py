@@ -112,6 +112,8 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--sleep-seconds", type=float, default=2.0)
     parser.add_argument("--retry-limit", type=int, default=1)
     parser.add_argument("--queries-json", default=None)
+    parser.add_argument("--year-low", type=int, default=None)
+    parser.add_argument("--year-high", type=int, default=None)
 
     parser.add_argument(
         "--proxy-mode",
@@ -256,10 +258,26 @@ def extract_publication_record(
     return record
 
 
-def evaluate_post_filter(group: str, record: Dict[str, Any]) -> Dict[str, Any]:
+
+
+def year_in_range(year: Optional[int], year_low: Optional[int], year_high: Optional[int]) -> bool:
+    if year is None:
+        return True
+    if year_low is not None and year < year_low:
+        return False
+    if year_high is not None and year > year_high:
+        return False
+    return True
+
+def evaluate_post_filter(group: str, record: Dict[str, Any], year_low: Optional[int] = None, year_high: Optional[int] = None) -> Dict[str, Any]:
     title = normalize_text(record.get("title"))
-    passed = bool(title)
-    reason = "ok" if passed else "missing_title"
+    passed = bool(title) and year_in_range(record.get("year"), year_low, year_high)
+    if not title:
+        reason = "missing_title"
+    elif not year_in_range(record.get("year"), year_low, year_high):
+        reason = "outside_year_range"
+    else:
+        reason = "ok"
     return {
         "passed": passed,
         "reason": reason,
@@ -317,6 +335,8 @@ def search_group(
     sleep_seconds: float,
     retry_limit: int,
     interactive_captcha: bool = False,
+    year_low: Optional[int] = None,
+    year_high: Optional[int] = None,
 ) -> Dict[str, Any]:
     seen: Dict[str, Dict[str, Any]] = {}
     raw_candidate_count = 0
@@ -359,7 +379,12 @@ def search_group(
                     query=query,
                 )
 
-                search_iter = scholarly.search_pubs(query)
+                search_iter = scholarly.search_pubs(
+                    query,
+                    year_low=year_low,
+                    year_high=year_high,
+                    sort_by='date',
+                )
 
                 log_progress(
                     "query_search_ready",
@@ -491,7 +516,7 @@ def search_group(
                 continue
 
             record = extract_publication_record(filled, group=group, query_used=query)
-            post_filter = evaluate_post_filter(group, record)
+            post_filter = evaluate_post_filter(group, record, year_low=year_low, year_high=year_high)
             record["post_filter"] = post_filter
 
             if not post_filter["passed"]:
@@ -617,6 +642,8 @@ def main() -> int:
             sleep_seconds=args.sleep_seconds,
             retry_limit=args.retry_limit,
             interactive_captcha=args.interactive_captcha,
+            year_low=args.year_low,
+            year_high=args.year_high,
         )
 
         os.makedirs(os.path.dirname(os.path.abspath(args.output)), exist_ok=True)

@@ -1,0 +1,8 @@
+@article{liu2025lightweight,
+  title={Lightweight population-based policy optimization for pickup and delivery problems},
+  author={Liu, Yizhou and Li, Li and Xu, Yixin and Liu, Tang and Cheng, Rong and Wu, Die and Yang, Jilin and Li, Jingwen},
+  journal={Computers \& Industrial Engineering},
+  pages={111376},
+  year={2025},
+  publisher={Elsevier}
+}

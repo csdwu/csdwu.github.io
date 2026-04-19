@@ -13,6 +13,7 @@ import urllib.error
 from urllib.parse import urlencode, quote
 from xml.etree import ElementTree as ET
 import time
+from datetime import datetime
 from typing import List, Dict, Any, Optional
 
 # arXiv API endpoint
@@ -69,11 +70,16 @@ def parse_arxiv_entry(entry, namespaces: Dict[str, str]) -> Optional[Dict[str, A
 
         # Extract year from published date (YYYY-MM-DD)
         year = None
+        month = None
         if published:
             try:
                 year = int(published[:4])
             except (ValueError, IndexError):
                 pass
+            try:
+                month = int(published[5:7])
+            except (ValueError, IndexError):
+                month = None
 
         # Extract authors
         authors = []
@@ -112,6 +118,7 @@ def parse_arxiv_entry(entry, namespaces: Dict[str, str]) -> Optional[Dict[str, A
             'abstract': abstract,
             'authors': authors,
             'year': year,
+            'month': month,
             'urls': {
                 'arxiv': paper_url,
                 'pdf': pdf_url,
@@ -134,11 +141,78 @@ def parse_arxiv_entry(entry, namespaces: Dict[str, str]) -> Optional[Dict[str, A
         return None
 
 
+
+
+def build_submitted_date_clause(year_low: Optional[int], year_high: Optional[int]) -> Optional[str]:
+    if year_low is None and year_high is None:
+        return None
+
+    lower = year_low if year_low is not None else 1991
+    upper = year_high if year_high is not None else datetime.utcnow().year
+    return f'submittedDate:[{lower}01010000+TO+{upper}12312359]'
+
+
+def paper_in_year_range(paper: Dict[str, Any], year_low: Optional[int], year_high: Optional[int]) -> bool:
+    year = paper.get('year')
+    if year is None:
+        return True
+    if year_low is not None and year < year_low:
+        return False
+    if year_high is not None and year > year_high:
+        return False
+    return True
+
+def fetch_arxiv_total_results(
+    query: str,
+    categories: Optional[List[str]] = None,
+) -> int:
+    """
+    Query arXiv once and return the total available results from
+    opensearch:totalResults.
+    """
+    query_parts = [f'all:{query}']
+    if categories:
+        cat_query = ' OR '.join([f'cat:{cat}' for cat in categories])
+        query_parts.append(f'({cat_query})')
+
+    full_query = ' AND '.join(query_parts)
+
+    post_data = {
+        'search_query': full_query,
+        'start': 0,
+        'max_results': 1,
+        'sortBy': 'lastUpdatedDate',
+        'sortOrder': 'descending',
+    }
+
+    data = urlencode(post_data).encode('utf-8')
+
+    req = urllib.request.Request(ARXIV_API_BASE, data=data, method='POST')
+    req.add_header('User-Agent', USER_AGENT)
+    req.add_header('Content-Type', 'application/x-www-form-urlencoded')
+
+    with urllib.request.urlopen(req, timeout=ARXIV_REQUEST_TIMEOUT) as response:
+        xml_data = response.read().decode('utf-8')
+
+    namespaces = {
+        'atom': 'http://www.w3.org/2005/Atom',
+        'opensearch': 'http://a9.com/-/spec/opensearch/1.1/',
+    }
+
+    root = ET.fromstring(xml_data)
+    total_node = root.find('opensearch:totalResults', namespaces)
+    if total_node is None or not total_node.text:
+        return 0
+
+    return int(total_node.text)
+
 def search_arxiv_page(
     query: str,
     categories: Optional[List[str]] = None,
     page_size: int = DEFAULT_PAGE_SIZE,
     start_index: int = 0,
+    year_low: Optional[int] = None,
+    year_high: Optional[int] = None,
 ) -> List[Dict[str, Any]]:
     """
     Search arXiv for a single page and return papers.
@@ -152,6 +226,10 @@ def search_arxiv_page(
             # Add category filters
             cat_query = ' OR '.join([f'cat:{cat}' for cat in categories])
             query_parts.append(f'({cat_query})')
+
+        date_clause = build_submitted_date_clause(year_low, year_high)
+        if date_clause:
+            query_parts.append(date_clause)
 
         full_query = ' AND '.join(query_parts)
 
@@ -208,6 +286,8 @@ def search_arxiv_with_retry(
     page_size: int = DEFAULT_PAGE_SIZE,
     start_index: int = 0,
     max_retries: int = MAX_RETRIES,
+    year_low: Optional[int] = None,
+    year_high: Optional[int] = None,
 ) -> List[Dict[str, Any]]:
     """
     Search arXiv with retry logic and exponential backoff.
@@ -216,7 +296,7 @@ def search_arxiv_with_retry(
 
     for attempt in range(max_retries):
         try:
-            return search_arxiv_page(query, categories, page_size, start_index)
+            return search_arxiv_page(query, categories, page_size, start_index, year_low, year_high)
         except Exception as e:
             last_error = e
             if attempt < max_retries - 1:
@@ -234,6 +314,8 @@ def search_arxiv_full(
     categories: Optional[List[str]] = None,
     page_size: int = DEFAULT_PAGE_SIZE,
     total_limit: Optional[int] = DEFAULT_TOTAL_LIMIT,
+    year_low: Optional[int] = None,
+    year_high: Optional[int] = None,
 ) -> List[Dict[str, Any]]:
     """
     Search arXiv with full pagination until all results are fetched or limit reached.
@@ -252,11 +334,20 @@ def search_arxiv_full(
         current_page_size = min(page_size, remaining) if total_limit else page_size
 
         try:
-            papers = search_arxiv_with_retry(query, categories, current_page_size, start_index)
+            papers = search_arxiv_with_retry(
+                query,
+                categories,
+                current_page_size,
+                start_index,
+                year_low=year_low,
+                year_high=year_high,
+            )
         except Exception as e:
             print(f'[arxiv_search] Failed to fetch page starting at {start_index}: {e}', file=sys.stderr)
             # If a page fails completely, we stop to avoid infinite loops
             break
+
+        papers = [paper for paper in papers if paper_in_year_range(paper, year_low, year_high)]
 
         if not papers:
             print(f'[arxiv_search] No more results from page {start_index}', file=sys.stderr)
@@ -287,6 +378,8 @@ def main():
     parser.add_argument('--categories', help='Comma-separated arXiv categories (e.g., cs.AI,cs.LG)')
     parser.add_argument('--page-size', type=int, default=DEFAULT_PAGE_SIZE, help='Page size (default: 50)')
     parser.add_argument('--total-limit', type=int, help='Total limit (default: no limit)')
+    parser.add_argument('--year-low', type=int, help='Keep papers with year >= this value')
+    parser.add_argument('--year-high', type=int, help='Keep papers with year <= this value')
     # Backward compatibility: if --max-results is used without --total-limit, treat as page size
     parser.add_argument('--max-results', type=int, help='DEPRECATED: Use --page-size and --total-limit')
 
@@ -314,6 +407,8 @@ def main():
             categories=categories,
             page_size=page_size,
             total_limit=total_limit,
+            year_low=args.year_low,
+            year_high=args.year_high,
         )
 
         # Output as JSON
@@ -324,6 +419,8 @@ def main():
             'count': len(papers),
             'page_size': page_size,
             'total_limit': total_limit,
+            'year_low': args.year_low,
+            'year_high': args.year_high,
         }
         print(json.dumps(result, indent=2))
 

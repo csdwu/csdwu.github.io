@@ -143,12 +143,14 @@ function buildKeywordSearchArgs(groupKey, options = {}) {
     sleepSeconds = SCHOLAR_REQUEST_SLEEP_SECONDS,
     retryLimit = SCHOLAR_RETRY_LIMIT,
     queries = null,
+    yearLow = null,
+    yearHigh = null,
     extraArgs = [],
   } = options;
 
   const finalQueries = buildQueryList(groupKey, queries);
 
-  return [
+  const args = [
     MAIN_PY_PATH,
     'keyword-search',
     '--group',
@@ -163,8 +165,19 @@ function buildKeywordSearchArgs(groupKey, options = {}) {
     String(retryLimit),
     '--queries-json',
     JSON.stringify(finalQueries),
-    ...extraArgs,
   ];
+
+  if (yearLow != null) {
+    args.push('--year-low', String(yearLow));
+  }
+
+  if (yearHigh != null) {
+    args.push('--year-high', String(yearHigh));
+  }
+
+  args.push(...extraArgs);
+
+  return args;
 }
 
 function buildDownloadArgs(options = {}) {

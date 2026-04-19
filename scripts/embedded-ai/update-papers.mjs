@@ -128,6 +128,8 @@ Options:
   --https-proxy URL          HTTPS proxy URL when --proxy-mode single
   --page-size N              Page size for arXiv pagination (default: 50)
   --total-limit N            Total limit for arXiv results (default: no limit)
+  --year-low YYYY           Keep papers with year >= YYYY
+  --year-high YYYY          Keep papers with year <= YYYY
   --output PATH              Output JSON path (default: _data/embedded_ai_papers.json)
   --help                     Show this help
 
@@ -179,6 +181,8 @@ function parseCliArgs(argv) {
     httpsProxy: parseStringOption(argv, '--https-proxy', ''),
     pageSize: parseNumberOption(argv, '--page-size', 50),
     totalLimit: parseNumberOption(argv, '--total-limit', null),
+    yearLow: parseNumberOption(argv, '--year-low', null),
+    yearHigh: parseNumberOption(argv, '--year-high', null),
   };
 }
 
@@ -253,6 +257,8 @@ function buildPipelineSummary({
       proxy_mode: cliOptions.proxyMode,
       http_proxy: cliOptions.httpProxy || null,
       https_proxy: cliOptions.httpsProxy || null,
+      year_low: cliOptions.yearLow ?? null,
+      year_high: cliOptions.yearHigh ?? null,
     },
     counts: {
       raw_search: summarizeGroupedPayloads(groupedPayloads, cliOptions.groups),
@@ -330,12 +336,16 @@ async function executeSearchStep(cliOptions) {
         sleepSeconds: cliOptions.sleepSeconds,
         retryLimit: cliOptions.retryLimit,
         extraArgs: buildSearchExtraArgs(cliOptions),
+        yearLow: cliOptions.yearLow,
+        yearHigh: cliOptions.yearHigh,
       });
     } else if (src === 'arxiv') {
       searchResult = await runAllArxivKeywordSearches({
         groups,
         pageSize: cliOptions.pageSize ?? 50,
         totalLimit: cliOptions.totalLimit,
+        yearLow: cliOptions.yearLow,
+        yearHigh: cliOptions.yearHigh,
       });
     }
 

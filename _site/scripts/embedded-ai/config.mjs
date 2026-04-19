@@ -8,6 +8,7 @@ export const REPO_ROOT = path.resolve(__dirname, '..', '..');
 export const DATA_DIR = path.resolve(REPO_ROOT, '_data');
 export const ASSETS_DIR = path.resolve(REPO_ROOT, 'assets');
 export const SCHOLAR_CRAWLER_DIR = path.resolve(REPO_ROOT, 'google_scholar_crawler');
+export const ARXIV_CRAWLER_DIR = path.resolve(REPO_ROOT, 'google_scholar_crawler');
 
 export const OUTPUT_JSON_PATH = path.resolve(DATA_DIR, 'embedded_ai_papers.json');
 
@@ -15,10 +16,16 @@ export const SCHOLAR_CACHE_DIR = path.resolve(SCHOLAR_CRAWLER_DIR, 'cache');
 export const SCHOLAR_STATE_DIR = path.resolve(SCHOLAR_CRAWLER_DIR, 'state');
 export const SCHOLAR_DOWNLOAD_DIR = path.resolve(SCHOLAR_CRAWLER_DIR, 'downloads', 'embedded-ai');
 
+export const ARXIV_CACHE_DIR = path.resolve(ARXIV_CRAWLER_DIR, 'cache', 'arxiv');
+
 export const SCHOLAR_RAW_A_PATH = path.resolve(SCHOLAR_CACHE_DIR, 'scholar_A_raw.json');
 export const SCHOLAR_RAW_B_PATH = path.resolve(SCHOLAR_CACHE_DIR, 'scholar_B_raw.json');
 export const SCHOLAR_RAW_C_PATH = path.resolve(SCHOLAR_CACHE_DIR, 'scholar_C_raw.json');
 export const SCHOLAR_NORMALIZED_PATH = path.resolve(SCHOLAR_CACHE_DIR, 'normalized_papers.json');
+
+export const ARXIV_RAW_A_PATH = path.resolve(ARXIV_CACHE_DIR, 'arxiv_A_raw.json');
+export const ARXIV_RAW_B_PATH = path.resolve(ARXIV_CACHE_DIR, 'arxiv_B_raw.json');
+export const ARXIV_RAW_C_PATH = path.resolve(ARXIV_CACHE_DIR, 'arxiv_C_raw.json');
 
 export const DOWNLOAD_STATE_PATH = path.resolve(SCHOLAR_STATE_DIR, 'download_state.json');
 export const DOWNLOAD_QUOTA_PATH = path.resolve(SCHOLAR_STATE_DIR, 'download_quota.json');
@@ -66,6 +73,9 @@ export const TAG_DISPLAY_ORDER = Object.freeze([
 ]);
 
 export const GROUP_ORDER = Object.freeze(['A', 'B', 'C']);
+
+export const SEARCH_SOURCES = Object.freeze(['scholar', 'arxiv', 'all']);
+export const DEFAULT_SEARCH_SOURCE = 'arxiv';
 
 export const FRONTEND_TOP_N = 20;
 export const DAILY_DOWNLOAD_LIMIT = 20;
@@ -167,9 +177,37 @@ export const FILE_NAMES = Object.freeze({
   rawA: 'scholar_A_raw.json',
   rawB: 'scholar_B_raw.json',
   rawC: 'scholar_C_raw.json',
+  arxivRawA: 'arxiv_A_raw.json',
+  arxivRawB: 'arxiv_B_raw.json',
+  arxivRawC: 'arxiv_C_raw.json',
   normalized: 'normalized_papers.json',
   downloadState: 'download_state.json',
   downloadQuota: 'download_quota.json',
+});
+
+// arXiv-specific queries (using arXiv API query syntax)
+export const ARXIV_QUERY_GROUPS = Object.freeze({
+  A: {
+    key: 'A',
+    title: 'Embedded AI (arXiv)',
+    description: 'General Embedded AI papers from arXiv.',
+    primaryQuery: '(embedded AND machine AND learning) OR (embedded AND ai)',
+    categories: ['cs.AI', 'cs.LG', 'cs.AR', 'cs.CV'],
+  },
+  B: {
+    key: 'B',
+    title: 'Low-Power / Ultra-Low-Power Embedded AI (arXiv)',
+    description: 'Low-power and ultra-low-power Embedded AI from arXiv.',
+    primaryQuery: '(embedded OR edge) AND ("low power" OR "ultra-low-power" OR "energy efficient") AND (machine AND learning)',
+    categories: ['cs.AI', 'cs.LG', 'cs.AR'],
+  },
+  C: {
+    key: 'C',
+    title: 'TinyML (arXiv)',
+    description: 'TinyML-focused papers from arXiv.',
+    primaryQuery: '(tinyml OR "tiny machine learning" OR microcontroller OR mcu) AND (embedded OR edge)',
+    categories: ['cs.AI', 'cs.LG', 'cs.AR', 'eess.SY'],
+  },
 });
 
 function v(full, short = null, aliases = []) {

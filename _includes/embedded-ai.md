@@ -1,114 +1,196 @@
 {% assign page_data = site.data.embedded_ai %}
 {% assign papers_data = site.data.embedded_ai_papers %}
 {% assign default_visible_count = 20 %}
+{% assign heading_date = papers_data.generated_at | date: "%B %-d, %Y" %}
 
-## {{ page_data.title }}
+<style>
+  .embedded-ai-page p {
+    margin: 0 0 0.9rem 0;
+  }
 
-{% for paragraph in page_data.intro.paragraphs %}
-{{ paragraph }}
+  .embedded-ai-links {
+    margin: 0 0 1.5rem 1.2rem;
+  }
 
-{% endfor %}
+  .embedded-ai-links li {
+    margin-bottom: 0.45rem;
+  }
 
-## Useful Links
+  .embedded-ai-category {
+    margin: 1.6rem 0 2rem;
+  }
 
-{% for link in page_data.useful_links %}
-* [{{ link.title }}]({{ link.url }}){% if link.description %} — {{ link.description }}{% endif %}
-{% endfor %}
+  .embedded-ai-paper-list {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+  }
 
-## Papers
+  .embedded-ai-paper-item {
+    padding: 0.65rem 0;
+    border-bottom: 1px solid #ececec;
+  }
 
-{% if papers_data and papers_data.categories and papers_data.categories.size > 0 %}
+  .embedded-ai-paper-line {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.45rem;
+    align-items: center;
+  }
 
-  {% for category in papers_data.categories %}
-### {{ category.title }}{% if category.count %} ({{ category.count }}){% endif %}
+  .embedded-ai-paper-title a {
+    font-weight: 600;
+    text-decoration: none;
+  }
 
-    {% if category.papers and category.papers.size > 0 %}
-<div class="embedded-ai-category" data-category-key="{{ category.key }}">
-  <ul class="embedded-ai-paper-list" style="list-style: none; padding-left: 0; margin-left: 0;">
-        {% for paper in category.papers %}
-          {% assign paper_link = paper.urls.pdf | default: paper.urls.paper | default: paper.urls.scholar %}
-          {% assign paper_tags = paper.final_tags | default: paper.tags %}
-          {% assign is_hidden = false %}
-          {% if forloop.index > default_visible_count %}
-            {% assign is_hidden = true %}
-          {% endif %}
-    <li
-      class="embedded-ai-paper-item"
-      {% if is_hidden %}data-hidden-paper="true" style="display: none; margin-bottom: 1rem;"{% else %}style="margin-bottom: 1rem;"{% endif %}
-    >
-      <div class="embedded-ai-paper-entry">
-              {% if paper_tags and paper_tags.size > 0 %}
-        <div class="embedded-ai-paper-tags" style="margin-bottom: 0.25rem;">
-                {% for tag in paper_tags %}
-          <span
-            class="embedded-ai-tag embedded-ai-tag-{{ tag | downcase }}"
-            style="display: inline-block; margin-right: 0.35rem; margin-bottom: 0.2rem; padding: 0.1rem 0.45rem; border: 1px solid #ccc; border-radius: 999px; font-size: 0.82rem; font-weight: 600;"
-          >
-            {{ tag }}
-          </span>
-                {% endfor %}
-        </div>
-              {% endif %}
+  .embedded-ai-paper-title a:hover {
+    text-decoration: underline;
+  }
 
-        <div class="embedded-ai-paper-title" style="font-weight: 600; margin-bottom: 0.2rem;">
-                {% if paper_link != "" %}
-          <a href="{{ paper_link }}" target="_blank" rel="noopener noreferrer">{{ paper.title }}</a>
+  .embedded-ai-paper-date {
+    color: #777;
+    font-size: 0.92rem;
+    white-space: nowrap;
+  }
+
+  .embedded-ai-tag {
+    display: inline-block;
+    padding: 0.15rem 0.5rem;
+    border-radius: 999px;
+    font-size: 0.78rem;
+    font-weight: 600;
+    line-height: 1.4;
+    vertical-align: middle;
+  }
+
+  .embedded-ai-tag--tinyml { background: #e8f0ff; color: #2457c5; }
+  .embedded-ai-tag--ulp { background: #e7f8ef; color: #1f7a4d; }
+  .embedded-ai-tag--lp { background: #fff4db; color: #9a6500; }
+  .embedded-ai-tag--hardware { background: #f1e9ff; color: #6941c6; }
+  .embedded-ai-tag--applications { background: #ffe9ef; color: #b4235c; }
+  .embedded-ai-tag--default { background: #f2f4f7; color: #475467; }
+
+  .embedded-ai-paper-item.is-hidden {
+    display: none;
+  }
+
+  .embedded-ai-show-more-btn {
+    margin-top: 0.9rem;
+    padding: 0.5rem 0.9rem;
+    border: 1px solid #d0d5dd;
+    border-radius: 8px;
+    background: #fff;
+    cursor: pointer;
+    font-size: 0.95rem;
+  }
+
+  .embedded-ai-show-more-btn:hover {
+    background: #f8fafc;
+  }
+</style>
+
+<div class="embedded-ai-page">
+  <h2>{{ page_data.title }}</h2>
+
+  {% if page_data.intro and page_data.intro.paragraphs %}
+    {% for paragraph in page_data.intro.paragraphs %}
+      <p>{{ paragraph }}</p>
+    {% endfor %}
+  {% endif %}
+
+  {% if page_data.useful_links and page_data.useful_links.size > 0 %}
+    <h2>Useful Links</h2>
+    <ul class="embedded-ai-links">
+      {% for link in page_data.useful_links %}
+        <li>
+          <a href="{{ link.url }}" target="_blank" rel="noopener noreferrer">{{ link.title }}</a>
+          {% if link.description %} — {{ link.description }}{% endif %}
+        </li>
+      {% endfor %}
+    </ul>
+  {% endif %}
+
+  <h2>Papers{% if heading_date %} (Last Update: {{ heading_date }}){% endif %}</h2>
+
+  {% if papers_data and papers_data.categories and papers_data.categories.size > 0 %}
+    {% for category in papers_data.categories %}
+      <section class="embedded-ai-category" id="category-{{ category.key }}">
+        <h3>{{ category.title }}{% if category.count %} ({{ category.count }}){% endif %}</h3>
+
+        {% if category.papers and category.papers.size > 0 %}
+          <ul class="embedded-ai-paper-list">
+            {% for paper in category.papers %}
+              {% assign display_tags = paper.final_tags | default: paper.tags %}
+              {% assign official_link = paper.urls.paper | default: paper.urls.ieee | default: paper.urls.acm | default: paper.urls.venue | default: paper.urls.url %}
+              {% assign paper_link = paper.urls.pdf | default: official_link | default: paper.urls.arxiv %}
+              {% assign date_text = "" %}
+
+              {% if paper.year and paper.month %}
+                {% assign month_num = paper.month | plus: 0 %}
+                {% if month_num < 10 %}
+                  {% assign date_text = paper.year | append: "-0" | append: month_num %}
                 {% else %}
-          {{ paper.title }}
+                  {% assign date_text = paper.year | append: "-" | append: month_num %}
                 {% endif %}
-        </div>
-
-        <div class="embedded-ai-paper-meta" style="font-size: 0.95rem; color: #666; margin-bottom: 0.25rem;">
-                {% if paper.venue %}
-          <span>{{ paper.venue }}</span>
+              {% elsif paper.arxiv_id %}
+                {% assign arxiv_base = paper.arxiv_id | split: "." | first %}
+                {% assign arxiv_yy = arxiv_base | slice: 0, 2 %}
+                {% assign arxiv_mm = arxiv_base | slice: 2, 2 %}
+                {% if arxiv_yy != "" and arxiv_mm != "" %}
+                  {% assign date_text = "20" | append: arxiv_yy | append: "-" | append: arxiv_mm %}
                 {% endif %}
-                {% if paper.year %}
-                  {% if paper.venue %}<span> · </span>{% endif %}
-          <span>{{ paper.year }}</span>
-                {% endif %}
-                {% if paper.matched_th_cpl_level %}
-          <span> · TH-CPL {{ paper.matched_th_cpl_level }}</span>
-                {% endif %}
-                {% if paper.filter_bucket == "arxiv" %}
-          <span> · arXiv</span>
-                {% endif %}
-        </div>
-
-              {% if paper.authors and paper.authors.size > 0 %}
-        <div class="embedded-ai-paper-authors" style="font-size: 0.92rem; margin-bottom: 0.25rem;">
-          {{ paper.authors | join: ", " }}
-        </div>
+              {% elsif paper.year %}
+                {% assign date_text = paper.year %}
               {% endif %}
 
-              {% if paper.abstract %}
-        <div class="embedded-ai-paper-abstract" style="font-size: 0.92rem; color: #444;">
-          {{ paper.abstract }}
-        </div>
-              {% endif %}
-      </div>
-    </li>
-        {% endfor %}
-  </ul>
+              <li class="embedded-ai-paper-item{% if forloop.index > default_visible_count %} is-hidden{% endif %}">
+                <div class="embedded-ai-paper-line">
+                  {% if display_tags and display_tags.size > 0 %}
+                    {% assign first_tag = display_tags[0] | downcase %}
+                    {% assign badge_class = "embedded-ai-tag--default" %}
+                    {% if first_tag contains "tinyml" %}
+                      {% assign badge_class = "embedded-ai-tag--tinyml" %}
+                    {% elsif first_tag contains "ulp" or first_tag contains "ultra-low-power" %}
+                      {% assign badge_class = "embedded-ai-tag--ulp" %}
+                    {% elsif first_tag == "lp" or first_tag contains "low-power" %}
+                      {% assign badge_class = "embedded-ai-tag--lp" %}
+                    {% elsif first_tag contains "accelerator" or first_tag contains "hardware" or first_tag contains "architecture" %}
+                      {% assign badge_class = "embedded-ai-tag--hardware" %}
+                    {% elsif first_tag contains "application" %}
+                      {% assign badge_class = "embedded-ai-tag--applications" %}
+                    {% endif %}
+                    <span class="embedded-ai-tag {{ badge_class }}">{{ display_tags[0] }}</span>
+                  {% endif %}
 
-      {% if category.papers.size > default_visible_count %}
-  <button
-    type="button"
-    class="embedded-ai-show-more-btn"
-    data-expanded="false"
-    style="margin-top: 0.25rem; padding: 0.45rem 0.8rem; border: 1px solid #ccc; border-radius: 8px; background: transparent; cursor: pointer;"
-  >
-    Show more
-  </button>
-      {% endif %}
+                  <span class="embedded-ai-paper-title">
+                    {% if paper_link and paper_link != "" %}
+                      <a href="{{ paper_link }}" target="_blank" rel="noopener noreferrer">{{ paper.title }}</a>
+                    {% else %}
+                      {{ paper.title }}
+                    {% endif %}
+                  </span>
+
+                  {% if date_text != "" %}
+                    <span class="embedded-ai-paper-date">{{ date_text }}</span>
+                  {% endif %}
+                </div>
+              </li>
+            {% endfor %}
+          </ul>
+
+          {% if category.papers.size > default_visible_count %}
+            <button type="button" class="embedded-ai-show-more-btn">
+              Show more
+            </button>
+          {% endif %}
+        {% else %}
+          <p>No papers have been added to this category yet.</p>
+        {% endif %}
+      </section>
+    {% endfor %}
+  {% else %}
+    <p>No paper data is available yet.</p>
+  {% endif %}
 </div>
-    {% else %}
-No papers have been added to this category yet.
-    {% endif %}
-
-  {% endfor %}
-
-{% else %}
-No paper data is available yet.
-{% endif %}
 
 <script src="{{ '/assets/js/embedded-ai.js' | relative_url }}"></script>

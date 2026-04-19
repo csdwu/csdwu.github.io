@@ -37,6 +37,39 @@ function deepClone(value) {
   return JSON.parse(JSON.stringify(value));
 }
 
+function extractMonthNumber(value) {
+  if (value == null || value === '') return null;
+  const num = Number(value);
+  if (Number.isFinite(num) && num >= 1 && num <= 12) return num;
+  const match = String(value).match(/(0?[1-9]|1[0-2])/);
+  return match ? Number(match[1]) : null;
+}
+
+function deriveYearMonthFromArxivId(arxivId) {
+  const text = toTrimmedString(arxivId);
+  const match = text.match(/^(\d{2})(\d{2})\./);
+  if (!match) return { year: null, month: null };
+  return {
+    year: Number(`20${match[1]}`),
+    month: Number(match[2]),
+  };
+}
+
+function buildSortKey(paper = {}) {
+  const explicitYear = safeInt(paper.year);
+  const explicitMonth = extractMonthNumber(paper.month);
+  if (explicitYear != null) {
+    return explicitYear * 100 + (explicitMonth ?? 0);
+  }
+
+  const derived = deriveYearMonthFromArxivId(paper.arxiv_id);
+  if (derived.year != null) {
+    return derived.year * 100 + (derived.month ?? 0);
+  }
+
+  return 0;
+}
+
 function firstNonEmpty(...values) {
   for (const value of values) {
     const text = toTrimmedString(value);
@@ -46,9 +79,9 @@ function firstNonEmpty(...values) {
 }
 
 function sortPapers(a, b) {
-  const ay = safeInt(a.year) ?? 0;
-  const by = safeInt(b.year) ?? 0;
-  if (by !== ay) return by - ay;
+  const ask = buildSortKey(a);
+  const bsk = buildSortKey(b);
+  if (bsk !== ask) return bsk - ask;
 
   const ac = Number(a.cited_by ?? 0);
   const bc = Number(b.cited_by ?? 0);
@@ -145,6 +178,7 @@ function sanitizePaperForOutput(paper, downloadLookup) {
     title: toTrimmedString(paper.title),
     authors: ensureArray(paper.authors).map((item) => String(item)).filter(Boolean),
     year: safeInt(paper.year),
+    month: extractMonthNumber(paper.month) ?? deriveYearMonthFromArxivId(paper.arxiv_id).month,
     venue: toTrimmedString(paper.venue),
     venue_type: toTrimmedString(paper.matched_venue_type || paper.venue_type),
     abstract: toTrimmedString(paper.abstract),
@@ -162,6 +196,7 @@ function sanitizePaperForOutput(paper, downloadLookup) {
     cited_by: Number(paper.cited_by ?? 0) || 0,
     doi: toTrimmedString(paper.doi),
     arxiv_id: toTrimmedString(paper.arxiv_id),
+    sort_key: buildSortKey(paper),
     download,
   };
 }
