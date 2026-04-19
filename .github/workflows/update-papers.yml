@@ -53,8 +53,9 @@ jobs:
 
           
           VENUE_FILTER_PRESET: ${{ vars.VENUE_FILTER_PRESET || 'recall_first' }}
+          SEARCH_SOURCE: ${{ vars.SEARCH_SOURCE || 'arxiv' }}
         run: |
-          node scripts/embedded-ai/update-papers.mjs
+          node scripts/embedded-ai/update-papers.mjs --source "$SEARCH_SOURCE"
 
       - name: Commit changes
         run: |

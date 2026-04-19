@@ -4,7 +4,7 @@
 
 <div style="text-align:justify">
 <ul>
-<li><strong>[Nov. 2025]</strong> Our paper Poster is accepted by <a href="https://dl.acm.org/doi/epdf/10.1145/3680207.3765670">MobiCom 2025</a>!</li>
+<li><strong>[Nov. 2025]</strong> Our paper Poster is accepted by <a href="https://dl.acm.org/doi/epdf/10.1145/3680207.3765670">qMobiCom 2025</a>!</li>
 <li><strong>[Nov. 2025]</strong> Our paper PIPVs is accepted by <a href="https://www.sciencedirect.com/science/article/abs/pii/S1369702125003669">Materials Today</a>！</li>
 <li><strong>[Aug. 2025]</strong> Our paper EMIT is accepted by <a href="https://doi.org/10.1109/TMC.2025.3600093">TMC</a>！</li>
 <li><strong>[Jul. 2025]</strong> Our paper LPPO is accepted by <a href="https://www.sciencedirect.com/science/article/pii/S0360835225005224">Computers &amp; Industrial Engineering</a>！</li>
