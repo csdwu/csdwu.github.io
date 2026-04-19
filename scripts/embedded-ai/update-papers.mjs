@@ -126,6 +126,8 @@ Options:
   --proxy-mode MODE          Proxy mode for scholarly: none | free | single
   --http-proxy URL           HTTP proxy URL when --proxy-mode single
   --https-proxy URL          HTTPS proxy URL when --proxy-mode single
+  --page-size N              Page size for arXiv pagination (default: 50)
+  --total-limit N            Total limit for arXiv results (default: no limit)
   --output PATH              Output JSON path (default: _data/embedded_ai_papers.json)
   --help                     Show this help
 
@@ -135,6 +137,7 @@ Examples:
   node scripts/embedded-ai/update-papers.mjs --source scholar --proxy-mode free
   node scripts/embedded-ai/update-papers.mjs --groups A,B --max-results 80
   node scripts/embedded-ai/update-papers.mjs --skip-search --skip-download
+  node scripts/embedded-ai/update-papers.mjs --source arxiv --page-size 100 --total-limit 500
 `.trim());
 }
 
@@ -174,6 +177,8 @@ function parseCliArgs(argv) {
     proxyMode,
     httpProxy: parseStringOption(argv, '--http-proxy', ''),
     httpsProxy: parseStringOption(argv, '--https-proxy', ''),
+    pageSize: parseNumberOption(argv, '--page-size', 50),
+    totalLimit: parseNumberOption(argv, '--total-limit', null),
   };
 }
 
@@ -329,6 +334,8 @@ async function executeSearchStep(cliOptions) {
     } else if (src === 'arxiv') {
       searchResult = await runAllArxivKeywordSearches({
         groups,
+        pageSize: cliOptions.pageSize ?? 50,
+        totalLimit: cliOptions.totalLimit,
       });
     }
 

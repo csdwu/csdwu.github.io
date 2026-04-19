@@ -83,6 +83,12 @@ function extractArxivId(paper = {}) {
 
 function inferGroupPolicy(paper = {}) {
   const finalSets = ensureArray(paper.search_sets_final);
+  const source = toTrimmedString(paper.source);
+
+  // arXiv papers should use TH_CPL_AB_OR_ARXIV policy regardless of group
+  if (source === 'arxiv') {
+    return FILTER_POLICIES.TH_CPL_AB_OR_ARXIV;
+  }
 
   if (finalSets.includes('A')) {
     return FILTER_POLICIES.TH_CPL_A;

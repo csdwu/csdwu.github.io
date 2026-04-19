@@ -1,0 +1,102 @@
+[
+  {
+    "arxiv_id": "2604.15273v1",
+    "title": "How Embeddings Shape Graph Neural Networks: Classical vs Quantum-Oriented Node Representations",
+    "abstract": "Node embeddings act as the information interface for graph neural networks, yet their empirical impact is often reported under mismatched backbones, splits, and training budgets. This paper provides a controlled benchmark of embedding choices for graph classification, comparing classical baselines with quantum-oriented node representations under a unified pipeline. We evaluate two classical baselines alongside quantum-oriented alternatives, including a circuit-defined variational embedding and quantum-inspired embeddings computed via graph operators and linear-algebraic constructions. All variants are trained and tested with the same backbone, stratified splits, identical optimization and early stopping, and consistent metrics. Experiments on five different TU datasets and on QM9 converted to classification via target binning show clear dataset dependence: quantum-oriented embeddings yield the most consistent gains on structure-driven benchmarks, while social graphs with limited node attributes remain well served by classical baselines. The study highlights practical trade-offs between inductive bias, trainability, and stability under a fixed training budget, and offers a reproducible reference point for selecting quantum-oriented embeddings in graph learning.",
+    "authors": [
+      "Nouhaila Innan",
+      "Antonello Rosato",
+      "Alberto Marchisio",
+      "Muhammad Shafique"
+    ],
+    "year": 2026,
+    "urls": {
+      "arxiv": "https://arxiv.org/abs/2604.15273v1",
+      "pdf": "https://arxiv.org/pdf/2604.15273v1"
+    },
+    "arxiv_url": "https://arxiv.org/abs/2604.15273v1",
+    "pdf_url": "https://arxiv.org/pdf/2604.15273v1",
+    "eprint_url": "https://arxiv.org/pdf/2604.15273v1",
+    "pub_url": "https://arxiv.org/abs/2604.15273v1",
+    "snippet": "Node embeddings act as the information interface for graph neural networks, yet their empirical impact is often reported under mismatched backbones, splits, and training budgets. This paper provides a",
+    "source": "arxiv",
+    "doi": "",
+    "venue": "arXiv",
+    "cited_by": 0
+  },
+  {
+    "arxiv_id": "2604.15128v1",
+    "title": "SCENIC: Stream Computation-Enhanced SmartNIC",
+    "abstract": "Although modern, AI-centric datacenters heavily rely on SmartNICs, existing devices impose a hard trade-off. Commercial SmartNICs provide high bandwidth and easy software integration, but offer limited support for customization and data processing offload. In contrast, research SmartNICs often suffer from low bandwidth, limited functionality, and poor software compatibility -- to the point that many are not actual NICs in a technical sense. This gap can be closed by treating the NIC datapath as a first-class stream computation substrate with shared hardware/software abstractions for a tight co-design of infrastructure and applications. To demonstrate this, we introduce SCENIC, an open-source datacenter SmartNIC. SCENIC implements a 200G network datapath over offloaded TCP/IP and RDMA stacks, as well as a fallback path for processing arbitrary network traffic. On top of the network logic, SCENIC combines on-datapath Stream Compute Units (SCUs) for data processing and embedded ARM cores for flexible control path manipulation with direct access to GPUs and SSDs. SCENIC is fully integrated with the OS, exposing native Linux network and RDMA verb interfaces, making the programmable datapath transparent to existing applications while enabling control of, e.g., user-defined offloads and programmable congestion control. SCENIC's performance matches commercial platforms, and we show its versatility through several use cases such as offloaded collective communication and network-to-GPU hash-based data partitioning.",
+    "authors": [
+      "Benjamin Ramhorst",
+      "Maximilian Jakob Heer",
+      "Luhao Liu",
+      "Heejae Kim",
+      "Jonas Dann",
+      "Jin-Soo Kim",
+      "Gustavo Alonso"
+    ],
+    "year": 2026,
+    "urls": {
+      "arxiv": "https://arxiv.org/abs/2604.15128v1",
+      "pdf": "https://arxiv.org/pdf/2604.15128v1"
+    },
+    "arxiv_url": "https://arxiv.org/abs/2604.15128v1",
+    "pdf_url": "https://arxiv.org/pdf/2604.15128v1",
+    "eprint_url": "https://arxiv.org/pdf/2604.15128v1",
+    "pub_url": "https://arxiv.org/abs/2604.15128v1",
+    "snippet": "Although modern, AI-centric datacenters heavily rely on SmartNICs, existing devices impose a hard trade-off. Commercial SmartNICs provide high bandwidth and easy software integration, but offer limite",
+    "source": "arxiv",
+    "doi": "",
+    "venue": "arXiv",
+    "cited_by": 0
+  },
+  {
+    "arxiv_id": "2604.15078v1",
+    "title": "Where are the Humans? A Scoping Review of Fairness in Multi-agent AI Systems",
+    "abstract": "Rapid advances in Generative AI are giving rise to increasingly sophisticated Multi-Agent AI (MAAI) systems. While AI fairness has been extensively studied in traditional predictive scenarios, its examination in MAAI remains nascent and fragmented. This scoping review critically synthesizes existing research on fairness in MAAI systems. Through a qualitative content analysis of 23 selected studies, we identify five archetypal approaches. Our findings reveal that fairness in MAAI systems is often addressed superficially, lacks robust normative foundations, and frequently overlooks the complex dynamics introduced by agent autonomy and system-level interactions. We argue that fairness must be embedded structurally throughout the development lifecycle of MAAI, rather than appended as a post-hoc consideration. Meaningful evaluation requires explicit human oversight, normative clarity, and a precise articulation of fairness objectives and beneficiaries. This review provides a foundation for advancing fairness research in MAAI systems by highlighting critical gaps, exposing prevailing limitations, and suggesting pathways.",
+    "authors": [
+      "Simeon Allmendinger",
+      "Luca Deck",
+      "Lucas Mueller"
+    ],
+    "year": 2026,
+    "urls": {
+      "arxiv": "https://arxiv.org/abs/2604.15078v1",
+      "pdf": "https://arxiv.org/pdf/2604.15078v1"
+    },
+    "arxiv_url": "https://arxiv.org/abs/2604.15078v1",
+    "pdf_url": "https://arxiv.org/pdf/2604.15078v1",
+    "eprint_url": "https://arxiv.org/pdf/2604.15078v1",
+    "pub_url": "https://arxiv.org/abs/2604.15078v1",
+    "snippet": "Rapid advances in Generative AI are giving rise to increasingly sophisticated Multi-Agent AI (MAAI) systems. While AI fairness has been extensively studied in traditional predictive scenarios, its exa",
+    "source": "arxiv",
+    "doi": "",
+    "venue": "arXiv",
+    "cited_by": 0
+  },
+  {
+    "arxiv_id": "2311.11841v4",
+    "title": "High Probability Guarantees for Random Reshuffling",
+    "abstract": "We consider the stochastic gradient method with random reshuffling ($\\mathsf{RR}$) for tackling smooth nonconvex optimization problems. $\\mathsf{RR}$ finds broad applications in practice, notably in training neural networks. In this work, we provide high probability complexity guarantees for this method. First, we establish a high probability ergodic sample complexity result (without taking expectation) for finding an $\\varepsilon$-stationary point. Our derived complexity matches the best existing in-expectation one up to a logarithmic term while imposing no additional assumptions nor modifying $\\mathsf{RR}$'s updating rule. Second, building on this analysis, we propose a simple stopping criterion embedded with a computable stopping test for $\\mathsf{RR}$ (denoted as $\\mathsf{RR}$-$\\mathsf{sc}$). This criterion is guaranteed to be triggered after a finite number of iterations, enabling us to prove the same order high probability complexity for the returned last iterate. The fundamental ingredient in deriving the aforementioned results is a new concentration property for random reshuffling, which could be of independent interest. Finally, we conduct numerical experiments on small neural network training to support our theoretical findings.",
+    "authors": [
+      "Hengxu Yu",
+      "Xiao Li"
+    ],
+    "year": 2023,
+    "urls": {
+      "arxiv": "https://arxiv.org/abs/2311.11841v4",
+      "pdf": "https://arxiv.org/pdf/2311.11841v4"
+    },
+    "arxiv_url": "https://arxiv.org/abs/2311.11841v4",
+    "pdf_url": "https://arxiv.org/pdf/2311.11841v4",
+    "eprint_url": "https://arxiv.org/pdf/2311.11841v4",
+    "pub_url": "https://arxiv.org/abs/2311.11841v4",
+    "snippet": "We consider the stochastic gradient method with random reshuffling ($\\mathsf{RR}$) for tackling smooth nonconvex optimization problems. $\\mathsf{RR}$ finds broad applications in practice, notably in t",
+    "source": "arxiv",
+    "doi": "",
+    "venue": "arXiv",
+    "cited_by": 0
+  }
+]

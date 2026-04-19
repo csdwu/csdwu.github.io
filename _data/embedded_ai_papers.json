@@ -1,75 +1,231 @@
 {
-  "version": "2.0",
-  "generated_at": "2026-04-16T10:30:00Z",
+  "version": "2.0.0",
+  "generated_at": "2026-04-19T04:40:55.891Z",
   "query_groups": {
-    "A": "embedded AI",
-    "B": "(low power OR ultra-low-power) embedded AI",
-    "C": "TinyML embedded AI"
+    "A": "\"embedded ai\"",
+    "B": "(\"low power\" OR \"ultra-low-power\") \"embedded ai\"",
+    "C": "\"tinyml\" \"embedded ai\""
   },
   "stats": {
     "raw_counts": {
-      "A": 120,
-      "B": 80,
-      "C": 60
+      "A": 4,
+      "B": 0,
+      "C": 0
     },
     "after_set_ops": {
-      "A_only": 70,
-      "B": 80,
-      "C": 60,
-      "merged_total": 170
+      "A_only": 4,
+      "B": 0,
+      "C": 0,
+      "merged_total": 4,
+      "bc_overlap": 0
     },
-    "after_filter": 94
+    "after_filter": 4,
+    "classification": {
+      "total": 4,
+      "by_category": {
+        "Efficient Model Design and Optimization": 0,
+        "Novel Computing Architectures and Domain-Specific Accelerators": 0,
+        "Embedded AI Applications": 4
+      },
+      "by_tag": {
+        "TinyML": 0,
+        "LP": 0,
+        "ULP": 0
+      },
+      "by_provider": {
+        "tencent_tokenhub": 0,
+        "heuristic": 0,
+        "heuristic_fallback": 4
+      }
+    }
   },
   "categories": [
     {
       "key": "efficient_model_design",
-      "title": "高效模型设计与优化",
-      "count": 31,
-      "papers": [
-        {
-          "id": "paper-xxxx",
-          "title": "Example Paper Title",
-          "authors": ["A", "B", "C"],
-          "year": 2025,
-          "venue": "ISLPED",
-          "venue_type": "conference",
-          "abstract": "....",
-          "urls": {
-            "scholar": "https://scholar.google.com/...",
-            "paper": "https://...",
-            "pdf": "https://...",
-            "arxiv": "https://arxiv.org/abs/..."
-          },
-          "search_sets_raw": ["A", "B"],
-          "search_sets_final": ["B"],
-          "filter_bucket": "th_cpl_ab",
-          "matched_venue": "ISLPED",
-          "matched_th_cpl_level": "B",
-          "matched_th_cpl_area": "High Performance Computing",
-          "category": "高效模型设计与优化",
-          "llm_tags": ["ULP"],
-          "forced_tags": [],
-          "final_tags": ["ULP"],
-          "download": {
-            "status": "downloaded",
-            "source": "arxiv",
-            "path": "google_scholar_crawler/downloads/embedded-ai/paper-xxxx.pdf",
-            "last_attempt_at": "2026-04-16T10:20:00Z"
-          }
-        }
-      ]
+      "title": "Efficient Model Design and Optimization",
+      "count": 0,
+      "papers": []
     },
     {
       "key": "novel_architecture_accelerator",
-      "title": "新型计算架构与专用加速器",
-      "count": 28,
+      "title": "Novel Computing Architectures and Domain-Specific Accelerators",
+      "count": 0,
       "papers": []
     },
     {
       "key": "embedded_ai_applications",
-      "title": "嵌入式AI应用",
-      "count": 35,
-      "papers": []
+      "title": "Embedded AI Applications",
+      "count": 4,
+      "papers": [
+        {
+          "id": "8b6195e1ce932f7769948bdfba039b03c35ff2bf",
+          "title": "How Embeddings Shape Graph Neural Networks: Classical vs Quantum-Oriented Node Representations",
+          "authors": [
+            "Nouhaila Innan",
+            "Antonello Rosato",
+            "Alberto Marchisio",
+            "Muhammad Shafique"
+          ],
+          "year": 2026,
+          "venue": "arXiv",
+          "venue_type": "",
+          "abstract": "Node embeddings act as the information interface for graph neural networks, yet their empirical impact is often reported under mismatched backbones, splits, and training budgets. This paper provides a controlled benchmark of embedding choices for graph classification, comparing classical baselines with quantum-oriented node representations under a unified pipeline. We evaluate two classical baselines alongside quantum-oriented alternatives, including a circuit-defined variational embedding and quantum-inspired embeddings computed via graph operators and linear-algebraic constructions. All variants are trained and tested with the same backbone, stratified splits, identical optimization and early stopping, and consistent metrics. Experiments on five different TU datasets and on QM9 converted to classification via target binning show clear dataset dependence: quantum-oriented embeddings yield the most consistent gains on structure-driven benchmarks, while social graphs with limited node attributes remain well served by classical baselines. The study highlights practical trade-offs between inductive bias, trainability, and stability under a fixed training budget, and offers a reproducible reference point for selecting quantum-oriented embeddings in graph learning.",
+          "urls": {
+            "arxiv": "https://arxiv.org/abs/2604.15273v1",
+            "pdf": "https://arxiv.org/pdf/2604.15273v1",
+            "paper": "https://arxiv.org/abs/2604.15273v1"
+          },
+          "search_sets_raw": [
+            "A"
+          ],
+          "search_sets_final": [
+            "A"
+          ],
+          "filter_bucket": "arxiv",
+          "matched_venue": "",
+          "matched_th_cpl_level": "",
+          "matched_th_cpl_area": "",
+          "category": "Embedded AI Applications",
+          "llm_tags": [],
+          "forced_tags": [],
+          "final_tags": [],
+          "cited_by": 0,
+          "doi": "",
+          "arxiv_id": "2604.15273v1",
+          "download": {
+            "status": "pending",
+            "source": null,
+            "path": null,
+            "last_attempt_at": null
+          }
+        },
+        {
+          "id": "04b2d4ab8d60d7941046109577b7bfe00c5bb57d",
+          "title": "SCENIC: Stream Computation-Enhanced SmartNIC",
+          "authors": [
+            "Benjamin Ramhorst",
+            "Maximilian Jakob Heer",
+            "Luhao Liu",
+            "Heejae Kim",
+            "Jonas Dann",
+            "Jin-Soo Kim",
+            "Gustavo Alonso"
+          ],
+          "year": 2026,
+          "venue": "arXiv",
+          "venue_type": "",
+          "abstract": "Although modern, AI-centric datacenters heavily rely on SmartNICs, existing devices impose a hard trade-off. Commercial SmartNICs provide high bandwidth and easy software integration, but offer limited support for customization and data processing offload. In contrast, research SmartNICs often suffer from low bandwidth, limited functionality, and poor software compatibility -- to the point that many are not actual NICs in a technical sense. This gap can be closed by treating the NIC datapath as a first-class stream computation substrate with shared hardware/software abstractions for a tight co-design of infrastructure and applications. To demonstrate this, we introduce SCENIC, an open-source datacenter SmartNIC. SCENIC implements a 200G network datapath over offloaded TCP/IP and RDMA stacks, as well as a fallback path for processing arbitrary network traffic. On top of the network logic, SCENIC combines on-datapath Stream Compute Units (SCUs) for data processing and embedded ARM cores for flexible control path manipulation with direct access to GPUs and SSDs. SCENIC is fully integrated with the OS, exposing native Linux network and RDMA verb interfaces, making the programmable datapath transparent to existing applications while enabling control of, e.g., user-defined offloads and programmable congestion control. SCENIC's performance matches commercial platforms, and we show its versatility through several use cases such as offloaded collective communication and network-to-GPU hash-based data partitioning.",
+          "urls": {
+            "arxiv": "https://arxiv.org/abs/2604.15128v1",
+            "pdf": "https://arxiv.org/pdf/2604.15128v1",
+            "paper": "https://arxiv.org/abs/2604.15128v1"
+          },
+          "search_sets_raw": [
+            "A"
+          ],
+          "search_sets_final": [
+            "A"
+          ],
+          "filter_bucket": "arxiv",
+          "matched_venue": "",
+          "matched_th_cpl_level": "",
+          "matched_th_cpl_area": "",
+          "category": "Embedded AI Applications",
+          "llm_tags": [],
+          "forced_tags": [],
+          "final_tags": [],
+          "cited_by": 0,
+          "doi": "",
+          "arxiv_id": "2604.15128v1",
+          "download": {
+            "status": "pending",
+            "source": null,
+            "path": null,
+            "last_attempt_at": null
+          }
+        },
+        {
+          "id": "b21043cfafe133cd3f9a7ae475aca690b4270294",
+          "title": "Where are the Humans? A Scoping Review of Fairness in Multi-agent AI Systems",
+          "authors": [
+            "Simeon Allmendinger",
+            "Luca Deck",
+            "Lucas Mueller"
+          ],
+          "year": 2026,
+          "venue": "arXiv",
+          "venue_type": "",
+          "abstract": "Rapid advances in Generative AI are giving rise to increasingly sophisticated Multi-Agent AI (MAAI) systems. While AI fairness has been extensively studied in traditional predictive scenarios, its examination in MAAI remains nascent and fragmented. This scoping review critically synthesizes existing research on fairness in MAAI systems. Through a qualitative content analysis of 23 selected studies, we identify five archetypal approaches. Our findings reveal that fairness in MAAI systems is often addressed superficially, lacks robust normative foundations, and frequently overlooks the complex dynamics introduced by agent autonomy and system-level interactions. We argue that fairness must be embedded structurally throughout the development lifecycle of MAAI, rather than appended as a post-hoc consideration. Meaningful evaluation requires explicit human oversight, normative clarity, and a precise articulation of fairness objectives and beneficiaries. This review provides a foundation for advancing fairness research in MAAI systems by highlighting critical gaps, exposing prevailing limitations, and suggesting pathways.",
+          "urls": {
+            "arxiv": "https://arxiv.org/abs/2604.15078v1",
+            "pdf": "https://arxiv.org/pdf/2604.15078v1",
+            "paper": "https://arxiv.org/abs/2604.15078v1"
+          },
+          "search_sets_raw": [
+            "A"
+          ],
+          "search_sets_final": [
+            "A"
+          ],
+          "filter_bucket": "arxiv",
+          "matched_venue": "",
+          "matched_th_cpl_level": "",
+          "matched_th_cpl_area": "",
+          "category": "Embedded AI Applications",
+          "llm_tags": [],
+          "forced_tags": [],
+          "final_tags": [],
+          "cited_by": 0,
+          "doi": "",
+          "arxiv_id": "2604.15078v1",
+          "download": {
+            "status": "pending",
+            "source": null,
+            "path": null,
+            "last_attempt_at": null
+          }
+        },
+        {
+          "id": "c920c31de0b0129f864c4c9ab242b4b336a962d0",
+          "title": "High Probability Guarantees for Random Reshuffling",
+          "authors": [
+            "Hengxu Yu",
+            "Xiao Li"
+          ],
+          "year": 2023,
+          "venue": "arXiv",
+          "venue_type": "",
+          "abstract": "We consider the stochastic gradient method with random reshuffling ($\\mathsf{RR}$) for tackling smooth nonconvex optimization problems. $\\mathsf{RR}$ finds broad applications in practice, notably in training neural networks. In this work, we provide high probability complexity guarantees for this method. First, we establish a high probability ergodic sample complexity result (without taking expectation) for finding an $\\varepsilon$-stationary point. Our derived complexity matches the best existing in-expectation one up to a logarithmic term while imposing no additional assumptions nor modifying $\\mathsf{RR}$'s updating rule. Second, building on this analysis, we propose a simple stopping criterion embedded with a computable stopping test for $\\mathsf{RR}$ (denoted as $\\mathsf{RR}$-$\\mathsf{sc}$). This criterion is guaranteed to be triggered after a finite number of iterations, enabling us to prove the same order high probability complexity for the returned last iterate. The fundamental ingredient in deriving the aforementioned results is a new concentration property for random reshuffling, which could be of independent interest. Finally, we conduct numerical experiments on small neural network training to support our theoretical findings.",
+          "urls": {
+            "arxiv": "https://arxiv.org/abs/2311.11841v4",
+            "pdf": "https://arxiv.org/pdf/2311.11841v4",
+            "paper": "https://arxiv.org/abs/2311.11841v4"
+          },
+          "search_sets_raw": [
+            "A"
+          ],
+          "search_sets_final": [
+            "A"
+          ],
+          "filter_bucket": "arxiv",
+          "matched_venue": "",
+          "matched_th_cpl_level": "",
+          "matched_th_cpl_area": "",
+          "category": "Embedded AI Applications",
+          "llm_tags": [],
+          "forced_tags": [],
+          "final_tags": [],
+          "cited_by": 0,
+          "doi": "",
+          "arxiv_id": "2311.11841v4",
+          "download": {
+            "status": "pending",
+            "source": null,
+            "path": null,
+            "last_attempt_at": null
+          }
+        }
+      ]
     }
   ]
 }

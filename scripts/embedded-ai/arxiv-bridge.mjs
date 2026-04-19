@@ -109,7 +109,7 @@ function buildArxivSearchArgs(groupKey, options = {}) {
     throw new Error(`arXiv group "${groupKey}" not found in config.`);
   }
 
-  const { maxResults = 200 } = options;
+  const { pageSize = 50, totalLimit = null } = options;
 
   const args = [
     ARXIV_SEARCH_PY_PATH,
@@ -117,9 +117,13 @@ function buildArxivSearchArgs(groupKey, options = {}) {
     group.primaryQuery,
     '--categories',
     group.categories.join(','),
-    '--max-results',
-    String(maxResults),
+    '--page-size',
+    String(pageSize),
   ];
+
+  if (totalLimit != null) {
+    args.push('--total-limit', String(totalLimit));
+  }
 
   return args;
 }
@@ -295,6 +299,12 @@ export async function runAllArxivKeywordSearches(options = {}) {
     console.log(`[embedded-ai] arXiv group done: ${groupKey}`);
     results.push(result);
     groupedData[groupKey] = result.data;
+
+    // Sleep between groups to avoid rate limiting
+    if (groups.indexOf(groupKey) < groups.length - 1) {
+      console.log(`[embedded-ai] Sleeping 3s before next arXiv group...`);
+      await new Promise(resolve => setTimeout(resolve, 3000));
+    }
   }
 
   return { results, groupedData };
