@@ -30,6 +30,8 @@ export const ARXIV_RAW_C_PATH = path.resolve(ARXIV_CACHE_DIR, 'arxiv_C_raw.json'
 export const DOWNLOAD_STATE_PATH = path.resolve(SCHOLAR_STATE_DIR, 'download_state.json');
 export const DOWNLOAD_QUOTA_PATH = path.resolve(SCHOLAR_STATE_DIR, 'download_quota.json');
 export const CLASSIFICATION_CHECKPOINT_PATH = path.resolve(SCHOLAR_STATE_DIR, 'classification_checkpoint.json');
+export const LAST_SEARCH_STATE_PATH = path.resolve(SCHOLAR_STATE_DIR, 'last_search_state.json');
+export const ARXIV_INCREMENTAL_OVERLAP_DAYS = 1;
 
 export const OUTPUT_SCHEMA_VERSION = '2.0.0';
 

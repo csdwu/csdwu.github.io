@@ -24,7 +24,7 @@ import {
 import { runAllArxivKeywordSearches, loadAllArxivRawGroups } from './arxiv-bridge.mjs';
 import { runSetOperations } from './set-ops.mjs';
 import { applyFilterRulesToSetOps } from './filter-rules.mjs';
-import { classifyPapers } from './classify.mjs';
+import { classifyPapers, summarizeClassificationStats } from './classify.mjs';
 import { buildAndWriteOutputJson } from './output-builder.mjs';
 import { generateBibtexArtifacts } from './bibtex-builder.mjs';
 
@@ -34,6 +34,12 @@ function unique(values) {
 
 function parseBooleanFlag(args, flag) {
   return args.includes(flag);
+}
+
+function parseDefaultTrueFlag(args, positiveFlag, negativeFlag) {
+  if (args.includes(negativeFlag)) return false;
+  if (args.includes(positiveFlag)) return true;
+  return true;
 }
 
 function parseStringOption(args, flag, defaultValue = null) {
@@ -113,8 +119,10 @@ Usage:
 Options:
   --source MODE              Paper source: scholar | arxiv | all. Default: ${DEFAULT_SEARCH_SOURCE}
   --groups A,B,C             Which groups to process. Default: A,B,C
+  --force-full-search        Ignore watermark and run full arXiv search
   --skip-search              Reuse existing raw cache instead of running search
-  --skip-download            Skip downloader.py
+  --skip-download            Skip downloader.py (default: true)
+  --no-skip-download         Enable downloader.py
   --download-dry-run         Run downloader in dry-run mode
   --download-max N           Max number of downloads in this run
   --heuristic-only           Skip Tencent TokenHub and use heuristic classifier only
@@ -135,6 +143,7 @@ Options:
 
 Examples:
   node scripts/embedded-ai/update-papers.mjs --source arxiv
+  node scripts/embedded-ai/update-papers.mjs --source arxiv --force-full-search
   node scripts/embedded-ai/update-papers.mjs --source all
   node scripts/embedded-ai/update-papers.mjs --source scholar --proxy-mode free
   node scripts/embedded-ai/update-papers.mjs --groups A,B --max-results 80
@@ -165,8 +174,9 @@ function parseCliArgs(argv) {
     help: false,
     source,
     groups: parseGroups(parseStringOption(argv, '--groups', null)),
+    forceFullSearch: parseBooleanFlag(argv, '--force-full-search'),
     skipSearch: parseBooleanFlag(argv, '--skip-search'),
-    skipDownload: parseBooleanFlag(argv, '--skip-download'),
+    skipDownload: parseDefaultTrueFlag(argv, '--skip-download', '--no-skip-download'),
     downloadDryRun: parseBooleanFlag(argv, '--download-dry-run'),
     heuristicOnly: parseBooleanFlag(argv, '--heuristic-only'),
     clearCache: parseBooleanFlag(argv, '--clear-cache'),
@@ -183,6 +193,89 @@ function parseCliArgs(argv) {
     totalLimit: parseNumberOption(argv, '--total-limit', null),
     yearLow: parseNumberOption(argv, '--year-low', null),
     yearHigh: parseNumberOption(argv, '--year-high', null),
+  };
+}
+
+function safeArray(value) {
+  return Array.isArray(value) ? value : [];
+}
+
+function normalizeTitleKey(title) {
+  return String(title ?? '')
+    .toLowerCase()
+    .replace(/\s+/g, ' ')
+    .trim();
+}
+
+function buildPaperIdentityKey(paper = {}) {
+  const dedupeKey = String(paper.dedupe_key ?? '').trim();
+  if (dedupeKey) return `dedupe:${dedupeKey}`;
+
+  const arxivId = String(paper.arxiv_id ?? '').trim().toLowerCase();
+  if (arxivId) return `arxiv:${arxivId}`;
+
+  const doi = String(paper.doi ?? '').trim().toLowerCase();
+  if (doi) return `doi:${doi}`;
+
+  const title = normalizeTitleKey(paper.title);
+  const year = String(paper.year ?? '').trim();
+  if (title) return `title:${title}::${year}`;
+
+  return `id:${String(paper.id ?? '').trim()}`;
+}
+
+function mergeUniqueStrings(...lists) {
+  return [...new Set(lists.flatMap((list) => safeArray(list).map((item) => String(item).trim()).filter(Boolean)))];
+}
+
+function mergeExistingWithIncoming(existing = {}, incoming = {}) {
+  const merged = {
+    ...existing,
+    ...incoming,
+  };
+
+  merged.id = existing.id ?? incoming.id;
+  merged.dedupe_key = existing.dedupe_key ?? incoming.dedupe_key;
+  merged.search_sets_raw = mergeUniqueStrings(existing.search_sets_raw, incoming.search_sets_raw);
+  merged.search_sets_final = mergeUniqueStrings(existing.search_sets_final, incoming.search_sets_final);
+  merged.raw_group_hits = mergeUniqueStrings(existing.raw_group_hits, incoming.raw_group_hits);
+  merged.query_useds = mergeUniqueStrings(existing.query_useds, incoming.query_useds);
+  merged.seed_tags = mergeUniqueStrings(existing.seed_tags, incoming.seed_tags);
+
+  // Keep existing classification so updated metadata does not trigger re-classification.
+  merged.category = existing.category;
+  merged.llm_tags = safeArray(existing.llm_tags);
+  merged.final_tags = safeArray(existing.final_tags);
+  merged.provider_used = existing.provider_used;
+  merged.classification_model = existing.classification_model;
+  merged.classification_raw_response = existing.classification_raw_response;
+
+  return merged;
+}
+
+function mergeHistoricalWithFilteredPapers(historicalPapers = [], filteredPapers = []) {
+  const historicalMap = new Map();
+
+  for (const paper of historicalPapers) {
+    const key = buildPaperIdentityKey(paper);
+    historicalMap.set(key, paper);
+  }
+
+  const newCandidates = [];
+
+  for (const paper of filteredPapers) {
+    const key = buildPaperIdentityKey(paper);
+    if (historicalMap.has(key)) {
+      const merged = mergeExistingWithIncoming(historicalMap.get(key), paper);
+      historicalMap.set(key, merged);
+      continue;
+    }
+    newCandidates.push(paper);
+  }
+
+  return {
+    preservedHistorical: [...historicalMap.values()],
+    newCandidates,
   };
 }
 
@@ -231,6 +324,7 @@ function summarizeGroupedPayloads(groupedPayloads = {}, groups = GROUP_ORDER) {
 
 function buildPipelineSummary({
   cliOptions,
+  searchMeta,
   groupedPayloads,
   setOpsResult,
   filteredResult,
@@ -244,7 +338,9 @@ function buildPipelineSummary({
     ok: true,
     generated_at: generatedAt,
     options: {
+      source: cliOptions.source,
       groups: cliOptions.groups,
+      force_full_search: cliOptions.forceFullSearch,
       skip_search: cliOptions.skipSearch,
       skip_download: cliOptions.skipDownload,
       download_dry_run: cliOptions.downloadDryRun,
@@ -260,6 +356,7 @@ function buildPipelineSummary({
       year_low: cliOptions.yearLow ?? null,
       year_high: cliOptions.yearHigh ?? null,
     },
+    search: searchMeta ?? null,
     counts: {
       raw_search: summarizeGroupedPayloads(groupedPayloads, cliOptions.groups),
       after_set_ops: setOpsResult?.stats?.after_set_ops ?? {},
@@ -319,11 +416,21 @@ async function executeSearchStep(cliOptions) {
 
     const summary = summarizeGroupedPayloads(allGroupedPayloads, groups);
     logStep(`Loaded existing raw cache (sources: ${sourcesToRun.join(', ')}): ${JSON.stringify(summary)}`);
-    return ensureGroupedPayloadShape(allGroupedPayloads, groups);
+    return {
+      groupedPayloads: ensureGroupedPayloadShape(allGroupedPayloads, groups),
+      searchMeta: {
+        source: source,
+        mode: 'cache',
+      },
+    };
   }
 
   // Run searches for each source
   let allGroupedPayloads = {};
+  let latestSearchMeta = {
+    source,
+    mode: 'full',
+  };
 
   for (const src of sourcesToRun) {
     logStep(`Running ${src} search for groups: ${groups.join(', ')}`);
@@ -346,7 +453,11 @@ async function executeSearchStep(cliOptions) {
         totalLimit: cliOptions.totalLimit,
         yearLow: cliOptions.yearLow,
         yearHigh: cliOptions.yearHigh,
+        forceFullSearch: cliOptions.forceFullSearch,
       });
+      if (searchResult?.runMeta) {
+        latestSearchMeta = searchResult.runMeta;
+      }
     }
 
     if (searchResult?.groupedData) {
@@ -364,7 +475,22 @@ async function executeSearchStep(cliOptions) {
     }
   }
 
-  return ensureGroupedPayloadShape(allGroupedPayloads, groups);
+  const pulledTotal = Object.values(summarizeGroupedPayloads(allGroupedPayloads, groups)).reduce(
+    (sum, count) => sum + Number(count || 0),
+    0,
+  );
+  const uniqueIds = new Set();
+  for (const group of groups) {
+    for (const item of extractItemsFromPayload(allGroupedPayloads[group])) {
+      uniqueIds.add(buildPaperIdentityKey(item));
+    }
+  }
+  logStep(`Search fetched ${pulledTotal} raw records, unique pre-set-ops=${uniqueIds.size}`);
+
+  return {
+    groupedPayloads: ensureGroupedPayloadShape(allGroupedPayloads, groups),
+    searchMeta: latestSearchMeta,
+  };
 }
 
 function buildFilterStatsPayload(filteredResult) {
@@ -425,16 +551,16 @@ async function main() {
 
   logStep('Starting embedded AI paper update pipeline');
 
-  const groupedPayloads = await executeSearchStep(cliOptions);
+  const { groupedPayloads, searchMeta } = await executeSearchStep(cliOptions);
 
   const rawCounts = summarizeGroupedPayloads(groupedPayloads, cliOptions.groups);
   const totalRawCount = Object.values(rawCounts).reduce((sum, count) => sum + count, 0);
 
-  logStep(`Raw Scholar candidates total: ${totalRawCount}`);
+  logStep(`Raw candidates total: ${totalRawCount}`);
 
   if (totalRawCount === 0) {
     throw new Error(
-      'No Scholar results available. Check raw cache or rerun without --skip-search.',
+      'No search results available. Check raw cache or rerun without --skip-search.',
     );
   }
 
@@ -446,18 +572,40 @@ async function main() {
   const filteredResult = applyFilterRulesToSetOps(setOpsResult);
   logStep(`After filtering: ${filteredResult.filtered_papers.length} papers remain`);
 
-  logStep('Classifying papers');
-  const classifiedResult = await executeClassificationStep(filteredResult, cliOptions);
-  logStep(`Classification completed: ${classifiedResult.papers.length} papers classified`);
+  const historicalPapers = await safeReadJson(SCHOLAR_NORMALIZED_PATH, []);
+  const { preservedHistorical, newCandidates } = mergeHistoricalWithFilteredPapers(
+    safeArray(historicalPapers),
+    filteredResult.filtered_papers,
+  );
 
-  await saveNormalizedPapers(classifiedResult.papers);
+  logStep(
+    `Merge baseline ready: historical=${preservedHistorical.length}, incremental_filtered=${filteredResult.filtered_papers.length}, new_for_classification=${newCandidates.length}`,
+  );
+
+  logStep('Classifying new papers only');
+  const classifiedResult = await classifyPapers(newCandidates, {
+    useHeuristicOnly: cliOptions.heuristicOnly,
+    concurrency: cliOptions.concurrency,
+  });
+  logStep(`Classification completed: ${classifiedResult.papers.length} new papers classified`);
+
+  const finalPapers = [...preservedHistorical];
+  const finalMap = new Map(finalPapers.map((paper) => [buildPaperIdentityKey(paper), paper]));
+  for (const paper of classifiedResult.papers) {
+    finalMap.set(buildPaperIdentityKey(paper), paper);
+  }
+  const mergedPapers = [...finalMap.values()];
+  const mergedClassificationStats = summarizeClassificationStats(mergedPapers);
+  logStep(`Final merged paper count: ${mergedPapers.length}`);
+
+  await saveNormalizedPapers(mergedPapers);
   logStep(`Saved normalized paper data to ${SCHOLAR_NORMALIZED_PATH}`);
 
   const { outputJson, outputPath } = await buildAndWriteOutputJson({
-    classifiedPapers: classifiedResult.papers,
+    classifiedPapers: mergedPapers,
     setOpsStats: setOpsResult.stats,
     filterStats: buildFilterStatsPayload(filteredResult),
-    classificationStats: classifiedResult.stats,
+    classificationStats: mergedClassificationStats,
     downloadState: await safeReadJson(DOWNLOAD_STATE_PATH, { papers: {} }),
     generatedAt,
     outputPath: cliOptions.outputPath,
@@ -468,7 +616,7 @@ async function main() {
   logStep('Generating BibTeX artifacts');
   let bibtexRun = null;
   try {
-    bibtexRun = await generateBibtexArtifacts(classifiedResult.papers);
+    bibtexRun = await generateBibtexArtifacts(mergedPapers);
     logStep('BibTeX artifact generation completed');
   } catch (error) {
     bibtexRun = {
@@ -522,10 +670,10 @@ async function main() {
 
   if (downloadRun) {
     await buildAndWriteOutputJson({
-      classifiedPapers: classifiedResult.papers,
+      classifiedPapers: mergedPapers,
       setOpsStats: setOpsResult.stats,
       filterStats: buildFilterStatsPayload(filteredResult),
-      classificationStats: classifiedResult.stats,
+      classificationStats: mergedClassificationStats,
       downloadState,
       generatedAt,
       outputPath: cliOptions.outputPath,
@@ -534,10 +682,14 @@ async function main() {
 
   const summary = buildPipelineSummary({
     cliOptions,
+    searchMeta,
     groupedPayloads,
     setOpsResult,
     filteredResult,
-    classifiedResult,
+    classifiedResult: {
+      papers: mergedPapers,
+      stats: mergedClassificationStats,
+    },
     outputPath,
     bibtexRun,
     downloadRun: downloadRun
@@ -548,6 +700,10 @@ async function main() {
       : null,
     generatedAt,
   });
+
+  logStep(
+    `Run mode summary: source=${searchMeta?.source ?? cliOptions.source}, mode=${searchMeta?.mode ?? 'full'}, skip_download=${cliOptions.skipDownload}`,
+  );
 
   console.log(
     JSON.stringify(

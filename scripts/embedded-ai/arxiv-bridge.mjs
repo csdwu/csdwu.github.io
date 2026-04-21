@@ -10,6 +10,8 @@ import {
   ARXIV_RAW_A_PATH,
   ARXIV_RAW_B_PATH,
   ARXIV_RAW_C_PATH,
+  LAST_SEARCH_STATE_PATH,
+  ARXIV_INCREMENTAL_OVERLAP_DAYS,
 } from './config.mjs';
 
 const ARXIV_SEARCH_PY_PATH = path.resolve(ARXIV_CRAWLER_DIR, 'arxiv_search.py');
@@ -109,7 +111,13 @@ function buildArxivSearchArgs(groupKey, options = {}) {
     throw new Error(`arXiv group "${groupKey}" not found in config.`);
   }
 
-  const { pageSize = 50, totalLimit = null, yearLow = null, yearHigh = null } = options;
+  const {
+    pageSize = 50,
+    totalLimit = null,
+    yearLow = null,
+    yearHigh = null,
+    updatedAfter = null,
+  } = options;
 
   const args = [
     ARXIV_SEARCH_PY_PATH,
@@ -133,7 +141,62 @@ function buildArxivSearchArgs(groupKey, options = {}) {
     args.push('--year-high', String(yearHigh));
   }
 
+  if (updatedAfter) {
+    args.push('--updated-after', String(updatedAfter));
+  }
+
   return args;
+}
+
+function toIsoString(value) {
+  if (!value) return null;
+  const dt = new Date(value);
+  if (Number.isNaN(dt.getTime())) return null;
+  return dt.toISOString();
+}
+
+function shiftIsoByDays(isoValue, days) {
+  const dt = new Date(isoValue);
+  if (Number.isNaN(dt.getTime())) return null;
+  dt.setUTCDate(dt.getUTCDate() + days);
+  return dt.toISOString();
+}
+
+function buildDefaultSearchState() {
+  return {
+    source: 'arxiv',
+    last_successful_search_at: null,
+    overlap_buffer_days: ARXIV_INCREMENTAL_OVERLAP_DAYS,
+    groups: Object.fromEntries(
+      GROUP_ORDER.map((group) => [group, { last_successful_search_at: null }]),
+    ),
+  };
+}
+
+function normalizeSearchState(rawState) {
+  const base = buildDefaultSearchState();
+  const raw = rawState && typeof rawState === 'object' ? rawState : {};
+
+  base.source = 'arxiv';
+  base.last_successful_search_at = toIsoString(raw.last_successful_search_at);
+  base.overlap_buffer_days = Number.isFinite(Number(raw.overlap_buffer_days))
+    ? Number(raw.overlap_buffer_days)
+    : ARXIV_INCREMENTAL_OVERLAP_DAYS;
+
+  for (const group of GROUP_ORDER) {
+    const g = raw.groups?.[group] ?? {};
+    base.groups[group] = {
+      last_successful_search_at: toIsoString(g.last_successful_search_at),
+    };
+  }
+
+  return base;
+}
+
+function getGroupWatermark(state, groupKey) {
+  return toIsoString(state?.groups?.[groupKey]?.last_successful_search_at)
+    || toIsoString(state?.last_successful_search_at)
+    || null;
 }
 
 function streamChildLines(stream, prefix, onChunk) {
@@ -292,21 +355,77 @@ export async function runArxivKeywordSearch(groupKey, options = {}) {
     stderr: execResult.stderr,
     parsedStdout: stdoutJson,
     data: papers,
+    searchMode: options.searchMode ?? 'full',
+    watermark: options.watermark ?? null,
+    overlapBufferDays: options.overlapBufferDays ?? ARXIV_INCREMENTAL_OVERLAP_DAYS,
+    updatedAfter: options.updatedAfter ?? null,
   };
 }
 
 export async function runAllArxivKeywordSearches(options = {}) {
   await ensureArxivRuntimeDirs();
   const groups = options.groups?.length ? options.groups : GROUP_ORDER;
+  const forceFullSearch = Boolean(options.forceFullSearch);
+  const overlapBufferDays = Number.isFinite(Number(options.overlapBufferDays))
+    ? Number(options.overlapBufferDays)
+    : ARXIV_INCREMENTAL_OVERLAP_DAYS;
+
+  const stateRaw = await safeReadJson(LAST_SEARCH_STATE_PATH, null);
+  const state = normalizeSearchState(stateRaw);
+
+  const runStartedAt = new Date().toISOString();
   const results = [];
   const groupedData = {};
+  const perGroupStats = {};
+
+  const runMode = forceFullSearch
+    ? 'full'
+    : (groups.every((groupKey) => getGroupWatermark(state, groupKey)) ? 'incremental' : 'full');
+
+  console.log(
+    `[embedded-ai] arXiv search mode: ${runMode} | force_full_search=${forceFullSearch} | overlap_buffer_days=${overlapBufferDays}`,
+  );
 
   for (const groupKey of groups) {
+    const watermark = forceFullSearch ? null : getGroupWatermark(state, groupKey);
+    const incrementalUpdatedAfter = watermark
+      ? shiftIsoByDays(watermark, -overlapBufferDays)
+      : null;
+    const searchMode = incrementalUpdatedAfter ? 'incremental' : 'full';
+
+    console.log(
+      `[embedded-ai] arXiv group ${groupKey}: mode=${searchMode}, watermark=${watermark ?? 'none'}, updated_after=${incrementalUpdatedAfter ?? 'none'}, overlap_buffer_days=${overlapBufferDays}`,
+    );
+
     console.log(`[embedded-ai] arXiv group start: ${groupKey}`);
-    const result = await runArxivKeywordSearch(groupKey, options);
+    const result = await runArxivKeywordSearch(groupKey, {
+      ...options,
+      updatedAfter: incrementalUpdatedAfter,
+      searchMode,
+      watermark,
+      overlapBufferDays,
+    });
     console.log(`[embedded-ai] arXiv group done: ${groupKey}`);
     results.push(result);
     groupedData[groupKey] = result.data;
+
+    const pulledCount = Array.isArray(result.data) ? result.data.length : 0;
+    perGroupStats[groupKey] = {
+      mode: searchMode,
+      watermark,
+      updated_after: incrementalUpdatedAfter,
+      overlap_buffer_days: overlapBufferDays,
+      pulled_count: pulledCount,
+      dedupe_kept_count: pulledCount,
+    };
+
+    console.log(
+      `[embedded-ai] arXiv group ${groupKey} stats: pulled=${pulledCount}, dedupe_kept=${pulledCount}`,
+    );
+
+    state.groups[groupKey] = {
+      last_successful_search_at: runStartedAt,
+    };
 
     // Sleep between groups to avoid rate limiting
     if (groups.indexOf(groupKey) < groups.length - 1) {
@@ -315,5 +434,31 @@ export async function runAllArxivKeywordSearches(options = {}) {
     }
   }
 
-  return { results, groupedData };
+  state.source = 'arxiv';
+  state.overlap_buffer_days = overlapBufferDays;
+  state.last_successful_search_at = runStartedAt;
+  await writeJson(LAST_SEARCH_STATE_PATH, state);
+
+  const totalPulled = Object.values(perGroupStats).reduce(
+    (sum, item) => sum + Number(item.pulled_count ?? 0),
+    0,
+  );
+  console.log(
+    `[embedded-ai] arXiv run summary: mode=${runMode}, watermark=${stateRaw?.last_successful_search_at ?? 'none'}, overlap_buffer_days=${overlapBufferDays}, pulled_total=${totalPulled}`,
+  );
+
+  return {
+    results,
+    groupedData,
+    searchState: state,
+    runMeta: {
+      source: 'arxiv',
+      mode: runMode,
+      overlap_buffer_days: overlapBufferDays,
+      watermark: stateRaw?.last_successful_search_at ?? null,
+      per_group: perGroupStats,
+      pulled_total: totalPulled,
+      dedupe_kept_total: totalPulled,
+    },
+  };
 }

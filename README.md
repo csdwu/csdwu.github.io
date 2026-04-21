@@ -68,6 +68,41 @@ After that, run:
 npm run update-papers
 ```
 
+#### Default behavior (current)
+- Default source: arXiv (`--source arxiv`)
+- Default download mode: skip PDF download
+- Default search mode: incremental (when watermark exists)
+
+#### Incremental search state files
+- `google_scholar_crawler/state/last_search_state.json`: arXiv search watermark state
+- `google_scholar_crawler/state/classification_checkpoint.json`: classification checkpoint/cache
+- `google_scholar_crawler/cache/normalized_papers.json`: merged historical + incremental normalized papers
+
+#### Example commands
+```bash
+# 1) Default incremental update
+npm run update-papers
+
+# 2) Incremental update with year window
+npm run update-papers -- --source arxiv --year-low 2024 --year-high 2026
+
+# 3) Force full search rebuild
+npm run update-papers -- --source arxiv --force-full-search
+```
+
+#### Reset incremental watermark
+Delete `google_scholar_crawler/state/last_search_state.json` and run updater again.
+
+#### GitHub Actions
+- Workflow file: `.github/workflows/update-papers.yml`
+- Runs daily on schedule and supports manual dispatch inputs:
+    - `year_low`
+    - `year_high`
+    - `total_limit`
+    - `skip_download` (default `true`)
+
+To verify automatic runs, check the latest run in Actions and confirm logs include search mode (`full` / `incremental`) and updater summary.
+
 ### Acknowledgements
 
 This project uses the source code from the following repositories:

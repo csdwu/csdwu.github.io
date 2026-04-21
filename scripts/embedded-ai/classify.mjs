@@ -547,14 +547,13 @@ export async function classifyPapers(papers = [], options = {}) {
   // Separate papers into new and existing
   const newPapers = [];
   const reusedResults = [];
-  const dedupeKeyToIndex = new Map();
 
   for (let i = 0; i < papers.length; i++) {
     const paper = papers[i];
     const dedupeKey = paper.dedupe_key;
     if (!dedupeKey) {
       console.warn(`[classify] Paper at index ${i} missing dedupe_key, treating as new`);
-      newPapers.push({ paper, index: i });
+      newPapers.push({ paper, originalIndex: i });
       continue;
     }
 
@@ -563,15 +562,14 @@ export async function classifyPapers(papers = [], options = {}) {
       reusedResults.push({ ...existing, originalIndex: i });
       console.log(`[classify] Reused ${i + 1}/${papers.length}: ${toTrimmedString(paper.title)}`);
     } else {
-      newPapers.push({ paper, index: i });
-      dedupeKeyToIndex.set(dedupeKey, i);
+      newPapers.push({ paper, originalIndex: i });
     }
   }
 
   console.log(`[classify] ${reusedResults.length} papers reused from checkpoint, ${newPapers.length} new papers to classify`);
 
   const queue = newPapers.slice();
-  const newResults = new Array(newPapers.length);
+  const newResultsByOriginalIndex = new Map();
 
   const progress = createClassificationProgress(newPapers.length, {
     stream: process.stderr,
@@ -584,13 +582,12 @@ export async function classifyPapers(papers = [], options = {}) {
       const job = queue.shift();
       if (!job) return;
 
-      const { paper, index: localIndex } = job;
-      const globalIndex = job.index;
-      progress.onStart(localIndex, paper);
+      const { paper, originalIndex } = job;
+      progress.onStart(originalIndex, paper);
 
       try {
         const classified = await classifyPaper(paper, options);
-        newResults[localIndex] = classified;
+        newResultsByOriginalIndex.set(originalIndex, classified);
 
         // Persist to checkpoint immediately
         const dedupeKey = paper.dedupe_key;
@@ -603,9 +600,9 @@ export async function classifyPapers(papers = [], options = {}) {
           await saveClassificationCheckpoint(checkpoint);
         }
 
-        progress.onSuccess(localIndex, paper, classified);
+        progress.onSuccess(originalIndex, paper, classified);
       } catch (error) {
-        progress.onError(localIndex, paper, error);
+        progress.onError(originalIndex, paper, error);
         throw error;
       }
     }
@@ -618,12 +615,11 @@ export async function classifyPapers(papers = [], options = {}) {
     ),
   );
 
-  const finalResults = results.map((_, i) => {
-    const reused = reusedResults.find(r => r.originalIndex === i);
-    if (reused) return reused;
-    const newIndex = newPapers.findIndex(n => n.index === i);
-    return newResults[newIndex];
-  }).filter(Boolean);
+  const reusedByIndex = new Map(reusedResults.map((paper) => [paper.originalIndex, paper]));
+
+  const finalResults = papers
+    .map((_, i) => reusedByIndex.get(i) || newResultsByOriginalIndex.get(i))
+    .filter(Boolean);
 
   finalResults.sort(sortByCategoryThenYear);
 

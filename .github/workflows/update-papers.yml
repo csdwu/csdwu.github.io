@@ -28,8 +28,8 @@ on:
           - "false"
 
   schedule:
-    # UTC 时间 01:17 = 北京时间 09:17
-    - cron: "17 1 * * *"
+    # UTC 时间 00:00 = 北京时间 08:00
+    - cron: "0 0 * * *"
 
 permissions:
   contents: write
@@ -64,13 +64,15 @@ jobs:
         working-directory: scripts/embedded-ai
         env:
           TENCENT_TOKENHUB_API_KEY: ${{ secrets.TENCENT_TOKENHUB_API_KEY }}
-          TENCENT_TOKENHUB_MODEL: ${{ vars.TENCENT_TOKENHUB_MODEL || 'hunyuan-2.0-instruct-20251111' }}
+          TENCENT_TOKENHUB_MODEL: hunyuan-2.0-instruct-20251111
           YEAR_LOW: ${{ github.event_name == 'workflow_dispatch' && inputs.year_low || '' }}
           YEAR_HIGH: ${{ github.event_name == 'workflow_dispatch' && inputs.year_high || '' }}
           TOTAL_LIMIT: ${{ github.event_name == 'workflow_dispatch' && inputs.total_limit || '' }}
           SKIP_DOWNLOAD: ${{ github.event_name == 'workflow_dispatch' && inputs.skip_download || 'true' }}
         run: |
           set -euxo pipefail
+
+          echo "Update mode: source=arxiv, default_skip_download=true"
 
           ARGS=(
             --source arxiv
@@ -90,6 +92,8 @@ jobs:
 
           if [ "$SKIP_DOWNLOAD" = "true" ]; then
             ARGS+=(--skip-download)
+          else
+            ARGS+=(--no-skip-download)
           fi
 
           if [ -z "${TENCENT_TOKENHUB_API_KEY:-}" ]; then
@@ -97,8 +101,20 @@ jobs:
             ARGS+=(--heuristic-only)
           fi
 
+          echo "skip_download input: ${SKIP_DOWNLOAD}"
           echo "Running: node update-papers.mjs ${ARGS[*]}"
           node update-papers.mjs "${ARGS[@]}"
+
+      - name: Print incremental search state
+        run: |
+          set -euxo pipefail
+          STATE_FILE="google_scholar_crawler/state/last_search_state.json"
+          if [ -f "$STATE_FILE" ]; then
+            echo "Search state file found: $STATE_FILE"
+            cat "$STATE_FILE"
+          else
+            echo "Search state file not found yet"
+          fi
 
       - name: Show changed files
         run: git status --short
@@ -118,8 +134,12 @@ jobs:
             git add -A artifacts
           fi
 
-          if [ -d "google_scholar_crawler" ]; then
-            git add -A google_scholar_crawler
+          if [ -f "google_scholar_crawler/cache/normalized_papers.json" ]; then
+            git add google_scholar_crawler/cache/normalized_papers.json
+          fi
+
+          if [ -d "google_scholar_crawler/state" ]; then
+            git add -A google_scholar_crawler/state
           fi
 
           if git diff --cached --quiet; then
