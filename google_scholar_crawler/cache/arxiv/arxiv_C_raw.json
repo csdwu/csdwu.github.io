@@ -1,5 +1,30 @@
 [
   {
+    "arxiv_id": "2604.11807v3",
+    "title": "Physics-Informed State Space Models for Reliable Solar Irradiance Forecasting in Off-Grid Systems",
+    "abstract": "The stable operation of off-grid photovoltaic systems requires accurate, computationally efficient solar forecasting. Contemporary deep learning models often suffer from massive computational overhead and physical blindness, generating impossible predictions. This paper introduces the Physics-Informed State Space Model (PISSM) to bridge the gap between efficiency and physical accuracy for edge-deployed microcontrollers. PISSM utilizes a dynamic Hankel matrix embedding to filter stochastic sensor noise by transforming raw meteorological sequences into a robust state space. A Linear State Space Model replaces heavy attention mechanisms, efficiently modeling temporal dependencies for parallel processing. Crucially, a novel Physics-Informed Gating mechanism leverages the Solar Zenith Angle and Clearness Index to structurally bound outputs, ensuring predictions strictly obey diurnal cycles and preventing nocturnal errors. Validated on a multi-year dataset for Omdurman, Sudan, PISSM achieves superior accuracy with fewer than 40,000 parameters, establishing an ultra-lightweight benchmark for real-time off-grid control.",
+    "authors": [
+      "Mohammed Ezzaldin Babiker Abdullah"
+    ],
+    "year": 2026,
+    "month": 4,
+    "published": "2026-04-13T17:59:49Z",
+    "updated": "2026-04-17T19:36:34Z",
+    "urls": {
+      "arxiv": "https://arxiv.org/abs/2604.11807v3",
+      "pdf": "https://arxiv.org/pdf/2604.11807v3"
+    },
+    "arxiv_url": "https://arxiv.org/abs/2604.11807v3",
+    "pdf_url": "https://arxiv.org/pdf/2604.11807v3",
+    "eprint_url": "https://arxiv.org/pdf/2604.11807v3",
+    "pub_url": "https://arxiv.org/abs/2604.11807v3",
+    "snippet": "The stable operation of off-grid photovoltaic systems requires accurate, computationally efficient solar forecasting. Contemporary deep learning models often suffer from massive computational overhead",
+    "source": "arxiv",
+    "doi": "",
+    "venue": "arXiv",
+    "cited_by": 0
+  },
+  {
     "arxiv_id": "2604.13359v1",
     "title": "BioTrain: Sub-MB, Sub-50mW On-Device Fine-Tuning for Edge-AI on Biosignals",
     "abstract": "Biosignals exhibit substantial cross-subject and cross-session variability, inducing severe domain shifts that degrade post-deployment performance for small, edge-oriented AI models. On-device adaptation is therefore essential to both preserve user privacy and ensure system reliability. However, existing sub-100 mW MCU-based wearable platforms can only support shallow or sparse adaptation schemes due to the prohibitive memory footprint and computational cost of full backpropagation (BP). In this paper, we propose BioTrain, a framework enabling full-network fine-tuning of state-of-the-art biosignal models under milliwatt-scale power and sub-megabyte memory constraints. We validate BioTrain using both offline and on-device benchmarks on EEG and EOG datasets, covering Day-1 new-subject calibration and longitudinal adaptation to signal drift. Experimental results show that full-network fine-tuning achieves accuracy improvements of up to 35% over non-adapted baselines and outperforms last-layer updates by approximately 7% during new-subject calibration. On the GAP9 MCU platform, BioTrain enables efficient on-device training throughput of 17 samples/s for EEG and 85 samples/s for EOG models within a power envelope below 50 mW. In addition, BioTrain's efficient memory allocator and network topology optimization enable the use of a large batch size, reducing peak memory usage. For fully on-chip BP on GAP9, BioTrain reduces the memory footprint by 8.1x, from 5.4 MB to 0.67 MB, compared to conventional full-network fine-tuning using batch normalization with batch size 8.",
@@ -32,25 +57,26 @@
     "cited_by": 0
   },
   {
-    "arxiv_id": "2604.11807v2",
-    "title": "Physics-Informed State Space Models for Reliable Solar Irradiance Forecasting in Off-Grid Systems",
-    "abstract": "The stable operation of off-grid photovoltaic systems requires accurate, computationally efficient solar forecasting. Contemporary deep learning models often suffer from massive computational overhead and physical blindness, generating impossible predictions. This paper introduces the Physics-Informed State Space Model (PISSM) to bridge the gap between efficiency and physical accuracy for edge-deployed microcontrollers. PISSM utilizes a dynamic Hankel matrix embedding to filter stochastic sensor noise by transforming raw meteorological sequences into a robust state space. A Linear State Space Model replaces heavy attention mechanisms, efficiently modeling temporal dependencies for parallel processing. Crucially, a novel Physics-Informed Gating mechanism leverages the Solar Zenith Angle and Clearness Index to structurally bound outputs, ensuring predictions strictly obey diurnal cycles and preventing nocturnal errors. Validated on a multi-year dataset for Omdurman, Sudan, PISSM achieves superior accuracy with fewer than 40,000 parameters, establishing an ultra-lightweight benchmark for real-time off-grid control.",
+    "arxiv_id": "2604.16474v1",
+    "title": "Full Feature Spiking Neural Network Simulation on Micro-Controllers for Neuromorphic Applications at the Edge",
+    "abstract": "Microcontroller units (MCU), which have an order of magnitude lower Size, Weight and Power (SWaP) than standard computers, makes them suitable for applications at the edge. Neuromorphic computing, which can realize low SWaP, relies on Spiking Neural Networks (SNNs). Until now, software based simulations of SNNs required GPU-based workstations, application classified core processors such as the ARM Cortex-A53, or specialized hardware like Intel's Loihi. In the present work, we demonstrate that the SNN simulator CARLsim can run its full feature set on a MCU RP2350 with 8 MB memory. We accomplished this by utilizing IEEE 16-bit float point numbers, which reduced memory requirements without loss of function. We were able to run the Synfire4 benchmark which comprises 1200 neurons. The accuracy was 97.5% compared to the standard single precision numbers. Furthermore, we show that CARLsim runs a Synfire4 benchmark scaled-down to 186 neurons on a MCU in real-time at only 20 mW. Compared to the smallest application class ARM processor used by Raspberry in their Pi Zero 2 W, our MCU implementation is five times more energy efficient for the SNN itself, and an order of magnitude better when compared to the complete SoC (MCU/CPU + Board).",
     "authors": [
-      "Mohammed Ezzaldin Babiker Abdullah"
+      "L. Niedermeier",
+      "J. L. Krichmar"
     ],
     "year": 2026,
     "month": 4,
-    "published": "2026-04-13T17:59:49Z",
-    "updated": "2026-04-14T06:11:22Z",
+    "published": "2026-04-11T07:17:51Z",
+    "updated": "2026-04-11T07:17:51Z",
     "urls": {
-      "arxiv": "https://arxiv.org/abs/2604.11807v2",
-      "pdf": "https://arxiv.org/pdf/2604.11807v2"
+      "arxiv": "https://arxiv.org/abs/2604.16474v1",
+      "pdf": "https://arxiv.org/pdf/2604.16474v1"
     },
-    "arxiv_url": "https://arxiv.org/abs/2604.11807v2",
-    "pdf_url": "https://arxiv.org/pdf/2604.11807v2",
-    "eprint_url": "https://arxiv.org/pdf/2604.11807v2",
-    "pub_url": "https://arxiv.org/abs/2604.11807v2",
-    "snippet": "The stable operation of off-grid photovoltaic systems requires accurate, computationally efficient solar forecasting. Contemporary deep learning models often suffer from massive computational overhead",
+    "arxiv_url": "https://arxiv.org/abs/2604.16474v1",
+    "pdf_url": "https://arxiv.org/pdf/2604.16474v1",
+    "eprint_url": "https://arxiv.org/pdf/2604.16474v1",
+    "pub_url": "https://arxiv.org/abs/2604.16474v1",
+    "snippet": "Microcontroller units (MCU), which have an order of magnitude lower Size, Weight and Power (SWaP) than standard computers, makes them suitable for applications at the edge. Neuromorphic computing, whi",
     "source": "arxiv",
     "doi": "",
     "venue": "arXiv",
@@ -80,6 +106,31 @@
     "eprint_url": "https://arxiv.org/pdf/2604.04297v1",
     "pub_url": "https://arxiv.org/abs/2604.04297v1",
     "snippet": "Physiological foundation models (FMs) have shown promise for biosignal representation learning, yet most remain confined to a single modality such as EEG, ECG, or PPG, largely because paired multimoda",
+    "source": "arxiv",
+    "doi": "",
+    "venue": "arXiv",
+    "cited_by": 0
+  },
+  {
+    "arxiv_id": "2604.15352v1",
+    "title": "Temporal Derivative Soft-Sensing and Reconstructing Solar Radiation and Heat Flux from Common Environmental Sensors",
+    "abstract": "Modern methods of environmental monitoring are deficient in the lack of ability to take measurements of energy flows since traditional readings involve capturing parameters such as temperature, pressure, and humidity without considering their physical causes. The present research describes Differential Temporal Derivative Soft-Sensing (DTDSS), a physics-based approach which enables any ordinary low cost sensor array to infer estimates of the energy exchange in the environment by modeling its radiative heat fluxes. In particular, the proposed approach combines a novel paired sensor configuration along with a unique algorithmic solution called Inertial Noise Reduction or INR, that mathematically models the flow of energy in the environment by computing Global Horizontal Irradiance, or GHI, and convective heat flux. Experimental field testing has been conducted with the use of calibrated reference pyranometers supplied by the Department of Meteorology of Sri Lanka, yielding a correspondence between 8 bit embedded processor results and the reference of R2 approx. eqv. to 0.9 and RMSE approx. eqv. to 45 Watts per square meter in under 2KB RAM of a microcontroller unit.",
+    "authors": [
+      "Neksha DeSilva"
+    ],
+    "year": 2026,
+    "month": 4,
+    "published": "2026-04-05T15:03:12Z",
+    "updated": "2026-04-05T15:03:12Z",
+    "urls": {
+      "arxiv": "https://arxiv.org/abs/2604.15352v1",
+      "pdf": "https://arxiv.org/pdf/2604.15352v1"
+    },
+    "arxiv_url": "https://arxiv.org/abs/2604.15352v1",
+    "pdf_url": "https://arxiv.org/pdf/2604.15352v1",
+    "eprint_url": "https://arxiv.org/pdf/2604.15352v1",
+    "pub_url": "https://arxiv.org/abs/2604.15352v1",
+    "snippet": "Modern methods of environmental monitoring are deficient in the lack of ability to take measurements of energy flows since traditional readings involve capturing parameters such as temperature, pressu",
     "source": "arxiv",
     "doi": "",
     "venue": "arXiv",
