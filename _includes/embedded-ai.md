@@ -110,6 +110,12 @@
     </ul>
   {% endif %}
 
+{% assign heading_date = nil %}
+{% if papers_data and papers_data.generated_at %}
+  {% assign generated_unix = papers_data.generated_at | date: "%s" | plus: 0 %}
+  {% assign heading_date = generated_unix | plus: 28800 | date: "%B %-d, %Y" %}
+{% endif %}
+
   <h2>Papers{% if heading_date %} (Last Update: {{ heading_date }}){% endif %}</h2>
 
   {% if papers_data and papers_data.categories and papers_data.categories.size > 0 %}

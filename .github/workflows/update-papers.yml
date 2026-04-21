@@ -13,6 +13,12 @@ on:
         required: false
         default: ''
         type: string
+      total_limit:
+        description: 'Maximum total number of arXiv results'
+        required: false
+        default: ''
+        type: string
+
   schedule:
     - cron: '17 9 * * *'
       timezone: 'Asia/Shanghai'
@@ -27,20 +33,14 @@ concurrency:
 jobs:
   update:
     runs-on: ubuntu-latest
+    env:
+      TZ: Asia/Shanghai
 
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
-
-      - name: Setup Python
-        uses: actions/setup-python@v4
-        with:
-          python-version: '3.11'
-
-      - name: Install Python dependencies
-        run: pip install -r google_scholar_crawler/requirements.txt
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
@@ -56,43 +56,48 @@ jobs:
       - name: Run paper updater
         working-directory: scripts/embedded-ai
         env:
-          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-          GEMINI_MODEL: ${{ vars.GEMINI_MODEL || 'gemini-2.5-flash' }}
-          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
-          OPENROUTER_MODEL: ${{ vars.OPENROUTER_MODEL || 'openrouter/free' }}
           TENCENT_TOKENHUB_API_KEY: ${{ secrets.TENCENT_TOKENHUB_API_KEY }}
           TENCENT_TOKENHUB_MODEL: ${{ vars.TENCENT_TOKENHUB_MODEL || 'hunyuan-2.0-instruct-20251111' }}
-
-          MAX_RESULTS_PER_QUERY: ${{ vars.MAX_RESULTS_PER_QUERY || '10' }}
-          REQUEST_DELAY_MS: ${{ vars.REQUEST_DELAY_MS || '6000' }}
-          LLM_DELAY_MS: ${{ vars.LLM_DELAY_MS || '500' }}
-          ARXIV_MAX_ATTEMPTS: ${{ vars.ARXIV_MAX_ATTEMPTS || '5' }}
-
           YEAR_LOW: ${{ github.event.inputs.year_low || '' }}
           YEAR_HIGH: ${{ github.event.inputs.year_high || '' }}
-          VENUE_FILTER_PRESET: ${{ vars.VENUE_FILTER_PRESET || 'recall_first' }}
-          SEARCH_SOURCE: ${{ vars.SEARCH_SOURCE || 'all' }}
+          TOTAL_LIMIT: ${{ github.event.inputs.total_limit || '' }}
         run: |
-          ARGS=("--source" "$SEARCH_SOURCE")
+          ARGS=(
+            "--source" "arxiv"
+            "--skip-download"
+          )
+
           if [ -n "$YEAR_LOW" ]; then
             ARGS+=("--year-low" "$YEAR_LOW")
           fi
+
           if [ -n "$YEAR_HIGH" ]; then
             ARGS+=("--year-high" "$YEAR_HIGH")
           fi
+
+          if [ -n "$TOTAL_LIMIT" ]; then
+            ARGS+=("--total-limit" "$TOTAL_LIMIT")
+          fi
+
+          if [ -z "$TENCENT_TOKENHUB_API_KEY" ]; then
+            echo "TENCENT_TOKENHUB_API_KEY not set, fallback to heuristic-only mode"
+            ARGS+=("--heuristic-only")
+          fi
+
+          echo "Running: node update-papers.mjs ${ARGS[*]}"
           node update-papers.mjs "${ARGS[@]}"
 
-      - name: Commit changes
+      - name: Commit generated files
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
           git add _data/embedded_ai_papers.json
+          git add artifacts/*.bib
           git add google_scholar_crawler/cache/normalized_papers.json
           git add google_scholar_crawler/state/classification_checkpoint.json
           git add google_scholar_crawler/state/download_state.json
           git add google_scholar_crawler/state/download_quota.json
-          git add artifacts/*.bib
 
           if git diff --cached --quiet; then
             echo "No changes to commit"
