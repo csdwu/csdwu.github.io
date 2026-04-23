@@ -17817,3 +17817,47 @@
   url = {https://arxiv.org/abs/2510.18637v2},
   abstract = {Semantic segmentation of electron microscopy (EM) images of biological samples remains a challenge in the life sciences. EM data captures details of biological structures, sometimes with such complexity that even human observers can find it overwhelming. We introduce ε-Seg, a method based on hierarchical variational autoencoders (HVAEs), employing center-region masking, sparse label contrastive learning (CL), a Gaussian mixture model (GMM) prior, and clustering-free label prediction. Center-region masking and the inpainting loss encourage the model to learn robust and representative embeddings to distinguish the desired classes, even if training labels are sparse (0.05% of the total image data or less). For optimal performance, we employ CL and a GMM prior to shape the latent space of the HVAE such that encoded input patches tend to cluster wrt. the semantic classes we wish to distinguish. Finally, instead of clustering latent embeddings for semantic segmentation, we propose a MLP semantic segmentation head to directly predict class labels from latent embeddings. We show empirical results of ε-Seg and baseline methods on 2 dense EM datasets of biological tissues and demonstrate the applicability of our method also on fluorescence microscopy data. Our results show that ε-Seg is capable of achieving competitive sparsely-supervised segmentation results on complex biological image data, even if only limited amounts of training labels are available.}
 }
+
+@article{flynn2026-compass-continual-multilingual-peft-154fe530,
+  author = {Noah Flynn},
+  title = {COMPASS: COntinual Multilingual PEFT with Adaptive Semantic Sampling},
+  year = {2026},
+  journal = {arXiv},
+  eprint = {2604.20720v1},
+  archivePrefix = {arXiv},
+  url = {https://arxiv.org/abs/2604.20720v1},
+  abstract = {Large language models (LLMs) often exhibit performance disparities across languages, with naive multilingual fine-tuning frequently degrading performance due to negative cross-lingual interference. To address this, we introduce COMPASS (COntinual Multilingual PEFT with Adaptive Semantic Sampling), a novel data-centric framework for adapting LLMs to target languages. COMPASS leverages parameter-efficient fine-tuning (PEFT) by training lightweight, language-specific adapters on a judiciously selected subset of auxiliary multilingual data. The core of our method is a distribution-aware sampling strategy that uses multilingual embeddings and clustering to identify semantic gaps between existing training data and a target usage distribution. By prioritizing auxiliary data from under-represented semantic clusters, COMPASS maximizes positive cross-lingual transfer while minimizing interference. We extend this into a continual learning framework, COMPASS-ECDA, which monitors for data distribution shifts in production and dynamically updates adapters to prevent model staleness, balancing adaptation to new data with the preservation of existing knowledge. Across three different model architectures (Phi-4-Mini, Llama-3.1-8B, and Qwen2.5-7B) and multiple challenging multilingual benchmarks (Global-MMLU, MMLU-ProX), including unseen long-context tasks (OneRuler), we demonstrate that COMPASS consistently outperforms baseline methods guided by linguistic similarity, providing an effective, efficient, and sustainable solution for developing and maintaining high-performing multilingual models in dynamic environments.}
+}
+
+@article{fu2026-convergent-evolution-how-different-e62e664b,
+  author = {Deqing Fu and Tianyi Zhou and Mikhail Belkin and Vatsal Sharan and Robin Jia},
+  title = {Convergent Evolution: How Different Language Models Learn Similar Number Representations},
+  year = {2026},
+  journal = {arXiv},
+  eprint = {2604.20817v1},
+  archivePrefix = {arXiv},
+  url = {https://arxiv.org/abs/2604.20817v1},
+  abstract = {Language models trained on natural text learn to represent numbers using periodic features with dominant periods at $T=2, 5, 10$. In this paper, we identify a two-tiered hierarchy of these features: while Transformers, Linear RNNs, LSTMs, and classical word embeddings trained in different ways all learn features that have period-$T$ spikes in the Fourier domain, only some learn geometrically separable features that can be used to linearly classify a number mod-$T$. To explain this incongruity, we prove that Fourier domain sparsity is necessary but not sufficient for mod-$T$ geometric separability. Empirically, we investigate when model training yields geometrically separable features, finding that the data, architecture, optimizer, and tokenizer all play key roles. In particular, we identify two different routes through which models can acquire geometrically separable features: they can learn them from complementary co-occurrence signals in general language data, including text-number co-occurrence and cross-number interaction, or from multi-token (but not single-token) addition problems. Overall, our results highlight the phenomenon of convergent evolution in feature learning: A diverse range of models learn similar features from different training signals.}
+}
+
+@article{dong2026-hierarchically-robust-zero-shot-811f92d5,
+  author = {Junhao Dong and Yifei Zhang and Hao Zhu and Yew-Soon Ong and Piotr Koniusz},
+  title = {Hierarchically Robust Zero-shot Vision-language Models},
+  year = {2026},
+  journal = {arXiv},
+  eprint = {2604.18867v1},
+  archivePrefix = {arXiv},
+  url = {https://arxiv.org/abs/2604.18867v1},
+  abstract = {Vision-Language Models (VLMs) can perform zero-shot classification but are susceptible to adversarial attacks. While robust fine-tuning improves their robustness, existing approaches align fixed text embeddings with an image embedding, sacrificing natural performance and robustness. A robustness degradation also occurs when a model faces adversarial attacks targeting superclasses (parent classes, e.g., mammal) in addition to their base (leaf) classes (e.g., cat). Thus, to enhance adversarial robustness and leverage the inherent hierarchical properties of class space, we propose a novel adversarial fine-tuning framework based on hierarchical embeddings and several levels of adversarially robust alignment of image-text modalities. Additional mechanisms place visual embeddings at the desired depth of hierarchy, and we provide a theoretical connection between the depth of embedding in the hierarchy and the maximum viable margin size. Our model naturally realizes several margin sizes, boosting generalization of adversaries for robustification. As various trees with different parent labels can share the same leaf labels, we also consider aligning over multiple trees to boost semantic variety. Experiments across several datasets are performed.}
+}
+
+@article{zhou2026-scpformer-a-foundation-model-f9b6fa56,
+  author = {Qifeng Zhou and Lei Yu and Yuzhi Guo and Yuwei Miao and Hehuan Ma and Wenliang Zhong and Lin Xu and Junzhou Huang},
+  title = {scpFormer: A Foundation Model for Unified Representation and Integration of the Single-Cell Proteomics},
+  year = {2026},
+  journal = {arXiv},
+  eprint = {2604.20003v1},
+  archivePrefix = {arXiv},
+  url = {https://arxiv.org/abs/2604.20003v1},
+  abstract = {The integration of single-cell proteomic data is often hindered by the fragmented nature of targeted antibody panels. To address this limitation, we introduce scpFormer, a transformer-based foundation model designed for single-cell proteomics. Pre-trained on over 390 million cells, scpFormer replaces standard index-based tokenization with a continuous, sequence-anchored approach. By combining Evolutionary Scale Modeling (ESM) with value-aware expression embeddings, it dynamically maps variable panels into a shared semantic space without artificial discretization. We demonstrate that scpFormer generates global cell representations that perform competitively in large-scale batch integration and unsupervised clustering. Moreover, its open-vocabulary architecture facilitates in silico panel expansion, assisting in the reconstruction of biological manifolds in sparse clinical datasets. Finally, this learned protein co-expression logic is transferable to bulk-omics tasks, supporting applications like cancer drug response prediction. scpFormer provides a versatile, panel-agnostic framework to facilitate scalable biomarker discovery and precision oncology.}
+}

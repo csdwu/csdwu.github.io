@@ -10720,5 +10720,2417 @@
       "error": "TokenHub request failed with status 402: {\"error\":{\"message\":\"endpoint is inactive: FREE_QUOTA_EXHAUSTED\",\"code\":\"401008\",\"type\":\"gateway_error\",\"request_id\":\"0602b78e-b50a-41d8-a32d-96a63adbb388\"}}\n"
     },
     "checkpoint_saved_at": "2026-04-21T06:21:48.127Z"
+  },
+  "arxiv:2604 19309v1": {
+    "id": "496674cb8990e5b7eff5b30a26e3777f9918c56e",
+    "source": "arxiv",
+    "title": "Co-Refine: AI-Powered Tool Supporting Qualitative Analysis",
+    "abstract": "Qualitative coding relies on a researcher's application of codes to textual data. As coding proceeds across large datasets, interpretations of codes often shift (temporal drift), reducing the credibility of the analysis. Existing Computer-Assisted Qualitative Data Analysis (CAQDAS) tools provide support for data management but offer no workflow for real-time detection of these drifts. We present Co-Refine, an AI-augmented qualitative coding platform that delivers continuous, grounded feedback on coding consistency without disrupting the researcher's workflow. The system employs a three-stage audit pipeline: Stage 1 computes deterministic embedding-based metrics for mathematical consistency; Stage 2 grounds LLM verdicts within $\\pm0.15$ of the deterministic scores; and Stage 3 produces code definitions from previous patterns to create a deepening feedback loop. Co-Refine demonstrates that deterministic scoring can effectively constrain LLM outputs to produce reliable, real-time audit signals for qualitative analysis.",
+    "snippet": "Qualitative coding relies on a researcher's application of codes to textual data. As coding proceeds across large datasets, interpretations of codes often shift (temporal drift), reducing the credibil",
+    "authors": [
+      "Athikash Jeyaganthan",
+      "Kai Xu",
+      "Franziska Becker",
+      "Steffen Koch"
+    ],
+    "venue": "arXiv",
+    "year": 2026,
+    "cited_by": 0,
+    "doi": "",
+    "arxiv_id": "2604.19309v1",
+    "urls": {
+      "arxiv": "https://arxiv.org/abs/2604.19309v1",
+      "pdf": "https://arxiv.org/pdf/2604.19309v1",
+      "paper": "https://arxiv.org/abs/2604.19309v1"
+    },
+    "scholar_url": "",
+    "pub_url": "https://arxiv.org/abs/2604.19309v1",
+    "eprint_url": "https://arxiv.org/pdf/2604.19309v1",
+    "container_type": "",
+    "query_useds": [],
+    "raw_group_hits": [
+      "A"
+    ],
+    "search_sets_raw": [
+      "A"
+    ],
+    "search_sets_final": [
+      "A"
+    ],
+    "post_filter": null,
+    "raw_payloads": [
+      {
+        "arxiv_id": "2604.19309v1",
+        "title": "Co-Refine: AI-Powered Tool Supporting Qualitative Analysis",
+        "abstract": "Qualitative coding relies on a researcher's application of codes to textual data. As coding proceeds across large datasets, interpretations of codes often shift (temporal drift), reducing the credibility of the analysis. Existing Computer-Assisted Qualitative Data Analysis (CAQDAS) tools provide support for data management but offer no workflow for real-time detection of these drifts. We present Co-Refine, an AI-augmented qualitative coding platform that delivers continuous, grounded feedback on coding consistency without disrupting the researcher's workflow. The system employs a three-stage audit pipeline: Stage 1 computes deterministic embedding-based metrics for mathematical consistency; Stage 2 grounds LLM verdicts within $\\pm0.15$ of the deterministic scores; and Stage 3 produces code definitions from previous patterns to create a deepening feedback loop. Co-Refine demonstrates that deterministic scoring can effectively constrain LLM outputs to produce reliable, real-time audit signals for qualitative analysis.",
+        "authors": [
+          "Athikash Jeyaganthan",
+          "Kai Xu",
+          "Franziska Becker",
+          "Steffen Koch"
+        ],
+        "year": 2026,
+        "month": 4,
+        "published": "2026-04-21T10:16:13Z",
+        "updated": "2026-04-21T10:16:13Z",
+        "urls": {
+          "arxiv": "https://arxiv.org/abs/2604.19309v1",
+          "pdf": "https://arxiv.org/pdf/2604.19309v1"
+        },
+        "arxiv_url": "https://arxiv.org/abs/2604.19309v1",
+        "pdf_url": "https://arxiv.org/pdf/2604.19309v1",
+        "eprint_url": "https://arxiv.org/pdf/2604.19309v1",
+        "pub_url": "https://arxiv.org/abs/2604.19309v1",
+        "snippet": "Qualitative coding relies on a researcher's application of codes to textual data. As coding proceeds across large datasets, interpretations of codes often shift (temporal drift), reducing the credibil",
+        "source": "arxiv",
+        "doi": "",
+        "venue": "arXiv",
+        "cited_by": 0
+      }
+    ],
+    "dedupe_key": "arxiv:2604 19309v1",
+    "seed_tags": [],
+    "tag_hints": {
+      "force_tinyml": false,
+      "require_power_tag": false
+    },
+    "primary_group": "A",
+    "filter_policy": "TH_CPL_AB_OR_ARXIV",
+    "filter_bucket": "arxiv",
+    "filter_reason": "matched_arxiv",
+    "matched_venue": "",
+    "matched_th_cpl_level": "",
+    "matched_th_cpl_area": "",
+    "matched_venue_type": "",
+    "venue_match": {
+      "matched": false,
+      "raw": "arXiv",
+      "normalized": "arxiv",
+      "normalized_candidates": [
+        "arxiv"
+      ],
+      "match": null
+    },
+    "arxiv_match": {
+      "matched": true,
+      "arxiv_id": "2604.19309v1",
+      "matched_urls": [
+        "https://arxiv.org/abs/2604.19309v1",
+        "https://arxiv.org/pdf/2604.19309v1"
+      ]
+    },
+    "is_in_arxiv": true,
+    "category": "Embedded AI Applications",
+    "llm_tags": [],
+    "final_tags": [],
+    "provider_used": "heuristic_fallback",
+    "classification_model": "hunyuan-2.0-instruct-20251111",
+    "classification_raw_response": {
+      "error": "TokenHub request failed with status 402: {\"error\":{\"message\":\"endpoint is inactive: FREE_QUOTA_EXHAUSTED\",\"code\":\"401008\",\"type\":\"gateway_error\",\"request_id\":\"cfda8d28-ed9b-4df1-8b06-b8788a1f2f4e\"}}\n"
+    },
+    "checkpoint_saved_at": "2026-04-23T02:07:19.635Z"
+  },
+  "arxiv:2604 19165v1": {
+    "id": "c3f115a9af0f1102dd6188ce77c4e2c326d9794a",
+    "source": "arxiv",
+    "title": "Analytical Extraction of Conditional Sobol' Indices via Basis Decomposition of Polynomial Chaos Expansions",
+    "abstract": "In uncertainty quantification, evaluating sensitivity measures under specific conditions (i.e., conditional Sobol' indices) is essential for systems with parameterized responses, such as spatial fields or varying operating conditions. Traditional approaches often rely on point-wise modeling, which is computationally expensive and may lack consistency across the parameter space. This paper demonstrates that for a pre-trained global Polynomial Chaos Expansion (PCE) model, the analytical conditional Sobol' indices are inherently embedded within its basis functions. By leveraging the tensor-product property of PCE bases, we reformulate the global expansion into a set of analytical coefficient fields that depend on the conditioning variables. Based on the preservation of orthogonality under conditional probability measures, we derive closed-form expressions for conditional variances and Sobol' indices. This framework bypasses the need for repetitive modeling or additional sampling, transforming conditional sensitivity analysis into a purely algebraic post-processing step. Numerical benchmarks indicate that the proposed method ensures physical coherence and offers superior numerical robustness and computational efficiency compared to conventional point-wise approaches.",
+    "snippet": "In uncertainty quantification, evaluating sensitivity measures under specific conditions (i.e., conditional Sobol' indices) is essential for systems with parameterized responses, such as spatial field",
+    "authors": [
+      "Shijie Zhong",
+      "Jiangfeng Fu"
+    ],
+    "venue": "arXiv",
+    "year": 2026,
+    "cited_by": 0,
+    "doi": "",
+    "arxiv_id": "2604.19165v1",
+    "urls": {
+      "arxiv": "https://arxiv.org/abs/2604.19165v1",
+      "pdf": "https://arxiv.org/pdf/2604.19165v1",
+      "paper": "https://arxiv.org/abs/2604.19165v1"
+    },
+    "scholar_url": "",
+    "pub_url": "https://arxiv.org/abs/2604.19165v1",
+    "eprint_url": "https://arxiv.org/pdf/2604.19165v1",
+    "container_type": "",
+    "query_useds": [],
+    "raw_group_hits": [
+      "A"
+    ],
+    "search_sets_raw": [
+      "A"
+    ],
+    "search_sets_final": [
+      "A"
+    ],
+    "post_filter": null,
+    "raw_payloads": [
+      {
+        "arxiv_id": "2604.19165v1",
+        "title": "Analytical Extraction of Conditional Sobol' Indices via Basis Decomposition of Polynomial Chaos Expansions",
+        "abstract": "In uncertainty quantification, evaluating sensitivity measures under specific conditions (i.e., conditional Sobol' indices) is essential for systems with parameterized responses, such as spatial fields or varying operating conditions. Traditional approaches often rely on point-wise modeling, which is computationally expensive and may lack consistency across the parameter space. This paper demonstrates that for a pre-trained global Polynomial Chaos Expansion (PCE) model, the analytical conditional Sobol' indices are inherently embedded within its basis functions. By leveraging the tensor-product property of PCE bases, we reformulate the global expansion into a set of analytical coefficient fields that depend on the conditioning variables. Based on the preservation of orthogonality under conditional probability measures, we derive closed-form expressions for conditional variances and Sobol' indices. This framework bypasses the need for repetitive modeling or additional sampling, transforming conditional sensitivity analysis into a purely algebraic post-processing step. Numerical benchmarks indicate that the proposed method ensures physical coherence and offers superior numerical robustness and computational efficiency compared to conventional point-wise approaches.",
+        "authors": [
+          "Shijie Zhong",
+          "Jiangfeng Fu"
+        ],
+        "year": 2026,
+        "month": 4,
+        "published": "2026-04-21T07:20:47Z",
+        "updated": "2026-04-21T07:20:47Z",
+        "urls": {
+          "arxiv": "https://arxiv.org/abs/2604.19165v1",
+          "pdf": "https://arxiv.org/pdf/2604.19165v1"
+        },
+        "arxiv_url": "https://arxiv.org/abs/2604.19165v1",
+        "pdf_url": "https://arxiv.org/pdf/2604.19165v1",
+        "eprint_url": "https://arxiv.org/pdf/2604.19165v1",
+        "pub_url": "https://arxiv.org/abs/2604.19165v1",
+        "snippet": "In uncertainty quantification, evaluating sensitivity measures under specific conditions (i.e., conditional Sobol' indices) is essential for systems with parameterized responses, such as spatial field",
+        "source": "arxiv",
+        "doi": "",
+        "venue": "arXiv",
+        "cited_by": 0
+      }
+    ],
+    "dedupe_key": "arxiv:2604 19165v1",
+    "seed_tags": [],
+    "tag_hints": {
+      "force_tinyml": false,
+      "require_power_tag": false
+    },
+    "primary_group": "A",
+    "filter_policy": "TH_CPL_AB_OR_ARXIV",
+    "filter_bucket": "arxiv",
+    "filter_reason": "matched_arxiv",
+    "matched_venue": "",
+    "matched_th_cpl_level": "",
+    "matched_th_cpl_area": "",
+    "matched_venue_type": "",
+    "venue_match": {
+      "matched": false,
+      "raw": "arXiv",
+      "normalized": "arxiv",
+      "normalized_candidates": [
+        "arxiv"
+      ],
+      "match": null
+    },
+    "arxiv_match": {
+      "matched": true,
+      "arxiv_id": "2604.19165v1",
+      "matched_urls": [
+        "https://arxiv.org/abs/2604.19165v1",
+        "https://arxiv.org/pdf/2604.19165v1"
+      ]
+    },
+    "is_in_arxiv": true,
+    "category": "Embedded AI Applications",
+    "llm_tags": [],
+    "final_tags": [],
+    "provider_used": "heuristic_fallback",
+    "classification_model": "hunyuan-2.0-instruct-20251111",
+    "classification_raw_response": {
+      "error": "TokenHub request failed with status 402: {\"error\":{\"message\":\"endpoint is inactive: FREE_QUOTA_EXHAUSTED\",\"code\":\"401008\",\"type\":\"gateway_error\",\"request_id\":\"e47346b7-8058-432f-ad92-f31f2def94c0\"}}\n"
+    },
+    "checkpoint_saved_at": "2026-04-23T02:07:19.656Z"
+  },
+  "arxiv:2604 18570v2": {
+    "id": "6c60b2cdd1678ecd522cd997880bd71dc7193f8c",
+    "source": "arxiv",
+    "title": "A multimodal and temporal foundation model for virtual patient representations at healthcare system scale",
+    "abstract": "Modern medicine generates vast multimodal data across siloed systems, yet no existing model integrates the full breadth and temporal depth of the clinical record into a unified patient representation. We introduce Apollo, a multimodal temporal foundation model trained and evaluated on over three decades of longitudinal hospital records from a major US hospital system, composed of 25 billion records from 7.2 million patients, representing 28 distinct medical modalities and 12 major medical specialties. Apollo learns a unified representation space integrating over 100 thousand unique medical events in our clinical vocabulary as well as images and clinical text. This \"atlas of medical concepts\" forms a computational substrate for modeling entire patient care journeys comprised of sequences of structured and unstructured events, which are compressed by Apollo into virtual patient representations. To assess the potential of these whole-patient representations, we created 322 prognosis and retrieval tasks from a held-out test set of 1.4 million patients. We demonstrate the generalized clinical forecasting potential of Apollo embeddings, including predicting new disease onset risk up to five years in advance (95 tasks), disease progression (78 tasks), treatment response (59 tasks), risk of treatment-related adverse events (17 tasks), and hospital operations endpoints (12 tasks). Using feature attribution techniques, we show that model predictions align with clinically-interpretable multimodal biomarkers. We evaluate semantic similarity search on 61 retrieval tasks, and moreover demonstrate the potential of Apollo as a multimodal medical search engine using text and image queries. Together, these modeling capabilities establish the foundation for computable medicine, where the full context of patient care becomes accessible to computational reasoning.",
+    "snippet": "Modern medicine generates vast multimodal data across siloed systems, yet no existing model integrates the full breadth and temporal depth of the clinical record into a unified patient representation.",
+    "authors": [
+      "Andrew Zhang",
+      "Tong Ding",
+      "Sophia J. Wagner",
+      "Caiwei Tian",
+      "Ming Y. Lu",
+      "Rowland Pettit",
+      "Joshua E. Lewis",
+      "Alexandre Misrahi",
+      "Dandan Mo",
+      "Long Phi Le",
+      "Faisal Mahmood"
+    ],
+    "venue": "arXiv",
+    "year": 2026,
+    "cited_by": 0,
+    "doi": "",
+    "arxiv_id": "2604.18570v2",
+    "urls": {
+      "arxiv": "https://arxiv.org/abs/2604.18570v2",
+      "pdf": "https://arxiv.org/pdf/2604.18570v2",
+      "paper": "https://arxiv.org/abs/2604.18570v2"
+    },
+    "scholar_url": "",
+    "pub_url": "https://arxiv.org/abs/2604.18570v2",
+    "eprint_url": "https://arxiv.org/pdf/2604.18570v2",
+    "container_type": "",
+    "query_useds": [],
+    "raw_group_hits": [
+      "A"
+    ],
+    "search_sets_raw": [
+      "A"
+    ],
+    "search_sets_final": [
+      "A"
+    ],
+    "post_filter": null,
+    "raw_payloads": [
+      {
+        "arxiv_id": "2604.18570v2",
+        "title": "A multimodal and temporal foundation model for virtual patient representations at healthcare system scale",
+        "abstract": "Modern medicine generates vast multimodal data across siloed systems, yet no existing model integrates the full breadth and temporal depth of the clinical record into a unified patient representation. We introduce Apollo, a multimodal temporal foundation model trained and evaluated on over three decades of longitudinal hospital records from a major US hospital system, composed of 25 billion records from 7.2 million patients, representing 28 distinct medical modalities and 12 major medical specialties. Apollo learns a unified representation space integrating over 100 thousand unique medical events in our clinical vocabulary as well as images and clinical text. This \"atlas of medical concepts\" forms a computational substrate for modeling entire patient care journeys comprised of sequences of structured and unstructured events, which are compressed by Apollo into virtual patient representations. To assess the potential of these whole-patient representations, we created 322 prognosis and retrieval tasks from a held-out test set of 1.4 million patients. We demonstrate the generalized clinical forecasting potential of Apollo embeddings, including predicting new disease onset risk up to five years in advance (95 tasks), disease progression (78 tasks), treatment response (59 tasks), risk of treatment-related adverse events (17 tasks), and hospital operations endpoints (12 tasks). Using feature attribution techniques, we show that model predictions align with clinically-interpretable multimodal biomarkers. We evaluate semantic similarity search on 61 retrieval tasks, and moreover demonstrate the potential of Apollo as a multimodal medical search engine using text and image queries. Together, these modeling capabilities establish the foundation for computable medicine, where the full context of patient care becomes accessible to computational reasoning.",
+        "authors": [
+          "Andrew Zhang",
+          "Tong Ding",
+          "Sophia J. Wagner",
+          "Caiwei Tian",
+          "Ming Y. Lu",
+          "Rowland Pettit",
+          "Joshua E. Lewis",
+          "Alexandre Misrahi",
+          "Dandan Mo",
+          "Long Phi Le",
+          "Faisal Mahmood"
+        ],
+        "year": 2026,
+        "month": 4,
+        "published": "2026-04-20T17:55:47Z",
+        "updated": "2026-04-21T21:55:35Z",
+        "urls": {
+          "arxiv": "https://arxiv.org/abs/2604.18570v2",
+          "pdf": "https://arxiv.org/pdf/2604.18570v2"
+        },
+        "arxiv_url": "https://arxiv.org/abs/2604.18570v2",
+        "pdf_url": "https://arxiv.org/pdf/2604.18570v2",
+        "eprint_url": "https://arxiv.org/pdf/2604.18570v2",
+        "pub_url": "https://arxiv.org/abs/2604.18570v2",
+        "snippet": "Modern medicine generates vast multimodal data across siloed systems, yet no existing model integrates the full breadth and temporal depth of the clinical record into a unified patient representation.",
+        "source": "arxiv",
+        "doi": "",
+        "venue": "arXiv",
+        "cited_by": 0
+      }
+    ],
+    "dedupe_key": "arxiv:2604 18570v2",
+    "seed_tags": [],
+    "tag_hints": {
+      "force_tinyml": false,
+      "require_power_tag": false
+    },
+    "primary_group": "A",
+    "filter_policy": "TH_CPL_AB_OR_ARXIV",
+    "filter_bucket": "arxiv",
+    "filter_reason": "matched_arxiv",
+    "matched_venue": "",
+    "matched_th_cpl_level": "",
+    "matched_th_cpl_area": "",
+    "matched_venue_type": "",
+    "venue_match": {
+      "matched": false,
+      "raw": "arXiv",
+      "normalized": "arxiv",
+      "normalized_candidates": [
+        "arxiv"
+      ],
+      "match": null
+    },
+    "arxiv_match": {
+      "matched": true,
+      "arxiv_id": "2604.18570v2",
+      "matched_urls": [
+        "https://arxiv.org/abs/2604.18570v2",
+        "https://arxiv.org/pdf/2604.18570v2"
+      ]
+    },
+    "is_in_arxiv": true,
+    "category": "Embedded AI Applications",
+    "llm_tags": [],
+    "final_tags": [],
+    "provider_used": "heuristic_fallback",
+    "classification_model": "hunyuan-2.0-instruct-20251111",
+    "classification_raw_response": {
+      "error": "TokenHub request failed with status 402: {\"error\":{\"message\":\"endpoint is inactive: FREE_QUOTA_EXHAUSTED\",\"code\":\"401008\",\"type\":\"gateway_error\",\"request_id\":\"ee941551-c1ac-4538-90af-a9c5101ac441\"}}\n"
+    },
+    "checkpoint_saved_at": "2026-04-23T02:07:19.716Z"
+  },
+  "arxiv:2604 20720v1": {
+    "id": "bea57523ec88a872897dee421692632c73f6ae2a",
+    "source": "arxiv",
+    "title": "COMPASS: COntinual Multilingual PEFT with Adaptive Semantic Sampling",
+    "abstract": "Large language models (LLMs) often exhibit performance disparities across languages, with naive multilingual fine-tuning frequently degrading performance due to negative cross-lingual interference. To address this, we introduce COMPASS (COntinual Multilingual PEFT with Adaptive Semantic Sampling), a novel data-centric framework for adapting LLMs to target languages. COMPASS leverages parameter-efficient fine-tuning (PEFT) by training lightweight, language-specific adapters on a judiciously selected subset of auxiliary multilingual data. The core of our method is a distribution-aware sampling strategy that uses multilingual embeddings and clustering to identify semantic gaps between existing training data and a target usage distribution. By prioritizing auxiliary data from under-represented semantic clusters, COMPASS maximizes positive cross-lingual transfer while minimizing interference. We extend this into a continual learning framework, COMPASS-ECDA, which monitors for data distribution shifts in production and dynamically updates adapters to prevent model staleness, balancing adaptation to new data with the preservation of existing knowledge. Across three different model architectures (Phi-4-Mini, Llama-3.1-8B, and Qwen2.5-7B) and multiple challenging multilingual benchmarks (Global-MMLU, MMLU-ProX), including unseen long-context tasks (OneRuler), we demonstrate that COMPASS consistently outperforms baseline methods guided by linguistic similarity, providing an effective, efficient, and sustainable solution for developing and maintaining high-performing multilingual models in dynamic environments.",
+    "snippet": "Large language models (LLMs) often exhibit performance disparities across languages, with naive multilingual fine-tuning frequently degrading performance due to negative cross-lingual interference. To",
+    "authors": [
+      "Noah Flynn"
+    ],
+    "venue": "arXiv",
+    "year": 2026,
+    "cited_by": 0,
+    "doi": "",
+    "arxiv_id": "2604.20720v1",
+    "urls": {
+      "arxiv": "https://arxiv.org/abs/2604.20720v1",
+      "pdf": "https://arxiv.org/pdf/2604.20720v1",
+      "paper": "https://arxiv.org/abs/2604.20720v1"
+    },
+    "scholar_url": "",
+    "pub_url": "https://arxiv.org/abs/2604.20720v1",
+    "eprint_url": "https://arxiv.org/pdf/2604.20720v1",
+    "container_type": "",
+    "query_useds": [],
+    "raw_group_hits": [
+      "A"
+    ],
+    "search_sets_raw": [
+      "A"
+    ],
+    "search_sets_final": [
+      "A"
+    ],
+    "post_filter": null,
+    "raw_payloads": [
+      {
+        "arxiv_id": "2604.20720v1",
+        "title": "COMPASS: COntinual Multilingual PEFT with Adaptive Semantic Sampling",
+        "abstract": "Large language models (LLMs) often exhibit performance disparities across languages, with naive multilingual fine-tuning frequently degrading performance due to negative cross-lingual interference. To address this, we introduce COMPASS (COntinual Multilingual PEFT with Adaptive Semantic Sampling), a novel data-centric framework for adapting LLMs to target languages. COMPASS leverages parameter-efficient fine-tuning (PEFT) by training lightweight, language-specific adapters on a judiciously selected subset of auxiliary multilingual data. The core of our method is a distribution-aware sampling strategy that uses multilingual embeddings and clustering to identify semantic gaps between existing training data and a target usage distribution. By prioritizing auxiliary data from under-represented semantic clusters, COMPASS maximizes positive cross-lingual transfer while minimizing interference. We extend this into a continual learning framework, COMPASS-ECDA, which monitors for data distribution shifts in production and dynamically updates adapters to prevent model staleness, balancing adaptation to new data with the preservation of existing knowledge. Across three different model architectures (Phi-4-Mini, Llama-3.1-8B, and Qwen2.5-7B) and multiple challenging multilingual benchmarks (Global-MMLU, MMLU-ProX), including unseen long-context tasks (OneRuler), we demonstrate that COMPASS consistently outperforms baseline methods guided by linguistic similarity, providing an effective, efficient, and sustainable solution for developing and maintaining high-performing multilingual models in dynamic environments.",
+        "authors": [
+          "Noah Flynn"
+        ],
+        "year": 2026,
+        "month": 4,
+        "published": "2026-04-22T16:07:10Z",
+        "updated": "2026-04-22T16:07:10Z",
+        "urls": {
+          "arxiv": "https://arxiv.org/abs/2604.20720v1",
+          "pdf": "https://arxiv.org/pdf/2604.20720v1"
+        },
+        "arxiv_url": "https://arxiv.org/abs/2604.20720v1",
+        "pdf_url": "https://arxiv.org/pdf/2604.20720v1",
+        "eprint_url": "https://arxiv.org/pdf/2604.20720v1",
+        "pub_url": "https://arxiv.org/abs/2604.20720v1",
+        "snippet": "Large language models (LLMs) often exhibit performance disparities across languages, with naive multilingual fine-tuning frequently degrading performance due to negative cross-lingual interference. To",
+        "source": "arxiv",
+        "doi": "",
+        "venue": "arXiv",
+        "cited_by": 0
+      }
+    ],
+    "dedupe_key": "arxiv:2604 20720v1",
+    "seed_tags": [],
+    "tag_hints": {
+      "force_tinyml": false,
+      "require_power_tag": false
+    },
+    "primary_group": "A",
+    "filter_policy": "TH_CPL_AB_OR_ARXIV",
+    "filter_bucket": "arxiv",
+    "filter_reason": "matched_arxiv",
+    "matched_venue": "",
+    "matched_th_cpl_level": "",
+    "matched_th_cpl_area": "",
+    "matched_venue_type": "",
+    "venue_match": {
+      "matched": false,
+      "raw": "arXiv",
+      "normalized": "arxiv",
+      "normalized_candidates": [
+        "arxiv"
+      ],
+      "match": null
+    },
+    "arxiv_match": {
+      "matched": true,
+      "arxiv_id": "2604.20720v1",
+      "matched_urls": [
+        "https://arxiv.org/abs/2604.20720v1",
+        "https://arxiv.org/pdf/2604.20720v1"
+      ]
+    },
+    "is_in_arxiv": true,
+    "category": "Efficient Model Design and Optimization",
+    "llm_tags": [],
+    "final_tags": [],
+    "provider_used": "heuristic_fallback",
+    "classification_model": "hunyuan-2.0-instruct-20251111",
+    "classification_raw_response": {
+      "error": "TokenHub request failed with status 402: {\"error\":{\"message\":\"endpoint is inactive: FREE_QUOTA_EXHAUSTED\",\"code\":\"401008\",\"type\":\"gateway_error\",\"request_id\":\"79ed527e-9dc4-4725-b422-6cd57bd60bfa\"}}\n"
+    },
+    "checkpoint_saved_at": "2026-04-23T02:07:20.073Z"
+  },
+  "arxiv:2604 20021v1": {
+    "id": "af54b555cca51465dacfb3ee1c88948d173f002f",
+    "source": "arxiv",
+    "title": "Continuous Semantic Caching for Low-Cost LLM Serving",
+    "abstract": "As Large Language Models (LLMs) become increasingly popular, caching responses so that they can be reused by users with semantically similar queries has become a vital strategy for reducing inference costs and latency. Existing caching frameworks have proposed to decide which query responses to cache by assuming a finite, known universe of discrete queries and learning their serving costs and arrival probabilities. As LLMs' pool of users and queries expands, however, such an assumption becomes increasingly untenable: real-world LLM queries reside in an infinite, continuous embedding space. In this paper, we establish the first rigorous theoretical framework for semantic LLM response caching in continuous query space under uncertainty. To bridge the gap between discrete optimization and continuous representation spaces, we introduce dynamic $ε$-net discretization coupled with Kernel Ridge Regression. This design enables the system to formally quantify estimation uncertainty and generalize partial feedback on LLM query costs across continuous semantic query neighborhoods. We develop both offline learning and online adaptive algorithms optimized to reduce switching costs incurred by changing the cached responses. We prove that our online algorithm achieves a sublinear regret bound against an optimal continuous oracle, which reduces to existing bounds for discrete query models. Extensive empirical evaluations demonstrate that our framework approximates the continuous optimal cache well while also reducing computational and switching overhead compared to existing methods.",
+    "snippet": "As Large Language Models (LLMs) become increasingly popular, caching responses so that they can be reused by users with semantically similar queries has become a vital strategy for reducing inference",
+    "authors": [
+      "Baran Atalar",
+      "Xutong Liu",
+      "Jinhang Zuo",
+      "Siwei Wang",
+      "Wei Chen",
+      "Carlee Joe-Wong"
+    ],
+    "venue": "arXiv",
+    "year": 2026,
+    "cited_by": 0,
+    "doi": "",
+    "arxiv_id": "2604.20021v1",
+    "urls": {
+      "arxiv": "https://arxiv.org/abs/2604.20021v1",
+      "pdf": "https://arxiv.org/pdf/2604.20021v1",
+      "paper": "https://arxiv.org/abs/2604.20021v1"
+    },
+    "scholar_url": "",
+    "pub_url": "https://arxiv.org/abs/2604.20021v1",
+    "eprint_url": "https://arxiv.org/pdf/2604.20021v1",
+    "container_type": "",
+    "query_useds": [],
+    "raw_group_hits": [
+      "A"
+    ],
+    "search_sets_raw": [
+      "A"
+    ],
+    "search_sets_final": [
+      "A"
+    ],
+    "post_filter": null,
+    "raw_payloads": [
+      {
+        "arxiv_id": "2604.20021v1",
+        "title": "Continuous Semantic Caching for Low-Cost LLM Serving",
+        "abstract": "As Large Language Models (LLMs) become increasingly popular, caching responses so that they can be reused by users with semantically similar queries has become a vital strategy for reducing inference costs and latency. Existing caching frameworks have proposed to decide which query responses to cache by assuming a finite, known universe of discrete queries and learning their serving costs and arrival probabilities. As LLMs' pool of users and queries expands, however, such an assumption becomes increasingly untenable: real-world LLM queries reside in an infinite, continuous embedding space. In this paper, we establish the first rigorous theoretical framework for semantic LLM response caching in continuous query space under uncertainty. To bridge the gap between discrete optimization and continuous representation spaces, we introduce dynamic $ε$-net discretization coupled with Kernel Ridge Regression. This design enables the system to formally quantify estimation uncertainty and generalize partial feedback on LLM query costs across continuous semantic query neighborhoods. We develop both offline learning and online adaptive algorithms optimized to reduce switching costs incurred by changing the cached responses. We prove that our online algorithm achieves a sublinear regret bound against an optimal continuous oracle, which reduces to existing bounds for discrete query models. Extensive empirical evaluations demonstrate that our framework approximates the continuous optimal cache well while also reducing computational and switching overhead compared to existing methods.",
+        "authors": [
+          "Baran Atalar",
+          "Xutong Liu",
+          "Jinhang Zuo",
+          "Siwei Wang",
+          "Wei Chen",
+          "Carlee Joe-Wong"
+        ],
+        "year": 2026,
+        "month": 4,
+        "published": "2026-04-21T21:56:43Z",
+        "updated": "2026-04-21T21:56:43Z",
+        "urls": {
+          "arxiv": "https://arxiv.org/abs/2604.20021v1",
+          "pdf": "https://arxiv.org/pdf/2604.20021v1"
+        },
+        "arxiv_url": "https://arxiv.org/abs/2604.20021v1",
+        "pdf_url": "https://arxiv.org/pdf/2604.20021v1",
+        "eprint_url": "https://arxiv.org/pdf/2604.20021v1",
+        "pub_url": "https://arxiv.org/abs/2604.20021v1",
+        "snippet": "As Large Language Models (LLMs) become increasingly popular, caching responses so that they can be reused by users with semantically similar queries has become a vital strategy for reducing inference ",
+        "source": "arxiv",
+        "doi": "",
+        "venue": "arXiv",
+        "cited_by": 0
+      }
+    ],
+    "dedupe_key": "arxiv:2604 20021v1",
+    "seed_tags": [],
+    "tag_hints": {
+      "force_tinyml": false,
+      "require_power_tag": false
+    },
+    "primary_group": "A",
+    "filter_policy": "TH_CPL_AB_OR_ARXIV",
+    "filter_bucket": "arxiv",
+    "filter_reason": "matched_arxiv",
+    "matched_venue": "",
+    "matched_th_cpl_level": "",
+    "matched_th_cpl_area": "",
+    "matched_venue_type": "",
+    "venue_match": {
+      "matched": false,
+      "raw": "arXiv",
+      "normalized": "arxiv",
+      "normalized_candidates": [
+        "arxiv"
+      ],
+      "match": null
+    },
+    "arxiv_match": {
+      "matched": true,
+      "arxiv_id": "2604.20021v1",
+      "matched_urls": [
+        "https://arxiv.org/abs/2604.20021v1",
+        "https://arxiv.org/pdf/2604.20021v1"
+      ]
+    },
+    "is_in_arxiv": true,
+    "category": "Embedded AI Applications",
+    "llm_tags": [],
+    "final_tags": [],
+    "provider_used": "heuristic_fallback",
+    "classification_model": "hunyuan-2.0-instruct-20251111",
+    "classification_raw_response": {
+      "error": "TokenHub request failed with status 402: {\"error\":{\"message\":\"endpoint is inactive: FREE_QUOTA_EXHAUSTED\",\"code\":\"401008\",\"type\":\"gateway_error\",\"request_id\":\"81295c6d-5488-4542-922e-d964976dd9c7\"}}\n"
+    },
+    "checkpoint_saved_at": "2026-04-23T02:07:20.116Z"
+  },
+  "arxiv:2604 20817v1": {
+    "id": "56c916543e6530746fc1d91ae98ac23b12df516d",
+    "source": "arxiv",
+    "title": "Convergent Evolution: How Different Language Models Learn Similar Number Representations",
+    "abstract": "Language models trained on natural text learn to represent numbers using periodic features with dominant periods at $T=2, 5, 10$. In this paper, we identify a two-tiered hierarchy of these features: while Transformers, Linear RNNs, LSTMs, and classical word embeddings trained in different ways all learn features that have period-$T$ spikes in the Fourier domain, only some learn geometrically separable features that can be used to linearly classify a number mod-$T$. To explain this incongruity, we prove that Fourier domain sparsity is necessary but not sufficient for mod-$T$ geometric separability. Empirically, we investigate when model training yields geometrically separable features, finding that the data, architecture, optimizer, and tokenizer all play key roles. In particular, we identify two different routes through which models can acquire geometrically separable features: they can learn them from complementary co-occurrence signals in general language data, including text-number co-occurrence and cross-number interaction, or from multi-token (but not single-token) addition problems. Overall, our results highlight the phenomenon of convergent evolution in feature learning: A diverse range of models learn similar features from different training signals.",
+    "snippet": "Language models trained on natural text learn to represent numbers using periodic features with dominant periods at $T=2, 5, 10$. In this paper, we identify a two-tiered hierarchy of these features: w",
+    "authors": [
+      "Deqing Fu",
+      "Tianyi Zhou",
+      "Mikhail Belkin",
+      "Vatsal Sharan",
+      "Robin Jia"
+    ],
+    "venue": "arXiv",
+    "year": 2026,
+    "cited_by": 0,
+    "doi": "",
+    "arxiv_id": "2604.20817v1",
+    "urls": {
+      "arxiv": "https://arxiv.org/abs/2604.20817v1",
+      "pdf": "https://arxiv.org/pdf/2604.20817v1",
+      "paper": "https://arxiv.org/abs/2604.20817v1"
+    },
+    "scholar_url": "",
+    "pub_url": "https://arxiv.org/abs/2604.20817v1",
+    "eprint_url": "https://arxiv.org/pdf/2604.20817v1",
+    "container_type": "",
+    "query_useds": [],
+    "raw_group_hits": [
+      "A"
+    ],
+    "search_sets_raw": [
+      "A"
+    ],
+    "search_sets_final": [
+      "A"
+    ],
+    "post_filter": null,
+    "raw_payloads": [
+      {
+        "arxiv_id": "2604.20817v1",
+        "title": "Convergent Evolution: How Different Language Models Learn Similar Number Representations",
+        "abstract": "Language models trained on natural text learn to represent numbers using periodic features with dominant periods at $T=2, 5, 10$. In this paper, we identify a two-tiered hierarchy of these features: while Transformers, Linear RNNs, LSTMs, and classical word embeddings trained in different ways all learn features that have period-$T$ spikes in the Fourier domain, only some learn geometrically separable features that can be used to linearly classify a number mod-$T$. To explain this incongruity, we prove that Fourier domain sparsity is necessary but not sufficient for mod-$T$ geometric separability. Empirically, we investigate when model training yields geometrically separable features, finding that the data, architecture, optimizer, and tokenizer all play key roles. In particular, we identify two different routes through which models can acquire geometrically separable features: they can learn them from complementary co-occurrence signals in general language data, including text-number co-occurrence and cross-number interaction, or from multi-token (but not single-token) addition problems. Overall, our results highlight the phenomenon of convergent evolution in feature learning: A diverse range of models learn similar features from different training signals.",
+        "authors": [
+          "Deqing Fu",
+          "Tianyi Zhou",
+          "Mikhail Belkin",
+          "Vatsal Sharan",
+          "Robin Jia"
+        ],
+        "year": 2026,
+        "month": 4,
+        "published": "2026-04-22T17:45:27Z",
+        "updated": "2026-04-22T17:45:27Z",
+        "urls": {
+          "arxiv": "https://arxiv.org/abs/2604.20817v1",
+          "pdf": "https://arxiv.org/pdf/2604.20817v1"
+        },
+        "arxiv_url": "https://arxiv.org/abs/2604.20817v1",
+        "pdf_url": "https://arxiv.org/pdf/2604.20817v1",
+        "eprint_url": "https://arxiv.org/pdf/2604.20817v1",
+        "pub_url": "https://arxiv.org/abs/2604.20817v1",
+        "snippet": "Language models trained on natural text learn to represent numbers using periodic features with dominant periods at $T=2, 5, 10$. In this paper, we identify a two-tiered hierarchy of these features: w",
+        "source": "arxiv",
+        "doi": "",
+        "venue": "arXiv",
+        "cited_by": 0
+      }
+    ],
+    "dedupe_key": "arxiv:2604 20817v1",
+    "seed_tags": [],
+    "tag_hints": {
+      "force_tinyml": false,
+      "require_power_tag": false
+    },
+    "primary_group": "A",
+    "filter_policy": "TH_CPL_AB_OR_ARXIV",
+    "filter_bucket": "arxiv",
+    "filter_reason": "matched_arxiv",
+    "matched_venue": "",
+    "matched_th_cpl_level": "",
+    "matched_th_cpl_area": "",
+    "matched_venue_type": "",
+    "venue_match": {
+      "matched": false,
+      "raw": "arXiv",
+      "normalized": "arxiv",
+      "normalized_candidates": [
+        "arxiv"
+      ],
+      "match": null
+    },
+    "arxiv_match": {
+      "matched": true,
+      "arxiv_id": "2604.20817v1",
+      "matched_urls": [
+        "https://arxiv.org/abs/2604.20817v1",
+        "https://arxiv.org/pdf/2604.20817v1"
+      ]
+    },
+    "is_in_arxiv": true,
+    "category": "Efficient Model Design and Optimization",
+    "llm_tags": [],
+    "final_tags": [],
+    "provider_used": "heuristic_fallback",
+    "classification_model": "hunyuan-2.0-instruct-20251111",
+    "classification_raw_response": {
+      "error": "TokenHub request failed with status 402: {\"error\":{\"message\":\"endpoint is inactive: FREE_QUOTA_EXHAUSTED\",\"code\":\"401008\",\"type\":\"gateway_error\",\"request_id\":\"7bfd65cd-3ea3-4d5f-bca0-e532ebe02661\"}}\n"
+    },
+    "checkpoint_saved_at": "2026-04-23T02:07:20.231Z"
+  },
+  "arxiv:2604 18867v1": {
+    "id": "219fa27e9d4b75585b928aed60282ceb97d68bfc",
+    "source": "arxiv",
+    "title": "Hierarchically Robust Zero-shot Vision-language Models",
+    "abstract": "Vision-Language Models (VLMs) can perform zero-shot classification but are susceptible to adversarial attacks. While robust fine-tuning improves their robustness, existing approaches align fixed text embeddings with an image embedding, sacrificing natural performance and robustness. A robustness degradation also occurs when a model faces adversarial attacks targeting superclasses (parent classes, e.g., mammal) in addition to their base (leaf) classes (e.g., cat). Thus, to enhance adversarial robustness and leverage the inherent hierarchical properties of class space, we propose a novel adversarial fine-tuning framework based on hierarchical embeddings and several levels of adversarially robust alignment of image-text modalities. Additional mechanisms place visual embeddings at the desired depth of hierarchy, and we provide a theoretical connection between the depth of embedding in the hierarchy and the maximum viable margin size. Our model naturally realizes several margin sizes, boosting generalization of adversaries for robustification. As various trees with different parent labels can share the same leaf labels, we also consider aligning over multiple trees to boost semantic variety. Experiments across several datasets are performed.",
+    "snippet": "Vision-Language Models (VLMs) can perform zero-shot classification but are susceptible to adversarial attacks. While robust fine-tuning improves their robustness, existing approaches align fixed text",
+    "authors": [
+      "Junhao Dong",
+      "Yifei Zhang",
+      "Hao Zhu",
+      "Yew-Soon Ong",
+      "Piotr Koniusz"
+    ],
+    "venue": "arXiv",
+    "year": 2026,
+    "cited_by": 0,
+    "doi": "",
+    "arxiv_id": "2604.18867v1",
+    "urls": {
+      "arxiv": "https://arxiv.org/abs/2604.18867v1",
+      "pdf": "https://arxiv.org/pdf/2604.18867v1",
+      "paper": "https://arxiv.org/abs/2604.18867v1"
+    },
+    "scholar_url": "",
+    "pub_url": "https://arxiv.org/abs/2604.18867v1",
+    "eprint_url": "https://arxiv.org/pdf/2604.18867v1",
+    "container_type": "",
+    "query_useds": [],
+    "raw_group_hits": [
+      "A"
+    ],
+    "search_sets_raw": [
+      "A"
+    ],
+    "search_sets_final": [
+      "A"
+    ],
+    "post_filter": null,
+    "raw_payloads": [
+      {
+        "arxiv_id": "2604.18867v1",
+        "title": "Hierarchically Robust Zero-shot Vision-language Models",
+        "abstract": "Vision-Language Models (VLMs) can perform zero-shot classification but are susceptible to adversarial attacks. While robust fine-tuning improves their robustness, existing approaches align fixed text embeddings with an image embedding, sacrificing natural performance and robustness. A robustness degradation also occurs when a model faces adversarial attacks targeting superclasses (parent classes, e.g., mammal) in addition to their base (leaf) classes (e.g., cat). Thus, to enhance adversarial robustness and leverage the inherent hierarchical properties of class space, we propose a novel adversarial fine-tuning framework based on hierarchical embeddings and several levels of adversarially robust alignment of image-text modalities. Additional mechanisms place visual embeddings at the desired depth of hierarchy, and we provide a theoretical connection between the depth of embedding in the hierarchy and the maximum viable margin size. Our model naturally realizes several margin sizes, boosting generalization of adversaries for robustification. As various trees with different parent labels can share the same leaf labels, we also consider aligning over multiple trees to boost semantic variety. Experiments across several datasets are performed.",
+        "authors": [
+          "Junhao Dong",
+          "Yifei Zhang",
+          "Hao Zhu",
+          "Yew-Soon Ong",
+          "Piotr Koniusz"
+        ],
+        "year": 2026,
+        "month": 4,
+        "published": "2026-04-20T21:42:14Z",
+        "updated": "2026-04-20T21:42:14Z",
+        "urls": {
+          "arxiv": "https://arxiv.org/abs/2604.18867v1",
+          "pdf": "https://arxiv.org/pdf/2604.18867v1"
+        },
+        "arxiv_url": "https://arxiv.org/abs/2604.18867v1",
+        "pdf_url": "https://arxiv.org/pdf/2604.18867v1",
+        "eprint_url": "https://arxiv.org/pdf/2604.18867v1",
+        "pub_url": "https://arxiv.org/abs/2604.18867v1",
+        "snippet": "Vision-Language Models (VLMs) can perform zero-shot classification but are susceptible to adversarial attacks. While robust fine-tuning improves their robustness, existing approaches align fixed text ",
+        "source": "arxiv",
+        "doi": "",
+        "venue": "arXiv",
+        "cited_by": 0
+      }
+    ],
+    "dedupe_key": "arxiv:2604 18867v1",
+    "seed_tags": [],
+    "tag_hints": {
+      "force_tinyml": false,
+      "require_power_tag": false
+    },
+    "primary_group": "A",
+    "filter_policy": "TH_CPL_AB_OR_ARXIV",
+    "filter_bucket": "arxiv",
+    "filter_reason": "matched_arxiv",
+    "matched_venue": "",
+    "matched_th_cpl_level": "",
+    "matched_th_cpl_area": "",
+    "matched_venue_type": "",
+    "venue_match": {
+      "matched": false,
+      "raw": "arXiv",
+      "normalized": "arxiv",
+      "normalized_candidates": [
+        "arxiv"
+      ],
+      "match": null
+    },
+    "arxiv_match": {
+      "matched": true,
+      "arxiv_id": "2604.18867v1",
+      "matched_urls": [
+        "https://arxiv.org/abs/2604.18867v1",
+        "https://arxiv.org/pdf/2604.18867v1"
+      ]
+    },
+    "is_in_arxiv": true,
+    "category": "Efficient Model Design and Optimization",
+    "llm_tags": [],
+    "final_tags": [],
+    "provider_used": "heuristic_fallback",
+    "classification_model": "hunyuan-2.0-instruct-20251111",
+    "classification_raw_response": {
+      "error": "TokenHub request failed with status 402: {\"error\":{\"message\":\"endpoint is inactive: FREE_QUOTA_EXHAUSTED\",\"code\":\"401008\",\"type\":\"gateway_error\",\"request_id\":\"043764ed-24af-4d3f-ba5e-1168a681b806\"}}\n"
+    },
+    "checkpoint_saved_at": "2026-04-23T02:07:20.454Z"
+  },
+  "arxiv:2604 18816v1": {
+    "id": "7051829a417adc4855b9f96e96d24014224da04f",
+    "source": "arxiv",
+    "title": "Curvature-Aware PCA with Geodesic Tangent Space Aggregation for Semi-Supervised Learning",
+    "abstract": "Principal Component Analysis (PCA) is a fundamental tool for representation learning, but its global linear formulation fails to capture the structure of data supported on curved manifolds. In contrast, manifold learning methods model nonlinearity but often sacrifice the spectral structure and stability of PCA. We propose \\emph{Geodesic Tangent Space Aggregation PCA (GTSA-PCA)}, a geometric extension of PCA that integrates curvature awareness and geodesic consistency within a unified spectral framework. Our approach replaces the global covariance operator with curvature-weighted local covariance operators defined over a $k$-nearest neighbor graph, yielding local tangent subspaces that adapt to the manifold while suppressing high-curvature distortions. We then introduce a geodesic alignment operator that combines intrinsic graph distances with subspace affinities to globally synchronize these local representations. The resulting operator admits a spectral decomposition whose leading components define a geometry-aware embedding. We further incorporate semi-supervised information to guide the alignment, improving discriminative structure with minimal supervision. Experiments on real datasets show consistent improvements over PCA, Kernel PCA, Supervised PCA and strong graph-based baselines such as UMAP, particularly in small sample size and high-curvature regimes. Our results position GTSA-PCA as a principled bridge between statistical and geometric approaches to dimensionality reduction.",
+    "snippet": "Principal Component Analysis (PCA) is a fundamental tool for representation learning, but its global linear formulation fails to capture the structure of data supported on curved manifolds. In contras",
+    "authors": [
+      "Alexandre L. M. Levada"
+    ],
+    "venue": "arXiv",
+    "year": 2026,
+    "cited_by": 0,
+    "doi": "",
+    "arxiv_id": "2604.18816v1",
+    "urls": {
+      "arxiv": "https://arxiv.org/abs/2604.18816v1",
+      "pdf": "https://arxiv.org/pdf/2604.18816v1",
+      "paper": "https://arxiv.org/abs/2604.18816v1"
+    },
+    "scholar_url": "",
+    "pub_url": "https://arxiv.org/abs/2604.18816v1",
+    "eprint_url": "https://arxiv.org/pdf/2604.18816v1",
+    "container_type": "",
+    "query_useds": [],
+    "raw_group_hits": [
+      "A"
+    ],
+    "search_sets_raw": [
+      "A"
+    ],
+    "search_sets_final": [
+      "A"
+    ],
+    "post_filter": null,
+    "raw_payloads": [
+      {
+        "arxiv_id": "2604.18816v1",
+        "title": "Curvature-Aware PCA with Geodesic Tangent Space Aggregation for Semi-Supervised Learning",
+        "abstract": "Principal Component Analysis (PCA) is a fundamental tool for representation learning, but its global linear formulation fails to capture the structure of data supported on curved manifolds. In contrast, manifold learning methods model nonlinearity but often sacrifice the spectral structure and stability of PCA. We propose \\emph{Geodesic Tangent Space Aggregation PCA (GTSA-PCA)}, a geometric extension of PCA that integrates curvature awareness and geodesic consistency within a unified spectral framework. Our approach replaces the global covariance operator with curvature-weighted local covariance operators defined over a $k$-nearest neighbor graph, yielding local tangent subspaces that adapt to the manifold while suppressing high-curvature distortions. We then introduce a geodesic alignment operator that combines intrinsic graph distances with subspace affinities to globally synchronize these local representations. The resulting operator admits a spectral decomposition whose leading components define a geometry-aware embedding. We further incorporate semi-supervised information to guide the alignment, improving discriminative structure with minimal supervision. Experiments on real datasets show consistent improvements over PCA, Kernel PCA, Supervised PCA and strong graph-based baselines such as UMAP, particularly in small sample size and high-curvature regimes. Our results position GTSA-PCA as a principled bridge between statistical and geometric approaches to dimensionality reduction.",
+        "authors": [
+          "Alexandre L. M. Levada"
+        ],
+        "year": 2026,
+        "month": 4,
+        "published": "2026-04-20T20:36:36Z",
+        "updated": "2026-04-20T20:36:36Z",
+        "urls": {
+          "arxiv": "https://arxiv.org/abs/2604.18816v1",
+          "pdf": "https://arxiv.org/pdf/2604.18816v1"
+        },
+        "arxiv_url": "https://arxiv.org/abs/2604.18816v1",
+        "pdf_url": "https://arxiv.org/pdf/2604.18816v1",
+        "eprint_url": "https://arxiv.org/pdf/2604.18816v1",
+        "pub_url": "https://arxiv.org/abs/2604.18816v1",
+        "snippet": "Principal Component Analysis (PCA) is a fundamental tool for representation learning, but its global linear formulation fails to capture the structure of data supported on curved manifolds. In contras",
+        "source": "arxiv",
+        "doi": "",
+        "venue": "arXiv",
+        "cited_by": 0
+      }
+    ],
+    "dedupe_key": "arxiv:2604 18816v1",
+    "seed_tags": [],
+    "tag_hints": {
+      "force_tinyml": false,
+      "require_power_tag": false
+    },
+    "primary_group": "A",
+    "filter_policy": "TH_CPL_AB_OR_ARXIV",
+    "filter_bucket": "arxiv",
+    "filter_reason": "matched_arxiv",
+    "matched_venue": "",
+    "matched_th_cpl_level": "",
+    "matched_th_cpl_area": "",
+    "matched_venue_type": "",
+    "venue_match": {
+      "matched": false,
+      "raw": "arXiv",
+      "normalized": "arxiv",
+      "normalized_candidates": [
+        "arxiv"
+      ],
+      "match": null
+    },
+    "arxiv_match": {
+      "matched": true,
+      "arxiv_id": "2604.18816v1",
+      "matched_urls": [
+        "https://arxiv.org/abs/2604.18816v1",
+        "https://arxiv.org/pdf/2604.18816v1"
+      ]
+    },
+    "is_in_arxiv": true,
+    "category": "Embedded AI Applications",
+    "llm_tags": [],
+    "final_tags": [],
+    "provider_used": "heuristic_fallback",
+    "classification_model": "hunyuan-2.0-instruct-20251111",
+    "classification_raw_response": {
+      "error": "TokenHub request failed with status 402: {\"error\":{\"message\":\"endpoint is inactive: FREE_QUOTA_EXHAUSTED\",\"code\":\"401008\",\"type\":\"gateway_error\",\"request_id\":\"770a82d1-10cc-4ab3-bee9-65ee998ba5a5\"}}\n"
+    },
+    "checkpoint_saved_at": "2026-04-23T02:07:20.469Z"
+  },
+  "arxiv:2604 20174v1": {
+    "id": "c6f82fcfc0ea477b5e411c00aea643331a59635a",
+    "source": "arxiv",
+    "title": "Lever: Inference-Time Policy Reuse under Support Constraints",
+    "abstract": "Reinforcement learning (RL) policies are typically trained for fixed objectives, making reuse difficult when task requirements change. We study inference-time policy reuse: given a library of pre-trained policies and a new composite objective, can a high-quality policy be constructed entirely offline, without additional environment interaction? We introduce lever (Leveraging Efficient Vector Embeddings for Reusable policies), an end-to-end framework that retrieves relevant policies, evaluates them using behavioral embeddings, and composes new policies via offline Q-value composition. We focus on the support-limited regime, where no value propagation is possible, and show that the effectiveness of reuse depends critically on the coverage of available transitions. To balance performance and computational cost, lever proposes composition strategies that control the exploration of candidate policies. Experiments in deterministic GridWorld environments show that inference-time composition can match, and in some cases exceed, training-from-scratch performance while providing substantial speedups. At the same time, performance degrades when long-horizon dependencies require value propagation, highlighting a fundamental limitation of offline reuse.",
+    "snippet": "Reinforcement learning (RL) policies are typically trained for fixed objectives, making reuse difficult when task requirements change. We study inference-time policy reuse: given a library of pre-trai",
+    "authors": [
+      "Ihor Vitenki",
+      "Noha Ibrahim",
+      "Sihem Amer-Yahia"
+    ],
+    "venue": "arXiv",
+    "year": 2026,
+    "cited_by": 0,
+    "doi": "",
+    "arxiv_id": "2604.20174v1",
+    "urls": {
+      "arxiv": "https://arxiv.org/abs/2604.20174v1",
+      "pdf": "https://arxiv.org/pdf/2604.20174v1",
+      "paper": "https://arxiv.org/abs/2604.20174v1"
+    },
+    "scholar_url": "",
+    "pub_url": "https://arxiv.org/abs/2604.20174v1",
+    "eprint_url": "https://arxiv.org/pdf/2604.20174v1",
+    "container_type": "",
+    "query_useds": [],
+    "raw_group_hits": [
+      "A"
+    ],
+    "search_sets_raw": [
+      "A"
+    ],
+    "search_sets_final": [
+      "A"
+    ],
+    "post_filter": null,
+    "raw_payloads": [
+      {
+        "arxiv_id": "2604.20174v1",
+        "title": "Lever: Inference-Time Policy Reuse under Support Constraints",
+        "abstract": "Reinforcement learning (RL) policies are typically trained for fixed objectives, making reuse difficult when task requirements change. We study inference-time policy reuse: given a library of pre-trained policies and a new composite objective, can a high-quality policy be constructed entirely offline, without additional environment interaction? We introduce lever (Leveraging Efficient Vector Embeddings for Reusable policies), an end-to-end framework that retrieves relevant policies, evaluates them using behavioral embeddings, and composes new policies via offline Q-value composition. We focus on the support-limited regime, where no value propagation is possible, and show that the effectiveness of reuse depends critically on the coverage of available transitions. To balance performance and computational cost, lever proposes composition strategies that control the exploration of candidate policies. Experiments in deterministic GridWorld environments show that inference-time composition can match, and in some cases exceed, training-from-scratch performance while providing substantial speedups. At the same time, performance degrades when long-horizon dependencies require value propagation, highlighting a fundamental limitation of offline reuse.",
+        "authors": [
+          "Ihor Vitenki",
+          "Noha Ibrahim",
+          "Sihem Amer-Yahia"
+        ],
+        "year": 2026,
+        "month": 4,
+        "published": "2026-04-22T04:28:45Z",
+        "updated": "2026-04-22T04:28:45Z",
+        "urls": {
+          "arxiv": "https://arxiv.org/abs/2604.20174v1",
+          "pdf": "https://arxiv.org/pdf/2604.20174v1"
+        },
+        "arxiv_url": "https://arxiv.org/abs/2604.20174v1",
+        "pdf_url": "https://arxiv.org/pdf/2604.20174v1",
+        "eprint_url": "https://arxiv.org/pdf/2604.20174v1",
+        "pub_url": "https://arxiv.org/abs/2604.20174v1",
+        "snippet": "Reinforcement learning (RL) policies are typically trained for fixed objectives, making reuse difficult when task requirements change. We study inference-time policy reuse: given a library of pre-trai",
+        "source": "arxiv",
+        "doi": "",
+        "venue": "arXiv",
+        "cited_by": 0
+      }
+    ],
+    "dedupe_key": "arxiv:2604 20174v1",
+    "seed_tags": [],
+    "tag_hints": {
+      "force_tinyml": false,
+      "require_power_tag": false
+    },
+    "primary_group": "A",
+    "filter_policy": "TH_CPL_AB_OR_ARXIV",
+    "filter_bucket": "arxiv",
+    "filter_reason": "matched_arxiv",
+    "matched_venue": "",
+    "matched_th_cpl_level": "",
+    "matched_th_cpl_area": "",
+    "matched_venue_type": "",
+    "venue_match": {
+      "matched": false,
+      "raw": "arXiv",
+      "normalized": "arxiv",
+      "normalized_candidates": [
+        "arxiv"
+      ],
+      "match": null
+    },
+    "arxiv_match": {
+      "matched": true,
+      "arxiv_id": "2604.20174v1",
+      "matched_urls": [
+        "https://arxiv.org/abs/2604.20174v1",
+        "https://arxiv.org/pdf/2604.20174v1"
+      ]
+    },
+    "is_in_arxiv": true,
+    "category": "Embedded AI Applications",
+    "llm_tags": [],
+    "final_tags": [],
+    "provider_used": "heuristic_fallback",
+    "classification_model": "hunyuan-2.0-instruct-20251111",
+    "classification_raw_response": {
+      "error": "TokenHub request failed with status 402: {\"error\":{\"message\":\"endpoint is inactive: FREE_QUOTA_EXHAUSTED\",\"code\":\"401008\",\"type\":\"gateway_error\",\"request_id\":\"f7d4d977-b78b-4d59-9a0e-e045eeb8f21c\"}}\n"
+    },
+    "checkpoint_saved_at": "2026-04-23T02:07:20.634Z"
+  },
+  "arxiv:2604 19902v1": {
+    "id": "74874c6bad34f1d29e7b932e6b1494227d0d198e",
+    "source": "arxiv",
+    "title": "MMCORE: MultiModal COnnection with Representation Aligned Latent Embeddings",
+    "abstract": "We present MMCORE, a unified framework designed for multimodal image generation and editing. MMCORE leverages a pre-trained Vision-Language Model (VLM) to predict semantic visual embeddings via learnable query tokens, which subsequently serve as conditioning signals for a diffusion model. This streamlined design effectively transfers the rich understanding and reasoning capabilities of VLMs into the visual generation process. By obviating the need for deep fusion between autoregressive and diffusion models or training from scratch, MMCORE significantly reduces computational overhead while maintaining high-fidelity synthesis.\n  MMCORE seamlessly integrates text-to-image synthesis with interleaved image generation, demonstrating robust multimodal comprehension in complex scenarios such as spatial reasoning and visual grounding. Comprehensive evaluations indicate that MMCORE consistently outperforms state-of-the-art baselines across a broad spectrum of text-to-image and single/multi-image editing benchmarks.",
+    "snippet": "We present MMCORE, a unified framework designed for multimodal image generation and editing. MMCORE leverages a pre-trained Vision-Language Model (VLM) to predict semantic visual embeddings via learna",
+    "authors": [
+      "Zijie Li",
+      "Yichun Shi",
+      "Jingxiang Sun",
+      "Ye Wang",
+      "Yixuan Huang",
+      "Zhiyao Guo",
+      "Xiaochen Lian",
+      "Peihao Zhu",
+      "Yu Tian",
+      "Zhonghua Zhai",
+      "Peng Wang"
+    ],
+    "venue": "arXiv",
+    "year": 2026,
+    "cited_by": 0,
+    "doi": "",
+    "arxiv_id": "2604.19902v1",
+    "urls": {
+      "arxiv": "https://arxiv.org/abs/2604.19902v1",
+      "pdf": "https://arxiv.org/pdf/2604.19902v1",
+      "paper": "https://arxiv.org/abs/2604.19902v1"
+    },
+    "scholar_url": "",
+    "pub_url": "https://arxiv.org/abs/2604.19902v1",
+    "eprint_url": "https://arxiv.org/pdf/2604.19902v1",
+    "container_type": "",
+    "query_useds": [],
+    "raw_group_hits": [
+      "A"
+    ],
+    "search_sets_raw": [
+      "A"
+    ],
+    "search_sets_final": [
+      "A"
+    ],
+    "post_filter": null,
+    "raw_payloads": [
+      {
+        "arxiv_id": "2604.19902v1",
+        "title": "MMCORE: MultiModal COnnection with Representation Aligned Latent Embeddings",
+        "abstract": "We present MMCORE, a unified framework designed for multimodal image generation and editing. MMCORE leverages a pre-trained Vision-Language Model (VLM) to predict semantic visual embeddings via learnable query tokens, which subsequently serve as conditioning signals for a diffusion model. This streamlined design effectively transfers the rich understanding and reasoning capabilities of VLMs into the visual generation process. By obviating the need for deep fusion between autoregressive and diffusion models or training from scratch, MMCORE significantly reduces computational overhead while maintaining high-fidelity synthesis.\n  MMCORE seamlessly integrates text-to-image synthesis with interleaved image generation, demonstrating robust multimodal comprehension in complex scenarios such as spatial reasoning and visual grounding. Comprehensive evaluations indicate that MMCORE consistently outperforms state-of-the-art baselines across a broad spectrum of text-to-image and single/multi-image editing benchmarks.",
+        "authors": [
+          "Zijie Li",
+          "Yichun Shi",
+          "Jingxiang Sun",
+          "Ye Wang",
+          "Yixuan Huang",
+          "Zhiyao Guo",
+          "Xiaochen Lian",
+          "Peihao Zhu",
+          "Yu Tian",
+          "Zhonghua Zhai",
+          "Peng Wang"
+        ],
+        "year": 2026,
+        "month": 4,
+        "published": "2026-04-21T18:25:25Z",
+        "updated": "2026-04-21T18:25:25Z",
+        "urls": {
+          "arxiv": "https://arxiv.org/abs/2604.19902v1",
+          "pdf": "https://arxiv.org/pdf/2604.19902v1"
+        },
+        "arxiv_url": "https://arxiv.org/abs/2604.19902v1",
+        "pdf_url": "https://arxiv.org/pdf/2604.19902v1",
+        "eprint_url": "https://arxiv.org/pdf/2604.19902v1",
+        "pub_url": "https://arxiv.org/abs/2604.19902v1",
+        "snippet": "We present MMCORE, a unified framework designed for multimodal image generation and editing. MMCORE leverages a pre-trained Vision-Language Model (VLM) to predict semantic visual embeddings via learna",
+        "source": "arxiv",
+        "doi": "",
+        "venue": "arXiv",
+        "cited_by": 0
+      }
+    ],
+    "dedupe_key": "arxiv:2604 19902v1",
+    "seed_tags": [],
+    "tag_hints": {
+      "force_tinyml": false,
+      "require_power_tag": false
+    },
+    "primary_group": "A",
+    "filter_policy": "TH_CPL_AB_OR_ARXIV",
+    "filter_bucket": "arxiv",
+    "filter_reason": "matched_arxiv",
+    "matched_venue": "",
+    "matched_th_cpl_level": "",
+    "matched_th_cpl_area": "",
+    "matched_venue_type": "",
+    "venue_match": {
+      "matched": false,
+      "raw": "arXiv",
+      "normalized": "arxiv",
+      "normalized_candidates": [
+        "arxiv"
+      ],
+      "match": null
+    },
+    "arxiv_match": {
+      "matched": true,
+      "arxiv_id": "2604.19902v1",
+      "matched_urls": [
+        "https://arxiv.org/abs/2604.19902v1",
+        "https://arxiv.org/pdf/2604.19902v1"
+      ]
+    },
+    "is_in_arxiv": true,
+    "category": "Embedded AI Applications",
+    "llm_tags": [],
+    "final_tags": [],
+    "provider_used": "heuristic_fallback",
+    "classification_model": "hunyuan-2.0-instruct-20251111",
+    "classification_raw_response": {
+      "error": "TokenHub request failed with status 402: {\"error\":{\"message\":\"endpoint is inactive: FREE_QUOTA_EXHAUSTED\",\"code\":\"401008\",\"type\":\"gateway_error\",\"request_id\":\"dba8ab5c-19c6-4dfd-9d13-3531c3b7cf20\"}}\n"
+    },
+    "checkpoint_saved_at": "2026-04-23T02:07:20.836Z"
+  },
+  "arxiv:2604 19401v1": {
+    "id": "3ca170fcca8bc12733a56e49e3e426866b536f3d",
+    "source": "arxiv",
+    "title": "Revisiting Catastrophic Forgetting in Continual Knowledge Graph Embedding",
+    "abstract": "Knowledge Graph Embeddings (KGEs) support a wide range of downstream tasks over Knowledge Graphs (KGs). In practice, KGs evolve as new entities and facts are added, motivating Continual Knowledge Graph Embedding (CKGE) methods that update embeddings over time. Current CKGE approaches address catastrophic forgetting (i.e., the performance degradation on previously learned tasks) primarily by limiting changes to existing embeddings.\n  However, we show that this view is incomplete. When new entities are introduced, their embeddings can interfere with previously learned ones, causing the model to predict them in place of previously correct answers. This phenomenon, which we call entity interference, has been largely overlooked and is not accounted for in current CKGE evaluation protocols. As a result, the assessment of catastrophic forgetting becomes misleading, and CKGE methods performance is systematically overestimated.\n  To address this issue, we introduce a corrected CKGE evaluation protocol that accounts for entity interference. Through experiments on multiple benchmarks, we show that ignoring this effect can lead to performance overestimation of up to 25%, particularly in scenarios with significant entity growth. We further analyze how different CKGE methods and KGE models are affected by the different sources of forgetting, and introduce a catastrophic forgetting metric tailored to CKGE.",
+    "snippet": "Knowledge Graph Embeddings (KGEs) support a wide range of downstream tasks over Knowledge Graphs (KGs). In practice, KGs evolve as new entities and facts are added, motivating Continual Knowledge Grap",
+    "authors": [
+      "Gerard Pons",
+      "Carlos Escolano",
+      "Besim Bilalli",
+      "Anna Queralt"
+    ],
+    "venue": "arXiv",
+    "year": 2026,
+    "cited_by": 0,
+    "doi": "",
+    "arxiv_id": "2604.19401v1",
+    "urls": {
+      "arxiv": "https://arxiv.org/abs/2604.19401v1",
+      "pdf": "https://arxiv.org/pdf/2604.19401v1",
+      "paper": "https://arxiv.org/abs/2604.19401v1"
+    },
+    "scholar_url": "",
+    "pub_url": "https://arxiv.org/abs/2604.19401v1",
+    "eprint_url": "https://arxiv.org/pdf/2604.19401v1",
+    "container_type": "",
+    "query_useds": [],
+    "raw_group_hits": [
+      "A"
+    ],
+    "search_sets_raw": [
+      "A"
+    ],
+    "search_sets_final": [
+      "A"
+    ],
+    "post_filter": null,
+    "raw_payloads": [
+      {
+        "arxiv_id": "2604.19401v1",
+        "title": "Revisiting Catastrophic Forgetting in Continual Knowledge Graph Embedding",
+        "abstract": "Knowledge Graph Embeddings (KGEs) support a wide range of downstream tasks over Knowledge Graphs (KGs). In practice, KGs evolve as new entities and facts are added, motivating Continual Knowledge Graph Embedding (CKGE) methods that update embeddings over time. Current CKGE approaches address catastrophic forgetting (i.e., the performance degradation on previously learned tasks) primarily by limiting changes to existing embeddings.\n  However, we show that this view is incomplete. When new entities are introduced, their embeddings can interfere with previously learned ones, causing the model to predict them in place of previously correct answers. This phenomenon, which we call entity interference, has been largely overlooked and is not accounted for in current CKGE evaluation protocols. As a result, the assessment of catastrophic forgetting becomes misleading, and CKGE methods performance is systematically overestimated.\n  To address this issue, we introduce a corrected CKGE evaluation protocol that accounts for entity interference. Through experiments on multiple benchmarks, we show that ignoring this effect can lead to performance overestimation of up to 25%, particularly in scenarios with significant entity growth. We further analyze how different CKGE methods and KGE models are affected by the different sources of forgetting, and introduce a catastrophic forgetting metric tailored to CKGE.",
+        "authors": [
+          "Gerard Pons",
+          "Carlos Escolano",
+          "Besim Bilalli",
+          "Anna Queralt"
+        ],
+        "year": 2026,
+        "month": 4,
+        "published": "2026-04-21T12:26:56Z",
+        "updated": "2026-04-21T12:26:56Z",
+        "urls": {
+          "arxiv": "https://arxiv.org/abs/2604.19401v1",
+          "pdf": "https://arxiv.org/pdf/2604.19401v1"
+        },
+        "arxiv_url": "https://arxiv.org/abs/2604.19401v1",
+        "pdf_url": "https://arxiv.org/pdf/2604.19401v1",
+        "eprint_url": "https://arxiv.org/pdf/2604.19401v1",
+        "pub_url": "https://arxiv.org/abs/2604.19401v1",
+        "snippet": "Knowledge Graph Embeddings (KGEs) support a wide range of downstream tasks over Knowledge Graphs (KGs). In practice, KGs evolve as new entities and facts are added, motivating Continual Knowledge Grap",
+        "source": "arxiv",
+        "doi": "",
+        "venue": "arXiv",
+        "cited_by": 0
+      }
+    ],
+    "dedupe_key": "arxiv:2604 19401v1",
+    "seed_tags": [],
+    "tag_hints": {
+      "force_tinyml": false,
+      "require_power_tag": false
+    },
+    "primary_group": "A",
+    "filter_policy": "TH_CPL_AB_OR_ARXIV",
+    "filter_bucket": "arxiv",
+    "filter_reason": "matched_arxiv",
+    "matched_venue": "",
+    "matched_th_cpl_level": "",
+    "matched_th_cpl_area": "",
+    "matched_venue_type": "",
+    "venue_match": {
+      "matched": false,
+      "raw": "arXiv",
+      "normalized": "arxiv",
+      "normalized_candidates": [
+        "arxiv"
+      ],
+      "match": null
+    },
+    "arxiv_match": {
+      "matched": true,
+      "arxiv_id": "2604.19401v1",
+      "matched_urls": [
+        "https://arxiv.org/abs/2604.19401v1",
+        "https://arxiv.org/pdf/2604.19401v1"
+      ]
+    },
+    "is_in_arxiv": true,
+    "category": "Embedded AI Applications",
+    "llm_tags": [],
+    "final_tags": [],
+    "provider_used": "heuristic_fallback",
+    "classification_model": "hunyuan-2.0-instruct-20251111",
+    "classification_raw_response": {
+      "error": "TokenHub request failed with status 402: {\"error\":{\"message\":\"endpoint is inactive: FREE_QUOTA_EXHAUSTED\",\"code\":\"401008\",\"type\":\"gateway_error\",\"request_id\":\"4c9a0286-ffe4-4f86-be4c-ee7f725bab47\"}}\n"
+    },
+    "checkpoint_saved_at": "2026-04-23T02:07:20.902Z"
+  },
+  "arxiv:2604 19623v1": {
+    "id": "751e6fcda97a18589c7a3e72da27ca3efce6ab25",
+    "source": "arxiv",
+    "title": "SAGE: Training-Free Semantic Evidence Composition for Edge-Cloud Inference under Hard Uplink Budgets",
+    "abstract": "Edge-cloud hybrid inference offloads difficult inputs to a powerful remote model, but the uplink channel imposes hard per-request constraints on the number of bits that can be transmitted. We show that selecting transmitted content based solely on attention-based importance, the standard approach in collaborative inference, is inherently limited under hard budgets. Two findings support this claim. First, replacing high-importance units with low-importance but complementary ones improves server accuracy. This shows that what matters is not individual importance but how well the transmitted set covers diverse aspects of the input. Second, spatially uniform selection without any content information achieves competitive accuracy at moderate budgets. This confirms that spatial coverage alone carries independent value. Based on this analysis, we propose SAGE (Semantic Attention-Guided Evidence), a principled, training-free method that combines importance filtering with embedding-diversity sampling. SAGE achieves 93% of the server ceiling in offloaded accuracy while transmitting fewer than half of the available evidence units on ImageNet-1K, substantially outperforming importance-only composition.",
+    "snippet": "Edge-cloud hybrid inference offloads difficult inputs to a powerful remote model, but the uplink channel imposes hard per-request constraints on the number of bits that can be transmitted. We show tha",
+    "authors": [
+      "Inhyeok Choi",
+      "Hyuncheol Park"
+    ],
+    "venue": "arXiv",
+    "year": 2026,
+    "cited_by": 0,
+    "doi": "",
+    "arxiv_id": "2604.19623v1",
+    "urls": {
+      "arxiv": "https://arxiv.org/abs/2604.19623v1",
+      "pdf": "https://arxiv.org/pdf/2604.19623v1",
+      "paper": "https://arxiv.org/abs/2604.19623v1"
+    },
+    "scholar_url": "",
+    "pub_url": "https://arxiv.org/abs/2604.19623v1",
+    "eprint_url": "https://arxiv.org/pdf/2604.19623v1",
+    "container_type": "",
+    "query_useds": [],
+    "raw_group_hits": [
+      "A"
+    ],
+    "search_sets_raw": [
+      "A"
+    ],
+    "search_sets_final": [
+      "A"
+    ],
+    "post_filter": null,
+    "raw_payloads": [
+      {
+        "arxiv_id": "2604.19623v1",
+        "title": "SAGE: Training-Free Semantic Evidence Composition for Edge-Cloud Inference under Hard Uplink Budgets",
+        "abstract": "Edge-cloud hybrid inference offloads difficult inputs to a powerful remote model, but the uplink channel imposes hard per-request constraints on the number of bits that can be transmitted. We show that selecting transmitted content based solely on attention-based importance, the standard approach in collaborative inference, is inherently limited under hard budgets. Two findings support this claim. First, replacing high-importance units with low-importance but complementary ones improves server accuracy. This shows that what matters is not individual importance but how well the transmitted set covers diverse aspects of the input. Second, spatially uniform selection without any content information achieves competitive accuracy at moderate budgets. This confirms that spatial coverage alone carries independent value. Based on this analysis, we propose SAGE (Semantic Attention-Guided Evidence), a principled, training-free method that combines importance filtering with embedding-diversity sampling. SAGE achieves 93% of the server ceiling in offloaded accuracy while transmitting fewer than half of the available evidence units on ImageNet-1K, substantially outperforming importance-only composition.",
+        "authors": [
+          "Inhyeok Choi",
+          "Hyuncheol Park"
+        ],
+        "year": 2026,
+        "month": 4,
+        "published": "2026-04-21T16:11:56Z",
+        "updated": "2026-04-21T16:11:56Z",
+        "urls": {
+          "arxiv": "https://arxiv.org/abs/2604.19623v1",
+          "pdf": "https://arxiv.org/pdf/2604.19623v1"
+        },
+        "arxiv_url": "https://arxiv.org/abs/2604.19623v1",
+        "pdf_url": "https://arxiv.org/pdf/2604.19623v1",
+        "eprint_url": "https://arxiv.org/pdf/2604.19623v1",
+        "pub_url": "https://arxiv.org/abs/2604.19623v1",
+        "snippet": "Edge-cloud hybrid inference offloads difficult inputs to a powerful remote model, but the uplink channel imposes hard per-request constraints on the number of bits that can be transmitted. We show tha",
+        "source": "arxiv",
+        "doi": "",
+        "venue": "arXiv",
+        "cited_by": 0
+      }
+    ],
+    "dedupe_key": "arxiv:2604 19623v1",
+    "seed_tags": [],
+    "tag_hints": {
+      "force_tinyml": false,
+      "require_power_tag": false
+    },
+    "primary_group": "A",
+    "filter_policy": "TH_CPL_AB_OR_ARXIV",
+    "filter_bucket": "arxiv",
+    "filter_reason": "matched_arxiv",
+    "matched_venue": "",
+    "matched_th_cpl_level": "",
+    "matched_th_cpl_area": "",
+    "matched_venue_type": "",
+    "venue_match": {
+      "matched": false,
+      "raw": "arXiv",
+      "normalized": "arxiv",
+      "normalized_candidates": [
+        "arxiv"
+      ],
+      "match": null
+    },
+    "arxiv_match": {
+      "matched": true,
+      "arxiv_id": "2604.19623v1",
+      "matched_urls": [
+        "https://arxiv.org/abs/2604.19623v1",
+        "https://arxiv.org/pdf/2604.19623v1"
+      ]
+    },
+    "is_in_arxiv": true,
+    "category": "Embedded AI Applications",
+    "llm_tags": [],
+    "final_tags": [],
+    "provider_used": "heuristic_fallback",
+    "classification_model": "hunyuan-2.0-instruct-20251111",
+    "classification_raw_response": {
+      "error": "TokenHub request failed with status 402: {\"error\":{\"message\":\"endpoint is inactive: FREE_QUOTA_EXHAUSTED\",\"code\":\"401008\",\"type\":\"gateway_error\",\"request_id\":\"ac35df21-9d04-42e7-b472-d4886938545a\"}}\n"
+    },
+    "checkpoint_saved_at": "2026-04-23T02:07:21.184Z"
+  },
+  "arxiv:2604 20003v1": {
+    "id": "d07b2b02354292830be07ad009673b88b2dbe09f",
+    "source": "arxiv",
+    "title": "scpFormer: A Foundation Model for Unified Representation and Integration of the Single-Cell Proteomics",
+    "abstract": "The integration of single-cell proteomic data is often hindered by the fragmented nature of targeted antibody panels. To address this limitation, we introduce scpFormer, a transformer-based foundation model designed for single-cell proteomics. Pre-trained on over 390 million cells, scpFormer replaces standard index-based tokenization with a continuous, sequence-anchored approach. By combining Evolutionary Scale Modeling (ESM) with value-aware expression embeddings, it dynamically maps variable panels into a shared semantic space without artificial discretization. We demonstrate that scpFormer generates global cell representations that perform competitively in large-scale batch integration and unsupervised clustering. Moreover, its open-vocabulary architecture facilitates in silico panel expansion, assisting in the reconstruction of biological manifolds in sparse clinical datasets. Finally, this learned protein co-expression logic is transferable to bulk-omics tasks, supporting applications like cancer drug response prediction. scpFormer provides a versatile, panel-agnostic framework to facilitate scalable biomarker discovery and precision oncology.",
+    "snippet": "The integration of single-cell proteomic data is often hindered by the fragmented nature of targeted antibody panels. To address this limitation, we introduce scpFormer, a transformer-based foundation",
+    "authors": [
+      "Qifeng Zhou",
+      "Lei Yu",
+      "Yuzhi Guo",
+      "Yuwei Miao",
+      "Hehuan Ma",
+      "Wenliang Zhong",
+      "Lin Xu",
+      "Junzhou Huang"
+    ],
+    "venue": "arXiv",
+    "year": 2026,
+    "cited_by": 0,
+    "doi": "",
+    "arxiv_id": "2604.20003v1",
+    "urls": {
+      "arxiv": "https://arxiv.org/abs/2604.20003v1",
+      "pdf": "https://arxiv.org/pdf/2604.20003v1",
+      "paper": "https://arxiv.org/abs/2604.20003v1"
+    },
+    "scholar_url": "",
+    "pub_url": "https://arxiv.org/abs/2604.20003v1",
+    "eprint_url": "https://arxiv.org/pdf/2604.20003v1",
+    "container_type": "",
+    "query_useds": [],
+    "raw_group_hits": [
+      "A"
+    ],
+    "search_sets_raw": [
+      "A"
+    ],
+    "search_sets_final": [
+      "A"
+    ],
+    "post_filter": null,
+    "raw_payloads": [
+      {
+        "arxiv_id": "2604.20003v1",
+        "title": "scpFormer: A Foundation Model for Unified Representation and Integration of the Single-Cell Proteomics",
+        "abstract": "The integration of single-cell proteomic data is often hindered by the fragmented nature of targeted antibody panels. To address this limitation, we introduce scpFormer, a transformer-based foundation model designed for single-cell proteomics. Pre-trained on over 390 million cells, scpFormer replaces standard index-based tokenization with a continuous, sequence-anchored approach. By combining Evolutionary Scale Modeling (ESM) with value-aware expression embeddings, it dynamically maps variable panels into a shared semantic space without artificial discretization. We demonstrate that scpFormer generates global cell representations that perform competitively in large-scale batch integration and unsupervised clustering. Moreover, its open-vocabulary architecture facilitates in silico panel expansion, assisting in the reconstruction of biological manifolds in sparse clinical datasets. Finally, this learned protein co-expression logic is transferable to bulk-omics tasks, supporting applications like cancer drug response prediction. scpFormer provides a versatile, panel-agnostic framework to facilitate scalable biomarker discovery and precision oncology.",
+        "authors": [
+          "Qifeng Zhou",
+          "Lei Yu",
+          "Yuzhi Guo",
+          "Yuwei Miao",
+          "Hehuan Ma",
+          "Wenliang Zhong",
+          "Lin Xu",
+          "Junzhou Huang"
+        ],
+        "year": 2026,
+        "month": 4,
+        "published": "2026-04-21T21:27:04Z",
+        "updated": "2026-04-21T21:27:04Z",
+        "urls": {
+          "arxiv": "https://arxiv.org/abs/2604.20003v1",
+          "pdf": "https://arxiv.org/pdf/2604.20003v1"
+        },
+        "arxiv_url": "https://arxiv.org/abs/2604.20003v1",
+        "pdf_url": "https://arxiv.org/pdf/2604.20003v1",
+        "eprint_url": "https://arxiv.org/pdf/2604.20003v1",
+        "pub_url": "https://arxiv.org/abs/2604.20003v1",
+        "snippet": "The integration of single-cell proteomic data is often hindered by the fragmented nature of targeted antibody panels. To address this limitation, we introduce scpFormer, a transformer-based foundation",
+        "source": "arxiv",
+        "doi": "",
+        "venue": "arXiv",
+        "cited_by": 0
+      }
+    ],
+    "dedupe_key": "arxiv:2604 20003v1",
+    "seed_tags": [],
+    "tag_hints": {
+      "force_tinyml": false,
+      "require_power_tag": false
+    },
+    "primary_group": "A",
+    "filter_policy": "TH_CPL_AB_OR_ARXIV",
+    "filter_bucket": "arxiv",
+    "filter_reason": "matched_arxiv",
+    "matched_venue": "",
+    "matched_th_cpl_level": "",
+    "matched_th_cpl_area": "",
+    "matched_venue_type": "",
+    "venue_match": {
+      "matched": false,
+      "raw": "arXiv",
+      "normalized": "arxiv",
+      "normalized_candidates": [
+        "arxiv"
+      ],
+      "match": null
+    },
+    "arxiv_match": {
+      "matched": true,
+      "arxiv_id": "2604.20003v1",
+      "matched_urls": [
+        "https://arxiv.org/abs/2604.20003v1",
+        "https://arxiv.org/pdf/2604.20003v1"
+      ]
+    },
+    "is_in_arxiv": true,
+    "category": "Efficient Model Design and Optimization",
+    "llm_tags": [],
+    "final_tags": [],
+    "provider_used": "heuristic_fallback",
+    "classification_model": "hunyuan-2.0-instruct-20251111",
+    "classification_raw_response": {
+      "error": "TokenHub request failed with status 402: {\"error\":{\"message\":\"endpoint is inactive: FREE_QUOTA_EXHAUSTED\",\"code\":\"401008\",\"type\":\"gateway_error\",\"request_id\":\"b2f72077-d662-46e8-a081-81a9c8620934\"}}\n"
+    },
+    "checkpoint_saved_at": "2026-04-23T02:07:21.227Z"
+  },
+  "arxiv:2604 20598v1": {
+    "id": "336ecb649a8c1974be0f8907e0d8956b3ebaa094",
+    "source": "arxiv",
+    "title": "Self-Aware Vector Embeddings for Retrieval-Augmented Generation: A Neuroscience-Inspired Framework for Temporal, Confidence-Weighted, and Relational Knowledge",
+    "abstract": "Modern retrieval-augmented generation (RAG) systems treat vector embeddings as static, context-free artifacts: an embedding has no notion of when it was created, how trustworthy its source is, or which other embeddings depend on it. This flattening of knowledge has a measurable cost: recent work on VersionRAG reports that conventional RAG achieves only 58% accuracy on versioned technical queries, because retrieval returns semantically similar but temporally invalid content. We propose SmartVector, a framework that augments dense embeddings with three explicit properties -- temporal awareness, confidence decay, and relational awareness -- and a five-stage lifecycle modeled on hippocampal-neocortical memory consolidation. A retrieval pipeline replaces pure cosine similarity with a four-signal score that mixes semantic relevance, temporal validity, live confidence, and graph-relational importance. A background consolidation agent detects contradictions, builds dependency edges, and propagates updates along those edges as graph-neural-network-style messages. Confidence is governed by a closed-form function combining an Ebbinghaus-style exponential decay, user-feedback reconsolidation, and logarithmic access reinforcement. We formalize the model, relate it to temporal knowledge graph embedding, agentic memory architectures, and uncertainty-aware RAG, and present a reference implementation. On a reproducible synthetic versioned-policy benchmark of 258 vectors and 138 queries, SmartVector roughly doubles top-1 accuracy over plain cosine RAG (62.0% vs. 31.0% on a held-out split), drops stale-answer rate from 35.0% to 13.3%, cuts Expected Calibration Error by nearly 2x (0.244 vs. 0.470), reduces re-embedding cost per single-word edit by 77%, and is robust across contradiction-injection rates from 0% to 75%.",
+    "snippet": "Modern retrieval-augmented generation (RAG) systems treat vector embeddings as static, context-free artifacts: an embedding has no notion of when it was created, how trustworthy its source is, or whic",
+    "authors": [
+      "Naizhong Xu"
+    ],
+    "venue": "arXiv",
+    "year": 2026,
+    "cited_by": 0,
+    "doi": "",
+    "arxiv_id": "2604.20598v1",
+    "urls": {
+      "arxiv": "https://arxiv.org/abs/2604.20598v1",
+      "pdf": "https://arxiv.org/pdf/2604.20598v1",
+      "paper": "https://arxiv.org/abs/2604.20598v1"
+    },
+    "scholar_url": "",
+    "pub_url": "https://arxiv.org/abs/2604.20598v1",
+    "eprint_url": "https://arxiv.org/pdf/2604.20598v1",
+    "container_type": "",
+    "query_useds": [],
+    "raw_group_hits": [
+      "A"
+    ],
+    "search_sets_raw": [
+      "A"
+    ],
+    "search_sets_final": [
+      "A"
+    ],
+    "post_filter": null,
+    "raw_payloads": [
+      {
+        "arxiv_id": "2604.20598v1",
+        "title": "Self-Aware Vector Embeddings for Retrieval-Augmented Generation: A Neuroscience-Inspired Framework for Temporal, Confidence-Weighted, and Relational Knowledge",
+        "abstract": "Modern retrieval-augmented generation (RAG) systems treat vector embeddings as static, context-free artifacts: an embedding has no notion of when it was created, how trustworthy its source is, or which other embeddings depend on it. This flattening of knowledge has a measurable cost: recent work on VersionRAG reports that conventional RAG achieves only 58% accuracy on versioned technical queries, because retrieval returns semantically similar but temporally invalid content. We propose SmartVector, a framework that augments dense embeddings with three explicit properties -- temporal awareness, confidence decay, and relational awareness -- and a five-stage lifecycle modeled on hippocampal-neocortical memory consolidation. A retrieval pipeline replaces pure cosine similarity with a four-signal score that mixes semantic relevance, temporal validity, live confidence, and graph-relational importance. A background consolidation agent detects contradictions, builds dependency edges, and propagates updates along those edges as graph-neural-network-style messages. Confidence is governed by a closed-form function combining an Ebbinghaus-style exponential decay, user-feedback reconsolidation, and logarithmic access reinforcement. We formalize the model, relate it to temporal knowledge graph embedding, agentic memory architectures, and uncertainty-aware RAG, and present a reference implementation. On a reproducible synthetic versioned-policy benchmark of 258 vectors and 138 queries, SmartVector roughly doubles top-1 accuracy over plain cosine RAG (62.0% vs. 31.0% on a held-out split), drops stale-answer rate from 35.0% to 13.3%, cuts Expected Calibration Error by nearly 2x (0.244 vs. 0.470), reduces re-embedding cost per single-word edit by 77%, and is robust across contradiction-injection rates from 0% to 75%.",
+        "authors": [
+          "Naizhong Xu"
+        ],
+        "year": 2026,
+        "month": 4,
+        "published": "2026-04-22T14:13:50Z",
+        "updated": "2026-04-22T14:13:50Z",
+        "urls": {
+          "arxiv": "https://arxiv.org/abs/2604.20598v1",
+          "pdf": "https://arxiv.org/pdf/2604.20598v1"
+        },
+        "arxiv_url": "https://arxiv.org/abs/2604.20598v1",
+        "pdf_url": "https://arxiv.org/pdf/2604.20598v1",
+        "eprint_url": "https://arxiv.org/pdf/2604.20598v1",
+        "pub_url": "https://arxiv.org/abs/2604.20598v1",
+        "snippet": "Modern retrieval-augmented generation (RAG) systems treat vector embeddings as static, context-free artifacts: an embedding has no notion of when it was created, how trustworthy its source is, or whic",
+        "source": "arxiv",
+        "doi": "",
+        "venue": "arXiv",
+        "cited_by": 0
+      }
+    ],
+    "dedupe_key": "arxiv:2604 20598v1",
+    "seed_tags": [],
+    "tag_hints": {
+      "force_tinyml": false,
+      "require_power_tag": false
+    },
+    "primary_group": "A",
+    "filter_policy": "TH_CPL_AB_OR_ARXIV",
+    "filter_bucket": "arxiv",
+    "filter_reason": "matched_arxiv",
+    "matched_venue": "",
+    "matched_th_cpl_level": "",
+    "matched_th_cpl_area": "",
+    "matched_venue_type": "",
+    "venue_match": {
+      "matched": false,
+      "raw": "arXiv",
+      "normalized": "arxiv",
+      "normalized_candidates": [
+        "arxiv"
+      ],
+      "match": null
+    },
+    "arxiv_match": {
+      "matched": true,
+      "arxiv_id": "2604.20598v1",
+      "matched_urls": [
+        "https://arxiv.org/abs/2604.20598v1",
+        "https://arxiv.org/pdf/2604.20598v1"
+      ]
+    },
+    "is_in_arxiv": true,
+    "category": "Embedded AI Applications",
+    "llm_tags": [],
+    "final_tags": [],
+    "provider_used": "heuristic_fallback",
+    "classification_model": "hunyuan-2.0-instruct-20251111",
+    "classification_raw_response": {
+      "error": "TokenHub request failed with status 402: {\"error\":{\"message\":\"endpoint is inactive: FREE_QUOTA_EXHAUSTED\",\"code\":\"401008\",\"type\":\"gateway_error\",\"request_id\":\"61b1955b-8972-404b-a3ce-d07796ccf1ea\"}}\n"
+    },
+    "checkpoint_saved_at": "2026-04-23T02:07:21.286Z"
+  },
+  "arxiv:2604 19562v1": {
+    "id": "87bfb82d93d88ea772e76b5e48a327c9eb8d0ee7",
+    "source": "arxiv",
+    "title": "Structure-guided molecular design with contrastive 3D protein-ligand learning",
+    "abstract": "Structure-based drug discovery faces the dual challenge of accurately capturing 3D protein-ligand interactions while navigating ultra-large chemical spaces to identify synthetically accessible candidates. In this work, we present a unified framework that addresses these challenges by combining contrastive 3D structure encoding with autoregressive molecular generation conditioned on commercial compound spaces. First, we introduce an SE(3)-equivariant transformer that encodes ligand and pocket structures into a shared embedding space via contrastive learning, achieving competitive results in zero-shot virtual screening. Second, we integrate these embeddings into a multimodal Chemical Language Model (MCLM). The model generates target-specific molecules conditioned on either pocket or ligand structures, with a learned dataset token that steers the output toward targeted chemical spaces, yielding candidates with favorable predicted binding properties across diverse targets.",
+    "snippet": "Structure-based drug discovery faces the dual challenge of accurately capturing 3D protein-ligand interactions while navigating ultra-large chemical spaces to identify synthetically accessible candida",
+    "authors": [
+      "Carles Navarro",
+      "Philipp Tholke",
+      "Gianni de Fabritiis"
+    ],
+    "venue": "arXiv",
+    "year": 2026,
+    "cited_by": 0,
+    "doi": "",
+    "arxiv_id": "2604.19562v1",
+    "urls": {
+      "arxiv": "https://arxiv.org/abs/2604.19562v1",
+      "pdf": "https://arxiv.org/pdf/2604.19562v1",
+      "paper": "https://arxiv.org/abs/2604.19562v1"
+    },
+    "scholar_url": "",
+    "pub_url": "https://arxiv.org/abs/2604.19562v1",
+    "eprint_url": "https://arxiv.org/pdf/2604.19562v1",
+    "container_type": "",
+    "query_useds": [],
+    "raw_group_hits": [
+      "A"
+    ],
+    "search_sets_raw": [
+      "A"
+    ],
+    "search_sets_final": [
+      "A"
+    ],
+    "post_filter": null,
+    "raw_payloads": [
+      {
+        "arxiv_id": "2604.19562v1",
+        "title": "Structure-guided molecular design with contrastive 3D protein-ligand learning",
+        "abstract": "Structure-based drug discovery faces the dual challenge of accurately capturing 3D protein-ligand interactions while navigating ultra-large chemical spaces to identify synthetically accessible candidates. In this work, we present a unified framework that addresses these challenges by combining contrastive 3D structure encoding with autoregressive molecular generation conditioned on commercial compound spaces. First, we introduce an SE(3)-equivariant transformer that encodes ligand and pocket structures into a shared embedding space via contrastive learning, achieving competitive results in zero-shot virtual screening. Second, we integrate these embeddings into a multimodal Chemical Language Model (MCLM). The model generates target-specific molecules conditioned on either pocket or ligand structures, with a learned dataset token that steers the output toward targeted chemical spaces, yielding candidates with favorable predicted binding properties across diverse targets.",
+        "authors": [
+          "Carles Navarro",
+          "Philipp Tholke",
+          "Gianni de Fabritiis"
+        ],
+        "year": 2026,
+        "month": 4,
+        "published": "2026-04-21T15:13:41Z",
+        "updated": "2026-04-21T15:13:41Z",
+        "urls": {
+          "arxiv": "https://arxiv.org/abs/2604.19562v1",
+          "pdf": "https://arxiv.org/pdf/2604.19562v1"
+        },
+        "arxiv_url": "https://arxiv.org/abs/2604.19562v1",
+        "pdf_url": "https://arxiv.org/pdf/2604.19562v1",
+        "eprint_url": "https://arxiv.org/pdf/2604.19562v1",
+        "pub_url": "https://arxiv.org/abs/2604.19562v1",
+        "snippet": "Structure-based drug discovery faces the dual challenge of accurately capturing 3D protein-ligand interactions while navigating ultra-large chemical spaces to identify synthetically accessible candida",
+        "source": "arxiv",
+        "doi": "",
+        "venue": "arXiv",
+        "cited_by": 0
+      }
+    ],
+    "dedupe_key": "arxiv:2604 19562v1",
+    "seed_tags": [],
+    "tag_hints": {
+      "force_tinyml": false,
+      "require_power_tag": false
+    },
+    "primary_group": "A",
+    "filter_policy": "TH_CPL_AB_OR_ARXIV",
+    "filter_bucket": "arxiv",
+    "filter_reason": "matched_arxiv",
+    "matched_venue": "",
+    "matched_th_cpl_level": "",
+    "matched_th_cpl_area": "",
+    "matched_venue_type": "",
+    "venue_match": {
+      "matched": false,
+      "raw": "arXiv",
+      "normalized": "arxiv",
+      "normalized_candidates": [
+        "arxiv"
+      ],
+      "match": null
+    },
+    "arxiv_match": {
+      "matched": true,
+      "arxiv_id": "2604.19562v1",
+      "matched_urls": [
+        "https://arxiv.org/abs/2604.19562v1",
+        "https://arxiv.org/pdf/2604.19562v1"
+      ]
+    },
+    "is_in_arxiv": true,
+    "category": "Embedded AI Applications",
+    "llm_tags": [],
+    "final_tags": [],
+    "provider_used": "heuristic_fallback",
+    "classification_model": "hunyuan-2.0-instruct-20251111",
+    "classification_raw_response": {
+      "error": "TokenHub request failed with status 402: {\"error\":{\"message\":\"endpoint is inactive: FREE_QUOTA_EXHAUSTED\",\"code\":\"401008\",\"type\":\"gateway_error\",\"request_id\":\"27171b1f-6d57-4227-bb00-0de96592d1e9\"}}\n"
+    },
+    "checkpoint_saved_at": "2026-04-23T02:07:21.624Z"
+  },
+  "arxiv:2604 20436v1": {
+    "id": "95655b2020d3b2d136eb62eb22172c4555169248",
+    "source": "arxiv",
+    "title": "Shift-Up: A Framework for Software Engineering Guardrails in AI-native Software Development -- Initial Findings",
+    "abstract": "Generative AI (GenAI) is reshaping software engineering by shifting development from manual coding toward agent-driven implementation. While vibe coding promises rapid prototyping, it often suffers from architectural drift, limited traceability, and reduced maintainability. Applying the design science research (DSR) methodology, this paper proposes Shift-Up, a framework that reinterprets established software engineering practices, like executable requirements (BDD), architectural modeling (C4), and architecture decision records (ADRs), as structural guardrails for GenAI-native development. Preliminary findings from our exploratory evaluation compare unstructured vibe coding, structured prompt engineering, and the Shift-Up approach in the development of a web application. These findings indicate that embedding machine-readable requirements and architectural artifacts stabilizes agent behavior, reduces implementation drift, and shifts human effort toward higher-level design and validation activities. The results suggest that traditional software engineering artifacts can serve as effective control mechanisms in AI-assisted development.",
+    "snippet": "Generative AI (GenAI) is reshaping software engineering by shifting development from manual coding toward agent-driven implementation. While vibe coding promises rapid prototyping, it often suffers fr",
+    "authors": [
+      "Petrus Lipsanen",
+      "Liisa Rannikko",
+      "François Christophe",
+      "Konsta Kalliokoski",
+      "Vlad Stirbu",
+      "Tommi Mikkonen"
+    ],
+    "venue": "arXiv",
+    "year": 2026,
+    "cited_by": 0,
+    "doi": "",
+    "arxiv_id": "2604.20436v1",
+    "urls": {
+      "arxiv": "https://arxiv.org/abs/2604.20436v1",
+      "pdf": "https://arxiv.org/pdf/2604.20436v1",
+      "paper": "https://arxiv.org/abs/2604.20436v1"
+    },
+    "scholar_url": "",
+    "pub_url": "https://arxiv.org/abs/2604.20436v1",
+    "eprint_url": "https://arxiv.org/pdf/2604.20436v1",
+    "container_type": "",
+    "query_useds": [],
+    "raw_group_hits": [
+      "A"
+    ],
+    "search_sets_raw": [
+      "A"
+    ],
+    "search_sets_final": [
+      "A"
+    ],
+    "post_filter": null,
+    "raw_payloads": [
+      {
+        "arxiv_id": "2604.20436v1",
+        "title": "Shift-Up: A Framework for Software Engineering Guardrails in AI-native Software Development -- Initial Findings",
+        "abstract": "Generative AI (GenAI) is reshaping software engineering by shifting development from manual coding toward agent-driven implementation. While vibe coding promises rapid prototyping, it often suffers from architectural drift, limited traceability, and reduced maintainability. Applying the design science research (DSR) methodology, this paper proposes Shift-Up, a framework that reinterprets established software engineering practices, like executable requirements (BDD), architectural modeling (C4), and architecture decision records (ADRs), as structural guardrails for GenAI-native development. Preliminary findings from our exploratory evaluation compare unstructured vibe coding, structured prompt engineering, and the Shift-Up approach in the development of a web application. These findings indicate that embedding machine-readable requirements and architectural artifacts stabilizes agent behavior, reduces implementation drift, and shifts human effort toward higher-level design and validation activities. The results suggest that traditional software engineering artifacts can serve as effective control mechanisms in AI-assisted development.",
+        "authors": [
+          "Petrus Lipsanen",
+          "Liisa Rannikko",
+          "François Christophe",
+          "Konsta Kalliokoski",
+          "Vlad Stirbu",
+          "Tommi Mikkonen"
+        ],
+        "year": 2026,
+        "month": 4,
+        "published": "2026-04-22T10:55:57Z",
+        "updated": "2026-04-22T10:55:57Z",
+        "urls": {
+          "arxiv": "https://arxiv.org/abs/2604.20436v1",
+          "pdf": "https://arxiv.org/pdf/2604.20436v1"
+        },
+        "arxiv_url": "https://arxiv.org/abs/2604.20436v1",
+        "pdf_url": "https://arxiv.org/pdf/2604.20436v1",
+        "eprint_url": "https://arxiv.org/pdf/2604.20436v1",
+        "pub_url": "https://arxiv.org/abs/2604.20436v1",
+        "snippet": "Generative AI (GenAI) is reshaping software engineering by shifting development from manual coding toward agent-driven implementation. While vibe coding promises rapid prototyping, it often suffers fr",
+        "source": "arxiv",
+        "doi": "",
+        "venue": "arXiv",
+        "cited_by": 0
+      }
+    ],
+    "dedupe_key": "arxiv:2604 20436v1",
+    "seed_tags": [],
+    "tag_hints": {
+      "force_tinyml": false,
+      "require_power_tag": false
+    },
+    "primary_group": "A",
+    "filter_policy": "TH_CPL_AB_OR_ARXIV",
+    "filter_bucket": "arxiv",
+    "filter_reason": "matched_arxiv",
+    "matched_venue": "",
+    "matched_th_cpl_level": "",
+    "matched_th_cpl_area": "",
+    "matched_venue_type": "",
+    "venue_match": {
+      "matched": false,
+      "raw": "arXiv",
+      "normalized": "arxiv",
+      "normalized_candidates": [
+        "arxiv"
+      ],
+      "match": null
+    },
+    "arxiv_match": {
+      "matched": true,
+      "arxiv_id": "2604.20436v1",
+      "matched_urls": [
+        "https://arxiv.org/abs/2604.20436v1",
+        "https://arxiv.org/pdf/2604.20436v1"
+      ]
+    },
+    "is_in_arxiv": true,
+    "category": "Embedded AI Applications",
+    "llm_tags": [],
+    "final_tags": [],
+    "provider_used": "heuristic_fallback",
+    "classification_model": "hunyuan-2.0-instruct-20251111",
+    "classification_raw_response": {
+      "error": "TokenHub request failed with status 402: {\"error\":{\"message\":\"endpoint is inactive: FREE_QUOTA_EXHAUSTED\",\"code\":\"401008\",\"type\":\"gateway_error\",\"request_id\":\"56012647-2f1a-47ba-bf06-07597a4c3169\"}}\n"
+    },
+    "checkpoint_saved_at": "2026-04-23T02:07:21.665Z"
+  },
+  "arxiv:2604 18835v1": {
+    "id": "ab5c98d07227bc83c4a941ed4b6b65c57ae10532",
+    "source": "arxiv",
+    "title": "Semantic Needles in Document Haystacks: Sensitivity Testing of LLM-as-a-Judge Similarity Scoring",
+    "abstract": "We propose a scalable, multifactorial experimental framework that systematically probes LLM sensitivity to subtle semantic changes in pairwise document comparison. We analogize this as a needle-in-a-haystack problem: a single semantically altered sentence (the needle) is embedded within surrounding context (the hay), and we vary the perturbation type (negation, conjunction swap, named entity replacement), context type (original vs. topically unrelated), needle position, and document length across all combinations, testing five LLMs on tens of thousands of document pairs. Our analysis reveals several striking findings. First, LLMs exhibit a within-document positional bias distinct from previously studied candidate-order effects: most models penalize semantic differences more harshly when they occur earlier in a document. Second, when the altered sentence is surrounded by topically unrelated context, it systematically lowers similarity scores and induces bipolarized scores that indicate either very low or very high similarity. This is consistent with an interpretive frame account in which topically-related context may allow models to contextualize and downweight the alterations. Third, each LLM produces a qualitatively distinct scoring distribution, a stable \"fingerprint\" that is invariant to perturbation type, yet all models share a universal hierarchy in how leniently they treat different perturbation types. Together, these results demonstrate that LLM semantic similarity scores are sensitive to document structure, context coherence, and model identity in ways that go beyond the semantic change itself, and that the proposed framework offers a practical, LLM-agnostic toolkit for auditing and comparing scoring behavior across current and future models.",
+    "snippet": "We propose a scalable, multifactorial experimental framework that systematically probes LLM sensitivity to subtle semantic changes in pairwise document comparison. We analogize this as a needle-in-a-h",
+    "authors": [
+      "Sinan G. Aksoy",
+      "Alexandra A. Sabrio",
+      "Erik VonKaenel",
+      "Lee Burke"
+    ],
+    "venue": "arXiv",
+    "year": 2026,
+    "cited_by": 0,
+    "doi": "",
+    "arxiv_id": "2604.18835v1",
+    "urls": {
+      "arxiv": "https://arxiv.org/abs/2604.18835v1",
+      "pdf": "https://arxiv.org/pdf/2604.18835v1",
+      "paper": "https://arxiv.org/abs/2604.18835v1"
+    },
+    "scholar_url": "",
+    "pub_url": "https://arxiv.org/abs/2604.18835v1",
+    "eprint_url": "https://arxiv.org/pdf/2604.18835v1",
+    "container_type": "",
+    "query_useds": [],
+    "raw_group_hits": [
+      "A"
+    ],
+    "search_sets_raw": [
+      "A"
+    ],
+    "search_sets_final": [
+      "A"
+    ],
+    "post_filter": null,
+    "raw_payloads": [
+      {
+        "arxiv_id": "2604.18835v1",
+        "title": "Semantic Needles in Document Haystacks: Sensitivity Testing of LLM-as-a-Judge Similarity Scoring",
+        "abstract": "We propose a scalable, multifactorial experimental framework that systematically probes LLM sensitivity to subtle semantic changes in pairwise document comparison. We analogize this as a needle-in-a-haystack problem: a single semantically altered sentence (the needle) is embedded within surrounding context (the hay), and we vary the perturbation type (negation, conjunction swap, named entity replacement), context type (original vs. topically unrelated), needle position, and document length across all combinations, testing five LLMs on tens of thousands of document pairs. Our analysis reveals several striking findings. First, LLMs exhibit a within-document positional bias distinct from previously studied candidate-order effects: most models penalize semantic differences more harshly when they occur earlier in a document. Second, when the altered sentence is surrounded by topically unrelated context, it systematically lowers similarity scores and induces bipolarized scores that indicate either very low or very high similarity. This is consistent with an interpretive frame account in which topically-related context may allow models to contextualize and downweight the alterations. Third, each LLM produces a qualitatively distinct scoring distribution, a stable \"fingerprint\" that is invariant to perturbation type, yet all models share a universal hierarchy in how leniently they treat different perturbation types. Together, these results demonstrate that LLM semantic similarity scores are sensitive to document structure, context coherence, and model identity in ways that go beyond the semantic change itself, and that the proposed framework offers a practical, LLM-agnostic toolkit for auditing and comparing scoring behavior across current and future models.",
+        "authors": [
+          "Sinan G. Aksoy",
+          "Alexandra A. Sabrio",
+          "Erik VonKaenel",
+          "Lee Burke"
+        ],
+        "year": 2026,
+        "month": 4,
+        "published": "2026-04-20T20:59:25Z",
+        "updated": "2026-04-20T20:59:25Z",
+        "urls": {
+          "arxiv": "https://arxiv.org/abs/2604.18835v1",
+          "pdf": "https://arxiv.org/pdf/2604.18835v1"
+        },
+        "arxiv_url": "https://arxiv.org/abs/2604.18835v1",
+        "pdf_url": "https://arxiv.org/pdf/2604.18835v1",
+        "eprint_url": "https://arxiv.org/pdf/2604.18835v1",
+        "pub_url": "https://arxiv.org/abs/2604.18835v1",
+        "snippet": "We propose a scalable, multifactorial experimental framework that systematically probes LLM sensitivity to subtle semantic changes in pairwise document comparison. We analogize this as a needle-in-a-h",
+        "source": "arxiv",
+        "doi": "",
+        "venue": "arXiv",
+        "cited_by": 0
+      }
+    ],
+    "dedupe_key": "arxiv:2604 18835v1",
+    "seed_tags": [],
+    "tag_hints": {
+      "force_tinyml": false,
+      "require_power_tag": false
+    },
+    "primary_group": "A",
+    "filter_policy": "TH_CPL_AB_OR_ARXIV",
+    "filter_bucket": "arxiv",
+    "filter_reason": "matched_arxiv",
+    "matched_venue": "",
+    "matched_th_cpl_level": "",
+    "matched_th_cpl_area": "",
+    "matched_venue_type": "",
+    "venue_match": {
+      "matched": false,
+      "raw": "arXiv",
+      "normalized": "arxiv",
+      "normalized_candidates": [
+        "arxiv"
+      ],
+      "match": null
+    },
+    "arxiv_match": {
+      "matched": true,
+      "arxiv_id": "2604.18835v1",
+      "matched_urls": [
+        "https://arxiv.org/abs/2604.18835v1",
+        "https://arxiv.org/pdf/2604.18835v1"
+      ]
+    },
+    "is_in_arxiv": true,
+    "category": "Embedded AI Applications",
+    "llm_tags": [],
+    "final_tags": [],
+    "provider_used": "heuristic_fallback",
+    "classification_model": "hunyuan-2.0-instruct-20251111",
+    "classification_raw_response": {
+      "error": "TokenHub request failed with status 402: {\"error\":{\"message\":\"endpoint is inactive: FREE_QUOTA_EXHAUSTED\",\"code\":\"401008\",\"type\":\"gateway_error\",\"request_id\":\"7bae39cb-8968-4fe4-87f7-603fe78906f4\"}}\n"
+    },
+    "checkpoint_saved_at": "2026-04-23T02:07:21.727Z"
+  },
+  "arxiv:2604 18868v1": {
+    "id": "77380450afd88f67e29557b6eb7093943ba4897e",
+    "source": "arxiv",
+    "title": "Subgraph Concept Networks: Concept Levels in Graph Classification",
+    "abstract": "The reasoning process of Graph Neural Networks is complex and considered opaque, limiting trust in their predictions. To alleviate this issue, prior work has proposed concept-based explanations, extracted from clusters in the model's node embeddings. However, a limitation of concept-based explanations is that they only explain the node embedding space and are obscured by pooling in graph classification. To mitigate this issue and provide a deeper level of understanding, we propose the Subgraph Concept Network. The Subgraph Concept Network is the first graph neural network architecture that distils subgraph and graph-level concepts. It achieves this by performing soft clustering on node concept embeddings to derive subgraph and graph-level concepts. Our results show that the Subgraph Concept Network allows to obtain competitive model accuracy, while discovering meaningful concepts at different levels of the network.",
+    "snippet": "The reasoning process of Graph Neural Networks is complex and considered opaque, limiting trust in their predictions. To alleviate this issue, prior work has proposed concept-based explanations, extra",
+    "authors": [
+      "Lucie Charlotte Magister",
+      "Alexander Norcliffe",
+      "Iulia Duta",
+      "Pietro Lio"
+    ],
+    "venue": "arXiv",
+    "year": 2026,
+    "cited_by": 0,
+    "doi": "",
+    "arxiv_id": "2604.18868v1",
+    "urls": {
+      "arxiv": "https://arxiv.org/abs/2604.18868v1",
+      "pdf": "https://arxiv.org/pdf/2604.18868v1",
+      "paper": "https://arxiv.org/abs/2604.18868v1"
+    },
+    "scholar_url": "",
+    "pub_url": "https://arxiv.org/abs/2604.18868v1",
+    "eprint_url": "https://arxiv.org/pdf/2604.18868v1",
+    "container_type": "",
+    "query_useds": [],
+    "raw_group_hits": [
+      "A"
+    ],
+    "search_sets_raw": [
+      "A"
+    ],
+    "search_sets_final": [
+      "A"
+    ],
+    "post_filter": null,
+    "raw_payloads": [
+      {
+        "arxiv_id": "2604.18868v1",
+        "title": "Subgraph Concept Networks: Concept Levels in Graph Classification",
+        "abstract": "The reasoning process of Graph Neural Networks is complex and considered opaque, limiting trust in their predictions. To alleviate this issue, prior work has proposed concept-based explanations, extracted from clusters in the model's node embeddings. However, a limitation of concept-based explanations is that they only explain the node embedding space and are obscured by pooling in graph classification. To mitigate this issue and provide a deeper level of understanding, we propose the Subgraph Concept Network. The Subgraph Concept Network is the first graph neural network architecture that distils subgraph and graph-level concepts. It achieves this by performing soft clustering on node concept embeddings to derive subgraph and graph-level concepts. Our results show that the Subgraph Concept Network allows to obtain competitive model accuracy, while discovering meaningful concepts at different levels of the network.",
+        "authors": [
+          "Lucie Charlotte Magister",
+          "Alexander Norcliffe",
+          "Iulia Duta",
+          "Pietro Lio"
+        ],
+        "year": 2026,
+        "month": 4,
+        "published": "2026-04-20T21:44:05Z",
+        "updated": "2026-04-20T21:44:05Z",
+        "urls": {
+          "arxiv": "https://arxiv.org/abs/2604.18868v1",
+          "pdf": "https://arxiv.org/pdf/2604.18868v1"
+        },
+        "arxiv_url": "https://arxiv.org/abs/2604.18868v1",
+        "pdf_url": "https://arxiv.org/pdf/2604.18868v1",
+        "eprint_url": "https://arxiv.org/pdf/2604.18868v1",
+        "pub_url": "https://arxiv.org/abs/2604.18868v1",
+        "snippet": "The reasoning process of Graph Neural Networks is complex and considered opaque, limiting trust in their predictions. To alleviate this issue, prior work has proposed concept-based explanations, extra",
+        "source": "arxiv",
+        "doi": "",
+        "venue": "arXiv",
+        "cited_by": 0
+      }
+    ],
+    "dedupe_key": "arxiv:2604 18868v1",
+    "seed_tags": [],
+    "tag_hints": {
+      "force_tinyml": false,
+      "require_power_tag": false
+    },
+    "primary_group": "A",
+    "filter_policy": "TH_CPL_AB_OR_ARXIV",
+    "filter_bucket": "arxiv",
+    "filter_reason": "matched_arxiv",
+    "matched_venue": "",
+    "matched_th_cpl_level": "",
+    "matched_th_cpl_area": "",
+    "matched_venue_type": "",
+    "venue_match": {
+      "matched": false,
+      "raw": "arXiv",
+      "normalized": "arxiv",
+      "normalized_candidates": [
+        "arxiv"
+      ],
+      "match": null
+    },
+    "arxiv_match": {
+      "matched": true,
+      "arxiv_id": "2604.18868v1",
+      "matched_urls": [
+        "https://arxiv.org/abs/2604.18868v1",
+        "https://arxiv.org/pdf/2604.18868v1"
+      ]
+    },
+    "is_in_arxiv": true,
+    "category": "Embedded AI Applications",
+    "llm_tags": [],
+    "final_tags": [],
+    "provider_used": "heuristic_fallback",
+    "classification_model": "hunyuan-2.0-instruct-20251111",
+    "classification_raw_response": {
+      "error": "TokenHub request failed with status 402: {\"error\":{\"message\":\"endpoint is inactive: FREE_QUOTA_EXHAUSTED\",\"code\":\"401008\",\"type\":\"gateway_error\",\"request_id\":\"4f42be2f-f7d9-4147-9ea2-7ae9ec4073ad\"}}\n"
+    },
+    "checkpoint_saved_at": "2026-04-23T02:07:21.954Z"
+  },
+  "arxiv:2604 20331v1": {
+    "id": "663f24492eed605d90e69ce77f052c538f2427c9",
+    "source": "arxiv",
+    "title": "Surrogate modeling for interpreting black-box LLMs in medical predictions",
+    "abstract": "Large language models (LLMs), trained on vast datasets, encode extensive real-world knowledge within their parameters, yet their black-box nature obscures the mechanisms and extent of this encoding. Surrogate modeling, which uses simplified models to approximate complex systems, can offer a path toward better interpretability of black-box models. We propose a surrogate modeling framework that quantitatively explains LLM-encoded knowledge. For a specific hypothesis derived from domain knowledge, this framework approximates the latent LLM knowledge space using observable elements (input-output pairs) through extensive prompting across a comprehensive range of simulated scenarios. Through proof-of-concept experiments in medical predictions, we demonstrate our framework's effectiveness in revealing the extent to which LLMs \"perceive\" each input variable in relation to the output. Particularly, given concerns that LLMs may perpetuate inaccuracies and societal biases embedded in their training data, our experiments using this framework quantitatively revealed both associations that contradict established medical knowledge and the persistence of scientifically refuted racial assumptions within LLM-encoded knowledge. By disclosing these issues, our framework can act as a red-flag indicator to support the safe and reliable application of these models.",
+    "snippet": "Large language models (LLMs), trained on vast datasets, encode extensive real-world knowledge within their parameters, yet their black-box nature obscures the mechanisms and extent of this encoding. S",
+    "authors": [
+      "Changho Han",
+      "Songsoo Kim",
+      "Dong Won Kim",
+      "Leo Anthony Celi",
+      "Jaewoong Kim",
+      "SungA Bae",
+      "Dukyong Yoon"
+    ],
+    "venue": "arXiv",
+    "year": 2026,
+    "cited_by": 0,
+    "doi": "",
+    "arxiv_id": "2604.20331v1",
+    "urls": {
+      "arxiv": "https://arxiv.org/abs/2604.20331v1",
+      "pdf": "https://arxiv.org/pdf/2604.20331v1",
+      "paper": "https://arxiv.org/abs/2604.20331v1"
+    },
+    "scholar_url": "",
+    "pub_url": "https://arxiv.org/abs/2604.20331v1",
+    "eprint_url": "https://arxiv.org/pdf/2604.20331v1",
+    "container_type": "",
+    "query_useds": [],
+    "raw_group_hits": [
+      "A"
+    ],
+    "search_sets_raw": [
+      "A"
+    ],
+    "search_sets_final": [
+      "A"
+    ],
+    "post_filter": null,
+    "raw_payloads": [
+      {
+        "arxiv_id": "2604.20331v1",
+        "title": "Surrogate modeling for interpreting black-box LLMs in medical predictions",
+        "abstract": "Large language models (LLMs), trained on vast datasets, encode extensive real-world knowledge within their parameters, yet their black-box nature obscures the mechanisms and extent of this encoding. Surrogate modeling, which uses simplified models to approximate complex systems, can offer a path toward better interpretability of black-box models. We propose a surrogate modeling framework that quantitatively explains LLM-encoded knowledge. For a specific hypothesis derived from domain knowledge, this framework approximates the latent LLM knowledge space using observable elements (input-output pairs) through extensive prompting across a comprehensive range of simulated scenarios. Through proof-of-concept experiments in medical predictions, we demonstrate our framework's effectiveness in revealing the extent to which LLMs \"perceive\" each input variable in relation to the output. Particularly, given concerns that LLMs may perpetuate inaccuracies and societal biases embedded in their training data, our experiments using this framework quantitatively revealed both associations that contradict established medical knowledge and the persistence of scientifically refuted racial assumptions within LLM-encoded knowledge. By disclosing these issues, our framework can act as a red-flag indicator to support the safe and reliable application of these models.",
+        "authors": [
+          "Changho Han",
+          "Songsoo Kim",
+          "Dong Won Kim",
+          "Leo Anthony Celi",
+          "Jaewoong Kim",
+          "SungA Bae",
+          "Dukyong Yoon"
+        ],
+        "year": 2026,
+        "month": 4,
+        "published": "2026-04-22T08:26:23Z",
+        "updated": "2026-04-22T08:26:23Z",
+        "urls": {
+          "arxiv": "https://arxiv.org/abs/2604.20331v1",
+          "pdf": "https://arxiv.org/pdf/2604.20331v1"
+        },
+        "arxiv_url": "https://arxiv.org/abs/2604.20331v1",
+        "pdf_url": "https://arxiv.org/pdf/2604.20331v1",
+        "eprint_url": "https://arxiv.org/pdf/2604.20331v1",
+        "pub_url": "https://arxiv.org/abs/2604.20331v1",
+        "snippet": "Large language models (LLMs), trained on vast datasets, encode extensive real-world knowledge within their parameters, yet their black-box nature obscures the mechanisms and extent of this encoding. S",
+        "source": "arxiv",
+        "doi": "",
+        "venue": "arXiv",
+        "cited_by": 0
+      }
+    ],
+    "dedupe_key": "arxiv:2604 20331v1",
+    "seed_tags": [],
+    "tag_hints": {
+      "force_tinyml": false,
+      "require_power_tag": false
+    },
+    "primary_group": "A",
+    "filter_policy": "TH_CPL_AB_OR_ARXIV",
+    "filter_bucket": "arxiv",
+    "filter_reason": "matched_arxiv",
+    "matched_venue": "",
+    "matched_th_cpl_level": "",
+    "matched_th_cpl_area": "",
+    "matched_venue_type": "",
+    "venue_match": {
+      "matched": false,
+      "raw": "arXiv",
+      "normalized": "arxiv",
+      "normalized_candidates": [
+        "arxiv"
+      ],
+      "match": null
+    },
+    "arxiv_match": {
+      "matched": true,
+      "arxiv_id": "2604.20331v1",
+      "matched_urls": [
+        "https://arxiv.org/abs/2604.20331v1",
+        "https://arxiv.org/pdf/2604.20331v1"
+      ]
+    },
+    "is_in_arxiv": true,
+    "category": "Embedded AI Applications",
+    "llm_tags": [],
+    "final_tags": [],
+    "provider_used": "heuristic_fallback",
+    "classification_model": "hunyuan-2.0-instruct-20251111",
+    "classification_raw_response": {
+      "error": "TokenHub request failed with status 402: {\"error\":{\"message\":\"endpoint is inactive: FREE_QUOTA_EXHAUSTED\",\"code\":\"401008\",\"type\":\"gateway_error\",\"request_id\":\"4ef9e611-b75a-4fef-a605-8fee3cbf1f72\"}}\n"
+    },
+    "checkpoint_saved_at": "2026-04-23T02:07:21.985Z"
+  },
+  "arxiv:2604 18939v1": {
+    "id": "e112e702b0cd0e46868ba7bb8cd9c1d06cbe2871",
+    "source": "arxiv",
+    "title": "TabEmb: Joint Semantic-Structure Embedding for Table Annotation",
+    "abstract": "Table annotation is crucial for making web and enterprise tables usable in downstream NLP applications. Unlike textual data where learning semantically rich token or sentence embeddings often suffice, tables are structured combinations of columns wherein useful representations must jointly capture column's semantics and the inter-column relationships. Existing models learn by linearizing the 2D table into a 1D token sequence and encoding it with pretrained language models (PLMs) such as BERT. However, this leads to limited semantic quality and weaker generalization to unseen or rare values compared to modern LLMs, and degraded structural modeling due to 2D-to-1D flattening and context-length constraints. We propose TabEmb, which directly targets these limitations by decoupling semantic encoding from structural modeling. An LLM first produces semantically rich embeddings for each column, and a graph-based module over columns then injects relationships into the embeddings, yielding joint semantic-tructural representations for table annotation. Experiments show that TabEmb consistently outperforms strong baselines on different table annotation tasks. Source code and datasets are available at https://github.com/hoseinzadeehsan/TabEmb",
+    "snippet": "Table annotation is crucial for making web and enterprise tables usable in downstream NLP applications. Unlike textual data where learning semantically rich token or sentence embeddings often suffice,",
+    "authors": [
+      "Ehsan Hoseinzade",
+      "Ke Wang",
+      "Anandharaju Durai Raju"
+    ],
+    "venue": "arXiv",
+    "year": 2026,
+    "cited_by": 0,
+    "doi": "",
+    "arxiv_id": "2604.18939v1",
+    "urls": {
+      "arxiv": "https://arxiv.org/abs/2604.18939v1",
+      "pdf": "https://arxiv.org/pdf/2604.18939v1",
+      "paper": "https://arxiv.org/abs/2604.18939v1"
+    },
+    "scholar_url": "",
+    "pub_url": "https://arxiv.org/abs/2604.18939v1",
+    "eprint_url": "https://arxiv.org/pdf/2604.18939v1",
+    "container_type": "",
+    "query_useds": [],
+    "raw_group_hits": [
+      "A"
+    ],
+    "search_sets_raw": [
+      "A"
+    ],
+    "search_sets_final": [
+      "A"
+    ],
+    "post_filter": null,
+    "raw_payloads": [
+      {
+        "arxiv_id": "2604.18939v1",
+        "title": "TabEmb: Joint Semantic-Structure Embedding for Table Annotation",
+        "abstract": "Table annotation is crucial for making web and enterprise tables usable in downstream NLP applications. Unlike textual data where learning semantically rich token or sentence embeddings often suffice, tables are structured combinations of columns wherein useful representations must jointly capture column's semantics and the inter-column relationships. Existing models learn by linearizing the 2D table into a 1D token sequence and encoding it with pretrained language models (PLMs) such as BERT. However, this leads to limited semantic quality and weaker generalization to unseen or rare values compared to modern LLMs, and degraded structural modeling due to 2D-to-1D flattening and context-length constraints. We propose TabEmb, which directly targets these limitations by decoupling semantic encoding from structural modeling. An LLM first produces semantically rich embeddings for each column, and a graph-based module over columns then injects relationships into the embeddings, yielding joint semantic-tructural representations for table annotation. Experiments show that TabEmb consistently outperforms strong baselines on different table annotation tasks. Source code and datasets are available at https://github.com/hoseinzadeehsan/TabEmb",
+        "authors": [
+          "Ehsan Hoseinzade",
+          "Ke Wang",
+          "Anandharaju Durai Raju"
+        ],
+        "year": 2026,
+        "month": 4,
+        "published": "2026-04-21T00:25:49Z",
+        "updated": "2026-04-21T00:25:49Z",
+        "urls": {
+          "arxiv": "https://arxiv.org/abs/2604.18939v1",
+          "pdf": "https://arxiv.org/pdf/2604.18939v1"
+        },
+        "arxiv_url": "https://arxiv.org/abs/2604.18939v1",
+        "pdf_url": "https://arxiv.org/pdf/2604.18939v1",
+        "eprint_url": "https://arxiv.org/pdf/2604.18939v1",
+        "pub_url": "https://arxiv.org/abs/2604.18939v1",
+        "snippet": "Table annotation is crucial for making web and enterprise tables usable in downstream NLP applications. Unlike textual data where learning semantically rich token or sentence embeddings often suffice,",
+        "source": "arxiv",
+        "doi": "",
+        "venue": "arXiv",
+        "cited_by": 0
+      }
+    ],
+    "dedupe_key": "arxiv:2604 18939v1",
+    "seed_tags": [],
+    "tag_hints": {
+      "force_tinyml": false,
+      "require_power_tag": false
+    },
+    "primary_group": "A",
+    "filter_policy": "TH_CPL_AB_OR_ARXIV",
+    "filter_bucket": "arxiv",
+    "filter_reason": "matched_arxiv",
+    "matched_venue": "",
+    "matched_th_cpl_level": "",
+    "matched_th_cpl_area": "",
+    "matched_venue_type": "",
+    "venue_match": {
+      "matched": false,
+      "raw": "arXiv",
+      "normalized": "arxiv",
+      "normalized_candidates": [
+        "arxiv"
+      ],
+      "match": null
+    },
+    "arxiv_match": {
+      "matched": true,
+      "arxiv_id": "2604.18939v1",
+      "matched_urls": [
+        "https://arxiv.org/abs/2604.18939v1",
+        "https://arxiv.org/pdf/2604.18939v1"
+      ]
+    },
+    "is_in_arxiv": true,
+    "category": "Embedded AI Applications",
+    "llm_tags": [],
+    "final_tags": [],
+    "provider_used": "heuristic_fallback",
+    "classification_model": "hunyuan-2.0-instruct-20251111",
+    "classification_raw_response": {
+      "error": "TokenHub request failed with status 402: {\"error\":{\"message\":\"endpoint is inactive: FREE_QUOTA_EXHAUSTED\",\"code\":\"401008\",\"type\":\"gateway_error\",\"request_id\":\"1dfe174e-bba4-4859-b769-2f63af3d49c4\"}}\n"
+    },
+    "checkpoint_saved_at": "2026-04-23T02:07:22.188Z"
+  },
+  "arxiv:2604 18850v1": {
+    "id": "16b9df2b389766065c1c83ea6334b494a0a2f54b",
+    "source": "arxiv",
+    "title": "The Triadic Loop: A Framework for Negotiating Alignment in AI Co-hosted Livestreaming",
+    "abstract": "AI systems are increasingly embedded in multi-user social environments, yet most alignment frameworks conceptualize interaction as a dyadic relationship between a single user and an AI system. Livestreaming platforms challenge this assumption: interaction unfolds among streamers and audiences in real time, producing dynamic affective and social feedback loops. In this paper, we introduce the Triadic Loop, a conceptual framework that reconceptualizes alignment in AI co-hosted livestreaming as a temporally reinforced process of bidirectional adaptation among three actors: streamer $\\leftrightarrow$ AI co-host, AI co-host $\\leftrightarrow$ audience, and streamer $\\leftrightarrow$ audience. Unlike instruction-following paradigms, bidirectional alignment requires each actor to continuously reshape the others, meaning misalignment in any sub-loop can destabilize the broader system. Drawing on literature from multi-party interaction, collaborative AI, and relational agents, we articulate how AI co-hosts function not only as mediators but as performative participants and community members shaping collective meaning-making. We further propose \"strategic misalignment\" as a mechanism for sustaining community engagement and introduce three relational evaluation constructs grounded in established instruments. The framework contributes a model of dynamic multi-party alignment, an account of cross-loop reinforcement, and design implications for AI co-hosts that sustain social coherence in participatory media environments.",
+    "snippet": "AI systems are increasingly embedded in multi-user social environments, yet most alignment frameworks conceptualize interaction as a dyadic relationship between a single user and an AI system. Livestr",
+    "authors": [
+      "Katherine Wang",
+      "Nadia Berthouze",
+      "Aneesha Singh"
+    ],
+    "venue": "arXiv",
+    "year": 2026,
+    "cited_by": 0,
+    "doi": "",
+    "arxiv_id": "2604.18850v1",
+    "urls": {
+      "arxiv": "https://arxiv.org/abs/2604.18850v1",
+      "pdf": "https://arxiv.org/pdf/2604.18850v1",
+      "paper": "https://arxiv.org/abs/2604.18850v1"
+    },
+    "scholar_url": "",
+    "pub_url": "https://arxiv.org/abs/2604.18850v1",
+    "eprint_url": "https://arxiv.org/pdf/2604.18850v1",
+    "container_type": "",
+    "query_useds": [],
+    "raw_group_hits": [
+      "A"
+    ],
+    "search_sets_raw": [
+      "A"
+    ],
+    "search_sets_final": [
+      "A"
+    ],
+    "post_filter": null,
+    "raw_payloads": [
+      {
+        "arxiv_id": "2604.18850v1",
+        "title": "The Triadic Loop: A Framework for Negotiating Alignment in AI Co-hosted Livestreaming",
+        "abstract": "AI systems are increasingly embedded in multi-user social environments, yet most alignment frameworks conceptualize interaction as a dyadic relationship between a single user and an AI system. Livestreaming platforms challenge this assumption: interaction unfolds among streamers and audiences in real time, producing dynamic affective and social feedback loops. In this paper, we introduce the Triadic Loop, a conceptual framework that reconceptualizes alignment in AI co-hosted livestreaming as a temporally reinforced process of bidirectional adaptation among three actors: streamer $\\leftrightarrow$ AI co-host, AI co-host $\\leftrightarrow$ audience, and streamer $\\leftrightarrow$ audience. Unlike instruction-following paradigms, bidirectional alignment requires each actor to continuously reshape the others, meaning misalignment in any sub-loop can destabilize the broader system. Drawing on literature from multi-party interaction, collaborative AI, and relational agents, we articulate how AI co-hosts function not only as mediators but as performative participants and community members shaping collective meaning-making. We further propose \"strategic misalignment\" as a mechanism for sustaining community engagement and introduce three relational evaluation constructs grounded in established instruments. The framework contributes a model of dynamic multi-party alignment, an account of cross-loop reinforcement, and design implications for AI co-hosts that sustain social coherence in participatory media environments.",
+        "authors": [
+          "Katherine Wang",
+          "Nadia Berthouze",
+          "Aneesha Singh"
+        ],
+        "year": 2026,
+        "month": 4,
+        "published": "2026-04-20T21:19:36Z",
+        "updated": "2026-04-20T21:19:36Z",
+        "urls": {
+          "arxiv": "https://arxiv.org/abs/2604.18850v1",
+          "pdf": "https://arxiv.org/pdf/2604.18850v1"
+        },
+        "arxiv_url": "https://arxiv.org/abs/2604.18850v1",
+        "pdf_url": "https://arxiv.org/pdf/2604.18850v1",
+        "eprint_url": "https://arxiv.org/pdf/2604.18850v1",
+        "pub_url": "https://arxiv.org/abs/2604.18850v1",
+        "snippet": "AI systems are increasingly embedded in multi-user social environments, yet most alignment frameworks conceptualize interaction as a dyadic relationship between a single user and an AI system. Livestr",
+        "source": "arxiv",
+        "doi": "",
+        "venue": "arXiv",
+        "cited_by": 0
+      }
+    ],
+    "dedupe_key": "arxiv:2604 18850v1",
+    "seed_tags": [],
+    "tag_hints": {
+      "force_tinyml": false,
+      "require_power_tag": false
+    },
+    "primary_group": "A",
+    "filter_policy": "TH_CPL_AB_OR_ARXIV",
+    "filter_bucket": "arxiv",
+    "filter_reason": "matched_arxiv",
+    "matched_venue": "",
+    "matched_th_cpl_level": "",
+    "matched_th_cpl_area": "",
+    "matched_venue_type": "",
+    "venue_match": {
+      "matched": false,
+      "raw": "arXiv",
+      "normalized": "arxiv",
+      "normalized_candidates": [
+        "arxiv"
+      ],
+      "match": null
+    },
+    "arxiv_match": {
+      "matched": true,
+      "arxiv_id": "2604.18850v1",
+      "matched_urls": [
+        "https://arxiv.org/abs/2604.18850v1",
+        "https://arxiv.org/pdf/2604.18850v1"
+      ]
+    },
+    "is_in_arxiv": true,
+    "category": "Embedded AI Applications",
+    "llm_tags": [],
+    "final_tags": [],
+    "provider_used": "heuristic_fallback",
+    "classification_model": "hunyuan-2.0-instruct-20251111",
+    "classification_raw_response": {
+      "error": "TokenHub request failed with status 402: {\"error\":{\"message\":\"endpoint is inactive: FREE_QUOTA_EXHAUSTED\",\"code\":\"401008\",\"type\":\"gateway_error\",\"request_id\":\"8e90eb18-b218-4cf7-aaaa-8251c14f5008\"}}\n"
+    },
+    "checkpoint_saved_at": "2026-04-23T02:07:22.285Z"
+  },
+  "arxiv:2604 19514v1": {
+    "id": "40830c206ba37d2c409700de53d7003e49b8af1d",
+    "source": "arxiv",
+    "title": "When Graph Structure Becomes a Liability: A Critical Re-Evaluation of Graph Neural Networks for Bitcoin Fraud Detection under Temporal Distribution Shift",
+    "abstract": "The consensus that GCN, GraphSAGE, GAT, and EvolveGCN outperform feature-only baselines on the Elliptic Bitcoin Dataset is widely cited but has not been rigorously stress-tested under a leakage-free evaluation protocol. We perform a seed-matched inductive-versus-transductive comparison and find that this consensus does not hold. Under a strictly inductive protocol, Random Forest on raw features achieves F1 = 0.821 and outperforms all evaluated GNNs, while GraphSAGE reaches F1 = 0.689 +/- 0.017. A paired controlled experiment reveals a 39.5-point F1 gap attributable to training-time exposure to test-period adjacency. Additionally, edge-shuffle ablations show that randomly wired graphs outperform the real transaction graph, indicating that the dataset's topology can be misleading under temporal distribution shift. Hybrid models combining GNN embeddings with raw features provide only marginal gains and remain substantially below feature-only baselines. We release code, checkpoints, and a strict-inductive protocol to enable reproducible, leakage-free evaluation.",
+    "snippet": "The consensus that GCN, GraphSAGE, GAT, and EvolveGCN outperform feature-only baselines on the Elliptic Bitcoin Dataset is widely cited but has not been rigorously stress-tested under a leakage-free e",
+    "authors": [
+      "Saket Maganti"
+    ],
+    "venue": "arXiv",
+    "year": 2026,
+    "cited_by": 0,
+    "doi": "",
+    "arxiv_id": "2604.19514v1",
+    "urls": {
+      "arxiv": "https://arxiv.org/abs/2604.19514v1",
+      "pdf": "https://arxiv.org/pdf/2604.19514v1",
+      "paper": "https://arxiv.org/abs/2604.19514v1"
+    },
+    "scholar_url": "",
+    "pub_url": "https://arxiv.org/abs/2604.19514v1",
+    "eprint_url": "https://arxiv.org/pdf/2604.19514v1",
+    "container_type": "",
+    "query_useds": [],
+    "raw_group_hits": [
+      "A"
+    ],
+    "search_sets_raw": [
+      "A"
+    ],
+    "search_sets_final": [
+      "A"
+    ],
+    "post_filter": null,
+    "raw_payloads": [
+      {
+        "arxiv_id": "2604.19514v1",
+        "title": "When Graph Structure Becomes a Liability: A Critical Re-Evaluation of Graph Neural Networks for Bitcoin Fraud Detection under Temporal Distribution Shift",
+        "abstract": "The consensus that GCN, GraphSAGE, GAT, and EvolveGCN outperform feature-only baselines on the Elliptic Bitcoin Dataset is widely cited but has not been rigorously stress-tested under a leakage-free evaluation protocol. We perform a seed-matched inductive-versus-transductive comparison and find that this consensus does not hold. Under a strictly inductive protocol, Random Forest on raw features achieves F1 = 0.821 and outperforms all evaluated GNNs, while GraphSAGE reaches F1 = 0.689 +/- 0.017. A paired controlled experiment reveals a 39.5-point F1 gap attributable to training-time exposure to test-period adjacency. Additionally, edge-shuffle ablations show that randomly wired graphs outperform the real transaction graph, indicating that the dataset's topology can be misleading under temporal distribution shift. Hybrid models combining GNN embeddings with raw features provide only marginal gains and remain substantially below feature-only baselines. We release code, checkpoints, and a strict-inductive protocol to enable reproducible, leakage-free evaluation.",
+        "authors": [
+          "Saket Maganti"
+        ],
+        "year": 2026,
+        "month": 4,
+        "published": "2026-04-21T14:32:20Z",
+        "updated": "2026-04-21T14:32:20Z",
+        "urls": {
+          "arxiv": "https://arxiv.org/abs/2604.19514v1",
+          "pdf": "https://arxiv.org/pdf/2604.19514v1"
+        },
+        "arxiv_url": "https://arxiv.org/abs/2604.19514v1",
+        "pdf_url": "https://arxiv.org/pdf/2604.19514v1",
+        "eprint_url": "https://arxiv.org/pdf/2604.19514v1",
+        "pub_url": "https://arxiv.org/abs/2604.19514v1",
+        "snippet": "The consensus that GCN, GraphSAGE, GAT, and EvolveGCN outperform feature-only baselines on the Elliptic Bitcoin Dataset is widely cited but has not been rigorously stress-tested under a leakage-free e",
+        "source": "arxiv",
+        "doi": "",
+        "venue": "arXiv",
+        "cited_by": 0
+      }
+    ],
+    "dedupe_key": "arxiv:2604 19514v1",
+    "seed_tags": [],
+    "tag_hints": {
+      "force_tinyml": false,
+      "require_power_tag": false
+    },
+    "primary_group": "A",
+    "filter_policy": "TH_CPL_AB_OR_ARXIV",
+    "filter_bucket": "arxiv",
+    "filter_reason": "matched_arxiv",
+    "matched_venue": "",
+    "matched_th_cpl_level": "",
+    "matched_th_cpl_area": "",
+    "matched_venue_type": "",
+    "venue_match": {
+      "matched": false,
+      "raw": "arXiv",
+      "normalized": "arxiv",
+      "normalized_candidates": [
+        "arxiv"
+      ],
+      "match": null
+    },
+    "arxiv_match": {
+      "matched": true,
+      "arxiv_id": "2604.19514v1",
+      "matched_urls": [
+        "https://arxiv.org/abs/2604.19514v1",
+        "https://arxiv.org/pdf/2604.19514v1"
+      ]
+    },
+    "is_in_arxiv": true,
+    "category": "Embedded AI Applications",
+    "llm_tags": [],
+    "final_tags": [],
+    "provider_used": "heuristic_fallback",
+    "classification_model": "hunyuan-2.0-instruct-20251111",
+    "classification_raw_response": {
+      "error": "TokenHub request failed with status 402: {\"error\":{\"message\":\"endpoint is inactive: FREE_QUOTA_EXHAUSTED\",\"code\":\"401008\",\"type\":\"gateway_error\",\"request_id\":\"bd412d9b-d8da-436e-a68f-3ff4d9f06176\"}}\n"
+    },
+    "checkpoint_saved_at": "2026-04-23T02:07:22.306Z"
   }
 }
