@@ -17861,3 +17861,36 @@
   url = {https://arxiv.org/abs/2604.20003v1},
   abstract = {The integration of single-cell proteomic data is often hindered by the fragmented nature of targeted antibody panels. To address this limitation, we introduce scpFormer, a transformer-based foundation model designed for single-cell proteomics. Pre-trained on over 390 million cells, scpFormer replaces standard index-based tokenization with a continuous, sequence-anchored approach. By combining Evolutionary Scale Modeling (ESM) with value-aware expression embeddings, it dynamically maps variable panels into a shared semantic space without artificial discretization. We demonstrate that scpFormer generates global cell representations that perform competitively in large-scale batch integration and unsupervised clustering. Moreover, its open-vocabulary architecture facilitates in silico panel expansion, assisting in the reconstruction of biological manifolds in sparse clinical datasets. Finally, this learned protein co-expression logic is transferable to bulk-omics tasks, supporting applications like cancer drug response prediction. scpFormer provides a versatile, panel-agnostic framework to facilitate scalable biomarker discovery and precision oncology.}
 }
+
+@article{zymet2026-adaptive-instruction-composition-for-2893b50a,
+  author = {Jesse Zymet and Andy Luo and Swapnil Shinde and Sahil Wadhwa and Emily Chen},
+  title = {Adaptive Instruction Composition for Automated LLM Red-Teaming},
+  year = {2026},
+  journal = {arXiv},
+  eprint = {2604.21159v1},
+  archivePrefix = {arXiv},
+  url = {https://arxiv.org/abs/2604.21159v1},
+  abstract = {Many approaches to LLM red-teaming leverage an attacker LLM to discover jailbreaks against a target. Several of them task the attacker with identifying effective strategies through trial and error, resulting in a semantically limited range of successes. Another approach discovers diverse attacks by combining crowdsourced harmful queries and tactics into instructions for the attacker, but does so at random, limiting effectiveness. This article introduces a novel framework, Adaptive Instruction Composition, that combines crowdsourced texts according to an adaptive mechanism trained to jointly optimize effectiveness with diversity. We use reinforcement learning to balance exploration with exploitation in a combinatorial space of instructions to guide the attacker toward diverse generations tailored to target vulnerabilities. We demonstrate that our approach substantially outperforms random combination on a set of effectiveness and diversity metrics, even under model transfer. Further, we show that it surpasses a host of recent adaptive approaches on Harmbench. We employ a lightweight neural contextual bandit that adapts to contrastive embedding inputs, and provide ablations suggesting that the contrastive pretraining enables the network to rapidly generalize and scale to the massive space as it learns.}
+}
+
+@article{salama2026-dwtsumm-discrete-wavelet-transform-01f72383,
+  author = {Rana Salama and Abdou Youssef and Mona Diab},
+  title = {DWTSumm: Discrete Wavelet Transform for Document Summarization},
+  year = {2026},
+  journal = {arXiv},
+  eprint = {2604.21070v1},
+  archivePrefix = {arXiv},
+  url = {https://arxiv.org/abs/2604.21070v1},
+  abstract = {Summarizing long, domain-specific documents with large language models (LLMs) remains challenging due to context limitations, information loss, and hallucinations, particularly in clinical and legal settings. We propose a Discrete Wavelet Transform (DWT)-based multi-resolution framework that treats text as a semantic signal and decomposes it into global (approximation) and local (detail) components. Applied to sentence- or word-level embeddings, DWT yields compact representations that preserve overall structure and critical domain-specific details, which are used directly as summaries or to guide LLM generation. Experiments on clinical and legal benchmarks demonstrate comparable ROUGE-L scores. Compared to a GPT-4o baseline, the DWT based summarization consistently improve semantic similarity and grounding, achieving gains of over 2% in BERTScore, more than 4\\% in Semantic Fidelity, factual consistency in legal tasks, and large METEOR improvements indicative of preserved domain-specific semantics. Across multiple embedding models, Fidelity reaches up to 97%, suggesting that DWT acts as a semantic denoising mechanism that reduces hallucinations and strengthens factual grounding. Overall, DWT provides a lightweight, generalizable method for reliable long-document and domain-specific summarization with LLMs.}
+}
+
+@article{deng2026-toward-efficient-membership-inference-18476cba,
+  author = {Guilin Deng and Silong Chen and Yuchuan Luo and Yi Liu and Songlei Wang and Zhiping Cai and Lin Liu and Xiaohua Jia and Shaojing Fu},
+  title = {Toward Efficient Membership Inference Attacks against Federated Large Language Models: A Projection Residual Approach},
+  year = {2026},
+  journal = {arXiv},
+  eprint = {2604.21197v1},
+  archivePrefix = {arXiv},
+  url = {https://arxiv.org/abs/2604.21197v1},
+  abstract = {Federated Large Language Models (FedLLMs) enable multiple parties to collaboratively fine-tune LLMs without sharing raw data, addressing challenges of limited resources and privacy concerns. Despite data localization, shared gradients can still expose sensitive information through membership inference attacks (MIAs). However, FedLLMs' unique properties, i.e. massive parameter scales, rapid convergence, and sparse, non-orthogonal gradients, render existing MIAs ineffective. To address this gap, we propose ProjRes, the first projection residuals-based passive MIA tailored for FedLLMs. ProjRes leverages hidden embedding vectors as sample representations and analyzes their projection residuals on the gradient subspace to uncover the intrinsic link between gradients and inputs. It requires no shadow models, auxiliary classifiers, or historical updates, ensuring efficiency and robustness. Experiments on four benchmarks and four LLMs show that ProjRes achieves near 100% accuracy, outperforming prior methods by up to 75.75%, and remains effective even under strong differential privacy defenses. Our findings reveal a previously overlooked privacy vulnerability in FedLLMs and call for a re-examination of their security assumptions. Our code and data are available at $\\href\{https://anonymous.4open.science/r/Passive-MIA-5268\}\{link\}$.}
+}

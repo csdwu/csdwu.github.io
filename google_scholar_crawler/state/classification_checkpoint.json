@@ -13132,5 +13132,2429 @@
       "error": "TokenHub request failed with status 402: {\"error\":{\"message\":\"endpoint is inactive: FREE_QUOTA_EXHAUSTED\",\"code\":\"401008\",\"type\":\"gateway_error\",\"request_id\":\"bd412d9b-d8da-436e-a68f-3ff4d9f06176\"}}\n"
     },
     "checkpoint_saved_at": "2026-04-23T02:07:22.306Z"
+  },
+  "arxiv:2604 21103v1": {
+    "id": "e54ba368668469ac72b7b34a65846d467eb238b1",
+    "source": "arxiv",
+    "title": "AI Governance under Political Turnover: The Alignment Surface of Compliance Design",
+    "abstract": "Governments are increasingly interested in using AI to make administrative decisions cheaper, more scalable, and more consistent. But for probabilistic AI to be incorporated into public administration it must be embedded in a compliance layer that makes decisions reviewable, repeatable, and legally defensible. That layer can improve oversight by making departures from law easier to detect. But it can also create a stable approval boundary that political successors learn to navigate while preserving the appearance of lawful administration. We develop a formal model in which institutions choose the scale of automation, the degree of codification, and safeguards on iterative use. The model shows when these systems become vulnerable to strategic use from within government, why reforms that initially improve oversight can later increase that vulnerability, and why expansions in AI use may be difficult to unwind. Making AI usable can thus make procedures easier for future governments to learn and exploit.",
+    "snippet": "Governments are increasingly interested in using AI to make administrative decisions cheaper, more scalable, and more consistent. But for probabilistic AI to be incorporated into public administration",
+    "authors": [
+      "Andrew J. Peterson"
+    ],
+    "venue": "arXiv",
+    "year": 2026,
+    "cited_by": 0,
+    "doi": "",
+    "arxiv_id": "2604.21103v1",
+    "urls": {
+      "arxiv": "https://arxiv.org/abs/2604.21103v1",
+      "pdf": "https://arxiv.org/pdf/2604.21103v1",
+      "paper": "https://arxiv.org/abs/2604.21103v1"
+    },
+    "scholar_url": "",
+    "pub_url": "https://arxiv.org/abs/2604.21103v1",
+    "eprint_url": "https://arxiv.org/pdf/2604.21103v1",
+    "container_type": "",
+    "query_useds": [],
+    "raw_group_hits": [
+      "A"
+    ],
+    "search_sets_raw": [
+      "A"
+    ],
+    "search_sets_final": [
+      "A"
+    ],
+    "post_filter": null,
+    "raw_payloads": [
+      {
+        "arxiv_id": "2604.21103v1",
+        "title": "AI Governance under Political Turnover: The Alignment Surface of Compliance Design",
+        "abstract": "Governments are increasingly interested in using AI to make administrative decisions cheaper, more scalable, and more consistent. But for probabilistic AI to be incorporated into public administration it must be embedded in a compliance layer that makes decisions reviewable, repeatable, and legally defensible. That layer can improve oversight by making departures from law easier to detect. But it can also create a stable approval boundary that political successors learn to navigate while preserving the appearance of lawful administration. We develop a formal model in which institutions choose the scale of automation, the degree of codification, and safeguards on iterative use. The model shows when these systems become vulnerable to strategic use from within government, why reforms that initially improve oversight can later increase that vulnerability, and why expansions in AI use may be difficult to unwind. Making AI usable can thus make procedures easier for future governments to learn and exploit.",
+        "authors": [
+          "Andrew J. Peterson"
+        ],
+        "year": 2026,
+        "month": 4,
+        "published": "2026-04-22T21:42:50Z",
+        "updated": "2026-04-22T21:42:50Z",
+        "urls": {
+          "arxiv": "https://arxiv.org/abs/2604.21103v1",
+          "pdf": "https://arxiv.org/pdf/2604.21103v1"
+        },
+        "arxiv_url": "https://arxiv.org/abs/2604.21103v1",
+        "pdf_url": "https://arxiv.org/pdf/2604.21103v1",
+        "eprint_url": "https://arxiv.org/pdf/2604.21103v1",
+        "pub_url": "https://arxiv.org/abs/2604.21103v1",
+        "snippet": "Governments are increasingly interested in using AI to make administrative decisions cheaper, more scalable, and more consistent. But for probabilistic AI to be incorporated into public administration",
+        "source": "arxiv",
+        "doi": "",
+        "venue": "arXiv",
+        "cited_by": 0
+      }
+    ],
+    "dedupe_key": "arxiv:2604 21103v1",
+    "seed_tags": [],
+    "tag_hints": {
+      "force_tinyml": false,
+      "require_power_tag": false
+    },
+    "primary_group": "A",
+    "filter_policy": "TH_CPL_AB_OR_ARXIV",
+    "filter_bucket": "arxiv",
+    "filter_reason": "matched_arxiv",
+    "matched_venue": "",
+    "matched_th_cpl_level": "",
+    "matched_th_cpl_area": "",
+    "matched_venue_type": "",
+    "venue_match": {
+      "matched": false,
+      "raw": "arXiv",
+      "normalized": "arxiv",
+      "normalized_candidates": [
+        "arxiv"
+      ],
+      "match": null
+    },
+    "arxiv_match": {
+      "matched": true,
+      "arxiv_id": "2604.21103v1",
+      "matched_urls": [
+        "https://arxiv.org/abs/2604.21103v1",
+        "https://arxiv.org/pdf/2604.21103v1"
+      ]
+    },
+    "is_in_arxiv": true,
+    "category": "Embedded AI Applications",
+    "llm_tags": [],
+    "final_tags": [],
+    "provider_used": "heuristic_fallback",
+    "classification_model": "hunyuan-2.0-instruct-20251111",
+    "classification_raw_response": {
+      "error": "TokenHub request failed with status 402: {\"error\":{\"message\":\"endpoint is inactive: FREE_QUOTA_EXHAUSTED\",\"code\":\"401008\",\"type\":\"gateway_error\",\"request_id\":\"40bb0238-4b41-49c8-9cb6-0a3e677ffcf6\"}}\n"
+    },
+    "checkpoint_saved_at": "2026-04-25T01:57:44.021Z"
+  },
+  "arxiv:2604 21159v1": {
+    "id": "5247a1fa2afb25e7c3990a1cf184179d51f1784e",
+    "source": "arxiv",
+    "title": "Adaptive Instruction Composition for Automated LLM Red-Teaming",
+    "abstract": "Many approaches to LLM red-teaming leverage an attacker LLM to discover jailbreaks against a target. Several of them task the attacker with identifying effective strategies through trial and error, resulting in a semantically limited range of successes. Another approach discovers diverse attacks by combining crowdsourced harmful queries and tactics into instructions for the attacker, but does so at random, limiting effectiveness. This article introduces a novel framework, Adaptive Instruction Composition, that combines crowdsourced texts according to an adaptive mechanism trained to jointly optimize effectiveness with diversity. We use reinforcement learning to balance exploration with exploitation in a combinatorial space of instructions to guide the attacker toward diverse generations tailored to target vulnerabilities. We demonstrate that our approach substantially outperforms random combination on a set of effectiveness and diversity metrics, even under model transfer. Further, we show that it surpasses a host of recent adaptive approaches on Harmbench. We employ a lightweight neural contextual bandit that adapts to contrastive embedding inputs, and provide ablations suggesting that the contrastive pretraining enables the network to rapidly generalize and scale to the massive space as it learns.",
+    "snippet": "Many approaches to LLM red-teaming leverage an attacker LLM to discover jailbreaks against a target. Several of them task the attacker with identifying effective strategies through trial and error, re",
+    "authors": [
+      "Jesse Zymet",
+      "Andy Luo",
+      "Swapnil Shinde",
+      "Sahil Wadhwa",
+      "Emily Chen"
+    ],
+    "venue": "arXiv",
+    "year": 2026,
+    "cited_by": 0,
+    "doi": "",
+    "arxiv_id": "2604.21159v1",
+    "urls": {
+      "arxiv": "https://arxiv.org/abs/2604.21159v1",
+      "pdf": "https://arxiv.org/pdf/2604.21159v1",
+      "paper": "https://arxiv.org/abs/2604.21159v1"
+    },
+    "scholar_url": "",
+    "pub_url": "https://arxiv.org/abs/2604.21159v1",
+    "eprint_url": "https://arxiv.org/pdf/2604.21159v1",
+    "container_type": "",
+    "query_useds": [],
+    "raw_group_hits": [
+      "A"
+    ],
+    "search_sets_raw": [
+      "A"
+    ],
+    "search_sets_final": [
+      "A"
+    ],
+    "post_filter": null,
+    "raw_payloads": [
+      {
+        "arxiv_id": "2604.21159v1",
+        "title": "Adaptive Instruction Composition for Automated LLM Red-Teaming",
+        "abstract": "Many approaches to LLM red-teaming leverage an attacker LLM to discover jailbreaks against a target. Several of them task the attacker with identifying effective strategies through trial and error, resulting in a semantically limited range of successes. Another approach discovers diverse attacks by combining crowdsourced harmful queries and tactics into instructions for the attacker, but does so at random, limiting effectiveness. This article introduces a novel framework, Adaptive Instruction Composition, that combines crowdsourced texts according to an adaptive mechanism trained to jointly optimize effectiveness with diversity. We use reinforcement learning to balance exploration with exploitation in a combinatorial space of instructions to guide the attacker toward diverse generations tailored to target vulnerabilities. We demonstrate that our approach substantially outperforms random combination on a set of effectiveness and diversity metrics, even under model transfer. Further, we show that it surpasses a host of recent adaptive approaches on Harmbench. We employ a lightweight neural contextual bandit that adapts to contrastive embedding inputs, and provide ablations suggesting that the contrastive pretraining enables the network to rapidly generalize and scale to the massive space as it learns.",
+        "authors": [
+          "Jesse Zymet",
+          "Andy Luo",
+          "Swapnil Shinde",
+          "Sahil Wadhwa",
+          "Emily Chen"
+        ],
+        "year": 2026,
+        "month": 4,
+        "published": "2026-04-22T23:55:32Z",
+        "updated": "2026-04-22T23:55:32Z",
+        "urls": {
+          "arxiv": "https://arxiv.org/abs/2604.21159v1",
+          "pdf": "https://arxiv.org/pdf/2604.21159v1"
+        },
+        "arxiv_url": "https://arxiv.org/abs/2604.21159v1",
+        "pdf_url": "https://arxiv.org/pdf/2604.21159v1",
+        "eprint_url": "https://arxiv.org/pdf/2604.21159v1",
+        "pub_url": "https://arxiv.org/abs/2604.21159v1",
+        "snippet": "Many approaches to LLM red-teaming leverage an attacker LLM to discover jailbreaks against a target. Several of them task the attacker with identifying effective strategies through trial and error, re",
+        "source": "arxiv",
+        "doi": "",
+        "venue": "arXiv",
+        "cited_by": 0
+      }
+    ],
+    "dedupe_key": "arxiv:2604 21159v1",
+    "seed_tags": [],
+    "tag_hints": {
+      "force_tinyml": false,
+      "require_power_tag": false
+    },
+    "primary_group": "A",
+    "filter_policy": "TH_CPL_AB_OR_ARXIV",
+    "filter_bucket": "arxiv",
+    "filter_reason": "matched_arxiv",
+    "matched_venue": "",
+    "matched_th_cpl_level": "",
+    "matched_th_cpl_area": "",
+    "matched_venue_type": "",
+    "venue_match": {
+      "matched": false,
+      "raw": "arXiv",
+      "normalized": "arxiv",
+      "normalized_candidates": [
+        "arxiv"
+      ],
+      "match": null
+    },
+    "arxiv_match": {
+      "matched": true,
+      "arxiv_id": "2604.21159v1",
+      "matched_urls": [
+        "https://arxiv.org/abs/2604.21159v1",
+        "https://arxiv.org/pdf/2604.21159v1"
+      ]
+    },
+    "is_in_arxiv": true,
+    "category": "Efficient Model Design and Optimization",
+    "llm_tags": [],
+    "final_tags": [],
+    "provider_used": "heuristic_fallback",
+    "classification_model": "hunyuan-2.0-instruct-20251111",
+    "classification_raw_response": {
+      "error": "TokenHub request failed with status 402: {\"error\":{\"message\":\"endpoint is inactive: FREE_QUOTA_EXHAUSTED\",\"code\":\"401008\",\"type\":\"gateway_error\",\"request_id\":\"38b19ef4-0168-4097-aed4-75f0ae581a03\"}}\n"
+    },
+    "checkpoint_saved_at": "2026-04-25T01:57:44.127Z"
+  },
+  "arxiv:2604 21101v1": {
+    "id": "885936133edf50c5b6bafdaf63bdcdf709d46789",
+    "source": "arxiv",
+    "title": "A Hybridizable Neural Time Integrator for Stable Autoregressive Forecasting",
+    "abstract": "For autoregressive modeling of chaotic dynamical systems over long time horizons, the stability of both training and inference is a major challenge in building scientific foundation models. We present a hybrid technique in which an autoregressive transformer is embedded within a novel shooting-based mixed finite element scheme, exposing topological structure that enables provable stability. For forward problems, we prove preservation of discrete energies, while for training we prove uniform bounds on gradients, provably avoiding the exploding gradient problem. Combined with a vision transformer, this yields latent tokens admitting structure-preserving dynamics. We outperform modern foundation models with a $65\\times$ reduction in model parameters and long-horizon forecasting of chaotic systems. A \"mini-foundation\" model of a fusion component shows that 12 simulations suffice to train a real-time surrogate, achieving a $9{,}000\\times$ speedup over particle-in-cell simulation.",
+    "snippet": "For autoregressive modeling of chaotic dynamical systems over long time horizons, the stability of both training and inference is a major challenge in building scientific foundation models. We present",
+    "authors": [
+      "Brooks Kinch",
+      "Xiaozhe Hu",
+      "Yilong Huang",
+      "Martine Dyring Hansen",
+      "Sunniva Meltzer",
+      "Nathaniel Donald Hamlin",
+      "David Sirajuddin",
+      "Eric C. Cyr",
+      "Nathaniel Trask"
+    ],
+    "venue": "arXiv",
+    "year": 2026,
+    "cited_by": 0,
+    "doi": "",
+    "arxiv_id": "2604.21101v1",
+    "urls": {
+      "arxiv": "https://arxiv.org/abs/2604.21101v1",
+      "pdf": "https://arxiv.org/pdf/2604.21101v1",
+      "paper": "https://arxiv.org/abs/2604.21101v1"
+    },
+    "scholar_url": "",
+    "pub_url": "https://arxiv.org/abs/2604.21101v1",
+    "eprint_url": "https://arxiv.org/pdf/2604.21101v1",
+    "container_type": "",
+    "query_useds": [],
+    "raw_group_hits": [
+      "A"
+    ],
+    "search_sets_raw": [
+      "A"
+    ],
+    "search_sets_final": [
+      "A"
+    ],
+    "post_filter": null,
+    "raw_payloads": [
+      {
+        "arxiv_id": "2604.21101v1",
+        "title": "A Hybridizable Neural Time Integrator for Stable Autoregressive Forecasting",
+        "abstract": "For autoregressive modeling of chaotic dynamical systems over long time horizons, the stability of both training and inference is a major challenge in building scientific foundation models. We present a hybrid technique in which an autoregressive transformer is embedded within a novel shooting-based mixed finite element scheme, exposing topological structure that enables provable stability. For forward problems, we prove preservation of discrete energies, while for training we prove uniform bounds on gradients, provably avoiding the exploding gradient problem. Combined with a vision transformer, this yields latent tokens admitting structure-preserving dynamics. We outperform modern foundation models with a $65\\times$ reduction in model parameters and long-horizon forecasting of chaotic systems. A \"mini-foundation\" model of a fusion component shows that 12 simulations suffice to train a real-time surrogate, achieving a $9{,}000\\times$ speedup over particle-in-cell simulation.",
+        "authors": [
+          "Brooks Kinch",
+          "Xiaozhe Hu",
+          "Yilong Huang",
+          "Martine Dyring Hansen",
+          "Sunniva Meltzer",
+          "Nathaniel Donald Hamlin",
+          "David Sirajuddin",
+          "Eric C. Cyr",
+          "Nathaniel Trask"
+        ],
+        "year": 2026,
+        "month": 4,
+        "published": "2026-04-22T21:39:54Z",
+        "updated": "2026-04-22T21:39:54Z",
+        "urls": {
+          "arxiv": "https://arxiv.org/abs/2604.21101v1",
+          "pdf": "https://arxiv.org/pdf/2604.21101v1"
+        },
+        "arxiv_url": "https://arxiv.org/abs/2604.21101v1",
+        "pdf_url": "https://arxiv.org/pdf/2604.21101v1",
+        "eprint_url": "https://arxiv.org/pdf/2604.21101v1",
+        "pub_url": "https://arxiv.org/abs/2604.21101v1",
+        "snippet": "For autoregressive modeling of chaotic dynamical systems over long time horizons, the stability of both training and inference is a major challenge in building scientific foundation models. We present",
+        "source": "arxiv",
+        "doi": "",
+        "venue": "arXiv",
+        "cited_by": 0
+      }
+    ],
+    "dedupe_key": "arxiv:2604 21101v1",
+    "seed_tags": [],
+    "tag_hints": {
+      "force_tinyml": false,
+      "require_power_tag": false
+    },
+    "primary_group": "A",
+    "filter_policy": "TH_CPL_AB_OR_ARXIV",
+    "filter_bucket": "arxiv",
+    "filter_reason": "matched_arxiv",
+    "matched_venue": "",
+    "matched_th_cpl_level": "",
+    "matched_th_cpl_area": "",
+    "matched_venue_type": "",
+    "venue_match": {
+      "matched": false,
+      "raw": "arXiv",
+      "normalized": "arxiv",
+      "normalized_candidates": [
+        "arxiv"
+      ],
+      "match": null
+    },
+    "arxiv_match": {
+      "matched": true,
+      "arxiv_id": "2604.21101v1",
+      "matched_urls": [
+        "https://arxiv.org/abs/2604.21101v1",
+        "https://arxiv.org/pdf/2604.21101v1"
+      ]
+    },
+    "is_in_arxiv": true,
+    "category": "Embedded AI Applications",
+    "llm_tags": [],
+    "final_tags": [],
+    "provider_used": "heuristic_fallback",
+    "classification_model": "hunyuan-2.0-instruct-20251111",
+    "classification_raw_response": {
+      "error": "TokenHub request failed with status 402: {\"error\":{\"message\":\"endpoint is inactive: FREE_QUOTA_EXHAUSTED\",\"code\":\"401008\",\"type\":\"gateway_error\",\"request_id\":\"da968259-10a6-4129-b33f-20162da0f5de\"}}\n"
+    },
+    "checkpoint_saved_at": "2026-04-25T01:57:44.176Z"
+  },
+  "arxiv:2604 21789v1": {
+    "id": "2a4d952ef444208651071217b18e9db71a05e60f",
+    "source": "arxiv",
+    "title": "Compliance Moral Hazard and the Backfiring Mandate",
+    "abstract": "Competing firms that serve shared customer populations face a fundamental information aggregation problem: each firm holds fragmented signals about risky customers, but individual incentives impede efficient collective detection. We develop a mechanism design framework for decentralized risk analytics, grounded in anti-money laundering in banking networks. Three strategic frictions distinguish our setting: compliance moral hazard, adversarial adaptation, and information destruction through intervention. A temporal value assignment (TVA) mechanism, which credits institutions using a strictly proper scoring rule on discounted verified outcomes, implements truthful reporting as a Bayes--Nash equilibrium (uniquely optimal at each edge) in large federations. Embedding TVA in a banking competition model, we show competitive pressure amplifies compliance moral hazard and poorly designed mandates can reduce welfare below autarky, a ``backfiring'' result with direct policy implications. In simulation using a synthetic AML benchmark, TVA achieves substantially higher welfare than autarky or mandated sharing without incentive design.",
+    "snippet": "Competing firms that serve shared customer populations face a fundamental information aggregation problem: each firm holds fragmented signals about risky customers, but individual incentives impede ef",
+    "authors": [
+      "Jian Ni",
+      "Lecheng Zheng",
+      "John R Birge"
+    ],
+    "venue": "arXiv",
+    "year": 2026,
+    "cited_by": 0,
+    "doi": "",
+    "arxiv_id": "2604.21789v1",
+    "urls": {
+      "arxiv": "https://arxiv.org/abs/2604.21789v1",
+      "pdf": "https://arxiv.org/pdf/2604.21789v1",
+      "paper": "https://arxiv.org/abs/2604.21789v1"
+    },
+    "scholar_url": "",
+    "pub_url": "https://arxiv.org/abs/2604.21789v1",
+    "eprint_url": "https://arxiv.org/pdf/2604.21789v1",
+    "container_type": "",
+    "query_useds": [],
+    "raw_group_hits": [
+      "A"
+    ],
+    "search_sets_raw": [
+      "A"
+    ],
+    "search_sets_final": [
+      "A"
+    ],
+    "post_filter": null,
+    "raw_payloads": [
+      {
+        "arxiv_id": "2604.21789v1",
+        "title": "Compliance Moral Hazard and the Backfiring Mandate",
+        "abstract": "Competing firms that serve shared customer populations face a fundamental information aggregation problem: each firm holds fragmented signals about risky customers, but individual incentives impede efficient collective detection. We develop a mechanism design framework for decentralized risk analytics, grounded in anti-money laundering in banking networks. Three strategic frictions distinguish our setting: compliance moral hazard, adversarial adaptation, and information destruction through intervention. A temporal value assignment (TVA) mechanism, which credits institutions using a strictly proper scoring rule on discounted verified outcomes, implements truthful reporting as a Bayes--Nash equilibrium (uniquely optimal at each edge) in large federations. Embedding TVA in a banking competition model, we show competitive pressure amplifies compliance moral hazard and poorly designed mandates can reduce welfare below autarky, a ``backfiring'' result with direct policy implications. In simulation using a synthetic AML benchmark, TVA achieves substantially higher welfare than autarky or mandated sharing without incentive design.",
+        "authors": [
+          "Jian Ni",
+          "Lecheng Zheng",
+          "John R Birge"
+        ],
+        "year": 2026,
+        "month": 4,
+        "published": "2026-04-23T15:46:24Z",
+        "updated": "2026-04-23T15:46:24Z",
+        "urls": {
+          "arxiv": "https://arxiv.org/abs/2604.21789v1",
+          "pdf": "https://arxiv.org/pdf/2604.21789v1"
+        },
+        "arxiv_url": "https://arxiv.org/abs/2604.21789v1",
+        "pdf_url": "https://arxiv.org/pdf/2604.21789v1",
+        "eprint_url": "https://arxiv.org/pdf/2604.21789v1",
+        "pub_url": "https://arxiv.org/abs/2604.21789v1",
+        "snippet": "Competing firms that serve shared customer populations face a fundamental information aggregation problem: each firm holds fragmented signals about risky customers, but individual incentives impede ef",
+        "source": "arxiv",
+        "doi": "",
+        "venue": "arXiv",
+        "cited_by": 0
+      }
+    ],
+    "dedupe_key": "arxiv:2604 21789v1",
+    "seed_tags": [],
+    "tag_hints": {
+      "force_tinyml": false,
+      "require_power_tag": false
+    },
+    "primary_group": "A",
+    "filter_policy": "TH_CPL_AB_OR_ARXIV",
+    "filter_bucket": "arxiv",
+    "filter_reason": "matched_arxiv",
+    "matched_venue": "",
+    "matched_th_cpl_level": "",
+    "matched_th_cpl_area": "",
+    "matched_venue_type": "",
+    "venue_match": {
+      "matched": false,
+      "raw": "arXiv",
+      "normalized": "arxiv",
+      "normalized_candidates": [
+        "arxiv"
+      ],
+      "match": null
+    },
+    "arxiv_match": {
+      "matched": true,
+      "arxiv_id": "2604.21789v1",
+      "matched_urls": [
+        "https://arxiv.org/abs/2604.21789v1",
+        "https://arxiv.org/pdf/2604.21789v1"
+      ]
+    },
+    "is_in_arxiv": true,
+    "category": "Embedded AI Applications",
+    "llm_tags": [],
+    "final_tags": [],
+    "provider_used": "heuristic_fallback",
+    "classification_model": "hunyuan-2.0-instruct-20251111",
+    "classification_raw_response": {
+      "error": "TokenHub request failed with status 402: {\"error\":{\"message\":\"endpoint is inactive: FREE_QUOTA_EXHAUSTED\",\"code\":\"401008\",\"type\":\"gateway_error\",\"request_id\":\"a3bb6ed7-f54c-4c22-9da4-74e64baa3ddc\"}}\n"
+    },
+    "checkpoint_saved_at": "2026-04-25T01:57:44.357Z"
+  },
+  "arxiv:2604 21469v1": {
+    "id": "6754be7631768178177a099a81734c0ca480314d",
+    "source": "arxiv",
+    "title": "Cross-Domain Data Selection and Augmentation for Automatic Compliance Detection",
+    "abstract": "Automating the detection of regulatory compliance remains a challenging task due to the complexity and variability of legal texts. Models trained on one regulation often fail to generalise to others. This limitation underscores the need for principled methods to improve cross-domain transfer. We study data selection as a strategy to mitigate negative transfer in compliance detection framed as a natural language inference (NLI) task. Specifically, we evaluate four approaches for selecting augmentation data from a larger source domain: random sampling, Moore-Lewis's cross-entropy difference, importance weighting, and embedding-based retrieval. We systematically vary the proportion of selected data to analyse its effect on cross-domain adaptation. Our findings demonstrate that targeted data selection substantially reduces negative transfer, offering a practical path toward scalable and reliable compliance automation across heterogeneous regulations.",
+    "snippet": "Automating the detection of regulatory compliance remains a challenging task due to the complexity and variability of legal texts. Models trained on one regulation often fail to generalise to others.",
+    "authors": [
+      "Fariz Ikhwantri",
+      "Dusica Marijan"
+    ],
+    "venue": "arXiv",
+    "year": 2026,
+    "cited_by": 0,
+    "doi": "",
+    "arxiv_id": "2604.21469v1",
+    "urls": {
+      "arxiv": "https://arxiv.org/abs/2604.21469v1",
+      "pdf": "https://arxiv.org/pdf/2604.21469v1",
+      "paper": "https://arxiv.org/abs/2604.21469v1"
+    },
+    "scholar_url": "",
+    "pub_url": "https://arxiv.org/abs/2604.21469v1",
+    "eprint_url": "https://arxiv.org/pdf/2604.21469v1",
+    "container_type": "",
+    "query_useds": [],
+    "raw_group_hits": [
+      "A"
+    ],
+    "search_sets_raw": [
+      "A"
+    ],
+    "search_sets_final": [
+      "A"
+    ],
+    "post_filter": null,
+    "raw_payloads": [
+      {
+        "arxiv_id": "2604.21469v1",
+        "title": "Cross-Domain Data Selection and Augmentation for Automatic Compliance Detection",
+        "abstract": "Automating the detection of regulatory compliance remains a challenging task due to the complexity and variability of legal texts. Models trained on one regulation often fail to generalise to others. This limitation underscores the need for principled methods to improve cross-domain transfer. We study data selection as a strategy to mitigate negative transfer in compliance detection framed as a natural language inference (NLI) task. Specifically, we evaluate four approaches for selecting augmentation data from a larger source domain: random sampling, Moore-Lewis's cross-entropy difference, importance weighting, and embedding-based retrieval. We systematically vary the proportion of selected data to analyse its effect on cross-domain adaptation. Our findings demonstrate that targeted data selection substantially reduces negative transfer, offering a practical path toward scalable and reliable compliance automation across heterogeneous regulations.",
+        "authors": [
+          "Fariz Ikhwantri",
+          "Dusica Marijan"
+        ],
+        "year": 2026,
+        "month": 4,
+        "published": "2026-04-23T09:28:50Z",
+        "updated": "2026-04-23T09:28:50Z",
+        "urls": {
+          "arxiv": "https://arxiv.org/abs/2604.21469v1",
+          "pdf": "https://arxiv.org/pdf/2604.21469v1"
+        },
+        "arxiv_url": "https://arxiv.org/abs/2604.21469v1",
+        "pdf_url": "https://arxiv.org/pdf/2604.21469v1",
+        "eprint_url": "https://arxiv.org/pdf/2604.21469v1",
+        "pub_url": "https://arxiv.org/abs/2604.21469v1",
+        "snippet": "Automating the detection of regulatory compliance remains a challenging task due to the complexity and variability of legal texts. Models trained on one regulation often fail to generalise to others. ",
+        "source": "arxiv",
+        "doi": "",
+        "venue": "arXiv",
+        "cited_by": 0
+      }
+    ],
+    "dedupe_key": "arxiv:2604 21469v1",
+    "seed_tags": [],
+    "tag_hints": {
+      "force_tinyml": false,
+      "require_power_tag": false
+    },
+    "primary_group": "A",
+    "filter_policy": "TH_CPL_AB_OR_ARXIV",
+    "filter_bucket": "arxiv",
+    "filter_reason": "matched_arxiv",
+    "matched_venue": "",
+    "matched_th_cpl_level": "",
+    "matched_th_cpl_area": "",
+    "matched_venue_type": "",
+    "venue_match": {
+      "matched": false,
+      "raw": "arXiv",
+      "normalized": "arxiv",
+      "normalized_candidates": [
+        "arxiv"
+      ],
+      "match": null
+    },
+    "arxiv_match": {
+      "matched": true,
+      "arxiv_id": "2604.21469v1",
+      "matched_urls": [
+        "https://arxiv.org/abs/2604.21469v1",
+        "https://arxiv.org/pdf/2604.21469v1"
+      ]
+    },
+    "is_in_arxiv": true,
+    "category": "Embedded AI Applications",
+    "llm_tags": [],
+    "final_tags": [],
+    "provider_used": "heuristic_fallback",
+    "classification_model": "hunyuan-2.0-instruct-20251111",
+    "classification_raw_response": {
+      "error": "TokenHub request failed with status 402: {\"error\":{\"message\":\"endpoint is inactive: FREE_QUOTA_EXHAUSTED\",\"code\":\"401008\",\"type\":\"gateway_error\",\"request_id\":\"ba6e792a-fac6-436f-9981-6497db999475\"}}\n"
+    },
+    "checkpoint_saved_at": "2026-04-25T01:57:44.569Z"
+  },
+  "arxiv:2604 21354v1": {
+    "id": "243b737f15a9be87a778372de2ab4b3ac1d92b8e",
+    "source": "arxiv",
+    "title": "Decoupled Travel Planning with Behavior Forest",
+    "abstract": "Behavior sequences, composed of executable steps, serve as the operational foundation for multi-constraint planning problems such as travel planning. In such tasks, each planning step is not only constrained locally but also influenced by global constraints spanning multiple subtasks, leading to a tightly coupled and complex decision process. Existing travel planning methods typically rely on a single decision space that entangles all subtasks and constraints, failing to distinguish between locally acting constraints within a subtask and global constraints that span multiple subtasks. Consequently, the model is forced to jointly reason over local and global constraints at each decision step, increasing the reasoning burden and reducing planning efficiency. To address this problem, we propose the Behavior Forest method. Specifically, our approach structures the decision-making process into a forest of parallel behavior trees, where each behavior tree is responsible for a subtask. A global coordination mechanism is introduced to orchestrate the interactions among these trees, enabling modular and coherent travel planning. Within this framework, large language models are embedded as decision engines within behavior tree nodes, performing localized reasoning conditioned on task-specific constraints to generate candidate subplans and adapt decisions based on coordination feedback. The behavior trees, in turn, provide an explicit control structure that guides LLM generation. This design decouples complex tasks and constraints into manageable subspaces, enabling task-specific reasoning and reducing the cognitive load of LLM. Experimental results show that our method outperforms state-of-the-art methods by 6.67% on the TravelPlanner and by 11.82% on the ChinaTravel benchmarks, demonstrating its effectiveness in increasing LLM performance for complex multi-constraint travel planning.",
+    "snippet": "Behavior sequences, composed of executable steps, serve as the operational foundation for multi-constraint planning problems such as travel planning. In such tasks, each planning step is not only cons",
+    "authors": [
+      "Duanyang Yuan",
+      "Sihang Zhou",
+      "Yanning Hou",
+      "Xiaoshu Chen",
+      "Haoyuan Chen",
+      "Ke Liang",
+      "Jiyuan Liu",
+      "Chuan Ma",
+      "Xinwang Liu",
+      "Jian Huang"
+    ],
+    "venue": "arXiv",
+    "year": 2026,
+    "cited_by": 0,
+    "doi": "",
+    "arxiv_id": "2604.21354v1",
+    "urls": {
+      "arxiv": "https://arxiv.org/abs/2604.21354v1",
+      "pdf": "https://arxiv.org/pdf/2604.21354v1",
+      "paper": "https://arxiv.org/abs/2604.21354v1"
+    },
+    "scholar_url": "",
+    "pub_url": "https://arxiv.org/abs/2604.21354v1",
+    "eprint_url": "https://arxiv.org/pdf/2604.21354v1",
+    "container_type": "",
+    "query_useds": [],
+    "raw_group_hits": [
+      "A"
+    ],
+    "search_sets_raw": [
+      "A"
+    ],
+    "search_sets_final": [
+      "A"
+    ],
+    "post_filter": null,
+    "raw_payloads": [
+      {
+        "arxiv_id": "2604.21354v1",
+        "title": "Decoupled Travel Planning with Behavior Forest",
+        "abstract": "Behavior sequences, composed of executable steps, serve as the operational foundation for multi-constraint planning problems such as travel planning. In such tasks, each planning step is not only constrained locally but also influenced by global constraints spanning multiple subtasks, leading to a tightly coupled and complex decision process. Existing travel planning methods typically rely on a single decision space that entangles all subtasks and constraints, failing to distinguish between locally acting constraints within a subtask and global constraints that span multiple subtasks. Consequently, the model is forced to jointly reason over local and global constraints at each decision step, increasing the reasoning burden and reducing planning efficiency. To address this problem, we propose the Behavior Forest method. Specifically, our approach structures the decision-making process into a forest of parallel behavior trees, where each behavior tree is responsible for a subtask. A global coordination mechanism is introduced to orchestrate the interactions among these trees, enabling modular and coherent travel planning. Within this framework, large language models are embedded as decision engines within behavior tree nodes, performing localized reasoning conditioned on task-specific constraints to generate candidate subplans and adapt decisions based on coordination feedback. The behavior trees, in turn, provide an explicit control structure that guides LLM generation. This design decouples complex tasks and constraints into manageable subspaces, enabling task-specific reasoning and reducing the cognitive load of LLM. Experimental results show that our method outperforms state-of-the-art methods by 6.67% on the TravelPlanner and by 11.82% on the ChinaTravel benchmarks, demonstrating its effectiveness in increasing LLM performance for complex multi-constraint travel planning.",
+        "authors": [
+          "Duanyang Yuan",
+          "Sihang Zhou",
+          "Yanning Hou",
+          "Xiaoshu Chen",
+          "Haoyuan Chen",
+          "Ke Liang",
+          "Jiyuan Liu",
+          "Chuan Ma",
+          "Xinwang Liu",
+          "Jian Huang"
+        ],
+        "year": 2026,
+        "month": 4,
+        "published": "2026-04-23T07:14:29Z",
+        "updated": "2026-04-23T07:14:29Z",
+        "urls": {
+          "arxiv": "https://arxiv.org/abs/2604.21354v1",
+          "pdf": "https://arxiv.org/pdf/2604.21354v1"
+        },
+        "arxiv_url": "https://arxiv.org/abs/2604.21354v1",
+        "pdf_url": "https://arxiv.org/pdf/2604.21354v1",
+        "eprint_url": "https://arxiv.org/pdf/2604.21354v1",
+        "pub_url": "https://arxiv.org/abs/2604.21354v1",
+        "snippet": "Behavior sequences, composed of executable steps, serve as the operational foundation for multi-constraint planning problems such as travel planning. In such tasks, each planning step is not only cons",
+        "source": "arxiv",
+        "doi": "",
+        "venue": "arXiv",
+        "cited_by": 0
+      }
+    ],
+    "dedupe_key": "arxiv:2604 21354v1",
+    "seed_tags": [],
+    "tag_hints": {
+      "force_tinyml": false,
+      "require_power_tag": false
+    },
+    "primary_group": "A",
+    "filter_policy": "TH_CPL_AB_OR_ARXIV",
+    "filter_bucket": "arxiv",
+    "filter_reason": "matched_arxiv",
+    "matched_venue": "",
+    "matched_th_cpl_level": "",
+    "matched_th_cpl_area": "",
+    "matched_venue_type": "",
+    "venue_match": {
+      "matched": false,
+      "raw": "arXiv",
+      "normalized": "arxiv",
+      "normalized_candidates": [
+        "arxiv"
+      ],
+      "match": null
+    },
+    "arxiv_match": {
+      "matched": true,
+      "arxiv_id": "2604.21354v1",
+      "matched_urls": [
+        "https://arxiv.org/abs/2604.21354v1",
+        "https://arxiv.org/pdf/2604.21354v1"
+      ]
+    },
+    "is_in_arxiv": true,
+    "category": "Embedded AI Applications",
+    "llm_tags": [],
+    "final_tags": [],
+    "provider_used": "heuristic_fallback",
+    "classification_model": "hunyuan-2.0-instruct-20251111",
+    "classification_raw_response": {
+      "error": "TokenHub request failed with status 402: {\"error\":{\"message\":\"endpoint is inactive: FREE_QUOTA_EXHAUSTED\",\"code\":\"401008\",\"type\":\"gateway_error\",\"request_id\":\"059d40ac-7813-403d-b327-28715fd6ce14\"}}\n"
+    },
+    "checkpoint_saved_at": "2026-04-25T01:57:44.673Z"
+  },
+  "arxiv:2604 21070v1": {
+    "id": "9bb1917265029d4e359677693d38f7a3158f721e",
+    "source": "arxiv",
+    "title": "DWTSumm: Discrete Wavelet Transform for Document Summarization",
+    "abstract": "Summarizing long, domain-specific documents with large language models (LLMs) remains challenging due to context limitations, information loss, and hallucinations, particularly in clinical and legal settings. We propose a Discrete Wavelet Transform (DWT)-based multi-resolution framework that treats text as a semantic signal and decomposes it into global (approximation) and local (detail) components. Applied to sentence- or word-level embeddings, DWT yields compact representations that preserve overall structure and critical domain-specific details, which are used directly as summaries or to guide LLM generation. Experiments on clinical and legal benchmarks demonstrate comparable ROUGE-L scores. Compared to a GPT-4o baseline, the DWT based summarization consistently improve semantic similarity and grounding, achieving gains of over 2% in BERTScore, more than 4\\% in Semantic Fidelity, factual consistency in legal tasks, and large METEOR improvements indicative of preserved domain-specific semantics. Across multiple embedding models, Fidelity reaches up to 97%, suggesting that DWT acts as a semantic denoising mechanism that reduces hallucinations and strengthens factual grounding. Overall, DWT provides a lightweight, generalizable method for reliable long-document and domain-specific summarization with LLMs.",
+    "snippet": "Summarizing long, domain-specific documents with large language models (LLMs) remains challenging due to context limitations, information loss, and hallucinations, particularly in clinical and legal s",
+    "authors": [
+      "Rana Salama",
+      "Abdou Youssef",
+      "Mona Diab"
+    ],
+    "venue": "arXiv",
+    "year": 2026,
+    "cited_by": 0,
+    "doi": "",
+    "arxiv_id": "2604.21070v1",
+    "urls": {
+      "arxiv": "https://arxiv.org/abs/2604.21070v1",
+      "pdf": "https://arxiv.org/pdf/2604.21070v1",
+      "paper": "https://arxiv.org/abs/2604.21070v1"
+    },
+    "scholar_url": "",
+    "pub_url": "https://arxiv.org/abs/2604.21070v1",
+    "eprint_url": "https://arxiv.org/pdf/2604.21070v1",
+    "container_type": "",
+    "query_useds": [],
+    "raw_group_hits": [
+      "A"
+    ],
+    "search_sets_raw": [
+      "A"
+    ],
+    "search_sets_final": [
+      "A"
+    ],
+    "post_filter": null,
+    "raw_payloads": [
+      {
+        "arxiv_id": "2604.21070v1",
+        "title": "DWTSumm: Discrete Wavelet Transform for Document Summarization",
+        "abstract": "Summarizing long, domain-specific documents with large language models (LLMs) remains challenging due to context limitations, information loss, and hallucinations, particularly in clinical and legal settings. We propose a Discrete Wavelet Transform (DWT)-based multi-resolution framework that treats text as a semantic signal and decomposes it into global (approximation) and local (detail) components. Applied to sentence- or word-level embeddings, DWT yields compact representations that preserve overall structure and critical domain-specific details, which are used directly as summaries or to guide LLM generation. Experiments on clinical and legal benchmarks demonstrate comparable ROUGE-L scores. Compared to a GPT-4o baseline, the DWT based summarization consistently improve semantic similarity and grounding, achieving gains of over 2% in BERTScore, more than 4\\% in Semantic Fidelity, factual consistency in legal tasks, and large METEOR improvements indicative of preserved domain-specific semantics. Across multiple embedding models, Fidelity reaches up to 97%, suggesting that DWT acts as a semantic denoising mechanism that reduces hallucinations and strengthens factual grounding. Overall, DWT provides a lightweight, generalizable method for reliable long-document and domain-specific summarization with LLMs.",
+        "authors": [
+          "Rana Salama",
+          "Abdou Youssef",
+          "Mona Diab"
+        ],
+        "year": 2026,
+        "month": 4,
+        "published": "2026-04-22T20:30:52Z",
+        "updated": "2026-04-22T20:30:52Z",
+        "urls": {
+          "arxiv": "https://arxiv.org/abs/2604.21070v1",
+          "pdf": "https://arxiv.org/pdf/2604.21070v1"
+        },
+        "arxiv_url": "https://arxiv.org/abs/2604.21070v1",
+        "pdf_url": "https://arxiv.org/pdf/2604.21070v1",
+        "eprint_url": "https://arxiv.org/pdf/2604.21070v1",
+        "pub_url": "https://arxiv.org/abs/2604.21070v1",
+        "snippet": "Summarizing long, domain-specific documents with large language models (LLMs) remains challenging due to context limitations, information loss, and hallucinations, particularly in clinical and legal s",
+        "source": "arxiv",
+        "doi": "",
+        "venue": "arXiv",
+        "cited_by": 0
+      }
+    ],
+    "dedupe_key": "arxiv:2604 21070v1",
+    "seed_tags": [],
+    "tag_hints": {
+      "force_tinyml": false,
+      "require_power_tag": false
+    },
+    "primary_group": "A",
+    "filter_policy": "TH_CPL_AB_OR_ARXIV",
+    "filter_bucket": "arxiv",
+    "filter_reason": "matched_arxiv",
+    "matched_venue": "",
+    "matched_th_cpl_level": "",
+    "matched_th_cpl_area": "",
+    "matched_venue_type": "",
+    "venue_match": {
+      "matched": false,
+      "raw": "arXiv",
+      "normalized": "arxiv",
+      "normalized_candidates": [
+        "arxiv"
+      ],
+      "match": null
+    },
+    "arxiv_match": {
+      "matched": true,
+      "arxiv_id": "2604.21070v1",
+      "matched_urls": [
+        "https://arxiv.org/abs/2604.21070v1",
+        "https://arxiv.org/pdf/2604.21070v1"
+      ]
+    },
+    "is_in_arxiv": true,
+    "category": "Efficient Model Design and Optimization",
+    "llm_tags": [],
+    "final_tags": [],
+    "provider_used": "heuristic_fallback",
+    "classification_model": "hunyuan-2.0-instruct-20251111",
+    "classification_raw_response": {
+      "error": "TokenHub request failed with status 402: {\"error\":{\"message\":\"endpoint is inactive: FREE_QUOTA_EXHAUSTED\",\"code\":\"401008\",\"type\":\"gateway_error\",\"request_id\":\"af5142db-d5fe-45f2-a8a2-789d01117bb3\"}}\n"
+    },
+    "checkpoint_saved_at": "2026-04-25T01:57:44.683Z"
+  },
+  "arxiv:2604 21567v1": {
+    "id": "066605ab5ad62d2ef8f787ea0e505643abfdc469",
+    "source": "arxiv",
+    "title": "Hybrid Deep Learning Approach for Coupled Demand Forecasting and Supply Chain Optimization",
+    "abstract": "Supply chain resilience and efficiency are vital in industries characterized by volatile demand and uncertain supply, such as textiles and personal protective equipment (PPE). Traditional forecasting and optimization approaches often operate in isolation, limiting their real-world effectiveness. This paper proposes a Hybrid AI Framework for Demand-Supply Forecasting and Optimization (HAF-DS), which integrates a Long Short-Term Memory (LSTM)-based demand forecasting module with a mixed integer linear programming (MILP) optimization layer. The LSTM captures temporal and contextual demand dependencies, while the optimization layer prescribes cost-efficient replenishment and allocation decisions. The framework jointly minimizes forecasting error and operational cost through embedding-based feature representation and recurrent neural architectures. Experiments on textile sales and supply chain datasets show significant performance gains over statistical and deep learning baselines. On the combined dataset, HAF-DS reduced Mean Absolute Error (MAE) from 15.04 to 12.83 (14.7%), Root Mean Squared Error (RMSE) from 19.53 to 17.11 (12.4%), and Mean Absolute Percentage Error (MAPE) from 9.5% to 8.1%. Inventory cost decreased by 5.4%, stockouts by 27.5%, and service level rose from 95.5% to 97.8%. These results confirm that coupling predictive forecasting with prescriptive optimization enhances both accuracy and efficiency, providing a scalable and adaptable solution for modern textile and PPE supply chains.",
+    "snippet": "Supply chain resilience and efficiency are vital in industries characterized by volatile demand and uncertain supply, such as textiles and personal protective equipment (PPE). Traditional forecasting",
+    "authors": [
+      "Nusrat Yasmin Nadia",
+      "Md Habibul Arif",
+      "Habibor Rahman Rabby",
+      "Md Iftekhar Monzur Tanvir",
+      "Md. Jakir Hossen",
+      "M. F. Mridha"
+    ],
+    "venue": "arXiv",
+    "year": 2026,
+    "cited_by": 0,
+    "doi": "",
+    "arxiv_id": "2604.21567v1",
+    "urls": {
+      "arxiv": "https://arxiv.org/abs/2604.21567v1",
+      "pdf": "https://arxiv.org/pdf/2604.21567v1",
+      "paper": "https://arxiv.org/abs/2604.21567v1"
+    },
+    "scholar_url": "",
+    "pub_url": "https://arxiv.org/abs/2604.21567v1",
+    "eprint_url": "https://arxiv.org/pdf/2604.21567v1",
+    "container_type": "",
+    "query_useds": [],
+    "raw_group_hits": [
+      "A"
+    ],
+    "search_sets_raw": [
+      "A"
+    ],
+    "search_sets_final": [
+      "A"
+    ],
+    "post_filter": null,
+    "raw_payloads": [
+      {
+        "arxiv_id": "2604.21567v1",
+        "title": "Hybrid Deep Learning Approach for Coupled Demand Forecasting and Supply Chain Optimization",
+        "abstract": "Supply chain resilience and efficiency are vital in industries characterized by volatile demand and uncertain supply, such as textiles and personal protective equipment (PPE). Traditional forecasting and optimization approaches often operate in isolation, limiting their real-world effectiveness. This paper proposes a Hybrid AI Framework for Demand-Supply Forecasting and Optimization (HAF-DS), which integrates a Long Short-Term Memory (LSTM)-based demand forecasting module with a mixed integer linear programming (MILP) optimization layer. The LSTM captures temporal and contextual demand dependencies, while the optimization layer prescribes cost-efficient replenishment and allocation decisions. The framework jointly minimizes forecasting error and operational cost through embedding-based feature representation and recurrent neural architectures. Experiments on textile sales and supply chain datasets show significant performance gains over statistical and deep learning baselines. On the combined dataset, HAF-DS reduced Mean Absolute Error (MAE) from 15.04 to 12.83 (14.7%), Root Mean Squared Error (RMSE) from 19.53 to 17.11 (12.4%), and Mean Absolute Percentage Error (MAPE) from 9.5% to 8.1%. Inventory cost decreased by 5.4%, stockouts by 27.5%, and service level rose from 95.5% to 97.8%. These results confirm that coupling predictive forecasting with prescriptive optimization enhances both accuracy and efficiency, providing a scalable and adaptable solution for modern textile and PPE supply chains.",
+        "authors": [
+          "Nusrat Yasmin Nadia",
+          "Md Habibul Arif",
+          "Habibor Rahman Rabby",
+          "Md Iftekhar Monzur Tanvir",
+          "Md. Jakir Hossen",
+          "M. F. Mridha"
+        ],
+        "year": 2026,
+        "month": 4,
+        "published": "2026-04-23T11:38:59Z",
+        "updated": "2026-04-23T11:38:59Z",
+        "urls": {
+          "arxiv": "https://arxiv.org/abs/2604.21567v1",
+          "pdf": "https://arxiv.org/pdf/2604.21567v1"
+        },
+        "arxiv_url": "https://arxiv.org/abs/2604.21567v1",
+        "pdf_url": "https://arxiv.org/pdf/2604.21567v1",
+        "eprint_url": "https://arxiv.org/pdf/2604.21567v1",
+        "pub_url": "https://arxiv.org/abs/2604.21567v1",
+        "snippet": "Supply chain resilience and efficiency are vital in industries characterized by volatile demand and uncertain supply, such as textiles and personal protective equipment (PPE). Traditional forecasting ",
+        "source": "arxiv",
+        "doi": "",
+        "venue": "arXiv",
+        "cited_by": 0
+      }
+    ],
+    "dedupe_key": "arxiv:2604 21567v1",
+    "seed_tags": [],
+    "tag_hints": {
+      "force_tinyml": false,
+      "require_power_tag": false
+    },
+    "primary_group": "A",
+    "filter_policy": "TH_CPL_AB_OR_ARXIV",
+    "filter_bucket": "arxiv",
+    "filter_reason": "matched_arxiv",
+    "matched_venue": "",
+    "matched_th_cpl_level": "",
+    "matched_th_cpl_area": "",
+    "matched_venue_type": "",
+    "venue_match": {
+      "matched": false,
+      "raw": "arXiv",
+      "normalized": "arxiv",
+      "normalized_candidates": [
+        "arxiv"
+      ],
+      "match": null
+    },
+    "arxiv_match": {
+      "matched": true,
+      "arxiv_id": "2604.21567v1",
+      "matched_urls": [
+        "https://arxiv.org/abs/2604.21567v1",
+        "https://arxiv.org/pdf/2604.21567v1"
+      ]
+    },
+    "is_in_arxiv": true,
+    "category": "Embedded AI Applications",
+    "llm_tags": [],
+    "final_tags": [],
+    "provider_used": "heuristic_fallback",
+    "classification_model": "hunyuan-2.0-instruct-20251111",
+    "classification_raw_response": {
+      "error": "TokenHub request failed with status 402: {\"error\":{\"message\":\"endpoint is inactive: FREE_QUOTA_EXHAUSTED\",\"code\":\"401008\",\"type\":\"gateway_error\",\"request_id\":\"bf3bf1da-9337-4a67-b4f6-ed05675c5129\"}}\n"
+    },
+    "checkpoint_saved_at": "2026-04-25T01:57:45.011Z"
+  },
+  "arxiv:2604 21554v1": {
+    "id": "f10d5f934ec6367c5b348d06584604f1b8ccc427",
+    "source": "arxiv",
+    "title": "Engaged AI Governance: Addressing the Last Mile Challenge Through Internal Expert Collaboration",
+    "abstract": "Under the EU AI Act, translating AI governance requirements into software development practice remains challenging. While AI governance frameworks exist at industry and organizational levels, empirical evidence of team-level implementation is scarce. We address this \"Last Mile\" Challenge through insider action research embedded within an AI startup. We present a legal-text-to-action pipeline that translates EU AI Act requirements into actionable strategies through internal expert collaboration by extracting requirements from legal text, engaging practitioners in assessment and ideation, and prioritizing implementation through collective evaluation. Our analysis reveals three patterns in how practitioners perceive regulatory requirements: convergence (compliance aligns with development priorities), existing practice (current work already satisfies requirements), and disconnection (requirements perceived as administrative overhead). Based on these patterns, we discuss when governance might be treated genuinely or performatively. Practitioners prioritize requirements that serve end-users or their own development needs, but view verification-oriented requirements as box-ticking exercises. This distinction suggests a translation challenge: regulatory requirements risk superficial treatment unless practitioners understand how compliance serves system quality and user protection. Expert collaboration offers a practical mechanism for transforming governance from external imposition to shared ownership and making previously invisible governance work visible and collective.",
+    "snippet": "Under the EU AI Act, translating AI governance requirements into software development practice remains challenging. While AI governance frameworks exist at industry and organizational levels, empirica",
+    "authors": [
+      "Simon Jarvers",
+      "Orestis Papakyriakopoulos"
+    ],
+    "venue": "arXiv",
+    "year": 2026,
+    "cited_by": 0,
+    "doi": "",
+    "arxiv_id": "2604.21554v1",
+    "urls": {
+      "arxiv": "https://arxiv.org/abs/2604.21554v1",
+      "pdf": "https://arxiv.org/pdf/2604.21554v1",
+      "paper": "https://arxiv.org/abs/2604.21554v1"
+    },
+    "scholar_url": "",
+    "pub_url": "https://arxiv.org/abs/2604.21554v1",
+    "eprint_url": "https://arxiv.org/pdf/2604.21554v1",
+    "container_type": "",
+    "query_useds": [],
+    "raw_group_hits": [
+      "A"
+    ],
+    "search_sets_raw": [
+      "A"
+    ],
+    "search_sets_final": [
+      "A"
+    ],
+    "post_filter": null,
+    "raw_payloads": [
+      {
+        "arxiv_id": "2604.21554v1",
+        "title": "Engaged AI Governance: Addressing the Last Mile Challenge Through Internal Expert Collaboration",
+        "abstract": "Under the EU AI Act, translating AI governance requirements into software development practice remains challenging. While AI governance frameworks exist at industry and organizational levels, empirical evidence of team-level implementation is scarce. We address this \"Last Mile\" Challenge through insider action research embedded within an AI startup. We present a legal-text-to-action pipeline that translates EU AI Act requirements into actionable strategies through internal expert collaboration by extracting requirements from legal text, engaging practitioners in assessment and ideation, and prioritizing implementation through collective evaluation. Our analysis reveals three patterns in how practitioners perceive regulatory requirements: convergence (compliance aligns with development priorities), existing practice (current work already satisfies requirements), and disconnection (requirements perceived as administrative overhead). Based on these patterns, we discuss when governance might be treated genuinely or performatively. Practitioners prioritize requirements that serve end-users or their own development needs, but view verification-oriented requirements as box-ticking exercises. This distinction suggests a translation challenge: regulatory requirements risk superficial treatment unless practitioners understand how compliance serves system quality and user protection. Expert collaboration offers a practical mechanism for transforming governance from external imposition to shared ownership and making previously invisible governance work visible and collective.",
+        "authors": [
+          "Simon Jarvers",
+          "Orestis Papakyriakopoulos"
+        ],
+        "year": 2026,
+        "month": 4,
+        "published": "2026-04-23T11:27:36Z",
+        "updated": "2026-04-23T11:27:36Z",
+        "urls": {
+          "arxiv": "https://arxiv.org/abs/2604.21554v1",
+          "pdf": "https://arxiv.org/pdf/2604.21554v1"
+        },
+        "arxiv_url": "https://arxiv.org/abs/2604.21554v1",
+        "pdf_url": "https://arxiv.org/pdf/2604.21554v1",
+        "eprint_url": "https://arxiv.org/pdf/2604.21554v1",
+        "pub_url": "https://arxiv.org/abs/2604.21554v1",
+        "snippet": "Under the EU AI Act, translating AI governance requirements into software development practice remains challenging. While AI governance frameworks exist at industry and organizational levels, empirica",
+        "source": "arxiv",
+        "doi": "",
+        "venue": "arXiv",
+        "cited_by": 0
+      }
+    ],
+    "dedupe_key": "arxiv:2604 21554v1",
+    "seed_tags": [],
+    "tag_hints": {
+      "force_tinyml": false,
+      "require_power_tag": false
+    },
+    "primary_group": "A",
+    "filter_policy": "TH_CPL_AB_OR_ARXIV",
+    "filter_bucket": "arxiv",
+    "filter_reason": "matched_arxiv",
+    "matched_venue": "",
+    "matched_th_cpl_level": "",
+    "matched_th_cpl_area": "",
+    "matched_venue_type": "",
+    "venue_match": {
+      "matched": false,
+      "raw": "arXiv",
+      "normalized": "arxiv",
+      "normalized_candidates": [
+        "arxiv"
+      ],
+      "match": null
+    },
+    "arxiv_match": {
+      "matched": true,
+      "arxiv_id": "2604.21554v1",
+      "matched_urls": [
+        "https://arxiv.org/abs/2604.21554v1",
+        "https://arxiv.org/pdf/2604.21554v1"
+      ]
+    },
+    "is_in_arxiv": true,
+    "category": "Embedded AI Applications",
+    "llm_tags": [],
+    "final_tags": [],
+    "provider_used": "heuristic_fallback",
+    "classification_model": "hunyuan-2.0-instruct-20251111",
+    "classification_raw_response": {
+      "error": "TokenHub request failed with status 402: {\"error\":{\"message\":\"endpoint is inactive: FREE_QUOTA_EXHAUSTED\",\"code\":\"401008\",\"type\":\"gateway_error\",\"request_id\":\"eabaca85-fccd-4a37-8282-40a0f710c388\"}}\n"
+    },
+    "checkpoint_saved_at": "2026-04-25T01:57:45.080Z"
+  },
+  "arxiv:2604 21175v1": {
+    "id": "e4e96b3340f6e9ecc61ba7d22852c206490e437d",
+    "source": "arxiv",
+    "title": "Graph Neural Network-Informed Predictive Flows for Faster Ford-Fulkerson and PAC-Learnability",
+    "abstract": "We propose a learning-augmented framework for accelerating max-flow computation and image segmentation by integrating Graph Neural Networks (GNNs) with the Ford-Fulkerson algorithm. Rather than predicting initial flows, our method learns edge importance probabilities to guide augmenting path selection. We introduce a Message Passing GNN (MPGNN) that jointly learns node and edge embeddings through coupled updates, capturing both global structure and local flow dynamics such as residual capacity and bottlenecks.\n  Given an input image, we propose a method to construct a grid-based flow network with source and sink nodes, extract features, and perform a single GNN inference to assign edge probabilities reflecting their likelihood of belonging to high-capacity cuts. These probabilities are stored in a priority queue and used to guide a modified Ford-Fulkerson procedure, prioritizing augmenting paths via an Edmonds-Karp-style search with bottleneck-aware tie-breaking. This avoids repeated inference over residual graphs while leveraging learned structure throughout optimization.\n  We further introduce a bidirectional path construction strategy centered on high-probability edges and provide a theoretical framework relating prediction quality to efficiency via a weighted permutation distance metric. Our method preserves max-flow/min-cut optimality while reducing the number of augmentations in practice. We also outline a hybrid extension combining flow warm-starting with edge-priority prediction, establishing a foundation for learning-guided combinatorial optimization in image segmentation.",
+    "snippet": "We propose a learning-augmented framework for accelerating max-flow computation and image segmentation by integrating Graph Neural Networks (GNNs) with the Ford-Fulkerson algorithm. Rather than predic",
+    "authors": [
+      "Eleanor Wiesler",
+      "Trace Baxley"
+    ],
+    "venue": "arXiv",
+    "year": 2026,
+    "cited_by": 0,
+    "doi": "",
+    "arxiv_id": "2604.21175v1",
+    "urls": {
+      "arxiv": "https://arxiv.org/abs/2604.21175v1",
+      "pdf": "https://arxiv.org/pdf/2604.21175v1",
+      "paper": "https://arxiv.org/abs/2604.21175v1"
+    },
+    "scholar_url": "",
+    "pub_url": "https://arxiv.org/abs/2604.21175v1",
+    "eprint_url": "https://arxiv.org/pdf/2604.21175v1",
+    "container_type": "",
+    "query_useds": [],
+    "raw_group_hits": [
+      "A"
+    ],
+    "search_sets_raw": [
+      "A"
+    ],
+    "search_sets_final": [
+      "A"
+    ],
+    "post_filter": null,
+    "raw_payloads": [
+      {
+        "arxiv_id": "2604.21175v1",
+        "title": "Graph Neural Network-Informed Predictive Flows for Faster Ford-Fulkerson and PAC-Learnability",
+        "abstract": "We propose a learning-augmented framework for accelerating max-flow computation and image segmentation by integrating Graph Neural Networks (GNNs) with the Ford-Fulkerson algorithm. Rather than predicting initial flows, our method learns edge importance probabilities to guide augmenting path selection. We introduce a Message Passing GNN (MPGNN) that jointly learns node and edge embeddings through coupled updates, capturing both global structure and local flow dynamics such as residual capacity and bottlenecks.\n  Given an input image, we propose a method to construct a grid-based flow network with source and sink nodes, extract features, and perform a single GNN inference to assign edge probabilities reflecting their likelihood of belonging to high-capacity cuts. These probabilities are stored in a priority queue and used to guide a modified Ford-Fulkerson procedure, prioritizing augmenting paths via an Edmonds-Karp-style search with bottleneck-aware tie-breaking. This avoids repeated inference over residual graphs while leveraging learned structure throughout optimization.\n  We further introduce a bidirectional path construction strategy centered on high-probability edges and provide a theoretical framework relating prediction quality to efficiency via a weighted permutation distance metric. Our method preserves max-flow/min-cut optimality while reducing the number of augmentations in practice. We also outline a hybrid extension combining flow warm-starting with edge-priority prediction, establishing a foundation for learning-guided combinatorial optimization in image segmentation.",
+        "authors": [
+          "Eleanor Wiesler",
+          "Trace Baxley"
+        ],
+        "year": 2026,
+        "month": 4,
+        "published": "2026-04-23T00:45:32Z",
+        "updated": "2026-04-23T00:45:32Z",
+        "urls": {
+          "arxiv": "https://arxiv.org/abs/2604.21175v1",
+          "pdf": "https://arxiv.org/pdf/2604.21175v1"
+        },
+        "arxiv_url": "https://arxiv.org/abs/2604.21175v1",
+        "pdf_url": "https://arxiv.org/pdf/2604.21175v1",
+        "eprint_url": "https://arxiv.org/pdf/2604.21175v1",
+        "pub_url": "https://arxiv.org/abs/2604.21175v1",
+        "snippet": "We propose a learning-augmented framework for accelerating max-flow computation and image segmentation by integrating Graph Neural Networks (GNNs) with the Ford-Fulkerson algorithm. Rather than predic",
+        "source": "arxiv",
+        "doi": "",
+        "venue": "arXiv",
+        "cited_by": 0
+      }
+    ],
+    "dedupe_key": "arxiv:2604 21175v1",
+    "seed_tags": [],
+    "tag_hints": {
+      "force_tinyml": false,
+      "require_power_tag": false
+    },
+    "primary_group": "A",
+    "filter_policy": "TH_CPL_AB_OR_ARXIV",
+    "filter_bucket": "arxiv",
+    "filter_reason": "matched_arxiv",
+    "matched_venue": "",
+    "matched_th_cpl_level": "",
+    "matched_th_cpl_area": "",
+    "matched_venue_type": "",
+    "venue_match": {
+      "matched": false,
+      "raw": "arXiv",
+      "normalized": "arxiv",
+      "normalized_candidates": [
+        "arxiv"
+      ],
+      "match": null
+    },
+    "arxiv_match": {
+      "matched": true,
+      "arxiv_id": "2604.21175v1",
+      "matched_urls": [
+        "https://arxiv.org/abs/2604.21175v1",
+        "https://arxiv.org/pdf/2604.21175v1"
+      ]
+    },
+    "is_in_arxiv": true,
+    "category": "Embedded AI Applications",
+    "llm_tags": [],
+    "final_tags": [],
+    "provider_used": "heuristic_fallback",
+    "classification_model": "hunyuan-2.0-instruct-20251111",
+    "classification_raw_response": {
+      "error": "TokenHub request failed with status 402: {\"error\":{\"message\":\"endpoint is inactive: FREE_QUOTA_EXHAUSTED\",\"code\":\"401008\",\"type\":\"gateway_error\",\"request_id\":\"d890599b-4879-4ea2-bf8d-ae3ded708c38\"}}\n"
+    },
+    "checkpoint_saved_at": "2026-04-25T01:57:45.196Z"
+  },
+  "arxiv:2604 21465v1": {
+    "id": "12d4b6c16fc42c18031a844bfc7ea1880af2f824",
+    "source": "arxiv",
+    "title": "ID-Eraser: Proactive Defense Against Face Swapping via Identity Perturbation",
+    "abstract": "Deepfake technologies have rapidly advanced with modern generative AI, and face swapping in particular poses serious threats to privacy and digital security. Existing proactive defenses mostly rely on pixel-level perturbations, which are ineffective against contemporary swapping models that extract robust high-level identity embeddings. We propose ID-Eraser, a feature-space proactive defense that removes identifiable facial information to prevent malicious face swapping. By injecting learnable perturbations into identity embeddings and reconstructing natural-looking protection images through a Face Revive Generator (FRG), ID-Eraser produces visually realistic results for humans while rendering the protected identities unusable for Deepfake models. Experiments show that ID-Eraser substantially disrupts identity recognition across diverse face recognition and swapping systems under strict black-box settings, achieving the lowest Top-1 accuracy (0.30) with the best FID (1.64) and LPIPS (0.020). Compared with swaps generated from clean inputs, the identity similarity of protected swaps drops sharply to an average of 0.504 across five representative face swapping models. ID-Eraser further demonstrates strong cross-dataset generalization, robustness to common distortions, and practical effectiveness on commercial APIs, reducing Tencent API similarity from 0.76 to 0.36.",
+    "snippet": "Deepfake technologies have rapidly advanced with modern generative AI, and face swapping in particular poses serious threats to privacy and digital security. Existing proactive defenses mostly rely on",
+    "authors": [
+      "Junyan Luo",
+      "Peipeng Yu",
+      "Jianwei Fei",
+      "Shiya Zeng",
+      "Xiaoyu Zhou",
+      "Zhihua Xia",
+      "Xiang Liu"
+    ],
+    "venue": "arXiv",
+    "year": 2026,
+    "cited_by": 0,
+    "doi": "",
+    "arxiv_id": "2604.21465v1",
+    "urls": {
+      "arxiv": "https://arxiv.org/abs/2604.21465v1",
+      "pdf": "https://arxiv.org/pdf/2604.21465v1",
+      "paper": "https://arxiv.org/abs/2604.21465v1"
+    },
+    "scholar_url": "",
+    "pub_url": "https://arxiv.org/abs/2604.21465v1",
+    "eprint_url": "https://arxiv.org/pdf/2604.21465v1",
+    "container_type": "",
+    "query_useds": [],
+    "raw_group_hits": [
+      "A"
+    ],
+    "search_sets_raw": [
+      "A"
+    ],
+    "search_sets_final": [
+      "A"
+    ],
+    "post_filter": null,
+    "raw_payloads": [
+      {
+        "arxiv_id": "2604.21465v1",
+        "title": "ID-Eraser: Proactive Defense Against Face Swapping via Identity Perturbation",
+        "abstract": "Deepfake technologies have rapidly advanced with modern generative AI, and face swapping in particular poses serious threats to privacy and digital security. Existing proactive defenses mostly rely on pixel-level perturbations, which are ineffective against contemporary swapping models that extract robust high-level identity embeddings. We propose ID-Eraser, a feature-space proactive defense that removes identifiable facial information to prevent malicious face swapping. By injecting learnable perturbations into identity embeddings and reconstructing natural-looking protection images through a Face Revive Generator (FRG), ID-Eraser produces visually realistic results for humans while rendering the protected identities unusable for Deepfake models. Experiments show that ID-Eraser substantially disrupts identity recognition across diverse face recognition and swapping systems under strict black-box settings, achieving the lowest Top-1 accuracy (0.30) with the best FID (1.64) and LPIPS (0.020). Compared with swaps generated from clean inputs, the identity similarity of protected swaps drops sharply to an average of 0.504 across five representative face swapping models. ID-Eraser further demonstrates strong cross-dataset generalization, robustness to common distortions, and practical effectiveness on commercial APIs, reducing Tencent API similarity from 0.76 to 0.36.",
+        "authors": [
+          "Junyan Luo",
+          "Peipeng Yu",
+          "Jianwei Fei",
+          "Shiya Zeng",
+          "Xiaoyu Zhou",
+          "Zhihua Xia",
+          "Xiang Liu"
+        ],
+        "year": 2026,
+        "month": 4,
+        "published": "2026-04-23T09:18:34Z",
+        "updated": "2026-04-23T09:18:34Z",
+        "urls": {
+          "arxiv": "https://arxiv.org/abs/2604.21465v1",
+          "pdf": "https://arxiv.org/pdf/2604.21465v1"
+        },
+        "arxiv_url": "https://arxiv.org/abs/2604.21465v1",
+        "pdf_url": "https://arxiv.org/pdf/2604.21465v1",
+        "eprint_url": "https://arxiv.org/pdf/2604.21465v1",
+        "pub_url": "https://arxiv.org/abs/2604.21465v1",
+        "snippet": "Deepfake technologies have rapidly advanced with modern generative AI, and face swapping in particular poses serious threats to privacy and digital security. Existing proactive defenses mostly rely on",
+        "source": "arxiv",
+        "doi": "",
+        "venue": "arXiv",
+        "cited_by": 0
+      }
+    ],
+    "dedupe_key": "arxiv:2604 21465v1",
+    "seed_tags": [],
+    "tag_hints": {
+      "force_tinyml": false,
+      "require_power_tag": false
+    },
+    "primary_group": "A",
+    "filter_policy": "TH_CPL_AB_OR_ARXIV",
+    "filter_bucket": "arxiv",
+    "filter_reason": "matched_arxiv",
+    "matched_venue": "",
+    "matched_th_cpl_level": "",
+    "matched_th_cpl_area": "",
+    "matched_venue_type": "",
+    "venue_match": {
+      "matched": false,
+      "raw": "arXiv",
+      "normalized": "arxiv",
+      "normalized_candidates": [
+        "arxiv"
+      ],
+      "match": null
+    },
+    "arxiv_match": {
+      "matched": true,
+      "arxiv_id": "2604.21465v1",
+      "matched_urls": [
+        "https://arxiv.org/abs/2604.21465v1",
+        "https://arxiv.org/pdf/2604.21465v1"
+      ]
+    },
+    "is_in_arxiv": true,
+    "category": "Embedded AI Applications",
+    "llm_tags": [],
+    "final_tags": [],
+    "provider_used": "heuristic_fallback",
+    "classification_model": "hunyuan-2.0-instruct-20251111",
+    "classification_raw_response": {
+      "error": "TokenHub request failed with status 402: {\"error\":{\"message\":\"endpoint is inactive: FREE_QUOTA_EXHAUSTED\",\"code\":\"401008\",\"type\":\"gateway_error\",\"request_id\":\"57ebe028-1e85-44f6-8831-56174d9901ee\"}}\n"
+    },
+    "checkpoint_saved_at": "2026-04-25T01:57:45.342Z"
+  },
+  "arxiv:2604 21046v1": {
+    "id": "eea81eb0ffb8ecb307fc9cb2fccf76e7fd21dd4f",
+    "source": "arxiv",
+    "title": "JEPAMatch: Geometric Representation Shaping for Semi-Supervised Learning",
+    "abstract": "Semi-supervised learning has emerged as a powerful paradigm for leveraging large amounts of unlabeled data to improve the performance of machine learning models when labeled data are scarce. Among existing approaches, methods derived from FixMatch have achieved state-of-the-art results in image classification by combining weak and strong data augmentations with confidence-based pseudo-labeling. Despite their strong empirical performance, these methods typically struggle with two critical bottlenecks: majority classes tend to dominate the learning process, which is amplified by incorrect pseudo-labels, leading to biased models. Furthermore, noisy early pseudo-labels prevent the model from forming clear decision boundaries, requiring prolonged training to learn informative representation. In this paper, we introduce a paradigm shift from conventional logical output threshold base, toward an explicit shaping of geometric representations. Our approach is inspired by the recently proposed Latent-Euclidean Joint-Embedding Predictive Architectures (LeJEPA), a theoretically grounded framework asserting that meaningful representations should exhibit an isotropic Gaussian structure in latent space. Building on this principle, we propose a new training objective that combines the classical semi-supervised loss used in FlexMatch, an adaptive extension of FixMatch, with a latent-space regularization term derived from LeJEPA.\n  Our proposed approach, encourages well-structured representations while preserving the advantages of pseudo-labeling strategies. Through extensive experiments on CIFAR-100, STL-10 and Tiny-ImageNet, we demonstrate that the proposed method consistently outperforms existing baselines. In addition, our method significantly accelerates the convergence, drastically reducing the overall computational cost compared to standard FixMatch-based pipelines.",
+    "snippet": "Semi-supervised learning has emerged as a powerful paradigm for leveraging large amounts of unlabeled data to improve the performance of machine learning models when labeled data are scarce. Among exi",
+    "authors": [
+      "Ali Aghababaei-Harandi",
+      "Aude Sportisse",
+      "Massih-Reza Amini"
+    ],
+    "venue": "arXiv",
+    "year": 2026,
+    "cited_by": 0,
+    "doi": "",
+    "arxiv_id": "2604.21046v1",
+    "urls": {
+      "arxiv": "https://arxiv.org/abs/2604.21046v1",
+      "pdf": "https://arxiv.org/pdf/2604.21046v1",
+      "paper": "https://arxiv.org/abs/2604.21046v1"
+    },
+    "scholar_url": "",
+    "pub_url": "https://arxiv.org/abs/2604.21046v1",
+    "eprint_url": "https://arxiv.org/pdf/2604.21046v1",
+    "container_type": "",
+    "query_useds": [],
+    "raw_group_hits": [
+      "A"
+    ],
+    "search_sets_raw": [
+      "A"
+    ],
+    "search_sets_final": [
+      "A"
+    ],
+    "post_filter": null,
+    "raw_payloads": [
+      {
+        "arxiv_id": "2604.21046v1",
+        "title": "JEPAMatch: Geometric Representation Shaping for Semi-Supervised Learning",
+        "abstract": "Semi-supervised learning has emerged as a powerful paradigm for leveraging large amounts of unlabeled data to improve the performance of machine learning models when labeled data are scarce. Among existing approaches, methods derived from FixMatch have achieved state-of-the-art results in image classification by combining weak and strong data augmentations with confidence-based pseudo-labeling. Despite their strong empirical performance, these methods typically struggle with two critical bottlenecks: majority classes tend to dominate the learning process, which is amplified by incorrect pseudo-labels, leading to biased models. Furthermore, noisy early pseudo-labels prevent the model from forming clear decision boundaries, requiring prolonged training to learn informative representation. In this paper, we introduce a paradigm shift from conventional logical output threshold base, toward an explicit shaping of geometric representations. Our approach is inspired by the recently proposed Latent-Euclidean Joint-Embedding Predictive Architectures (LeJEPA), a theoretically grounded framework asserting that meaningful representations should exhibit an isotropic Gaussian structure in latent space. Building on this principle, we propose a new training objective that combines the classical semi-supervised loss used in FlexMatch, an adaptive extension of FixMatch, with a latent-space regularization term derived from LeJEPA.\n  Our proposed approach, encourages well-structured representations while preserving the advantages of pseudo-labeling strategies. Through extensive experiments on CIFAR-100, STL-10 and Tiny-ImageNet, we demonstrate that the proposed method consistently outperforms existing baselines. In addition, our method significantly accelerates the convergence, drastically reducing the overall computational cost compared to standard FixMatch-based pipelines.",
+        "authors": [
+          "Ali Aghababaei-Harandi",
+          "Aude Sportisse",
+          "Massih-Reza Amini"
+        ],
+        "year": 2026,
+        "month": 4,
+        "published": "2026-04-22T19:44:41Z",
+        "updated": "2026-04-22T19:44:41Z",
+        "urls": {
+          "arxiv": "https://arxiv.org/abs/2604.21046v1",
+          "pdf": "https://arxiv.org/pdf/2604.21046v1"
+        },
+        "arxiv_url": "https://arxiv.org/abs/2604.21046v1",
+        "pdf_url": "https://arxiv.org/pdf/2604.21046v1",
+        "eprint_url": "https://arxiv.org/pdf/2604.21046v1",
+        "pub_url": "https://arxiv.org/abs/2604.21046v1",
+        "snippet": "Semi-supervised learning has emerged as a powerful paradigm for leveraging large amounts of unlabeled data to improve the performance of machine learning models when labeled data are scarce. Among exi",
+        "source": "arxiv",
+        "doi": "",
+        "venue": "arXiv",
+        "cited_by": 0
+      }
+    ],
+    "dedupe_key": "arxiv:2604 21046v1",
+    "seed_tags": [],
+    "tag_hints": {
+      "force_tinyml": false,
+      "require_power_tag": false
+    },
+    "primary_group": "A",
+    "filter_policy": "TH_CPL_AB_OR_ARXIV",
+    "filter_bucket": "arxiv",
+    "filter_reason": "matched_arxiv",
+    "matched_venue": "",
+    "matched_th_cpl_level": "",
+    "matched_th_cpl_area": "",
+    "matched_venue_type": "",
+    "venue_match": {
+      "matched": false,
+      "raw": "arXiv",
+      "normalized": "arxiv",
+      "normalized_candidates": [
+        "arxiv"
+      ],
+      "match": null
+    },
+    "arxiv_match": {
+      "matched": true,
+      "arxiv_id": "2604.21046v1",
+      "matched_urls": [
+        "https://arxiv.org/abs/2604.21046v1",
+        "https://arxiv.org/pdf/2604.21046v1"
+      ]
+    },
+    "is_in_arxiv": true,
+    "category": "Embedded AI Applications",
+    "llm_tags": [],
+    "final_tags": [],
+    "provider_used": "heuristic_fallback",
+    "classification_model": "hunyuan-2.0-instruct-20251111",
+    "classification_raw_response": {
+      "error": "TokenHub request failed with status 402: {\"error\":{\"message\":\"endpoint is inactive: FREE_QUOTA_EXHAUSTED\",\"code\":\"401008\",\"type\":\"gateway_error\",\"request_id\":\"e5d1d707-712a-413b-bb3a-f001704c1265\"}}\n"
+    },
+    "checkpoint_saved_at": "2026-04-25T01:57:45.505Z"
+  },
+  "arxiv:2604 21811v1": {
+    "id": "2e282894ff6b3a431bf910292d8dde81d58d4e10",
+    "source": "arxiv",
+    "title": "Probably Approximately Consensus: On the Learning Theory of Finding Common Ground",
+    "abstract": "A primary goal of online deliberation platforms is to identify ideas that are broadly agreeable to a community of users through their expressed preferences. Yet, consensus elicitation should ideally extend beyond the specific statements provided by users and should incorporate the relative salience of particular topics. We address this issue by modelling consensus as an interval in a one-dimensional opinion space derived from potentially high-dimensional data via embedding and dimensionality reduction. We define an objective that maximizes expected agreement within a hypothesis interval where the expectation is over an underlying distribution of issues, implicitly taking into account their salience. We propose an efficient Empirical Risk Minimization (ERM) algorithm and establish PAC-learning guarantees. Our initial experiments demonstrate the performance of our algorithm and examine more efficient approaches to identifying optimal consensus regions. We find that through selectively querying users on an existing sample of statements, we can reduce the number of queries needed to a practical number.",
+    "snippet": "A primary goal of online deliberation platforms is to identify ideas that are broadly agreeable to a community of users through their expressed preferences. Yet, consensus elicitation should ideally e",
+    "authors": [
+      "Carter Blair",
+      "Ben Armstrong",
+      "Shiri Alouf-Heffetz",
+      "Nimrod Talmon",
+      "Davide Grossi"
+    ],
+    "venue": "arXiv",
+    "year": 2026,
+    "cited_by": 0,
+    "doi": "",
+    "arxiv_id": "2604.21811v1",
+    "urls": {
+      "arxiv": "https://arxiv.org/abs/2604.21811v1",
+      "pdf": "https://arxiv.org/pdf/2604.21811v1",
+      "paper": "https://arxiv.org/abs/2604.21811v1"
+    },
+    "scholar_url": "",
+    "pub_url": "https://arxiv.org/abs/2604.21811v1",
+    "eprint_url": "https://arxiv.org/pdf/2604.21811v1",
+    "container_type": "",
+    "query_useds": [],
+    "raw_group_hits": [
+      "A"
+    ],
+    "search_sets_raw": [
+      "A"
+    ],
+    "search_sets_final": [
+      "A"
+    ],
+    "post_filter": null,
+    "raw_payloads": [
+      {
+        "arxiv_id": "2604.21811v1",
+        "title": "Probably Approximately Consensus: On the Learning Theory of Finding Common Ground",
+        "abstract": "A primary goal of online deliberation platforms is to identify ideas that are broadly agreeable to a community of users through their expressed preferences. Yet, consensus elicitation should ideally extend beyond the specific statements provided by users and should incorporate the relative salience of particular topics. We address this issue by modelling consensus as an interval in a one-dimensional opinion space derived from potentially high-dimensional data via embedding and dimensionality reduction. We define an objective that maximizes expected agreement within a hypothesis interval where the expectation is over an underlying distribution of issues, implicitly taking into account their salience. We propose an efficient Empirical Risk Minimization (ERM) algorithm and establish PAC-learning guarantees. Our initial experiments demonstrate the performance of our algorithm and examine more efficient approaches to identifying optimal consensus regions. We find that through selectively querying users on an existing sample of statements, we can reduce the number of queries needed to a practical number.",
+        "authors": [
+          "Carter Blair",
+          "Ben Armstrong",
+          "Shiri Alouf-Heffetz",
+          "Nimrod Talmon",
+          "Davide Grossi"
+        ],
+        "year": 2026,
+        "month": 4,
+        "published": "2026-04-23T16:06:41Z",
+        "updated": "2026-04-23T16:06:41Z",
+        "urls": {
+          "arxiv": "https://arxiv.org/abs/2604.21811v1",
+          "pdf": "https://arxiv.org/pdf/2604.21811v1"
+        },
+        "arxiv_url": "https://arxiv.org/abs/2604.21811v1",
+        "pdf_url": "https://arxiv.org/pdf/2604.21811v1",
+        "eprint_url": "https://arxiv.org/pdf/2604.21811v1",
+        "pub_url": "https://arxiv.org/abs/2604.21811v1",
+        "snippet": "A primary goal of online deliberation platforms is to identify ideas that are broadly agreeable to a community of users through their expressed preferences. Yet, consensus elicitation should ideally e",
+        "source": "arxiv",
+        "doi": "",
+        "venue": "arXiv",
+        "cited_by": 0
+      }
+    ],
+    "dedupe_key": "arxiv:2604 21811v1",
+    "seed_tags": [],
+    "tag_hints": {
+      "force_tinyml": false,
+      "require_power_tag": false
+    },
+    "primary_group": "A",
+    "filter_policy": "TH_CPL_AB_OR_ARXIV",
+    "filter_bucket": "arxiv",
+    "filter_reason": "matched_arxiv",
+    "matched_venue": "",
+    "matched_th_cpl_level": "",
+    "matched_th_cpl_area": "",
+    "matched_venue_type": "",
+    "venue_match": {
+      "matched": false,
+      "raw": "arXiv",
+      "normalized": "arxiv",
+      "normalized_candidates": [
+        "arxiv"
+      ],
+      "match": null
+    },
+    "arxiv_match": {
+      "matched": true,
+      "arxiv_id": "2604.21811v1",
+      "matched_urls": [
+        "https://arxiv.org/abs/2604.21811v1",
+        "https://arxiv.org/pdf/2604.21811v1"
+      ]
+    },
+    "is_in_arxiv": true,
+    "category": "Embedded AI Applications",
+    "llm_tags": [],
+    "final_tags": [],
+    "provider_used": "heuristic_fallback",
+    "classification_model": "hunyuan-2.0-instruct-20251111",
+    "classification_raw_response": {
+      "error": "TokenHub request failed with status 402: {\"error\":{\"message\":\"endpoint is inactive: FREE_QUOTA_EXHAUSTED\",\"code\":\"401008\",\"type\":\"gateway_error\",\"request_id\":\"83d1241c-46f9-442f-b4cd-d155c22b623e\"}}\n"
+    },
+    "checkpoint_saved_at": "2026-04-25T01:57:45.625Z"
+  },
+  "arxiv:2604 21728v1": {
+    "id": "fcda9be4586727e66bd333d2bf1ea04c09ef79b8",
+    "source": "arxiv",
+    "title": "Ramen: Robust Test-Time Adaptation of Vision-Language Models with Active Sample Selection",
+    "abstract": "Pretrained vision-language models such as CLIP exhibit strong zero-shot generalization but remain sensitive to distribution shifts. Test-time adaptation adapts models during inference without access to source data or target labels, offering a practical way to handle such shifts. However, existing methods typically assume that test samples come from a single, consistent domain, while in practice, test data often include samples from mixed domains with distinct characteristics. Consequently, their performance degrades under mixed-domain settings. To address this, we present Ramen, a framework for robust test-time adaptation through active sample selection. For each incoming test sample, Ramen retrieves a customized batch of relevant samples from previously seen data based on two criteria: domain consistency, which ensures that adaptation focuses on data from similar domains, and prediction balance, which mitigates adaptation bias caused by skewed predictions. To improve efficiency, Ramen employs an embedding-gradient cache that stores the embeddings and sample-level gradients of past test images. The stored embeddings are used to retrieve relevant samples, and the corresponding gradients are aggregated for model updates, eliminating the need for any additional forward or backward passes. Our theoretical analysis provides insight into why the proposed adaptation mechanism is effective under mixed-domain shifts. Experiments on multiple image corruption and domain-shift benchmarks demonstrate that Ramen achieves strong and consistent performance, offering robust and efficient adaptation in complex mixed-domain scenarios. Our code is available at https://github.com/baowenxuan/Ramen .",
+    "snippet": "Pretrained vision-language models such as CLIP exhibit strong zero-shot generalization but remain sensitive to distribution shifts. Test-time adaptation adapts models during inference without access t",
+    "authors": [
+      "Wenxuan Bao",
+      "Yanjun Zhao",
+      "Xiyuan Yang",
+      "Jingrui He"
+    ],
+    "venue": "arXiv",
+    "year": 2026,
+    "cited_by": 0,
+    "doi": "",
+    "arxiv_id": "2604.21728v1",
+    "urls": {
+      "arxiv": "https://arxiv.org/abs/2604.21728v1",
+      "pdf": "https://arxiv.org/pdf/2604.21728v1",
+      "paper": "https://arxiv.org/abs/2604.21728v1"
+    },
+    "scholar_url": "",
+    "pub_url": "https://arxiv.org/abs/2604.21728v1",
+    "eprint_url": "https://arxiv.org/pdf/2604.21728v1",
+    "container_type": "",
+    "query_useds": [],
+    "raw_group_hits": [
+      "A"
+    ],
+    "search_sets_raw": [
+      "A"
+    ],
+    "search_sets_final": [
+      "A"
+    ],
+    "post_filter": null,
+    "raw_payloads": [
+      {
+        "arxiv_id": "2604.21728v1",
+        "title": "Ramen: Robust Test-Time Adaptation of Vision-Language Models with Active Sample Selection",
+        "abstract": "Pretrained vision-language models such as CLIP exhibit strong zero-shot generalization but remain sensitive to distribution shifts. Test-time adaptation adapts models during inference without access to source data or target labels, offering a practical way to handle such shifts. However, existing methods typically assume that test samples come from a single, consistent domain, while in practice, test data often include samples from mixed domains with distinct characteristics. Consequently, their performance degrades under mixed-domain settings. To address this, we present Ramen, a framework for robust test-time adaptation through active sample selection. For each incoming test sample, Ramen retrieves a customized batch of relevant samples from previously seen data based on two criteria: domain consistency, which ensures that adaptation focuses on data from similar domains, and prediction balance, which mitigates adaptation bias caused by skewed predictions. To improve efficiency, Ramen employs an embedding-gradient cache that stores the embeddings and sample-level gradients of past test images. The stored embeddings are used to retrieve relevant samples, and the corresponding gradients are aggregated for model updates, eliminating the need for any additional forward or backward passes. Our theoretical analysis provides insight into why the proposed adaptation mechanism is effective under mixed-domain shifts. Experiments on multiple image corruption and domain-shift benchmarks demonstrate that Ramen achieves strong and consistent performance, offering robust and efficient adaptation in complex mixed-domain scenarios. Our code is available at https://github.com/baowenxuan/Ramen .",
+        "authors": [
+          "Wenxuan Bao",
+          "Yanjun Zhao",
+          "Xiyuan Yang",
+          "Jingrui He"
+        ],
+        "year": 2026,
+        "month": 4,
+        "published": "2026-04-23T14:33:27Z",
+        "updated": "2026-04-23T14:33:27Z",
+        "urls": {
+          "arxiv": "https://arxiv.org/abs/2604.21728v1",
+          "pdf": "https://arxiv.org/pdf/2604.21728v1"
+        },
+        "arxiv_url": "https://arxiv.org/abs/2604.21728v1",
+        "pdf_url": "https://arxiv.org/pdf/2604.21728v1",
+        "eprint_url": "https://arxiv.org/pdf/2604.21728v1",
+        "pub_url": "https://arxiv.org/abs/2604.21728v1",
+        "snippet": "Pretrained vision-language models such as CLIP exhibit strong zero-shot generalization but remain sensitive to distribution shifts. Test-time adaptation adapts models during inference without access t",
+        "source": "arxiv",
+        "doi": "",
+        "venue": "arXiv",
+        "cited_by": 0
+      }
+    ],
+    "dedupe_key": "arxiv:2604 21728v1",
+    "seed_tags": [],
+    "tag_hints": {
+      "force_tinyml": false,
+      "require_power_tag": false
+    },
+    "primary_group": "A",
+    "filter_policy": "TH_CPL_AB_OR_ARXIV",
+    "filter_bucket": "arxiv",
+    "filter_reason": "matched_arxiv",
+    "matched_venue": "",
+    "matched_th_cpl_level": "",
+    "matched_th_cpl_area": "",
+    "matched_venue_type": "",
+    "venue_match": {
+      "matched": false,
+      "raw": "arXiv",
+      "normalized": "arxiv",
+      "normalized_candidates": [
+        "arxiv"
+      ],
+      "match": null
+    },
+    "arxiv_match": {
+      "matched": true,
+      "arxiv_id": "2604.21728v1",
+      "matched_urls": [
+        "https://arxiv.org/abs/2604.21728v1",
+        "https://arxiv.org/pdf/2604.21728v1"
+      ]
+    },
+    "is_in_arxiv": true,
+    "category": "Embedded AI Applications",
+    "llm_tags": [],
+    "final_tags": [],
+    "provider_used": "heuristic_fallback",
+    "classification_model": "hunyuan-2.0-instruct-20251111",
+    "classification_raw_response": {
+      "error": "TokenHub request failed with status 402: {\"error\":{\"message\":\"endpoint is inactive: FREE_QUOTA_EXHAUSTED\",\"code\":\"401008\",\"type\":\"gateway_error\",\"request_id\":\"448d8742-e4ad-43b6-91cb-b669c232bed1\"}}\n"
+    },
+    "checkpoint_saved_at": "2026-04-25T01:57:45.670Z"
+  },
+  "arxiv:2604 21393v1": {
+    "id": "d5a21366ccde790ef70c70389e552d7119de84f1",
+    "source": "arxiv",
+    "title": "Relocation of compact sets in $\\mathbb{R}^n$ by diffeomorphisms and linear separability of datasets in $\\mathbb{R}^n$",
+    "abstract": "Relocation of compact sets in an $n$-dimensional manifold by self-diffeomorphism is of its own interest as well as significant potential applications to data classification in data science. This paper presents a theory for relocating a finite number of compact sets in $\\mathbb{R}^n$ to be relocated to arbitrary target domains in $\\mathbb{R}^n$ by diffeomorphisms of $\\mathbb{R}^n$. Furthermore, we prove that for any such collection, there exists a differentiable embedding into $\\mathbb{R}^{n+1}$ such that their images become linearly separable.\n  As applications of the established theory, we show that a finite number of compact datasets in $\\mathbb{R}^n$ can be made linearly separable by width-$n$ deep neural networks (DNNs) with Leaky-ReLU, ELU, or SELU activation functions, under a mild condition. In addition, we show that any finite number of mutually disjoint compact datasets in $\\mathbb{R}^n$ can be made linearly separable in $\\mathbb{R}^{n+1}$ by a width-$(n+1)$ DNN.",
+    "snippet": "Relocation of compact sets in an $n$-dimensional manifold by self-diffeomorphism is of its own interest as well as significant potential applications to data classification in data science. This paper",
+    "authors": [
+      "Xiao-Song Yang",
+      "Xuan Zhou",
+      "Qi Zhou"
+    ],
+    "venue": "arXiv",
+    "year": 2026,
+    "cited_by": 0,
+    "doi": "",
+    "arxiv_id": "2604.21393v1",
+    "urls": {
+      "arxiv": "https://arxiv.org/abs/2604.21393v1",
+      "pdf": "https://arxiv.org/pdf/2604.21393v1",
+      "paper": "https://arxiv.org/abs/2604.21393v1"
+    },
+    "scholar_url": "",
+    "pub_url": "https://arxiv.org/abs/2604.21393v1",
+    "eprint_url": "https://arxiv.org/pdf/2604.21393v1",
+    "container_type": "",
+    "query_useds": [],
+    "raw_group_hits": [
+      "A"
+    ],
+    "search_sets_raw": [
+      "A"
+    ],
+    "search_sets_final": [
+      "A"
+    ],
+    "post_filter": null,
+    "raw_payloads": [
+      {
+        "arxiv_id": "2604.21393v1",
+        "title": "Relocation of compact sets in $\\mathbb{R}^n$ by diffeomorphisms and linear separability of datasets in $\\mathbb{R}^n$",
+        "abstract": "Relocation of compact sets in an $n$-dimensional manifold by self-diffeomorphism is of its own interest as well as significant potential applications to data classification in data science. This paper presents a theory for relocating a finite number of compact sets in $\\mathbb{R}^n$ to be relocated to arbitrary target domains in $\\mathbb{R}^n$ by diffeomorphisms of $\\mathbb{R}^n$. Furthermore, we prove that for any such collection, there exists a differentiable embedding into $\\mathbb{R}^{n+1}$ such that their images become linearly separable.\n  As applications of the established theory, we show that a finite number of compact datasets in $\\mathbb{R}^n$ can be made linearly separable by width-$n$ deep neural networks (DNNs) with Leaky-ReLU, ELU, or SELU activation functions, under a mild condition. In addition, we show that any finite number of mutually disjoint compact datasets in $\\mathbb{R}^n$ can be made linearly separable in $\\mathbb{R}^{n+1}$ by a width-$(n+1)$ DNN.",
+        "authors": [
+          "Xiao-Song Yang",
+          "Xuan Zhou",
+          "Qi Zhou"
+        ],
+        "year": 2026,
+        "month": 4,
+        "published": "2026-04-23T08:00:55Z",
+        "updated": "2026-04-23T08:00:55Z",
+        "urls": {
+          "arxiv": "https://arxiv.org/abs/2604.21393v1",
+          "pdf": "https://arxiv.org/pdf/2604.21393v1"
+        },
+        "arxiv_url": "https://arxiv.org/abs/2604.21393v1",
+        "pdf_url": "https://arxiv.org/pdf/2604.21393v1",
+        "eprint_url": "https://arxiv.org/pdf/2604.21393v1",
+        "pub_url": "https://arxiv.org/abs/2604.21393v1",
+        "snippet": "Relocation of compact sets in an $n$-dimensional manifold by self-diffeomorphism is of its own interest as well as significant potential applications to data classification in data science. This paper",
+        "source": "arxiv",
+        "doi": "",
+        "venue": "arXiv",
+        "cited_by": 0
+      }
+    ],
+    "dedupe_key": "arxiv:2604 21393v1",
+    "seed_tags": [],
+    "tag_hints": {
+      "force_tinyml": false,
+      "require_power_tag": false
+    },
+    "primary_group": "A",
+    "filter_policy": "TH_CPL_AB_OR_ARXIV",
+    "filter_bucket": "arxiv",
+    "filter_reason": "matched_arxiv",
+    "matched_venue": "",
+    "matched_th_cpl_level": "",
+    "matched_th_cpl_area": "",
+    "matched_venue_type": "",
+    "venue_match": {
+      "matched": false,
+      "raw": "arXiv",
+      "normalized": "arxiv",
+      "normalized_candidates": [
+        "arxiv"
+      ],
+      "match": null
+    },
+    "arxiv_match": {
+      "matched": true,
+      "arxiv_id": "2604.21393v1",
+      "matched_urls": [
+        "https://arxiv.org/abs/2604.21393v1",
+        "https://arxiv.org/pdf/2604.21393v1"
+      ]
+    },
+    "is_in_arxiv": true,
+    "category": "Embedded AI Applications",
+    "llm_tags": [],
+    "final_tags": [],
+    "provider_used": "heuristic_fallback",
+    "classification_model": "hunyuan-2.0-instruct-20251111",
+    "classification_raw_response": {
+      "error": "TokenHub request failed with status 402: {\"error\":{\"message\":\"endpoint is inactive: FREE_QUOTA_EXHAUSTED\",\"code\":\"401008\",\"type\":\"gateway_error\",\"request_id\":\"eaa70e72-a637-4763-89a8-f4dcba23162a\"}}\n"
+    },
+    "checkpoint_saved_at": "2026-04-25T01:57:45.958Z"
+  },
+  "arxiv:2604 21284v1": {
+    "id": "977d3f8cfcb25180aa1aff830b7a9fafea46bc4f",
+    "source": "arxiv",
+    "title": "Spatial Metaphors for LLM Memory: A Critical Analysis of the MemPalace Architecture",
+    "abstract": "MemPalace is an open-source AI memory system that applies the ancient method of loci (memory palace) spatial metaphor to organize long-term memory for large language models; launched in April 2026, it accumulated over 47,000 GitHub stars in its first two weeks and claims state-of-the-art retrieval performance on the LongMemEval benchmark (96.6% Recall@5) without requiring any LLM inference at write time. Through independent codebase analysis, benchmark replication, and comparison with competing systems, we find that MemPalace's headline retrieval performance is attributable primarily to its verbatim storage philosophy combined with ChromaDB's default embedding model (all-MiniLM-L6-v2), rather than to its spatial organizational metaphor per se -- the palace hierarchy (Wings->Rooms->Closets->Drawers) operates as standard vector database metadata filtering, an effective but well-established technique. However, MemPalace makes several genuinely novel contributions: (1) a contrarian verbatim-first storage philosophy that challenges extraction-based competitors, (2) an extremely low wake-up cost (approximately 170 tokens) through its four-layer memory stack, (3) a fully deterministic, zero-LLM write path enabling offline operation at zero API cost, and (4) the first systematic application of spatial memory metaphors as an organizing principle for AI memory systems. We also note that the competitive landscape is evolving rapidly, with Mem0's April 2026 token-efficient algorithm raising their LongMemEval score from approximately 49% to 93.4%, narrowing the gap between extraction-based and verbatim approaches. Our analysis concludes that MemPalace represents significant architectural insight wrapped in overstated claims -- a pattern common in rapidly adopted open-source projects where marketing velocity exceeds scientific rigor.",
+    "snippet": "MemPalace is an open-source AI memory system that applies the ancient method of loci (memory palace) spatial metaphor to organize long-term memory for large language models; launched in April 2026, it",
+    "authors": [
+      "Robin Dey",
+      "Panyanon Viradecha"
+    ],
+    "venue": "arXiv",
+    "year": 2026,
+    "cited_by": 0,
+    "doi": "",
+    "arxiv_id": "2604.21284v1",
+    "urls": {
+      "arxiv": "https://arxiv.org/abs/2604.21284v1",
+      "pdf": "https://arxiv.org/pdf/2604.21284v1",
+      "paper": "https://arxiv.org/abs/2604.21284v1"
+    },
+    "scholar_url": "",
+    "pub_url": "https://arxiv.org/abs/2604.21284v1",
+    "eprint_url": "https://arxiv.org/pdf/2604.21284v1",
+    "container_type": "",
+    "query_useds": [],
+    "raw_group_hits": [
+      "A"
+    ],
+    "search_sets_raw": [
+      "A"
+    ],
+    "search_sets_final": [
+      "A"
+    ],
+    "post_filter": null,
+    "raw_payloads": [
+      {
+        "arxiv_id": "2604.21284v1",
+        "title": "Spatial Metaphors for LLM Memory: A Critical Analysis of the MemPalace Architecture",
+        "abstract": "MemPalace is an open-source AI memory system that applies the ancient method of loci (memory palace) spatial metaphor to organize long-term memory for large language models; launched in April 2026, it accumulated over 47,000 GitHub stars in its first two weeks and claims state-of-the-art retrieval performance on the LongMemEval benchmark (96.6% Recall@5) without requiring any LLM inference at write time. Through independent codebase analysis, benchmark replication, and comparison with competing systems, we find that MemPalace's headline retrieval performance is attributable primarily to its verbatim storage philosophy combined with ChromaDB's default embedding model (all-MiniLM-L6-v2), rather than to its spatial organizational metaphor per se -- the palace hierarchy (Wings->Rooms->Closets->Drawers) operates as standard vector database metadata filtering, an effective but well-established technique. However, MemPalace makes several genuinely novel contributions: (1) a contrarian verbatim-first storage philosophy that challenges extraction-based competitors, (2) an extremely low wake-up cost (approximately 170 tokens) through its four-layer memory stack, (3) a fully deterministic, zero-LLM write path enabling offline operation at zero API cost, and (4) the first systematic application of spatial memory metaphors as an organizing principle for AI memory systems. We also note that the competitive landscape is evolving rapidly, with Mem0's April 2026 token-efficient algorithm raising their LongMemEval score from approximately 49% to 93.4%, narrowing the gap between extraction-based and verbatim approaches. Our analysis concludes that MemPalace represents significant architectural insight wrapped in overstated claims -- a pattern common in rapidly adopted open-source projects where marketing velocity exceeds scientific rigor.",
+        "authors": [
+          "Robin Dey",
+          "Panyanon Viradecha"
+        ],
+        "year": 2026,
+        "month": 4,
+        "published": "2026-04-23T04:59:16Z",
+        "updated": "2026-04-23T04:59:16Z",
+        "urls": {
+          "arxiv": "https://arxiv.org/abs/2604.21284v1",
+          "pdf": "https://arxiv.org/pdf/2604.21284v1"
+        },
+        "arxiv_url": "https://arxiv.org/abs/2604.21284v1",
+        "pdf_url": "https://arxiv.org/pdf/2604.21284v1",
+        "eprint_url": "https://arxiv.org/pdf/2604.21284v1",
+        "pub_url": "https://arxiv.org/abs/2604.21284v1",
+        "snippet": "MemPalace is an open-source AI memory system that applies the ancient method of loci (memory palace) spatial metaphor to organize long-term memory for large language models; launched in April 2026, it",
+        "source": "arxiv",
+        "doi": "",
+        "venue": "arXiv",
+        "cited_by": 0
+      }
+    ],
+    "dedupe_key": "arxiv:2604 21284v1",
+    "seed_tags": [],
+    "tag_hints": {
+      "force_tinyml": false,
+      "require_power_tag": false
+    },
+    "primary_group": "A",
+    "filter_policy": "TH_CPL_AB_OR_ARXIV",
+    "filter_bucket": "arxiv",
+    "filter_reason": "matched_arxiv",
+    "matched_venue": "",
+    "matched_th_cpl_level": "",
+    "matched_th_cpl_area": "",
+    "matched_venue_type": "",
+    "venue_match": {
+      "matched": false,
+      "raw": "arXiv",
+      "normalized": "arxiv",
+      "normalized_candidates": [
+        "arxiv"
+      ],
+      "match": null
+    },
+    "arxiv_match": {
+      "matched": true,
+      "arxiv_id": "2604.21284v1",
+      "matched_urls": [
+        "https://arxiv.org/abs/2604.21284v1",
+        "https://arxiv.org/pdf/2604.21284v1"
+      ]
+    },
+    "is_in_arxiv": true,
+    "category": "Embedded AI Applications",
+    "llm_tags": [],
+    "final_tags": [],
+    "provider_used": "heuristic_fallback",
+    "classification_model": "hunyuan-2.0-instruct-20251111",
+    "classification_raw_response": {
+      "error": "TokenHub request failed with status 402: {\"error\":{\"message\":\"endpoint is inactive: FREE_QUOTA_EXHAUSTED\",\"code\":\"401008\",\"type\":\"gateway_error\",\"request_id\":\"224c1458-8047-4ebb-975a-e6bd01e0da71\"}}\n"
+    },
+    "checkpoint_saved_at": "2026-04-25T01:57:45.994Z"
+  },
+  "arxiv:2604 21893v1": {
+    "id": "829b3785a4d98128f65dde4bba7b6122da30efa0",
+    "source": "arxiv",
+    "title": "Revealing Geography-Driven Signals in Zone-Level Claim Frequency Models: An Empirical Study using Environmental and Visual Predictors",
+    "abstract": "Geographic context is often consider relevant to motor insurance risk, yet public actuarial datasets provide limited location identifiers, constraining how this information can be incorporated and evaluated in claim-frequency models. This study examines how geographic information from alternative data sources can be incorporated into actuarial models for Motor Third Party Liability (MTPL) claim prediction under such constraints.\n  Using the BeMTPL97 dataset, we adopt a zone-level modeling framework and evaluate predictive performance on unseen postcodes. Geographic information is introduced through two channels: environmental indicators from OpenStreetMap and CORINE Land Cover, and orthoimagery released by the Belgian National Geographic Institute for academic use. We evaluate the predictive contribution of coordinates, environmental features, and image embeddings across three baseline models: generalized linear models (GLMs), regularized GLMs, and gradient-boosted trees, while raw imagery is modeled using convolutional neural networks.\n  Our results show that augmenting actuarial variables with constructed geographic information improves accuracy. Across experiments, both linear and tree-based models benefit most from combining coordinates with environmental features extracted at 5 km scale, while smaller neighborhoods also improve baseline specifications. Generally, image embeddings do not improve performance when environmental features are available; however, when such features are absent, pretrained vision-transformer embeddings enhance accuracy and stability for regularized GLMs. Our results show that the predictive value of geographic information in zone-level MTPL frequency models depends less on model complexity than on how geography is represented, and illustrate that geographic context can be incorporated despite limited individual-level spatial information.",
+    "snippet": "Geographic context is often consider relevant to motor insurance risk, yet public actuarial datasets provide limited location identifiers, constraining how this information can be incorporated and eva",
+    "authors": [
+      "Sherly Alfonso-Sánchez",
+      "Cristián Bravo",
+      "Kristina G. Stankova"
+    ],
+    "venue": "arXiv",
+    "year": 2026,
+    "cited_by": 0,
+    "doi": "",
+    "arxiv_id": "2604.21893v1",
+    "urls": {
+      "arxiv": "https://arxiv.org/abs/2604.21893v1",
+      "pdf": "https://arxiv.org/pdf/2604.21893v1",
+      "paper": "https://arxiv.org/abs/2604.21893v1"
+    },
+    "scholar_url": "",
+    "pub_url": "https://arxiv.org/abs/2604.21893v1",
+    "eprint_url": "https://arxiv.org/pdf/2604.21893v1",
+    "container_type": "",
+    "query_useds": [],
+    "raw_group_hits": [
+      "A"
+    ],
+    "search_sets_raw": [
+      "A"
+    ],
+    "search_sets_final": [
+      "A"
+    ],
+    "post_filter": null,
+    "raw_payloads": [
+      {
+        "arxiv_id": "2604.21893v1",
+        "title": "Revealing Geography-Driven Signals in Zone-Level Claim Frequency Models: An Empirical Study using Environmental and Visual Predictors",
+        "abstract": "Geographic context is often consider relevant to motor insurance risk, yet public actuarial datasets provide limited location identifiers, constraining how this information can be incorporated and evaluated in claim-frequency models. This study examines how geographic information from alternative data sources can be incorporated into actuarial models for Motor Third Party Liability (MTPL) claim prediction under such constraints.\n  Using the BeMTPL97 dataset, we adopt a zone-level modeling framework and evaluate predictive performance on unseen postcodes. Geographic information is introduced through two channels: environmental indicators from OpenStreetMap and CORINE Land Cover, and orthoimagery released by the Belgian National Geographic Institute for academic use. We evaluate the predictive contribution of coordinates, environmental features, and image embeddings across three baseline models: generalized linear models (GLMs), regularized GLMs, and gradient-boosted trees, while raw imagery is modeled using convolutional neural networks.\n  Our results show that augmenting actuarial variables with constructed geographic information improves accuracy. Across experiments, both linear and tree-based models benefit most from combining coordinates with environmental features extracted at 5 km scale, while smaller neighborhoods also improve baseline specifications. Generally, image embeddings do not improve performance when environmental features are available; however, when such features are absent, pretrained vision-transformer embeddings enhance accuracy and stability for regularized GLMs. Our results show that the predictive value of geographic information in zone-level MTPL frequency models depends less on model complexity than on how geography is represented, and illustrate that geographic context can be incorporated despite limited individual-level spatial information.",
+        "authors": [
+          "Sherly Alfonso-Sánchez",
+          "Cristián Bravo",
+          "Kristina G. Stankova"
+        ],
+        "year": 2026,
+        "month": 4,
+        "published": "2026-04-23T17:44:52Z",
+        "updated": "2026-04-23T17:44:52Z",
+        "urls": {
+          "arxiv": "https://arxiv.org/abs/2604.21893v1",
+          "pdf": "https://arxiv.org/pdf/2604.21893v1"
+        },
+        "arxiv_url": "https://arxiv.org/abs/2604.21893v1",
+        "pdf_url": "https://arxiv.org/pdf/2604.21893v1",
+        "eprint_url": "https://arxiv.org/pdf/2604.21893v1",
+        "pub_url": "https://arxiv.org/abs/2604.21893v1",
+        "snippet": "Geographic context is often consider relevant to motor insurance risk, yet public actuarial datasets provide limited location identifiers, constraining how this information can be incorporated and eva",
+        "source": "arxiv",
+        "doi": "",
+        "venue": "arXiv",
+        "cited_by": 0
+      }
+    ],
+    "dedupe_key": "arxiv:2604 21893v1",
+    "seed_tags": [],
+    "tag_hints": {
+      "force_tinyml": false,
+      "require_power_tag": false
+    },
+    "primary_group": "A",
+    "filter_policy": "TH_CPL_AB_OR_ARXIV",
+    "filter_bucket": "arxiv",
+    "filter_reason": "matched_arxiv",
+    "matched_venue": "",
+    "matched_th_cpl_level": "",
+    "matched_th_cpl_area": "",
+    "matched_venue_type": "",
+    "venue_match": {
+      "matched": false,
+      "raw": "arXiv",
+      "normalized": "arxiv",
+      "normalized_candidates": [
+        "arxiv"
+      ],
+      "match": null
+    },
+    "arxiv_match": {
+      "matched": true,
+      "arxiv_id": "2604.21893v1",
+      "matched_urls": [
+        "https://arxiv.org/abs/2604.21893v1",
+        "https://arxiv.org/pdf/2604.21893v1"
+      ]
+    },
+    "is_in_arxiv": true,
+    "category": "Embedded AI Applications",
+    "llm_tags": [],
+    "final_tags": [],
+    "provider_used": "heuristic_fallback",
+    "classification_model": "hunyuan-2.0-instruct-20251111",
+    "classification_raw_response": {
+      "error": "TokenHub request failed with status 402: {\"error\":{\"message\":\"endpoint is inactive: FREE_QUOTA_EXHAUSTED\",\"code\":\"401008\",\"type\":\"gateway_error\",\"request_id\":\"82c6de9c-f557-4618-bd64-e95d9f244f85\"}}\n"
+    },
+    "checkpoint_saved_at": "2026-04-25T01:57:46.133Z"
+  },
+  "arxiv:2604 20331v2": {
+    "id": "00eb5132cf6f89b50ec03822148d1a452a7e4880",
+    "source": "arxiv",
+    "title": "Surrogate modeling for interpreting black-box LLMs in medical predictions",
+    "abstract": "Large language models (LLMs), trained on vast datasets, encode extensive real-world knowledge within their parameters, yet their black-box nature obscures the mechanisms and extent of this encoding. Surrogate modeling, which uses simplified models to approximate complex systems, can offer a path toward better interpretability of black-box models. We propose a surrogate modeling framework that quantitatively explains LLM-encoded knowledge. For a specific hypothesis derived from domain knowledge, this framework approximates the latent LLM knowledge space using observable elements (input-output pairs) through extensive prompting across a comprehensive range of simulated scenarios. Through proof-of-concept experiments in medical predictions, we demonstrate our framework's effectiveness in revealing the extent to which LLMs \"perceive\" each input variable in relation to the output. Particularly, given concerns that LLMs may perpetuate inaccuracies and societal biases embedded in their training data, our experiments using this framework quantitatively revealed both associations that contradict established medical knowledge and the persistence of scientifically refuted racial assumptions within LLM-encoded knowledge. By disclosing these issues, our framework can act as a red-flag indicator to support the safe and reliable application of these models.",
+    "snippet": "Large language models (LLMs), trained on vast datasets, encode extensive real-world knowledge within their parameters, yet their black-box nature obscures the mechanisms and extent of this encoding. S",
+    "authors": [
+      "Changho Han",
+      "Songsoo Kim",
+      "Dong Won Kim",
+      "Leo Anthony Celi",
+      "Jaewoong Kim",
+      "SungA Bae",
+      "Dukyong Yoon"
+    ],
+    "venue": "arXiv",
+    "year": 2026,
+    "cited_by": 0,
+    "doi": "",
+    "arxiv_id": "2604.20331v2",
+    "urls": {
+      "arxiv": "https://arxiv.org/abs/2604.20331v2",
+      "pdf": "https://arxiv.org/pdf/2604.20331v2",
+      "paper": "https://arxiv.org/abs/2604.20331v2"
+    },
+    "scholar_url": "",
+    "pub_url": "https://arxiv.org/abs/2604.20331v2",
+    "eprint_url": "https://arxiv.org/pdf/2604.20331v2",
+    "container_type": "",
+    "query_useds": [],
+    "raw_group_hits": [
+      "A"
+    ],
+    "search_sets_raw": [
+      "A"
+    ],
+    "search_sets_final": [
+      "A"
+    ],
+    "post_filter": null,
+    "raw_payloads": [
+      {
+        "arxiv_id": "2604.20331v2",
+        "title": "Surrogate modeling for interpreting black-box LLMs in medical predictions",
+        "abstract": "Large language models (LLMs), trained on vast datasets, encode extensive real-world knowledge within their parameters, yet their black-box nature obscures the mechanisms and extent of this encoding. Surrogate modeling, which uses simplified models to approximate complex systems, can offer a path toward better interpretability of black-box models. We propose a surrogate modeling framework that quantitatively explains LLM-encoded knowledge. For a specific hypothesis derived from domain knowledge, this framework approximates the latent LLM knowledge space using observable elements (input-output pairs) through extensive prompting across a comprehensive range of simulated scenarios. Through proof-of-concept experiments in medical predictions, we demonstrate our framework's effectiveness in revealing the extent to which LLMs \"perceive\" each input variable in relation to the output. Particularly, given concerns that LLMs may perpetuate inaccuracies and societal biases embedded in their training data, our experiments using this framework quantitatively revealed both associations that contradict established medical knowledge and the persistence of scientifically refuted racial assumptions within LLM-encoded knowledge. By disclosing these issues, our framework can act as a red-flag indicator to support the safe and reliable application of these models.",
+        "authors": [
+          "Changho Han",
+          "Songsoo Kim",
+          "Dong Won Kim",
+          "Leo Anthony Celi",
+          "Jaewoong Kim",
+          "SungA Bae",
+          "Dukyong Yoon"
+        ],
+        "year": 2026,
+        "month": 4,
+        "published": "2026-04-22T08:26:23Z",
+        "updated": "2026-04-23T03:15:21Z",
+        "urls": {
+          "arxiv": "https://arxiv.org/abs/2604.20331v2",
+          "pdf": "https://arxiv.org/pdf/2604.20331v2"
+        },
+        "arxiv_url": "https://arxiv.org/abs/2604.20331v2",
+        "pdf_url": "https://arxiv.org/pdf/2604.20331v2",
+        "eprint_url": "https://arxiv.org/pdf/2604.20331v2",
+        "pub_url": "https://arxiv.org/abs/2604.20331v2",
+        "snippet": "Large language models (LLMs), trained on vast datasets, encode extensive real-world knowledge within their parameters, yet their black-box nature obscures the mechanisms and extent of this encoding. S",
+        "source": "arxiv",
+        "doi": "",
+        "venue": "arXiv",
+        "cited_by": 0
+      }
+    ],
+    "dedupe_key": "arxiv:2604 20331v2",
+    "seed_tags": [],
+    "tag_hints": {
+      "force_tinyml": false,
+      "require_power_tag": false
+    },
+    "primary_group": "A",
+    "filter_policy": "TH_CPL_AB_OR_ARXIV",
+    "filter_bucket": "arxiv",
+    "filter_reason": "matched_arxiv",
+    "matched_venue": "",
+    "matched_th_cpl_level": "",
+    "matched_th_cpl_area": "",
+    "matched_venue_type": "",
+    "venue_match": {
+      "matched": false,
+      "raw": "arXiv",
+      "normalized": "arxiv",
+      "normalized_candidates": [
+        "arxiv"
+      ],
+      "match": null
+    },
+    "arxiv_match": {
+      "matched": true,
+      "arxiv_id": "2604.20331v2",
+      "matched_urls": [
+        "https://arxiv.org/abs/2604.20331v2",
+        "https://arxiv.org/pdf/2604.20331v2"
+      ]
+    },
+    "is_in_arxiv": true,
+    "category": "Embedded AI Applications",
+    "llm_tags": [],
+    "final_tags": [],
+    "provider_used": "heuristic_fallback",
+    "classification_model": "hunyuan-2.0-instruct-20251111",
+    "classification_raw_response": {
+      "error": "TokenHub request failed with status 402: {\"error\":{\"message\":\"endpoint is inactive: FREE_QUOTA_EXHAUSTED\",\"code\":\"401008\",\"type\":\"gateway_error\",\"request_id\":\"54f94975-b712-4cde-82e2-43cb5cda52f0\"}}\n"
+    },
+    "checkpoint_saved_at": "2026-04-25T01:57:46.311Z"
+  },
+  "arxiv:2604 21094v1": {
+    "id": "3d39525208333a3726f2ac6a98433244e6184973",
+    "source": "arxiv",
+    "title": "Spectral Embeddings Leak Graph Topology: Theory, Benchmark, and Adaptive Reconstruction",
+    "abstract": "Graph Neural Networks (GNNs) excel on relational data, but standard benchmarks unrealistically assume the graph is centrally available. In practice, settings such as Federated Graph Learning, distributed systems, and privacy-sensitive applications involve graph data that are localized, fragmented, noisy, and privacy-leaking. We present a unified framework for this setting. We introduce LoGraB (Local Graph Benchmark), which decomposes standard datasets into fragmented benchmarks using three strategies and four controls: neighborhood radius $d$, spectral quality $k$, noise level $σ$, and coverage ratio $p$. LoGraB supports graph reconstruction, localized node classification, and inter-fragment link prediction, with Island Cohesion. We propose AFR (Adaptive Fidelity-driven Reconstruction), a method for noisy spectral fragments. AFR scores patch quality via a fidelity measure combining a gap-to-truncation stability ratio and structural entropy, then assembles fragments using RANSAC-Procrustes alignment, adaptive stitching, and Bundle Adjustment. Rather than forcing a single global graph, AFR recovers large faithful islands. We prove heat-kernel edge recovery under a separation condition, Davis--Kahan perturbation stability, and bounded alignment error. We establish a Spectral Leakage Proposition: under a spectral-gap assumption, polynomial-time Bayesian recovery is feasible once enough eigenvectors are shared, complementing AFR's deterministic guarantees. Experiments on nine benchmarks show that LoGraB reveals model strengths and weaknesses under fragmentation, AFR achieves the best F1 on 7/9 datasets, and under per-embedding $(ε,δ)$-Gaussian differential privacy, AFR retains 75% of its undefended F1 at $ε=2$. Our anonymous code is available at https://anonymous.4open.science/r/JMLR_submission",
+    "snippet": "Graph Neural Networks (GNNs) excel on relational data, but standard benchmarks unrealistically assume the graph is centrally available. In practice, settings such as Federated Graph Learning, distribu",
+    "authors": [
+      "Thinh Nguyen-Cong",
+      "Truong-Son Hy",
+      "Thang N. Dinh"
+    ],
+    "venue": "arXiv",
+    "year": 2026,
+    "cited_by": 0,
+    "doi": "",
+    "arxiv_id": "2604.21094v1",
+    "urls": {
+      "arxiv": "https://arxiv.org/abs/2604.21094v1",
+      "pdf": "https://arxiv.org/pdf/2604.21094v1",
+      "paper": "https://arxiv.org/abs/2604.21094v1"
+    },
+    "scholar_url": "",
+    "pub_url": "https://arxiv.org/abs/2604.21094v1",
+    "eprint_url": "https://arxiv.org/pdf/2604.21094v1",
+    "container_type": "",
+    "query_useds": [],
+    "raw_group_hits": [
+      "A"
+    ],
+    "search_sets_raw": [
+      "A"
+    ],
+    "search_sets_final": [
+      "A"
+    ],
+    "post_filter": null,
+    "raw_payloads": [
+      {
+        "arxiv_id": "2604.21094v1",
+        "title": "Spectral Embeddings Leak Graph Topology: Theory, Benchmark, and Adaptive Reconstruction",
+        "abstract": "Graph Neural Networks (GNNs) excel on relational data, but standard benchmarks unrealistically assume the graph is centrally available. In practice, settings such as Federated Graph Learning, distributed systems, and privacy-sensitive applications involve graph data that are localized, fragmented, noisy, and privacy-leaking. We present a unified framework for this setting. We introduce LoGraB (Local Graph Benchmark), which decomposes standard datasets into fragmented benchmarks using three strategies and four controls: neighborhood radius $d$, spectral quality $k$, noise level $σ$, and coverage ratio $p$. LoGraB supports graph reconstruction, localized node classification, and inter-fragment link prediction, with Island Cohesion. We propose AFR (Adaptive Fidelity-driven Reconstruction), a method for noisy spectral fragments. AFR scores patch quality via a fidelity measure combining a gap-to-truncation stability ratio and structural entropy, then assembles fragments using RANSAC-Procrustes alignment, adaptive stitching, and Bundle Adjustment. Rather than forcing a single global graph, AFR recovers large faithful islands. We prove heat-kernel edge recovery under a separation condition, Davis--Kahan perturbation stability, and bounded alignment error. We establish a Spectral Leakage Proposition: under a spectral-gap assumption, polynomial-time Bayesian recovery is feasible once enough eigenvectors are shared, complementing AFR's deterministic guarantees. Experiments on nine benchmarks show that LoGraB reveals model strengths and weaknesses under fragmentation, AFR achieves the best F1 on 7/9 datasets, and under per-embedding $(ε,δ)$-Gaussian differential privacy, AFR retains 75% of its undefended F1 at $ε=2$. Our anonymous code is available at https://anonymous.4open.science/r/JMLR_submission",
+        "authors": [
+          "Thinh Nguyen-Cong",
+          "Truong-Son Hy",
+          "Thang N. Dinh"
+        ],
+        "year": 2026,
+        "month": 4,
+        "published": "2026-04-22T21:31:32Z",
+        "updated": "2026-04-22T21:31:32Z",
+        "urls": {
+          "arxiv": "https://arxiv.org/abs/2604.21094v1",
+          "pdf": "https://arxiv.org/pdf/2604.21094v1"
+        },
+        "arxiv_url": "https://arxiv.org/abs/2604.21094v1",
+        "pdf_url": "https://arxiv.org/pdf/2604.21094v1",
+        "eprint_url": "https://arxiv.org/pdf/2604.21094v1",
+        "pub_url": "https://arxiv.org/abs/2604.21094v1",
+        "snippet": "Graph Neural Networks (GNNs) excel on relational data, but standard benchmarks unrealistically assume the graph is centrally available. In practice, settings such as Federated Graph Learning, distribu",
+        "source": "arxiv",
+        "doi": "",
+        "venue": "arXiv",
+        "cited_by": 0
+      }
+    ],
+    "dedupe_key": "arxiv:2604 21094v1",
+    "seed_tags": [],
+    "tag_hints": {
+      "force_tinyml": false,
+      "require_power_tag": false
+    },
+    "primary_group": "A",
+    "filter_policy": "TH_CPL_AB_OR_ARXIV",
+    "filter_bucket": "arxiv",
+    "filter_reason": "matched_arxiv",
+    "matched_venue": "",
+    "matched_th_cpl_level": "",
+    "matched_th_cpl_area": "",
+    "matched_venue_type": "",
+    "venue_match": {
+      "matched": false,
+      "raw": "arXiv",
+      "normalized": "arxiv",
+      "normalized_candidates": [
+        "arxiv"
+      ],
+      "match": null
+    },
+    "arxiv_match": {
+      "matched": true,
+      "arxiv_id": "2604.21094v1",
+      "matched_urls": [
+        "https://arxiv.org/abs/2604.21094v1",
+        "https://arxiv.org/pdf/2604.21094v1"
+      ]
+    },
+    "is_in_arxiv": true,
+    "category": "Embedded AI Applications",
+    "llm_tags": [],
+    "final_tags": [],
+    "provider_used": "heuristic_fallback",
+    "classification_model": "hunyuan-2.0-instruct-20251111",
+    "classification_raw_response": {
+      "error": "TokenHub request failed with status 402: {\"error\":{\"message\":\"endpoint is inactive: FREE_QUOTA_EXHAUSTED\",\"code\":\"401008\",\"type\":\"gateway_error\",\"request_id\":\"24350dcd-7cee-4992-af64-e0ff0ef20ecc\"}}\n"
+    },
+    "checkpoint_saved_at": "2026-04-25T01:57:46.431Z"
+  },
+  "arxiv:2604 21197v1": {
+    "id": "cd29dabcdf1002977dda597e199576690ed54817",
+    "source": "arxiv",
+    "title": "Toward Efficient Membership Inference Attacks against Federated Large Language Models: A Projection Residual Approach",
+    "abstract": "Federated Large Language Models (FedLLMs) enable multiple parties to collaboratively fine-tune LLMs without sharing raw data, addressing challenges of limited resources and privacy concerns. Despite data localization, shared gradients can still expose sensitive information through membership inference attacks (MIAs). However, FedLLMs' unique properties, i.e. massive parameter scales, rapid convergence, and sparse, non-orthogonal gradients, render existing MIAs ineffective. To address this gap, we propose ProjRes, the first projection residuals-based passive MIA tailored for FedLLMs. ProjRes leverages hidden embedding vectors as sample representations and analyzes their projection residuals on the gradient subspace to uncover the intrinsic link between gradients and inputs. It requires no shadow models, auxiliary classifiers, or historical updates, ensuring efficiency and robustness. Experiments on four benchmarks and four LLMs show that ProjRes achieves near 100% accuracy, outperforming prior methods by up to 75.75%, and remains effective even under strong differential privacy defenses. Our findings reveal a previously overlooked privacy vulnerability in FedLLMs and call for a re-examination of their security assumptions. Our code and data are available at $\\href{https://anonymous.4open.science/r/Passive-MIA-5268}{link}$.",
+    "snippet": "Federated Large Language Models (FedLLMs) enable multiple parties to collaboratively fine-tune LLMs without sharing raw data, addressing challenges of limited resources and privacy concerns. Despite d",
+    "authors": [
+      "Guilin Deng",
+      "Silong Chen",
+      "Yuchuan Luo",
+      "Yi Liu",
+      "Songlei Wang",
+      "Zhiping Cai",
+      "Lin Liu",
+      "Xiaohua Jia",
+      "Shaojing Fu"
+    ],
+    "venue": "arXiv",
+    "year": 2026,
+    "cited_by": 0,
+    "doi": "",
+    "arxiv_id": "2604.21197v1",
+    "urls": {
+      "arxiv": "https://arxiv.org/abs/2604.21197v1",
+      "pdf": "https://arxiv.org/pdf/2604.21197v1",
+      "paper": "https://arxiv.org/abs/2604.21197v1"
+    },
+    "scholar_url": "",
+    "pub_url": "https://arxiv.org/abs/2604.21197v1",
+    "eprint_url": "https://arxiv.org/pdf/2604.21197v1",
+    "container_type": "",
+    "query_useds": [],
+    "raw_group_hits": [
+      "A"
+    ],
+    "search_sets_raw": [
+      "A"
+    ],
+    "search_sets_final": [
+      "A"
+    ],
+    "post_filter": null,
+    "raw_payloads": [
+      {
+        "arxiv_id": "2604.21197v1",
+        "title": "Toward Efficient Membership Inference Attacks against Federated Large Language Models: A Projection Residual Approach",
+        "abstract": "Federated Large Language Models (FedLLMs) enable multiple parties to collaboratively fine-tune LLMs without sharing raw data, addressing challenges of limited resources and privacy concerns. Despite data localization, shared gradients can still expose sensitive information through membership inference attacks (MIAs). However, FedLLMs' unique properties, i.e. massive parameter scales, rapid convergence, and sparse, non-orthogonal gradients, render existing MIAs ineffective. To address this gap, we propose ProjRes, the first projection residuals-based passive MIA tailored for FedLLMs. ProjRes leverages hidden embedding vectors as sample representations and analyzes their projection residuals on the gradient subspace to uncover the intrinsic link between gradients and inputs. It requires no shadow models, auxiliary classifiers, or historical updates, ensuring efficiency and robustness. Experiments on four benchmarks and four LLMs show that ProjRes achieves near 100% accuracy, outperforming prior methods by up to 75.75%, and remains effective even under strong differential privacy defenses. Our findings reveal a previously overlooked privacy vulnerability in FedLLMs and call for a re-examination of their security assumptions. Our code and data are available at $\\href{https://anonymous.4open.science/r/Passive-MIA-5268}{link}$.",
+        "authors": [
+          "Guilin Deng",
+          "Silong Chen",
+          "Yuchuan Luo",
+          "Yi Liu",
+          "Songlei Wang",
+          "Zhiping Cai",
+          "Lin Liu",
+          "Xiaohua Jia",
+          "Shaojing Fu"
+        ],
+        "year": 2026,
+        "month": 4,
+        "published": "2026-04-23T01:44:04Z",
+        "updated": "2026-04-23T01:44:04Z",
+        "urls": {
+          "arxiv": "https://arxiv.org/abs/2604.21197v1",
+          "pdf": "https://arxiv.org/pdf/2604.21197v1"
+        },
+        "arxiv_url": "https://arxiv.org/abs/2604.21197v1",
+        "pdf_url": "https://arxiv.org/pdf/2604.21197v1",
+        "eprint_url": "https://arxiv.org/pdf/2604.21197v1",
+        "pub_url": "https://arxiv.org/abs/2604.21197v1",
+        "snippet": "Federated Large Language Models (FedLLMs) enable multiple parties to collaboratively fine-tune LLMs without sharing raw data, addressing challenges of limited resources and privacy concerns. Despite d",
+        "source": "arxiv",
+        "doi": "",
+        "venue": "arXiv",
+        "cited_by": 0
+      }
+    ],
+    "dedupe_key": "arxiv:2604 21197v1",
+    "seed_tags": [],
+    "tag_hints": {
+      "force_tinyml": false,
+      "require_power_tag": false
+    },
+    "primary_group": "A",
+    "filter_policy": "TH_CPL_AB_OR_ARXIV",
+    "filter_bucket": "arxiv",
+    "filter_reason": "matched_arxiv",
+    "matched_venue": "",
+    "matched_th_cpl_level": "",
+    "matched_th_cpl_area": "",
+    "matched_venue_type": "",
+    "venue_match": {
+      "matched": false,
+      "raw": "arXiv",
+      "normalized": "arxiv",
+      "normalized_candidates": [
+        "arxiv"
+      ],
+      "match": null
+    },
+    "arxiv_match": {
+      "matched": true,
+      "arxiv_id": "2604.21197v1",
+      "matched_urls": [
+        "https://arxiv.org/abs/2604.21197v1",
+        "https://arxiv.org/pdf/2604.21197v1"
+      ]
+    },
+    "is_in_arxiv": true,
+    "category": "Efficient Model Design and Optimization",
+    "llm_tags": [],
+    "final_tags": [],
+    "provider_used": "heuristic_fallback",
+    "classification_model": "hunyuan-2.0-instruct-20251111",
+    "classification_raw_response": {
+      "error": "TokenHub request failed with status 402: {\"error\":{\"message\":\"endpoint is inactive: FREE_QUOTA_EXHAUSTED\",\"code\":\"401008\",\"type\":\"gateway_error\",\"request_id\":\"71228f51-01f1-477f-aecc-68dd3378502f\"}}\n"
+    },
+    "checkpoint_saved_at": "2026-04-25T01:57:46.563Z"
+  },
+  "arxiv:2604 21696v1": {
+    "id": "c2b7f47bf047d72aa8ddf92a09e9617657a920cd",
+    "source": "arxiv",
+    "title": "Towards Universal Tabular Embeddings: A Benchmark Across Data Tasks",
+    "abstract": "Tabular foundation models aim to learn universal representations of tabular data that transfer across tasks and domains, enabling applications such as table retrieval, semantic search and table-based prediction. Despite the growing number of such models, it remains unclear which approach works best in practice, as existing methods are often evaluated under task-specific settings that make direct comparison difficult. To address this, we introduce TEmBed, the Tabular Embedding Test Bed, a comprehensive benchmark for systematically evaluating tabular embeddings across four representation levels: cell, row, column, and table. Evaluating a diverse set of tabular representation learning models, we show that which model to use depends on the task and representation level. Our results offer practical guidance for selecting tabular embeddings in real-world applications and lay the groundwork for developing more general-purpose tabular representation models.",
+    "snippet": "Tabular foundation models aim to learn universal representations of tabular data that transfer across tasks and domains, enabling applications such as table retrieval, semantic search and table-based",
+    "authors": [
+      "Liane Vogel",
+      "Kavitha Srinivas",
+      "Niharika D'Souza",
+      "Sola Shirai",
+      "Oktie Hassanzadeh",
+      "Horst Samulowitz"
+    ],
+    "venue": "arXiv",
+    "year": 2026,
+    "cited_by": 0,
+    "doi": "",
+    "arxiv_id": "2604.21696v1",
+    "urls": {
+      "arxiv": "https://arxiv.org/abs/2604.21696v1",
+      "pdf": "https://arxiv.org/pdf/2604.21696v1",
+      "paper": "https://arxiv.org/abs/2604.21696v1"
+    },
+    "scholar_url": "",
+    "pub_url": "https://arxiv.org/abs/2604.21696v1",
+    "eprint_url": "https://arxiv.org/pdf/2604.21696v1",
+    "container_type": "",
+    "query_useds": [],
+    "raw_group_hits": [
+      "A"
+    ],
+    "search_sets_raw": [
+      "A"
+    ],
+    "search_sets_final": [
+      "A"
+    ],
+    "post_filter": null,
+    "raw_payloads": [
+      {
+        "arxiv_id": "2604.21696v1",
+        "title": "Towards Universal Tabular Embeddings: A Benchmark Across Data Tasks",
+        "abstract": "Tabular foundation models aim to learn universal representations of tabular data that transfer across tasks and domains, enabling applications such as table retrieval, semantic search and table-based prediction. Despite the growing number of such models, it remains unclear which approach works best in practice, as existing methods are often evaluated under task-specific settings that make direct comparison difficult. To address this, we introduce TEmBed, the Tabular Embedding Test Bed, a comprehensive benchmark for systematically evaluating tabular embeddings across four representation levels: cell, row, column, and table. Evaluating a diverse set of tabular representation learning models, we show that which model to use depends on the task and representation level. Our results offer practical guidance for selecting tabular embeddings in real-world applications and lay the groundwork for developing more general-purpose tabular representation models.",
+        "authors": [
+          "Liane Vogel",
+          "Kavitha Srinivas",
+          "Niharika D'Souza",
+          "Sola Shirai",
+          "Oktie Hassanzadeh",
+          "Horst Samulowitz"
+        ],
+        "year": 2026,
+        "month": 4,
+        "published": "2026-04-23T14:05:38Z",
+        "updated": "2026-04-23T14:05:38Z",
+        "urls": {
+          "arxiv": "https://arxiv.org/abs/2604.21696v1",
+          "pdf": "https://arxiv.org/pdf/2604.21696v1"
+        },
+        "arxiv_url": "https://arxiv.org/abs/2604.21696v1",
+        "pdf_url": "https://arxiv.org/pdf/2604.21696v1",
+        "eprint_url": "https://arxiv.org/pdf/2604.21696v1",
+        "pub_url": "https://arxiv.org/abs/2604.21696v1",
+        "snippet": "Tabular foundation models aim to learn universal representations of tabular data that transfer across tasks and domains, enabling applications such as table retrieval, semantic search and table-based ",
+        "source": "arxiv",
+        "doi": "",
+        "venue": "arXiv",
+        "cited_by": 0
+      }
+    ],
+    "dedupe_key": "arxiv:2604 21696v1",
+    "seed_tags": [],
+    "tag_hints": {
+      "force_tinyml": false,
+      "require_power_tag": false
+    },
+    "primary_group": "A",
+    "filter_policy": "TH_CPL_AB_OR_ARXIV",
+    "filter_bucket": "arxiv",
+    "filter_reason": "matched_arxiv",
+    "matched_venue": "",
+    "matched_th_cpl_level": "",
+    "matched_th_cpl_area": "",
+    "matched_venue_type": "",
+    "venue_match": {
+      "matched": false,
+      "raw": "arXiv",
+      "normalized": "arxiv",
+      "normalized_candidates": [
+        "arxiv"
+      ],
+      "match": null
+    },
+    "arxiv_match": {
+      "matched": true,
+      "arxiv_id": "2604.21696v1",
+      "matched_urls": [
+        "https://arxiv.org/abs/2604.21696v1",
+        "https://arxiv.org/pdf/2604.21696v1"
+      ]
+    },
+    "is_in_arxiv": true,
+    "category": "Embedded AI Applications",
+    "llm_tags": [],
+    "final_tags": [],
+    "provider_used": "heuristic_fallback",
+    "classification_model": "hunyuan-2.0-instruct-20251111",
+    "classification_raw_response": {
+      "error": "TokenHub request failed with status 402: {\"error\":{\"message\":\"endpoint is inactive: FREE_QUOTA_EXHAUSTED\",\"code\":\"401008\",\"type\":\"gateway_error\",\"request_id\":\"0649b85f-e8c8-4f38-a75d-12a3713d2919\"}}\n"
+    },
+    "checkpoint_saved_at": "2026-04-25T01:57:46.627Z"
+  },
+  "arxiv:2604 21761v1": {
+    "id": "1a14808c0d10e4d699a9a0bf7ffe42a6c05b0fbc",
+    "source": "arxiv",
+    "title": "Transferable Physics-Informed Representations via Closed-Form Head Adaptation",
+    "abstract": "Physics-informed neural networks (PINNs) have garnered significant interest for their potential in solving partial differential equations (PDEs) that govern a wide range of physical phenomena. By incorporating physical laws into the learning process, PINN models have demonstrated the ability to learn physical outcomes reasonably well. However, current PINN approaches struggle to predict or solve new PDEs effectively when there is a lack of training examples, indicating they do not generalize well to unseen problem instances. In this paper, we present a transferable learning approach for PINNs premised on a fast Pseudoinverse PINN framework (Pi-PINN). Pi-PINN learns a transferable physics-informed representation in a shared embedding space and enables rapid solving of both known and unknown PDE instances via closed-form head adaptation using a least-squares-optimal pseudoinverse under PDE constraints. We further investigate the synergies between data-driven multi-task learning loss and physics-informed loss, providing insights into the design of more performant PINNs. We demonstrate the effectiveness of Pi-PINN on various PDE problems, including Poisson's equation, Helmholtz equation, and Burgers' equation, achieving fast and accurate physics-informed solutions without requiring any data for unseen instances. Pi-PINN can produce predictions 100-1000 times faster than a typical PINN, while producing predictions with 10-100 times lower relative error than a typical data-driven model even with only two training samples. Overall, our findings highlight the potential of transferable representations with closed-form head adaptation to enhance the efficiency and generalization of PINNs across PDE families and scientific and engineering applications.",
+    "snippet": "Physics-informed neural networks (PINNs) have garnered significant interest for their potential in solving partial differential equations (PDEs) that govern a wide range of physical phenomena. By inco",
+    "authors": [
+      "Jian Cheng Wong",
+      "Isaac Yin Chung Lai",
+      "Pao-Hsiung Chiu",
+      "Chin Chun Ooi",
+      "Abhishek Gupta",
+      "Yew-Soon Ong"
+    ],
+    "venue": "arXiv",
+    "year": 2026,
+    "cited_by": 0,
+    "doi": "",
+    "arxiv_id": "2604.21761v1",
+    "urls": {
+      "arxiv": "https://arxiv.org/abs/2604.21761v1",
+      "pdf": "https://arxiv.org/pdf/2604.21761v1",
+      "paper": "https://arxiv.org/abs/2604.21761v1"
+    },
+    "scholar_url": "",
+    "pub_url": "https://arxiv.org/abs/2604.21761v1",
+    "eprint_url": "https://arxiv.org/pdf/2604.21761v1",
+    "container_type": "",
+    "query_useds": [],
+    "raw_group_hits": [
+      "A"
+    ],
+    "search_sets_raw": [
+      "A"
+    ],
+    "search_sets_final": [
+      "A"
+    ],
+    "post_filter": null,
+    "raw_payloads": [
+      {
+        "arxiv_id": "2604.21761v1",
+        "title": "Transferable Physics-Informed Representations via Closed-Form Head Adaptation",
+        "abstract": "Physics-informed neural networks (PINNs) have garnered significant interest for their potential in solving partial differential equations (PDEs) that govern a wide range of physical phenomena. By incorporating physical laws into the learning process, PINN models have demonstrated the ability to learn physical outcomes reasonably well. However, current PINN approaches struggle to predict or solve new PDEs effectively when there is a lack of training examples, indicating they do not generalize well to unseen problem instances. In this paper, we present a transferable learning approach for PINNs premised on a fast Pseudoinverse PINN framework (Pi-PINN). Pi-PINN learns a transferable physics-informed representation in a shared embedding space and enables rapid solving of both known and unknown PDE instances via closed-form head adaptation using a least-squares-optimal pseudoinverse under PDE constraints. We further investigate the synergies between data-driven multi-task learning loss and physics-informed loss, providing insights into the design of more performant PINNs. We demonstrate the effectiveness of Pi-PINN on various PDE problems, including Poisson's equation, Helmholtz equation, and Burgers' equation, achieving fast and accurate physics-informed solutions without requiring any data for unseen instances. Pi-PINN can produce predictions 100-1000 times faster than a typical PINN, while producing predictions with 10-100 times lower relative error than a typical data-driven model even with only two training samples. Overall, our findings highlight the potential of transferable representations with closed-form head adaptation to enhance the efficiency and generalization of PINNs across PDE families and scientific and engineering applications.",
+        "authors": [
+          "Jian Cheng Wong",
+          "Isaac Yin Chung Lai",
+          "Pao-Hsiung Chiu",
+          "Chin Chun Ooi",
+          "Abhishek Gupta",
+          "Yew-Soon Ong"
+        ],
+        "year": 2026,
+        "month": 4,
+        "published": "2026-04-23T15:08:28Z",
+        "updated": "2026-04-23T15:08:28Z",
+        "urls": {
+          "arxiv": "https://arxiv.org/abs/2604.21761v1",
+          "pdf": "https://arxiv.org/pdf/2604.21761v1"
+        },
+        "arxiv_url": "https://arxiv.org/abs/2604.21761v1",
+        "pdf_url": "https://arxiv.org/pdf/2604.21761v1",
+        "eprint_url": "https://arxiv.org/pdf/2604.21761v1",
+        "pub_url": "https://arxiv.org/abs/2604.21761v1",
+        "snippet": "Physics-informed neural networks (PINNs) have garnered significant interest for their potential in solving partial differential equations (PDEs) that govern a wide range of physical phenomena. By inco",
+        "source": "arxiv",
+        "doi": "",
+        "venue": "arXiv",
+        "cited_by": 0
+      }
+    ],
+    "dedupe_key": "arxiv:2604 21761v1",
+    "seed_tags": [],
+    "tag_hints": {
+      "force_tinyml": false,
+      "require_power_tag": false
+    },
+    "primary_group": "A",
+    "filter_policy": "TH_CPL_AB_OR_ARXIV",
+    "filter_bucket": "arxiv",
+    "filter_reason": "matched_arxiv",
+    "matched_venue": "",
+    "matched_th_cpl_level": "",
+    "matched_th_cpl_area": "",
+    "matched_venue_type": "",
+    "venue_match": {
+      "matched": false,
+      "raw": "arXiv",
+      "normalized": "arxiv",
+      "normalized_candidates": [
+        "arxiv"
+      ],
+      "match": null
+    },
+    "arxiv_match": {
+      "matched": true,
+      "arxiv_id": "2604.21761v1",
+      "matched_urls": [
+        "https://arxiv.org/abs/2604.21761v1",
+        "https://arxiv.org/pdf/2604.21761v1"
+      ]
+    },
+    "is_in_arxiv": true,
+    "category": "Embedded AI Applications",
+    "llm_tags": [],
+    "final_tags": [],
+    "provider_used": "heuristic_fallback",
+    "classification_model": "hunyuan-2.0-instruct-20251111",
+    "classification_raw_response": {
+      "error": "TokenHub request failed with status 402: {\"error\":{\"message\":\"endpoint is inactive: FREE_QUOTA_EXHAUSTED\",\"code\":\"401008\",\"type\":\"gateway_error\",\"request_id\":\"74722276-cce0-4ee9-835a-229cf3eceb64\"}}\n"
+    },
+    "checkpoint_saved_at": "2026-04-25T01:57:46.949Z"
   }
 }
