@@ -486,6 +486,19 @@ async function executeSearchStep(cliOptions) {
       if (searchResult?.runMeta) {
         latestSearchMeta = searchResult.runMeta;
       }
+
+      // CRITICAL: Check if arXiv full search failed
+      const isFullSearchMode = cliOptions.forceFullSearch || !cliOptions.skipCache;
+      const arxivComplete = searchResult?.runMeta?.complete ?? true;
+      const failedGroups = searchResult?.runMeta?.failed_groups ?? [];
+
+      if (isFullSearchMode && !arxivComplete && failedGroups.length > 0) {
+        throw new Error(
+          `CRITICAL: arXiv full search incomplete | failed_groups: ${failedGroups.join(', ')} | ` +
+          `per_group_details: ${JSON.stringify(searchResult?.runMeta?.per_group)}. ` +
+          `Stopping pipeline - do not write output files or update watermark.`,
+        );
+      }
     }
 
     if (searchResult?.groupedData) {

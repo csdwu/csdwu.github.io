@@ -76,6 +76,8 @@ jobs:
 
           ARGS=(
             --source arxiv
+            --skip-arxiv-in-a
+            --refilter-all
           )
 
           if [ -n "$YEAR_LOW" ]; then
@@ -138,8 +140,20 @@ jobs:
             git add google_scholar_crawler/cache/normalized_papers.json
           fi
 
-          if [ -d "google_scholar_crawler/state" ]; then
-            git add -A google_scholar_crawler/state
+          if [ -f "google_scholar_crawler/state/last_search_state.json" ]; then
+            git add google_scholar_crawler/state/last_search_state.json
+          fi
+
+          if [ -f "google_scholar_crawler/state/classification_checkpoint.json" ]; then
+            git add google_scholar_crawler/state/classification_checkpoint.json
+          fi
+
+          if [ -f "google_scholar_crawler/state/download_state.json" ]; then
+            git add google_scholar_crawler/state/download_state.json
+          fi
+
+          if [ -f "google_scholar_crawler/state/download_quota.json" ]; then
+            git add google_scholar_crawler/state/download_quota.json
           fi
 
           if git diff --cached --quiet; then

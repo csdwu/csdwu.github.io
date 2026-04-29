@@ -473,12 +473,37 @@ def search_arxiv_full(
     year_low: Optional[int] = None,
     year_high: Optional[int] = None,
     updated_after: Optional[str] = None,
-) -> List[Dict[str, Any]]:
+) -> Dict[str, Any]:
     """
     Search arXiv with full pagination until all results are fetched or limit reached.
+    
+    Returns a dict with:
+    {
+        "papers": [...],
+        "complete": bool,
+        "total_available": int or None,
+        "fetched_count": int,
+        "failed_start": int or None,
+        "error": str or None
+    }
     """
     all_papers = []
     start_index = 0
+    total_available = None
+    failed_start = None
+    error_message = None
+
+    # Fetch total count first
+    try:
+        total_available = fetch_total_available(
+            query=query,
+            categories=categories,
+            year_low=year_low,
+            year_high=year_high,
+            updated_after=updated_after,
+        )
+    except Exception as e:
+        print(f"[arxiv_search] Warning: Could not fetch total count: {e}", file=sys.stderr)
 
     while True:
         if total_limit is not None and len(all_papers) >= total_limit:
@@ -503,10 +528,13 @@ def search_arxiv_full(
                 updated_after=updated_after,
             )
         except Exception as e:
+            error_str = str(e)
             print(
                 f"[arxiv_search] Failed to fetch page starting at {start_index}: {e}",
                 file=sys.stderr,
             )
+            failed_start = start_index
+            error_message = error_str
             break
 
         if not papers:
@@ -524,7 +552,22 @@ def search_arxiv_full(
             print(f"[arxiv_search] Sleeping {PAGE_SLEEP}s before next page...", file=sys.stderr)
             time.sleep(PAGE_SLEEP)
 
-    return all_papers
+    # Determine if this is a complete fetch
+    complete = True
+    if failed_start is not None:
+        complete = False
+    elif total_available is not None and total_limit is None and len(all_papers) < total_available:
+        # Fetched fewer papers than total available in unlimited full search
+        complete = False
+
+    return {
+        "papers": all_papers,
+        "complete": complete,
+        "total_available": total_available,
+        "fetched_count": len(all_papers),
+        "failed_start": failed_start,
+        "error": error_message,
+    }
 
 
 def main():
@@ -589,13 +632,25 @@ def main():
                     file=sys.stderr,
                 )
 
-        total_available = fetch_total_available(
+        print(
+            f"[arxiv_search] Sleeping {PAGE_SLEEP}s before paginated search...",
+            file=sys.stderr,
+        )
+        time.sleep(PAGE_SLEEP)
+
+        search_result = search_arxiv_full(
             query=args.query,
             categories=categories,
+            page_size=page_size,
+            total_limit=total_limit,
             year_low=args.year_low,
             year_high=args.year_high,
             updated_after=args.updated_after,
         )
+
+        papers = search_result.get("papers", [])
+        total_available = search_result.get("total_available")
+        complete = search_result.get("complete", False)
 
         if total_available is not None:
             print(
@@ -614,20 +669,21 @@ def main():
                 )
 
         print(
-            f"[arxiv_search] Sleeping {PAGE_SLEEP}s before paginated search...",
+            f"[arxiv_search] Fetched {len(papers)} papers (complete={complete}, total_available={total_available})",
             file=sys.stderr,
         )
-        time.sleep(PAGE_SLEEP)
 
-        papers = search_arxiv_full(
-            query=args.query,
-            categories=categories,
-            page_size=page_size,
-            total_limit=total_limit,
-            year_low=args.year_low,
-            year_high=args.year_high,
-            updated_after=args.updated_after,
-        )
+        # If this is a full search (no total_limit) and it's incomplete, exit with error
+        if total_limit is None and not complete:
+            error_msg = search_result.get("error", "Unknown error")
+            failed_start = search_result.get("failed_start")
+            print(
+                f"[arxiv_search] CRITICAL: Incomplete full search | "
+                f"fetched={len(papers)} | total_available={total_available} | "
+                f"failed_start={failed_start} | error={error_msg}",
+                file=sys.stderr,
+            )
+            sys.exit(1)
 
         result = {
             "papers": papers,
@@ -637,6 +693,9 @@ def main():
             "total_available": total_available,
             "page_size": page_size,
             "total_limit": total_limit,
+            "complete": complete,
+            "failed_start": search_result.get("failed_start"),
+            "error": search_result.get("error"),
             "year_low": args.year_low,
             "year_high": args.year_high,
             "updated_after": args.updated_after,

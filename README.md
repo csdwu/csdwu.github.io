@@ -62,36 +62,147 @@ Long-Term Usage：
     setx OPENROUTER_MODEL "openrouter/free"
     setx TENCENT_TOKENHUB_MODEL "hunyuan-2.0-instruct-20251111"
 ```
-After that, run:
+#### Daily update strategy (GitHub Actions)
+
+Daily GitHub Action uses arXiv as the search source, and enables `--skip-arxiv-in-a` and `--refilter-all` by default.
+
+This means:
+- arXiv is still used for discovery.
+- Papers that match raw group A cannot pass filtering by arXiv fallback alone.
+- A-related papers must match a real TH_CPL / THP_CPL venue.
+- B/C papers may still use arXiv fallback when no real venue is available, unless future rules change.
+
+#### Local full rebuild commands
+
+Without PDF download:
 
 ```bash
-npm run update-papers
+node scripts/embedded-ai/update-papers.mjs --source arxiv --force-full-search --year-low 2025 --skip-arxiv-in-a --refilter-all --skip-download --clear-cache 2>&1 | tee run_2025_full.log
 ```
 
-#### Default behavior (current)
-- Default source: arXiv (`--source arxiv`)
-- Default download mode: skip PDF download
-- Default search mode: incremental (when watermark exists)
+With PDF download:
 
-#### Incremental search state files
-- `google_scholar_crawler/state/last_search_state.json`: arXiv search watermark state
-- `google_scholar_crawler/state/classification_checkpoint.json`: classification checkpoint/cache
-- `google_scholar_crawler/cache/normalized_papers.json`: merged historical + incremental normalized papers
-
-#### Example commands
 ```bash
-# 1) Default incremental update
-npm run update-papers
-
-# 2) Incremental update with year window
-npm run update-papers -- --source arxiv --year-low 2024 --year-high 2026
-
-# 3) Force full search rebuild
-npm run update-papers -- --source arxiv --force-full-search
+node scripts/embedded-ai/update-papers.mjs --source arxiv --force-full-search --year-low 2025 --skip-arxiv-in-a --refilter-all --no-skip-download --clear-cache 2>&1 | tee run_2025_full.log
 ```
 
-#### Reset incremental watermark
-Delete `google_scholar_crawler/state/last_search_state.json` and run updater again.
+#### Local daily incremental simulation
+
+```bash
+node scripts/embedded-ai/update-papers.mjs --source arxiv --skip-arxiv-in-a --refilter-all --skip-download
+```
+
+#### Files that should be committed
+
+- `_data/embedded_ai_papers.json`
+- `artifacts/*.bib`
+- `google_scholar_crawler/cache/normalized_papers.json`
+- `google_scholar_crawler/state/last_search_state.json`
+- `google_scholar_crawler/state/classification_checkpoint.json`
+- `google_scholar_crawler/state/download_state.json` (if download step is used)
+- `google_scholar_crawler/state/download_quota.json` (if download step is used)
+
+#### Files that should NOT be committed
+
+- `google_scholar_crawler/cache/arxiv/*.json`
+- `google_scholar_crawler/state/source_stats.json`
+- `google_scholar_crawler/state/*.tmp`
+- `run_*.log`
+- `*.log`
+
+#### Why cache/state directories must not be globally ignored
+
+Do not ignore or delete the entire `google_scholar_crawler/cache` or `google_scholar_crawler/state` directories.
+
+Some files inside them are required for daily incremental updates:
+- `normalized_papers.json` keeps the canonical historical paper set.
+- `last_search_state.json` stores arXiv incremental watermarks.
+- `classification_checkpoint.json` caches classification results.
+
+#### Validation commands
+
+Filter bucket distribution:
+
+```bash
+jq '
+[
+    .categories[].papers[].filter_bucket
+]
+| group_by(.)
+| map({bucket: .[0], count: length})
+' _data/embedded_ai_papers.json
+```
+
+TH_CPL matched count:
+
+```bash
+jq '
+[
+    .categories[].papers[]
+    | select((.matched_th_cpl_level // "") != "")
+]
+| length
+' _data/embedded_ai_papers.json
+```
+
+Matched venue distribution:
+
+```bash
+jq '
+[
+    .categories[].papers[]
+    | select((.matched_venue // "") != "")
+    | .matched_venue
+]
+| group_by(.)
+| map({venue: .[0], count: length})
+| sort_by(-.count)
+' _data/embedded_ai_papers.json
+```
+
+Check source_stats total consistency with final output:
+
+```bash
+jq '.stats.after_filter, .stats.classification.total, .stats.source_stats.total_summary.total' _data/embedded_ai_papers.json
+```
+
+#### arXiv Full Search Semantics
+
+When using `--force-full-search`, the pipeline enforces **all-or-nothing semantics**:
+
+1. **Complete Success**: All three groups (A, B, C) fetch their complete result sets from arXiv. The watermark is updated, and output files are written.
+2. **Partial Failure**: If any group fails mid-pagination (e.g., arXiv API returns 503 errors after fetching 300 of 6469 papers), the pipeline **aborts entirely**:
+   - No watermark is updated
+   - No final JSON output is written
+   - No BibTeX artifacts are generated
+   - Exit code is non-zero
+   - Error details are logged including the failed group, page where failure occurred, and error message
+
+This prevents data corruption from partial results being silently accepted as complete.
+
+**Troubleshooting Partial Search Failures**:
+
+Detect if the pipeline failed due to incomplete search:
+
+```bash
+# Check last run log for CRITICAL arXiv messages
+grep "CRITICAL: Incomplete full search" run_2025_full.log
+
+# Check per-group completion status in logs
+grep "\[arxiv-bridge\].*failed" run_2025_full.log
+
+# Verify watermark was not updated after failed run
+cat google_scholar_crawler/state/last_search_state.json
+```
+
+If a full search fails, you have two options:
+
+1. **Retry the full search** later when the arXiv API is stable
+2. **Split by year range** to reduce pages per request:
+   ```bash
+   node scripts/embedded-ai/update-papers.mjs --source arxiv --force-full-search --year-low 2025 --year-high 2025 --skip-download --clear-cache
+   node scripts/embedded-ai/update-papers.mjs --source arxiv --force-full-search --year-low 2024 --year-high 2024 --skip-download
+   ```
 
 #### GitHub Actions
 - Workflow file: `.github/workflows/update-papers.yml`
@@ -100,8 +211,6 @@ Delete `google_scholar_crawler/state/last_search_state.json` and run updater aga
     - `year_high`
     - `total_limit`
     - `skip_download` (default `true`)
-
-To verify automatic runs, check the latest run in Actions and confirm logs include search mode (`full` / `incremental`) and updater summary.
 
 ### Acknowledgements
 

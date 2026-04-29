@@ -68,52 +68,30 @@ export function extractAllThCplVenues() {
 }
 
 /**
- * Checks if a paper is from arXiv.
- * Satisfies any of: source='arxiv', arxiv_id exists, urls.arxiv exists, venue='arXiv'
- * @param {object} paper Paper object
- * @returns {boolean}
- */
-export function isArxivPaper(paper = {}) {
-  const source = toTrimmedString(paper.source).toLowerCase();
-  if (source === 'arxiv') return true;
-
-  const arxivId = toTrimmedString(paper.arxiv_id);
-  if (arxivId) return true;
-
-  const arxivUrl = toTrimmedString(paper.urls?.arxiv ?? '');
-  if (arxivUrl) return true;
-
-  const venue = toTrimmedString(paper.venue);
-  if (venue.toLowerCase() === 'arxiv') return true;
-
-  const matchedVenue = toTrimmedString(paper.matched_venue);
-  if (matchedVenue.toLowerCase() === 'arxiv') return true;
-
-  return false;
-}
-
-/**
  * Normalizes a paper's venue to TH-CPL short form, other_venue, or unknown.
- * Priority: matched_venue (if TH-CPL) > venue > arxiv detection > unknown
+ * Priority:
+ * 1) matched_venue (non-empty)
+ * 2) venue (non-empty and not arxiv)
+ * 3) filter_bucket=arxiv OR source=arxiv
+ * 4) unknown
  * @param {object} paper Paper object
  * @returns {object} { type: 'arxiv' | 'th_cpl' | 'other_venue' | 'unknown', value: string }
  */
 export function normalizeVenue(paper = {}) {
-  // Check if arxiv
-  if (isArxivPaper(paper)) {
-    return { type: 'arxiv', value: 'arxiv' };
-  }
-
-  // Check matched_venue (should be TH-CPL short form if present)
   const matchedVenue = toTrimmedString(paper.matched_venue);
-  if (matchedVenue && matchedVenue.toLowerCase() !== 'arxiv' && matchedVenue !== 'unknown') {
+  if (matchedVenue && matchedVenue.toLowerCase() !== 'unknown') {
     return { type: 'th_cpl', value: matchedVenue };
   }
 
-  // Check venue field
   const venue = toTrimmedString(paper.venue);
-  if (venue && venue.toLowerCase() !== 'arxiv' && venue !== 'unknown') {
+  if (venue && venue.toLowerCase() !== 'arxiv' && venue.toLowerCase() !== 'unknown') {
     return { type: 'other_venue', value: venue };
+  }
+
+  const filterBucket = toTrimmedString(paper.filter_bucket).toLowerCase();
+  const source = toTrimmedString(paper.source).toLowerCase();
+  if (filterBucket === 'arxiv' || source === 'arxiv') {
+    return { type: 'arxiv', value: 'arxiv' };
   }
 
   return { type: 'unknown', value: 'unknown' };
@@ -194,7 +172,11 @@ export function computeSourceStats(papers = [], options = {}) {
       } else if (venueInfo.type === 'th_cpl') {
         groupStats.venues[venueInfo.value] = (groupStats.venues[venueInfo.value] ?? 0) + 1;
       } else if (venueInfo.type === 'other_venue') {
-        groupStats.other_venue += 1;
+        if (groupStats.venues[venueInfo.value] != null) {
+          groupStats.venues[venueInfo.value] += 1;
+        } else {
+          groupStats.other_venue += 1;
+        }
       } else {
         groupStats.unknown += 1;
       }
@@ -206,7 +188,11 @@ export function computeSourceStats(papers = [], options = {}) {
       } else if (venueInfo.type === 'th_cpl') {
         stats.total_summary.venues[venueInfo.value] = (stats.total_summary.venues[venueInfo.value] ?? 0) + 1;
       } else if (venueInfo.type === 'other_venue') {
-        stats.total_summary.other_venue += 1;
+        if (stats.total_summary.venues[venueInfo.value] != null) {
+          stats.total_summary.venues[venueInfo.value] += 1;
+        } else {
+          stats.total_summary.other_venue += 1;
+        }
       } else {
         stats.total_summary.unknown += 1;
       }

@@ -70,6 +70,22 @@
   .embedded-ai-tag--applications { background: #ffe9ef; color: #b4235c; }
   .embedded-ai-tag--default { background: #f2f4f7; color: #475467; }
 
+  .embedded-ai-venue {
+    display: inline-block;
+    padding: 0.2rem 0.6rem;
+    border-radius: 4px;
+    font-size: 0.78rem;
+    font-weight: 600;
+    line-height: 1.4;
+    vertical-align: middle;
+    white-space: nowrap;
+  }
+
+  .embedded-ai-venue--a { background: #dcfce7; color: #166534; }
+  .embedded-ai-venue--b { background: #fce7f3; color: #be185d; }
+  .embedded-ai-venue--c { background: #fed7aa; color: #9a3412; }
+  .embedded-ai-venue--arxiv { background: #f3f4f6; color: #6b7280; }
+
   .embedded-ai-paper-item.is-hidden {
     display: none;
   }
@@ -129,9 +145,22 @@
               {% assign display_tags = paper.final_tags | default: paper.tags %}
               {% assign official_link = paper.urls.paper | default: paper.urls.ieee | default: paper.urls.acm | default: paper.urls.venue | default: paper.urls.url %}
               {% assign paper_link = paper.urls.pdf | default: official_link | default: paper.urls.arxiv %}
-              {% assign venue_text = paper.venue | default: paper.matched_venue | default: paper.venue_type | default: "" %}
-              {% assign venue_text = venue_text | strip %}
-              {% if venue_text != "" %}
+              
+              <!-- Determine venue display: priority is matched_venue > venue > arxiv fallback -->
+              {% assign display_venue = paper.matched_venue | default: "" %}
+              {% assign display_venue = display_venue | strip %}
+              {% assign is_arxiv_fallback = false %}
+              
+              {% if display_venue == "" %}
+                {% if paper.filter_bucket == "arxiv" or paper.source == "arxiv" %}
+                  {% assign display_venue = "arXiv" %}
+                  {% assign is_arxiv_fallback = true %}
+                {% endif %}
+              {% endif %}
+              
+              <!-- Normalize venue names for display -->
+              {% assign venue_text = display_venue %}
+              {% if venue_text != "" and is_arxiv_fallback == false %}
                 {% assign venue_lower = venue_text | downcase %}
 
                 {% if venue_lower contains "computer-aided design of integrated circuits and systems" %}
@@ -177,6 +206,20 @@
                 {% endif %}
 
                 {% assign venue_text = venue_text | replace: "IEEE/CVF ", "" | replace: "IEEE/CVF", "" | replace: "IEEE ", "" | replace: "ACM ", "" | replace: "Springer ", "" | replace: "Elsevier ", "" | replace: "Proceedings of the ", "" | replace: "Proceedings of ", "" | replace: "Transactions on ", "" | replace: "International Conference on ", "" | replace: "Conference on ", "" | replace: "Workshop on ", "" | replace: "Symposium on ", "" | strip %}
+              {% endif %}
+
+              <!-- Determine color class based on TH-CPL level or arxiv fallback -->
+              {% assign venue_class = "embedded-ai-venue--arxiv" %}
+              {% if is_arxiv_fallback == false %}
+                {% if paper.matched_th_cpl_level == "A" %}
+                  {% assign venue_class = "embedded-ai-venue--a" %}
+                {% elsif paper.matched_th_cpl_level == "B" %}
+                  {% assign venue_class = "embedded-ai-venue--b" %}
+                {% elsif paper.matched_th_cpl_level == "C" %}
+                  {% assign venue_class = "embedded-ai-venue--c" %}
+                {% endif %}
+              {% else %}
+                {% assign venue_class = "embedded-ai-venue--arxiv" %}
               {% endif %}
               {% assign date_text = "" %}
 
@@ -225,8 +268,8 @@
                     {% endif %}
                   </span>
 
-                  {% if venue_text != "" %}
-                    <span class="embedded-ai-paper-date">{{ venue_text }}</span>
+                  {% if venue_text and venue_text != "" %}
+                    <span class="embedded-ai-venue {{ venue_class }}">{{ venue_text }}</span>
                   {% endif %}
 
                   {% if date_text != "" %}

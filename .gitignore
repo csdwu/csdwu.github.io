@@ -1,0 +1,8 @@
+﻿# embedded-ai raw/debug/runtime outputs
+google_scholar_crawler/cache/arxiv/
+google_scholar_crawler/state/source_stats.json
+google_scholar_crawler/state/*.tmp
+
+# local run logs
+run_*.log
+*.log

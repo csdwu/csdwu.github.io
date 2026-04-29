@@ -353,8 +353,36 @@ export async function runArxivKeywordSearch(groupKey, options = {}) {
     papers = stdoutJson;
   }
 
-  // Save to file
-  await writeJson(outputPath, papers);
+  // Check if this was a full search that failed
+  const complete = stdoutJson?.complete ?? true;
+  const totalAvailable = stdoutJson?.total_available;
+  const failedStart = stdoutJson?.failed_start;
+  const error = stdoutJson?.error;
+  const isFullSearch = options.searchMode === 'full' || !options.updatedAfter;
+
+  // If this is a full search and it's incomplete, mark as failed
+  let searchFailed = false;
+  let failureReason = null;
+
+  if (isFullSearch && !complete) {
+    searchFailed = true;
+    failureReason =
+      `Incomplete full search: fetched=${papers.length}, ` +
+      `total_available=${totalAvailable}, failed_start=${failedStart}, error="${error}"`;
+    console.error(`[arxiv-bridge] ${failureReason}`);
+  }
+
+  // Also check if Python exited with non-zero code
+  if (!execResult.ok) {
+    searchFailed = true;
+    failureReason = `Python command failed with exit code ${execResult.code}`;
+    console.error(`[arxiv-bridge] ${failureReason}`);
+  }
+
+  // Save to file only if not failed
+  if (!searchFailed) {
+    await writeJson(outputPath, papers);
+  }
 
   return {
     group: groupKey,
@@ -368,6 +396,13 @@ export async function runArxivKeywordSearch(groupKey, options = {}) {
     watermark: options.watermark ?? null,
     overlapBufferDays: options.overlapBufferDays ?? ARXIV_INCREMENTAL_OVERLAP_DAYS,
     updatedAfter: options.updatedAfter ?? null,
+    // New failure tracking
+    searchFailed,
+    failureReason,
+    complete,
+    totalAvailable,
+    failedStart,
+    searchError: error,
   };
 }
 
@@ -386,6 +421,8 @@ export async function runAllArxivKeywordSearches(options = {}) {
   const results = [];
   const groupedData = {};
   const perGroupStats = {};
+  let hasFailedGroup = false;
+  const failedGroups = [];
 
   const runMode = forceFullSearch
     ? 'full'
@@ -414,7 +451,18 @@ export async function runAllArxivKeywordSearches(options = {}) {
       watermark,
       overlapBufferDays,
     });
-    console.log(`[embedded-ai] arXiv group done: ${groupKey}`);
+
+    // Check if the search failed
+    if (result.searchFailed) {
+      hasFailedGroup = true;
+      failedGroups.push(groupKey);
+      console.error(
+        `[embedded-ai] arXiv group failed: ${groupKey} | ${result.failureReason}`,
+      );
+    } else {
+      console.log(`[embedded-ai] arXiv group done: ${groupKey}`);
+    }
+
     results.push(result);
     groupedData[groupKey] = result.data;
 
@@ -426,15 +474,23 @@ export async function runAllArxivKeywordSearches(options = {}) {
       overlap_buffer_days: overlapBufferDays,
       pulled_count: pulledCount,
       dedupe_kept_count: pulledCount,
+      complete: result.complete ?? true,
+      total_available: result.totalAvailable,
+      failed_start: result.failedStart,
+      error: result.searchError,
+      failed: result.searchFailed ?? false,
     };
 
     console.log(
-      `[embedded-ai] arXiv group ${groupKey} stats: pulled=${pulledCount}, dedupe_kept=${pulledCount}`,
+      `[embedded-ai] arXiv group ${groupKey} stats: pulled=${pulledCount}, dedupe_kept=${pulledCount}, complete=${result.complete ?? true}`,
     );
 
-    state.groups[groupKey] = {
-      last_successful_search_at: runStartedAt,
-    };
+    // Only update watermark if search was successful
+    if (!result.searchFailed) {
+      state.groups[groupKey] = {
+        last_successful_search_at: runStartedAt,
+      };
+    }
 
     // Sleep between groups to avoid rate limiting
     if (groups.indexOf(groupKey) < groups.length - 1) {
@@ -443,23 +499,33 @@ export async function runAllArxivKeywordSearches(options = {}) {
     }
   }
 
-  state.source = 'arxiv';
-  state.overlap_buffer_days = overlapBufferDays;
-  state.last_successful_search_at = runStartedAt;
-  await writeJson(LAST_SEARCH_STATE_PATH, state);
+  // Only save state if no groups failed
+  if (!hasFailedGroup) {
+    state.source = 'arxiv';
+    state.overlap_buffer_days = overlapBufferDays;
+    state.last_successful_search_at = runStartedAt;
+    await writeJson(LAST_SEARCH_STATE_PATH, state);
+    console.log(`[embedded-ai] Updated arXiv search state`);
+  } else {
+    console.error(
+      `[embedded-ai] CRITICAL: Not updating search state because groups failed: ${failedGroups.join(', ')}`,
+    );
+  }
 
   const totalPulled = Object.values(perGroupStats).reduce(
     (sum, item) => sum + Number(item.pulled_count ?? 0),
     0,
   );
   console.log(
-    `[embedded-ai] arXiv run summary: mode=${runMode}, watermark=${stateRaw?.last_successful_search_at ?? 'none'}, overlap_buffer_days=${overlapBufferDays}, pulled_total=${totalPulled}`,
+    `[embedded-ai] arXiv run summary: mode=${runMode}, watermark=${stateRaw?.last_successful_search_at ?? 'none'}, overlap_buffer_days=${overlapBufferDays}, pulled_total=${totalPulled}, has_failures=${hasFailedGroup}`,
   );
 
   return {
     results,
     groupedData,
     searchState: state,
+    hasFailedGroup,
+    failedGroups,
     runMeta: {
       source: 'arxiv',
       mode: runMode,
@@ -468,6 +534,8 @@ export async function runAllArxivKeywordSearches(options = {}) {
       per_group: perGroupStats,
       pulled_total: totalPulled,
       dedupe_kept_total: totalPulled,
+      complete: !hasFailedGroup,
+      failed_groups: failedGroups,
     },
   };
 }
