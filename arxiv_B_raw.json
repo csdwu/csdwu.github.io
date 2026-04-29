@@ -1,0 +1,32 @@
+[
+  {
+    "arxiv_id": "2604.24273v1",
+    "title": "BitRL: Reinforcement Learning with 1-bit Quantized Language Models for Resource-Constrained Edge Deployment",
+    "abstract": "The deployment of intelligent reinforcement learning (RL) agents on resource-constrained edge devices remains a fundamental challenge due to the substantial memory, computational, and energy requirements of modern deep learning systems. While large language models (LLMs) have emerged as powerful architectures for decision-making agents, their multi-billion parameter scale confines them to cloud-based deployment, raising concerns about latency, privacy, and connectivity dependence.\n  We introduce BitRL, a framework for building RL agents using 1-bit quantized language models that enables practical on-device learning and inference under severe resource constraints. Leveraging the BitNet b1.58 architecture with ternary weights (-1, 0, +1) and an optimized inference stack, BitRL achieves 10-16x memory reduction and 3-5x energy efficiency improvements over full-precision baselines while maintaining 85-98 percent of task performance across benchmarks.\n  We provide theoretical analysis of quantization as structured parameter perturbation, derive convergence bounds for quantized policy gradients under frozen-backbone architectures, and identify the exploration-stability trade-off in extreme quantization. Our framework systematically integrates 1-bit quantized language models with reinforcement learning for edge deployment and demonstrates effectiveness on commodity hardware.",
+    "authors": [
+      "Md. Ashiq Ul Islam Sajid",
+      "Mohammad Sakib Mahmood",
+      "Md. Tareq Hasan",
+      "Md Abdur Rahim",
+      "Rafat Ara",
+      "Md. Arafat Hossain"
+    ],
+    "year": 2026,
+    "month": 4,
+    "published": "2026-04-27T10:03:37Z",
+    "updated": "2026-04-27T10:03:37Z",
+    "urls": {
+      "arxiv": "https://arxiv.org/abs/2604.24273v1",
+      "pdf": "https://arxiv.org/pdf/2604.24273v1"
+    },
+    "arxiv_url": "https://arxiv.org/abs/2604.24273v1",
+    "pdf_url": "https://arxiv.org/pdf/2604.24273v1",
+    "eprint_url": "https://arxiv.org/pdf/2604.24273v1",
+    "pub_url": "https://arxiv.org/abs/2604.24273v1",
+    "snippet": "The deployment of intelligent reinforcement learning (RL) agents on resource-constrained edge devices remains a fundamental challenge due to the substantial memory, computational, and energy requireme",
+    "source": "arxiv",
+    "doi": "",
+    "venue": "arXiv",
+    "cited_by": 0
+  }
+]

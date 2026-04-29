@@ -1,0 +1,695 @@
+[
+  {
+    "arxiv_id": "2604.25902v1",
+    "title": "Toward a Functional Geometric Algebra for Natural Language Semantics",
+    "abstract": "Distributional and neural approaches to natural language semantics have been built almost exclusively on conventional linear algebra: vectors, matrices, tensors, and the operations that accompany them. These methods have achieved remarkable empirical success, yet they face persistent structural limitations in compositional semantics, type sensitivity, and interpretability. I argue in this paper that geometric algebra (GA) -- specifically, Clifford algebras -- provides a mathematically superior foundation for semantic representation, and that a Functional Geometric Algebra (FGA) framework extends GA toward a typed, compositional semantics capable of supporting inference, transformation, and interpretability while retaining full compatibility with distributional learning and modern neural architectures. I develop the formal foundations, identify three core capabilities that GA provides and linear algebra does not, present a detailed worked example illustrating operator-level semantic contrasts, and show how GA-based operations already implicit in current transformer architectures can be made explicit and extended. The central claim is not merely increased dimensionality but increased structural organization: GA expands an $n$-dimensional embedding space into a $2^n$ multivector algebra where base semantic concepts and their higher-order interactions are represented within a single, principled algebraic framework.",
+    "authors": [
+      "James Pustejovsky"
+    ],
+    "year": 2026,
+    "month": 4,
+    "published": "2026-04-28T17:47:46Z",
+    "updated": "2026-04-28T17:47:46Z",
+    "urls": {
+      "arxiv": "https://arxiv.org/abs/2604.25902v1",
+      "pdf": "https://arxiv.org/pdf/2604.25902v1"
+    },
+    "arxiv_url": "https://arxiv.org/abs/2604.25902v1",
+    "pdf_url": "https://arxiv.org/pdf/2604.25902v1",
+    "eprint_url": "https://arxiv.org/pdf/2604.25902v1",
+    "pub_url": "https://arxiv.org/abs/2604.25902v1",
+    "snippet": "Distributional and neural approaches to natural language semantics have been built almost exclusively on conventional linear algebra: vectors, matrices, tensors, and the operations that accompany them",
+    "source": "arxiv",
+    "doi": "",
+    "venue": "arXiv",
+    "cited_by": 0
+  },
+  {
+    "arxiv_id": "2604.25853v1",
+    "title": "G-Loss: Graph-Guided Fine-Tuning of Language Models",
+    "abstract": "Traditional loss functions, including cross-entropy, contrastive, triplet, and su pervised contrastive losses, used for fine-tuning pre-trained language models such as BERT, operate only within local neighborhoods and fail to account for the global semantic structure. We present G-Loss, a graph-guided loss function that incorporates semi-supervised label propagation to use structural relationships within the embedding manifold. G-Loss builds a document-similarity graph that captures global semantic relationships, thereby guiding the model to learn more discriminative and robust embeddings. We evaluate G-Loss on five benchmark datasets covering key downstream classification tasks: MR (sentiment analysis), R8 and R52 (topic categorization), Ohsumed (medical document classification), and 20NG (news categorization). In the majority of experimental setups, G-Loss converges faster and produces semantically coherent embedding spaces, resulting in higher classification accuracy than models fine-tuned with traditional loss functions.",
+    "authors": [
+      "Sharma Aditya",
+      "Agarwal Vinti",
+      "Kumar Rajesh"
+    ],
+    "year": 2026,
+    "month": 4,
+    "published": "2026-04-28T16:55:57Z",
+    "updated": "2026-04-28T16:55:57Z",
+    "urls": {
+      "arxiv": "https://arxiv.org/abs/2604.25853v1",
+      "pdf": "https://arxiv.org/pdf/2604.25853v1"
+    },
+    "arxiv_url": "https://arxiv.org/abs/2604.25853v1",
+    "pdf_url": "https://arxiv.org/pdf/2604.25853v1",
+    "eprint_url": "https://arxiv.org/pdf/2604.25853v1",
+    "pub_url": "https://arxiv.org/abs/2604.25853v1",
+    "snippet": "Traditional loss functions, including cross-entropy, contrastive, triplet, and su pervised contrastive losses, used for fine-tuning pre-trained language models such as BERT, operate only within local ",
+    "source": "arxiv",
+    "doi": "",
+    "venue": "arXiv",
+    "cited_by": 0
+  },
+  {
+    "arxiv_id": "2604.25817v1",
+    "title": "Magnification-Invariant Image Classification via Domain Generalization and Stable Sparse Embedding Signatures",
+    "abstract": "Magnification shift is a major obstacle to robust histopathology classification, because models trained on one imaging scale often generalize poorly to another. Here, we evaluated this problem on the BreaKHis dataset using a strict patient-disjoint leave-one-magnification-out protocol, comparing supervised baseline, baseline augmented with DCGAN-generated patches, and a gradient-reversal domain-general model designed to preserve discriminative information while suppressing magnification-specific variation. Across held-out magnifications, the domain-general model achieved the strongest overall discrimination and its clearest gain was observed when 200X was held out. By contrast, GAN augmentation produced inconsistent effects, improving some folds but degrading others, particularly at 400X. The domain-general model also yielded the lowest Brier score at 0.063 vs 0.089 at baseline. Sparse embedding analysis further revealed that domain-general training reduced average signature size more than three-fold (306 versus 1,074 dimensions) while preserving equivalent predictive performance (AUC: 0.967 vs 0.965; F1: 0.930 vs 0.931). It also increased cross-fold signature reproducibility from near-zero Jaccard overlap in the baseline to 0.99 between the 100X and 200X folds. These findings show that calibrated, compact, and transferable representations can be learned without added architectural complexity, with clear implications for the reliable deployment of computational pathology models across heterogeneous acquisition settings.",
+    "authors": [
+      "Ifeanyi Ezuma",
+      "Olusiji Medaiyese"
+    ],
+    "year": 2026,
+    "month": 4,
+    "published": "2026-04-28T16:26:14Z",
+    "updated": "2026-04-28T16:26:14Z",
+    "urls": {
+      "arxiv": "https://arxiv.org/abs/2604.25817v1",
+      "pdf": "https://arxiv.org/pdf/2604.25817v1"
+    },
+    "arxiv_url": "https://arxiv.org/abs/2604.25817v1",
+    "pdf_url": "https://arxiv.org/pdf/2604.25817v1",
+    "eprint_url": "https://arxiv.org/pdf/2604.25817v1",
+    "pub_url": "https://arxiv.org/abs/2604.25817v1",
+    "snippet": "Magnification shift is a major obstacle to robust histopathology classification, because models trained on one imaging scale often generalize poorly to another. Here, we evaluated this problem on the ",
+    "source": "arxiv",
+    "doi": "",
+    "venue": "arXiv",
+    "cited_by": 0
+  },
+  {
+    "arxiv_id": "2604.25710v1",
+    "title": "Adaptive Meta-Learning Stochastic Gradient Hamiltonian Monte Carlo Simulation for Bayesian Updating of Structural Dynamic Models",
+    "abstract": "In the last few decades, Markov chain Monte Carlo (MCMC) methods have been widely applied to Bayesian updating of structural dynamic models in the field of structural health monitoring. Recently, several MCMC algorithms have been developed that incorporate neural networks to enhance their performance for specific Bayesian model updating problems. However, a common challenge with these approaches lies in the fact that the embedded neural networks often necessitate retraining when faced with new tasks, a process that is time-consuming and significantly undermines the competitiveness of these methods. This paper introduces a newly developed adaptive meta-learning stochastic gradient Hamiltonian Monte Carlo (AM-SGHMC) algorithm. The idea behind AM-SGHMC is to optimize the sampling strategy by training adaptive neural networks, and due to the adaptive design of the network inputs and outputs, the trained sampler can be directly applied to various Bayesian updating problems of the same type of structure without further training, thereby achieving meta-learning. Additionally, practical issues for the feasibility of the AM-SGHMC algorithm for structural dynamic model updating are addressed, and two examples involving Bayesian updating of multi-story building models with different model fidelity are used to demonstrate the effectiveness and generalization ability of the proposed method.",
+    "authors": [
+      "Xianghao Meng",
+      "James L. Beck",
+      "Yong Huang",
+      "Hui Li"
+    ],
+    "year": 2026,
+    "month": 4,
+    "published": "2026-04-28T14:34:48Z",
+    "updated": "2026-04-28T14:34:48Z",
+    "urls": {
+      "arxiv": "https://arxiv.org/abs/2604.25710v1",
+      "pdf": "https://arxiv.org/pdf/2604.25710v1"
+    },
+    "arxiv_url": "https://arxiv.org/abs/2604.25710v1",
+    "pdf_url": "https://arxiv.org/pdf/2604.25710v1",
+    "eprint_url": "https://arxiv.org/pdf/2604.25710v1",
+    "pub_url": "https://arxiv.org/abs/2604.25710v1",
+    "snippet": "In the last few decades, Markov chain Monte Carlo (MCMC) methods have been widely applied to Bayesian updating of structural dynamic models in the field of structural health monitoring. Recently, seve",
+    "source": "arxiv",
+    "doi": "",
+    "venue": "arXiv",
+    "cited_by": 0
+  },
+  {
+    "arxiv_id": "2604.25684v1",
+    "title": "Think Before You Act -- A Neurocognitive Governance Model for Autonomous AI Agents",
+    "abstract": "The rapid deployment of autonomous AI agents across enterprise, healthcare, and safety-critical environments has created a fundamental governance gap. Existing approaches, runtime guardrails, training-time alignment, and post-hoc auditing treat governance as an external constraint rather than an internalized behavioral principle, leaving agents vulnerable to unsafe and irreversible actions. We address this gap by drawing on how humans self-govern naturally: before acting, humans engage deliberate cognitive processes grounded in executive function, inhibitory control, and internalized organizational rules to evaluate whether an intended action is permissible, requires modification, or demands escalation. This paper proposes a neurocognitive governance framework that formally maps this human self-governance process to LLM-driven agent reasoning, establishing a structural parallel between the human brain and the large language model as the cognitive core of an agent. We formalize a Pre-Action Governance Reasoning Loop (PAGRL) in which agents consult a four-layer governance rule set: global, workflow-specific, agent-specific, and situational before every consequential action, mirroring how human organizations structure compliance hierarchies across enterprise, department, and role levels. Implemented on a production-grade retail supply chain workflow, the framework achieves 95% compliance accuracy and zero false escalations to human oversight, demonstrating that embedding governance into agent reasoning produces more consistent, explainable, and auditable compliance than external enforcement. This work offers a principled foundation for autonomous AI agents that govern themselves the way humans do: not because rules are imposed upon them, but because deliberation is embedded in how they think.",
+    "authors": [
+      "Eranga Bandara",
+      "Ross Gore",
+      "Asanga Gunaratna",
+      "Sachini Rajapakse",
+      "Isurunima Kularathna",
+      "Ravi Mukkamala",
+      "Sachin Shetty",
+      "Xueping Liang",
+      "Amin Hass",
+      "Tharaka Hewa",
+      "Abdul Rahman",
+      "Christopher K. Rhea",
+      "Anita H. Clayton",
+      "Preston Samuel",
+      "Atmaram Yarlagadda"
+    ],
+    "year": 2026,
+    "month": 4,
+    "published": "2026-04-28T14:15:20Z",
+    "updated": "2026-04-28T14:15:20Z",
+    "urls": {
+      "arxiv": "https://arxiv.org/abs/2604.25684v1",
+      "pdf": "https://arxiv.org/pdf/2604.25684v1"
+    },
+    "arxiv_url": "https://arxiv.org/abs/2604.25684v1",
+    "pdf_url": "https://arxiv.org/pdf/2604.25684v1",
+    "eprint_url": "https://arxiv.org/pdf/2604.25684v1",
+    "pub_url": "https://arxiv.org/abs/2604.25684v1",
+    "snippet": "The rapid deployment of autonomous AI agents across enterprise, healthcare, and safety-critical environments has created a fundamental governance gap. Existing approaches, runtime guardrails, training",
+    "source": "arxiv",
+    "doi": "",
+    "venue": "arXiv",
+    "cited_by": 0
+  },
+  {
+    "arxiv_id": "2604.25389v1",
+    "title": "Co-Writing with AI: An Empirical Study of Diverse Academic Writing Workflows",
+    "abstract": "Despite AI tools becoming increasingly embedded in academic practice, little is known about how university students integrate them into their writing processes. We examine how students engage with AI across different writing tasks, and how this engagement is shaped by individual factors including AI literacy, writing confidence, trust, authorship concerns, and motivation. Study~1 surveys 107 UK university students to map task-specific and co-occurring patterns of AI use across five writing stages (ideation, sourcing, planning, drafting, and reviewing) and their associations with individual factors. Study~2 complements this by exploring how these patterns can be assembled in practice, through interviews with 12 postgraduates reflecting on their established use of AI in assessed writing. Together, the studies suggest that AI integration is selective and heterogeneous, forming three recurring and value-oriented configurations: (1) early-stage (learning-oriented), where tools support exploration and understanding; (2) late-stage (quality-oriented), where tools support drafting and refinement; and (3) peripheral (productivity-oriented), where tools are used to reduce friction and sustain momentum across the process. We offer a workflow-level account of AI-supported academic writing, showing how students navigate competing priorities of learning, quality, productivity, and authorship, and how they evaluate and take responsibility for AI-generated outputs.",
+    "authors": [
+      "Silvia Bodei",
+      "Duncan P. Brumby",
+      "Katie Fisher",
+      "Jon Mella"
+    ],
+    "year": 2026,
+    "month": 4,
+    "published": "2026-04-28T09:00:48Z",
+    "updated": "2026-04-28T09:00:48Z",
+    "urls": {
+      "arxiv": "https://arxiv.org/abs/2604.25389v1",
+      "pdf": "https://arxiv.org/pdf/2604.25389v1"
+    },
+    "arxiv_url": "https://arxiv.org/abs/2604.25389v1",
+    "pdf_url": "https://arxiv.org/pdf/2604.25389v1",
+    "eprint_url": "https://arxiv.org/pdf/2604.25389v1",
+    "pub_url": "https://arxiv.org/abs/2604.25389v1",
+    "snippet": "Despite AI tools becoming increasingly embedded in academic practice, little is known about how university students integrate them into their writing processes. We examine how students engage with AI ",
+    "source": "arxiv",
+    "doi": "",
+    "venue": "arXiv",
+    "cited_by": 0
+  },
+  {
+    "arxiv_id": "2604.25289v1",
+    "title": "Exploring Time Conditioning in Diffusion Generative Models from Disjoint Noisy Data Manifolds",
+    "abstract": "Practically, training diffusion models typically requires explicit time conditioning to guide the network through the denoising sampling process. Especially in deterministic methods like DDIM, the absence of time conditioning leads to significant performance degradation. However, other deterministic sampling approaches, such as flow matching, can generate high-quality content without this conditioning, raising the question of its necessity. In this work, we revisit the role of time conditioning from a geometric perspective. We analyze the evolution of noisy data distributions under the forward diffusion process and demonstrate that, in high-dimensional spaces, these distributions concentrate on low-dimensional hyper-cylinder-like manifolds embedded within the input space. Successful generation, we argue, stems from the disentanglement of these manifolds in high-dimensional space. Based on this insight, we modify the forward process of DDIM to align the noisy data manifold with the flow-matching approach, proving that DDIM can generate high-quality content without time conditioning, provided the noisy manifold evolves according to the flow-matching method. Additionally, we extend our framework to class-conditioned generation by decoupling classes into distinct time spaces, enabling class-conditioned synthesis with a class-unconditional denoising model. Extensive experiments validate our theoretical analysis and show that high-quality generation is achievable without explicit conditional embeddings.",
+    "authors": [
+      "Liuzhuozheng Li",
+      "Zhiyuan Zhan",
+      "Shuhong Liu",
+      "Dengyang Jiang",
+      "Zanyi Wang",
+      "Guang Dai",
+      "Jingdong Wang",
+      "Mengmeng Wang"
+    ],
+    "year": 2026,
+    "month": 4,
+    "published": "2026-04-28T06:53:57Z",
+    "updated": "2026-04-28T06:53:57Z",
+    "urls": {
+      "arxiv": "https://arxiv.org/abs/2604.25289v1",
+      "pdf": "https://arxiv.org/pdf/2604.25289v1"
+    },
+    "arxiv_url": "https://arxiv.org/abs/2604.25289v1",
+    "pdf_url": "https://arxiv.org/pdf/2604.25289v1",
+    "eprint_url": "https://arxiv.org/pdf/2604.25289v1",
+    "pub_url": "https://arxiv.org/abs/2604.25289v1",
+    "snippet": "Practically, training diffusion models typically requires explicit time conditioning to guide the network through the denoising sampling process. Especially in deterministic methods like DDIM, the abs",
+    "source": "arxiv",
+    "doi": "",
+    "venue": "arXiv",
+    "cited_by": 0
+  },
+  {
+    "arxiv_id": "2604.25209v1",
+    "title": "DiRe-RAPIDS: Topology-faithful dimensionality reduction at scale",
+    "abstract": "Dimensionality reduction methods such as UMAP and t-SNE are central tools for visualising high-dimensional data, but their local-neighborhood objectives can preserve sampling noise while distorting global topology. We show that standard local metrics reward this noise memorisation: top-performing embeddings invent cycles and disconnected islands absent from the data. We introduce a topology-faithfulness benchmark based on noisy manifolds with known homology, tune DiRe against it, and find Pareto-optimal configurations that match or beat GPU-accelerated UMAP on classification while recovering exact first Betti numbers on stress tests. On 723K arXiv paper embeddings, DiRe preserves 3-4 times more topological structure than UMAP at comparable wall-clock.",
+    "authors": [
+      "Alexander Kolpakov",
+      "Igor Rivin"
+    ],
+    "year": 2026,
+    "month": 4,
+    "published": "2026-04-28T04:28:22Z",
+    "updated": "2026-04-28T04:28:22Z",
+    "urls": {
+      "arxiv": "https://arxiv.org/abs/2604.25209v1",
+      "pdf": "https://arxiv.org/pdf/2604.25209v1"
+    },
+    "arxiv_url": "https://arxiv.org/abs/2604.25209v1",
+    "pdf_url": "https://arxiv.org/pdf/2604.25209v1",
+    "eprint_url": "https://arxiv.org/pdf/2604.25209v1",
+    "pub_url": "https://arxiv.org/abs/2604.25209v1",
+    "snippet": "Dimensionality reduction methods such as UMAP and t-SNE are central tools for visualising high-dimensional data, but their local-neighborhood objectives can preserve sampling noise while distorting gl",
+    "source": "arxiv",
+    "doi": "",
+    "venue": "arXiv",
+    "cited_by": 0
+  },
+  {
+    "arxiv_id": "2604.25199v1",
+    "title": "Kohn-Sham Hamiltonian from Effective Field Theory: Quasiparticle Band Narrowing from Frozen Core Dynamics",
+    "abstract": "Kohn-Sham (KS) eigenvalues are routinely compared with angle-resolved photoemission (ARPES) and used as input for many-body methods, yet density functional theory (DFT) assigns them no physical meaning. For alkali and alkaline-earth metals, KS bandwidths overestimate ARPES measurements by 20-35%, a discrepancy that persists across all exchange-correlation functionals. We construct an effective field theory (EFT) of the inhomogeneous electron gas and show that two conditions imply KS bands are the quasiparticle bands, up to a frozen-core renormalization factor zcore: a scale separation between core excitation energies and the valence Fermi energy, and an approximate Galilean invariance of the uniform electron gas confirmed by diagrammatic Monte Carlo. This factor reflects dynamical core excitations that conventional pseudopotentials freeze out and no static potential can capture. The correction 1-zcore reaches 20-35% for alkali metals but falls below 5% for Al and Si, explaining both the failure and success of KS band theory. We derive a closed-form post-SCF formula and validate it for Li, Na, K, Ca, Mg, Al, and Si; the predicted quasiparticle bands resolve the long-standing ARPES bandwidth discrepancy, matching embedded dynamical mean-field theory at negligible cost. This work also exemplifies first-principles agentic science, a direction particularly suited to the AGI-for-Science paradigm: an LLM-co-developed derivation with controlled approximations, verified symbolically and against a few experiments, becomes a deterministic harness for agentic scale-out, resolving simultaneously the LLM audit bottleneck and the non-falsifiability of fit-based AI-for-science.",
+    "authors": [
+      "Xiansheng Cai",
+      "Han Wang",
+      "Kun Chen"
+    ],
+    "year": 2026,
+    "month": 4,
+    "published": "2026-04-28T04:09:06Z",
+    "updated": "2026-04-28T04:09:06Z",
+    "urls": {
+      "arxiv": "https://arxiv.org/abs/2604.25199v1",
+      "pdf": "https://arxiv.org/pdf/2604.25199v1"
+    },
+    "arxiv_url": "https://arxiv.org/abs/2604.25199v1",
+    "pdf_url": "https://arxiv.org/pdf/2604.25199v1",
+    "eprint_url": "https://arxiv.org/pdf/2604.25199v1",
+    "pub_url": "https://arxiv.org/abs/2604.25199v1",
+    "snippet": "Kohn-Sham (KS) eigenvalues are routinely compared with angle-resolved photoemission (ARPES) and used as input for many-body methods, yet density functional theory (DFT) assigns them no physical meanin",
+    "source": "arxiv",
+    "doi": "",
+    "venue": "arXiv",
+    "cited_by": 0
+  },
+  {
+    "arxiv_id": "2604.24911v1",
+    "title": "Learning with Embedded Linear Equality Constraints via Variational Bayesian Inference",
+    "abstract": "Machine Learning is becoming more prevalent in science and engineering, but many approaches do not provide meaningful uncertainty estimates and predictions may also violate known physical knowledge. We propose a Bayesian framework to embed linear relationships across inputs and outputs into the learning process, whilst characterizing full predictive uncertainty over both the model parameters and the domain knowledge. We evaluated our method on learning the single particle battery model subject to voltage and energy balances, showing its ability to provide reduced credible intervals and constraint violations compared to standard Bayesian neural networks based on variational inference.",
+    "authors": [
+      "Matthew Marsh",
+      "Benoît Chachuat",
+      "Antonio del Rio Chanona"
+    ],
+    "year": 2026,
+    "month": 4,
+    "published": "2026-04-27T18:47:13Z",
+    "updated": "2026-04-27T18:47:13Z",
+    "urls": {
+      "arxiv": "https://arxiv.org/abs/2604.24911v1",
+      "pdf": "https://arxiv.org/pdf/2604.24911v1"
+    },
+    "arxiv_url": "https://arxiv.org/abs/2604.24911v1",
+    "pdf_url": "https://arxiv.org/pdf/2604.24911v1",
+    "eprint_url": "https://arxiv.org/pdf/2604.24911v1",
+    "pub_url": "https://arxiv.org/abs/2604.24911v1",
+    "snippet": "Machine Learning is becoming more prevalent in science and engineering, but many approaches do not provide meaningful uncertainty estimates and predictions may also violate known physical knowledge. W",
+    "source": "arxiv",
+    "doi": "",
+    "venue": "arXiv",
+    "cited_by": 0
+  },
+  {
+    "arxiv_id": "2604.24909v1",
+    "title": "Contrastive Image-Metadata Pre-Training for Materials Transmission Electron Microscopy",
+    "abstract": "The vast majority of transmission electron microscopy (TEM) data never gets published and ends up on a backup drive until deleted to free up space. These left-over datasets are rich in detail and variation, often paired with automatically saved metadata of instrument state and acquisition parameters. In this work, we introduce a dataset of 7,330 high-angle annular dark-field scanning-TEM (HAADF-STEM) images from a single instrument to learn a joint embedding space between image metadata and HAADF image. These embeddings link image style with acquisition parameters, which allows us to train a generative style transfer network that can convert experimental images into the style they would have had if they were recorded with different instrument parameters. We evaluate the performance of the network and explore the usefulness of the technique for physical denoising.",
+    "authors": [
+      "Georgia Channing",
+      "Debora Keller",
+      "Marta D. Rossell",
+      "Philip Torr",
+      "Rolf Erni",
+      "Stig Helveg",
+      "Henrik Eliasson"
+    ],
+    "year": 2026,
+    "month": 4,
+    "published": "2026-04-27T18:42:07Z",
+    "updated": "2026-04-27T18:42:07Z",
+    "urls": {
+      "arxiv": "https://arxiv.org/abs/2604.24909v1",
+      "pdf": "https://arxiv.org/pdf/2604.24909v1"
+    },
+    "arxiv_url": "https://arxiv.org/abs/2604.24909v1",
+    "pdf_url": "https://arxiv.org/pdf/2604.24909v1",
+    "eprint_url": "https://arxiv.org/pdf/2604.24909v1",
+    "pub_url": "https://arxiv.org/abs/2604.24909v1",
+    "snippet": "The vast majority of transmission electron microscopy (TEM) data never gets published and ends up on a backup drive until deleted to free up space. These left-over datasets are rich in detail and vari",
+    "source": "arxiv",
+    "doi": "",
+    "venue": "arXiv",
+    "cited_by": 0
+  },
+  {
+    "arxiv_id": "2604.24710v1",
+    "title": "Case-Specific Rubrics for Clinical AI Evaluation: Methodology, Validation, and LLM-Clinician Agreement Across 823 Encounters",
+    "abstract": "Objective. Clinical AI documentation systems require evaluation methodologies that are clinically valid, economically viable, and sensitive to iterative changes. Methods requiring expert review per scoring instance are too slow and expensive for safe, iterative deployment. We present a case-specific, clinician-authored rubric methodology for clinical AI evaluation and examine whether LLM-generated rubrics can approximate clinician agreement.\n  Materials and Methods. Twenty clinicians authored 1,646 rubrics for 823 clinical cases (736 real-world, 87 synthetic) across primary care, psychiatry, oncology, and behavioral health. Each rubric was validated by confirming that an LLM-based scoring agent consistently scored clinician-preferred outputs higher than rejected ones. Seven versions of an EHR-embedded AI agent for clinicians were evaluated across all cases.\n  Results. Clinician-authored rubrics discriminated effectively between high- and low-quality outputs (median score gap: 82.9%) with high scoring stability (median range: 0.00%). Median scores improved from 84% to 95%. In later experiments, clinician-LLM ranking agreement (tau: 0.42-0.46) matched or exceeded clinician-clinician agreement (tau: 0.38-0.43), attributable to both ceiling compression and LLM rubric improvement.\n  Discussion. This convergence supports incorporating LLM rubrics alongside clinician-authored ones. At roughly 1,000 times lower cost, LLM rubrics enable substantially greater evaluation coverage, while continued clinical authorship grounds evaluation in expert judgment. Ceiling compression poses a methodological challenge for future inter-rater agreement studies.\n  Conclusion. Case-specific rubrics offer a path for clinical AI evaluation that preserves expert judgment while enabling automation at three orders lower cost. Clinician-authored rubrics establish the baseline against which LLM rubrics are validated.",
+    "authors": [
+      "Aaryan Shah",
+      "Andrew Hines",
+      "Alexia Downs",
+      "Denis Bajet",
+      "Paulius Mui",
+      "Fabiano Araujo",
+      "Laura Offutt",
+      "Aida Rutledge",
+      "Elizabeth Jimenez"
+    ],
+    "year": 2026,
+    "month": 4,
+    "published": "2026-04-27T17:17:56Z",
+    "updated": "2026-04-27T17:17:56Z",
+    "urls": {
+      "arxiv": "https://arxiv.org/abs/2604.24710v1",
+      "pdf": "https://arxiv.org/pdf/2604.24710v1"
+    },
+    "arxiv_url": "https://arxiv.org/abs/2604.24710v1",
+    "pdf_url": "https://arxiv.org/pdf/2604.24710v1",
+    "eprint_url": "https://arxiv.org/pdf/2604.24710v1",
+    "pub_url": "https://arxiv.org/abs/2604.24710v1",
+    "snippet": "Objective. Clinical AI documentation systems require evaluation methodologies that are clinically valid, economically viable, and sensitive to iterative changes. Methods requiring expert review per sc",
+    "source": "arxiv",
+    "doi": "",
+    "venue": "arXiv",
+    "cited_by": 0
+  },
+  {
+    "arxiv_id": "2604.24692v1",
+    "title": "Diffusion-Guided Feature Selection via Nishimori Temperature: Noise-Based Spectral Embedding",
+    "abstract": "We propose Noise-Based Spectral Embedding (NBSE), a physics-informed framework for selecting informative features from high-dimensional data without greedy search. NBSE constructs a sparse similarity graph on the samples and identifies the Nishimori temperature $β_N$ the critical inverse temperature at which the Bethe Hessian becomes singular. The corresponding smallest eigenvector captures the dominant mode of an intrinsically degree-corrected diffusion process, naturally reweighting nodes to prevent hub dominance. By transposing the data matrix and applying NBSE in feature space, we obtain a one-dimensional spectral embedding that reveals groups of redundant or semantically related dimensions; balanced binning then selects one representative per group. We prove that coloured Gaussian perturbations shift $β_N$ by at most $O(\\barσ^2)$, guaranteeing robustness to measurement noise. Experiments on ImageNet embeddings from MobileNetV2 and EfficientNet-B4 show that NBSE preserves classification accuracy even under aggressive compression: on EfficientNet-B4 the accuracy drop is below $1\\%$ when retaining only $30\\%$ of features, outperforming ANOVA $F$-test and random selection by up to $6.8\\%$.",
+    "authors": [
+      "Vasiliy S. Usatyuk",
+      "Denis A. Sapozhnikov",
+      "Sergey I. Egorov"
+    ],
+    "year": 2026,
+    "month": 4,
+    "published": "2026-04-27T16:53:40Z",
+    "updated": "2026-04-27T16:53:40Z",
+    "urls": {
+      "arxiv": "https://arxiv.org/abs/2604.24692v1",
+      "pdf": "https://arxiv.org/pdf/2604.24692v1"
+    },
+    "arxiv_url": "https://arxiv.org/abs/2604.24692v1",
+    "pdf_url": "https://arxiv.org/pdf/2604.24692v1",
+    "eprint_url": "https://arxiv.org/pdf/2604.24692v1",
+    "pub_url": "https://arxiv.org/abs/2604.24692v1",
+    "snippet": "We propose Noise-Based Spectral Embedding (NBSE), a physics-informed framework for selecting informative features from high-dimensional data without greedy search. NBSE constructs a sparse similarity ",
+    "source": "arxiv",
+    "doi": "",
+    "venue": "arXiv",
+    "cited_by": 0
+  },
+  {
+    "arxiv_id": "2604.24527v1",
+    "title": "Interoceptive machine framework: Toward interoception-inspired regulatory architectures in artificial intelligence",
+    "abstract": "This review proposes an integrative framework grounded on interoception and embodied AI-termed the interoceptive machine framework-that translates biologically inspired principles of internal-state regulation into computational architectures for adaptive autonomy. Interoception, conceived as the monitoring, integration, and regulation of internal signals, has proven relevant for understanding adaptive behavior in biological systems. The proposed framework organizes interoceptive contributions into three functional principles: homeostatic, allostatic, and enactive, each associated with distinct computational roles: internal viability regulation, anticipatory uncertainty-based re-evaluation, and active data generation through interaction. These principles are not intended as direct neurophysiological mappings, but as abstractions that inform the design of artificial agents with improved self-regulation and context-sensitive behavior. By embedding internal state variables and regulatory loops within these principles, AI systems can achieve more robust decision-making, calibrated uncertainty handling, and adaptive interaction strategies, particularly in uncertain and dynamic environments. This approach provides a concrete and testable pathway toward agents capable of functionally grounded self-regulation, with direct implications for human-computer interaction and assistive technologies. Ultimately, the interoceptive machine framework offers a unifying perspective on how internal-state regulation can enhance autonomy, adaptivity, and robustness in embodied AI systems",
+    "authors": [
+      "Diego Candia-Rivera"
+    ],
+    "year": 2026,
+    "month": 4,
+    "published": "2026-04-27T14:28:09Z",
+    "updated": "2026-04-27T14:28:09Z",
+    "urls": {
+      "arxiv": "https://arxiv.org/abs/2604.24527v1",
+      "pdf": "https://arxiv.org/pdf/2604.24527v1"
+    },
+    "arxiv_url": "https://arxiv.org/abs/2604.24527v1",
+    "pdf_url": "https://arxiv.org/pdf/2604.24527v1",
+    "eprint_url": "https://arxiv.org/pdf/2604.24527v1",
+    "pub_url": "https://arxiv.org/abs/2604.24527v1",
+    "snippet": "This review proposes an integrative framework grounded on interoception and embodied AI-termed the interoceptive machine framework-that translates biologically inspired principles of internal-state re",
+    "source": "arxiv",
+    "doi": "",
+    "venue": "arXiv",
+    "cited_by": 0
+  },
+  {
+    "arxiv_id": "2604.24818v1",
+    "title": "Heterogeneous Variational Inference for Markov Degradation Hazard Models: Discretized Mixture with Interpretable Clusters",
+    "abstract": "Bayesian finite mixture models can identify discrete risk clusters (low-risk vs. high-risk equipment), but face three critical bottlenecks: (1) insufficient degradation signals from coarse state discretization, (2) unstable cluster identification when data inherently supports fewer clusters than explored, and (3) computational infeasibility of Markov Chain Monte Carlo (MCMC) methods for production deployment (7+ hours per model). We propose a practical framework combining (1) 8-state global percentile discretization that amplifies degradation events, (2) 30-dimensional feature engineering integrating statistical trends (22 features), continuous health indicators, and text embeddings (PCA-compressed to 3 dimensions), (3) interpretable model selection rules enforcing minimum cluster share and separation alongside WAIC, and (4) Automatic Differentiation Variational Inference (ADVI) with full-rank covariance for stable, fast estimation. Applied to 280 industrial pump equipment with 104,703 inspection records, we demonstrate: (1) Random effect models (baseline) show ADVI and NUTS produce nearly identical estimates with 15$\\times$ speedup, validating ADVI accuracy. (2) Finite mixture models identify optimal number of clusters with interpretability constraints. (3) NUTS exhibits severe convergence issues and label switching, while ADVI provides stable results in 84$\\times$ less time. We contributed that (1) First demonstration that fine-grained state discretization (8-state) is essential for mixture model stability in survival analysis.(2) Comprehensive feature engineering strategy combining statistical, continuous, and semantic signals. (3) Practical interpretability rules preventing overfitting in automated model selection. (4) Empirical evidence that ADVI outperforms NUTS for finite mixture models in terms of convergence, stability, and computational efficiency.",
+    "authors": [
+      "Takato Yasuno"
+    ],
+    "year": 2026,
+    "month": 4,
+    "published": "2026-04-27T14:02:43Z",
+    "updated": "2026-04-27T14:02:43Z",
+    "urls": {
+      "arxiv": "https://arxiv.org/abs/2604.24818v1",
+      "pdf": "https://arxiv.org/pdf/2604.24818v1"
+    },
+    "arxiv_url": "https://arxiv.org/abs/2604.24818v1",
+    "pdf_url": "https://arxiv.org/pdf/2604.24818v1",
+    "eprint_url": "https://arxiv.org/pdf/2604.24818v1",
+    "pub_url": "https://arxiv.org/abs/2604.24818v1",
+    "snippet": "Bayesian finite mixture models can identify discrete risk clusters (low-risk vs. high-risk equipment), but face three critical bottlenecks: (1) insufficient degradation signals from coarse state discr",
+    "source": "arxiv",
+    "doi": "",
+    "venue": "arXiv",
+    "cited_by": 0
+  },
+  {
+    "arxiv_id": "2604.24479v1",
+    "title": "Zero-to-CAD: Agentic Synthesis of Interpretable CAD Programs at Million-Scale Without Real Data",
+    "abstract": "Computer-Aided Design (CAD) models are defined by their construction history: a parametric recipe that encodes design intent. However, existing large-scale 3D datasets predominantly consist of boundary representations (B-Reps) or meshes, stripping away this critical procedural information. To address this scarcity, we introduce Zero-to-CAD, a scalable framework for synthesizing executable CAD construction sequences. We frame synthesis as an agentic search problem: by embedding a large language model (LLM) within a feedback-driven CAD environment, our system iteratively generates, executes, and validates code using tools and documentation lookup to promote geometric validity and operation diversity. This agentic approach enables the synthesis of approximately one million executable, readable, editable CAD sequences, covering a rich vocabulary of operations beyond sketch-and-extrude workflows. We also release a curated subset of 100,000 high-quality models selected for geometric diversity. To demonstrate the dataset's utility, we fine-tune a vision-language model on our synthetic data to reconstruct editable CAD programs from multi-view images, outperforming strong baselines, including GPT-5.2, and effectively bootstrapping sequence generation capabilities without real construction-history training data. Zero-to-CAD bridges the gap between geometric scale and parametric interpretability, offering a vital resource for the next generation of CAD AI.",
+    "authors": [
+      "Mohammadmehdi Ataei",
+      "Farzaneh Askari",
+      "Kamal Rahimi Malekshan",
+      "Pradeep Kumar Jayaraman"
+    ],
+    "year": 2026,
+    "month": 4,
+    "published": "2026-04-27T13:46:41Z",
+    "updated": "2026-04-27T13:46:41Z",
+    "urls": {
+      "arxiv": "https://arxiv.org/abs/2604.24479v1",
+      "pdf": "https://arxiv.org/pdf/2604.24479v1"
+    },
+    "arxiv_url": "https://arxiv.org/abs/2604.24479v1",
+    "pdf_url": "https://arxiv.org/pdf/2604.24479v1",
+    "eprint_url": "https://arxiv.org/pdf/2604.24479v1",
+    "pub_url": "https://arxiv.org/abs/2604.24479v1",
+    "snippet": "Computer-Aided Design (CAD) models are defined by their construction history: a parametric recipe that encodes design intent. However, existing large-scale 3D datasets predominantly consist of boundar",
+    "source": "arxiv",
+    "doi": "",
+    "venue": "arXiv",
+    "cited_by": 0
+  },
+  {
+    "arxiv_id": "2604.24474v1",
+    "title": "Advancing Ligand-based Virtual Screening and Molecular Generation with Pretrained Molecular Embedding Distance",
+    "abstract": "Molecular similarity plays a central role in ligand-based drug discovery, such as virtual screening, analog searching, and goal-directed molecular generation. However, traditional similarity measures, ranging from fingerprint-based Tanimoto coefficients to 3D shape overlays, are often computationally expensive at scale or rely on hand-crafted molecular descriptors. Meanwhile, many deep learning approaches to similarity-aware design still depend on similarity-specific supervision or costly data curation, limiting their generality across targets. In this work, we propose pretrained embedding distance (PED) as an effective alternative, computed directly from pretrained molecular models without task-specific training. Experimental results show that PED exhibits distinct correlations with traditional similarity metrics, and performs effectively in both ranking molecules for virtual screening and guiding molecular generation via reward design. These findings suggest that pretrained molecular embeddings capture rich structural information and can serve as a promising and scalable similarity measurement for modern AI-aided drug discovery.",
+    "authors": [
+      "Shiyun Wa",
+      "Yifei Wang",
+      "Simone Sciabola",
+      "Ye Wang"
+    ],
+    "year": 2026,
+    "month": 4,
+    "published": "2026-04-27T13:43:20Z",
+    "updated": "2026-04-27T13:43:20Z",
+    "urls": {
+      "arxiv": "https://arxiv.org/abs/2604.24474v1",
+      "pdf": "https://arxiv.org/pdf/2604.24474v1"
+    },
+    "arxiv_url": "https://arxiv.org/abs/2604.24474v1",
+    "pdf_url": "https://arxiv.org/pdf/2604.24474v1",
+    "eprint_url": "https://arxiv.org/pdf/2604.24474v1",
+    "pub_url": "https://arxiv.org/abs/2604.24474v1",
+    "snippet": "Molecular similarity plays a central role in ligand-based drug discovery, such as virtual screening, analog searching, and goal-directed molecular generation. However, traditional similarity measures,",
+    "source": "arxiv",
+    "doi": "",
+    "venue": "arXiv",
+    "cited_by": 0
+  },
+  {
+    "arxiv_id": "2604.24432v1",
+    "title": "Kwai Summary Attention Technical Report",
+    "abstract": "Long-context ability, has become one of the most important iteration direction of next-generation Large Language Models, particularly in semantic understanding/reasoning, code agentic intelligence and recommendation system. However, the standard softmax attention exhibits quadratic time complexity with respect to sequence length. As the sequence length increases, this incurs substantial overhead in long-context settings, leading the training and inference costs of extremely long sequences deteriorate rapidly. Existing solutions mitigate this issue through two technique routings: i) Reducing the KV cache per layer, such as from the head-level compression GQA, and the embedding dimension-level compression MLA, but the KV cache remains linearly dependent on the sequence length at a 1:1 ratio. ii) Interleaving with KV Cache friendly architecture, such as local attention SWA, linear kernel GDN, but often involve trade-offs among KV Cache and long-context modeling effectiveness. Besides the two technique routings, we argue that there exists an intermediate path not well explored: {Maintaining a linear relationship between the KV cache and sequence length, but performing semantic-level compression through a specific ratio $k$}. This $O(n/k)$ path does not pursue a ``minimum KV cache'', but rather trades acceptable memory costs for complete, referential, and interpretable retention of long distant dependency. Motivated by this, we propose Kwai Summary Attention (KSA), a novel attention mechanism that reduces sequence modeling cost by compressing historical contexts into learnable summary tokens.",
+    "authors": [
+      "Chenglong Chu",
+      "Guorui Zhou",
+      "Guowang Zhang",
+      "Han Li",
+      "Hao Peng",
+      "Hongtao Cheng",
+      "Jian Liang",
+      "Jiangxia Cao",
+      "Kun Gai",
+      "Lingzhi Zhou",
+      "Lu Ren",
+      "Qi Zhang",
+      "Ruiming Tang",
+      "Ruitao Wang",
+      "Xinchen Luo",
+      "Yi Su",
+      "Zhiyuan Liang",
+      "Ziqi Wang",
+      "Boyang Ding",
+      "Chengru Song",
+      "Dunju Zang",
+      "Hui Wang",
+      "Jiao Ou",
+      "Jiaxin Deng",
+      "Jijun Shi",
+      "Jinghao Zhang",
+      "Junmin Chen",
+      "Lejian Ren",
+      "Minxuan Lv",
+      "Qianqian Wang",
+      "Qigen Hu",
+      "Shiyao Wang",
+      "Siyang Mao",
+      "Tao Wang",
+      "Xingmei Wang",
+      "Zhixin Ling",
+      "Ziming Li",
+      "Zixing Zhang"
+    ],
+    "year": 2026,
+    "month": 4,
+    "published": "2026-04-27T12:59:53Z",
+    "updated": "2026-04-27T12:59:53Z",
+    "urls": {
+      "arxiv": "https://arxiv.org/abs/2604.24432v1",
+      "pdf": "https://arxiv.org/pdf/2604.24432v1"
+    },
+    "arxiv_url": "https://arxiv.org/abs/2604.24432v1",
+    "pdf_url": "https://arxiv.org/pdf/2604.24432v1",
+    "eprint_url": "https://arxiv.org/pdf/2604.24432v1",
+    "pub_url": "https://arxiv.org/abs/2604.24432v1",
+    "snippet": "Long-context ability, has become one of the most important iteration direction of next-generation Large Language Models, particularly in semantic understanding/reasoning, code agentic intelligence and",
+    "source": "arxiv",
+    "doi": "",
+    "venue": "arXiv",
+    "cited_by": 0
+  },
+  {
+    "arxiv_id": "2604.24234v1",
+    "title": "Graph-augmented Segmentation of Complex Shapes in Laser Powder bed Fusion for Enhanced In Situ Inspection",
+    "abstract": "The technological maturity of in situ inspection and monitoring methods in additive manufacturing is steadily increasing, enabling more efficient and practical qualification procedures. In this context, image segmentation of powder bed images in Laser Powder Bed Fusion (L-PBF) has been investigated by various authors, leveraging both edge detection and machine learning approaches to identify deviations from nominal geometry. Despite these developments, several challenges remain, including the sensitivity of segmentation performance to industrial illumination conditions and layer-to-layer variability in pixel intensity patterns. The study addresses these limitations by proposing a graph-augmented segmentation approach. The underlying principle consists of preserving the geometrical information at a global level rather than at pixel-wise level, modeling dependencies and relational information among spatial regions with a Graph Neural Network bottleneck embedded into a U-Net architecture. This allows enhancing the consistency and accuracy of the geometry reconstruction in the presence of spatial and layer-wise photometric variability systematically faced in real data. The method is evaluated against benchmark techniques for the in situ reconstruction of lattice structures produced by L-PBF, demonstrating its potential as a scalable solution for robust in situ inspection and geometric verification in industrial environments.",
+    "authors": [
+      "Stefano Raimondo",
+      "Matteo Bugatti",
+      "Marco Grasso"
+    ],
+    "year": 2026,
+    "month": 4,
+    "published": "2026-04-27T09:43:10Z",
+    "updated": "2026-04-27T09:43:10Z",
+    "urls": {
+      "arxiv": "https://arxiv.org/abs/2604.24234v1",
+      "pdf": "https://arxiv.org/pdf/2604.24234v1"
+    },
+    "arxiv_url": "https://arxiv.org/abs/2604.24234v1",
+    "pdf_url": "https://arxiv.org/pdf/2604.24234v1",
+    "eprint_url": "https://arxiv.org/pdf/2604.24234v1",
+    "pub_url": "https://arxiv.org/abs/2604.24234v1",
+    "snippet": "The technological maturity of in situ inspection and monitoring methods in additive manufacturing is steadily increasing, enabling more efficient and practical qualification procedures. In this contex",
+    "source": "arxiv",
+    "doi": "",
+    "venue": "arXiv",
+    "cited_by": 0
+  },
+  {
+    "arxiv_id": "2604.24167v1",
+    "title": "PEPS: Positional Encoding Projected Sampling -- Extended",
+    "abstract": "Implicit neural representations (INRs) are increasingly being used as tools to map coordinates to signals, encompassing applications from neural fields to texture compression, shape representations, and beyond. Most INR methods are based on using high-dimensional projections of the initial coordinates through encoders such as grid or positional encoding. Nevertheless, positional encoding is often insufficient and grids, as we show in this paper, require high resolution for being able to learn. In this paper, we demonstrate that positional encoding can be used not only as a high-dimensional embedding but also decomposed as a series of meaningful points. We propose the Positional Encoding Projected Sampling, where we treat the projection of the original coordinate at each frequency as a point of interest. We describe the motion of each point with respect to the frequencies and show that it follows a unique pattern. Finally, we use the unique motion of each point as a basis decomposition for doing learned positional encoding using grids. We prove, using three competitive applications; image representation, texture compression, and signed distance function; that the proposed approach outperforms the current state of the art methods, and often requires 25\\% less parameters for equivalent reconstruction error or rendering.",
+    "authors": [
+      "Guillaume Perez",
+      "Janarbek Matai",
+      "Takahiro Harada"
+    ],
+    "year": 2026,
+    "month": 4,
+    "published": "2026-04-27T08:23:39Z",
+    "updated": "2026-04-27T08:23:39Z",
+    "urls": {
+      "arxiv": "https://arxiv.org/abs/2604.24167v1",
+      "pdf": "https://arxiv.org/pdf/2604.24167v1"
+    },
+    "arxiv_url": "https://arxiv.org/abs/2604.24167v1",
+    "pdf_url": "https://arxiv.org/pdf/2604.24167v1",
+    "eprint_url": "https://arxiv.org/pdf/2604.24167v1",
+    "pub_url": "https://arxiv.org/abs/2604.24167v1",
+    "snippet": "Implicit neural representations (INRs) are increasingly being used as tools to map coordinates to signals, encompassing applications from neural fields to texture compression, shape representations, a",
+    "source": "arxiv",
+    "doi": "",
+    "venue": "arXiv",
+    "cited_by": 0
+  },
+  {
+    "arxiv_id": "2604.24073v1",
+    "title": "FreeScale: Distributed Training for Sequence Recommendation Models with Minimal Scaling Cost",
+    "abstract": "Modern industrial Deep Learning Recommendation Models typically extract user preferences through the analysis of sequential interaction histories, subsequently generating predictions based on these derived interests. The inherent heterogeneity in data characteristics frequently result in substantial under-utilization of computational resources during large-scale training, primarily due to computational bubbles caused by severe stragglers and slow blocking communications. This paper introduces FreeScale, a solution designed to (1) mitigate the straggler problem through meticulously load balanced input samples (2) minimize the blocking communication by overlapping prioritized embedding communications with computations (3) resolve the GPU resource competition during computation and communication overlapping by communicating through SM-Free techniques. Empirical evaluation demonstrates that FreeScale achieves up to 90.3% reduction in computational bubbles when applied to real-world workloads running on 256 H100 GPUs.",
+    "authors": [
+      "Chenhao Feng",
+      "Haoli Zhang",
+      "Shakhzod Ali-Zade",
+      "Yanli Zhao",
+      "Liang Luo",
+      "Jennifer Cao",
+      "Lisen Deng",
+      "Siqiao Chen",
+      "Chenyu Zhao",
+      "Tristan Rice",
+      "Daniel Johnson",
+      "Min Si",
+      "Tiantu Xu",
+      "Yi Zhang",
+      "Siqi Yan",
+      "Chuanhao Zhuge",
+      "Min Ni",
+      "Bi Xue",
+      "Qunshu Zhang",
+      "Shen Li"
+    ],
+    "year": 2026,
+    "month": 4,
+    "published": "2026-04-27T05:59:44Z",
+    "updated": "2026-04-27T05:59:44Z",
+    "urls": {
+      "arxiv": "https://arxiv.org/abs/2604.24073v1",
+      "pdf": "https://arxiv.org/pdf/2604.24073v1"
+    },
+    "arxiv_url": "https://arxiv.org/abs/2604.24073v1",
+    "pdf_url": "https://arxiv.org/pdf/2604.24073v1",
+    "eprint_url": "https://arxiv.org/pdf/2604.24073v1",
+    "pub_url": "https://arxiv.org/abs/2604.24073v1",
+    "snippet": "Modern industrial Deep Learning Recommendation Models typically extract user preferences through the analysis of sequential interaction histories, subsequently generating predictions based on these de",
+    "source": "arxiv",
+    "doi": "",
+    "venue": "arXiv",
+    "cited_by": 0
+  },
+  {
+    "arxiv_id": "2604.24047v1",
+    "title": "Generalising maximum mean discrepancy: kernelised functional Bregman divergences",
+    "abstract": "Bregman divergences play a pivotal role in statistics, machine learning and computational information geometry. Particularly in the context of machine learning, they are central to clustering, exponential families, parameter estimation and optimisation, among other things. Despite this, the full toolkit of Hilbert spaces and in particular reproducing kernel Hilbert spaces have not been systematically developed and applied to functional Bregman divergences, where points are functions rather than finite-dimensional parameter vectors. While other types of functional Bregman divergences have been studied, these are typically in a Banach space rather than more directly aligned with kernel methods and Hilbert-space geometry commonly used in machine learning. We consider functional Bregman divergences on a Hilbert space, where the self-dual pairing and Riesz representer afford us particularly convenient calculus. Further specialising Bregman generators as a composition involving a kernel mean embedding makes such divergences easy to estimate. We discuss applications in clustering, universal estimation, robust estimation and generative modelling, and contrast our approach with other types of Bregman divergences.",
+    "authors": [
+      "Russell Tsuchida",
+      "Frank Nielsen"
+    ],
+    "year": 2026,
+    "month": 4,
+    "published": "2026-04-27T05:09:31Z",
+    "updated": "2026-04-27T05:09:31Z",
+    "urls": {
+      "arxiv": "https://arxiv.org/abs/2604.24047v1",
+      "pdf": "https://arxiv.org/pdf/2604.24047v1"
+    },
+    "arxiv_url": "https://arxiv.org/abs/2604.24047v1",
+    "pdf_url": "https://arxiv.org/pdf/2604.24047v1",
+    "eprint_url": "https://arxiv.org/pdf/2604.24047v1",
+    "pub_url": "https://arxiv.org/abs/2604.24047v1",
+    "snippet": "Bregman divergences play a pivotal role in statistics, machine learning and computational information geometry. Particularly in the context of machine learning, they are central to clustering, exponen",
+    "source": "arxiv",
+    "doi": "",
+    "venue": "arXiv",
+    "cited_by": 0
+  },
+  {
+    "arxiv_id": "2604.23968v1",
+    "title": "DecompKAN: Decomposed Patch-KAN for Long-Term Time Series Forecasting",
+    "abstract": "Accurate time series forecasting in scientific domains such as climate modeling, physiological monitoring, and energy systems benefits from both competitive predictions and model transparency. This work proposes DecompKAN, a lightweight attention-free architecture that combines trend-residual decomposition, channel-wise patching, learned instance normalization, and B-spline Kolmogorov-Arnold Network (KAN) edge functions. Each KAN edge learns an explicit, inspectable 1D scalar function over learned patch-embedding coordinates that can be directly visualized. On standard benchmarks, DecompKAN achieves best or tied-best MSE on 15 of 32 dataset-horizon combinations among selected published baselines, and achieves best or tied-best MSE on 20 of 36 comparisons under a controlled same-recipe evaluation across 9 datasets including the physiological PPG-DaLiA benchmark. The architecture shows particular strength on datasets with smooth temporal dynamics (Solar -17%, ECL -10% vs. iTransformer, Weather) and physiological time series. Visualization of learned edge functions reveals qualitatively different latent nonlinearities across domains. Ablation analysis shows that the architectural pipeline (decomposition, patching, normalization) drives performance more than the choice of nonlinear layer, while the KAN formulation enables inspection of learned latent transformations.",
+    "authors": [
+      "Naveen Mysore"
+    ],
+    "year": 2026,
+    "month": 4,
+    "published": "2026-04-27T02:29:35Z",
+    "updated": "2026-04-27T02:29:35Z",
+    "urls": {
+      "arxiv": "https://arxiv.org/abs/2604.23968v1",
+      "pdf": "https://arxiv.org/pdf/2604.23968v1"
+    },
+    "arxiv_url": "https://arxiv.org/abs/2604.23968v1",
+    "pdf_url": "https://arxiv.org/pdf/2604.23968v1",
+    "eprint_url": "https://arxiv.org/pdf/2604.23968v1",
+    "pub_url": "https://arxiv.org/abs/2604.23968v1",
+    "snippet": "Accurate time series forecasting in scientific domains such as climate modeling, physiological monitoring, and energy systems benefits from both competitive predictions and model transparency. This wo",
+    "source": "arxiv",
+    "doi": "",
+    "venue": "arXiv",
+    "cited_by": 0
+  }
+]
