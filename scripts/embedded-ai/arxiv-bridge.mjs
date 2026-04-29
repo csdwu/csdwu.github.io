@@ -199,7 +199,8 @@ function getGroupWatermark(state, groupKey) {
     || null;
 }
 
-function streamChildLines(stream, prefix, onChunk) {
+function streamChildLines(stream, prefix, onChunk, options = {}) {
+  const { echo = true } = options;
   let buffer = '';
 
   stream.on('data', (chunk) => {
@@ -207,9 +208,12 @@ function streamChildLines(stream, prefix, onChunk) {
     onChunk(text);
     buffer += text;
 
+    if (!echo) {
+      return;
+    }
+
     const lines = buffer.split(/\r?\n/);
     buffer = lines.pop() ?? '';
-
     for (const line of lines) {
       if (line.trim()) {
         console.log(`[${prefix}] ${line}`);
@@ -218,6 +222,9 @@ function streamChildLines(stream, prefix, onChunk) {
   });
 
   stream.on('end', () => {
+    if (!echo) {
+      return;
+    }
     if (buffer.trim()) {
       console.log(`[${prefix}] ${buffer}`);
     }
@@ -247,6 +254,7 @@ function spawnWithCandidate(pythonBin, args, options = {}) {
       (text) => {
         stdout += text;
       },
+      { echo: false },
     );
 
     streamChildLines(
@@ -255,6 +263,7 @@ function spawnWithCandidate(pythonBin, args, options = {}) {
       (text) => {
         stderr += text;
       },
+      { echo: true },
     );
 
     child.on('error', (error) => {

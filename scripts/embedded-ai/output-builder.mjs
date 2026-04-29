@@ -78,6 +78,89 @@ function firstNonEmpty(...values) {
   return '';
 }
 
+function normalizeSourceKey(paper = {}) {
+  const source = toTrimmedString(paper.source).toLowerCase();
+  if (source === 'arxiv') return 'arxiv';
+  if (source === 'scholar' || source === 'google_scholar') return 'scholar';
+
+  if (toTrimmedString(paper.arxiv_id) || toTrimmedString(paper.urls?.arxiv)) {
+    return 'arxiv';
+  }
+
+  return 'unknown';
+}
+
+function normalizeVenueKey(paper = {}) {
+  return firstNonEmpty(paper.matched_venue, paper.venue) || 'unknown';
+}
+
+function normalizeVenueTypeKey(paper = {}) {
+  const matchedType = toTrimmedString(paper.matched_venue_type).toLowerCase();
+  if (matchedType) return matchedType;
+
+  const venueType = toTrimmedString(paper.venue_type).toLowerCase();
+  if (venueType) return venueType;
+
+  const source = normalizeSourceKey(paper);
+  const venue = toTrimmedString(paper.matched_venue || paper.venue);
+  if (source === 'arxiv' || venue.toLowerCase() === 'arxiv') {
+    return 'preprint';
+  }
+
+  return 'unknown';
+}
+
+function makeSourceGroupCounts() {
+  return { arxiv: 0, scholar: 0, unknown: 0 };
+}
+
+function ensureCountKey(bucket, key) {
+  if (bucket[key] == null) {
+    bucket[key] = 0;
+  }
+}
+
+export function summarizeSourceStats(papers = [], options = {}) {
+  const sourceStats = {
+    generated_at: options.generatedAt ?? new Date().toISOString(),
+    total_papers: papers.length,
+    skip_arxiv_in_a: Boolean(options.skipArxivInA),
+    by_source: { arxiv: 0, scholar: 0, unknown: 0 },
+    by_venue: { unknown: 0 },
+    by_venue_type: { conference: 0, journal: 0, preprint: 0, unknown: 0 },
+    by_search_group: { A: 0, B: 0, C: 0 },
+    by_search_group_and_source: {
+      A: makeSourceGroupCounts(),
+      B: makeSourceGroupCounts(),
+      C: makeSourceGroupCounts(),
+    },
+  };
+
+  for (const paper of papers) {
+    const sourceKey = normalizeSourceKey(paper);
+    sourceStats.by_source[sourceKey] += 1;
+
+    const venueKey = normalizeVenueKey(paper);
+    ensureCountKey(sourceStats.by_venue, venueKey);
+    sourceStats.by_venue[venueKey] += 1;
+
+    const venueTypeKey = normalizeVenueTypeKey(paper);
+    ensureCountKey(sourceStats.by_venue_type, venueTypeKey);
+    sourceStats.by_venue_type[venueTypeKey] += 1;
+
+    const searchGroups = ensureArray(paper.search_sets_final)
+      .map((group) => toTrimmedString(group))
+      .filter((group) => ['A', 'B', 'C'].includes(group));
+
+    for (const group of searchGroups) {
+      sourceStats.by_search_group[group] += 1;
+      sourceStats.by_search_group_and_source[group][sourceKey] += 1;
+    }
+  }
+
+  return sourceStats;
+}
+
 function sortPapers(a, b) {
   const ask = buildSortKey(a);
   const bsk = buildSortKey(b);
@@ -217,6 +300,7 @@ function buildStats({
   setOpsStats = {},
   filterStats = {},
   classificationStats = {},
+  sourceStats = null,
 }) {
   return {
     raw_counts: {
@@ -238,6 +322,7 @@ function buildStats({
       by_tag: { ...(classificationStats?.by_tag ?? {}) },
       by_provider: { ...(classificationStats?.by_provider ?? {}) },
     },
+    source_stats: sourceStats ? { ...sourceStats } : null,
   };
 }
 
@@ -257,6 +342,7 @@ export function buildOutputJson({
   setOpsStats = {},
   filterStats = {},
   classificationStats = null,
+  sourceStats = null,
   downloadState = null,
   generatedAt = new Date().toISOString(),
 } = {}) {
@@ -286,6 +372,7 @@ export function buildOutputJson({
       setOpsStats,
       filterStats,
       classificationStats: effectiveClassificationStats,
+      sourceStats,
     }),
     categories,
   };
@@ -307,6 +394,7 @@ export async function buildAndWriteOutputJson({
   setOpsStats = {},
   filterStats = {},
   classificationStats = null,
+  sourceStats = null,
   downloadState = null,
   generatedAt = new Date().toISOString(),
   outputPath = OUTPUT_JSON_PATH,
@@ -316,6 +404,7 @@ export async function buildAndWriteOutputJson({
     setOpsStats,
     filterStats,
     classificationStats,
+    sourceStats,
     downloadState,
     generatedAt,
   });
@@ -332,6 +421,7 @@ export function buildOutputFromPipeline({
   setOpsResult = {},
   filteredResult = {},
   classifiedResult = {},
+  sourceStats = null,
   downloadState = null,
   generatedAt = new Date().toISOString(),
 } = {}) {
@@ -359,6 +449,7 @@ export function buildOutputFromPipeline({
     setOpsStats,
     filterStats,
     classificationStats,
+    sourceStats,
     downloadState,
     generatedAt,
   });

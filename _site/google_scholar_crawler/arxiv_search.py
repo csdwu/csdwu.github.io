@@ -28,9 +28,9 @@ ARXIV_API_BASE = "https://export.arxiv.org/api/query"
 DEFAULT_PAGE_SIZE = 50
 DEFAULT_TOTAL_LIMIT = None  # No limit by default
 ARXIV_REQUEST_TIMEOUT = 30
-MAX_RETRIES = 3
-RETRY_BACKOFF_BASE = 3  # seconds
-PAGE_SLEEP = 4  # seconds between pages
+MAX_RETRIES = 6
+RETRY_BACKOFF_BASE = 10  # seconds
+PAGE_SLEEP = 6  # seconds between pages
 USER_AGENT = "embedded-ai-crawler/1.1 (compatible)"
 
 ATOM_NAMESPACES = {
@@ -152,11 +152,48 @@ def build_submitted_date_clause(
     return f"submittedDate:[{start_str} TO {end_str}]"
 
 
+def parse_iso_datetime(value: Optional[str]) -> Optional[datetime]:
+    if not value:
+        return None
+
+    text = str(value).strip()
+    if not text:
+        return None
+
+    if text.endswith("Z"):
+        text = text[:-1] + "+00:00"
+
+    dt = datetime.fromisoformat(text)
+    if dt.tzinfo is None:
+        dt = dt.replace(tzinfo=timezone.utc)
+    return dt.astimezone(timezone.utc)
+
+
+def format_arxiv_date(dt: datetime) -> str:
+    utc_dt = dt.astimezone(timezone.utc)
+    return utc_dt.strftime("%Y%m%d%H%M")
+
+
+def build_last_updated_clause(
+    updated_after: Optional[str] = None,
+) -> Optional[str]:
+    dt = parse_iso_datetime(updated_after)
+    if dt is None:
+        return None
+
+    start_str = format_arxiv_date(dt)
+    end_str = format_arxiv_date(datetime.now(timezone.utc))
+
+    # Important: use spaces around TO here.
+    return f"lastUpdatedDate:[{start_str} TO {end_str}]"
+
+
 def build_full_query(
     query: str,
     categories: Optional[List[str]] = None,
     year_low: Optional[int] = None,
     year_high: Optional[int] = None,
+    updated_after: Optional[str] = None,
 ) -> str:
     query_parts = [f"({query})"]
 
@@ -167,6 +204,10 @@ def build_full_query(
     date_clause = build_submitted_date_clause(year_low, year_high)
     if date_clause:
         query_parts.append(date_clause)
+
+    updated_clause = build_last_updated_clause(updated_after)
+    if updated_clause:
+        query_parts.append(updated_clause)
 
     return " AND ".join(query_parts)
 
@@ -195,6 +236,7 @@ def fetch_total_available(
     categories: Optional[List[str]] = None,
     year_low: Optional[int] = None,
     year_high: Optional[int] = None,
+    updated_after: Optional[str] = None,
 ) -> Optional[int]:
     """
     Fetch total result count for this query. If it fails, return None and continue.
@@ -204,6 +246,7 @@ def fetch_total_available(
         categories=categories,
         year_low=year_low,
         year_high=year_high,
+        updated_after=updated_after,
     )
 
     post_data = {
@@ -243,6 +286,7 @@ def search_arxiv_page(
     start_index: int = 0,
     year_low: Optional[int] = None,
     year_high: Optional[int] = None,
+    updated_after: Optional[str] = None,
 ) -> List[Dict[str, Any]]:
     """
     Search arXiv for a single page and return papers.
@@ -254,6 +298,7 @@ def search_arxiv_page(
             categories=categories,
             year_low=year_low,
             year_high=year_high,
+            updated_after=updated_after,
         )
 
         post_data = {
@@ -303,6 +348,7 @@ def search_arxiv_with_retry(
     max_retries: int = MAX_RETRIES,
     year_low: Optional[int] = None,
     year_high: Optional[int] = None,
+    updated_after: Optional[str] = None,
 ) -> List[Dict[str, Any]]:
     """
     Search arXiv with retry logic and exponential backoff.
@@ -317,6 +363,7 @@ def search_arxiv_with_retry(
                 start_index=start_index,
                 year_low=year_low,
                 year_high=year_high,
+                updated_after=updated_after,
             )
         except Exception as e:
             last_error = e
@@ -342,6 +389,7 @@ def search_arxiv_full(
     total_limit: Optional[int] = DEFAULT_TOTAL_LIMIT,
     year_low: Optional[int] = None,
     year_high: Optional[int] = None,
+    updated_after: Optional[str] = None,
 ) -> List[Dict[str, Any]]:
     """
     Search arXiv with full pagination until all results are fetched or limit reached.
@@ -369,6 +417,7 @@ def search_arxiv_full(
                 max_retries=MAX_RETRIES,
                 year_low=year_low,
                 year_high=year_high,
+                updated_after=updated_after,
             )
         except Exception as e:
             print(
@@ -425,6 +474,12 @@ def main():
         default=None,
         help="Only include papers with year <= this value",
     )
+    parser.add_argument(
+        "--updated-after",
+        type=str,
+        default=None,
+        help="Only include papers with lastUpdatedDate after this ISO-8601 timestamp",
+    )
 
     # Backward compatibility
     parser.add_argument(
@@ -456,6 +511,7 @@ def main():
             categories=categories,
             year_low=args.year_low,
             year_high=args.year_high,
+            updated_after=args.updated_after,
         )
 
         if total_available is not None:
@@ -474,6 +530,12 @@ def main():
                     file=sys.stderr,
                 )
 
+        print(
+            f"[arxiv_search] Sleeping {PAGE_SLEEP}s before paginated search...",
+            file=sys.stderr,
+        )
+        time.sleep(PAGE_SLEEP)
+
         papers = search_arxiv_full(
             query=args.query,
             categories=categories,
@@ -481,6 +543,7 @@ def main():
             total_limit=total_limit,
             year_low=args.year_low,
             year_high=args.year_high,
+            updated_after=args.updated_after,
         )
 
         result = {
@@ -493,6 +556,7 @@ def main():
             "total_limit": total_limit,
             "year_low": args.year_low,
             "year_high": args.year_high,
+            "updated_after": args.updated_after,
         }
 
         print(json.dumps(result, indent=2, ensure_ascii=False))

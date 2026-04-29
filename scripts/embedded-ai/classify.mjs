@@ -168,13 +168,17 @@ async function saveClassificationCheckpoint(checkpoint) {
   try {
     const fs = await import('node:fs/promises');
     const path = await import('node:path');
-    const tempPath = `${CLASSIFICATION_CHECKPOINT_PATH}.tmp`;
-    await fs.mkdir(path.dirname(CLASSIFICATION_CHECKPOINT_PATH), { recursive: true });
+    const checkpointPath = CLASSIFICATION_CHECKPOINT_PATH;
+    const tempPath = `${checkpointPath}.${process.pid}.${Date.now()}.${Math.random().toString(36).slice(2)}.tmp`;
+
+    await fs.mkdir(path.dirname(checkpointPath), { recursive: true });
     await fs.writeFile(tempPath, JSON.stringify(checkpoint, null, 2), 'utf8');
-    await fs.rename(tempPath, CLASSIFICATION_CHECKPOINT_PATH);
+    await fs.rename(tempPath, checkpointPath);
+
+    return true;
   } catch (error) {
-    console.error(`[classify] Failed to save checkpoint: ${error?.message}`);
-    throw error;
+    console.warn(`[classify] Failed to save checkpoint: ${error?.message}`);
+    return false;
   }
 }
 

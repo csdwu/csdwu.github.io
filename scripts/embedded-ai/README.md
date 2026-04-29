@@ -412,7 +412,7 @@ google_scholar_crawler/
   ├─ downloads/
   │  └─ embedded-ai/           # Downloaded PDFs
   ├─ main.py                   # Python entry point
-  ├─ arxiv_search.py          # arXiv API client (NEW)
+  ├─ arxiv_search.py          # arXiv API client
   ├─ downloader.py
   └─ ... (Scholar crawler scripts)
 
@@ -420,7 +420,7 @@ scripts/embedded-ai/
   ├─ config.mjs                # Configuration
   ├─ update-papers.mjs         # Main orchestrator
   ├─ scholar-bridge.mjs        # Scholar Python bridge
-  ├─ arxiv-bridge.mjs          # arXiv Python bridge (NEW)
+  ├─ arxiv-bridge.mjs          # arXiv Python bridge
   ├─ set-ops.mjs               # Dedup + merge
   ├─ filter-rules.mjs          # Filtering logic
   ├─ classify.mjs              # Classification
@@ -435,6 +435,7 @@ scripts/embedded-ai/
 ### Example Command
 ```bash
   node scripts/embedded-ai/update-papers.mjs --skip-search --skip-download --source arxiv --year-low 2025  
+  node scripts/embedded-ai/update-papers.mjs --skip-download --source arxiv --year-low 2025  
 ```
 ### Display Help
 ```bash

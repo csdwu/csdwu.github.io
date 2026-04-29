@@ -5,6 +5,7 @@ import {
   SCHOLAR_NORMALIZED_PATH,
   DOWNLOAD_STATE_PATH,
   DOWNLOAD_QUOTA_PATH,
+  SOURCE_STATS_PATH,
   GROUP_ORDER,
   SCHOLAR_MAX_RESULTS_PER_GROUP,
   SCHOLAR_REQUEST_SLEEP_SECONDS,
@@ -20,12 +21,18 @@ import {
   saveNormalizedPapers,
   runDownloadManager,
   safeReadJson,
+  writeJson,
 } from './scholar-bridge.mjs';
 import { runAllArxivKeywordSearches, loadAllArxivRawGroups } from './arxiv-bridge.mjs';
 import { runSetOperations } from './set-ops.mjs';
-import { applyFilterRulesToSetOps } from './filter-rules.mjs';
+import { applyFilterRulesToSetOps, shouldHideFromFinalOutput } from './filter-rules.mjs';
 import { classifyPapers, summarizeClassificationStats } from './classify.mjs';
-import { buildAndWriteOutputJson } from './output-builder.mjs';
+import { buildAndWriteOutputJson, summarizeSourceStats } from './output-builder.mjs';
+import {
+  buildSourceStatsReport,
+  extractFinalStatsForJson,
+  generateSourceStatsLogs,
+} from './source-stats.mjs';
 import { generateBibtexArtifacts } from './bibtex-builder.mjs';
 
 function unique(values) {
@@ -120,6 +127,8 @@ Options:
   --source MODE              Paper source: scholar | arxiv | all. Default: ${DEFAULT_SEARCH_SOURCE}
   --groups A,B,C             Which groups to process. Default: A,B,C
   --force-full-search        Ignore watermark and run full arXiv search
+  --skip-arxiv-in-a         Disallow arXiv fallback for A-only papers
+  --refilter-all             Re-filter historical data before final output (requires --skip-arxiv-in-a)
   --skip-search              Reuse existing raw cache instead of running search
   --skip-download            Skip downloader.py (default: true)
   --no-skip-download         Enable downloader.py
@@ -144,6 +153,8 @@ Options:
 Examples:
   node scripts/embedded-ai/update-papers.mjs --source arxiv
   node scripts/embedded-ai/update-papers.mjs --source arxiv --force-full-search
+  node scripts/embedded-ai/update-papers.mjs --skip-arxiv-in-a
+  node scripts/embedded-ai/update-papers.mjs --skip-arxiv-in-a --refilter-all
   node scripts/embedded-ai/update-papers.mjs --source all
   node scripts/embedded-ai/update-papers.mjs --source scholar --proxy-mode free
   node scripts/embedded-ai/update-papers.mjs --groups A,B --max-results 80
@@ -175,6 +186,8 @@ function parseCliArgs(argv) {
     source,
     groups: parseGroups(parseStringOption(argv, '--groups', null)),
     forceFullSearch: parseBooleanFlag(argv, '--force-full-search'),
+    skipArxivInA: parseBooleanFlag(argv, '--skip-arxiv-in-a'),
+    refilterAll: parseBooleanFlag(argv, '--refilter-all'),
     skipSearch: parseBooleanFlag(argv, '--skip-search'),
     skipDownload: parseDefaultTrueFlag(argv, '--skip-download', '--no-skip-download'),
     downloadDryRun: parseBooleanFlag(argv, '--download-dry-run'),
@@ -322,6 +335,18 @@ function summarizeGroupedPayloads(groupedPayloads = {}, groups = GROUP_ORDER) {
   return summary;
 }
 
+function buildRunMessage({ rawCount, historicalCount, newCandidateCount }) {
+  if (rawCount === 0 && historicalCount > 0) {
+    return 'No new papers found or arXiv temporarily unavailable; preserved historical data.';
+  }
+
+  if (rawCount > 0 && newCandidateCount === 0 && historicalCount > 0) {
+    return 'No new papers today. Existing dataset preserved.';
+  }
+
+  return null;
+}
+
 function buildPipelineSummary({
   cliOptions,
   searchMeta,
@@ -333,14 +358,17 @@ function buildPipelineSummary({
   bibtexRun,
   downloadRun,
   generatedAt,
+  message = null,
 }) {
   return {
     ok: true,
+    message,
     generated_at: generatedAt,
     options: {
       source: cliOptions.source,
       groups: cliOptions.groups,
       force_full_search: cliOptions.forceFullSearch,
+      skip_arxiv_in_a: cliOptions.skipArxivInA,
       skip_search: cliOptions.skipSearch,
       skip_download: cliOptions.skipDownload,
       download_dry_run: cliOptions.downloadDryRun,
@@ -521,6 +549,32 @@ async function executeClassificationStep(filteredResult, cliOptions) {
   });
 }
 
+async function persistSourceStats(rawPapers, finalPapers, cliOptions, generatedAt) {
+  // Build comprehensive source statistics report with both raw and final stages
+  const statsReport = buildSourceStatsReport({
+    rawPapers: rawPapers ?? [],
+    finalPapers: finalPapers ?? [],
+    cliOptions,
+    generatedAt,
+  });
+
+  // Write full report (including raw and final) to file
+  await writeJson(SOURCE_STATS_PATH, statsReport);
+  
+  // Log statistics
+  const logs = generateSourceStatsLogs({
+    rawStats: statsReport.raw,
+    finalStats: statsReport.final,
+    cliOptions,
+  });
+  for (const log of logs) {
+    logStep(log);
+  }
+
+  // Return final stats for JSON output (final stage only)
+  return extractFinalStatsForJson(statsReport);
+}
+
 async function executeDownloadStep(cliOptions) {
   if (cliOptions.skipDownload) {
     return null;
@@ -550,8 +604,10 @@ async function main() {
   const generatedAt = new Date().toISOString();
 
   logStep('Starting embedded AI paper update pipeline');
+  logStep(`skipArxivInA: ${cliOptions.skipArxivInA ? 'true' : 'false'}`);
 
   const { groupedPayloads, searchMeta } = await executeSearchStep(cliOptions);
+  const historicalPapers = safeArray(await safeReadJson(SCHOLAR_NORMALIZED_PATH, []));
 
   const rawCounts = summarizeGroupedPayloads(groupedPayloads, cliOptions.groups);
   const totalRawCount = Object.values(rawCounts).reduce((sum, count) => sum + count, 0);
@@ -559,20 +615,120 @@ async function main() {
   logStep(`Raw candidates total: ${totalRawCount}`);
 
   if (totalRawCount === 0) {
-    throw new Error(
-      'No search results available. Check raw cache or rerun without --skip-search.',
+    if (!historicalPapers.length) {
+      throw new Error(
+        'No search results available. Check raw cache or rerun without --skip-search.',
+      );
+    }
+
+    const preservedHistorical = historicalPapers;
+    const runMessage = buildRunMessage({
+      rawCount: totalRawCount,
+      historicalCount: preservedHistorical.length,
+      newCandidateCount: 0,
+    });
+    const mergedClassificationStats = summarizeClassificationStats(preservedHistorical);
+    const sourceStats = await persistSourceStats(preservedHistorical, preservedHistorical, cliOptions, generatedAt);
+
+    logStep(runMessage);
+
+    await saveNormalizedPapers(preservedHistorical);
+    logStep(`Saved normalized paper data to ${SCHOLAR_NORMALIZED_PATH}`);
+
+    const { outputJson, outputPath } = await buildAndWriteOutputJson({
+      classifiedPapers: preservedHistorical,
+      setOpsStats: {
+        raw_counts: rawCounts,
+        after_set_ops: {
+          A_only: 0,
+          B: 0,
+          C: 0,
+          merged_total: 0,
+          bc_overlap: 0,
+        },
+      },
+      filterStats: buildFilterStatsPayload({
+        filtered_papers: [],
+        stats: {},
+      }),
+      classificationStats: mergedClassificationStats,
+      sourceStats,
+      downloadState: await safeReadJson(DOWNLOAD_STATE_PATH, { papers: {} }),
+      generatedAt,
+      outputPath: cliOptions.outputPath,
+    });
+
+    logStep(`Wrote JSON output to ${outputPath}`);
+
+    const summary = buildPipelineSummary({
+      cliOptions,
+      searchMeta,
+      groupedPayloads,
+      setOpsResult: {
+        stats: {
+          raw_counts: rawCounts,
+          after_set_ops: {
+            A_only: 0,
+            B: 0,
+            C: 0,
+            merged_total: 0,
+            bc_overlap: 0,
+          },
+        },
+      },
+      filteredResult: {
+        filtered_papers: [],
+        stats: {},
+      },
+      classifiedResult: {
+        papers: preservedHistorical,
+        stats: mergedClassificationStats,
+      },
+      outputPath,
+      bibtexRun: null,
+      downloadRun: null,
+      generatedAt,
+      message: runMessage,
+    });
+
+    logStep(
+      `Run mode summary: source=${searchMeta?.source ?? cliOptions.source}, mode=${searchMeta?.mode ?? 'full'}, skip_download=${cliOptions.skipDownload}`,
     );
+
+    console.log(
+      JSON.stringify(
+        {
+          ...summary,
+          output_preview: {
+            version: outputJson.version,
+            categories: outputJson.categories.map((category) => ({
+              key: category.key,
+              title: category.title,
+              count: category.count,
+            })),
+          },
+        },
+        null,
+        2,
+      ),
+    );
+
+    return;
   }
 
   logStep('Running set operations and deduplication');
   const setOpsResult = runSetOperations(groupedPayloads);
   logStep(`After set operations: ${JSON.stringify(setOpsResult.stats.after_set_ops)}`);
 
+  // Capture raw stage papers (for source statistics)
+  const rawPapers = setOpsResult.merged_papers ?? [];
+
   logStep('Applying TH-CPL / arXiv filter rules');
-  const filteredResult = applyFilterRulesToSetOps(setOpsResult);
+  const filteredResult = applyFilterRulesToSetOps(setOpsResult, {
+    skipArxivInA: cliOptions.skipArxivInA,
+  });
   logStep(`After filtering: ${filteredResult.filtered_papers.length} papers remain`);
 
-  const historicalPapers = await safeReadJson(SCHOLAR_NORMALIZED_PATH, []);
   const { preservedHistorical, newCandidates } = mergeHistoricalWithFilteredPapers(
     safeArray(historicalPapers),
     filteredResult.filtered_papers,
@@ -581,6 +737,16 @@ async function main() {
   logStep(
     `Merge baseline ready: historical=${preservedHistorical.length}, incremental_filtered=${filteredResult.filtered_papers.length}, new_for_classification=${newCandidates.length}`,
   );
+
+  const runMessage = buildRunMessage({
+    rawCount: totalRawCount,
+    historicalCount: preservedHistorical.length,
+    newCandidateCount: newCandidates.length,
+  });
+
+  if (runMessage) {
+    logStep(runMessage);
+  }
 
   logStep('Classifying new papers only');
   const classifiedResult = await classifyPapers(newCandidates, {
@@ -596,16 +762,33 @@ async function main() {
   }
   const mergedPapers = [...finalMap.values()];
   const mergedClassificationStats = summarizeClassificationStats(mergedPapers);
-  logStep(`Final merged paper count: ${mergedPapers.length}`);
+  
+  // Apply refiltering for output if requested
+  const outputPapers = cliOptions.refilterAll
+    ? mergedPapers.filter((paper) => !shouldHideFromFinalOutput(paper, { skipArxivInA: cliOptions.skipArxivInA }))
+    : mergedPapers;
+
+  if (cliOptions.refilterAll) {
+    logStep(`refilterAll: true`);
+    logStep(`Historical canonical papers preserved: ${mergedPapers.length}`);
+    const hiddenCount = mergedPapers.length - outputPapers.length;
+    logStep(`Hidden from final output by refilter: ${hiddenCount}`);
+    logStep(`Final output papers after refilter: ${outputPapers.length}`);
+  }
+  
+  // Capture source statistics with both raw and final stages
+  const sourceStats = await persistSourceStats(rawPapers, outputPapers, cliOptions, generatedAt);
+  logStep(`Source stats written to ${SOURCE_STATS_PATH}`);
 
   await saveNormalizedPapers(mergedPapers);
   logStep(`Saved normalized paper data to ${SCHOLAR_NORMALIZED_PATH}`);
 
   const { outputJson, outputPath } = await buildAndWriteOutputJson({
-    classifiedPapers: mergedPapers,
+    classifiedPapers: outputPapers,
     setOpsStats: setOpsResult.stats,
     filterStats: buildFilterStatsPayload(filteredResult),
     classificationStats: mergedClassificationStats,
+    sourceStats,
     downloadState: await safeReadJson(DOWNLOAD_STATE_PATH, { papers: {} }),
     generatedAt,
     outputPath: cliOptions.outputPath,
@@ -616,7 +799,7 @@ async function main() {
   logStep('Generating BibTeX artifacts');
   let bibtexRun = null;
   try {
-    bibtexRun = await generateBibtexArtifacts(mergedPapers);
+    bibtexRun = await generateBibtexArtifacts(outputPapers);
     logStep('BibTeX artifact generation completed');
   } catch (error) {
     bibtexRun = {
@@ -674,6 +857,7 @@ async function main() {
       setOpsStats: setOpsResult.stats,
       filterStats: buildFilterStatsPayload(filteredResult),
       classificationStats: mergedClassificationStats,
+      sourceStats,
       downloadState,
       generatedAt,
       outputPath: cliOptions.outputPath,
@@ -699,6 +883,7 @@ async function main() {
         }
       : null,
     generatedAt,
+    message: runMessage,
   });
 
   logStep(

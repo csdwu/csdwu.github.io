@@ -2,7 +2,13 @@
 
 ## Overview
 
-This pipeline automates the discovery, filtering, classification, and publication of embedded AI research papers. It supports incremental updates with checkpoint-based resume, ensuring only new papers are processed while preserving historical data.
+This pipeline automates discovery, filtering, classification, and publication of Embedded AI papers.
+
+Current default behavior:
+- source defaults to arXiv (`--source arxiv`)
+- PDF download is skipped by default (`--skip-download` behavior is default-on)
+- search is incremental when watermark state exists
+- historical papers are preserved in final output JSON
 
 ## Data Flow
 
@@ -14,8 +20,9 @@ Search Sources → Normalization → Deduplication → Filtering → Classificat
 
 ### Key Features
 
-- **Multi-source search**: Google Scholar and arXiv
-- **Incremental updates**: Checkpoint-based resume, only process new papers
+- **Incremental arXiv search**: watermark-based (`last_search_state.json`) with overlap buffer
+- **Historical-safe merge**: merge old normalized papers with incremental results before final output
+- **Classification checkpoint**: only truly new papers enter classification
 - **Robust deduplication**: DOI > arXiv ID > title+year > hash fallback
 - **Intelligent filtering**: TH-CPL relevance and category-based rules
 - **LLM classification**: Tencent TokenHub with heuristic fallback
@@ -65,7 +72,31 @@ Papers are deduplicated using a hierarchical key system:
 
 This ensures stable identification across sources and updates.
 
-## Incremental Update & Checkpoint Resume
+## Incremental Search And State
+
+### Search Watermark State
+- File: `google_scholar_crawler/state/last_search_state.json`
+- Source: `arxiv`
+- Fields include:
+  - `last_successful_search_at`
+  - `source`
+  - `overlap_buffer_days`
+  - per-group `groups.A/B/C.last_successful_search_at`
+
+### How Incremental Search Works
+1. If no `last_search_state.json` exists, pipeline runs full search for initialization.
+2. If state exists, each group uses its watermark and applies overlap buffer (default 1 day).
+3. Incremental query uses `lastUpdatedDate` range filtering.
+4. Overlap duplicates are removed by existing dedupe logic.
+5. After successful run, watermark is updated.
+
+### Historical Merge Behavior
+1. Load historical `google_scholar_crawler/cache/normalized_papers.json`.
+2. Merge historical papers with this run's filtered incremental papers.
+3. Only papers not seen in historical set are sent to classification.
+4. Keep output compatible with `_data/embedded_ai_papers.json` frontend schema.
+
+## Incremental Classification Checkpoint
 
 ### Checkpoint File
 - Location: `google_scholar_crawler/state/classification_checkpoint.json`
@@ -73,11 +104,11 @@ This ensures stable identification across sources and updates.
 
 ### Process
 1. Load checkpoint on startup
-2. For each filtered paper, check if `dedupe_key` exists and result is complete
-3. Reuse existing classifications, skip LLM calls
-4. Only classify new/missing papers
+2. For each truly new paper, call classifier
+3. Reuse existing classifications when available
+4. Persist checkpoint atomically after each successful classification
 5. Persist each successful classification immediately (atomic write)
-6. Merge reused + new results for output
+6. Merge historical + incremental results for output
 
 ### Benefits
 - Avoids re-processing historical papers
@@ -115,6 +146,11 @@ pip install -r ../../google_scholar_crawler/requirements.txt
 node update-papers.mjs --source arxiv
 ```
 
+### Force Full Search Rebuild
+```bash
+node update-papers.mjs --source arxiv --force-full-search
+```
+
 ### Run Classification Only
 ```bash
 node update-papers.mjs --skip-search --skip-download
@@ -128,19 +164,32 @@ node update-papers.mjs --source arxiv --groups A --max-results 5
 ## GitHub Actions Automation
 
 ### Workflow: update-papers.yml
-- Runs daily at 09:17 Asia/Shanghai
-- Searches all sources (Scholar + arXiv)
-- Uses checkpoint for incremental updates
+- Runs daily (`cron: 0 0 * * *`, UTC)
+- Defaults to arXiv-only search
+- Defaults to skip PDF download
+- Uses search watermark + overlap buffer for incremental search
+- Uses checkpoint for incremental classification
 - Commits changes to:
   - `_data/embedded_ai_papers.json`
   - `google_scholar_crawler/cache/normalized_papers.json`
+  - `google_scholar_crawler/state/last_search_state.json`
   - `google_scholar_crawler/state/classification_checkpoint.json`
   - `google_scholar_crawler/state/download_state.json`
   - `google_scholar_crawler/state/download_quota.json`
   - `artifacts/*.bib`
 
 ### Manual Trigger
-Use workflow_dispatch with year_low/year_high inputs.
+Use `workflow_dispatch` with:
+- `year_low`
+- `year_high`
+- `total_limit`
+- `skip_download` (default `true`)
+
+### How To Verify Scheduled Run
+1. Open GitHub Actions `Update papers daily` workflow history.
+2. Check latest scheduled run status is `success`.
+3. In logs, confirm printed search mode (`full` or `incremental`) and skip-download behavior.
+4. Confirm recent commit updates `_data/embedded_ai_papers.json` and state files.
 
 ### Only New Papers Logic
 - Compares filtered papers against checkpoint
@@ -170,6 +219,7 @@ The pipeline updates these files in the repository:
 - `_data/embedded_ai_papers.json`: Frontend data
 - `google_scholar_crawler/cache/normalized_papers.json`: Raw normalized papers
 - `google_scholar_crawler/state/classification_checkpoint.json`: Classification cache
+- `google_scholar_crawler/state/last_search_state.json`: arXiv incremental watermark state
 - `google_scholar_crawler/state/download_state.json`: Download status
 - `google_scholar_crawler/state/download_quota.json`: Download limits
 - `artifacts/efficient_model_design.bib`: BibTeX by category
@@ -179,11 +229,14 @@ The pipeline updates these files in the repository:
 ## Common Commands
 
 ```bash
-# Full update
+# 1) Default incremental update (arXiv only, skip download by default)
 npm run update-papers
 
-# ArXiv only
-npm run update-papers -- --source arxiv
+# 2) Incremental update with year range
+npm run update-papers -- --source arxiv --year-low 2024 --year-high 2026
+
+# 3) Force full search (ignore watermark)
+npm run update-papers -- --source arxiv --force-full-search
 
 # Skip search, re-classify existing
 npm run update-papers -- --skip-search
@@ -217,7 +270,10 @@ cat google_scholar_crawler/state/classification_checkpoint.json | jq '. | length
 Modify `classify.mjs` to add debug logging.
 
 ### Reset State
-Delete checkpoint/state files to force full re-run (use with caution).
+Delete `google_scholar_crawler/state/last_search_state.json` to reset incremental search watermark.
+
+If you also want to reset classification cache, delete:
+- `google_scholar_crawler/state/classification_checkpoint.json`
 
 ### 1. Source Search Modules
 
@@ -356,7 +412,7 @@ google_scholar_crawler/
   ├─ downloads/
   │  └─ embedded-ai/           # Downloaded PDFs
   ├─ main.py                   # Python entry point
-  ├─ arxiv_search.py          # arXiv API client (NEW)
+  ├─ arxiv_search.py          # arXiv API client
   ├─ downloader.py
   └─ ... (Scholar crawler scripts)
 
@@ -364,7 +420,7 @@ scripts/embedded-ai/
   ├─ config.mjs                # Configuration
   ├─ update-papers.mjs         # Main orchestrator
   ├─ scholar-bridge.mjs        # Scholar Python bridge
-  ├─ arxiv-bridge.mjs          # arXiv Python bridge (NEW)
+  ├─ arxiv-bridge.mjs          # arXiv Python bridge
   ├─ set-ops.mjs               # Dedup + merge
   ├─ filter-rules.mjs          # Filtering logic
   ├─ classify.mjs              # Classification
@@ -379,6 +435,7 @@ scripts/embedded-ai/
 ### Example Command
 ```bash
   node scripts/embedded-ai/update-papers.mjs --skip-search --skip-download --source arxiv --year-low 2025  
+  node scripts/embedded-ai/update-papers.mjs --skip-download --source arxiv --year-low 2025  
 ```
 ### Display Help
 ```bash

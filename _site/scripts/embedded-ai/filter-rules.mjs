@@ -81,20 +81,32 @@ function extractArxivId(paper = {}) {
   );
 }
 
-function inferGroupPolicy(paper = {}) {
+function inferGroupPolicy(paper = {}, options = {}) {
   const finalSets = ensureArray(paper.search_sets_final);
   const source = toTrimmedString(paper.source);
+  const skipArxivInA = Boolean(options.skipArxivInA);
 
-  // arXiv papers should use TH_CPL_AB_OR_ARXIV policy regardless of group
+  const inA = finalSets.includes('A');
+  const inB = finalSets.includes('B');
+  const inC = finalSets.includes('C');
+
+  // When the flag is on, A-only papers must satisfy TH_CPL_A strictly.
+  // Mixed A+B/C papers follow the broader B/C strategy because the B/C membership
+  // indicates the paper already passed the more permissive low-power/TinyML path.
+  if (skipArxivInA && inA && !inB && !inC) {
+    return FILTER_POLICIES.TH_CPL_A;
+  }
+
+  // arXiv papers should keep the broad fallback for B/C and the default A behavior.
   if (source === 'arxiv') {
     return FILTER_POLICIES.TH_CPL_AB_OR_ARXIV;
   }
 
-  if (finalSets.includes('A')) {
+  if (inA) {
     return FILTER_POLICIES.TH_CPL_A;
   }
 
-  if (finalSets.includes('B') || finalSets.includes('C')) {
+  if (inB || inC) {
     return FILTER_POLICIES.TH_CPL_AB_OR_ARXIV;
   }
 
@@ -265,12 +277,12 @@ export function filterPaperByVenueRule(paper, policy = inferGroupPolicy(paper)) 
   };
 }
 
-export function applyFilterRulesToPapers(papers = []) {
+export function applyFilterRulesToPapers(papers = [], options = {}) {
   const accepted = [];
   const rejected = [];
 
   for (const paper of papers) {
-    const policy = inferGroupPolicy(paper);
+    const policy = inferGroupPolicy(paper, options);
     const result = filterPaperByVenueRule(paper, policy);
 
     if (result.accepted) {
@@ -290,9 +302,9 @@ export function applyFilterRulesToPapers(papers = []) {
   };
 }
 
-export function applyFilterRulesToSetOps(setOpsResult = {}) {
+export function applyFilterRulesToSetOps(setOpsResult = {}, options = {}) {
   const mergedPapers = ensureArray(setOpsResult.merged_papers);
-  const { accepted, rejected, stats } = applyFilterRulesToPapers(mergedPapers);
+  const { accepted, rejected, stats } = applyFilterRulesToPapers(mergedPapers, options);
 
   const acceptedByPartition = {
     A_only: [],
@@ -391,6 +403,60 @@ export function summarizeFilterStats(accepted = [], rejected = []) {
   };
 }
 
-export function inferPaperFilterPolicy(paper = {}) {
-  return inferGroupPolicy(paper);
+export function inferPaperFilterPolicy(paper = {}, options = {}) {
+  return inferGroupPolicy(paper, options);
+}
+
+/**
+ * Determines whether a paper should be hidden from final output (frontend JSON).
+ * Used when --refilter-all is enabled to exclude papers that don't meet current criteria.
+ * 
+ * Note: This only determines visibility for frontend output. Papers remain in canonical data.
+ * 
+ * @param {object} paper Paper object
+ * @param {object} options Options
+ * @param {boolean} options.skipArxivInA Whether to hide A-only arXiv papers
+ * @returns {boolean} true if paper should be hidden from frontend output
+ */
+export function shouldHideFromFinalOutput(paper = {}, options = {}) {
+  const { skipArxivInA = false } = options;
+
+  if (!skipArxivInA) {
+    return false;
+  }
+
+  // Extract groups from paper
+  const groups = ensureArray(paper.search_sets_final ?? paper.search_sets ?? [])
+    .map((g) => toTrimmedString(g))
+    .filter((g) => ['A', 'B', 'C'].includes(g));
+
+  const inA = groups.includes('A');
+  const inB = groups.includes('B');
+  const inC = groups.includes('C');
+  const isAOnly = inA && !inB && !inC;
+
+  // If not A-only, don't hide
+  if (!isAOnly) {
+    return false;
+  }
+
+  // Check if it's arXiv
+  const source = toTrimmedString(paper.source).toLowerCase();
+  const isArxiv =
+    source === 'arxiv' ||
+    Boolean(paper.arxiv_id) ||
+    Boolean(paper.urls?.arxiv) ||
+    toTrimmedString(paper.venue).toLowerCase() === 'arxiv' ||
+    toTrimmedString(paper.matched_venue).toLowerCase() === 'arxiv';
+
+  // If not arxiv, don't hide
+  if (!isArxiv) {
+    return false;
+  }
+
+  // Check if it has TH-CPL A level match
+  const hasThCplA = toTrimmedString(paper.matched_th_cpl_level) === 'A';
+
+  // Hide if it's A-only arxiv without TH-CPL A match
+  return !hasThCplA;
 }

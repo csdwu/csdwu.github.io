@@ -28,9 +28,9 @@ ARXIV_API_BASE = "https://export.arxiv.org/api/query"
 DEFAULT_PAGE_SIZE = 50
 DEFAULT_TOTAL_LIMIT = None  # No limit by default
 ARXIV_REQUEST_TIMEOUT = 30
-MAX_RETRIES = 3
-RETRY_BACKOFF_BASE = 3  # seconds
-PAGE_SLEEP = 4  # seconds between pages
+MAX_RETRIES = 6
+RETRY_BACKOFF_BASE = 10  # seconds
+PAGE_SLEEP = 6  # seconds between pages
 USER_AGENT = "embedded-ai-crawler/1.1 (compatible)"
 
 ATOM_NAMESPACES = {
@@ -529,6 +529,12 @@ def main():
                     f"[arxiv_search] Will fetch up to {min(total_available, total_limit)} papers in pages of {page_size}",
                     file=sys.stderr,
                 )
+
+        print(
+            f"[arxiv_search] Sleeping {PAGE_SLEEP}s before paginated search...",
+            file=sys.stderr,
+        )
+        time.sleep(PAGE_SLEEP)
 
         papers = search_arxiv_full(
             query=args.query,

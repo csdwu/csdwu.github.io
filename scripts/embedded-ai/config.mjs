@@ -31,6 +31,7 @@ export const DOWNLOAD_STATE_PATH = path.resolve(SCHOLAR_STATE_DIR, 'download_sta
 export const DOWNLOAD_QUOTA_PATH = path.resolve(SCHOLAR_STATE_DIR, 'download_quota.json');
 export const CLASSIFICATION_CHECKPOINT_PATH = path.resolve(SCHOLAR_STATE_DIR, 'classification_checkpoint.json');
 export const LAST_SEARCH_STATE_PATH = path.resolve(SCHOLAR_STATE_DIR, 'last_search_state.json');
+export const SOURCE_STATS_PATH = path.resolve(SCHOLAR_STATE_DIR, 'source_stats.json');
 export const ARXIV_INCREMENTAL_OVERLAP_DAYS = 1;
 
 export const OUTPUT_SCHEMA_VERSION = '2.0.0';

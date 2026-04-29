@@ -177,7 +177,15 @@
 
 <h2 id="overview">Overview</h2>
 
-<p>This pipeline automates the discovery, filtering, classification, and publication of embedded AI research papers. It supports incremental updates with checkpoint-based resume, ensuring only new papers are processed while preserving historical data.</p>
+<p>This pipeline automates discovery, filtering, classification, and publication of Embedded AI papers.</p>
+
+<p>Current default behavior:</p>
+<ul>
+  <li>source defaults to arXiv (<code class="language-plaintext highlighter-rouge">--source arxiv</code>)</li>
+  <li>PDF download is skipped by default (<code class="language-plaintext highlighter-rouge">--skip-download</code> behavior is default-on)</li>
+  <li>search is incremental when watermark state exists</li>
+  <li>historical papers are preserved in final output JSON</li>
+</ul>
 
 <h2 id="data-flow">Data Flow</h2>
 
@@ -189,8 +197,9 @@
 <h3 id="key-features">Key Features</h3>
 
 <ul>
-  <li><strong>Multi-source search</strong>: Google Scholar and arXiv</li>
-  <li><strong>Incremental updates</strong>: Checkpoint-based resume, only process new papers</li>
+  <li><strong>Incremental arXiv search</strong>: watermark-based (<code class="language-plaintext highlighter-rouge">last_search_state.json</code>) with overlap buffer</li>
+  <li><strong>Historical-safe merge</strong>: merge old normalized papers with incremental results before final output</li>
+  <li><strong>Classification checkpoint</strong>: only truly new papers enter classification</li>
   <li><strong>Robust deduplication</strong>: DOI &gt; arXiv ID &gt; title+year &gt; hash fallback</li>
   <li><strong>Intelligent filtering</strong>: TH-CPL relevance and category-based rules</li>
   <li><strong>LLM classification</strong>: Tencent TokenHub with heuristic fallback</li>
@@ -243,7 +252,40 @@
 
 <p>This ensures stable identification across sources and updates.</p>
 
-<h2 id="incremental-update--checkpoint-resume">Incremental Update &amp; Checkpoint Resume</h2>
+<h2 id="incremental-search-and-state">Incremental Search And State</h2>
+
+<h3 id="search-watermark-state">Search Watermark State</h3>
+<ul>
+  <li>File: <code class="language-plaintext highlighter-rouge">google_scholar_crawler/state/last_search_state.json</code></li>
+  <li>Source: <code class="language-plaintext highlighter-rouge">arxiv</code></li>
+  <li>Fields include:
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">last_successful_search_at</code></li>
+      <li><code class="language-plaintext highlighter-rouge">source</code></li>
+      <li><code class="language-plaintext highlighter-rouge">overlap_buffer_days</code></li>
+      <li>per-group <code class="language-plaintext highlighter-rouge">groups.A/B/C.last_successful_search_at</code></li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="how-incremental-search-works">How Incremental Search Works</h3>
+<ol>
+  <li>If no <code class="language-plaintext highlighter-rouge">last_search_state.json</code> exists, pipeline runs full search for initialization.</li>
+  <li>If state exists, each group uses its watermark and applies overlap buffer (default 1 day).</li>
+  <li>Incremental query uses <code class="language-plaintext highlighter-rouge">lastUpdatedDate</code> range filtering.</li>
+  <li>Overlap duplicates are removed by existing dedupe logic.</li>
+  <li>After successful run, watermark is updated.</li>
+</ol>
+
+<h3 id="historical-merge-behavior">Historical Merge Behavior</h3>
+<ol>
+  <li>Load historical <code class="language-plaintext highlighter-rouge">google_scholar_crawler/cache/normalized_papers.json</code>.</li>
+  <li>Merge historical papers with this run’s filtered incremental papers.</li>
+  <li>Only papers not seen in historical set are sent to classification.</li>
+  <li>Keep output compatible with <code class="language-plaintext highlighter-rouge">_data/embedded_ai_papers.json</code> frontend schema.</li>
+</ol>
+
+<h2 id="incremental-classification-checkpoint">Incremental Classification Checkpoint</h2>
 
 <h3 id="checkpoint-file">Checkpoint File</h3>
 <ul>
@@ -254,11 +296,11 @@
 <h3 id="process">Process</h3>
 <ol>
   <li>Load checkpoint on startup</li>
-  <li>For each filtered paper, check if <code class="language-plaintext highlighter-rouge">dedupe_key</code> exists and result is complete</li>
-  <li>Reuse existing classifications, skip LLM calls</li>
-  <li>Only classify new/missing papers</li>
+  <li>For each truly new paper, call classifier</li>
+  <li>Reuse existing classifications when available</li>
+  <li>Persist checkpoint atomically after each successful classification</li>
   <li>Persist each successful classification immediately (atomic write)</li>
-  <li>Merge reused + new results for output</li>
+  <li>Merge historical + incremental results for output</li>
 </ol>
 
 <h3 id="benefits">Benefits</h3>
@@ -301,6 +343,10 @@ npm <span class="nb">install
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>node update-papers.mjs <span class="nt">--source</span> arxiv
 </code></pre></div></div>
 
+<h3 id="force-full-search-rebuild">Force Full Search Rebuild</h3>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>node update-papers.mjs <span class="nt">--source</span> arxiv <span class="nt">--force-full-search</span>
+</code></pre></div></div>
+
 <h3 id="run-classification-only">Run Classification Only</h3>
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>node update-papers.mjs <span class="nt">--skip-search</span> <span class="nt">--skip-download</span>
 </code></pre></div></div>
@@ -313,13 +359,16 @@ npm <span class="nb">install
 
 <h3 id="workflow-update-papersyml">Workflow: update-papers.yml</h3>
 <ul>
-  <li>Runs daily at 09:17 Asia/Shanghai</li>
-  <li>Searches all sources (Scholar + arXiv)</li>
-  <li>Uses checkpoint for incremental updates</li>
+  <li>Runs daily (<code class="language-plaintext highlighter-rouge">cron: 0 0 * * *</code>, UTC)</li>
+  <li>Defaults to arXiv-only search</li>
+  <li>Defaults to skip PDF download</li>
+  <li>Uses search watermark + overlap buffer for incremental search</li>
+  <li>Uses checkpoint for incremental classification</li>
   <li>Commits changes to:
     <ul>
       <li><code class="language-plaintext highlighter-rouge">_data/embedded_ai_papers.json</code></li>
       <li><code class="language-plaintext highlighter-rouge">google_scholar_crawler/cache/normalized_papers.json</code></li>
+      <li><code class="language-plaintext highlighter-rouge">google_scholar_crawler/state/last_search_state.json</code></li>
       <li><code class="language-plaintext highlighter-rouge">google_scholar_crawler/state/classification_checkpoint.json</code></li>
       <li><code class="language-plaintext highlighter-rouge">google_scholar_crawler/state/download_state.json</code></li>
       <li><code class="language-plaintext highlighter-rouge">google_scholar_crawler/state/download_quota.json</code></li>
@@ -329,7 +378,21 @@ npm <span class="nb">install
 </ul>
 
 <h3 id="manual-trigger">Manual Trigger</h3>
-<p>Use workflow_dispatch with year_low/year_high inputs.</p>
+<p>Use <code class="language-plaintext highlighter-rouge">workflow_dispatch</code> with:</p>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">year_low</code></li>
+  <li><code class="language-plaintext highlighter-rouge">year_high</code></li>
+  <li><code class="language-plaintext highlighter-rouge">total_limit</code></li>
+  <li><code class="language-plaintext highlighter-rouge">skip_download</code> (default <code class="language-plaintext highlighter-rouge">true</code>)</li>
+</ul>
+
+<h3 id="how-to-verify-scheduled-run">How To Verify Scheduled Run</h3>
+<ol>
+  <li>Open GitHub Actions <code class="language-plaintext highlighter-rouge">Update papers daily</code> workflow history.</li>
+  <li>Check latest scheduled run status is <code class="language-plaintext highlighter-rouge">success</code>.</li>
+  <li>In logs, confirm printed search mode (<code class="language-plaintext highlighter-rouge">full</code> or <code class="language-plaintext highlighter-rouge">incremental</code>) and skip-download behavior.</li>
+  <li>Confirm recent commit updates <code class="language-plaintext highlighter-rouge">_data/embedded_ai_papers.json</code> and state files.</li>
+</ol>
 
 <h3 id="only-new-papers-logic">Only New Papers Logic</h3>
 <ul>
@@ -368,6 +431,7 @@ npm <span class="nb">install
   <li><code class="language-plaintext highlighter-rouge">_data/embedded_ai_papers.json</code>: Frontend data</li>
   <li><code class="language-plaintext highlighter-rouge">google_scholar_crawler/cache/normalized_papers.json</code>: Raw normalized papers</li>
   <li><code class="language-plaintext highlighter-rouge">google_scholar_crawler/state/classification_checkpoint.json</code>: Classification cache</li>
+  <li><code class="language-plaintext highlighter-rouge">google_scholar_crawler/state/last_search_state.json</code>: arXiv incremental watermark state</li>
   <li><code class="language-plaintext highlighter-rouge">google_scholar_crawler/state/download_state.json</code>: Download status</li>
   <li><code class="language-plaintext highlighter-rouge">google_scholar_crawler/state/download_quota.json</code>: Download limits</li>
   <li><code class="language-plaintext highlighter-rouge">artifacts/efficient_model_design.bib</code>: BibTeX by category</li>
@@ -377,11 +441,14 @@ npm <span class="nb">install
 
 <h2 id="common-commands">Common Commands</h2>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Full update</span>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># 1) Default incremental update (arXiv only, skip download by default)</span>
 npm run update-papers
 
-<span class="c"># ArXiv only</span>
-npm run update-papers <span class="nt">--</span> <span class="nt">--source</span> arxiv
+<span class="c"># 2) Incremental update with year range</span>
+npm run update-papers <span class="nt">--</span> <span class="nt">--source</span> arxiv <span class="nt">--year-low</span> 2024 <span class="nt">--year-high</span> 2026
+
+<span class="c"># 3) Force full search (ignore watermark)</span>
+npm run update-papers <span class="nt">--</span> <span class="nt">--source</span> arxiv <span class="nt">--force-full-search</span>
 
 <span class="c"># Skip search, re-classify existing</span>
 npm run update-papers <span class="nt">--</span> <span class="nt">--skip-search</span>
@@ -416,7 +483,12 @@ npm run update-papers <span class="nt">--</span> <span class="nt">--download-dry
 <p>Modify <code class="language-plaintext highlighter-rouge">classify.mjs</code> to add debug logging.</p>
 
 <h3 id="reset-state">Reset State</h3>
-<p>Delete checkpoint/state files to force full re-run (use with caution).</p>
+<p>Delete <code class="language-plaintext highlighter-rouge">google_scholar_crawler/state/last_search_state.json</code> to reset incremental search watermark.</p>
+
+<p>If you also want to reset classification cache, delete:</p>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">google_scholar_crawler/state/classification_checkpoint.json</code></li>
+</ul>
 
 <h3 id="1-source-search-modules">1. Source Search Modules</h3>
 
@@ -571,7 +643,7 @@ npm run update-papers <span class="nt">--</span> <span class="nt">--download-dry
   ├─ downloads/
   │  └─ embedded-ai/           # Downloaded PDFs
   ├─ main.py                   # Python entry point
-  ├─ arxiv_search.py          # arXiv API client (NEW)
+  ├─ arxiv_search.py          # arXiv API client
   ├─ downloader.py
   └─ ... (Scholar crawler scripts)
 
@@ -579,7 +651,7 @@ scripts/embedded-ai/
   ├─ config.mjs                # Configuration
   ├─ update-papers.mjs         # Main orchestrator
   ├─ scholar-bridge.mjs        # Scholar Python bridge
-  ├─ arxiv-bridge.mjs          # arXiv Python bridge (NEW)
+  ├─ arxiv-bridge.mjs          # arXiv Python bridge
   ├─ set-ops.mjs               # Dedup + merge
   ├─ filter-rules.mjs          # Filtering logic
   ├─ classify.mjs              # Classification
@@ -592,6 +664,7 @@ scripts/embedded-ai/
 
 <h3 id="example-command">Example Command</h3>
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  node scripts/embedded-ai/update-papers.mjs <span class="nt">--skip-search</span> <span class="nt">--skip-download</span> <span class="nt">--source</span> arxiv <span class="nt">--year-low</span> 2025  
+  node scripts/embedded-ai/update-papers.mjs <span class="nt">--skip-download</span> <span class="nt">--source</span> arxiv <span class="nt">--year-low</span> 2025  
 </code></pre></div></div>
 <h3 id="display-help">Display Help</h3>
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>node scripts/embedded-ai/update-papers.mjs <span class="nt">--help</span>
