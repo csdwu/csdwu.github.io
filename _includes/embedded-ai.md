@@ -129,6 +129,55 @@
               {% assign display_tags = paper.final_tags | default: paper.tags %}
               {% assign official_link = paper.urls.paper | default: paper.urls.ieee | default: paper.urls.acm | default: paper.urls.venue | default: paper.urls.url %}
               {% assign paper_link = paper.urls.pdf | default: official_link | default: paper.urls.arxiv %}
+              {% assign venue_text = paper.venue | default: paper.matched_venue | default: paper.venue_type | default: "" %}
+              {% assign venue_text = venue_text | strip %}
+              {% if venue_text != "" %}
+                {% assign venue_lower = venue_text | downcase %}
+
+                {% if venue_lower contains "computer-aided design of integrated circuits and systems" %}
+                  {% assign venue_text = "TCAD" %}
+                {% elsif venue_lower contains "pattern analysis and machine intelligence" %}
+                  {% assign venue_text = "TPAMI" %}
+                {% elsif venue_lower contains "neural networks and learning systems" %}
+                  {% assign venue_text = "TNNLS" %}
+                {% elsif venue_lower contains "circuits and systems for video technology" %}
+                  {% assign venue_text = "TCSVT" %}
+                {% elsif venue_lower contains "computer vision and pattern recognition" or venue_lower contains "cvpr" %}
+                  {% assign venue_text = "CVPR" %}
+                {% elsif venue_lower contains "international conference on computer vision" or venue_lower contains "iccv" %}
+                  {% assign venue_text = "ICCV" %}
+                {% elsif venue_lower contains "european conference on computer vision" or venue_lower contains "eccv" %}
+                  {% assign venue_text = "ECCV" %}
+                {% elsif venue_lower contains "neural information processing systems" or venue_lower contains "neurips" %}
+                  {% assign venue_text = "NeurIPS" %}
+                {% elsif venue_lower contains "machine learning" and venue_lower contains "conference" or venue_lower contains "icml" %}
+                  {% assign venue_text = "ICML" %}
+                {% elsif venue_lower contains "learning representations" or venue_lower contains "iclr" %}
+                  {% assign venue_text = "ICLR" %}
+                {% elsif venue_lower contains "artificial intelligence" and venue_lower contains "aaai" or venue_lower contains "aaai" %}
+                  {% assign venue_text = "AAAI" %}
+                {% elsif venue_lower contains "international joint conference on artificial intelligence" or venue_lower contains "ijcai" %}
+                  {% assign venue_text = "IJCAI" %}
+                {% elsif venue_lower contains "association for computational linguistics" or venue_lower contains "acl" %}
+                  {% assign venue_text = "ACL" %}
+                {% elsif venue_lower contains "empirical methods in natural language processing" or venue_lower contains "emnlp" %}
+                  {% assign venue_text = "EMNLP" %}
+                {% elsif venue_lower contains "design automation conference" or venue_lower contains "dac" %}
+                  {% assign venue_text = "DAC" %}
+                {% elsif venue_lower contains "design, automation and test in europe" or venue_lower contains "design automation and test in europe" or venue_lower contains "date" %}
+                  {% assign venue_text = "DATE" %}
+                {% elsif venue_lower contains "international conference on computer-aided design" or venue_lower contains "iccad" %}
+                  {% assign venue_text = "ICCAD" %}
+                {% elsif venue_lower contains "architectural support for programming languages and operating systems" or venue_lower contains "asplos" %}
+                  {% assign venue_text = "ASPLOS" %}
+                {% elsif venue_lower contains "computer architecture" and venue_lower contains "symposium" or venue_lower contains "isca" %}
+                  {% assign venue_text = "ISCA" %}
+                {% elsif venue_lower contains "microarchitecture" or venue_lower contains "micro" %}
+                  {% assign venue_text = "MICRO" %}
+                {% endif %}
+
+                {% assign venue_text = venue_text | replace: "IEEE/CVF ", "" | replace: "IEEE/CVF", "" | replace: "IEEE ", "" | replace: "ACM ", "" | replace: "Springer ", "" | replace: "Elsevier ", "" | replace: "Proceedings of the ", "" | replace: "Proceedings of ", "" | replace: "Transactions on ", "" | replace: "International Conference on ", "" | replace: "Conference on ", "" | replace: "Workshop on ", "" | replace: "Symposium on ", "" | strip %}
+              {% endif %}
               {% assign date_text = "" %}
 
               {% if paper.year and paper.month %}
@@ -175,6 +224,10 @@
                       {{ paper.title }}
                     {% endif %}
                   </span>
+
+                  {% if venue_text != "" %}
+                    <span class="embedded-ai-paper-date">{{ venue_text }}</span>
+                  {% endif %}
 
                   {% if date_text != "" %}
                     <span class="embedded-ai-paper-date">{{ date_text }}</span>
