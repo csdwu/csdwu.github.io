@@ -25,7 +25,7 @@ import {
 } from './scholar-bridge.mjs';
 import { runAllArxivKeywordSearches, loadAllArxivRawGroups } from './arxiv-bridge.mjs';
 import { runSetOperations } from './set-ops.mjs';
-import { applyFilterRulesToSetOps, shouldHideFromFinalOutput } from './filter-rules.mjs';
+import { applyFilterRulesToPapers, applyFilterRulesToSetOps } from './filter-rules.mjs';
 import { classifyPapers, summarizeClassificationStats } from './classify.mjs';
 import { buildAndWriteOutputJson, summarizeSourceStats } from './output-builder.mjs';
 import {
@@ -528,6 +528,34 @@ function buildFilterStatsPayload(filteredResult) {
   };
 }
 
+function maybeRefilterOutputPapers(papers = [], cliOptions = {}) {
+  if (!cliOptions.refilterAll) {
+    return {
+      filtered_papers: papers,
+      stats: {
+        after_filter: papers.length,
+        filter_breakdown: {
+          accepted_count: papers.length,
+          rejected_count: 0,
+        },
+      },
+    };
+  }
+
+  const result = applyFilterRulesToPapers(papers, {
+    skipArxivInA: cliOptions.skipArxivInA,
+  });
+
+  return {
+    filtered_papers: result.accepted,
+    rejected_papers: result.rejected,
+    stats: {
+      after_filter: result.accepted.length,
+      filter_breakdown: result.stats,
+    },
+  };
+}
+
 async function executeClassificationStep(filteredResult, cliOptions) {
   const papersToClassify = filteredResult?.filtered_papers ?? [];
 
@@ -621,14 +649,15 @@ async function main() {
       );
     }
 
-    const preservedHistorical = historicalPapers;
+    const finalHistoricalResult = maybeRefilterOutputPapers(historicalPapers, cliOptions);
+    const preservedHistorical = finalHistoricalResult.filtered_papers;
     const runMessage = buildRunMessage({
       rawCount: totalRawCount,
-      historicalCount: preservedHistorical.length,
+      historicalCount: historicalPapers.length,
       newCandidateCount: 0,
     });
     const mergedClassificationStats = summarizeClassificationStats(preservedHistorical);
-    const sourceStats = await persistSourceStats(preservedHistorical, preservedHistorical, cliOptions, generatedAt);
+    const sourceStats = await persistSourceStats(historicalPapers, preservedHistorical, cliOptions, generatedAt);
 
     logStep(runMessage);
 
@@ -647,10 +676,7 @@ async function main() {
           bc_overlap: 0,
         },
       },
-      filterStats: buildFilterStatsPayload({
-        filtered_papers: [],
-        stats: {},
-      }),
+      filterStats: buildFilterStatsPayload(finalHistoricalResult),
       classificationStats: mergedClassificationStats,
       sourceStats,
       downloadState: await safeReadJson(DOWNLOAD_STATE_PATH, { papers: {} }),
@@ -676,10 +702,7 @@ async function main() {
           },
         },
       },
-      filteredResult: {
-        filtered_papers: [],
-        stats: {},
-      },
+      filteredResult: finalHistoricalResult,
       classifiedResult: {
         papers: preservedHistorical,
         stats: mergedClassificationStats,
@@ -761,12 +784,9 @@ async function main() {
     finalMap.set(buildPaperIdentityKey(paper), paper);
   }
   const mergedPapers = [...finalMap.values()];
-  const mergedClassificationStats = summarizeClassificationStats(mergedPapers);
-  
-  // Apply refiltering for output if requested
-  const outputPapers = cliOptions.refilterAll
-    ? mergedPapers.filter((paper) => !shouldHideFromFinalOutput(paper, { skipArxivInA: cliOptions.skipArxivInA }))
-    : mergedPapers;
+  const finalFilterResult = maybeRefilterOutputPapers(mergedPapers, cliOptions);
+  const outputPapers = finalFilterResult.filtered_papers;
+  const mergedClassificationStats = summarizeClassificationStats(outputPapers);
 
   if (cliOptions.refilterAll) {
     logStep(`refilterAll: true`);
@@ -780,13 +800,13 @@ async function main() {
   const sourceStats = await persistSourceStats(rawPapers, outputPapers, cliOptions, generatedAt);
   logStep(`Source stats written to ${SOURCE_STATS_PATH}`);
 
-  await saveNormalizedPapers(mergedPapers);
+  await saveNormalizedPapers(outputPapers);
   logStep(`Saved normalized paper data to ${SCHOLAR_NORMALIZED_PATH}`);
 
   const { outputJson, outputPath } = await buildAndWriteOutputJson({
     classifiedPapers: outputPapers,
     setOpsStats: setOpsResult.stats,
-    filterStats: buildFilterStatsPayload(filteredResult),
+    filterStats: buildFilterStatsPayload(finalFilterResult),
     classificationStats: mergedClassificationStats,
     sourceStats,
     downloadState: await safeReadJson(DOWNLOAD_STATE_PATH, { papers: {} }),
@@ -853,9 +873,9 @@ async function main() {
 
   if (downloadRun) {
     await buildAndWriteOutputJson({
-      classifiedPapers: mergedPapers,
+      classifiedPapers: outputPapers,
       setOpsStats: setOpsResult.stats,
-      filterStats: buildFilterStatsPayload(filteredResult),
+      filterStats: buildFilterStatsPayload(finalFilterResult),
       classificationStats: mergedClassificationStats,
       sourceStats,
       downloadState,
@@ -869,9 +889,9 @@ async function main() {
     searchMeta,
     groupedPayloads,
     setOpsResult,
-    filteredResult,
+    filteredResult: finalFilterResult,
     classifiedResult: {
-      papers: mergedPapers,
+      papers: outputPapers,
       stats: mergedClassificationStats,
     },
     outputPath,

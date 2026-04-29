@@ -434,8 +434,8 @@ scripts/embedded-ai/
 
 ### Example Command
 ```bash
-  node scripts/embedded-ai/update-papers.mjs --skip-search --skip-download --source arxiv --year-low 2025  
-  node scripts/embedded-ai/update-papers.mjs --skip-download --source arxiv --year-low 2025  
+  node scripts/embedded-ai/update-papers.mjs --skip-search --skip-download --source arxiv --year-low 2025 --skip-arxiv-in-a
+  node scripts/embedded-ai/update-papers.mjs --skip-download --source arxiv --year-low 2025  --skip-arxiv-in-a
 ```
 ### Display Help
 ```bash

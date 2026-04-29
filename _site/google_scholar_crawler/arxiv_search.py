@@ -12,6 +12,7 @@ existing Scholar-style pipeline. Supports:
 
 import argparse
 import json
+import re
 import sys
 import time
 import urllib.error
@@ -36,7 +37,53 @@ USER_AGENT = "embedded-ai-crawler/1.1 (compatible)"
 ATOM_NAMESPACES = {
     "atom": "http://www.w3.org/2005/Atom",
     "opensearch": "http://a9.com/-/spec/opensearch/1.1/",
+    "arxiv": "http://arxiv.org/schemas/atom",
 }
+
+ARXIV_VENUE_PATTERNS = [
+    (re.compile(r"\b(neurips|nips|neural information processing systems|advances in neural information processing systems|conference on neural information processing systems)\b", re.I), "NeurIPS"),
+    (re.compile(r"\b(icml|international conference on machine learning)\b", re.I), "ICML"),
+    (re.compile(r"\b(iclr|international conference on learning representations)\b", re.I), "ICLR"),
+    (re.compile(r"\b(cvpr|conference on computer vision and pattern recognition)\b", re.I), "CVPR"),
+    (re.compile(r"\b(iccv|international conference on computer vision)\b", re.I), "ICCV"),
+    (re.compile(r"\b(eccv|european conference on computer vision)\b", re.I), "ECCV"),
+    (re.compile(r"\b(aaai|association for the advancement of artificial intelligence)\b", re.I), "AAAI"),
+    (re.compile(r"\b(ijcai|international joint conference on artificial intelligence)\b", re.I), "IJCAI"),
+    (re.compile(r"\b(asplos|architectural support for programming languages and operating systems)\b", re.I), "ASPLOS"),
+    (re.compile(r"\b(isca|international symposium on computer architecture)\b", re.I), "ISCA"),
+    (re.compile(r"\b(microarchitecture|ieee/acm international symposium on microarchitecture|\bmicro\b)\b", re.I), "MICRO"),
+    (re.compile(r"\b(hpca|high performance computer architecture|international symposium on high-performance computer architecture)\b", re.I), "HPCA"),
+    (re.compile(r"\b(dac|design automation conference)\b", re.I), "DAC"),
+    (re.compile(r"\b(date|design, automation and test in europe)\b", re.I), "DATE"),
+    (re.compile(r"\b(iccad|international conference on computer-aided design|computer aided design)\b", re.I), "ICCAD"),
+    (re.compile(r"\b(codes\+isss|codes and isss|codes/isss|hardware/software co-design and system synthesis)\b", re.I), "CODES+ISSS"),
+    (re.compile(r"\b(emsoft|embedded software)\b", re.I), "EMSOFT"),
+    (re.compile(r"\b(rtas|real-time and embedded technology and applications symposium)\b", re.I), "RTAS"),
+    (re.compile(r"\b(rtss|real-time systems symposium)\b", re.I), "RTSS"),
+    (re.compile(r"\b(islped|international symposium on low power electronics and design|low power electronics and design)\b", re.I), "ISLPED"),
+    (re.compile(r"\b(ipsn|information processing in sensor networks)\b", re.I), "IPSN"),
+    (re.compile(r"\b(sensys|sensor systems|embedded networked sensor systems)\b", re.I), "SenSys"),
+    (re.compile(r"\b(ieee transactions on computers|ieee trans\.? on computers|ieee tc)\b", re.I), "IEEE Transactions on Computers"),
+    (re.compile(r"\b(ieee transactions on computer-aided design|ieee transactions on computer aided design|ieee trans\.? on computer[- ]aided design|ieee tcad|tcad)\b", re.I), "IEEE Transactions on Computer-Aided Design of Integrated Circuits and Systems"),
+    (re.compile(r"\b(acm transactions on embedded computing systems|acm tecs|tecs)\b", re.I), "ACM Transactions on Embedded Computing Systems"),
+]
+
+
+def infer_venue_from_arxiv_metadata(journal_ref: str = "", comment: str = "", doi: str = "") -> str:
+    """
+    Conservatively infer a real venue from arXiv metadata.
+    Returns an empty string when no reliable venue can be recognized.
+    """
+    for source_text in (journal_ref, comment, doi):
+        text = source_text.strip()
+        if not text:
+            continue
+
+        for pattern, venue in ARXIV_VENUE_PATTERNS:
+            if pattern.search(text):
+                return venue
+
+    return ""
 
 
 def parse_arxiv_entry(entry, namespaces: Dict[str, str]) -> Optional[Dict[str, Any]]:
@@ -62,6 +109,36 @@ def parse_arxiv_entry(entry, namespaces: Dict[str, str]) -> Optional[Dict[str, A
         abstract = summary_elem.text.strip() if summary_elem is not None and summary_elem.text else ""
         published = published_elem.text.strip() if published_elem is not None and published_elem.text else ""
         updated = updated_elem.text.strip() if updated_elem is not None and updated_elem.text else ""
+        journal_ref = entry.findtext("arxiv:journal_ref", default="", namespaces=namespaces).strip()
+        doi = entry.findtext("arxiv:doi", default="", namespaces=namespaces).strip()
+        comment = entry.findtext("arxiv:comment", default="", namespaces=namespaces).strip()
+
+        inferred_venue = infer_venue_from_arxiv_metadata(journal_ref, comment, doi)
+        if inferred_venue:
+            if journal_ref:
+                venue = inferred_venue
+                raw_venue = journal_ref
+                venue_source = "arxiv_journal_ref"
+            elif comment:
+                venue = inferred_venue
+                raw_venue = comment
+                venue_source = "arxiv_comment"
+            else:
+                venue = inferred_venue
+                raw_venue = ""
+                venue_source = "arxiv_doi"
+        elif journal_ref:
+            venue = journal_ref
+            raw_venue = journal_ref
+            venue_source = "arxiv_journal_ref"
+        elif comment:
+            venue = comment
+            raw_venue = comment
+            venue_source = "arxiv_comment"
+        else:
+            venue = ""
+            raw_venue = ""
+            venue_source = ""
 
         year = None
         month = None
@@ -116,8 +193,14 @@ def parse_arxiv_entry(entry, namespaces: Dict[str, str]) -> Optional[Dict[str, A
             "pub_url": paper_url,
             "snippet": abstract[:200] if abstract else "",
             "source": "arxiv",
-            "doi": "",
-            "venue": "arXiv",
+            "is_preprint_on_arxiv": True,
+            "preprint_source": "arXiv",
+            "journal_ref": journal_ref,
+            "doi": doi,
+            "arxiv_comment": comment,
+            "venue": venue,
+            "raw_venue": raw_venue,
+            "venue_source": venue_source,
             "cited_by": 0,
         }
         return paper

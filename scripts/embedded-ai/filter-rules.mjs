@@ -33,6 +33,20 @@ function firstNonEmpty(...values) {
   return '';
 }
 
+function isArxivVenue(value) {
+  return /^arxiv(\.org)?$/i.test(toTrimmedString(value));
+}
+
+function firstRealVenue(...values) {
+  for (const value of values) {
+    const text = toTrimmedString(value);
+    if (text && !isArxivVenue(text)) {
+      return text;
+    }
+  }
+  return '';
+}
+
 function buildUrlMap(paper = {}) {
   const urls = { ...(paper.urls ?? {}) };
 
@@ -82,18 +96,18 @@ function extractArxivId(paper = {}) {
 }
 
 function inferGroupPolicy(paper = {}, options = {}) {
+  const rawSets = ensureArray(paper.search_sets_raw);
   const finalSets = ensureArray(paper.search_sets_final);
   const source = toTrimmedString(paper.source);
   const skipArxivInA = Boolean(options.skipArxivInA);
 
+  const rawInA = rawSets.includes('A');
   const inA = finalSets.includes('A');
   const inB = finalSets.includes('B');
   const inC = finalSets.includes('C');
 
-  // When the flag is on, A-only papers must satisfy TH_CPL_A strictly.
-  // Mixed A+B/C papers follow the broader B/C strategy because the B/C membership
-  // indicates the paper already passed the more permissive low-power/TinyML path.
-  if (skipArxivInA && inA && !inB && !inC) {
+  // When the flag is on, anything that originally matched A must satisfy TH_CPL_A strictly.
+  if (skipArxivInA && rawInA) {
     return FILTER_POLICIES.TH_CPL_A;
   }
 
@@ -114,8 +128,11 @@ function inferGroupPolicy(paper = {}, options = {}) {
 }
 
 function getPrimaryVenueString(paper = {}) {
-  return firstNonEmpty(
+  return firstRealVenue(
     paper.venue,
+    paper.inferred_venue,
+    paper.publication_venue,
+    paper.journal_ref,
     paper.matched_venue,
     paper.raw_venue,
   );
@@ -134,9 +151,12 @@ function collectArxivSignals(paper = {}) {
 
   const matchedUrls = candidates.filter((url) => isArxivUrl(url));
   const arxivId = extractArxivId(paper);
+  const source = toTrimmedString(paper.source).toLowerCase();
+  const preprintSource = toTrimmedString(paper.preprint_source).toLowerCase();
+  const isPreprintOnArxiv = Boolean(paper.is_preprint_on_arxiv) || source === 'arxiv' || preprintSource === 'arxiv';
 
   return {
-    is_on_arxiv: matchedUrls.length > 0 || Boolean(arxivId),
+    is_on_arxiv: matchedUrls.length > 0 || Boolean(arxivId) || isPreprintOnArxiv,
     arxiv_id: arxivId || '',
     matched_urls: matchedUrls,
   };
@@ -155,7 +175,7 @@ function buildVenueMatchPayload(venueValue, policy) {
   };
 }
 
-function normalizeFilterBucket({ policy, hasVenueMatch, hasArxiv }) {
+function normalizeFilterBucket({ policy, hasVenueMatch, hasArxiv, hasRealVenue }) {
   if (policy === FILTER_POLICIES.TH_CPL_A) {
     return hasVenueMatch ? 'th_cpl_a' : 'rejected';
   }
@@ -165,7 +185,7 @@ function normalizeFilterBucket({ policy, hasVenueMatch, hasArxiv }) {
     return level === 'A' ? 'th_cpl_a' : 'th_cpl_ab';
   }
 
-  if (hasArxiv) {
+  if (hasArxiv && !hasRealVenue) {
     return 'arxiv';
   }
 
@@ -177,6 +197,7 @@ function buildFilterDecision(paper = {}, policy = inferGroupPolicy(paper)) {
   const venuePayload = buildVenueMatchPayload(venueValue, policy);
   const arxivSignals = collectArxivSignals(paper);
 
+  const hasRealVenue = Boolean(venueValue);
   const venueMatched = Boolean(venuePayload.match_result?.matched);
   const arxivMatched = Boolean(arxivSignals.is_on_arxiv);
 
@@ -189,11 +210,13 @@ function buildFilterDecision(paper = {}, policy = inferGroupPolicy(paper)) {
       ? 'matched_th_cpl_a'
       : 'rejected_not_in_th_cpl_a';
   } else if (policy === FILTER_POLICIES.TH_CPL_AB_OR_ARXIV) {
-    accepted = venueMatched || arxivMatched;
+    accepted = venueMatched || (!hasRealVenue && arxivMatched);
     if (venueMatched) {
       reason = 'matched_th_cpl_ab';
-    } else if (arxivMatched) {
+    } else if (!hasRealVenue && arxivMatched) {
       reason = 'matched_arxiv';
+    } else if (hasRealVenue) {
+      reason = 'rejected_real_venue_did_not_match_th_cpl';
     } else {
       reason = 'rejected_not_in_th_cpl_ab_and_not_on_arxiv';
     }
@@ -203,6 +226,7 @@ function buildFilterDecision(paper = {}, policy = inferGroupPolicy(paper)) {
     policy,
     hasVenueMatch: venueMatched,
     hasArxiv: arxivMatched,
+    hasRealVenue,
   });
 
   const match = venuePayload.match_result?.match ?? null;
@@ -425,38 +449,22 @@ export function shouldHideFromFinalOutput(paper = {}, options = {}) {
     return false;
   }
 
-  // Extract groups from paper
-  const groups = ensureArray(paper.search_sets_final ?? paper.search_sets ?? [])
+  const groups = ensureArray(paper.search_sets_raw ?? paper.search_sets_final ?? paper.search_sets ?? [])
     .map((g) => toTrimmedString(g))
     .filter((g) => ['A', 'B', 'C'].includes(g));
 
   const inA = groups.includes('A');
-  const inB = groups.includes('B');
-  const inC = groups.includes('C');
-  const isAOnly = inA && !inB && !inC;
 
-  // If not A-only, don't hide
-  if (!isAOnly) {
+  if (!inA) {
     return false;
   }
 
-  // Check if it's arXiv
-  const source = toTrimmedString(paper.source).toLowerCase();
-  const isArxiv =
-    source === 'arxiv' ||
-    Boolean(paper.arxiv_id) ||
-    Boolean(paper.urls?.arxiv) ||
-    toTrimmedString(paper.venue).toLowerCase() === 'arxiv' ||
-    toTrimmedString(paper.matched_venue).toLowerCase() === 'arxiv';
-
-  // If not arxiv, don't hide
-  if (!isArxiv) {
-    return false;
-  }
-
-  // Check if it has TH-CPL A level match
   const hasThCplA = toTrimmedString(paper.matched_th_cpl_level) === 'A';
 
-  // Hide if it's A-only arxiv without TH-CPL A match
+  if (hasThCplA) {
+    return false;
+  }
+
+  // Raw A membership is enough to require a real TH_CPL A match when the flag is enabled.
   return !hasThCplA;
 }
