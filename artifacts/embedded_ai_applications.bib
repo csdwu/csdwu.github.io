@@ -301,6 +301,17 @@
   abstract = {Deploying neural-network control barrier functions (CBFs) on embedded hardware requires evaluating the barrier value and its Lie derivatives along the system vector fields at every control cycle. The standard mechanism for exact gradient extraction, reverse-mode automatic differentiation, constructs a dynamic computational graph whose memory footprint grows with network depth and whose backward traversal obstructs the worst-case execution time analysis required for safety-critical certification. This paper presents a dual-algebraic compiler that extracts the exact barrier value and its Lie derivatives through forward network evaluation alone. Encoding the system state as the real part of a dual number and a target vector field as the dual part, we prove that every affine and componentwise-activation layer admits a dual extension that propagates the exact directional derivative alongside the activation, and that the composed dual-extended network evaluates the exact Jacobian--vector-field product with zero truncation error. We derive closed-form expressions for the dual-pass floating-point operation count and peak memory footprint, prove that the proposed algorithm eliminates dynamic graph allocation, and extend the framework to the second-order Lie derivatives required by relative-degree-two CBFs using hyper-dual arithmetic. An open-source ahead-of-time compiler translates trained neural CBFs into self-contained C++ headers that assemble the complete safety constraint on an ESP32-S3 microcontroller from a statically allocated buffer, with zero dynamic memory allocation and a sub-millisecond cycle budget that supports kilohertz-rate safety filters.}
 }
 
+@article{araslanov2026-featurising-pixels-from-dynamic-35955735,
+  author = {Nikita Araslanov and Martin Sundermeyer and Hidenobu Matsuki and David Joseph Tan and Federico Tombari},
+  title = {Featurising Pixels from Dynamic 3D Scenes with Linear In-Context Learners},
+  year = {2026},
+  journal = {CVPR},
+  eprint = {2604.26488v1},
+  archivePrefix = {arXiv},
+  url = {https://arxiv.org/abs/2604.26488v1},
+  abstract = {One of the most exciting applications of vision models involve pixel-level reasoning. Despite the abundance of vision foundation models, we still lack representations that effectively embed spatio-temporal properties of visual scenes at the pixel level. Existing frameworks either train on image-based pretext tasks, which do not account for dynamic elements, or on video sequences for action-level reasoning, which does not scale to dense pixel-level prediction. We present a framework that learns pixel-accurate feature descriptors from videos, LILA. The core element of our training framework is linear in-context learning. LILA leverages spatio-temporal cue maps -- depth and motion -- estimated with off-the-shelf networks. Despite the noisy nature of those cues, LILA trains effectively on uncurated video datasets, embedding semantic and geometric properties in a temporally consistent manner. We demonstrate compelling empirical benefits of the learned representation across a diverse suite of vision tasks: video object segmentation, surface normal estimation and semantic segmentation.}
+}
+
 @article{kaushik2026-forget-less-by-learning-bc4e8076,
   author = {Arjun Ramesh Kaushik and Naresh Kumar Devulapally and Vishnu Suresh Lokhande and Nalini K. Ratha and Venu Govindaraju},
   title = {Forget Less by Learning from Parents Through Hierarchical Relationships},

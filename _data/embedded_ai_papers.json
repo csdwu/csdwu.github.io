@@ -1,6 +1,6 @@
 {
   "version": "2.0.0",
-  "generated_at": "2026-04-29T09:47:31.021Z",
+  "generated_at": "2026-04-30T02:30:30.682Z",
   "query_groups": {
     "A": "\"embedded ai\"",
     "B": "(\"low power\" OR \"ultra-low-power\") \"embedded ai\"",
@@ -8,24 +8,24 @@
   },
   "stats": {
     "raw_counts": {
-      "A": 6469,
-      "B": 257,
-      "C": 130
+      "A": 21,
+      "B": 1,
+      "C": 0
     },
     "after_set_ops": {
-      "A_only": 6362,
-      "B": 257,
-      "C": 130,
-      "merged_total": 6713,
-      "bc_overlap": 36
+      "A_only": 20,
+      "B": 1,
+      "C": 0,
+      "merged_total": 21,
+      "bc_overlap": 0
     },
-    "after_filter": 765,
+    "after_filter": 766,
     "classification": {
-      "total": 765,
+      "total": 766,
       "by_category": {
         "Efficient Model Design and Optimization": 239,
         "Novel Computing Architectures and Domain-Specific Accelerators": 39,
-        "Embedded AI Applications": 487
+        "Embedded AI Applications": 488
       },
       "by_tag": {
         "TinyML": 44,
@@ -35,14 +35,14 @@
       "by_provider": {
         "tencent_tokenhub": 0,
         "heuristic": 0,
-        "heuristic_fallback": 765
+        "heuristic_fallback": 766
       }
     },
     "source_stats": {
-      "total": 765,
+      "total": 766,
       "by_group": {
         "A": {
-          "total": 635,
+          "total": 636,
           "arxiv": 0,
           "venues": {
             "AAAI": 89,
@@ -95,7 +95,7 @@
             "CSL": 0,
             "CT-RSA": 0,
             "CVIU": 0,
-            "CVPR": 56,
+            "CVPR": 57,
             "CoNEXT": 0,
             "DAC": 8,
             "DASFAA": 0,
@@ -1539,7 +1539,7 @@
         }
       },
       "total_summary": {
-        "total": 780,
+        "total": 781,
         "arxiv": 117,
         "venues": {
           "AAAI": 89,
@@ -1592,7 +1592,7 @@
           "CSL": 0,
           "CT-RSA": 0,
           "CVIU": 0,
-          "CVPR": 57,
+          "CVPR": 58,
           "CoNEXT": 0,
           "DAC": 8,
           "DASFAA": 0,
@@ -16696,7 +16696,7 @@
     {
       "key": "embedded_ai_applications",
       "title": "Embedded AI Applications",
-      "count": 487,
+      "count": 488,
       "papers": [
         {
           "id": "000a4cacf2d780478ca41fe7c8f3a0c7981b89d2",
@@ -16943,6 +16943,58 @@
           "doi": "",
           "arxiv_comment": "",
           "arxiv_id": "2604.23995v1",
+          "raw_venue": "",
+          "venue_source": "",
+          "sort_key": 202600,
+          "download": {
+            "status": "pending",
+            "source": null,
+            "path": null,
+            "last_attempt_at": null
+          }
+        },
+        {
+          "id": "fd17680d0221956e07fe12c7e6564739ed4fc061",
+          "title": "Featurising Pixels from Dynamic 3D Scenes with Linear In-Context Learners",
+          "authors": [
+            "Nikita Araslanov",
+            "Martin Sundermeyer",
+            "Hidenobu Matsuki",
+            "David Joseph Tan",
+            "Federico Tombari"
+          ],
+          "year": 2026,
+          "month": 4,
+          "source": "arxiv",
+          "venue": "CVPR",
+          "venue_type": "conference",
+          "abstract": "One of the most exciting applications of vision models involve pixel-level reasoning. Despite the abundance of vision foundation models, we still lack representations that effectively embed spatio-temporal properties of visual scenes at the pixel level. Existing frameworks either train on image-based pretext tasks, which do not account for dynamic elements, or on video sequences for action-level reasoning, which does not scale to dense pixel-level prediction. We present a framework that learns pixel-accurate feature descriptors from videos, LILA. The core element of our training framework is linear in-context learning. LILA leverages spatio-temporal cue maps -- depth and motion -- estimated with off-the-shelf networks. Despite the noisy nature of those cues, LILA trains effectively on uncurated video datasets, embedding semantic and geometric properties in a temporally consistent manner. We demonstrate compelling empirical benefits of the learned representation across a diverse suite of vision tasks: video object segmentation, surface normal estimation and semantic segmentation.",
+          "urls": {
+            "arxiv": "https://arxiv.org/abs/2604.26488v1",
+            "pdf": "https://arxiv.org/pdf/2604.26488v1",
+            "paper": "https://arxiv.org/abs/2604.26488v1"
+          },
+          "search_sets_raw": [
+            "A"
+          ],
+          "search_sets_final": [
+            "A"
+          ],
+          "filter_bucket": "th_cpl_a",
+          "matched_venue": "CVPR",
+          "matched_th_cpl_level": "A",
+          "matched_th_cpl_area": "Artificial Intelligence and Pattern Recognition",
+          "category": "Embedded AI Applications",
+          "llm_tags": [],
+          "forced_tags": [],
+          "final_tags": [],
+          "cited_by": 0,
+          "is_preprint_on_arxiv": false,
+          "preprint_source": "",
+          "journal_ref": "",
+          "doi": "",
+          "arxiv_comment": "",
+          "arxiv_id": "2604.26488v1",
           "raw_venue": "",
           "venue_source": "",
           "sort_key": 202600,
