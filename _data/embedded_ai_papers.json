@@ -1,6 +1,6 @@
 {
   "version": "2.0.0",
-  "generated_at": "2026-04-30T02:30:30.682Z",
+  "generated_at": "2026-05-01T02:35:35.033Z",
   "query_groups": {
     "A": "\"embedded ai\"",
     "B": "(\"low power\" OR \"ultra-low-power\") \"embedded ai\"",
@@ -8,38 +8,38 @@
   },
   "stats": {
     "raw_counts": {
-      "A": 21,
-      "B": 1,
-      "C": 0
+      "A": 26,
+      "B": 3,
+      "C": 1
     },
     "after_set_ops": {
-      "A_only": 20,
-      "B": 1,
-      "C": 0,
-      "merged_total": 21,
-      "bc_overlap": 0
+      "A_only": 25,
+      "B": 3,
+      "C": 1,
+      "merged_total": 28,
+      "bc_overlap": 1
     },
-    "after_filter": 766,
+    "after_filter": 767,
     "classification": {
-      "total": 766,
+      "total": 767,
       "by_category": {
         "Efficient Model Design and Optimization": 239,
         "Novel Computing Architectures and Domain-Specific Accelerators": 39,
-        "Embedded AI Applications": 488
+        "Embedded AI Applications": 489
       },
       "by_tag": {
         "TinyML": 44,
-        "LP": 94,
+        "LP": 95,
         "ULP": 13
       },
       "by_provider": {
         "tencent_tokenhub": 0,
         "heuristic": 0,
-        "heuristic_fallback": 766
+        "heuristic_fallback": 767
       }
     },
     "source_stats": {
-      "total": 766,
+      "total": 767,
       "by_group": {
         "A": {
           "total": 636,
@@ -416,8 +416,8 @@
           "unknown": 0
         },
         "B": {
-          "total": 101,
-          "arxiv": 78,
+          "total": 102,
+          "arxiv": 79,
           "venues": {
             "AAAI": 0,
             "AAMAS": 0,
@@ -1539,8 +1539,8 @@
         }
       },
       "total_summary": {
-        "total": 781,
-        "arxiv": 117,
+        "total": 782,
+        "arxiv": 118,
         "venues": {
           "AAAI": 89,
           "AAMAS": 0,
@@ -16696,7 +16696,7 @@
     {
       "key": "embedded_ai_applications",
       "title": "Embedded AI Applications",
-      "count": 488,
+      "count": 489,
       "papers": [
         {
           "id": "000a4cacf2d780478ca41fe7c8f3a0c7981b89d2",
@@ -17200,6 +17200,61 @@
           "doi": "",
           "arxiv_comment": "",
           "arxiv_id": "2604.12223v1",
+          "raw_venue": "",
+          "venue_source": "",
+          "sort_key": 202600,
+          "download": {
+            "status": "pending",
+            "source": null,
+            "path": null,
+            "last_attempt_at": null
+          }
+        },
+        {
+          "id": "4d8f34dc45ff3cba1b1c256332188f840e5ea7a7",
+          "title": "Physical Foundation Models: Fixed hardware implementations of large-scale neural networks",
+          "authors": [
+            "Logan G Wright",
+            "Tianyu Wang",
+            "Tatsuhiro Onodera",
+            "Peter L. McMahon"
+          ],
+          "year": 2026,
+          "month": 4,
+          "source": "arxiv",
+          "venue": "",
+          "venue_type": "",
+          "abstract": "Foundation models are deep neural networks (such as GPT-5, Gemini~3, and Opus~4) trained on large datasets that can perform diverse downstream tasks -- text and code generation, question answering, summarization, image classification, and so on. The philosophy of foundation models is to put effort into a single, large (${\\sim}10^{12}$-parameter) general-purpose model that can be adapted to many downstream tasks with no or minimal additional training. We argue that the rise of foundation models presents an opportunity for hardware engineers: in contrast to when different models were used for different tasks, it now makes sense to build special-purpose, fixed hardware implementations of neural networks, manufactured and released at the roughly 1-year cadence of major new foundation-model versions.\n  Beyond conventional digital-electronic inference hardware with read-only weight memory, we advocate a more radical re-thinking: hardware in which the neural network is realized directly at the level of the physical design and operates via the hardware's natural physical dynamics -- \\textit{Physical Foundation Models} (PFMs). PFMs could enable orders-of-magnitude advantages in energy efficiency, speed, and parameter density. For ${\\sim}10^{12}$-parameter models, this would both reduce the high energy burden of AI in datacenters and enable AI in edge devices that today are power-constrained to far smaller models. PFMs could also enable inference hardware for models much larger than current ones: $10^{15}$- or even $10^{18}$-parameter PFMs seem plausible by some measures. We present back-of-the-envelope calculations illustrating PFM scaling using an optical example -- a 3D nanostructured glass medium -- and discuss prospects in nanoelectronics and other physical platforms. We conclude with the major research challenges that must be resolved for trillion-parameter PFMs and beyond to become reality.",
+          "urls": {
+            "arxiv": "https://arxiv.org/abs/2604.27911v1",
+            "pdf": "https://arxiv.org/pdf/2604.27911v1",
+            "paper": "https://arxiv.org/abs/2604.27911v1"
+          },
+          "search_sets_raw": [
+            "B"
+          ],
+          "search_sets_final": [
+            "B"
+          ],
+          "filter_bucket": "arxiv",
+          "matched_venue": "",
+          "matched_th_cpl_level": "",
+          "matched_th_cpl_area": "",
+          "category": "Embedded AI Applications",
+          "llm_tags": [],
+          "forced_tags": [
+            "LP"
+          ],
+          "final_tags": [
+            "LP"
+          ],
+          "cited_by": 0,
+          "is_preprint_on_arxiv": false,
+          "preprint_source": "",
+          "journal_ref": "",
+          "doi": "",
+          "arxiv_comment": "",
+          "arxiv_id": "2604.27911v1",
           "raw_venue": "",
           "venue_source": "",
           "sort_key": 202600,
