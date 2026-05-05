@@ -281,6 +281,17 @@
   abstract = {Exemplar replay has become an effective strategy for mitigating catastrophic forgetting in federated continual learning (FCL) by retaining representative samples from past tasks. Existing studies focus on designing sample-importance estimation mechanisms to identify information-rich samples. However, they typically overlook strategies for effectively utilizing the selected exemplars, which limits their performance under continual dynamic heterogeneity across clients and tasks. To address this issue, this paper proposes a Federated gEometry-Aware correcTion method, termed FEAT, which alleviates imbalance-induced representation collapse that drags rare-class features toward frequent classes across clients. Specifically, it consists of two key modules: 1) the Geometric Structure Alignment module performs structural knowledge distillation by aligning the pairwise angular similarities between feature representations and their corresponding Equiangular Tight Frame prototypes, which are fixed and shared across clients to serve as a class-discriminative reference structure. This encourages geometric consistency across tasks and helps mitigate representation drift; 2) the Energy-based Geometric Correction module removes task-irrelevant directional components from feature embeddings, which reduces prediction bias toward majority classes. This improves sensitivity to minority classes and enhances the model's robustness under class-imbalanced distributions.}
 }
 
+@article{nerrise2026-geosae-geometric-prior-guided-37788b52,
+  author = {Favour Nerrise and Lucy Yin and Mohammad H. Abbasi and Kilian M. Pohl and Ehsan Adeli},
+  title = {GeoSAE: Geometric Prior-Guided Layer-Wise Sparse Autoencoder Annotation of Brain MRI Foundation Models},
+  year = {2026},
+  journal = {CVPR},
+  eprint = {2605.01829v1},
+  archivePrefix = {arXiv},
+  url = {https://arxiv.org/abs/2605.01829v1},
+  abstract = {Brain MRI foundation models learn rich representations of anatomy, but interpreting what clinical information they encode remains an open problem. Standard sparse autoencoders (SAEs) suffer from severe feature collapse in deep transformer layers, and in Alzheimer's disease (AD) research, aging confounds nearly every clinical variable, making naive annotation unreliable. We propose GeoSAE, a geometry-guided SAE framework that uses the foundation model's learned manifold structure to prevent feature collapse and annotates each surviving feature via age-deconfounded partial correlations. Applied to ~14k T1-weighted MRI scans from the Alzheimer's Disease Neuroimaging Initiative (ADNI) and the Australian Imaging biomarkers and Lifestyle (AIBL) datasets, GeoSAE identifies a compact, fully interpretable feature set that predicts mild cognitive impairment (MCI)-to-AD conversion (AUC 0.746) using only 2% of the embedding dimensions, while comorbidity-annotated features achieve only chance-level performance. The identified features replicate across cohorts without retraining (r=0.97) and localize to neuroanatomically distinct regions consistent with Braak staging. This shows that geometry-guided SAEs can extract interpretable, biomarkers from frozen brain MRI foundation models.}
+}
+
 @article{dong2026-greedy-information-projection-for-ced41cbd,
   author = {Victor Ye Dong and Kuan-Yun Lee and Jiamei Shuai and Shengfei Liu and Yi Liu and Jian Jiao},
   title = {Greedy Information Projection for LLM Data Selection},
