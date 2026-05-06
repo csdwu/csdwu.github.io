@@ -1,6 +1,6 @@
 {
   "version": "2.0.0",
-  "generated_at": "2026-05-05T02:14:29.168Z",
+  "generated_at": "2026-05-06T02:24:46.657Z",
   "query_groups": {
     "A": "\"embedded ai\"",
     "B": "(\"low power\" OR \"ultra-low-power\") \"embedded ai\"",
@@ -8,24 +8,24 @@
   },
   "stats": {
     "raw_counts": {
-      "A": 22,
-      "B": 1,
-      "C": 0
+      "A": 26,
+      "B": 0,
+      "C": 1
     },
     "after_set_ops": {
-      "A_only": 22,
-      "B": 1,
-      "C": 0,
-      "merged_total": 23,
+      "A_only": 26,
+      "B": 0,
+      "C": 1,
+      "merged_total": 27,
       "bc_overlap": 0
     },
-    "after_filter": 769,
+    "after_filter": 774,
     "classification": {
-      "total": 769,
+      "total": 774,
       "by_category": {
-        "Efficient Model Design and Optimization": 240,
+        "Efficient Model Design and Optimization": 243,
         "Novel Computing Architectures and Domain-Specific Accelerators": 39,
-        "Embedded AI Applications": 490
+        "Embedded AI Applications": 492
       },
       "by_tag": {
         "TinyML": 44,
@@ -35,17 +35,17 @@
       "by_provider": {
         "tencent_tokenhub": 0,
         "heuristic": 0,
-        "heuristic_fallback": 769
+        "heuristic_fallback": 774
       }
     },
     "source_stats": {
-      "total": 769,
+      "total": 774,
       "by_group": {
         "A": {
-          "total": 638,
+          "total": 643,
           "arxiv": 0,
           "venues": {
-            "AAAI": 89,
+            "AAAI": 90,
             "AAMAS": 0,
             "ACL": 4,
             "ACM MM": 0,
@@ -168,7 +168,7 @@
             "ICIP": 0,
             "ICLR": 156,
             "ICMI": 0,
-            "ICML": 79,
+            "ICML": 82,
             "ICMR": 0,
             "ICN": 0,
             "ICNP": 0,
@@ -257,7 +257,7 @@
             "NOSSDAV": 0,
             "NSDI": 0,
             "Networking": 0,
-            "NeurIPS": 184,
+            "NeurIPS": 185,
             "OOPSLA": 0,
             "OSDI": 0,
             "PACT": 0,
@@ -1539,10 +1539,10 @@
         }
       },
       "total_summary": {
-        "total": 784,
+        "total": 789,
         "arxiv": 118,
         "venues": {
-          "AAAI": 89,
+          "AAAI": 90,
           "AAMAS": 0,
           "ACL": 4,
           "ACM MM": 0,
@@ -1665,7 +1665,7 @@
           "ICIP": 0,
           "ICLR": 157,
           "ICMI": 0,
-          "ICML": 81,
+          "ICML": 84,
           "ICMR": 0,
           "ICN": 0,
           "ICNP": 0,
@@ -1754,7 +1754,7 @@
           "NOSSDAV": 0,
           "NSDI": 0,
           "Networking": 0,
-          "NeurIPS": 185,
+          "NeurIPS": 186,
           "OOPSLA": 0,
           "OSDI": 0,
           "PACT": 0,
@@ -1918,8 +1918,58 @@
     {
       "key": "efficient_model_design",
       "title": "Efficient Model Design and Optimization",
-      "count": 240,
+      "count": 243,
       "papers": [
+        {
+          "id": "df92ae5ce09d4881407a429ae5384bba45d5185d",
+          "title": "DynaTab: Dynamic Feature Ordering as Neural Rewiring for High-Dimensional Tabular Data",
+          "authors": [
+            "Al Zadid Sultan Bin Habib",
+            "Gianfranco Doretto",
+            "Donald A. Adjeroh"
+          ],
+          "year": 2026,
+          "month": 5,
+          "source": "arxiv",
+          "venue": "AAAI",
+          "venue_type": "conference",
+          "abstract": "High-dimensional tabular data lacks a natural feature order, limiting the applicability of permutation-sensitive deep learning models. We propose DynaTab, a dynamic feature ordering-enabled architecture inspired by neural rewiring. We introduce a lightweight criterion that predicts when feature permutation will benefit a dataset by quantifying its intrinsic complexity. DynaTab dynamically reorders features via a neural rewiring algorithm and processes them through a compact, dynamic order-aware combination of separate learned positional embedding, importance-based gating, and masked attention layers, compatible with any sequence-sensitive backbone. Trained end-to-end with bespoke dynamic feature ordering (DFO) and dispersion losses, DynaTab achieves statistically significant gains, particularly on high-dimensional datasets, where it is benchmarked against 45 state-of-the-art baselines across 36 different real-world tabular datasets. Our results position DynaTab as a compelling new paradigm for high-dimensional tabular deep learning.",
+          "urls": {
+            "arxiv": "https://arxiv.org/abs/2605.03430v1",
+            "pdf": "https://arxiv.org/pdf/2605.03430v1",
+            "paper": "https://arxiv.org/abs/2605.03430v1"
+          },
+          "search_sets_raw": [
+            "A"
+          ],
+          "search_sets_final": [
+            "A"
+          ],
+          "filter_bucket": "th_cpl_a",
+          "matched_venue": "AAAI",
+          "matched_th_cpl_level": "A",
+          "matched_th_cpl_area": "Artificial Intelligence and Pattern Recognition",
+          "category": "Efficient Model Design and Optimization",
+          "llm_tags": [],
+          "forced_tags": [],
+          "final_tags": [],
+          "cited_by": 0,
+          "is_preprint_on_arxiv": false,
+          "preprint_source": "",
+          "journal_ref": "",
+          "doi": "",
+          "arxiv_comment": "",
+          "arxiv_id": "2605.03430v1",
+          "raw_venue": "",
+          "venue_source": "",
+          "sort_key": 202600,
+          "download": {
+            "status": "pending",
+            "source": null,
+            "path": null,
+            "last_attempt_at": null
+          }
+        },
         {
           "id": "fa322738eefa1580ca8e071f2eb29b14f75fba9d",
           "title": "GeoSAE: Geometric Prior-Guided Layer-Wise Sparse Autoencoder Annotation of Brain MRI Foundation Models",
@@ -1962,6 +2012,107 @@
           "doi": "",
           "arxiv_comment": "",
           "arxiv_id": "2605.01829v1",
+          "raw_venue": "",
+          "venue_source": "",
+          "sort_key": 202600,
+          "download": {
+            "status": "pending",
+            "source": null,
+            "path": null,
+            "last_attempt_at": null
+          }
+        },
+        {
+          "id": "9af33db7678e092e3183ea031e60da9fc927100a",
+          "title": "Text-Conditional JEPA for Learning Semantically Rich Visual Representations",
+          "authors": [
+            "Chen Huang",
+            "Xianhang Li",
+            "Vimal Thilak",
+            "Etai Littwin",
+            "Josh Susskind"
+          ],
+          "year": 2026,
+          "month": 5,
+          "source": "arxiv",
+          "venue": "ICML",
+          "venue_type": "conference",
+          "abstract": "Image-based Joint-Embedding Predictive Architecture (I-JEPA) offers a promising approach to visual self-supervised learning through masked feature prediction. However with the inherent visual uncertainty at masked positions, feature prediction remains challenging and may fail to learn semantic representations. In this work, we propose Text-Conditional JEPA (TC-JEPA) that uses image captions to reduce the prediction uncertainty. Specifically, we modulate the predicted patch features using a fine-grained text conditioner that computes sparse cross-attention over input text tokens. With such conditioning, patch features become predictable as a function of text, thus are more semantically meaningful. We show TC-JEPA improves downstream performance and training stability, with promising scaling properties. TC-JEPA also offers a new vision-language pretraining paradigm based on feature prediction only, outperforming contrastive methods on diverse tasks, especially those requiring fine-grained visual understanding and reasoning.",
+          "urls": {
+            "arxiv": "https://arxiv.org/abs/2605.03245v1",
+            "pdf": "https://arxiv.org/pdf/2605.03245v1",
+            "paper": "https://arxiv.org/abs/2605.03245v1"
+          },
+          "search_sets_raw": [
+            "A"
+          ],
+          "search_sets_final": [
+            "A"
+          ],
+          "filter_bucket": "th_cpl_a",
+          "matched_venue": "ICML",
+          "matched_th_cpl_level": "A",
+          "matched_th_cpl_area": "Artificial Intelligence and Pattern Recognition",
+          "category": "Efficient Model Design and Optimization",
+          "llm_tags": [],
+          "forced_tags": [],
+          "final_tags": [],
+          "cited_by": 0,
+          "is_preprint_on_arxiv": false,
+          "preprint_source": "",
+          "journal_ref": "",
+          "doi": "",
+          "arxiv_comment": "",
+          "arxiv_id": "2605.03245v1",
+          "raw_venue": "",
+          "venue_source": "",
+          "sort_key": 202600,
+          "download": {
+            "status": "pending",
+            "source": null,
+            "path": null,
+            "last_attempt_at": null
+          }
+        },
+        {
+          "id": "a40a28043257f85bf893036b3434d74acbdb71dd",
+          "title": "Toward Structural Multimodal Representations: Specialization, Selection, and Sparsification via Mixture-of-Experts",
+          "authors": [
+            "Hahyeon Choi",
+            "Nojun Kwak"
+          ],
+          "year": 2026,
+          "month": 5,
+          "source": "arxiv",
+          "venue": "ICML",
+          "venue_type": "conference",
+          "abstract": "We propose S3 (Specialization, Selection, Sparsification), a framework that rethinks multimodal learning through a structural perspective. Instead of encoding all signals into a fixed embedding, S3 decomposes multimodal inputs into semantic experts and selectively routes them for each task. Specialization forms concept-level experts in a shared latent space, Selection adapts routing for task-specific needs, and Sparsification prunes low-utility paths to yield compact, information-minimal representations. Across four MultiBench benchmarks, S3 improves accuracy and shows a consistent reverse U-shaped sparsity-performance trend, with peak performance at intermediate sparsity. These results suggest that structuring multimodal representations as selectable semantic components provides a practical and principled alternative to contrastive learning or InfoMax-driven approaches.",
+          "urls": {
+            "arxiv": "https://arxiv.org/abs/2605.03348v1",
+            "pdf": "https://arxiv.org/pdf/2605.03348v1",
+            "paper": "https://arxiv.org/abs/2605.03348v1"
+          },
+          "search_sets_raw": [
+            "A"
+          ],
+          "search_sets_final": [
+            "A"
+          ],
+          "filter_bucket": "th_cpl_a",
+          "matched_venue": "ICML",
+          "matched_th_cpl_level": "A",
+          "matched_th_cpl_area": "Artificial Intelligence and Pattern Recognition",
+          "category": "Efficient Model Design and Optimization",
+          "llm_tags": [],
+          "forced_tags": [],
+          "final_tags": [],
+          "cited_by": 0,
+          "is_preprint_on_arxiv": false,
+          "preprint_source": "",
+          "journal_ref": "",
+          "doi": "",
+          "arxiv_comment": "",
+          "arxiv_id": "2605.03348v1",
           "raw_venue": "",
           "venue_source": "",
           "sort_key": 202600,
@@ -16748,7 +16899,7 @@
     {
       "key": "embedded_ai_applications",
       "title": "Embedded AI Applications",
-      "count": 490,
+      "count": 492,
       "papers": [
         {
           "id": "14f3c79b8524be4d669c38525d022e9d1ae05770",
@@ -16792,6 +16943,104 @@
           "doi": "",
           "arxiv_comment": "",
           "arxiv_id": "2605.02278v1",
+          "raw_venue": "",
+          "venue_source": "",
+          "sort_key": 202600,
+          "download": {
+            "status": "pending",
+            "source": null,
+            "path": null,
+            "last_attempt_at": null
+          }
+        },
+        {
+          "id": "3effb57fa90b0aea086a20f94c88cd04f0f9780d",
+          "title": "MEMSAD: Gradient-Coupled Anomaly Detection for Memory Poisoning in Retrieval-Augmented Agents",
+          "authors": [
+            "Ishrith Gowda"
+          ],
+          "year": 2026,
+          "month": 5,
+          "source": "arxiv",
+          "venue": "NeurIPS",
+          "venue_type": "conference",
+          "abstract": "Persistent external memory enables LLM agents to maintain context across sessions, yet its security properties remain formally uncharacterized. We formalize memory poisoning attacks on retrieval-augmented agents as a Stackelberg game with a unified evaluation framework spanning three attack classes with escalating access assumptions. Correcting an evaluation protocol inconsistency in the triggered-query specification of Chen et al. (2024), we show faithful evaluation increases measured attack success by $4\\times$ (ASR-R: $0.25 \\to 1.00$). Our primary contribution is MEMSAD (Semantic Anomaly Detection), a calibration-based defense grounded in a gradient coupling theorem: under encoder regularity, the anomaly score gradient and the retrieval objective gradient are provably identical, so any continuous perturbation that reduces detection risk necessarily degrades retrieval rank. This coupling yields a certified detection radius guaranteeing correct classification regardless of adversary strategy. We prove minimax optimality via Le Cam's method, showing any threshold detector requires $Ω(1/ρ^2)$ calibration samples and MEMSAD achieves this up to $\\log(1/δ)$ factors. We further derive online regret bounds for rolling calibration at rate $O(σ^{2/3}Δ^{1/3})$, and formally characterize a discrete synonym-invariance loophole that marks the boundary of what continuous-space defenses can guarantee. Experiments on a $3 \\times 5$ attack-defense matrix with bootstrap confidence intervals, Bonferroni-corrected hypothesis tests, and Clopper-Pearson validation ($n=1{,}000$) confirm: composite defenses achieve TPR $= 1.00$, FPR $= 0.00$ across all attacks, while synonym substitution evades detection at $Δ$ ASR-R $\\approx 0$, exposing a gap existing embedding-based defenses cannot close.",
+          "urls": {
+            "arxiv": "https://arxiv.org/abs/2605.03482v1",
+            "pdf": "https://arxiv.org/pdf/2605.03482v1",
+            "paper": "https://arxiv.org/abs/2605.03482v1"
+          },
+          "search_sets_raw": [
+            "A"
+          ],
+          "search_sets_final": [
+            "A"
+          ],
+          "filter_bucket": "th_cpl_a",
+          "matched_venue": "NeurIPS",
+          "matched_th_cpl_level": "A",
+          "matched_th_cpl_area": "Artificial Intelligence and Pattern Recognition",
+          "category": "Embedded AI Applications",
+          "llm_tags": [],
+          "forced_tags": [],
+          "final_tags": [],
+          "cited_by": 0,
+          "is_preprint_on_arxiv": false,
+          "preprint_source": "",
+          "journal_ref": "",
+          "doi": "",
+          "arxiv_comment": "",
+          "arxiv_id": "2605.03482v1",
+          "raw_venue": "",
+          "venue_source": "",
+          "sort_key": 202600,
+          "download": {
+            "status": "pending",
+            "source": null,
+            "path": null,
+            "last_attempt_at": null
+          }
+        },
+        {
+          "id": "be484daaf571ac09122343da4854ae53e1666798",
+          "title": "Provable Accuracy Collapse in Embedding-Based Representations under Dimensionality Mismatch",
+          "authors": [
+            "Dionysis Arvanitakis",
+            "Vaggos Chatziafratis",
+            "Yiyuan Luo"
+          ],
+          "year": 2026,
+          "month": 5,
+          "source": "arxiv",
+          "venue": "ICML",
+          "venue_type": "conference",
+          "abstract": "Embedding-based representations in Euclidean space $\\mathbb{R}^d$ are a cornerstone of modern machine learning, where a major goal is to use the \\emph{smallest dimension} that faithfully captures data relations. In this work, we prove sharp dimension--accuracy tradeoffs and identify a fundamental information-theoretic limitation: unless the embedding dimension $d$ is chosen close to the ground-truth dimension $D$, accuracy undergoes a sudden collapse. Our main result shows that this phenomenon arises even in standard contrastive learning settings, where supervision is limited to a set of $m$ anchor--positive--negative triplets $(i,j,k)$ encoding distance comparisons $\\mathrm{dist}(i,j) < \\mathrm{dist}(i,k)$. Specifically, given triplets realizable by an unknown ground-truth embedding in $D$ dimensions, we prove that there exists constant $c < 1$, such that \\emph{every embedding of dimension at most $cD$ violates half of the triplets}, yielding accuracy as low as a trivial one-dimensional solution that ignores the input. We complement our information-theoretic bounds with strong computational hardness results: under the Unique Games Conjecture, even if the given triplets are nearly realizable in $D=1$ dimension, no polynomial-time algorithm -- \\textit{regardless of its dimension} -- can achieve accuracy above the trivial $50\\%$ baseline.",
+          "urls": {
+            "arxiv": "https://arxiv.org/abs/2605.03346v1",
+            "pdf": "https://arxiv.org/pdf/2605.03346v1",
+            "paper": "https://arxiv.org/abs/2605.03346v1"
+          },
+          "search_sets_raw": [
+            "A"
+          ],
+          "search_sets_final": [
+            "A"
+          ],
+          "filter_bucket": "th_cpl_a",
+          "matched_venue": "ICML",
+          "matched_th_cpl_level": "A",
+          "matched_th_cpl_area": "Artificial Intelligence and Pattern Recognition",
+          "category": "Embedded AI Applications",
+          "llm_tags": [],
+          "forced_tags": [],
+          "final_tags": [],
+          "cited_by": 0,
+          "is_preprint_on_arxiv": false,
+          "preprint_source": "",
+          "journal_ref": "",
+          "doi": "",
+          "arxiv_comment": "",
+          "arxiv_id": "2605.03346v1",
           "raw_venue": "",
           "venue_source": "",
           "sort_key": 202600,

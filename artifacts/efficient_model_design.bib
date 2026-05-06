@@ -216,6 +216,17 @@
   abstract = {Large Language Models (LLMs) have emerged as promising recommendation systems, offering novel ways to model user preferences through generative approaches. However, many existing methods often rely solely on text semantics or incorporate collaborative signals in a limited manner, typically using only user or item embeddings. These methods struggle to handle multiple item embeddings representing user history, reverting to textual semantics and neglecting richer collaborative information. In this work, we propose a simple yet effective solution that projects user and item embeddings, learned from collaborative filtering, into the LLM token space via separate lightweight projector modules. A finetuned LLM then conditions on these projected embeddings alongside textual tokens to generate recommendations. Preliminary results show that this design effectively leverages structured user-item interaction data, improves recommendation performance over text-only LLM baselines, and offers a practical path for bridging traditional recommendation systems with modern LLMs.}
 }
 
+@article{habib2026-dynatab-dynamic-feature-ordering-74059451,
+  author = {Al Zadid Sultan Bin Habib and Gianfranco Doretto and Donald A. Adjeroh},
+  title = {DynaTab: Dynamic Feature Ordering as Neural Rewiring for High-Dimensional Tabular Data},
+  year = {2026},
+  journal = {AAAI},
+  eprint = {2605.03430v1},
+  archivePrefix = {arXiv},
+  url = {https://arxiv.org/abs/2605.03430v1},
+  abstract = {High-dimensional tabular data lacks a natural feature order, limiting the applicability of permutation-sensitive deep learning models. We propose DynaTab, a dynamic feature ordering-enabled architecture inspired by neural rewiring. We introduce a lightweight criterion that predicts when feature permutation will benefit a dataset by quantifying its intrinsic complexity. DynaTab dynamically reorders features via a neural rewiring algorithm and processes them through a compact, dynamic order-aware combination of separate learned positional embedding, importance-based gating, and masked attention layers, compatible with any sequence-sensitive backbone. Trained end-to-end with bespoke dynamic feature ordering (DFO) and dispersion losses, DynaTab achieves statistically significant gains, particularly on high-dimensional datasets, where it is benchmarked against 45 state-of-the-art baselines across 36 different real-world tabular datasets. Our results position DynaTab as a compelling new paradigm for high-dimensional tabular deep learning.}
+}
+
 @article{xiao2026-embedding-compression-via-spherical-1c6d33c9,
   author = {Han Xiao},
   title = {Embedding Compression via Spherical Coordinates},
@@ -557,6 +568,17 @@
   abstract = {Federated learning has drawn widespread interest from researchers, yet the data heterogeneity across edge clients remains a key challenge, often degrading model performance. Existing methods enhance model compatibility with data heterogeneity by splitting models and knowledge distillation. However, they neglect the insufficient communication bandwidth and computing power on the client, failing to strike an effective balance between addressing data heterogeneity and accommodating limited client resources. To tackle this limitation, we propose a personalized federated learning method based on cosine sparsification parameter packing and dual-weighted aggregation (FedCSPACK), which effectively leverages the limited client resources and reduces the impact of data heterogeneity on model performance. In FedCSPACK, the client packages model parameters and selects the most contributing parameter packages for sharing based on cosine similarity, effectively reducing bandwidth requirements. The client then generates a mask matrix anchored to the shared parameter package to improve the alignment and aggregation efficiency of sparse updates on the server. Furthermore, directional and distribution distance weights are embedded in the mask to implement a weighted-guided aggregation mechanism, enhancing the robustness and generalization performance of the global model. Extensive experiments across four datasets using ten state-of-the-art methods demonstrate that FedCSPACK effectively improves communication and computational efficiency while maintaining high model accuracy.}
 }
 
+@article{huang2026-text-conditional-jepa-for-363e865e,
+  author = {Chen Huang and Xianhang Li and Vimal Thilak and Etai Littwin and Josh Susskind},
+  title = {Text-Conditional JEPA for Learning Semantically Rich Visual Representations},
+  year = {2026},
+  journal = {ICML},
+  eprint = {2605.03245v1},
+  archivePrefix = {arXiv},
+  url = {https://arxiv.org/abs/2605.03245v1},
+  abstract = {Image-based Joint-Embedding Predictive Architecture (I-JEPA) offers a promising approach to visual self-supervised learning through masked feature prediction. However with the inherent visual uncertainty at masked positions, feature prediction remains challenging and may fail to learn semantic representations. In this work, we propose Text-Conditional JEPA (TC-JEPA) that uses image captions to reduce the prediction uncertainty. Specifically, we modulate the predicted patch features using a fine-grained text conditioner that computes sparse cross-attention over input text tokens. With such conditioning, patch features become predictable as a function of text, thus are more semantically meaningful. We show TC-JEPA improves downstream performance and training stability, with promising scaling properties. TC-JEPA also offers a new vision-language pretraining paradigm based on feature prediction only, outperforming contrastive methods on diverse tasks, especially those requiring fine-grained visual understanding and reasoning.}
+}
+
 @article{turazza2026-the-gaussian-head-ofl-85fa71fa,
   author = {Fabio Turazza and Marco Picone and Marco Mamei},
   title = {The Gaussian-Head OFL Family: One-Shot Federated Learning from Client Global Statistics},
@@ -577,6 +599,17 @@
   archivePrefix = {arXiv},
   url = {https://arxiv.org/abs/2601.17094v2},
   abstract = {Large Language Models (LLMs) generate fluent text, yet whether they truly understand the world or merely produce plausible texts about it remains contested. We propose an architectural principle, the mouth is not the brain, that explicitly separates world models from language models. Our architecture comprises three components: a DBM that captures domain structure as an energy-based world model, an adapter that projects latent belief states into embedding space, and a frozen GPT-2 that provides linguistic competence without domain knowledge. We instantiate this framework in the consumer review domain using Amazon smartphone reviews. Experiments demonstrate that (1) world model conditioning achieves lower cross-entropy loss and higher semantic similarity than architectural baselines including direct projection and full fine-tuning, while qualitative analysis reveals that soft prompt conditioning resolves a trade-off that prompt-based approaches cannot: simple prompts lack expressiveness while detailed prompts cause output collapse in small LLMs; (2) the DBM's energy function distinguishes coherent from incoherent market configurations, assigning higher energy to implausible brand-price combinations; and (3) interventions on specific attributes propagate causally to generated text with intervened outputs exhibiting distributions statistically consistent with naturally occurring samples sharing the target configuration. These findings suggest that even small-scale language models can achieve consistent, controllable generation when connected to an appropriate world model, providing empirical support for separating linguistic competence from world understanding.}
+}
+
+@article{choi2026-toward-structural-multimodal-representations-5370060b,
+  author = {Hahyeon Choi and Nojun Kwak},
+  title = {Toward Structural Multimodal Representations: Specialization, Selection, and Sparsification via Mixture-of-Experts},
+  year = {2026},
+  journal = {ICML},
+  eprint = {2605.03348v1},
+  archivePrefix = {arXiv},
+  url = {https://arxiv.org/abs/2605.03348v1},
+  abstract = {We propose S3 (Specialization, Selection, Sparsification), a framework that rethinks multimodal learning through a structural perspective. Instead of encoding all signals into a fixed embedding, S3 decomposes multimodal inputs into semantic experts and selectively routes them for each task. Specialization forms concept-level experts in a shared latent space, Selection adapts routing for task-specific needs, and Sparsification prunes low-utility paths to yield compact, information-minimal representations. Across four MultiBench benchmarks, S3 improves accuracy and shows a consistent reverse U-shaped sparsity-performance trend, with peak performance at intermediate sparsity. These results suggest that structuring multimodal representations as selectable semantic components provides a practical and principled alternative to contrastive learning or InfoMax-driven approaches.}
 }
 
 @article{wang2026-traindeeploy-hardware-accelerated-parameter-3336d8f3,

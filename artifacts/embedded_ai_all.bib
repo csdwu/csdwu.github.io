@@ -497,6 +497,17 @@
   abstract = {Stochastic computing (SC) offers hardware simplicity but suffers from low throughput, while high-throughput Digital Computing-in-Memory (DCIM) is bottlenecked by costly adder logic for matrix-vector multiplication (MVM). To address this trade-off, this paper introduces a digital stochastic CIM (DS-CIM) architecture that achieves both high accuracy and efficiency. We implement signed multiply-accumulation (MAC) in a compact, unsigned OR-based circuit by modifying the data representation. Throughput is enhanced by replicating this low-cost circuit 64 times with only a 1x area increase. Our core strategy, a shared Pseudo Random Number Generator (PRNG) with 2D partitioning, enables single-cycle mutually exclusive activation to eliminate OR-gate collisions. We also resolve the 1s saturation issue via stochastic process analysis and data remapping, significantly improving accuracy and resilience to input sparsity. Our high-accuracy DS-CIM1 variant achieves 94.45% accuracy for INT8 ResNet18 on CIFAR-10 with a root-mean-squared error (RMSE) of just 0.74%. Meanwhile, our high-efficiency DS-CIM2 variant attains an energy efficiency of 3566.1 TOPS/W and an area efficiency of 363.7 TOPS/mm^2, while maintaining a low RMSE of 3.81%. The DS-CIM capability with larger models is further demonstrated through experiments with INT8 ResNet50 on ImageNet and the FP8 LLaMA-7B model.}
 }
 
+@article{habib2026-dynatab-dynamic-feature-ordering-74059451,
+  author = {Al Zadid Sultan Bin Habib and Gianfranco Doretto and Donald A. Adjeroh},
+  title = {DynaTab: Dynamic Feature Ordering as Neural Rewiring for High-Dimensional Tabular Data},
+  year = {2026},
+  journal = {AAAI},
+  eprint = {2605.03430v1},
+  archivePrefix = {arXiv},
+  url = {https://arxiv.org/abs/2605.03430v1},
+  abstract = {High-dimensional tabular data lacks a natural feature order, limiting the applicability of permutation-sensitive deep learning models. We propose DynaTab, a dynamic feature ordering-enabled architecture inspired by neural rewiring. We introduce a lightweight criterion that predicts when feature permutation will benefit a dataset by quantifying its intrinsic complexity. DynaTab dynamically reorders features via a neural rewiring algorithm and processes them through a compact, dynamic order-aware combination of separate learned positional embedding, importance-based gating, and masked attention layers, compatible with any sequence-sensitive backbone. Trained end-to-end with bespoke dynamic feature ordering (DFO) and dispersion losses, DynaTab achieves statistically significant gains, particularly on high-dimensional datasets, where it is benchmarked against 45 state-of-the-art baselines across 36 different real-world tabular datasets. Our results position DynaTab as a compelling new paradigm for high-dimensional tabular deep learning.}
+}
+
 @article{seifi2026-ego-embedding-guided-personalization-957b2d72,
   author = {Soroush Seifi and Simon Gardier and Vaggelis Dorovatas and Daniel Olmeda Reino and Rahaf Aljundi},
   title = {Ego: Embedding-Guided Personalization of Vision-Language Models},
@@ -979,6 +990,17 @@
   abstract = {In this research, we analyze the performance of Membership Inference Tests (MINT), focusing on determining whether given data were utilized during the training phase, specifically in the domain of object recognition. Within the area of object recognition, we propose and develop architectures tailored for MINT models. These architectures aim to optimize performance and efficiency in data utilization, offering a tailored solution to tackle the complexities inherent in the object recognition domain. We conducted experiments involving an object detection model, an embedding extractor, and a MINT module. These experiments were performed in three public databases, totaling over 174K images. The proposed architecture leverages convolutional layers to capture and model the activation patterns present in the data during the training process. Through our analysis, we are able to identify given data used for testing and training, achieving precision rates ranging between 70% and 80%, contingent upon the depth of the detection module layer chosen for input to the MINT module. Additionally, our studies entail an analysis of the factors influencing the MINT Module, delving into the contributing elements behind more transparent training processes.}
 }
 
+@article{gowda2026-memsad-gradient-coupled-anomaly-4337e3e8,
+  author = {Ishrith Gowda},
+  title = {MEMSAD: Gradient-Coupled Anomaly Detection for Memory Poisoning in Retrieval-Augmented Agents},
+  year = {2026},
+  journal = {NeurIPS},
+  eprint = {2605.03482v1},
+  archivePrefix = {arXiv},
+  url = {https://arxiv.org/abs/2605.03482v1},
+  abstract = {Persistent external memory enables LLM agents to maintain context across sessions, yet its security properties remain formally uncharacterized. We formalize memory poisoning attacks on retrieval-augmented agents as a Stackelberg game with a unified evaluation framework spanning three attack classes with escalating access assumptions. Correcting an evaluation protocol inconsistency in the triggered-query specification of Chen et al. (2024), we show faithful evaluation increases measured attack success by $4\\times$ (ASR-R: $0.25 \\to 1.00$). Our primary contribution is MEMSAD (Semantic Anomaly Detection), a calibration-based defense grounded in a gradient coupling theorem: under encoder regularity, the anomaly score gradient and the retrieval objective gradient are provably identical, so any continuous perturbation that reduces detection risk necessarily degrades retrieval rank. This coupling yields a certified detection radius guaranteeing correct classification regardless of adversary strategy. We prove minimax optimality via Le Cam's method, showing any threshold detector requires $Ω(1/ρ^2)$ calibration samples and MEMSAD achieves this up to $\\log(1/δ)$ factors. We further derive online regret bounds for rolling calibration at rate $O(σ^\{2/3\}Δ^\{1/3\})$, and formally characterize a discrete synonym-invariance loophole that marks the boundary of what continuous-space defenses can guarantee. Experiments on a $3 \\times 5$ attack-defense matrix with bootstrap confidence intervals, Bonferroni-corrected hypothesis tests, and Clopper-Pearson validation ($n=1\{,\}000$) confirm: composite defenses achieve TPR $= 1.00$, FPR $= 0.00$ across all attacks, while synonym substitution evades detection at $Δ$ ASR-R $\\approx 0$, exposing a gap existing embedding-based defenses cannot close.}
+}
+
 @article{bi2026-ming-an-automated-cnn-28096c4f,
   author = {Jiahong Bi and Lars Schütze and Jeronimo Castrillon},
   title = {MING: An Automated CNN-to-Edge MLIR HLS framework},
@@ -1226,6 +1248,17 @@
   archivePrefix = {arXiv},
   url = {https://arxiv.org/abs/2601.04854v3},
   abstract = {Standard autoregressive language models generate text by repeatedly selecting a discrete next token, coupling prediction with irreversible commitment at every step. We show that token selection is not the only viable autoregressive interface. \\textbf\{Projected Autoregression\} replaces token selection with continuous prediction in embedding space followed by discrete projection at commitment time. The model predicts next-token vectors via regression and contrastive objectives, while discrete tokens arise only by nearest-neighbor projection. An optional mutable suffix (``liquid tail'') enables iterative refinement before commitment, but the central change is more basic: next-step prediction is continuous, and discrete tokens are produced only as a downstream interface. Projected Autoregression establishes a concrete alternative to token-selection autoregression: language generation can be organized around continuous-state prediction with delayed discrete commitment. Refinement remains local to a short causal suffix within a left-to-right causal process, rather than a sequence-wide denoising process. This separation has two consequences. First, it induces a \\emph\{distinct generation regime\}: even with immediate projection ($K\{=\}1$), continuous prediction yields text structure and dynamics that differ from tested token-space AR baselines, including a compute-matched best-of-16 reranking baseline. Second, it exposes a \\emph\{continuous control surface\} inside autoregressive generation: direction rate, history noise, delayed commitment, state-space guidance, and embedding geometry act directly on the evolving generative state before token commitment. Taken together, these results place repeated token selection within a larger family of autoregressive interfaces and expose continuous state space as a broader algorithmic design space for language generation.}
+}
+
+@article{arvanitakis2026-provable-accuracy-collapse-in-74b46d82,
+  author = {Dionysis Arvanitakis and Vaggos Chatziafratis and Yiyuan Luo},
+  title = {Provable Accuracy Collapse in Embedding-Based Representations under Dimensionality Mismatch},
+  year = {2026},
+  journal = {ICML},
+  eprint = {2605.03346v1},
+  archivePrefix = {arXiv},
+  url = {https://arxiv.org/abs/2605.03346v1},
+  abstract = {Embedding-based representations in Euclidean space $\\mathbb\{R\}^d$ are a cornerstone of modern machine learning, where a major goal is to use the \\emph\{smallest dimension\} that faithfully captures data relations. In this work, we prove sharp dimension--accuracy tradeoffs and identify a fundamental information-theoretic limitation: unless the embedding dimension $d$ is chosen close to the ground-truth dimension $D$, accuracy undergoes a sudden collapse. Our main result shows that this phenomenon arises even in standard contrastive learning settings, where supervision is limited to a set of $m$ anchor--positive--negative triplets $(i,j,k)$ encoding distance comparisons $\\mathrm\{dist\}(i,j) < \\mathrm\{dist\}(i,k)$. Specifically, given triplets realizable by an unknown ground-truth embedding in $D$ dimensions, we prove that there exists constant $c < 1$, such that \\emph\{every embedding of dimension at most $cD$ violates half of the triplets\}, yielding accuracy as low as a trivial one-dimensional solution that ignores the input. We complement our information-theoretic bounds with strong computational hardness results: under the Unique Games Conjecture, even if the given triplets are nearly realizable in $D=1$ dimension, no polynomial-time algorithm -- \\textit\{regardless of its dimension\} -- can achieve accuracy above the trivial $50\\%$ baseline.}
 }
 
 @article{vajrala2026-quantization-with-unified-adaptive-7c5e7cd3,
@@ -1602,6 +1635,17 @@
   abstract = {Accurate drug-target interaction (DTI) prediction is essential for computational drug discovery, yet existing models often rely on single-modality predefined molecular descriptors or sequence-based embeddings with limited representativeness. We propose Tensor-DTI, a contrastive learning framework that integrates multimodal embeddings from molecular graphs, protein language models, and binding-site predictions to improve interaction modeling. Tensor-DTI employs a siamese dual-encoder architecture, enabling it to capture both chemical and structural interaction features while distinguishing interacting from non-interacting pairs. Evaluations on multiple DTI benchmarks demonstrate that Tensor-DTI outperforms existing sequence-based and graph-based models. We also conduct large-scale inference experiments on CDK2 across billion-scale chemical libraries, where Tensor-DTI produces chemically plausible hit distributions even when CDK2 is withheld from training. In enrichment studies against Glide docking and Boltz-2 co-folder, Tensor-DTI remains competitive on CDK2 and improves the screening budget required to recover moderate fractions of high-affinity ligands on out-of-family targets under strict family-holdout splits. Additionally, we explore its applicability to protein-RNA and peptide-protein interactions. Our findings highlight the benefits of integrating multimodal information with contrastive objectives to enhance interaction-prediction accuracy and to provide more interpretable and reliability-aware models for virtual screening.}
 }
 
+@article{huang2026-text-conditional-jepa-for-363e865e,
+  author = {Chen Huang and Xianhang Li and Vimal Thilak and Etai Littwin and Josh Susskind},
+  title = {Text-Conditional JEPA for Learning Semantically Rich Visual Representations},
+  year = {2026},
+  journal = {ICML},
+  eprint = {2605.03245v1},
+  archivePrefix = {arXiv},
+  url = {https://arxiv.org/abs/2605.03245v1},
+  abstract = {Image-based Joint-Embedding Predictive Architecture (I-JEPA) offers a promising approach to visual self-supervised learning through masked feature prediction. However with the inherent visual uncertainty at masked positions, feature prediction remains challenging and may fail to learn semantic representations. In this work, we propose Text-Conditional JEPA (TC-JEPA) that uses image captions to reduce the prediction uncertainty. Specifically, we modulate the predicted patch features using a fine-grained text conditioner that computes sparse cross-attention over input text tokens. With such conditioning, patch features become predictable as a function of text, thus are more semantically meaningful. We show TC-JEPA improves downstream performance and training stability, with promising scaling properties. TC-JEPA also offers a new vision-language pretraining paradigm based on feature prediction only, outperforming contrastive methods on diverse tasks, especially those requiring fine-grained visual understanding and reasoning.}
+}
+
 @article{turazza2026-the-gaussian-head-ofl-85fa71fa,
   author = {Fabio Turazza and Marco Picone and Marco Mamei},
   title = {The Gaussian-Head OFL Family: One-Shot Federated Learning from Client Global Statistics},
@@ -1652,6 +1696,17 @@
   archivePrefix = {arXiv},
   url = {https://arxiv.org/abs/2603.00136v1},
   abstract = {Zero-shot object detection enables recognising novel objects without task-specific training, but current approaches rely on large vision language models (VLMs) like CLIP that require hundreds of megabytes of memory - far exceeding the constraints of micro controller units (MCUs). We present TinyVLM, the first framework enabling zero-shot object detection on resource-constrained MCUs with less than 1MB of memory. Our approach introduces three key innovations: (1) a decoupled architecture that separates visual inference from text encoding, allowing precomputed class embeddings to be stored in flash memory; (2) Matryoshka distillation that trains nested embeddings at multiple dimensions (16-256), enabling flexible accuracy-memory trade-offs; and (3) quantized embedding storage that reduces class prototype memory by 4x with minimal accuracy loss. Trained on Conceptual Captions 3M (CC3M), TinyVLM achieves competitive zero-shot accuracy on COCO, Flowers102, and Food101 while requiring only 285KB of RAM and 892KB of flash memory for the deployed vision encoder. We demonstrate real-time inference at 26 FPS on STM32H7 and over 1,000 FPS on MAX78000 with its CNN accelerator, enabling practical zero-shot detection on edge devices for the first time.}
+}
+
+@article{choi2026-toward-structural-multimodal-representations-5370060b,
+  author = {Hahyeon Choi and Nojun Kwak},
+  title = {Toward Structural Multimodal Representations: Specialization, Selection, and Sparsification via Mixture-of-Experts},
+  year = {2026},
+  journal = {ICML},
+  eprint = {2605.03348v1},
+  archivePrefix = {arXiv},
+  url = {https://arxiv.org/abs/2605.03348v1},
+  abstract = {We propose S3 (Specialization, Selection, Sparsification), a framework that rethinks multimodal learning through a structural perspective. Instead of encoding all signals into a fixed embedding, S3 decomposes multimodal inputs into semantic experts and selectively routes them for each task. Specialization forms concept-level experts in a shared latent space, Selection adapts routing for task-specific needs, and Sparsification prunes low-utility paths to yield compact, information-minimal representations. Across four MultiBench benchmarks, S3 improves accuracy and shows a consistent reverse U-shaped sparsity-performance trend, with peak performance at intermediate sparsity. These results suggest that structuring multimodal representations as selectable semantic components provides a practical and principled alternative to contrastive learning or InfoMax-driven approaches.}
 }
 
 @article{cui2026-toward-universal-and-transferable-bfc8e7f6,
