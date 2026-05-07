@@ -1,6 +1,6 @@
 {
   "version": "2.0.0",
-  "generated_at": "2026-05-06T02:24:46.657Z",
+  "generated_at": "2026-05-07T02:26:29.726Z",
   "query_groups": {
     "A": "\"embedded ai\"",
     "B": "(\"low power\" OR \"ultra-low-power\") \"embedded ai\"",
@@ -8,41 +8,41 @@
   },
   "stats": {
     "raw_counts": {
-      "A": 26,
-      "B": 0,
-      "C": 1
+      "A": 29,
+      "B": 1,
+      "C": 2
     },
     "after_set_ops": {
-      "A_only": 26,
-      "B": 0,
-      "C": 1,
-      "merged_total": 27,
+      "A_only": 28,
+      "B": 1,
+      "C": 2,
+      "merged_total": 31,
       "bc_overlap": 0
     },
-    "after_filter": 774,
+    "after_filter": 780,
     "classification": {
-      "total": 774,
+      "total": 780,
       "by_category": {
-        "Efficient Model Design and Optimization": 243,
+        "Efficient Model Design and Optimization": 246,
         "Novel Computing Architectures and Domain-Specific Accelerators": 39,
-        "Embedded AI Applications": 492
+        "Embedded AI Applications": 495
       },
       "by_tag": {
-        "TinyML": 44,
+        "TinyML": 45,
         "LP": 95,
         "ULP": 13
       },
       "by_provider": {
         "tencent_tokenhub": 0,
         "heuristic": 0,
-        "heuristic_fallback": 774
+        "heuristic_fallback": 780
       }
     },
     "source_stats": {
-      "total": 774,
+      "total": 780,
       "by_group": {
         "A": {
-          "total": 643,
+          "total": 648,
           "arxiv": 0,
           "venues": {
             "AAAI": 90,
@@ -166,9 +166,9 @@
             "ICDT": 0,
             "ICFP": 0,
             "ICIP": 0,
-            "ICLR": 156,
+            "ICLR": 157,
             "ICMI": 0,
-            "ICML": 82,
+            "ICML": 86,
             "ICMR": 0,
             "ICN": 0,
             "ICNP": 0,
@@ -790,7 +790,7 @@
           "unknown": 0
         },
         "C": {
-          "total": 44,
+          "total": 45,
           "arxiv": 39,
           "venues": {
             "AAAI": 0,
@@ -843,7 +843,7 @@
             "CSL": 0,
             "CT-RSA": 0,
             "CVIU": 0,
-            "CVPR": 0,
+            "CVPR": 1,
             "CoNEXT": 0,
             "DAC": 0,
             "DASFAA": 0,
@@ -1539,7 +1539,7 @@
         }
       },
       "total_summary": {
-        "total": 789,
+        "total": 795,
         "arxiv": 118,
         "venues": {
           "AAAI": 90,
@@ -1592,7 +1592,7 @@
           "CSL": 0,
           "CT-RSA": 0,
           "CVIU": 0,
-          "CVPR": 59,
+          "CVPR": 60,
           "CoNEXT": 0,
           "DAC": 8,
           "DASFAA": 0,
@@ -1663,9 +1663,9 @@
           "ICDT": 0,
           "ICFP": 0,
           "ICIP": 0,
-          "ICLR": 157,
+          "ICLR": 158,
           "ICMI": 0,
-          "ICML": 84,
+          "ICML": 88,
           "ICMR": 0,
           "ICN": 0,
           "ICNP": 0,
@@ -1918,7 +1918,7 @@
     {
       "key": "efficient_model_design",
       "title": "Efficient Model Design and Optimization",
-      "count": 243,
+      "count": 246,
       "papers": [
         {
           "id": "df92ae5ce09d4881407a429ae5384bba45d5185d",
@@ -2023,6 +2023,65 @@
           }
         },
         {
+          "id": "5a366887b68f6b102c9af8cdac442107b89fc0a6",
+          "title": "Hardware-Aware Neural Feature Extraction for Resource-Constrained Devices",
+          "authors": [
+            "Francesco Tosini",
+            "Simone Pedroni",
+            "Christian Veronesi",
+            "Pietro Bartoli",
+            "Marco Paracchini",
+            "Marco Marcon",
+            "Diana Trojaniello"
+          ],
+          "year": 2026,
+          "month": 5,
+          "source": "arxiv",
+          "venue": "CVPR",
+          "venue_type": "conference",
+          "abstract": "Visual SLAM is a core component of spatial computing systems, yet deploying learned local feature extractors on microcontroller-class hardware remains challenging due to memory, bandwidth, and quantization constraints. While modern neural descriptors provide strong robustness, their practical adoption is often hindered by system-level bottlenecks that are not captured by FLOP-based efficiency metrics. In this work, we introduce Gideon, a hardware-aware neural feature extractor explicitly designed for resource-constrained devices. Our approach combines relational knowledge distillation from a SuperPoint teacher with differentiable neural architecture search (DNAS) under strict memory and operator constraints. Unlike conventional design pipelines, we treat quantization stability and dynamic-range compactness as first-class objectives. We show that architectural choices such as replacing Batch Normalization with affine layers significantly improve INT8 robustness, and that descriptor dimensionality directly governs quantization resilience. Deployed on STM32N6, Gideon achieves 9.003 ms inference time (111 fps) while remaining below a 1.5 MB memory footprint. Remarkably, INT8 quantization induces negligible degradation and occasionally matches full-precision performance. These results demonstrate that robust learned feature extraction can be reconciled with embedded hardware constraints through holistic hardware-algorithm co-design.",
+          "urls": {
+            "arxiv": "https://arxiv.org/abs/2605.04282v1",
+            "pdf": "https://arxiv.org/pdf/2605.04282v1",
+            "paper": "https://arxiv.org/abs/2605.04282v1"
+          },
+          "search_sets_raw": [
+            "A",
+            "C"
+          ],
+          "search_sets_final": [
+            "C"
+          ],
+          "filter_bucket": "th_cpl_a",
+          "matched_venue": "CVPR",
+          "matched_th_cpl_level": "A",
+          "matched_th_cpl_area": "Artificial Intelligence and Pattern Recognition",
+          "category": "Efficient Model Design and Optimization",
+          "llm_tags": [
+            "TinyML"
+          ],
+          "forced_tags": [],
+          "final_tags": [
+            "TinyML"
+          ],
+          "cited_by": 0,
+          "is_preprint_on_arxiv": false,
+          "preprint_source": "",
+          "journal_ref": "",
+          "doi": "",
+          "arxiv_comment": "",
+          "arxiv_id": "2605.04282v1",
+          "raw_venue": "",
+          "venue_source": "",
+          "sort_key": 202600,
+          "download": {
+            "status": "pending",
+            "source": null,
+            "path": null,
+            "last_attempt_at": null
+          }
+        },
+        {
           "id": "9af33db7678e092e3183ea031e60da9fc927100a",
           "title": "Text-Conditional JEPA for Learning Semantically Rich Visual Representations",
           "authors": [
@@ -2113,6 +2172,107 @@
           "doi": "",
           "arxiv_comment": "",
           "arxiv_id": "2605.03348v1",
+          "raw_venue": "",
+          "venue_source": "",
+          "sort_key": 202600,
+          "download": {
+            "status": "pending",
+            "source": null,
+            "path": null,
+            "last_attempt_at": null
+          }
+        },
+        {
+          "id": "65cdbbf30521b715052a4b16719ea4c3d081a0ff",
+          "title": "Toward Structural Multimodal Representations: Specialization, Selection, and Sparsification via Mixture-of-Experts",
+          "authors": [
+            "Hahyeon Choi",
+            "Nojun Kwak"
+          ],
+          "year": 2026,
+          "month": 5,
+          "source": "arxiv",
+          "venue": "ICML",
+          "venue_type": "conference",
+          "abstract": "We propose S3 (Specialization, Selection, Sparsification), a framework that rethinks multimodal learning through a structural perspective. Instead of encoding all signals into a fixed embedding, S3 decomposes multimodal inputs into semantic experts and selectively routes them for each task. Specialization forms concept-level experts in a shared latent space, Selection adapts routing for task-specific needs, and Sparsification prunes low-utility paths to yield compact, information-minimal representations. Across four MultiBench benchmarks, S3 improves accuracy and shows a consistent reverse U-shaped sparsity-performance trend, with peak performance at intermediate sparsity. These results suggest that structuring multimodal representations as selectable semantic components provides a practical and principled alternative to contrastive learning or InfoMax-driven approaches.",
+          "urls": {
+            "arxiv": "https://arxiv.org/abs/2605.03348v2",
+            "pdf": "https://arxiv.org/pdf/2605.03348v2",
+            "paper": "https://arxiv.org/abs/2605.03348v2"
+          },
+          "search_sets_raw": [
+            "A"
+          ],
+          "search_sets_final": [
+            "A"
+          ],
+          "filter_bucket": "th_cpl_a",
+          "matched_venue": "ICML",
+          "matched_th_cpl_level": "A",
+          "matched_th_cpl_area": "Artificial Intelligence and Pattern Recognition",
+          "category": "Efficient Model Design and Optimization",
+          "llm_tags": [],
+          "forced_tags": [],
+          "final_tags": [],
+          "cited_by": 0,
+          "is_preprint_on_arxiv": false,
+          "preprint_source": "",
+          "journal_ref": "",
+          "doi": "",
+          "arxiv_comment": "",
+          "arxiv_id": "2605.03348v2",
+          "raw_venue": "",
+          "venue_source": "",
+          "sort_key": 202600,
+          "download": {
+            "status": "pending",
+            "source": null,
+            "path": null,
+            "last_attempt_at": null
+          }
+        },
+        {
+          "id": "920e228ba4d12c7c735625b3b54e3e83e74be313",
+          "title": "Transformed Latent Variable Multi-Output Gaussian Processes",
+          "authors": [
+            "Xiaoyu Jiang",
+            "Xinxing Shi",
+            "Sokratia Georgaka",
+            "Magnus Rattray",
+            "Mauricio A Álvarez"
+          ],
+          "year": 2026,
+          "month": 5,
+          "source": "arxiv",
+          "venue": "ICML",
+          "venue_type": "conference",
+          "abstract": "Multi-Output Gaussian Processes (MOGPs) provide a principled probabilistic framework for modelling correlated outputs but face scalability bottlenecks when applied to datasets with high-dimensional output spaces. To maintain tractability, existing methods typically resort to restrictive assumptions, such as employing low-rank or sum-of-separable kernels, which can limit expressiveness. We propose the Transformed Latent Variable MOGP (T-LVMOGP), a novel framework that scales MOGPs to a massive number of outputs while preserving the capacity to capture meaningful inter-output dependencies. T-LVMOGP constructs a flexible multi-output deep kernel by mapping inputs and output-specific latent variables into an embedding space using a Lipschitz-regularised neural network. Combined with stochastic variational inference, our model effectively scales to high-dimensional output settings. Across diverse benchmarks, including climate modelling with over 10,000 outputs and zero-inflated spatial transcriptomics data, T-LVMOGP outperforms baselines in both predictive accuracy and computational efficiency.",
+          "urls": {
+            "arxiv": "https://arxiv.org/abs/2605.05133v1",
+            "pdf": "https://arxiv.org/pdf/2605.05133v1",
+            "paper": "https://arxiv.org/abs/2605.05133v1"
+          },
+          "search_sets_raw": [
+            "A"
+          ],
+          "search_sets_final": [
+            "A"
+          ],
+          "filter_bucket": "th_cpl_a",
+          "matched_venue": "ICML",
+          "matched_th_cpl_level": "A",
+          "matched_th_cpl_area": "Artificial Intelligence and Pattern Recognition",
+          "category": "Efficient Model Design and Optimization",
+          "llm_tags": [],
+          "forced_tags": [],
+          "final_tags": [],
+          "cited_by": 0,
+          "is_preprint_on_arxiv": false,
+          "preprint_source": "",
+          "journal_ref": "",
+          "doi": "",
+          "arxiv_comment": "",
+          "arxiv_id": "2605.05133v1",
           "raw_venue": "",
           "venue_source": "",
           "sort_key": 202600,
@@ -16899,8 +17059,105 @@
     {
       "key": "embedded_ai_applications",
       "title": "Embedded AI Applications",
-      "count": 492,
+      "count": 495,
       "papers": [
+        {
+          "id": "4ac06718d4a329aa8ce722043e1191b2b9ce342f",
+          "title": "A geometric relation of the error introduced by sampling a language model's output distribution to its internal state",
+          "authors": [
+            "Albert F. Modenbach"
+          ],
+          "year": 2026,
+          "month": 5,
+          "source": "arxiv",
+          "venue": "ICML",
+          "venue_type": "conference",
+          "abstract": "GPT-style language models are sensitive to single-token changes at generation points where the predicted probability distribution is spread across multiple tokens. Viewing this sensitivity as a geometric property, we derive an $\\mathfrak{so}(n)$-valued 1-form that depends only on the geometry of the token embeddings. Despite this purely geometric origin, we show that its curvature is semantically meaningful: On chess reasoning tasks, the curvature couples to the world model of an off-the-shelf instruction-tuned model, with transformations clustering by board region and respecting piece importance. Our findings suggest that token space geometry directly reflects how models internally represent problems.",
+          "urls": {
+            "arxiv": "https://arxiv.org/abs/2605.04899v1",
+            "pdf": "https://arxiv.org/pdf/2605.04899v1",
+            "paper": "https://arxiv.org/abs/2605.04899v1"
+          },
+          "search_sets_raw": [
+            "A"
+          ],
+          "search_sets_final": [
+            "A"
+          ],
+          "filter_bucket": "th_cpl_a",
+          "matched_venue": "ICML",
+          "matched_th_cpl_level": "A",
+          "matched_th_cpl_area": "Artificial Intelligence and Pattern Recognition",
+          "category": "Embedded AI Applications",
+          "llm_tags": [],
+          "forced_tags": [],
+          "final_tags": [],
+          "cited_by": 0,
+          "is_preprint_on_arxiv": false,
+          "preprint_source": "",
+          "journal_ref": "",
+          "doi": "",
+          "arxiv_comment": "",
+          "arxiv_id": "2605.04899v1",
+          "raw_venue": "",
+          "venue_source": "",
+          "sort_key": 202600,
+          "download": {
+            "status": "pending",
+            "source": null,
+            "path": null,
+            "last_attempt_at": null
+          }
+        },
+        {
+          "id": "d2b5c874b4b76a655b80f7135764e39edadcd642",
+          "title": "Gradient Scaling Effects in Adaptive Spectral PINNs for Stiff Nonlinear ODEs",
+          "authors": [
+            "Isabela M. Yepes",
+            "Pavlos Protopapas"
+          ],
+          "year": 2026,
+          "month": 5,
+          "source": "arxiv",
+          "venue": "ICLR",
+          "venue_type": "conference",
+          "abstract": "Physics-Informed Neural Networks (PINNs) often struggle to train reliably on stiff and oscillatory dynamical systems due to poor optimization conditioning. While prior work has emphasized representational remedies such as spectral parameterizations, the optimization implications of initial-condition (IC) embeddings in adaptive spectral PINNs have not been well characterized. In this work, we show that the choice of IC gating function induces explicit time-dependent gradient scaling, which interacts with spectral representations during training. Using a nonlinear stiff spring-pendulum ODE as a controlled benchmark, we compare exponential and linear IC gates in combination with fixed and adaptive Fourier spectral trunks. We observe stiffness-dependent changes in relative dominance for adaptive PINNs: at moderate stiffness ($k=20$), exponential gating often yields lower error but exhibits heterogeneous behavior across random seeds, whereas at higher stiffness ($k=60$), linear gating becomes preferable, with additional reversals observed at larger $k$. These trends hold for both relative $L^2$ error and maximum pointwise error and are confirmed by paired Wilcoxon signed-rank tests with Holm correction. Overall, our results demonstrate that IC embeddings are not a neutral design choice in PINNs: the induced gradient scaling materially shapes optimization conditioning in stiff regimes, with distinct sensitivity patterns in baseline and adaptive spectral models.",
+          "urls": {
+            "arxiv": "https://arxiv.org/abs/2605.04502v1",
+            "pdf": "https://arxiv.org/pdf/2605.04502v1",
+            "paper": "https://arxiv.org/abs/2605.04502v1"
+          },
+          "search_sets_raw": [
+            "A"
+          ],
+          "search_sets_final": [
+            "A"
+          ],
+          "filter_bucket": "th_cpl_a",
+          "matched_venue": "ICLR",
+          "matched_th_cpl_level": "A",
+          "matched_th_cpl_area": "Artificial Intelligence and Pattern Recognition",
+          "category": "Embedded AI Applications",
+          "llm_tags": [],
+          "forced_tags": [],
+          "final_tags": [],
+          "cited_by": 0,
+          "is_preprint_on_arxiv": false,
+          "preprint_source": "",
+          "journal_ref": "",
+          "doi": "",
+          "arxiv_comment": "",
+          "arxiv_id": "2605.04502v1",
+          "raw_venue": "",
+          "venue_source": "",
+          "sort_key": 202600,
+          "download": {
+            "status": "pending",
+            "source": null,
+            "path": null,
+            "last_attempt_at": null
+          }
+        },
         {
           "id": "14f3c79b8524be4d669c38525d022e9d1ae05770",
           "title": "HELIX: Hybrid Encoding with Learnable Identity and Cross-dimensional Synthesis for Time Series Imputation",
@@ -16943,6 +17200,57 @@
           "doi": "",
           "arxiv_comment": "",
           "arxiv_id": "2605.02278v1",
+          "raw_venue": "",
+          "venue_source": "",
+          "sort_key": 202600,
+          "download": {
+            "status": "pending",
+            "source": null,
+            "path": null,
+            "last_attempt_at": null
+          }
+        },
+        {
+          "id": "ced34c1d1138e6285ae3ae938b195f899b31db8f",
+          "title": "Memory as a Markov Matrix: Sample Efficient Knowledge Expansion via Token-to-Dictionary Mapping",
+          "authors": [
+            "Kaustubh Pethkar",
+            "Ziyang Xiong",
+            "Zuofeng Shang",
+            "Yingcong Li"
+          ],
+          "year": 2026,
+          "month": 5,
+          "source": "arxiv",
+          "venue": "ICML",
+          "venue_type": "conference",
+          "abstract": "Continual incorporation of new knowledge is essential for the long-term evolution of large language models (LLMs). Existing approaches typically rely on parameter-update algorithms to mitigate catastrophic forgetting, yet they suffer from fundamental limitations: 1) forgetting is unavoidable as the amount of newly injected knowledge grows; and 2) model updates are often irreversible. As modern LLMs become increasingly expressive, it is natural to question whether large-scale weight updates are necessary for acquiring a small amount of new knowledge. In this work, we propose a principled framework that models autoregressive language generation as a Markov process over tokens, where model memory is represented by a Markov transition matrix. Under this formulation, incorporating new knowledge/tokens corresponds to extending the state space, and preserving existing transitions guarantees retention of previously learned knowledge. We then prove a sample complexity bound for incorporating new tokens via a token-to-dictionary mapping strategy. In particular, for learning the transition behavior of each new token, the required number of samples scales linearly with the number of existing tokens it is mapped to. To realize this mapping, we propose an embedding-tuning algorithm that requires minimal parameter updates and induces zero forgetting. Experimental results further demonstrate the effectiveness of our method and validate our theoretical findings.",
+          "urls": {
+            "arxiv": "https://arxiv.org/abs/2605.04308v1",
+            "pdf": "https://arxiv.org/pdf/2605.04308v1",
+            "paper": "https://arxiv.org/abs/2605.04308v1"
+          },
+          "search_sets_raw": [
+            "A"
+          ],
+          "search_sets_final": [
+            "A"
+          ],
+          "filter_bucket": "th_cpl_a",
+          "matched_venue": "ICML",
+          "matched_th_cpl_level": "A",
+          "matched_th_cpl_area": "Artificial Intelligence and Pattern Recognition",
+          "category": "Embedded AI Applications",
+          "llm_tags": [],
+          "forced_tags": [],
+          "final_tags": [],
+          "cited_by": 0,
+          "is_preprint_on_arxiv": false,
+          "preprint_source": "",
+          "journal_ref": "",
+          "doi": "",
+          "arxiv_comment": "",
+          "arxiv_id": "2605.04308v1",
           "raw_venue": "",
           "venue_source": "",
           "sort_key": 202600,

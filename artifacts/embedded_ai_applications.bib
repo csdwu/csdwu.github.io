@@ -1,3 +1,14 @@
+@article{modenbach2026-a-geometric-relation-of-e85a0cbd,
+  author = {Albert F. Modenbach},
+  title = {A geometric relation of the error introduced by sampling a language model's output distribution to its internal state},
+  year = {2026},
+  journal = {ICML},
+  eprint = {2605.04899v1},
+  archivePrefix = {arXiv},
+  url = {https://arxiv.org/abs/2605.04899v1},
+  abstract = {GPT-style language models are sensitive to single-token changes at generation points where the predicted probability distribution is spread across multiple tokens. Viewing this sensitivity as a geometric property, we derive an $\\mathfrak\{so\}(n)$-valued 1-form that depends only on the geometry of the token embeddings. Despite this purely geometric origin, we show that its curvature is semantically meaningful: On chess reasoning tasks, the curvature couples to the world model of an off-the-shelf instruction-tuned model, with transformations clustering by board region and respecting piece importance. Our findings suggest that token space geometry directly reflects how models internally represent problems.}
+}
+
 @article{bowen2026-a-logical-re-conception-00a89d48,
   author = {E Bowen and R Granger and A Rodriguez},
   title = {A logical re-conception of neural networks: Hamiltonian bitwise part-whole architecture},
@@ -355,6 +366,17 @@
   abstract = {Cold metals are a class of metals with an intrinsic energy gap located close to the Fermi level, which enables cold-carrier injection for steep-slope transistors and is therefore promising for low-power electronic applications. High-throughput screening has revealed 252 three-dimensional (3D) cold metals in the Materials Project database, but database searches are inherently limited to known compounds. Here we present an inverse-design workflow that generates 3D cold metals using MatterGPT, a conditional autoregressive Transformer trained on SLICES, an invertible and symmetry-invariant crystal string representation. We curate a training set of 26,309 metallic structures labeled with energy above hull and a unified band-edge distance descriptor that merges p-type and n-type cold-metal characteristics to address severe label imbalance. Property-conditioned generation targeting thermodynamic stability and 50-500 meV band-edge distances produces 148,506 unique candidates; 92.1% are successfully reconstructed to 3D structures and down-selected by symmetry, uniqueness and novelty filters, followed by high-throughput DFT validation. We identify 257 cold metals verified as novel with respect to the Materials Project database, with gaps around the Fermi level spanning 50-500 meV. First-principles phonon, electronic-structure, and work-function calculations for representative candidates confirm dynamical stability and contact-relevant work functions. Our results demonstrate that SLICES-enabled generative transformers can expand the chemical space of cold metals beyond high-throughput screening, providing a route to low-power electronic materials discovery.}
 }
 
+@article{yepes2026-gradient-scaling-effects-in-97299659,
+  author = {Isabela M. Yepes and Pavlos Protopapas},
+  title = {Gradient Scaling Effects in Adaptive Spectral PINNs for Stiff Nonlinear ODEs},
+  year = {2026},
+  journal = {ICLR},
+  eprint = {2605.04502v1},
+  archivePrefix = {arXiv},
+  url = {https://arxiv.org/abs/2605.04502v1},
+  abstract = {Physics-Informed Neural Networks (PINNs) often struggle to train reliably on stiff and oscillatory dynamical systems due to poor optimization conditioning. While prior work has emphasized representational remedies such as spectral parameterizations, the optimization implications of initial-condition (IC) embeddings in adaptive spectral PINNs have not been well characterized. In this work, we show that the choice of IC gating function induces explicit time-dependent gradient scaling, which interacts with spectral representations during training. Using a nonlinear stiff spring-pendulum ODE as a controlled benchmark, we compare exponential and linear IC gates in combination with fixed and adaptive Fourier spectral trunks. We observe stiffness-dependent changes in relative dominance for adaptive PINNs: at moderate stiffness ($k=20$), exponential gating often yields lower error but exhibits heterogeneous behavior across random seeds, whereas at higher stiffness ($k=60$), linear gating becomes preferable, with additional reversals observed at larger $k$. These trends hold for both relative $L^2$ error and maximum pointwise error and are confirmed by paired Wilcoxon signed-rank tests with Holm correction. Overall, our results demonstrate that IC embeddings are not a neutral design choice in PINNs: the induced gradient scaling materially shapes optimization conditioning in stiff regimes, with distinct sensitivity patterns in baseline and adaptive spectral models.}
+}
+
 @article{li2026-heegnet-hyperbolic-embeddings-for-07a069a1,
   author = {Shanglin Li and Shiwen Chu and Okan Koç and Yi Ding and Qibin Zhao and Motoaki Kawanabe and Ziheng Chen},
   title = {HEEGNet: Hyperbolic Embeddings for EEG},
@@ -541,6 +563,17 @@
   archivePrefix = {arXiv},
   url = {https://arxiv.org/abs/2601.12929v1},
   abstract = {In this research, we analyze the performance of Membership Inference Tests (MINT), focusing on determining whether given data were utilized during the training phase, specifically in the domain of object recognition. Within the area of object recognition, we propose and develop architectures tailored for MINT models. These architectures aim to optimize performance and efficiency in data utilization, offering a tailored solution to tackle the complexities inherent in the object recognition domain. We conducted experiments involving an object detection model, an embedding extractor, and a MINT module. These experiments were performed in three public databases, totaling over 174K images. The proposed architecture leverages convolutional layers to capture and model the activation patterns present in the data during the training process. Through our analysis, we are able to identify given data used for testing and training, achieving precision rates ranging between 70% and 80%, contingent upon the depth of the detection module layer chosen for input to the MINT module. Additionally, our studies entail an analysis of the factors influencing the MINT Module, delving into the contributing elements behind more transparent training processes.}
+}
+
+@article{pethkar2026-memory-as-a-markov-6f0d0146,
+  author = {Kaustubh Pethkar and Ziyang Xiong and Zuofeng Shang and Yingcong Li},
+  title = {Memory as a Markov Matrix: Sample Efficient Knowledge Expansion via Token-to-Dictionary Mapping},
+  year = {2026},
+  journal = {ICML},
+  eprint = {2605.04308v1},
+  archivePrefix = {arXiv},
+  url = {https://arxiv.org/abs/2605.04308v1},
+  abstract = {Continual incorporation of new knowledge is essential for the long-term evolution of large language models (LLMs). Existing approaches typically rely on parameter-update algorithms to mitigate catastrophic forgetting, yet they suffer from fundamental limitations: 1) forgetting is unavoidable as the amount of newly injected knowledge grows; and 2) model updates are often irreversible. As modern LLMs become increasingly expressive, it is natural to question whether large-scale weight updates are necessary for acquiring a small amount of new knowledge. In this work, we propose a principled framework that models autoregressive language generation as a Markov process over tokens, where model memory is represented by a Markov transition matrix. Under this formulation, incorporating new knowledge/tokens corresponds to extending the state space, and preserving existing transitions guarantees retention of previously learned knowledge. We then prove a sample complexity bound for incorporating new tokens via a token-to-dictionary mapping strategy. In particular, for learning the transition behavior of each new token, the required number of samples scales linearly with the number of existing tokens it is mapped to. To realize this mapping, we propose an embedding-tuning algorithm that requires minimal parameter updates and induces zero forgetting. Experimental results further demonstrate the effectiveness of our method and validate our theoretical findings.}
 }
 
 @article{gowda2026-memsad-gradient-coupled-anomaly-4337e3e8,
