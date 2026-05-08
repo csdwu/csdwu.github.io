@@ -95,6 +95,17 @@
   abstract = {Preference-based reward learning is widely used for shaping agent behavior to match a user's preference, yet its sparse binary feedback makes it especially vulnerable to causal confusion. The learned reward often latches onto spurious features that merely co-occur with preferred trajectories during training, collapsing when those correlations disappear or reverse at test time. We introduce ReCouPLe, a lightweight framework that uses natural language rationales to provide the missing causal signal. Each rationale is treated as a guiding projection axis in an embedding space, training the model to score trajectories based on features aligned with that axis while de-emphasizing context that is unrelated to the stated reason. Because the same rationales (e.g., "avoids collisions", "completes the task faster") can appear across multiple tasks, ReCouPLe naturally reuses the same causal direction whenever tasks share semantics, and transfers preference knowledge to novel tasks without extra data or language-model fine-tuning. Our learned reward model can ground preferences on the articulated reason, aligning better with user intent and generalizing beyond spurious features. ReCouPLe outperforms baselines by up to 1.5x in reward accuracy under distribution shifts, and 2x in downstream policy performance in novel tasks. We have released our code at https://github.com/mj-hwang/ReCouPLe}
 }
 
+@article{heiman2026-characterizing-brazilian-atlantic-forest-615959a2,
+  author = {Alice Heiman},
+  title = {Characterizing Brazilian Atlantic Forest Restoration Outcomes with Geospatial AlphaEarth Embeddings},
+  year = {2026},
+  journal = {ICLR},
+  eprint = {2605.05547v1},
+  archivePrefix = {arXiv},
+  url = {https://arxiv.org/abs/2605.05547v1},
+  abstract = {The Atlantic Forest in Brazil is a critical biodiversity hotspot, yet less than 12-15% of its original cover remains. Although monitoring forest restoration on a large scale is essential, traditional methods are limited by the impracticality of on-the-ground reporting on such a scale and by the saturation of remote-sensing indices such as NDVI. Furthermore, reforestation is a gradual process as opposed to the rapid spectral changes caused by deforestation. In this study, we examine 1,729 restoration sites in São Paulo, using satellite embeddings from the AlphaEarth Foundation's model to evaluate their effectiveness in characterising early restoration success. We introduce the concept of a 'Reference Trajectory Embedding', defining a metric of restoration success based on cosine similarity to reference sites of mature secondary forest. We observe distinct clusters in embedding space according to different land use and land cover (LULC) types, and we can identify sites with clear change vectors. However, the signal can be noisy, and embeddings may require further fine-tuning to capture and predict site metadata beyond LULC.}
+}
+
 @article{mukhtiar2026-core-fed-bridging-collaborative-cc7b1559,
   author = {Noorain Mukhtiar and Adnan Mahmood and Quan Z. Sheng},
   title = {CoRe-Fed: Bridging Collaborative and Representation Fairness via Federated Embedding Distillation},

@@ -257,6 +257,17 @@
   abstract = {Preference-based reward learning is widely used for shaping agent behavior to match a user's preference, yet its sparse binary feedback makes it especially vulnerable to causal confusion. The learned reward often latches onto spurious features that merely co-occur with preferred trajectories during training, collapsing when those correlations disappear or reverse at test time. We introduce ReCouPLe, a lightweight framework that uses natural language rationales to provide the missing causal signal. Each rationale is treated as a guiding projection axis in an embedding space, training the model to score trajectories based on features aligned with that axis while de-emphasizing context that is unrelated to the stated reason. Because the same rationales (e.g., "avoids collisions", "completes the task faster") can appear across multiple tasks, ReCouPLe naturally reuses the same causal direction whenever tasks share semantics, and transfers preference knowledge to novel tasks without extra data or language-model fine-tuning. Our learned reward model can ground preferences on the articulated reason, aligning better with user intent and generalizing beyond spurious features. ReCouPLe outperforms baselines by up to 1.5x in reward accuracy under distribution shifts, and 2x in downstream policy performance in novel tasks. We have released our code at https://github.com/mj-hwang/ReCouPLe}
 }
 
+@article{heiman2026-characterizing-brazilian-atlantic-forest-615959a2,
+  author = {Alice Heiman},
+  title = {Characterizing Brazilian Atlantic Forest Restoration Outcomes with Geospatial AlphaEarth Embeddings},
+  year = {2026},
+  journal = {ICLR},
+  eprint = {2605.05547v1},
+  archivePrefix = {arXiv},
+  url = {https://arxiv.org/abs/2605.05547v1},
+  abstract = {The Atlantic Forest in Brazil is a critical biodiversity hotspot, yet less than 12-15% of its original cover remains. Although monitoring forest restoration on a large scale is essential, traditional methods are limited by the impracticality of on-the-ground reporting on such a scale and by the saturation of remote-sensing indices such as NDVI. Furthermore, reforestation is a gradual process as opposed to the rapid spectral changes caused by deforestation. In this study, we examine 1,729 restoration sites in São Paulo, using satellite embeddings from the AlphaEarth Foundation's model to evaluate their effectiveness in characterising early restoration success. We introduce the concept of a 'Reference Trajectory Embedding', defining a metric of restoration success based on cosine similarity to reference sites of mature secondary forest. We observe distinct clusters in embedding space according to different land use and land cover (LULC) types, and we can identify sites with clear change vectors. However, the signal can be noisy, and embeddings may require further fine-tuning to capture and predict site metadata beyond LULC.}
+}
+
 @article{ndez2026-characterizing-human-semantic-navigation-f0c91d93,
   author = {Felipe D. Toro-Hernández and Jesuino Vieira Filho and Rodrigo M. Cabral-Carvalho},
   title = {Characterizing Human Semantic Navigation in Concept Production as Trajectories in Embedding Space},
@@ -560,6 +571,17 @@
   archivePrefix = {arXiv},
   url = {https://arxiv.org/abs/2604.03301v1},
   abstract = {Downlink bottlenecks motivate onboard systems that prioritize hazards without transmitting raw pixels. We study a strict setting where a ground station uplinks only compact embeddings plus metadata, and an onboard system performs vector search to triage new captures. We ask whether this embedding-only pipeline remains useful under explicit remote-sensing shift: cross-time (pre/post-event), cross-event/location (different disasters), cross-site cloud (15 geographic sites), and cross-city AOI holdout (buildings). Using OlmoEarth embeddings on a scaled public multi-task benchmark (27 Sentinel-2 L2A scenes, 15 cloud sites, 5 SpaceNet-2 AOIs; 10 seeds), we find that all effective methods rely on the same uplinked embeddings, but the optimal decision head is task-dependent: kNN retrieval is significantly superior for cloud classification (0.92 vs. centroid 0.91; p<0.01, Wilcoxon), while class centroids dominate temporal change detection (0.85 vs. retrieval 0.48; p<0.01). These results show that embedding-only uplink is the key enabler--once embeddings are onboard, the system can select the best head per task at no additional uplink cost, with all telemetry under 1 KB per query.}
+}
+
+@article{hashimoto2026-enabling-federated-inference-via-9a2be2b6,
+  author = {Yui Hashimoto and Takayuki Nishio and Yuichi Kitagawa and Takahito Tanimura},
+  title = {Enabling Federated Inference via Unsupervised Consensus Embedding},
+  year = {2026},
+  journal = {18 pages, 15 figures, submitted to IEEE Transactions on Mobile Computing (TMC) (under review)},
+  eprint = {2605.05718v1},
+  archivePrefix = {arXiv},
+  url = {https://arxiv.org/abs/2605.05718v1},
+  abstract = {Cooperative inference across independently deployed machine learning models is increasingly desirable in distributed environments, as there is a growing need to leverage multiple models while keeping their data and model parameters private. However, existing cooperative frameworks typically rely on sharing input data, model parameters, or a common encoder, which limits their applicability in privacy-sensitive or cross-organizational settings. To address this challenge, we propose Consensus Embedding-based Federated Inference (CE-FI), a framework that enables pretrained models to cooperate at inference time without sharing model parameters or raw inputs and without assuming a common encoder. CE-FI introduces two components: a Consensus Embedding (CE) layer that maps heterogeneous intermediate representations into a common embedding space, and a Cooperative Output (CO) layer that produces predictions from these embeddings. Both layers are trained using shared unlabeled data only, so the cooperative stage does not require additional labeled data. Experiments on image classification benchmarks -- CIFAR-10 and CIFAR-100 -- under diverse non-IID conditions show that CE-FI consistently outperforms solo inference and performs comparably to conventional methods that require stronger sharing assumptions. Additional evaluations on text and time-series tasks indicate applicability beyond image classification, although performance depends on the ensemble strategy. Further analysis identifies representation alignment as the primary bottleneck.}
 }
 
 @article{vahdatpour2026-energy-efficient-software-hardware-5159c709,

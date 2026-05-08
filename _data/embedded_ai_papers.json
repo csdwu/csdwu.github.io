@@ -1,6 +1,6 @@
 {
   "version": "2.0.0",
-  "generated_at": "2026-05-07T02:26:29.726Z",
+  "generated_at": "2026-05-08T02:34:11.137Z",
   "query_groups": {
     "A": "\"embedded ai\"",
     "B": "(\"low power\" OR \"ultra-low-power\") \"embedded ai\"",
@@ -8,24 +8,24 @@
   },
   "stats": {
     "raw_counts": {
-      "A": 29,
-      "B": 1,
-      "C": 2
+      "A": 46,
+      "B": 2,
+      "C": 0
     },
     "after_set_ops": {
-      "A_only": 28,
-      "B": 1,
-      "C": 2,
-      "merged_total": 31,
+      "A_only": 46,
+      "B": 2,
+      "C": 0,
+      "merged_total": 48,
       "bc_overlap": 0
     },
-    "after_filter": 780,
+    "after_filter": 782,
     "classification": {
-      "total": 780,
+      "total": 782,
       "by_category": {
-        "Efficient Model Design and Optimization": 246,
+        "Efficient Model Design and Optimization": 247,
         "Novel Computing Architectures and Domain-Specific Accelerators": 39,
-        "Embedded AI Applications": 495
+        "Embedded AI Applications": 496
       },
       "by_tag": {
         "TinyML": 45,
@@ -35,14 +35,14 @@
       "by_provider": {
         "tencent_tokenhub": 0,
         "heuristic": 0,
-        "heuristic_fallback": 780
+        "heuristic_fallback": 782
       }
     },
     "source_stats": {
-      "total": 780,
+      "total": 782,
       "by_group": {
         "A": {
-          "total": 648,
+          "total": 650,
           "arxiv": 0,
           "venues": {
             "AAAI": 90,
@@ -166,7 +166,7 @@
             "ICDT": 0,
             "ICFP": 0,
             "ICIP": 0,
-            "ICLR": 157,
+            "ICLR": 158,
             "ICMI": 0,
             "ICML": 86,
             "ICMR": 0,
@@ -349,7 +349,7 @@
             "TITS": 0,
             "TKDD": 0,
             "TKDE": 2,
-            "TMC": 0,
+            "TMC": 1,
             "TMI": 0,
             "TMM": 0,
             "TNNLS": 0,
@@ -1539,7 +1539,7 @@
         }
       },
       "total_summary": {
-        "total": 795,
+        "total": 797,
         "arxiv": 118,
         "venues": {
           "AAAI": 90,
@@ -1663,7 +1663,7 @@
           "ICDT": 0,
           "ICFP": 0,
           "ICIP": 0,
-          "ICLR": 158,
+          "ICLR": 159,
           "ICMI": 0,
           "ICML": 88,
           "ICMR": 0,
@@ -1846,7 +1846,7 @@
           "TITS": 0,
           "TKDD": 0,
           "TKDE": 2,
-          "TMC": 1,
+          "TMC": 2,
           "TMI": 0,
           "TMM": 0,
           "TNNLS": 1,
@@ -1918,8 +1918,56 @@
     {
       "key": "efficient_model_design",
       "title": "Efficient Model Design and Optimization",
-      "count": 246,
+      "count": 247,
       "papers": [
+        {
+          "id": "d31033e7483329f0f1d35c2c910bb646afb796f4",
+          "title": "Characterizing Brazilian Atlantic Forest Restoration Outcomes with Geospatial AlphaEarth Embeddings",
+          "authors": [
+            "Alice Heiman"
+          ],
+          "year": 2026,
+          "month": 5,
+          "source": "arxiv",
+          "venue": "ICLR",
+          "venue_type": "conference",
+          "abstract": "The Atlantic Forest in Brazil is a critical biodiversity hotspot, yet less than 12-15% of its original cover remains. Although monitoring forest restoration on a large scale is essential, traditional methods are limited by the impracticality of on-the-ground reporting on such a scale and by the saturation of remote-sensing indices such as NDVI. Furthermore, reforestation is a gradual process as opposed to the rapid spectral changes caused by deforestation. In this study, we examine 1,729 restoration sites in São Paulo, using satellite embeddings from the AlphaEarth Foundation's model to evaluate their effectiveness in characterising early restoration success. We introduce the concept of a 'Reference Trajectory Embedding', defining a metric of restoration success based on cosine similarity to reference sites of mature secondary forest. We observe distinct clusters in embedding space according to different land use and land cover (LULC) types, and we can identify sites with clear change vectors. However, the signal can be noisy, and embeddings may require further fine-tuning to capture and predict site metadata beyond LULC.",
+          "urls": {
+            "arxiv": "https://arxiv.org/abs/2605.05547v1",
+            "pdf": "https://arxiv.org/pdf/2605.05547v1",
+            "paper": "https://arxiv.org/abs/2605.05547v1"
+          },
+          "search_sets_raw": [
+            "A"
+          ],
+          "search_sets_final": [
+            "A"
+          ],
+          "filter_bucket": "th_cpl_a",
+          "matched_venue": "ICLR",
+          "matched_th_cpl_level": "A",
+          "matched_th_cpl_area": "Artificial Intelligence and Pattern Recognition",
+          "category": "Efficient Model Design and Optimization",
+          "llm_tags": [],
+          "forced_tags": [],
+          "final_tags": [],
+          "cited_by": 0,
+          "is_preprint_on_arxiv": false,
+          "preprint_source": "",
+          "journal_ref": "",
+          "doi": "",
+          "arxiv_comment": "",
+          "arxiv_id": "2605.05547v1",
+          "raw_venue": "",
+          "venue_source": "",
+          "sort_key": 202600,
+          "download": {
+            "status": "pending",
+            "source": null,
+            "path": null,
+            "last_attempt_at": null
+          }
+        },
         {
           "id": "df92ae5ce09d4881407a429ae5384bba45d5185d",
           "title": "DynaTab: Dynamic Feature Ordering as Neural Rewiring for High-Dimensional Tabular Data",
@@ -17059,7 +17107,7 @@
     {
       "key": "embedded_ai_applications",
       "title": "Embedded AI Applications",
-      "count": 495,
+      "count": 496,
       "papers": [
         {
           "id": "4ac06718d4a329aa8ce722043e1191b2b9ce342f",
@@ -17099,6 +17147,57 @@
           "doi": "",
           "arxiv_comment": "",
           "arxiv_id": "2605.04899v1",
+          "raw_venue": "",
+          "venue_source": "",
+          "sort_key": 202600,
+          "download": {
+            "status": "pending",
+            "source": null,
+            "path": null,
+            "last_attempt_at": null
+          }
+        },
+        {
+          "id": "021a8c164f62a5f17091685409b1230cfc20c29a",
+          "title": "Enabling Federated Inference via Unsupervised Consensus Embedding",
+          "authors": [
+            "Yui Hashimoto",
+            "Takayuki Nishio",
+            "Yuichi Kitagawa",
+            "Takahito Tanimura"
+          ],
+          "year": 2026,
+          "month": 5,
+          "source": "arxiv",
+          "venue": "18 pages, 15 figures, submitted to IEEE Transactions on Mobile Computing (TMC) (under review)",
+          "venue_type": "journal",
+          "abstract": "Cooperative inference across independently deployed machine learning models is increasingly desirable in distributed environments, as there is a growing need to leverage multiple models while keeping their data and model parameters private. However, existing cooperative frameworks typically rely on sharing input data, model parameters, or a common encoder, which limits their applicability in privacy-sensitive or cross-organizational settings. To address this challenge, we propose Consensus Embedding-based Federated Inference (CE-FI), a framework that enables pretrained models to cooperate at inference time without sharing model parameters or raw inputs and without assuming a common encoder. CE-FI introduces two components: a Consensus Embedding (CE) layer that maps heterogeneous intermediate representations into a common embedding space, and a Cooperative Output (CO) layer that produces predictions from these embeddings. Both layers are trained using shared unlabeled data only, so the cooperative stage does not require additional labeled data. Experiments on image classification benchmarks -- CIFAR-10 and CIFAR-100 -- under diverse non-IID conditions show that CE-FI consistently outperforms solo inference and performs comparably to conventional methods that require stronger sharing assumptions. Additional evaluations on text and time-series tasks indicate applicability beyond image classification, although performance depends on the ensemble strategy. Further analysis identifies representation alignment as the primary bottleneck.",
+          "urls": {
+            "arxiv": "https://arxiv.org/abs/2605.05718v1",
+            "pdf": "https://arxiv.org/pdf/2605.05718v1",
+            "paper": "https://arxiv.org/abs/2605.05718v1"
+          },
+          "search_sets_raw": [
+            "A"
+          ],
+          "search_sets_final": [
+            "A"
+          ],
+          "filter_bucket": "th_cpl_a",
+          "matched_venue": "TMC",
+          "matched_th_cpl_level": "A",
+          "matched_th_cpl_area": "Computer Networks",
+          "category": "Embedded AI Applications",
+          "llm_tags": [],
+          "forced_tags": [],
+          "final_tags": [],
+          "cited_by": 0,
+          "is_preprint_on_arxiv": false,
+          "preprint_source": "",
+          "journal_ref": "",
+          "doi": "",
+          "arxiv_comment": "",
+          "arxiv_id": "2605.05718v1",
           "raw_venue": "",
           "venue_source": "",
           "sort_key": 202600,

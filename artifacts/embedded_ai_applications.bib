@@ -279,6 +279,17 @@
   abstract = {Downlink bottlenecks motivate onboard systems that prioritize hazards without transmitting raw pixels. We study a strict setting where a ground station uplinks only compact embeddings plus metadata, and an onboard system performs vector search to triage new captures. We ask whether this embedding-only pipeline remains useful under explicit remote-sensing shift: cross-time (pre/post-event), cross-event/location (different disasters), cross-site cloud (15 geographic sites), and cross-city AOI holdout (buildings). Using OlmoEarth embeddings on a scaled public multi-task benchmark (27 Sentinel-2 L2A scenes, 15 cloud sites, 5 SpaceNet-2 AOIs; 10 seeds), we find that all effective methods rely on the same uplinked embeddings, but the optimal decision head is task-dependent: kNN retrieval is significantly superior for cloud classification (0.92 vs. centroid 0.91; p<0.01, Wilcoxon), while class centroids dominate temporal change detection (0.85 vs. retrieval 0.48; p<0.01). These results show that embedding-only uplink is the key enabler--once embeddings are onboard, the system can select the best head per task at no additional uplink cost, with all telemetry under 1 KB per query.}
 }
 
+@article{hashimoto2026-enabling-federated-inference-via-9a2be2b6,
+  author = {Yui Hashimoto and Takayuki Nishio and Yuichi Kitagawa and Takahito Tanimura},
+  title = {Enabling Federated Inference via Unsupervised Consensus Embedding},
+  year = {2026},
+  journal = {18 pages, 15 figures, submitted to IEEE Transactions on Mobile Computing (TMC) (under review)},
+  eprint = {2605.05718v1},
+  archivePrefix = {arXiv},
+  url = {https://arxiv.org/abs/2605.05718v1},
+  abstract = {Cooperative inference across independently deployed machine learning models is increasingly desirable in distributed environments, as there is a growing need to leverage multiple models while keeping their data and model parameters private. However, existing cooperative frameworks typically rely on sharing input data, model parameters, or a common encoder, which limits their applicability in privacy-sensitive or cross-organizational settings. To address this challenge, we propose Consensus Embedding-based Federated Inference (CE-FI), a framework that enables pretrained models to cooperate at inference time without sharing model parameters or raw inputs and without assuming a common encoder. CE-FI introduces two components: a Consensus Embedding (CE) layer that maps heterogeneous intermediate representations into a common embedding space, and a Cooperative Output (CO) layer that produces predictions from these embeddings. Both layers are trained using shared unlabeled data only, so the cooperative stage does not require additional labeled data. Experiments on image classification benchmarks -- CIFAR-10 and CIFAR-100 -- under diverse non-IID conditions show that CE-FI consistently outperforms solo inference and performs comparably to conventional methods that require stronger sharing assumptions. Additional evaluations on text and time-series tasks indicate applicability beyond image classification, although performance depends on the ensemble strategy. Further analysis identifies representation alignment as the primary bottleneck.}
+}
+
 @article{seefried2026-enginuity-building-an-open-4572b0a7,
   author = {Ethan Seefried and Prahitha Movva and Naga Harshita Marupaka and Tilak Kasturi and Tirthankar Ghosal},
   title = {Enginuity: Building an Open Multi-Domain Dataset of Complex Engineering Diagrams},
