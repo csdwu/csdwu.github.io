@@ -410,6 +410,17 @@
   abstract = {Time series imputation benefits from leveraging cross-feature correlations, yet existing attention-based methods re-discover feature relationships at each layer, lacking persistent anchors to maintain consistent representations. To address this, we propose HELIX, which assigns each feature a learnable feature identity, a persistent embedding that captures intrinsic semantic properties throughout the network. Unlike graph-based methods that rely on predefined topology and assume homogeneous spatial relationships, HELIX learns arbitrary feature dependencies end-to-end from temporal co-variation, naturally handling datasets where features mix spatial locations with semantic variables. Integrated with hybrid temporal-feature attention, HELIX achieves the state-of-the-art performance, surpassing all 16 baselines on 5 public datasets across 21 experimental settings in our evaluation. Furthermore, our mechanistic analysis reveals that HELIX aligns learned feature identities and dependencies with latent physical and semantic structure progressively across layers, demonstrating that it more effectively translates cross-feature structure into imputation accuracy.}
 }
 
+@article{petersen2026-hepa-a-self-supervised-ce889713,
+  author = {Jonas Petersen and Gian-Alessandro Lombardi and Riccardo Maggioni and Camilla Mazzoleni and Federico Martelli and Philipp Petersen},
+  title = {HEPA: A Self-Supervised Horizon-Conditioned Event Predictive Architecture for Time Series},
+  year = {2026},
+  journal = {NeurIPS},
+  eprint = {2605.11130v1},
+  archivePrefix = {arXiv},
+  url = {https://arxiv.org/abs/2605.11130v1},
+  abstract = {Critical events in multivariate time series, from turbine failures to cardiac arrhythmias, demand accurate prediction, yet labeled data is scarce because such events are rare and costly to annotate. We introduce HEPA (Horizon-conditioned Event Predictive Architecture), built on two key principles. First, a causal Transformer encoder is pretrained via a Joint-Embedding Predictive Architecture (JEPA): a horizon-conditioned predictor learns to forecast future representations rather than future values, forcing the encoder to capture predictable temporal dynamics from unlabeled data alone. Second, we freeze the encoder and finetune only the predictor toward the target event, producing a monotonic survival cumulative distribution function (CDF) over horizons. With fixed architecture and optimiser hyperparameters across all benchmarks, HEPA handles water contamination, cyberattack detection, volatility regimes, and eight further event types across 11 domains, exceeding leading time-series architectures including PatchTST, iTransformer, MAE, and Chronos-2 on at least 10 of 14 benchmarks, with an order of magnitude fewer tuned parameters and, on lifecycle datasets, an order of magnitude less labeled data.}
+}
+
 @article{zhang2026-hgatsolver-a-heterogeneous-graph-307994cc,
   author = {Qin-Yi Zhang and Hong Wang and Siyao Liu and Haichuan Lin and Linying Cao and Xiao-Hu Zhou and Chen Chen and Shuangyi Wang and Zeng-Guang Hou},
   title = {HGATSolver: A Heterogeneous Graph Attention Solver for Fluid-Structure Interaction},
@@ -475,6 +486,17 @@
   archivePrefix = {arXiv},
   url = {https://arxiv.org/abs/2602.04941v1},
   abstract = {Sets represent a fundamental abstraction across many types of data. To handle the unordered nature of set-structured data, models such as DeepSets and PointNet rely on fixed, non-learnable pooling operations (e.g., sum or max) -- a design choice that can hinder the transferability of learned embeddings and limits model expressivity. More recently, learnable aggregation functions have been proposed as more expressive alternatives. In this work, we advance this line of research by introducing the Neuralized Kolmogorov Mean (NKM) -- a novel, trainable framework for learning a generalized measure of central tendency through an invertible neural function. We further propose quasi-arithmetic neural networks (QUANNs), which incorporate the NKM as a learnable aggregation function. We provide a theoretical analysis showing that, QUANNs are universal approximators for a broad class of common set-function decompositions and, thanks to their invertible neural components, learn more structured latent representations. Empirically, QUANNs outperform state-of-the-art baselines across diverse benchmarks, while learning embeddings that transfer effectively even to tasks that do not involve sets.}
+}
+
+@article{lai2026-instruction-lens-score-your-07f85f5a,
+  author = {Runhe Lai and Xinhua Lu and Yanqi Wu and Jinlun Ye and Weijiang Yu and Ruixuan Wang},
+  title = {Instruction Lens Score: Your Instruction Contributes a Powerful Object Hallucination Detector for Multimodal Large Language Models},
+  year = {2026},
+  journal = {ICML},
+  eprint = {2605.12258v1},
+  archivePrefix = {arXiv},
+  url = {https://arxiv.org/abs/2605.12258v1},
+  abstract = {Multimodal large language models (MLLMs) have achieved remarkable progress, yet the object hallucination remains a critical challenge for reliable deployment. In this paper, we present an in-depth analysis of instruction token embeddings and reveal that they implicitly encode visual information while effectively filtering erroneous information introduced by misleading visual embeddings. Building on this insight, we propose the Instruction Lens Score (InsLen), which combines a Calibrated Local Score with a Context Consistency Score that measures context consistency of the object tokens. The proposed approach serves as a plug-and-play object hallucination detector without relying on auxiliary models or additional training. Extensive experiments across multiple benchmarks and diverse MLLM architectures demonstrate that InsLen consistently outperforms existing hallucination detection methods, highlighting its effectiveness and robustness. The code is available at https://github.com/Fraserlairh/Instruction-Lens-Score.}
 }
 
 @article{wan2026-invisible-safety-threat-malicious-e8eb10f5,

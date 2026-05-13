@@ -1,6 +1,6 @@
 {
   "version": "2.0.0",
-  "generated_at": "2026-05-12T02:32:26.338Z",
+  "generated_at": "2026-05-13T02:39:02.660Z",
   "query_groups": {
     "A": "\"embedded ai\"",
     "B": "(\"low power\" OR \"ultra-low-power\") \"embedded ai\"",
@@ -8,24 +8,24 @@
   },
   "stats": {
     "raw_counts": {
-      "A": 27,
-      "B": 1,
-      "C": 0
+      "A": 54,
+      "B": 2,
+      "C": 1
     },
     "after_set_ops": {
-      "A_only": 26,
-      "B": 1,
-      "C": 0,
-      "merged_total": 27,
-      "bc_overlap": 0
+      "A_only": 53,
+      "B": 2,
+      "C": 1,
+      "merged_total": 55,
+      "bc_overlap": 1
     },
-    "after_filter": 782,
+    "after_filter": 784,
     "classification": {
-      "total": 782,
+      "total": 784,
       "by_category": {
         "Efficient Model Design and Optimization": 247,
         "Novel Computing Architectures and Domain-Specific Accelerators": 39,
-        "Embedded AI Applications": 496
+        "Embedded AI Applications": 498
       },
       "by_tag": {
         "TinyML": 45,
@@ -35,14 +35,14 @@
       "by_provider": {
         "tencent_tokenhub": 0,
         "heuristic": 0,
-        "heuristic_fallback": 782
+        "heuristic_fallback": 784
       }
     },
     "source_stats": {
-      "total": 782,
+      "total": 784,
       "by_group": {
         "A": {
-          "total": 650,
+          "total": 652,
           "arxiv": 0,
           "venues": {
             "AAAI": 90,
@@ -168,7 +168,7 @@
             "ICIP": 0,
             "ICLR": 158,
             "ICMI": 0,
-            "ICML": 86,
+            "ICML": 87,
             "ICMR": 0,
             "ICN": 0,
             "ICNP": 0,
@@ -257,7 +257,7 @@
             "NOSSDAV": 0,
             "NSDI": 0,
             "Networking": 0,
-            "NeurIPS": 185,
+            "NeurIPS": 186,
             "OOPSLA": 0,
             "OSDI": 0,
             "PACT": 0,
@@ -1539,7 +1539,7 @@
         }
       },
       "total_summary": {
-        "total": 797,
+        "total": 799,
         "arxiv": 118,
         "venues": {
           "AAAI": 90,
@@ -1665,7 +1665,7 @@
           "ICIP": 0,
           "ICLR": 159,
           "ICMI": 0,
-          "ICML": 88,
+          "ICML": 89,
           "ICMR": 0,
           "ICN": 0,
           "ICNP": 0,
@@ -1754,7 +1754,7 @@
           "NOSSDAV": 0,
           "NSDI": 0,
           "Networking": 0,
-          "NeurIPS": 186,
+          "NeurIPS": 187,
           "OOPSLA": 0,
           "OSDI": 0,
           "PACT": 0,
@@ -17107,7 +17107,7 @@
     {
       "key": "embedded_ai_applications",
       "title": "Embedded AI Applications",
-      "count": 496,
+      "count": 498,
       "papers": [
         {
           "id": "4ac06718d4a329aa8ce722043e1191b2b9ce342f",
@@ -17299,6 +17299,112 @@
           "doi": "",
           "arxiv_comment": "",
           "arxiv_id": "2605.02278v1",
+          "raw_venue": "",
+          "venue_source": "",
+          "sort_key": 202600,
+          "download": {
+            "status": "pending",
+            "source": null,
+            "path": null,
+            "last_attempt_at": null
+          }
+        },
+        {
+          "id": "6dfd7e9a2dacce0dde0ee3a915892e8d1eeac8d0",
+          "title": "HEPA: A Self-Supervised Horizon-Conditioned Event Predictive Architecture for Time Series",
+          "authors": [
+            "Jonas Petersen",
+            "Gian-Alessandro Lombardi",
+            "Riccardo Maggioni",
+            "Camilla Mazzoleni",
+            "Federico Martelli",
+            "Philipp Petersen"
+          ],
+          "year": 2026,
+          "month": 5,
+          "source": "arxiv",
+          "venue": "NeurIPS",
+          "venue_type": "conference",
+          "abstract": "Critical events in multivariate time series, from turbine failures to cardiac arrhythmias, demand accurate prediction, yet labeled data is scarce because such events are rare and costly to annotate. We introduce HEPA (Horizon-conditioned Event Predictive Architecture), built on two key principles. First, a causal Transformer encoder is pretrained via a Joint-Embedding Predictive Architecture (JEPA): a horizon-conditioned predictor learns to forecast future representations rather than future values, forcing the encoder to capture predictable temporal dynamics from unlabeled data alone. Second, we freeze the encoder and finetune only the predictor toward the target event, producing a monotonic survival cumulative distribution function (CDF) over horizons. With fixed architecture and optimiser hyperparameters across all benchmarks, HEPA handles water contamination, cyberattack detection, volatility regimes, and eight further event types across 11 domains, exceeding leading time-series architectures including PatchTST, iTransformer, MAE, and Chronos-2 on at least 10 of 14 benchmarks, with an order of magnitude fewer tuned parameters and, on lifecycle datasets, an order of magnitude less labeled data.",
+          "urls": {
+            "arxiv": "https://arxiv.org/abs/2605.11130v1",
+            "pdf": "https://arxiv.org/pdf/2605.11130v1",
+            "paper": "https://arxiv.org/abs/2605.11130v1"
+          },
+          "search_sets_raw": [
+            "A"
+          ],
+          "search_sets_final": [
+            "A"
+          ],
+          "filter_bucket": "th_cpl_a",
+          "matched_venue": "NeurIPS",
+          "matched_th_cpl_level": "A",
+          "matched_th_cpl_area": "Artificial Intelligence and Pattern Recognition",
+          "category": "Embedded AI Applications",
+          "llm_tags": [],
+          "forced_tags": [],
+          "final_tags": [],
+          "cited_by": 0,
+          "is_preprint_on_arxiv": false,
+          "preprint_source": "",
+          "journal_ref": "",
+          "doi": "",
+          "arxiv_comment": "",
+          "arxiv_id": "2605.11130v1",
+          "raw_venue": "",
+          "venue_source": "",
+          "sort_key": 202600,
+          "download": {
+            "status": "pending",
+            "source": null,
+            "path": null,
+            "last_attempt_at": null
+          }
+        },
+        {
+          "id": "65142b311a7b1fd5e3787769ecced4a3d02b5258",
+          "title": "Instruction Lens Score: Your Instruction Contributes a Powerful Object Hallucination Detector for Multimodal Large Language Models",
+          "authors": [
+            "Runhe Lai",
+            "Xinhua Lu",
+            "Yanqi Wu",
+            "Jinlun Ye",
+            "Weijiang Yu",
+            "Ruixuan Wang"
+          ],
+          "year": 2026,
+          "month": 5,
+          "source": "arxiv",
+          "venue": "ICML",
+          "venue_type": "conference",
+          "abstract": "Multimodal large language models (MLLMs) have achieved remarkable progress, yet the object hallucination remains a critical challenge for reliable deployment. In this paper, we present an in-depth analysis of instruction token embeddings and reveal that they implicitly encode visual information while effectively filtering erroneous information introduced by misleading visual embeddings. Building on this insight, we propose the Instruction Lens Score (InsLen), which combines a Calibrated Local Score with a Context Consistency Score that measures context consistency of the object tokens. The proposed approach serves as a plug-and-play object hallucination detector without relying on auxiliary models or additional training. Extensive experiments across multiple benchmarks and diverse MLLM architectures demonstrate that InsLen consistently outperforms existing hallucination detection methods, highlighting its effectiveness and robustness. The code is available at https://github.com/Fraserlairh/Instruction-Lens-Score.",
+          "urls": {
+            "arxiv": "https://arxiv.org/abs/2605.12258v1",
+            "pdf": "https://arxiv.org/pdf/2605.12258v1",
+            "paper": "https://arxiv.org/abs/2605.12258v1"
+          },
+          "search_sets_raw": [
+            "A"
+          ],
+          "search_sets_final": [
+            "A"
+          ],
+          "filter_bucket": "th_cpl_a",
+          "matched_venue": "ICML",
+          "matched_th_cpl_level": "A",
+          "matched_th_cpl_area": "Artificial Intelligence and Pattern Recognition",
+          "category": "Embedded AI Applications",
+          "llm_tags": [],
+          "forced_tags": [],
+          "final_tags": [],
+          "cited_by": 0,
+          "is_preprint_on_arxiv": false,
+          "preprint_source": "",
+          "journal_ref": "",
+          "doi": "",
+          "arxiv_comment": "",
+          "arxiv_id": "2605.12258v1",
           "raw_venue": "",
           "venue_source": "",
           "sort_key": 202600,
