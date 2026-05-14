@@ -1,6 +1,6 @@
 {
   "version": "2.0.0",
-  "generated_at": "2026-05-13T02:39:02.660Z",
+  "generated_at": "2026-05-14T02:39:29.017Z",
   "query_groups": {
     "A": "\"embedded ai\"",
     "B": "(\"low power\" OR \"ultra-low-power\") \"embedded ai\"",
@@ -8,41 +8,41 @@
   },
   "stats": {
     "raw_counts": {
-      "A": 54,
+      "A": 43,
       "B": 2,
-      "C": 1
+      "C": 2
     },
     "after_set_ops": {
-      "A_only": 53,
+      "A_only": 42,
       "B": 2,
-      "C": 1,
-      "merged_total": 55,
+      "C": 2,
+      "merged_total": 45,
       "bc_overlap": 1
     },
-    "after_filter": 784,
+    "after_filter": 786,
     "classification": {
-      "total": 784,
+      "total": 786,
       "by_category": {
-        "Efficient Model Design and Optimization": 247,
+        "Efficient Model Design and Optimization": 248,
         "Novel Computing Architectures and Domain-Specific Accelerators": 39,
-        "Embedded AI Applications": 498
+        "Embedded AI Applications": 499
       },
       "by_tag": {
-        "TinyML": 45,
+        "TinyML": 46,
         "LP": 95,
         "ULP": 13
       },
       "by_provider": {
         "tencent_tokenhub": 0,
         "heuristic": 0,
-        "heuristic_fallback": 784
+        "heuristic_fallback": 786
       }
     },
     "source_stats": {
-      "total": 784,
+      "total": 786,
       "by_group": {
         "A": {
-          "total": 652,
+          "total": 653,
           "arxiv": 0,
           "venues": {
             "AAAI": 90,
@@ -257,7 +257,7 @@
             "NOSSDAV": 0,
             "NSDI": 0,
             "Networking": 0,
-            "NeurIPS": 186,
+            "NeurIPS": 187,
             "OOPSLA": 0,
             "OSDI": 0,
             "PACT": 0,
@@ -790,7 +790,7 @@
           "unknown": 0
         },
         "C": {
-          "total": 45,
+          "total": 46,
           "arxiv": 39,
           "venues": {
             "AAAI": 0,
@@ -1029,7 +1029,7 @@
             "RAID": 0,
             "RE": 0,
             "RECOMB": 0,
-            "RSS": 0,
+            "RSS": 1,
             "RTAS": 0,
             "RTSS": 0,
             "RecSys": 0,
@@ -1539,7 +1539,7 @@
         }
       },
       "total_summary": {
-        "total": 799,
+        "total": 801,
         "arxiv": 118,
         "venues": {
           "AAAI": 90,
@@ -1754,7 +1754,7 @@
           "NOSSDAV": 0,
           "NSDI": 0,
           "Networking": 0,
-          "NeurIPS": 187,
+          "NeurIPS": 188,
           "OOPSLA": 0,
           "OSDI": 0,
           "PACT": 0,
@@ -1778,7 +1778,7 @@
           "RAID": 0,
           "RE": 0,
           "RECOMB": 0,
-          "RSS": 2,
+          "RSS": 3,
           "RTAS": 0,
           "RTSS": 0,
           "RecSys": 0,
@@ -1918,7 +1918,7 @@
     {
       "key": "efficient_model_design",
       "title": "Efficient Model Design and Optimization",
-      "count": 247,
+      "count": 248,
       "papers": [
         {
           "id": "d31033e7483329f0f1d35c2c910bb646afb796f4",
@@ -1958,6 +1958,57 @@
           "doi": "",
           "arxiv_comment": "",
           "arxiv_id": "2605.05547v1",
+          "raw_venue": "",
+          "venue_source": "",
+          "sort_key": 202600,
+          "download": {
+            "status": "pending",
+            "source": null,
+            "path": null,
+            "last_attempt_at": null
+          }
+        },
+        {
+          "id": "4a64587f984be031ded57e8456640498db6aea9d",
+          "title": "ConRetroBert: EMA Stabilized Dual Encoders for Template-Based Single-Step Retrosynthesis",
+          "authors": [
+            "Mohammad Jahid Ibna Basher",
+            "Ali Khodabandeh Yalabadi",
+            "Ivan Garibay",
+            "Ozlem Ozmen Garibay"
+          ],
+          "year": 2026,
+          "month": 5,
+          "source": "arxiv",
+          "venue": "NeurIPS",
+          "venue_type": "conference",
+          "abstract": "Template based single step retrosynthesis predicts reactants by selecting and applying an explicit reaction template, making each prediction traceable to a chemical transformation rule. This is useful for synthesis planning, but template based methods are often viewed as less competitive than template free models because template prediction is commonly formulated as global classification over a long tailed rule library. We argue that this weakness is not inherent to templates, but to the learning formulation. We present ConRetroBert, a dual encoder framework that reframes template based retrosynthesis as dense product template retrieval followed by candidate set listwise ranking. Stage 1 uses contrastive pretraining to learn a shared embedding space between products and reaction templates. Stage 2 refines template ranking over mined hard negative candidate sets with a multi positive listwise objective. To enable template side adaptation without destabilizing hard negative mining, ConRetroBert uses a slow moving exponential moving average template encoder for retrieval bank construction while updating the live template encoder through the ranking loss. On the local USPTO-50k benchmark, Stage 2 candidate set ranking improves top-1 reaction accuracy from 50.5% to 61.3%, while EMA stabilized template adaptation further improves it to 62.4%. Fine tuning from a leakage controlled USPTO-Full checkpoint reaches 75.4% top-1 accuracy on USPTO-50k. We also show that retrieval based template prediction is strong in the long tail of rare templates, and that many correct reactant predictions arise from alternative explicit templates rather than only the recorded positive label. Code and data are available at https://github.com/JahidBasher/ConRetroBert.",
+          "urls": {
+            "arxiv": "https://arxiv.org/abs/2605.12736v1",
+            "pdf": "https://arxiv.org/pdf/2605.12736v1",
+            "paper": "https://arxiv.org/abs/2605.12736v1"
+          },
+          "search_sets_raw": [
+            "A"
+          ],
+          "search_sets_final": [
+            "A"
+          ],
+          "filter_bucket": "th_cpl_a",
+          "matched_venue": "NeurIPS",
+          "matched_th_cpl_level": "A",
+          "matched_th_cpl_area": "Artificial Intelligence and Pattern Recognition",
+          "category": "Efficient Model Design and Optimization",
+          "llm_tags": [],
+          "forced_tags": [],
+          "final_tags": [],
+          "cited_by": 0,
+          "is_preprint_on_arxiv": false,
+          "preprint_source": "",
+          "journal_ref": "",
+          "doi": "",
+          "arxiv_comment": "",
+          "arxiv_id": "2605.12736v1",
           "raw_venue": "",
           "venue_source": "",
           "sort_key": 202600,
@@ -17107,7 +17158,7 @@
     {
       "key": "embedded_ai_applications",
       "title": "Embedded AI Applications",
-      "count": 498,
+      "count": 499,
       "papers": [
         {
           "id": "4ac06718d4a329aa8ce722043e1191b2b9ce342f",
@@ -17554,6 +17605,64 @@
           "doi": "",
           "arxiv_comment": "",
           "arxiv_id": "2605.03346v1",
+          "raw_venue": "",
+          "venue_source": "",
+          "sort_key": 202600,
+          "download": {
+            "status": "pending",
+            "source": null,
+            "path": null,
+            "last_attempt_at": null
+          }
+        },
+        {
+          "id": "394707a2c9d3b7d9c1143502ed893739d1434801",
+          "title": "TinySDP: Real Time Semidefinite Optimization for Certifiable and Agile Edge Robotics",
+          "authors": [
+            "Ishaan Mahajan",
+            "Jon Arrizabalaga",
+            "Andrea Grillo",
+            "Fausto Vega",
+            "James Anderson",
+            "Zachary Manchester",
+            "Brian Plancher"
+          ],
+          "year": 2026,
+          "month": 5,
+          "source": "arxiv",
+          "venue": "Accepted to Robotics: Science and Systems (RSS) 2026. 11 pages, 5 figures, 2 tables. Project website: https://a2r-lab.org/TinySDP/",
+          "venue_type": "conference",
+          "abstract": "Semidefinite programming (SDP) provides a principled framework for convex relaxations of nonconvex geometric constraints in motion planning, yet existing solvers are too computationally expensive for real-time control, particularly on resource-constrained embedded systems. To address this gap, we introduce TinySDP, the first semidefinite programming solver designed for embedded systems, enabling real-time model-predictive control (MPC) on microcontrollers for problems with nonconvex obstacle constraints. Our approach integrates positive-semidefinite cone projections into a cached-Riccati-based ADMM solver, leveraging computational structure for embedded tractability. We pair this solver with an a posteriori rank-1 certificate that converts relaxed solutions into explicit geometric guarantees at each timestep. On challenging benchmarks, e.g., cul-de-sac and dynamic obstacle avoidance scenarios that induce failures in local methods, TinySDP achieves collision-free navigation with up to 73% shorter paths than state-of-the-art baselines. We validate our approach on a Crazyflie quadrotor, demonstrating that semidefinite constraints can be enforced at real-time rates for agile embedded robotics.",
+          "urls": {
+            "arxiv": "https://arxiv.org/abs/2605.13748v1",
+            "pdf": "https://arxiv.org/pdf/2605.13748v1",
+            "paper": "https://arxiv.org/abs/2605.13748v1"
+          },
+          "search_sets_raw": [
+            "C"
+          ],
+          "search_sets_final": [
+            "C"
+          ],
+          "filter_bucket": "th_cpl_ab",
+          "matched_venue": "RSS",
+          "matched_th_cpl_level": "A",
+          "matched_th_cpl_area": "Artificial Intelligence and Pattern Recognition",
+          "category": "Embedded AI Applications",
+          "llm_tags": [
+            "TinyML"
+          ],
+          "forced_tags": [],
+          "final_tags": [
+            "TinyML"
+          ],
+          "cited_by": 0,
+          "is_preprint_on_arxiv": false,
+          "preprint_source": "",
+          "journal_ref": "",
+          "doi": "",
+          "arxiv_comment": "",
+          "arxiv_id": "2605.13748v1",
           "raw_venue": "",
           "venue_source": "",
           "sort_key": 202600,
