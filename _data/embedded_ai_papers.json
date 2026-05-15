@@ -1,6 +1,6 @@
 {
   "version": "2.0.0",
-  "generated_at": "2026-05-14T02:39:29.017Z",
+  "generated_at": "2026-05-15T02:39:58.933Z",
   "query_groups": {
     "A": "\"embedded ai\"",
     "B": "(\"low power\" OR \"ultra-low-power\") \"embedded ai\"",
@@ -8,24 +8,24 @@
   },
   "stats": {
     "raw_counts": {
-      "A": 43,
+      "A": 33,
       "B": 2,
-      "C": 2
+      "C": 1
     },
     "after_set_ops": {
-      "A_only": 42,
+      "A_only": 33,
       "B": 2,
-      "C": 2,
-      "merged_total": 45,
-      "bc_overlap": 1
+      "C": 1,
+      "merged_total": 36,
+      "bc_overlap": 0
     },
-    "after_filter": 786,
+    "after_filter": 788,
     "classification": {
-      "total": 786,
+      "total": 788,
       "by_category": {
-        "Efficient Model Design and Optimization": 248,
+        "Efficient Model Design and Optimization": 249,
         "Novel Computing Architectures and Domain-Specific Accelerators": 39,
-        "Embedded AI Applications": 499
+        "Embedded AI Applications": 500
       },
       "by_tag": {
         "TinyML": 46,
@@ -35,14 +35,14 @@
       "by_provider": {
         "tencent_tokenhub": 0,
         "heuristic": 0,
-        "heuristic_fallback": 786
+        "heuristic_fallback": 788
       }
     },
     "source_stats": {
-      "total": 786,
+      "total": 788,
       "by_group": {
         "A": {
-          "total": 653,
+          "total": 655,
           "arxiv": 0,
           "venues": {
             "AAAI": 90,
@@ -168,7 +168,7 @@
             "ICIP": 0,
             "ICLR": 158,
             "ICMI": 0,
-            "ICML": 87,
+            "ICML": 89,
             "ICMR": 0,
             "ICN": 0,
             "ICNP": 0,
@@ -1539,7 +1539,7 @@
         }
       },
       "total_summary": {
-        "total": 801,
+        "total": 803,
         "arxiv": 118,
         "venues": {
           "AAAI": 90,
@@ -1665,7 +1665,7 @@
           "ICIP": 0,
           "ICLR": 159,
           "ICMI": 0,
-          "ICML": 89,
+          "ICML": 91,
           "ICMR": 0,
           "ICN": 0,
           "ICNP": 0,
@@ -1918,7 +1918,7 @@
     {
       "key": "efficient_model_design",
       "title": "Efficient Model Design and Optimization",
-      "count": 248,
+      "count": 249,
       "papers": [
         {
           "id": "d31033e7483329f0f1d35c2c910bb646afb796f4",
@@ -2170,6 +2170,59 @@
           "doi": "",
           "arxiv_comment": "",
           "arxiv_id": "2605.04282v1",
+          "raw_venue": "",
+          "venue_source": "",
+          "sort_key": 202600,
+          "download": {
+            "status": "pending",
+            "source": null,
+            "path": null,
+            "last_attempt_at": null
+          }
+        },
+        {
+          "id": "6f22f7ff33ac6b5ad14002b47ce3b5d07cd603dc",
+          "title": "RQ-MoE: Residual Quantization via Mixture of Experts for Efficient Input-Dependent Vector Compression",
+          "authors": [
+            "Zhengjia Zhong",
+            "Shuyan Ke",
+            "Zaizhou Lin",
+            "Jiaqi Song",
+            "Hongyi Lan",
+            "Hui Li"
+          ],
+          "year": 2026,
+          "month": 5,
+          "source": "arxiv",
+          "venue": "ICML",
+          "venue_type": "conference",
+          "abstract": "Vector quantization is a fundamental tool for compressing high-dimensional embeddings, yet existing multi-codebook methods rely on static codebooks that limit expressiveness under heterogeneous data geometry. While recent dynamic quantizers like QINCo adapt codebooks to individual inputs and improve expressiveness, their strict sequential dependencies create decoding bottlenecks. We propose Residual Quantization via Mixture of Experts (RQ-MoE), a framework combining a two-level MoE with dual-stream quantization to enable input-dependent codebook adaptation for efficient vector quantization. RQ-MoE enables dynamic codebook construction and decouples instruction from quantization, facilitating parallel decoding. Theoretically, we show that standard Residual Quantization and QINCo can be recovered as constrained special cases of RQ-MoE, and derive a guideline for setting expert dimensionality in RQ-MoE. Extensive experiments show that RQ-MoE achieves state-of-the-art or on-par performance in reconstruction and retrieval, while providing 6x-14x faster decoding than prior vector quantization methods. The implementation is available at https://github.com/KDEGroup/RQ-MoE.",
+          "urls": {
+            "arxiv": "https://arxiv.org/abs/2605.14359v1",
+            "pdf": "https://arxiv.org/pdf/2605.14359v1",
+            "paper": "https://arxiv.org/abs/2605.14359v1"
+          },
+          "search_sets_raw": [
+            "A"
+          ],
+          "search_sets_final": [
+            "A"
+          ],
+          "filter_bucket": "th_cpl_a",
+          "matched_venue": "ICML",
+          "matched_th_cpl_level": "A",
+          "matched_th_cpl_area": "Artificial Intelligence and Pattern Recognition",
+          "category": "Efficient Model Design and Optimization",
+          "llm_tags": [],
+          "forced_tags": [],
+          "final_tags": [],
+          "cited_by": 0,
+          "is_preprint_on_arxiv": false,
+          "preprint_source": "",
+          "journal_ref": "",
+          "doi": "",
+          "arxiv_comment": "",
+          "arxiv_id": "2605.14359v1",
           "raw_venue": "",
           "venue_source": "",
           "sort_key": 202600,
@@ -17158,7 +17211,7 @@
     {
       "key": "embedded_ai_applications",
       "title": "Embedded AI Applications",
-      "count": 499,
+      "count": 500,
       "papers": [
         {
           "id": "4ac06718d4a329aa8ce722043e1191b2b9ce342f",
@@ -17555,6 +17608,58 @@
           "doi": "",
           "arxiv_comment": "",
           "arxiv_id": "2605.03482v1",
+          "raw_venue": "",
+          "venue_source": "",
+          "sort_key": 202600,
+          "download": {
+            "status": "pending",
+            "source": null,
+            "path": null,
+            "last_attempt_at": null
+          }
+        },
+        {
+          "id": "7a02a04b152b59268c4534cdf8b8f6204b913e4c",
+          "title": "ML-Embed: Inclusive and Efficient Embeddings for a Multilingual World",
+          "authors": [
+            "Ziyin Zhang",
+            "Zihan Liao",
+            "Hang Yu",
+            "Peng Di",
+            "Rui Wang"
+          ],
+          "year": 2026,
+          "month": 5,
+          "source": "arxiv",
+          "venue": "ICML",
+          "venue_type": "conference",
+          "abstract": "The development of high-quality text embeddings is increasingly drifting toward an exclusionary future, defined by three critical barriers: prohibitive computational costs, a narrow linguistic focus that neglects most of the world's languages, and a lack of transparency from closed-source or open-weight models that stifles research. To dismantle these barriers, we introduce ML-Embed, a suite of inclusive and efficient models built upon a new framework: 3-Dimensional Matryoshka Learning (3D-ML). Our framework addresses the computational challenge with comprehensive efficiency across the entire model lifecycle. Beyond the storage benefits of Matryoshka Representation Learning (MRL) and flexible inference-time depth provided by Matryoshka Layer Learning (MLL), we introduce Matryoshka Embedding Learning (MEL) for enhanced parameter efficiency. To address the linguistic challenge, we curate a massively multilingual dataset and train a suite of models ranging from 140M to 8B parameters. In a direct commitment to transparency, we release all models, data, and code. Extensive evaluation on 430 tasks demonstrates that our models set new records on 9 of 17 evaluated MTEB benchmarks, with particularly strong results in low-resource languages, providing a reproducible blueprint for building globally equitable and computationally efficient AI systems.",
+          "urls": {
+            "arxiv": "https://arxiv.org/abs/2605.15081v1",
+            "pdf": "https://arxiv.org/pdf/2605.15081v1",
+            "paper": "https://arxiv.org/abs/2605.15081v1"
+          },
+          "search_sets_raw": [
+            "A"
+          ],
+          "search_sets_final": [
+            "A"
+          ],
+          "filter_bucket": "th_cpl_a",
+          "matched_venue": "ICML",
+          "matched_th_cpl_level": "A",
+          "matched_th_cpl_area": "Artificial Intelligence and Pattern Recognition",
+          "category": "Embedded AI Applications",
+          "llm_tags": [],
+          "forced_tags": [],
+          "final_tags": [],
+          "cited_by": 0,
+          "is_preprint_on_arxiv": false,
+          "preprint_source": "",
+          "journal_ref": "",
+          "doi": "",
+          "arxiv_comment": "",
+          "arxiv_id": "2605.15081v1",
           "raw_venue": "",
           "venue_source": "",
           "sort_key": 202600,

@@ -523,6 +523,17 @@
   abstract = {Unlike the predictable scaling laws in natural language processing and computer vision, protein language models (PLMs) scale poorly: for many tasks, models within the same family plateau or even decrease in performance, with mid-sized models often outperforming the largest in the family. We introduce Reverse Distillation, a principled framework that decomposes large PLM representations into orthogonal subspaces guided by smaller models of the same family. The resulting embeddings have a nested, Matryoshka-style structure: the first k dimensions of a larger model's embedding are exactly the representation from the smaller model. This ensures that larger reverse-distilled models consistently outperform smaller ones. A motivating intuition is that smaller models, constrained by capacity, preferentially encode broadly-shared protein features. Reverse distillation isolates these shared features and orthogonally extracts additional contributions from larger models, preventing interference between the two. On ProteinGym benchmarks, reverse-distilled ESM-2 variants outperform their respective baselines at the same embedding dimensionality, with the reverse-distilled 15 billion parameter model achieving the strongest performance. Our framework is generalizable to any model family where scaling challenges persist. Code and trained models are available at https://github.com/rohitsinghlab/plm_reverse_distillation.}
 }
 
+@article{zhong2026-rq-moe-residual-quantization-f9c66e08,
+  author = {Zhengjia Zhong and Shuyan Ke and Zaizhou Lin and Jiaqi Song and Hongyi Lan and Hui Li},
+  title = {RQ-MoE: Residual Quantization via Mixture of Experts for Efficient Input-Dependent Vector Compression},
+  year = {2026},
+  journal = {ICML},
+  eprint = {2605.14359v1},
+  archivePrefix = {arXiv},
+  url = {https://arxiv.org/abs/2605.14359v1},
+  abstract = {Vector quantization is a fundamental tool for compressing high-dimensional embeddings, yet existing multi-codebook methods rely on static codebooks that limit expressiveness under heterogeneous data geometry. While recent dynamic quantizers like QINCo adapt codebooks to individual inputs and improve expressiveness, their strict sequential dependencies create decoding bottlenecks. We propose Residual Quantization via Mixture of Experts (RQ-MoE), a framework combining a two-level MoE with dual-stream quantization to enable input-dependent codebook adaptation for efficient vector quantization. RQ-MoE enables dynamic codebook construction and decouples instruction from quantization, facilitating parallel decoding. Theoretically, we show that standard Residual Quantization and QINCo can be recovered as constrained special cases of RQ-MoE, and derive a guideline for setting expert dimensionality in RQ-MoE. Extensive experiments show that RQ-MoE achieves state-of-the-art or on-par performance in reconstruction and retrieval, while providing 6x-14x faster decoding than prior vector quantization methods. The implementation is available at https://github.com/KDEGroup/RQ-MoE.}
+}
+
 @article{xie2026-scaling-attention-via-feature-1b4689da,
   author = {Yan Xie and Tiansheng Wen and Tangda Huang and Bo Chen and Chenyu You and Stefanie Jegelka and Yifei Wang},
   title = {Scaling Attention via Feature Sparsity},

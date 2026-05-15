@@ -1121,6 +1121,17 @@
   abstract = {Large-scale scientific collaborations, such as the Compact Muon Solenoid (CMS) at CERN, produce a vast and ever-growing corpus of internal documentation. Navigating this complex information landscape presents a significant challenge for both new and experienced researchers, hindering knowledge sharing and slowing down the pace of scientific discovery. To address this, we present a prototype of MITRA, a Retrieval-Augmented Generation (RAG) based system, designed to answer specific, context-aware questions about physics analyses. MITRA employs a novel, automated pipeline using Selenium for document retrieval from internal databases and Optical Character Recognition (OCR) with layout parsing for high-fidelity text extraction. Crucially, MITRA's entire framework, from the embedding model to the Large Language Model (LLM), is hosted on-premise, ensuring that sensitive collaboration data remains private. We introduce a two-tiered vector database architecture that first identifies the relevant analysis from abstracts before focusing on the full documentation, resolving potential ambiguities between different analyses. We demonstrate the prototype's superior retrieval performance against a standard keyword-based baseline on realistic queries and discuss future work towards developing a comprehensive research agent for large experimental collaborations.}
 }
 
+@article{zhang2026-ml-embed-inclusive-and-5240b208,
+  author = {Ziyin Zhang and Zihan Liao and Hang Yu and Peng Di and Rui Wang},
+  title = {ML-Embed: Inclusive and Efficient Embeddings for a Multilingual World},
+  year = {2026},
+  journal = {ICML},
+  eprint = {2605.15081v1},
+  archivePrefix = {arXiv},
+  url = {https://arxiv.org/abs/2605.15081v1},
+  abstract = {The development of high-quality text embeddings is increasingly drifting toward an exclusionary future, defined by three critical barriers: prohibitive computational costs, a narrow linguistic focus that neglects most of the world's languages, and a lack of transparency from closed-source or open-weight models that stifles research. To dismantle these barriers, we introduce ML-Embed, a suite of inclusive and efficient models built upon a new framework: 3-Dimensional Matryoshka Learning (3D-ML). Our framework addresses the computational challenge with comprehensive efficiency across the entire model lifecycle. Beyond the storage benefits of Matryoshka Representation Learning (MRL) and flexible inference-time depth provided by Matryoshka Layer Learning (MLL), we introduce Matryoshka Embedding Learning (MEL) for enhanced parameter efficiency. To address the linguistic challenge, we curate a massively multilingual dataset and train a suite of models ranging from 140M to 8B parameters. In a direct commitment to transparency, we release all models, data, and code. Extensive evaluation on 430 tasks demonstrates that our models set new records on 9 of 17 evaluated MTEB benchmarks, with particularly strong results in low-resource languages, providing a reproducible blueprint for building globally equitable and computationally efficient AI systems.}
+}
+
 @article{kim2026-multimodalpfn-extending-prior-data-e424b258,
   author = {Wall Kim and Chaeyoung Song and Hanul Kim},
   title = {MultiModalPFN: Extending Prior-Data Fitted Networks for Multimodal Tabular Learning},
@@ -1535,6 +1546,17 @@
   archivePrefix = {arXiv},
   url = {https://arxiv.org/abs/2601.08039v2},
   abstract = {In this paper, we study Riemannian zeroth-order optimization in settings where the underlying Riemannian metric $g$ is geodesically incomplete, and the goal is to approximate stationary points with respect to this incomplete metric. To address this challenge, we construct structure-preserving metrics that are geodesically complete while ensuring that every stationary point under the new metric remains stationary under the original one. Building on this foundation, we revisit the classical symmetric two-point zeroth-order estimator and analyze its mean-squared error from a purely intrinsic perspective, depending only on the manifold's geometry rather than any ambient embedding. Leveraging this intrinsic analysis, we establish convergence guarantees for stochastic gradient descent with this intrinsic estimator. Under additional suitable conditions, an $ε$-stationary point under the constructed metric $g'$ also corresponds to an $ε$-stationary point under the original metric $g$, thereby matching the best-known complexity in the geodesically complete setting. Empirical studies on synthetic problems confirm our theoretical findings, and experiments on a practical mesh optimization task demonstrate that our framework maintains stable convergence even in the absence of geodesic completeness.}
+}
+
+@article{zhong2026-rq-moe-residual-quantization-f9c66e08,
+  author = {Zhengjia Zhong and Shuyan Ke and Zaizhou Lin and Jiaqi Song and Hongyi Lan and Hui Li},
+  title = {RQ-MoE: Residual Quantization via Mixture of Experts for Efficient Input-Dependent Vector Compression},
+  year = {2026},
+  journal = {ICML},
+  eprint = {2605.14359v1},
+  archivePrefix = {arXiv},
+  url = {https://arxiv.org/abs/2605.14359v1},
+  abstract = {Vector quantization is a fundamental tool for compressing high-dimensional embeddings, yet existing multi-codebook methods rely on static codebooks that limit expressiveness under heterogeneous data geometry. While recent dynamic quantizers like QINCo adapt codebooks to individual inputs and improve expressiveness, their strict sequential dependencies create decoding bottlenecks. We propose Residual Quantization via Mixture of Experts (RQ-MoE), a framework combining a two-level MoE with dual-stream quantization to enable input-dependent codebook adaptation for efficient vector quantization. RQ-MoE enables dynamic codebook construction and decouples instruction from quantization, facilitating parallel decoding. Theoretically, we show that standard Residual Quantization and QINCo can be recovered as constrained special cases of RQ-MoE, and derive a guideline for setting expert dimensionality in RQ-MoE. Extensive experiments show that RQ-MoE achieves state-of-the-art or on-par performance in reconstruction and retrieval, while providing 6x-14x faster decoding than prior vector quantization methods. The implementation is available at https://github.com/KDEGroup/RQ-MoE.}
 }
 
 @article{zhou2026-scalable-object-relation-encoding-e2fde175,
