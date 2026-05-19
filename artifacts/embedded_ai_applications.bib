@@ -20,6 +20,17 @@
   abstract = {We introduce a simple initial working system in which relations (such as part-whole) are directly represented via an architecture with operating and learning rules fundamentally distinct from standard artificial neural network methods. Arbitrary data are straightforwardly encoded as graphs whose edges correspond to codes from a small fixed primitive set of elemental pairwise relations, such that simple relational encoding is not an add-on, but occurs intrinsically within the most basic components of the system. A novel graph-Hamiltonian operator calculates energies among these encodings, with ground states denoting simultaneous satisfaction of all relation constraints among graph vertices. The method solely uses radically low-precision arithmetic; computational cost is correspondingly low, and scales linearly with the number of edges in the data. The resulting unconventional architecture can process standard ANN examples, but also produces representations that exhibit characteristics of symbolic computation. Specifically, the method identifies simple logical relational structures in these data (part-of; next-to), building hierarchical representations that enable abductive inferential steps generating relational position-based encodings, rather than solely statistical representations. Notably, an equivalent set of ANN operations are derived, identifying a special case of embedded vector encodings that may constitute a useful approach to current work in higher-level semantic representation. The very simple current state of the implemented system invites additional tools and improvements.}
 }
 
+@article{lee2026-a-more-word-like-67a58a0f,
+  author = {Hyun Lee and Hyemin Jeong and Yejin Kim and Hyungwook Choi and Hyunsoo Cho and Soo Kyung Kim and Joonseok Lee},
+  title = {A More Word-like Image Tokenization for MLLMs},
+  year = {2026},
+  journal = {CVPR},
+  eprint = {2605.17954v1},
+  archivePrefix = {arXiv},
+  url = {https://arxiv.org/abs/2605.17954v1},
+  abstract = {Modern multimodal large language models (MLLMs) typically keep the language model fixed and train a visual projector that maps the pixels into a sequence of tokens in its embedding space, so that images can be presented in essentially the same form as text. However, the language model has been optimized to operate on discrete, semantically meaningful tokens, while prevailing visual projectors transform an image into a long stream of continuous and highly correlated embeddings. This causes the visual tokens to behave differently from the word-like units that LLMs are originally trained to understand. We propose a novel Disentangled Visual Tokenization (DiVT) that clusters patch embeddings into coherent semantic units, so each token corresponds to a distinct visual concept instead of a rigid grid cell. DiVT further adapts its token budget to image complexity, providing an explicit accuracy-compute trade-off modifying neither the vision encoder nor the language model. Across diverse multimodal benchmarks, DiVT matches or surpasses baselines with significantly fewer visual tokens, demonstrating robustness under limited token budgets, significantly reducing memory cost and latency while making visual inputs more compatible with LLMs. Our code is available at https://github.com/snuviplab/DiVT.}
+}
+
 @article{sung2026-a-scalable-inter-edge-9c0c354e,
   author = {Jinkyu Sung and Myunggeum Jee and Joonseok Lee},
   title = {A Scalable Inter-edge Correlation Modeling in CopulaGNN for Link Sign Prediction},
@@ -1119,6 +1130,17 @@
   archivePrefix = {arXiv},
   url = {https://arxiv.org/abs/2603.01096v1},
   abstract = {We introduce V-SONAR, a vision-language embedding space extended from the text-only embedding space SONAR (Omnilingual Embeddings Team et al., 2026), which supports 1500 text languages and 177 speech languages. To construct V-SONAR, we propose a post-hoc alignment pipeline that maps the representations of an existing vision encoder into the SONAR space. We thoroughly evaluate V-SONAR and show that its embeddings achieve competitive performance on text-to-video retrieval. Equipped with the OMNISONAR text decoder, V-SONAR further surpasses state-of-the-art vision-language models on video captioning tasks, including DREAM-1K (BLEU 23.9 vs. 19.6) and PE-VIDEO (BLEU 39.0 vs. 30.0). Leveraging V-SONAR, we first demonstrate that the Large Concept Model (LCM; LCM team et al. 2024) operating in SONAR and trained with English text only, can perform both single- and multi-visual concept understanding in a zero-shot manner. Finally, we introduce V-LCM, which extends the LCM with vision-language instruction tuning. V-LCM encodes vision and language inputs into an unified sequence of latent embeddings via V-SONAR and SONAR, and it is trained with the same latent diffusion objective for next-embedding prediction as in LCM's text-only pre-training. Experiments on a large-scale multilingual and -modal instruction-tuning data mixture highlight the potential of V-LCM: V-LCM matches state-of-the-art vision-language models on tasks covering image/video captioning and question answering, while significantly outperforming them across 61 rich- to low-resource languages out of all 62 tested languages.}
+}
+
+@article{kang2026-unr-explainer-counterfactual-explanations-e1985aed,
+  author = {Hyunju Kang and Geonhee Han and Hogun Park},
+  title = {UNR-Explainer: Counterfactual Explanations for Unsupervised Node Representation Learning Models},
+  year = {2026},
+  journal = {ICLR},
+  eprint = {2605.17285v1},
+  archivePrefix = {arXiv},
+  url = {https://arxiv.org/abs/2605.17285v1},
+  abstract = {Node representation learning, such as Graph Neural Networks (GNNs), has emerged as a pivotal method in machine learning. The demand for reliable explanation generation surges, yet unsupervised models remain underexplored. To bridge this gap, we introduce a method for generating counterfactual (CF) explanations in unsupervised node representation learning. We identify the most important subgraphs that cause a significant change in the k-nearest neighbors of a node of interest in the learned embedding space upon perturbation. The k-nearest neighbor-based CF explanation method provides simple, yet pivotal, information for understanding unsupervised downstream tasks, such as top-k link prediction and clustering. Consequently, we introduce UNR-Explainer for generating expressive CF explanations for Unsupervised Node Representation learning methods based on a Monte Carlo Tree Search (MCTS). The proposed method demonstrates superior performance on diverse datasets for unsupervised GraphSAGE and DGI.}
 }
 
 @article{maity2026-vehicle-routing-with-finite-51dc06ef,
