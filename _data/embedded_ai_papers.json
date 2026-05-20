@@ -1,6 +1,6 @@
 {
   "version": "2.0.0",
-  "generated_at": "2026-05-19T02:44:46.175Z",
+  "generated_at": "2026-05-20T02:45:19.959Z",
   "query_groups": {
     "A": "\"embedded ai\"",
     "B": "(\"low power\" OR \"ultra-low-power\") \"embedded ai\"",
@@ -8,38 +8,38 @@
   },
   "stats": {
     "raw_counts": {
-      "A": 15,
+      "A": 28,
       "B": 0,
-      "C": 0
+      "C": 1
     },
     "after_set_ops": {
-      "A_only": 15,
+      "A_only": 28,
       "B": 0,
-      "C": 0,
-      "merged_total": 15,
+      "C": 1,
+      "merged_total": 29,
       "bc_overlap": 0
     },
-    "after_filter": 790,
+    "after_filter": 791,
     "classification": {
-      "total": 790,
+      "total": 791,
       "by_category": {
         "Efficient Model Design and Optimization": 249,
         "Novel Computing Architectures and Domain-Specific Accelerators": 39,
-        "Embedded AI Applications": 502
+        "Embedded AI Applications": 503
       },
       "by_tag": {
-        "TinyML": 46,
+        "TinyML": 47,
         "LP": 95,
-        "ULP": 13
+        "ULP": 14
       },
       "by_provider": {
         "tencent_tokenhub": 0,
         "heuristic": 0,
-        "heuristic_fallback": 790
+        "heuristic_fallback": 791
       }
     },
     "source_stats": {
-      "total": 790,
+      "total": 791,
       "by_group": {
         "A": {
           "total": 657,
@@ -790,7 +790,7 @@
           "unknown": 0
         },
         "C": {
-          "total": 46,
+          "total": 47,
           "arxiv": 39,
           "venues": {
             "AAAI": 0,
@@ -952,7 +952,7 @@
             "ISCA": 0,
             "ISCAS": 0,
             "ISIT": 0,
-            "ISLPED": 0,
+            "ISLPED": 1,
             "ISMAR": 0,
             "ISMB": 0,
             "ISPASS": 0,
@@ -1539,7 +1539,7 @@
         }
       },
       "total_summary": {
-        "total": 805,
+        "total": 806,
         "arxiv": 118,
         "venues": {
           "AAAI": 90,
@@ -1701,7 +1701,7 @@
           "ISCA": 1,
           "ISCAS": 0,
           "ISIT": 0,
-          "ISLPED": 0,
+          "ISLPED": 1,
           "ISMAR": 0,
           "ISMB": 0,
           "ISPASS": 0,
@@ -17211,7 +17211,7 @@
     {
       "key": "embedded_ai_applications",
       "title": "Embedded AI Applications",
-      "count": 502,
+      "count": 503,
       "papers": [
         {
           "id": "4ac06718d4a329aa8ce722043e1191b2b9ce342f",
@@ -17251,6 +17251,68 @@
           "doi": "",
           "arxiv_comment": "",
           "arxiv_id": "2605.04899v1",
+          "raw_venue": "",
+          "venue_source": "",
+          "sort_key": 202600,
+          "download": {
+            "status": "pending",
+            "source": null,
+            "path": null,
+            "last_attempt_at": null
+          }
+        },
+        {
+          "id": "572d5ae894a8ede79d01da579db9fb77af239ece",
+          "title": "A Hardware-Based Multi-Stage Dynamic Power Management Architecture for Autonomous Low-Light Operation",
+          "authors": [
+            "Charalampos S. Kouzinopoulos",
+            "Marcel L. Meli",
+            "Martin Schellenberg",
+            "Philip J. Poole",
+            "Mathieu Bellanger",
+            "Matthias Kauer",
+            "Julien De Vos",
+            "Dimosthenis Ioannidis",
+            "Dimitrios Tzovaras"
+          ],
+          "year": 2026,
+          "month": 5,
+          "source": "arxiv",
+          "venue": "ISLPED",
+          "venue_type": "conference",
+          "abstract": "The advance of autonomous Smart Sensor Networks and embedded systems for the Internet of Things, powered by photovoltaic energy harvesting, is severely limited by energy efficiency, especially in low-light environments. While Dynamic Power Management is essential for energy conservation, conventional software-based techniques that rely on processor-managed low-power states incur a persistent quiescent current drain. This current becomes the dominant energy sink in energy-scarce conditions, limiting autonomy. The work of this paper addresses this limitation by introducing a robust, hardware-orchestrated dynamic power management architecture that improves existing configurations for battery-based sensor nodes. The proposed architecture achieves a minimal quiescent drain of 452nA, by completely power-gating the microcontroller and all non-essential peripherals, with wake-up orchestrated by an ultra-low-power PMIC, RTC and a novel latch circuit developed specifically for this work. Our evaluation demonstrates that the dynamic power management architecture is significantly more efficient than traditional software-based sleep modes.",
+          "urls": {
+            "arxiv": "https://arxiv.org/abs/2605.19879v1",
+            "pdf": "https://arxiv.org/pdf/2605.19879v1",
+            "paper": "https://arxiv.org/abs/2605.19879v1"
+          },
+          "search_sets_raw": [
+            "C"
+          ],
+          "search_sets_final": [
+            "C"
+          ],
+          "filter_bucket": "th_cpl_ab",
+          "matched_venue": "ISLPED",
+          "matched_th_cpl_level": "B",
+          "matched_th_cpl_area": "High Performance Computing",
+          "category": "Embedded AI Applications",
+          "llm_tags": [
+            "TinyML",
+            "ULP"
+          ],
+          "forced_tags": [],
+          "final_tags": [
+            "TinyML",
+            "ULP"
+          ],
+          "cited_by": 0,
+          "is_preprint_on_arxiv": false,
+          "preprint_source": "",
+          "journal_ref": "",
+          "doi": "",
+          "arxiv_comment": "",
+          "arxiv_id": "2605.19879v1",
           "raw_venue": "",
           "venue_source": "",
           "sort_key": 202600,
