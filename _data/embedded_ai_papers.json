@@ -1,6 +1,6 @@
 {
   "version": "2.0.0",
-  "generated_at": "2026-05-20T02:45:19.959Z",
+  "generated_at": "2026-05-21T02:47:56.834Z",
   "query_groups": {
     "A": "\"embedded ai\"",
     "B": "(\"low power\" OR \"ultra-low-power\") \"embedded ai\"",
@@ -19,13 +19,13 @@
       "merged_total": 29,
       "bc_overlap": 0
     },
-    "after_filter": 791,
+    "after_filter": 793,
     "classification": {
-      "total": 791,
+      "total": 793,
       "by_category": {
         "Efficient Model Design and Optimization": 249,
         "Novel Computing Architectures and Domain-Specific Accelerators": 39,
-        "Embedded AI Applications": 503
+        "Embedded AI Applications": 505
       },
       "by_tag": {
         "TinyML": 47,
@@ -35,14 +35,14 @@
       "by_provider": {
         "tencent_tokenhub": 0,
         "heuristic": 0,
-        "heuristic_fallback": 791
+        "heuristic_fallback": 793
       }
     },
     "source_stats": {
-      "total": 791,
+      "total": 793,
       "by_group": {
         "A": {
-          "total": 657,
+          "total": 659,
           "arxiv": 0,
           "venues": {
             "AAAI": 90,
@@ -168,7 +168,7 @@
             "ICIP": 0,
             "ICLR": 159,
             "ICMI": 0,
-            "ICML": 89,
+            "ICML": 90,
             "ICMR": 0,
             "ICN": 0,
             "ICNP": 0,
@@ -257,7 +257,7 @@
             "NOSSDAV": 0,
             "NSDI": 0,
             "Networking": 0,
-            "NeurIPS": 187,
+            "NeurIPS": 188,
             "OOPSLA": 0,
             "OSDI": 0,
             "PACT": 0,
@@ -1539,7 +1539,7 @@
         }
       },
       "total_summary": {
-        "total": 806,
+        "total": 808,
         "arxiv": 118,
         "venues": {
           "AAAI": 90,
@@ -1665,7 +1665,7 @@
           "ICIP": 0,
           "ICLR": 160,
           "ICMI": 0,
-          "ICML": 91,
+          "ICML": 92,
           "ICMR": 0,
           "ICN": 0,
           "ICNP": 0,
@@ -1754,7 +1754,7 @@
           "NOSSDAV": 0,
           "NSDI": 0,
           "Networking": 0,
-          "NeurIPS": 188,
+          "NeurIPS": 189,
           "OOPSLA": 0,
           "OSDI": 0,
           "PACT": 0,
@@ -17211,7 +17211,7 @@
     {
       "key": "embedded_ai_applications",
       "title": "Embedded AI Applications",
-      "count": 503,
+      "count": 505,
       "papers": [
         {
           "id": "4ac06718d4a329aa8ce722043e1191b2b9ce342f",
@@ -17787,6 +17787,57 @@
           }
         },
         {
+          "id": "cb9234f0a7ef8bcfa051bef223087ac1d6c8d601",
+          "title": "Neural Collapse by Design: Learning Class Prototypes on the Hypersphere",
+          "authors": [
+            "Panagiotis Koromilas",
+            "Theodoros Giannakopoulos",
+            "Mihalis A. Nicolaou",
+            "Yannis Panagakis"
+          ],
+          "year": 2026,
+          "month": 5,
+          "source": "arxiv",
+          "venue": "ICML",
+          "venue_type": "conference",
+          "abstract": "Supervised classification has a theoretical optimum, Neural Collapse (NC), yet neither of its two dominant paradigms reaches it in practice. Cross entropy (CE) leaves radial degrees of freedom unconstrained and converges to a degenerate geometry, while supervised contrastive learning (SCL) drives features toward NC during pretraining but discards this structure in a post hoc linear probing phase. We show that both paradigms are different appearances of the same method, prototype contrast on the unit hypersphere, and that closing the gap requires fixing each at its specific point of failure. From the CE side, we propose NTCE and NONL, two normalized losses that import contrastive optimization's missing ingredients into classifier learning: a large effective negative set and decoupled alignment and uniformity terms. From the SCL side, we prove that SCL's objective already optimizes throughout training for a principled classifier whose weights are the class mean embeddings, making linear probing both redundant and harmful. Empirically, on four benchmarks including ImageNet-1K, NTCE and NONL surpass CE accuracy, closely approximate NC ($\\geq 95\\%$), and match CE's converged NC on 4/5 metrics in under $7.5\\%$ of its iterations, while SCL with fixed prototypes matches linear probing without the hours-long classifier training phase. The learned geometry yields $+5.5\\%$ mean relative improvement in transfer learning, up to $+8.7\\%$ under severe class imbalance, and lower mCE on ImageNet-C, recasting supervised learning as prototype learning on the hypersphere, with NC reached by design on both paths.",
+          "urls": {
+            "arxiv": "https://arxiv.org/abs/2605.20302v1",
+            "pdf": "https://arxiv.org/pdf/2605.20302v1",
+            "paper": "https://arxiv.org/abs/2605.20302v1"
+          },
+          "search_sets_raw": [
+            "A"
+          ],
+          "search_sets_final": [
+            "A"
+          ],
+          "filter_bucket": "th_cpl_a",
+          "matched_venue": "ICML",
+          "matched_th_cpl_level": "A",
+          "matched_th_cpl_area": "Artificial Intelligence and Pattern Recognition",
+          "category": "Embedded AI Applications",
+          "llm_tags": [],
+          "forced_tags": [],
+          "final_tags": [],
+          "cited_by": 0,
+          "is_preprint_on_arxiv": false,
+          "preprint_source": "",
+          "journal_ref": "",
+          "doi": "",
+          "arxiv_comment": "",
+          "arxiv_id": "2605.20302v1",
+          "raw_venue": "",
+          "venue_source": "",
+          "sort_key": 202600,
+          "download": {
+            "status": "pending",
+            "source": null,
+            "path": null,
+            "last_attempt_at": null
+          }
+        },
+        {
           "id": "be484daaf571ac09122343da4854ae53e1666798",
           "title": "Provable Accuracy Collapse in Embedding-Based Representations under Dimensionality Mismatch",
           "authors": [
@@ -17826,6 +17877,54 @@
           "doi": "",
           "arxiv_comment": "",
           "arxiv_id": "2605.03346v1",
+          "raw_venue": "",
+          "venue_source": "",
+          "sort_key": 202600,
+          "download": {
+            "status": "pending",
+            "source": null,
+            "path": null,
+            "last_attempt_at": null
+          }
+        },
+        {
+          "id": "8209e69574beb44db96cb8705de201bda8522643",
+          "title": "Sutra: Tensor-Op RNNs as a Compilation Target for Vector Symbolic Architectures",
+          "authors": [
+            "Emma Leonhart"
+          ],
+          "year": 2026,
+          "month": 5,
+          "source": "arxiv",
+          "venue": "NeurIPS",
+          "venue_type": "conference",
+          "abstract": "Sutra is a typed, purely functional programming language whose compiled forward pass is a PyTorch neural network. The compiler beta-reduces the whole program -- primitives, control flow, string I/O -- to one fused tensor-op graph over a frozen embedding substrate. Rotation binding, unbind, bundle, polynomial Kleene three-valued logic, and tail-recursive loops all lower to tensor operations; the Kleene connectives are Lagrange-interpolated polynomials exact on the {-1, 0, +1} truth grid. Validation is one fact tested two ways. (1) The same program runs on four frozen embeddings spanning two modalities -- three text encoders (nomic-embed-text, all-minilm, mxbai-embed-large) and one protein language model (ESM-2) -- and decodes bundles at 100% accuracy through width k=8 on every substrate, where the textbook Hadamard product has already collapsed (2.5% on mxbai-embed-large, 7.5% on all-minilm). (2) PyTorch autograd flows through the actually compiled graph: a fuzzy-rule classifier written in .su trains from random init (18.7 +/- 9.5%; chance = 20%, five classes) to 100.0 +/- 0.0% (three seeds) by backpropagating through the emitted graph, the symbolic source unmodified. A weighted variant additionally trains a scalar cosine gain and writes it back into the .su source as a numeric literal; recompiling reproduces the trained behaviour to ~2e-7 per logit, so the trained model is itself legible, recompilable code. The same artifact is therefore both a logic program and a trainable neural network.",
+          "urls": {
+            "arxiv": "https://arxiv.org/abs/2605.20919v1",
+            "pdf": "https://arxiv.org/pdf/2605.20919v1",
+            "paper": "https://arxiv.org/abs/2605.20919v1"
+          },
+          "search_sets_raw": [
+            "A"
+          ],
+          "search_sets_final": [
+            "A"
+          ],
+          "filter_bucket": "th_cpl_a",
+          "matched_venue": "NeurIPS",
+          "matched_th_cpl_level": "A",
+          "matched_th_cpl_area": "Artificial Intelligence and Pattern Recognition",
+          "category": "Embedded AI Applications",
+          "llm_tags": [],
+          "forced_tags": [],
+          "final_tags": [],
+          "cited_by": 0,
+          "is_preprint_on_arxiv": false,
+          "preprint_source": "",
+          "journal_ref": "",
+          "doi": "",
+          "arxiv_comment": "",
+          "arxiv_id": "2605.20919v1",
           "raw_venue": "",
           "venue_source": "",
           "sort_key": 202600,
