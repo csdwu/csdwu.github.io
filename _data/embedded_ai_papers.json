@@ -1,6 +1,6 @@
 {
   "version": "2.0.0",
-  "generated_at": "2026-05-21T02:47:56.834Z",
+  "generated_at": "2026-05-22T02:48:40.856Z",
   "query_groups": {
     "A": "\"embedded ai\"",
     "B": "(\"low power\" OR \"ultra-low-power\") \"embedded ai\"",
@@ -8,38 +8,38 @@
   },
   "stats": {
     "raw_counts": {
-      "A": 28,
-      "B": 0,
-      "C": 1
+      "A": 40,
+      "B": 1,
+      "C": 3
     },
     "after_set_ops": {
-      "A_only": 28,
-      "B": 0,
-      "C": 1,
-      "merged_total": 29,
+      "A_only": 39,
+      "B": 1,
+      "C": 3,
+      "merged_total": 43,
       "bc_overlap": 0
     },
-    "after_filter": 793,
+    "after_filter": 795,
     "classification": {
-      "total": 793,
+      "total": 795,
       "by_category": {
-        "Efficient Model Design and Optimization": 249,
+        "Efficient Model Design and Optimization": 250,
         "Novel Computing Architectures and Domain-Specific Accelerators": 39,
-        "Embedded AI Applications": 505
+        "Embedded AI Applications": 506
       },
       "by_tag": {
-        "TinyML": 47,
+        "TinyML": 49,
         "LP": 95,
         "ULP": 14
       },
       "by_provider": {
         "tencent_tokenhub": 0,
         "heuristic": 0,
-        "heuristic_fallback": 793
+        "heuristic_fallback": 795
       }
     },
     "source_stats": {
-      "total": 793,
+      "total": 795,
       "by_group": {
         "A": {
           "total": 659,
@@ -790,8 +790,8 @@
           "unknown": 0
         },
         "C": {
-          "total": 47,
-          "arxiv": 39,
+          "total": 49,
+          "arxiv": 41,
           "venues": {
             "AAAI": 0,
             "AAMAS": 0,
@@ -1539,8 +1539,8 @@
         }
       },
       "total_summary": {
-        "total": 808,
-        "arxiv": 118,
+        "total": 810,
+        "arxiv": 120,
         "venues": {
           "AAAI": 90,
           "AAMAS": 0,
@@ -1918,8 +1918,65 @@
     {
       "key": "efficient_model_design",
       "title": "Efficient Model Design and Optimization",
-      "count": 249,
+      "count": 250,
       "papers": [
+        {
+          "id": "e05123e781b0215c4cddfa52d257ada362f13e2f",
+          "title": "AutoMCU: Feasibility-First MCU Neural Network Customization via LLM-based Multi-Agent Systems",
+          "authors": [
+            "Penglin Dai",
+            "Zijie Zhou",
+            "Xincao Xu",
+            "Junhua Wang",
+            "Xiao Wu",
+            "Lixin Duan"
+          ],
+          "year": 2026,
+          "month": 5,
+          "source": "arxiv",
+          "venue": "",
+          "venue_type": "",
+          "abstract": "Deploying neural networks on microcontroller units (MCUs) is critical for edge intelligence but remains challenging due to tight memory, storage, and computation constraints. Existing approaches, such as model compression and hardware-aware neural architecture search (HW-NAS), often depend on proxy metrics, incur high search cost, and do not fully bridge the gap between architecture design and verified deployment. This paper presents AutoMCU, a feasibility-first large language model (LLM)-based multi-agent system for automated neural network customization under MCU constraints. Given natural-language task requirements and hardware specifications, AutoMCU iteratively generates structured architecture candidates, filters infeasible designs through vendor toolchain feedback before training, evaluates feasible models under a controlled protocol, and verifies deployability through backend-grounded deployment analysis. AutoMCU includes two key mechanisms: 1) hardware-in-the-loop architecture generation for early elimination of undeployable candidates under RAM and Flash constraints, and 2) state-isolated multi-agent scheduling for stable coordination of proposal, training, evaluation, and deployment stages. Experiments on CIFAR-10 and CIFAR-100 under strict MCU constraints show that AutoMCU achieves competitive accuracy while reducing customization time to about 1--2 hours, compared with hundreds of GPU hours for representative MCU-oriented HW-NAS baselines. Comparisons with ColabNAS and the LLM-based NAS method GENIUS on NAS-Bench-201 further demonstrate the effectiveness and stability of AutoMCU. Real-device deployments on multiple STM32 microcontrollers validate its practical applicability to MCU-scale edge intelligence.",
+          "urls": {
+            "arxiv": "https://arxiv.org/abs/2605.21560v1",
+            "pdf": "https://arxiv.org/pdf/2605.21560v1",
+            "paper": "https://arxiv.org/abs/2605.21560v1"
+          },
+          "search_sets_raw": [
+            "C"
+          ],
+          "search_sets_final": [
+            "C"
+          ],
+          "filter_bucket": "arxiv",
+          "matched_venue": "",
+          "matched_th_cpl_level": "",
+          "matched_th_cpl_area": "",
+          "category": "Efficient Model Design and Optimization",
+          "llm_tags": [
+            "TinyML"
+          ],
+          "forced_tags": [],
+          "final_tags": [
+            "TinyML"
+          ],
+          "cited_by": 0,
+          "is_preprint_on_arxiv": false,
+          "preprint_source": "",
+          "journal_ref": "",
+          "doi": "",
+          "arxiv_comment": "",
+          "arxiv_id": "2605.21560v1",
+          "raw_venue": "",
+          "venue_source": "",
+          "sort_key": 202600,
+          "download": {
+            "status": "pending",
+            "source": null,
+            "path": null,
+            "last_attempt_at": null
+          }
+        },
         {
           "id": "d31033e7483329f0f1d35c2c910bb646afb796f4",
           "title": "Characterizing Brazilian Atlantic Forest Restoration Outcomes with Geospatial AlphaEarth Embeddings",
@@ -17211,8 +17268,66 @@
     {
       "key": "embedded_ai_applications",
       "title": "Embedded AI Applications",
-      "count": 505,
+      "count": 506,
       "papers": [
+        {
+          "id": "0b3f877ac9f54b038cbdfbdb95e9d20b78b6d1a9",
+          "title": "A Constant-Time Implementation Methodology for Activation Functions on Microcontrollers",
+          "authors": [
+            "Andrii Tyvodar",
+            "Andreas Rechberger",
+            "Dirmanto Jap",
+            "Shivam Bhasin",
+            "Bernhard Jungk",
+            "Jakub Breier",
+            "Xiaolu Hou"
+          ],
+          "year": 2026,
+          "month": 5,
+          "source": "arxiv",
+          "venue": "",
+          "venue_type": "",
+          "abstract": "Embedded neural-network inference can leak information through timing side channels, including leakage caused by the evaluation of activation functions. This work proposes a constant-time implementation methodology for activation functions on embedded microcontrollers and validates it on ReLU, sigmoid, tanh, GELU, and Swish on an ARM Cortex-M4 platform. The proposed methodology combines branchless selection, fixed-cost Padé-based approximation, dummy arithmetic where needed, and cycle alignment to obtain timing-regular activation-function implementations. As motivation, we also evaluate a desynchronization-based countermeasure and show that it remains vulnerable to a template-based timing attack. Experimental results show that the resulting protected implementations achieve identical cycle counts for all tested inputs, including (88) cycles in the three-function setting and (108) cycles in the five-function setting. At the same time, the numerical-error analysis indicates that the approximated nonlinear functions retain high accuracy. These results suggest that the proposed methodology provides a practical basis for constructing side-channel-resistant activation functions in embedded inference.",
+          "urls": {
+            "arxiv": "https://arxiv.org/abs/2605.22441v1",
+            "pdf": "https://arxiv.org/pdf/2605.22441v1",
+            "paper": "https://arxiv.org/abs/2605.22441v1"
+          },
+          "search_sets_raw": [
+            "C"
+          ],
+          "search_sets_final": [
+            "C"
+          ],
+          "filter_bucket": "arxiv",
+          "matched_venue": "",
+          "matched_th_cpl_level": "",
+          "matched_th_cpl_area": "",
+          "category": "Embedded AI Applications",
+          "llm_tags": [
+            "TinyML"
+          ],
+          "forced_tags": [],
+          "final_tags": [
+            "TinyML"
+          ],
+          "cited_by": 0,
+          "is_preprint_on_arxiv": false,
+          "preprint_source": "",
+          "journal_ref": "",
+          "doi": "",
+          "arxiv_comment": "",
+          "arxiv_id": "2605.22441v1",
+          "raw_venue": "",
+          "venue_source": "",
+          "sort_key": 202600,
+          "download": {
+            "status": "pending",
+            "source": null,
+            "path": null,
+            "last_attempt_at": null
+          }
+        },
         {
           "id": "4ac06718d4a329aa8ce722043e1191b2b9ce342f",
           "title": "A geometric relation of the error introduced by sampling a language model's output distribution to its internal state",

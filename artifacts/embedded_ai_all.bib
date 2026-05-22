@@ -1,3 +1,13 @@
+@article{tyvodar2026-a-constant-time-implementation-e41c19c0,
+  author = {Andrii Tyvodar and Andreas Rechberger and Dirmanto Jap and Shivam Bhasin and Bernhard Jungk and Jakub Breier and Xiaolu Hou},
+  title = {A Constant-Time Implementation Methodology for Activation Functions on Microcontrollers},
+  year = {2026},
+  eprint = {2605.22441v1},
+  archivePrefix = {arXiv},
+  url = {https://arxiv.org/abs/2605.22441v1},
+  abstract = {Embedded neural-network inference can leak information through timing side channels, including leakage caused by the evaluation of activation functions. This work proposes a constant-time implementation methodology for activation functions on embedded microcontrollers and validates it on ReLU, sigmoid, tanh, GELU, and Swish on an ARM Cortex-M4 platform. The proposed methodology combines branchless selection, fixed-cost Padé-based approximation, dummy arithmetic where needed, and cycle alignment to obtain timing-regular activation-function implementations. As motivation, we also evaluate a desynchronization-based countermeasure and show that it remains vulnerable to a template-based timing attack. Experimental results show that the resulting protected implementations achieve identical cycle counts for all tested inputs, including (88) cycles in the three-function setting and (108) cycles in the five-function setting. At the same time, the numerical-error analysis indicates that the approximated nonlinear functions retain high accuracy. These results suggest that the proposed methodology provides a practical basis for constructing side-channel-resistant activation functions in embedded inference.}
+}
+
 @article{modenbach2026-a-geometric-relation-of-e85a0cbd,
   author = {Albert F. Modenbach},
   title = {A geometric relation of the error introduced by sampling a language model's output distribution to its internal state},
@@ -158,6 +168,16 @@
   archivePrefix = {arXiv},
   url = {https://arxiv.org/abs/2601.15399v1},
   abstract = {High-Performance Computing (HPC) schedulers must balance user performance with facility-wide resource constraints. The task boils down to selecting the optimal number of nodes for a given job. We present a surrogate-assisted multi-objective Bayesian optimization (MOBO) framework to automate this complex decision. Our core hypothesis is that surrogate models informed by attention-based embeddings of job telemetry can capture performance dynamics more effectively than standard regression techniques. We pair this with an intelligent sample acquisition strategy to ensure the approach is data-efficient. On two production HPC datasets, our embedding-informed method consistently identified higher-quality Pareto fronts of runtime-power trade-offs compared to baselines. Furthermore, our intelligent data sampling strategy drastically reduced training costs while improving the stability of the results. To our knowledge, this is the first work to successfully apply embedding-informed surrogates in a MOBO framework to the HPC scheduling problem, jointly optimizing for performance and power on production workloads.}
+}
+
+@article{dai2026-automcu-feasibility-first-mcu-ba9d7dd9,
+  author = {Penglin Dai and Zijie Zhou and Xincao Xu and Junhua Wang and Xiao Wu and Lixin Duan},
+  title = {AutoMCU: Feasibility-First MCU Neural Network Customization via LLM-based Multi-Agent Systems},
+  year = {2026},
+  eprint = {2605.21560v1},
+  archivePrefix = {arXiv},
+  url = {https://arxiv.org/abs/2605.21560v1},
+  abstract = {Deploying neural networks on microcontroller units (MCUs) is critical for edge intelligence but remains challenging due to tight memory, storage, and computation constraints. Existing approaches, such as model compression and hardware-aware neural architecture search (HW-NAS), often depend on proxy metrics, incur high search cost, and do not fully bridge the gap between architecture design and verified deployment. This paper presents AutoMCU, a feasibility-first large language model (LLM)-based multi-agent system for automated neural network customization under MCU constraints. Given natural-language task requirements and hardware specifications, AutoMCU iteratively generates structured architecture candidates, filters infeasible designs through vendor toolchain feedback before training, evaluates feasible models under a controlled protocol, and verifies deployability through backend-grounded deployment analysis. AutoMCU includes two key mechanisms: 1) hardware-in-the-loop architecture generation for early elimination of undeployable candidates under RAM and Flash constraints, and 2) state-isolated multi-agent scheduling for stable coordination of proposal, training, evaluation, and deployment stages. Experiments on CIFAR-10 and CIFAR-100 under strict MCU constraints show that AutoMCU achieves competitive accuracy while reducing customization time to about 1--2 hours, compared with hundreds of GPU hours for representative MCU-oriented HW-NAS baselines. Comparisons with ColabNAS and the LLM-based NAS method GENIUS on NAS-Bench-201 further demonstrate the effectiveness and stability of AutoMCU. Real-device deployments on multiple STM32 microcontrollers validate its practical applicability to MCU-scale edge intelligence.}
 }
 
 @article{dai2026-autoregressive-visual-decoding-from-260bb9d4,
