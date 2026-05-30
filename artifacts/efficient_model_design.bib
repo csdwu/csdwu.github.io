@@ -30,6 +30,17 @@
   abstract = {Pre-trained vision-language models (VLMs) exhibit strong zero-shot generalization but remain vulnerable to adversarial perturbations. Existing classification-guided adversarial fine-tuning methods often disrupt pre-trained cross-modal alignment, weakening visual-textual correspondence and degrading zero-shot performance. In this paper, we propose an Alignment-Guided Fine-Tuning (AGFT) framework that enhances zero-shot adversarial robustness while preserving the cross-modal semantic structure. Unlike label-based methods that rely on hard labels and fail to maintain the relative relationships between image and text, AGFT leverages the probabilistic predictions of the original model for text-guided adversarial training, which aligns adversarial visual features with textual embeddings via soft alignment distributions, improving zero-shot adversarial robustness. To address structural discrepancies introduced by fine-tuning, we introduce a distribution consistency calibration mechanism that adjusts the robust model output to match a temperature-scaled version of the pre-trained model predictions. Extensive experiments across multiple zero-shot benchmarks demonstrate that AGFT outperforms state-of-the-art methods while significantly improving zero-shot adversarial robustness.}
 }
 
+@article{xie2026-area-attribute-extraction-and-290595d8,
+  author = {Zhen-Hao Xie and Yu-Cheng Shi and Da-Wei Zhou},
+  title = {AREA: Attribute Extraction and Aggregation for CLIP-Based Class-Incremental Learning},
+  year = {2026},
+  journal = {ICML},
+  eprint = {2605.28809v1},
+  archivePrefix = {arXiv},
+  url = {https://arxiv.org/abs/2605.28809v1},
+  abstract = {Class-Incremental Learning (CIL) is important in building real-world learning systems. In CLIP-based CIL, the model performs classification by comparing similarity between visual and textual embeddings obtained from template prompts, e.g., ``a photo of a [CLASS]''. This seemingly monolithic matching process can be decomposed into two conceptually distinct stages: attribute extraction and attribute aggregation. For example, a model may recognize cat using attributes such as fur texture and whiskers. When learning a new class like car, the model must extract additional attributes like wheels and adjust how they are aggregated in the shared representation space. However, since only data from the current task is available, incremental updates can bias both attribute extraction and aggregation toward new classes, leading to catastrophic forgetting. Therefore, we propose AREA for attribute extraction and aggregation in CLIP-based CIL. To stabilize extraction, we anchor class-level visual and textual attributes on the hyperspherical embedding space via principal geodesic analysis. To stabilize aggregation, we learn lightweight task-specific experts with scoring and residual refinement, regularized by a variational information bottleneck objective. During inference, we perform routing over task attribute manifolds via optimal transport for more concise prediction. Experiments show that AREA consistently outperforms SOTA methods. Code is available at https://github.com/LAMDA-CL/ICML2026-AREA.}
+}
+
 @article{dai2026-automcu-feasibility-first-mcu-ba9d7dd9,
   author = {Penglin Dai and Zijie Zhou and Xincao Xu and Junhua Wang and Xiao Wu and Lixin Duan},
   title = {AutoMCU: Feasibility-First MCU Neural Network Customization via LLM-based Multi-Agent Systems},
@@ -116,6 +127,17 @@
   abstract = {The Atlantic Forest in Brazil is a critical biodiversity hotspot, yet less than 12-15% of its original cover remains. Although monitoring forest restoration on a large scale is essential, traditional methods are limited by the impracticality of on-the-ground reporting on such a scale and by the saturation of remote-sensing indices such as NDVI. Furthermore, reforestation is a gradual process as opposed to the rapid spectral changes caused by deforestation. In this study, we examine 1,729 restoration sites in São Paulo, using satellite embeddings from the AlphaEarth Foundation's model to evaluate their effectiveness in characterising early restoration success. We introduce the concept of a 'Reference Trajectory Embedding', defining a metric of restoration success based on cosine similarity to reference sites of mature secondary forest. We observe distinct clusters in embedding space according to different land use and land cover (LULC) types, and we can identify sites with clear change vectors. However, the signal can be noisy, and embeddings may require further fine-tuning to capture and predict site metadata beyond LULC.}
 }
 
+@article{qiu2026-chreode-a-cell-world-548e9731,
+  author = {Mufan Qiu and Genhui Zheng and Yinuo Xu and Ruichen Zhang and Ying Ding and Qi Long and Tianlong Chen},
+  title = {Chreode: A Cell World Model for One-Step Temporal Dynamics and Perturbation Prediction},
+  year = {2026},
+  journal = {NeurIPS},
+  eprint = {2605.28111v1},
+  archivePrefix = {arXiv},
+  url = {https://arxiv.org/abs/2605.28111v1},
+  abstract = {Predicting how a cell will change its transcriptional state under a developmental signal or a genetic perturbation is the computational core of in-silico biology and the AI Virtual Cell program. Existing approaches either fit static control-to-treated maps that discard time, or solve multi-step ODE / Schrödinger-bridge problems on each dataset independently. We introduce Chreode, a one-step cell world model that predicts action-conditioned cell-state transitions through a structured residual transition operator. It shifts distributional evolution from inference time to training time, enabling single-pass generation while preserving a Waddington-inspired decomposition into downhill landscape flow, rotational in-tangent dynamics, and stochastic spread. The model is pretrained with a shared scVI encoder and a DiT-based dynamics backbone on a 2.4M-cell mouse embryonic atlas spanning 7 datasets. As a fine-tuning initialization, Chreode improves per-target Sinkhorn distance on Weinreb hematopoiesis and Veres islet differentiation over matched scratch models, PI-SDE, and PRESCIENT. As a transferable gene-state embedding for GEARS, the pretrained dynamics representation reduces shared-vocabulary DE20 mean squared error on Norman Perturb-seq from 0.2121 to 0.1858, a 12.4% relative improvement, without changing the GEARS training procedure. We interpret this transfer to perturbation prediction as evidence that pretrained developmental-trajectory dynamics encode differentiation primitives transferable to CRISPR-induced state shifts, since both involve cell-state transitions in a shared latent geometry. The pretrained backbone additionally produces zero-shot clonal fate scores on Weinreb that are competitive with strong dynamic-OT baselines.}
+}
+
 @article{basher2026-conretrobert-ema-stabilized-dual-6b5cb7b2,
   author = {Mohammad Jahid Ibna Basher and Ali Khodabandeh Yalabadi and Ivan Garibay and Ozlem Ozmen Garibay},
   title = {ConRetroBert: EMA Stabilized Dual Encoders for Template-Based Single-Step Retrosynthesis},
@@ -125,6 +147,17 @@
   archivePrefix = {arXiv},
   url = {https://arxiv.org/abs/2605.12736v1},
   abstract = {Template based single step retrosynthesis predicts reactants by selecting and applying an explicit reaction template, making each prediction traceable to a chemical transformation rule. This is useful for synthesis planning, but template based methods are often viewed as less competitive than template free models because template prediction is commonly formulated as global classification over a long tailed rule library. We argue that this weakness is not inherent to templates, but to the learning formulation. We present ConRetroBert, a dual encoder framework that reframes template based retrosynthesis as dense product template retrieval followed by candidate set listwise ranking. Stage 1 uses contrastive pretraining to learn a shared embedding space between products and reaction templates. Stage 2 refines template ranking over mined hard negative candidate sets with a multi positive listwise objective. To enable template side adaptation without destabilizing hard negative mining, ConRetroBert uses a slow moving exponential moving average template encoder for retrieval bank construction while updating the live template encoder through the ranking loss. On the local USPTO-50k benchmark, Stage 2 candidate set ranking improves top-1 reaction accuracy from 50.5% to 61.3%, while EMA stabilized template adaptation further improves it to 62.4%. Fine tuning from a leakage controlled USPTO-Full checkpoint reaches 75.4% top-1 accuracy on USPTO-50k. We also show that retrieval based template prediction is strong in the long tail of rare templates, and that many correct reactant predictions arise from alternative explicit templates rather than only the recorded positive label. Code and data are available at https://github.com/JahidBasher/ConRetroBert.}
+}
+
+@article{bell2026-continual-model-routing-in-4760aaca,
+  author = {Jack Bell and Giacomo Carfì and Gerlando Gramaglia and Vincenzo Lomonaco},
+  title = {Continual Model Routing in Evolving Model Hubs},
+  year = {2026},
+  journal = {ICML},
+  eprint = {2605.28577v1},
+  archivePrefix = {arXiv},
+  url = {https://arxiv.org/abs/2605.28577v1},
+  abstract = {AI model hubs provide access to a rapidly growing collection of powerful pre-trained models, enabling off-the-shelf mixture-of-experts systems with different routing strategies. However, this rapid growth poses two fundamental challenges: scaling model selection across thousands of experts and continually updating routing mechanisms as new models and tasks are introduced. In this paper, we formalise this setting as Continual Model Routing (CMR) and propose CMRBench, a new large-scale benchmark simulating realistic hub expansion and including over 2,000 candidate models. Finally, we introduce CARvE, a contrastive embedding approach for efficient continual model routing via checkpoint-based anchoring and structured replay. Extensive empirical results and ablations show that CARvE significantly outperforms zero-shot retrieval, fine-tuning, and adapter-merging baselines in model, family, and domain-level accuracy.}
 }
 
 @article{mukhtiar2026-core-fed-bridging-collaborative-cc7b1559,
@@ -257,6 +290,17 @@
   archivePrefix = {arXiv},
   url = {https://arxiv.org/abs/2605.03430v1},
   abstract = {High-dimensional tabular data lacks a natural feature order, limiting the applicability of permutation-sensitive deep learning models. We propose DynaTab, a dynamic feature ordering-enabled architecture inspired by neural rewiring. We introduce a lightweight criterion that predicts when feature permutation will benefit a dataset by quantifying its intrinsic complexity. DynaTab dynamically reorders features via a neural rewiring algorithm and processes them through a compact, dynamic order-aware combination of separate learned positional embedding, importance-based gating, and masked attention layers, compatible with any sequence-sensitive backbone. Trained end-to-end with bespoke dynamic feature ordering (DFO) and dispersion losses, DynaTab achieves statistically significant gains, particularly on high-dimensional datasets, where it is benchmarked against 45 state-of-the-art baselines across 36 different real-world tabular datasets. Our results position DynaTab as a compelling new paradigm for high-dimensional tabular deep learning.}
+}
+
+@article{chen2026-efficient-validation-free-intrinsic-ef05758d,
+  author = {Zhichao Chen and Yongle Zhao and Kaicheng Yang and Meng Yang and Yin Xie and Ziyong Feng},
+  title = {Efficient, Validation-Free Intrinsic Quality Estimation for Large-Scale Face Recognition Datasets},
+  year = {2026},
+  journal = {ICML},
+  eprint = {2605.29720v1},
+  archivePrefix = {arXiv},
+  url = {https://arxiv.org/abs/2605.29720v1},
+  abstract = {We propose Intrinsic Quality (IQ), a validation-free metric designed to estimate the inherent potential of face recognition (FR) datasets to produce high-performance models without the need for full-scale training. IQ integrates two components: (i) a Neighbor-Consistency Score that quantifies local identity label agreement via nearest neighbors, and (ii) Global Representation Subspace Complexity (Effective Rank, ER), which captures the underlying embedding geometry and dataset diversity. IQ allows for rapid evaluation using lightweight proxy models or data subsets, facilitating dataset diagnosis and curation prior to resource-intensive full-scale training. We describe an experimental protocol tailored to clean, noisy, and mixed-quality FR datasets, and outline evaluation methodologies to validate IQ's predictive power for downstream performance.}
 }
 
 @article{xiao2026-embedding-compression-via-spherical-1c6d33c9,
@@ -410,6 +454,28 @@
   archivePrefix = {arXiv},
   url = {https://arxiv.org/abs/2602.04192v2},
   abstract = {Learning the intrinsic dimensionality of subjective perceptual spaces such as taste, smell, or aesthetics from ordinal data is a challenging problem. We introduce LORE (Low Rank Ordinal Embedding), a scalable framework that jointly learns both the intrinsic dimensionality and an ordinal embedding from noisy triplet comparisons of the form, "Is A more similar to B than C?". Unlike existing methods that require the embedding dimension to be set apriori, LORE regularizes the solution using the nonconvex Schatten-$p$ quasi norm, enabling automatic joint recovery of both the ordinal embedding and its dimensionality. We optimize this joint objective via an iteratively reweighted algorithm and establish convergence guarantees. Extensive experiments on synthetic datasets, simulated perceptual spaces, and real world crowdsourced ordinal judgements show that LORE learns compact, interpretable and highly accurate low dimensional embeddings that recover the latent geometry of subjective percepts. By simultaneously inferring both the intrinsic dimensionality and ordinal embeddings, LORE enables more interpretable and data efficient perceptual modeling in psychophysics and opens new directions for scalable discovery of low dimensional structure from ordinal data in machine learning.}
+}
+
+@article{zhang2026-medmamba-multi-view-state-9df42c41,
+  author = {Da Zhang and Bingyu Li and Zhiyuan Zhao and Hongyuan Zhang and Junyu Gao and Xuelong Li},
+  title = {MedMamba: Multi-View State Space Models with Adaptive Graph Learning for Medical Time Series Classification},
+  year = {2026},
+  journal = {ICML},
+  eprint = {2605.24961v1},
+  archivePrefix = {arXiv},
+  url = {https://arxiv.org/abs/2605.24961v1},
+  abstract = {Medical time series are central to healthcare, enabling continuous monitoring and supporting timely clinical decisions. Despite recent progress, existing methods struggle to jointly model local-global dynamics and handle nonstationarities like baseline drift, while often failing to capture latent channel interactions. To address these challenges, we propose MedMamba, an end-to-end architecture that integrates state space models with domain-specific inductive biases. Specifically, MedMamba first employs multi-scale convolutional embeddings to capture discriminative local morphology. Second, to mitigate nonstationarity, we introduce a tri-branch differential state space encoder that processes raw, temporal-difference, and frequency-domain views, fusing them to emphasize informative patterns while suppressing drift. Furthermore, to uncover latent channel correlations, we design a spatial graph Mamba module that learns a directed dependency structure regularized toward sparsity and acyclicity, which obviates the need for predefined graphs. Extensive experiments on five real-world datasets demonstrate that MedMamba achieves state-of-the-art performance while maintaining linear computational complexity, and ablation studies validate each component's contribution.Code is available at https://github.com/zhangda1018/MedMamba.}
+}
+
+@article{nguyen2026-mic-maximizing-informational-capacity-459a47b1,
+  author = {Dang Hong Nguyen and Nhi Ngoc-Yen Nguyen and Huy-Hieu Pham},
+  title = {MIC: Maximizing Informational Capacity in Adaptive Representations via Isotropic Subspace Alignment},
+  year = {2026},
+  journal = {ICML},
+  eprint = {2605.29987v1},
+  archivePrefix = {arXiv},
+  url = {https://arxiv.org/abs/2605.29987v1},
+  abstract = {Although multi-scales representation learning enables elastic-dimension embeddings, nested subspaces often suffer from dimensional redundancy and spectral collapse. To address this, we introduce MIC, a framework that optimizes the geometric landscape of multi-granular embeddings through isotropic subspace alignment. MIC employs Soft Collapse Regularization (SCR) to mitigate redundancy between prefix and residual subspaces via cross-correlation penalties, alongside Spectral Isotropy Regularization (SIR) to ensure hyper-spherical uniformity in low-dimensional prefixes. By unifying these strategies through a self-distillation objective, MIC generates semantically dense representations that maintain high discriminative power. Our experiments demonstrate that MIC significantly outperforms standard baselines, particularly in high-compression scenarios where maintaining informational capacity is most critical.}
 }
 
 @article{wang2026-native-reasoning-models-training-0454453e,
@@ -575,6 +641,17 @@
   archivePrefix = {arXiv},
   url = {https://arxiv.org/abs/2603.19028v1},
   abstract = {Models that bridge vision and language, such as CLIP, are key components of multimodal AI, yet their large-scale, uncurated training data introduce severe social and spurious biases. Existing post-hoc debiasing methods often operate directly in the dense CLIP embedding space, where bias and task-relevant information are highly entangled. This entanglement limits their ability to remove bias without degrading semantic fidelity. In this work, we propose Sparse Embedding Modulation (SEM), a post-hoc, zero-shot debiasing framework that operates in a Sparse Autoencoder (SAE) latent space. By decomposing CLIP text embeddings into disentangled features, SEM identifies and modulates bias-relevant neurons while preserving query-relevant ones. This enables more precise, non-linear interventions. Across four benchmark datasets and two CLIP backbones, SEM achieves substantial fairness gains in retrieval and zero-shot classification. Our results demonstrate that sparse latent representations provide an effective foundation for post-hoc debiasing of vision-language models.}
+}
+
+@article{zhao2026-sika-gp-accelerating-gaussian-635a74c9,
+  author = {Wenyuan Zhao and Rui Tuo and Chao Tian},
+  title = {SIKA-GP: Accelerating Gaussian Process Inference with Sparse Inducing Kernel Approximations for Bayesian Deep Learning},
+  year = {2026},
+  journal = {ICML},
+  eprint = {2605.26509v1},
+  archivePrefix = {arXiv},
+  url = {https://arxiv.org/abs/2605.26509v1},
+  abstract = {Gaussian processes (GPs) provide a principled Bayesian framework for uncertainty estimation, but their computational complexity severely limits scalability to large datasets. We propose SIKA-GP, which accelerates GP inference using sparse inducing kernel approximations based on a dyadic ordered template basis, incurring only $\{O\}(\\log M)$ complexity dependence on the number of inducing points. Our approach constructs compact and expressive kernel representations from sparsely activated bases, enabling efficient tensorized GPU computation and seamless integration with modern large-scale models. SIKA-GP can be naturally embedded into Bayesian neural networks (BNNs) with sparse activations, yielding significant speedups in both training and inference without sacrificing predictive performance. The method naturally extends to deep feature learning, addressing the scalability challenges introduced by deep architectures and high-dimensional feature representations. Empirical results on vision and transformer-based language benchmarks demonstrate that our approach consistently delivers fast and accurate GP models, providing a principled path toward scalable kernel learning.}
 }
 
 @article{kanamori2026-sparse-additive-model-pruning-dfdb1bae,

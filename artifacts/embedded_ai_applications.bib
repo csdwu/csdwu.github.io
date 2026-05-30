@@ -268,6 +268,17 @@
   abstract = {Although concept-based models promise interpretability by explaining predictions with human-understandable concepts, they typically rely on exhaustive annotations and treat concepts as flat and independent. To circumvent this, recent work has introduced Hierarchical Concept Embedding Models (HiCEMs) to explicitly model concept relationships, and Concept Splitting to discover sub-concepts using only coarse annotations. However, both HiCEMs and Concept Splitting are restricted to shallow hierarchies. We overcome this limitation with Multi-Level Concept Splitting (MLCS), which discovers multi-level concept hierarchies from only top-level supervision, and Deep-HiCEMs, an architecture that represents these discovered hierarchies and enables interventions at multiple levels of abstraction. Experiments across multiple datasets show that MLCS discovers human-interpretable concepts absent during training and that Deep-HiCEMs maintain high accuracy while supporting test-time concept interventions that can improve task performance.}
 }
 
+@article{lu2026-diva-harnessing-the-representation-005c68a2,
+  author = {Renjie Lu and Xulong Zhang and Xiaoyang Qu and Shangfei Wang and Jianzong Wang},
+  title = {DIVA: Harnessing the Representation Divergence in Unified Multimodal Models for Mutual Reinforcement},
+  year = {2026},
+  journal = {ICML},
+  eprint = {2605.25328v1},
+  archivePrefix = {arXiv},
+  url = {https://arxiv.org/abs/2605.25328v1},
+  abstract = {Unified Multimodal models (UMMs) built on a single architecture have shown impressive performance in both understanding and generation. We identify a fundamental challenge that lies in inductive biases induced by distinct supervision signals: generation branch prefers high-fidelity, fine-grained representations capable of reconstruction, while the understanding favours semantically discriminative embeddings that remain invariant to task-irrelevant factors. Consequently, optimizing these complementary but non-equivalent objectives within a monolithic backbone leads to mutual impairment instead of enhancement. In this paper, we first analyze the root cause of this interference in unified backbones and reveal a complementary structure in their internal representations. Motivated by the observation, we propose DIVA, a self-improved post-training framework that transforms the representation divergence into interior synergy. By explicitly factorizing the visual representation into shared and unique components based on two complementary information flow, DIVA enables both the understanding and generation branches to achieve beneficial transferring while preserving the integrity of unique information from cross-flow interference via mutual information estimation. Despite its generality, our method consistently achieves improvements across visual understanding (+7.82%) and generation (+8.46%). The official code is available at: https://github.com/Jayyy-H/DIVA.}
+}
+
 @article{wang2026-drive-my-way-preference-954e0e7a,
   author = {Zehao Wang and Huaide Jiang and Shuaiwu Dong and Yuping Wang and Hang Qiu and Jiachen Li},
   title = {Drive My Way: Preference Alignment of Vision-Language-Action Model for Personalized Driving},
@@ -772,6 +783,16 @@
   abstract = {Deep neural networks (DNNs) often produce overconfident predictions on out-of-distribution (OOD) inputs, undermining their reliability in open-world environments. Singularities in semi-discrete optimal transport (OT) mark regions of semantic ambiguity, where classifiers are particularly prone to unwarranted high-confidence predictions. Motivated by this observation, we propose a principled framework to mitigate OOD overconfidence by leveraging the geometry of OT-induced singular boundaries. Specifically, we formulate an OT problem between a continuous base distribution and the latent embeddings of training data, and identify the resulting singular boundaries. By sampling near these boundaries, we construct a class of OOD inputs, termed optimal transport-induced OOD samples (OTIS), which are geometrically grounded and inherently semantically ambiguous. During training, a confidence suppression loss is applied to OTIS to guide the model toward more calibrated predictions in structurally uncertain regions. Extensive experiments show that our method significantly alleviates OOD overconfidence and outperforms state-of-the-art methods.}
 }
 
+@article{guo2026-personalized-federated-learning-by-f52b9893,
+  author = {Shiqian Guo and Jianqing Liu and Beatriz Lorenzo},
+  title = {Personalized Federated Learning by Energy-Efficient UAV Communications},
+  year = {2026},
+  eprint = {2605.25212v1},
+  archivePrefix = {arXiv},
+  url = {https://arxiv.org/abs/2605.25212v1},
+  abstract = {Federated learning (FL) is an effective paradigm for enhancing the learning capability of edge devices while preserving data privacy. In geographically dispersed FL systems, such as sensor networks in remote areas, unmanned aerial vehicles (UAVs) can flexibly establish high-quality communication links to support parameter exchange. However, device heterogeneity and the limited battery capacity of UAVs pose significant challenges. Specifically, data heterogeneity slows convergence, while scheduling all devices for global collaboration incurs excessive communication and energy costs. To overcome these challenges, we adopt a strict separation between a globally shared backbone and permanently local personalization heads, thereby mitigating the impact of data heterogeneity. Furthermore, we propose a gradient-based scheduling strategy that jointly considers energy efficiency and learning performance. In each communication round, the backbone is updated only by the top-$α$ devices ranked by gradient $\\ell_\{2\}$-norm, ensuring that optimization focuses on the most informative updates. Simulation results demonstrate that the proposed scheme achieves higher learning accuracy than state-of-the-art approaches while significantly reducing UAV energy consumption.}
+}
+
 @article{wright2026-physical-foundation-models-fixed-537a1003,
   author = {Logan G Wright and Tianyu Wang and Tatsuhiro Onodera and Peter L. McMahon},
   title = {Physical Foundation Models: Fixed hardware implementations of large-scale neural networks},
@@ -791,6 +812,17 @@
   archivePrefix = {arXiv},
   url = {https://arxiv.org/abs/2603.06408v1},
   abstract = {Recent advances in diffusion-based video generation have achieved remarkable visual realism but still struggle to obey basic physical laws such as gravity, inertia, and collision. Generated objects often move inconsistently across frames, exhibit implausible dynamics, or violate physical constraints, limiting the realism and reliability of AI-generated videos. We address this gap by introducing Physical Simulator In-the-loop Video Generation (PSIVG), a novel framework that integrates a physical simulator into the video diffusion process. Starting from a template video generated by a pre-trained diffusion model, PSIVG reconstructs the 4D scene and foreground object meshes, initializes them within a physical simulator, and generates physically consistent trajectories. These simulated trajectories are then used to guide the video generator toward spatio-temporally physically coherent motion. To further improve texture consistency during object movement, we propose a Test-Time Texture Consistency Optimization (TTCO) technique that adapts text and feature embeddings based on pixel correspondences from the simulator. Comprehensive experiments demonstrate that PSIVG produces videos that better adhere to real-world physics while preserving visual quality and diversity. Project Page: https://vcai.mpi-inf.mpg.de/projects/PSIVG/}
+}
+
+@article{tran2026-poison-with-style-a-6b279cf1,
+  author = {Khang Tran and Yazan Boshmaf and Issa Khalil and NhatHai Phan and Ting Yu and Md Rizwan Parvez},
+  title = {Poison with Style: A Practical Poisoning Attack on Code Large Language Models},
+  year = {2026},
+  journal = {ICML},
+  eprint = {2605.27631v1},
+  archivePrefix = {arXiv},
+  url = {https://arxiv.org/abs/2605.27631v1},
+  abstract = {Code Large Language Models (CLLMs) serve as the core of modern code agents, enabling developers to automate complex software development tasks. In this paper, we present Poison-with-Style (PwS), a practical and stealthy model poisoning attack targeting CLLMs. Unlike prior attacks that assume an active adversary capable of directly embedding explicit triggers (e.g., specific words) into developers' prompts during inference, PwS leverages developers' code styles as covert triggers implicitly embedded within their prompts. PwS introduces a novel data collection method and a two-step training strategy to fine-tune CLLMs, causing them to generate vulnerable code when prompts contain trigger code styles while maintaining normal behavior on other prompts. Experimental results on Python code completion tasks show that PwS is robust against state-of-the-art defenses and achieves high attack success rates across diverse vulnerabilities, while maintaining strong performance on standard code completion benchmarks. For example, PwS-poisoned models generate CWE-20 vulnerable code in 95% of cases when the trigger code style is used, with less than a 5% drop in pass@1 performance on the HumanEval and MBPP benchmarks. Our implementation and dataset are here: https://github.com/khangtran2020/pws.}
 }
 
 @article{lohanimit2026-privacy-in-image-datasets-f89dfaa1,
@@ -838,6 +870,17 @@
   abstract = {Embedding-based representations in Euclidean space $\\mathbb\{R\}^d$ are a cornerstone of modern machine learning, where a major goal is to use the \\emph\{smallest dimension\} that faithfully captures data relations. In this work, we prove sharp dimension--accuracy tradeoffs and identify a fundamental information-theoretic limitation: unless the embedding dimension $d$ is chosen close to the ground-truth dimension $D$, accuracy undergoes a sudden collapse. Our main result shows that this phenomenon arises even in standard contrastive learning settings, where supervision is limited to a set of $m$ anchor--positive--negative triplets $(i,j,k)$ encoding distance comparisons $\\mathrm\{dist\}(i,j) < \\mathrm\{dist\}(i,k)$. Specifically, given triplets realizable by an unknown ground-truth embedding in $D$ dimensions, we prove that there exists constant $c < 1$, such that \\emph\{every embedding of dimension at most $cD$ violates half of the triplets\}, yielding accuracy as low as a trivial one-dimensional solution that ignores the input. We complement our information-theoretic bounds with strong computational hardness results: under the Unique Games Conjecture, even if the given triplets are nearly realizable in $D=1$ dimension, no polynomial-time algorithm -- \\textit\{regardless of its dimension\} -- can achieve accuracy above the trivial $50\\%$ baseline.}
 }
 
+@article{lim2026-quite-query-based-irregular-1da626b1,
+  author = {JungHoon Lim},
+  title = {QuITE: Query-Based Irregular Time Series Embedding},
+  year = {2026},
+  journal = {ICML},
+  eprint = {2605.28166v2},
+  archivePrefix = {arXiv},
+  url = {https://arxiv.org/abs/2605.28166v2},
+  abstract = {Irregular Multivariate Time Series (IMTS) are common in practice, yet their irregular sampling complicates effective modeling. Existing approaches typically either (i) design specialized architectures that limit the reuse of proven Multivariate Time Series (MTS) models, or (ii) map IMTS onto regular temporal grids through interpolation, which may distort temporal dynamics by introducing artificial values. To address these limitations, we propose a new input-embedding-based approach. We identify that the key bottleneck lies not in the backbone architecture, but in conventional embedding layers that assume uniform sampling. In this work, we introduce QuITE (Query-Based Irregular Time Series Embedding), a simple yet effective plug-and-play embedding module for IMTS. QuITE employs learnable query tokens to aggregate irregular observations through a single self-attention layer, directly producing backbone-compatible latent representations without artificial value generation or architectural modification. Extensive experiments on real-world benchmarks show that QuITE consistently improves MTS models, yielding average relative gains of up to $54.7\\%$ in forecasting and $15.8\\%$ in classification across diverse datasets and backbone architectures. Code is available at: https://github.com/Meaningfull9502/QuITE.}
+}
+
 @article{yi2026-radar-learning-to-route-5e077ec6,
   author = {Hang Yi and Ziwei Huang and Yining Ma and Zhiguang Cao},
   title = {RADAR: Learning to Route with Asymmetry-aware DistAnce Representations},
@@ -858,6 +901,17 @@
   archivePrefix = {arXiv},
   url = {https://arxiv.org/abs/2604.21728v2},
   abstract = {Pretrained vision-language models such as CLIP exhibit strong zero-shot generalization but remain sensitive to distribution shifts. Test-time adaptation adapts models during inference without access to source data or target labels, offering a practical way to handle such shifts. However, existing methods typically assume that test samples come from a single, consistent domain, while in practice, test data often include samples from mixed domains with distinct characteristics. Consequently, their performance degrades under mixed-domain settings. To address this, we present Ramen, a framework for robust test-time adaptation through active sample selection. For each incoming test sample, Ramen retrieves a customized batch of relevant samples from previously seen data based on two criteria: domain consistency, which ensures that adaptation focuses on data from similar domains, and prediction balance, which mitigates adaptation bias caused by skewed predictions. To improve efficiency, Ramen employs an embedding-gradient cache that stores the embeddings and sample-level gradients of past test images. The stored embeddings are used to retrieve relevant samples, and the corresponding gradients are aggregated for model updates, eliminating the need for any additional forward or backward passes. Our theoretical analysis provides insight into why the proposed adaptation mechanism is effective under mixed-domain shifts. Experiments on multiple image corruption and domain-shift benchmarks demonstrate that Ramen achieves strong and consistent performance, offering robust and efficient adaptation in complex mixed-domain scenarios. Our code is available at https://github.com/baowenxuan/Ramen .}
+}
+
+@article{rawal2026-rao-blackwellized-score-matching-a7df5bb1,
+  author = {Divit Rawal},
+  title = {Rao-Blackwellized Score Matching on Manifolds},
+  year = {2026},
+  journal = {ICML},
+  eprint = {2605.25567v2},
+  archivePrefix = {arXiv},
+  url = {https://arxiv.org/abs/2605.25567v2},
+  abstract = {We study denoising score matching (DSM) when the latent distribution is supported on a smooth embedded manifold $M \\subset \\mathbb\{R\}^D$. Under ambient Gaussian corruption, the tangent denoising target contains a singular normal-fiber noise channel whose variance diverges as $d/σ^2$ as $σ\\to 0^+$. We show that conditioning on the nearest-point projection $π(X)$ canonically removes this singularity: the resulting conditional expectation is the unique $L^2$-optimal Rao-Blackwellized predictor of the tangent DSM target among all estimators depending only on the projected observation $π(X)$. We then compute the small-noise expansion of this canonical target and show that it equals the intrinsic Riemannian score up to an explicit order-$σ^2$ correction that decomposes into an intrinsic Tweedie term and an extrinsic curvature term involving the Weingarten and Ricci operators. In the flat case, the construction reduces exactly to ordinary lower-dimensional Gaussian DSM, while on $S^d$ the extrinsic correction simplifies to the scalar factor $(1-d/2)\\nabla_M \\log q$; this extrinsic $σ^2$ correction cancels identically on $S^2$, though the intrinsic Tweedie term remains.}
 }
 
 @article{han2026-realistic-face-reconstruction-from-0d032b90,
@@ -970,6 +1024,17 @@
   abstract = {In this paper, we study Riemannian zeroth-order optimization in settings where the underlying Riemannian metric $g$ is geodesically incomplete, and the goal is to approximate stationary points with respect to this incomplete metric. To address this challenge, we construct structure-preserving metrics that are geodesically complete while ensuring that every stationary point under the new metric remains stationary under the original one. Building on this foundation, we revisit the classical symmetric two-point zeroth-order estimator and analyze its mean-squared error from a purely intrinsic perspective, depending only on the manifold's geometry rather than any ambient embedding. Leveraging this intrinsic analysis, we establish convergence guarantees for stochastic gradient descent with this intrinsic estimator. Under additional suitable conditions, an $ε$-stationary point under the constructed metric $g'$ also corresponds to an $ε$-stationary point under the original metric $g$, thereby matching the best-known complexity in the geodesically complete setting. Empirical studies on synthetic problems confirm our theoretical findings, and experiments on a practical mesh optimization task demonstrate that our framework maintains stable convergence even in the absence of geodesic completeness.}
 }
 
+@article{chen2026-rotation-invariant-spherical-watermarking-4a34e871,
+  author = {Pengzhen Chen and Yanwei Liu and Xiaoyan Gu and Antonios Argyriou and Wu Liu and Weiping Wang},
+  title = {Rotation-Invariant Spherical Watermarking via Third-Order SO(3) Representation Coupling},
+  year = {2026},
+  journal = {ICML},
+  eprint = {2605.26702v1},
+  archivePrefix = {arXiv},
+  url = {https://arxiv.org/abs/2605.26702v1},
+  abstract = {Reliable watermarking of panoramic imagery is fundamentally challenged by arbitrary 3D rotations. As panoramas are defined on the sphere, they naturally transform under the action of $SO(3)$, rendering conventional planar representations and augmentation-based robustness strategies inadequate and devoid of theoretical guarantees. To address this, we formulate panoramas as spherical signals and leverage $SO(3)$ representation theory to derive provably rotation-invariant descriptors. While spherical harmonic coefficients transform equivariantly under rotations, the natural invariant constructions are typically limited to zeroth-order statistics which eliminate directional information and severely constrain embedding capacity. In this work, we introduce a principled third-order invariant construction by coupling higher-order $SO(3)$ irreducible representations via tensor products and projecting onto the trivial representation. This yields a spherical invariant bispectrum that preserves phase information while remaining strictly rotation-invariant. Leveraging this property, we embed watermarks into higher-order spherical harmonic coefficients and recover them from invariant bispectral scalars, enabling reliable extraction under arbitrary 3D rotations. We provide a theoretical proof of $SO(3)$ invariance for it and demonstrate experimentally its near-perfect robustness to continuous rotations while maintaining high visual fidelity.}
+}
+
 @article{zhou2026-scalable-object-relation-encoding-e2fde175,
   author = {Shengli Zhou and Minghang Zheng and Feng Zheng and Yang Liu},
   title = {Scalable Object Relation Encoding for Better 3D Spatial Reasoning in Large Language Models},
@@ -1032,6 +1097,17 @@
   archivePrefix = {arXiv},
   url = {https://arxiv.org/abs/2603.26482v1},
   abstract = {Real time sensor based applications in pervasive computing require edge deployable models to ensure low latency privacy and efficient interaction. A prime example is sensor based human activity recognition where models must balance accuracy with stringent resource constraints. Yet many deep learning approaches treat temporal sensor signals as black box sequences overlooking spectral temporal structure while demanding excessive computation. We present SPECTRA a deployment first co designed spectral temporal architecture that integrates short time Fourier transform STFT feature extraction depthwise separable convolutions and channel wise self attention to capture spectral temporal dependencies under real edge runtime and memory constraints. A compact bidirectional GRU with attention pooling summarizes within window dynamics at low cost reducing downstream model burden while preserving accuracy. Across five public HAR datasets SPECTRA matches or approaches larger CNN LSTM and Transformer baselines while substantially reducing parameters latency and energy. Deployments on a Google Pixel 9 smartphone and an STM32L4 microcontroller further demonstrate end to end deployable realtime private and efficient HAR.}
+}
+
+@article{moreira2026-spectral-guidance-for-flexible-eff03460,
+  author = {Gabriel Moreira and Manuel Marques and João Paulo Costeira and Chenyan Xiong},
+  title = {Spectral Guidance for Flexible and Efficient Control of Diffusion Models},
+  year = {2026},
+  journal = {ICML},
+  eprint = {2605.28900v1},
+  archivePrefix = {arXiv},
+  url = {https://arxiv.org/abs/2605.28900v1},
+  abstract = {We introduce Spectral Guidance, a framework for controlling diffusion models by leveraging the intrinsic geometry of the generative process. As data is progressively corrupted by noise, only a small number of features remain informative for control. We characterize them as the singular functions of a conditional expectation operator and show that they can be learned via a self-supervised objective. Once recovered, this basis enables the projection of arbitrary guidance signals, such as labels, CLIP embeddings, or masks, directly onto the sampling trajectory. This approach allows for stable, high-fidelity control without retraining or denoiser backpropagation during sampling. Empirically, we improve conditional accuracy on CIFAR-10 by 37 percentage points over the strongest training-free baseline while offering $4\\times$ faster sampling. Moreover, the same representations that support label and CLIP guidance also enable spatial control, such as mask-based guidance, without auxiliary models. Finally, our framework reveals a phase transition in the generative process, pinpointing the optimal time window for effective guidance.}
 }
 
 @article{silva2026-stem-faculty-perspectives-on-1a7b3f71,

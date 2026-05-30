@@ -148,6 +148,17 @@
   abstract = {Out-of-distribution (OOD) detection, which maps high-dimensional data into a scalar OOD score, is critical for the reliable deployment of machine learning models. A key challenge in recent research is how to effectively leverage and aggregate token embeddings from language models to obtain the OOD score. In this work, we propose AP-OOD, a novel OOD detection method for natural language that goes beyond simple average-based aggregation by exploiting token-level information. AP-OOD is a semi-supervised approach that flexibly interpolates between unsupervised and supervised settings, enabling the use of limited auxiliary outlier data. Empirically, AP-OOD sets a new state of the art in OOD detection for text: in the unsupervised setting, it reduces the FPR95 (false positive rate at 95% true positives) from 27.84% to 4.67% on XSUM summarization, and from 77.08% to 70.37% on WMT15 En-Fr translation.}
 }
 
+@article{xie2026-area-attribute-extraction-and-290595d8,
+  author = {Zhen-Hao Xie and Yu-Cheng Shi and Da-Wei Zhou},
+  title = {AREA: Attribute Extraction and Aggregation for CLIP-Based Class-Incremental Learning},
+  year = {2026},
+  journal = {ICML},
+  eprint = {2605.28809v1},
+  archivePrefix = {arXiv},
+  url = {https://arxiv.org/abs/2605.28809v1},
+  abstract = {Class-Incremental Learning (CIL) is important in building real-world learning systems. In CLIP-based CIL, the model performs classification by comparing similarity between visual and textual embeddings obtained from template prompts, e.g., ``a photo of a [CLASS]''. This seemingly monolithic matching process can be decomposed into two conceptually distinct stages: attribute extraction and attribute aggregation. For example, a model may recognize cat using attributes such as fur texture and whiskers. When learning a new class like car, the model must extract additional attributes like wheels and adjust how they are aggregated in the shared representation space. However, since only data from the current task is available, incremental updates can bias both attribute extraction and aggregation toward new classes, leading to catastrophic forgetting. Therefore, we propose AREA for attribute extraction and aggregation in CLIP-based CIL. To stabilize extraction, we anchor class-level visual and textual attributes on the hyperspherical embedding space via principal geodesic analysis. To stabilize aggregation, we learn lightweight task-specific experts with scoring and residual refinement, regularized by a variational information bottleneck objective. During inference, we perform routing over task attribute manifolds via optimal transport for more concise prediction. Experiments show that AREA consistently outperforms SOTA methods. Code is available at https://github.com/LAMDA-CL/ICML2026-AREA.}
+}
+
 @article{chaudhry2026-asymptotic-and-finite-time-70e87c6e,
   author = {Faris Chaudhry},
   title = {Asymptotic and Finite-Time Guarantees for Langevin-Based Temperature Annealing in InfoNCE},
@@ -332,6 +343,17 @@
   abstract = {Hybrid action space, which combines discrete choices and continuous parameters, is prevalent in domains such as robot control and game AI. However, efficiently modeling and optimizing hybrid discrete-continuous action space remains a fundamental challenge, mainly due to limited policy expressiveness and poor scalability in high-dimensional settings. To address this challenge, we view the hybrid action space problem as a fully cooperative game and propose a \\textbf\{Cooperative Hybrid Diffusion Policies (CHDP)\} framework to solve it. CHDP employs two cooperative agents that leverage a discrete and a continuous diffusion policy, respectively. The continuous policy is conditioned on the discrete action's representation, explicitly modeling the dependency between them. This cooperative design allows the diffusion policies to leverage their expressiveness to capture complex distributions in their respective action spaces. To mitigate the update conflicts arising from simultaneous policy updates in this cooperative setting, we employ a sequential update scheme that fosters co-adaptation. Moreover, to improve scalability when learning in high-dimensional discrete action space, we construct a codebook that embeds the action space into a low-dimensional latent space. This mapping enables the discrete policy to learn in a compact, structured space. Finally, we design a Q-function-based guidance mechanism to align the codebook's embeddings with the discrete policy's representation during training. On challenging hybrid action benchmarks, CHDP outperforms the state-of-the-art method by up to $19.3\\%$ in success rate.}
 }
 
+@article{qiu2026-chreode-a-cell-world-548e9731,
+  author = {Mufan Qiu and Genhui Zheng and Yinuo Xu and Ruichen Zhang and Ying Ding and Qi Long and Tianlong Chen},
+  title = {Chreode: A Cell World Model for One-Step Temporal Dynamics and Perturbation Prediction},
+  year = {2026},
+  journal = {NeurIPS},
+  eprint = {2605.28111v1},
+  archivePrefix = {arXiv},
+  url = {https://arxiv.org/abs/2605.28111v1},
+  abstract = {Predicting how a cell will change its transcriptional state under a developmental signal or a genetic perturbation is the computational core of in-silico biology and the AI Virtual Cell program. Existing approaches either fit static control-to-treated maps that discard time, or solve multi-step ODE / Schrödinger-bridge problems on each dataset independently. We introduce Chreode, a one-step cell world model that predicts action-conditioned cell-state transitions through a structured residual transition operator. It shifts distributional evolution from inference time to training time, enabling single-pass generation while preserving a Waddington-inspired decomposition into downhill landscape flow, rotational in-tangent dynamics, and stochastic spread. The model is pretrained with a shared scVI encoder and a DiT-based dynamics backbone on a 2.4M-cell mouse embryonic atlas spanning 7 datasets. As a fine-tuning initialization, Chreode improves per-target Sinkhorn distance on Weinreb hematopoiesis and Veres islet differentiation over matched scratch models, PI-SDE, and PRESCIENT. As a transferable gene-state embedding for GEARS, the pretrained dynamics representation reduces shared-vocabulary DE20 mean squared error on Norman Perturb-seq from 0.2121 to 0.1858, a 12.4% relative improvement, without changing the GEARS training procedure. We interpret this transfer to perturbation prediction as evidence that pretrained developmental-trajectory dynamics encode differentiation primitives transferable to CRISPR-induced state shifts, since both involve cell-state transitions in a shared latent geometry. The pretrained backbone additionally produces zero-shot clonal fate scores on Weinreb that are competitive with strong dynamic-OT baselines.}
+}
+
 @article{wang2026-circuit-mechanisms-for-spatial-07a0d98f,
   author = {Binxu Wang and Jingxuan Fan and Xu Pan},
   title = {Circuit Mechanisms for Spatial Relation Generation in Diffusion Transformers},
@@ -363,6 +385,17 @@
   archivePrefix = {arXiv},
   url = {https://arxiv.org/abs/2605.12736v1},
   abstract = {Template based single step retrosynthesis predicts reactants by selecting and applying an explicit reaction template, making each prediction traceable to a chemical transformation rule. This is useful for synthesis planning, but template based methods are often viewed as less competitive than template free models because template prediction is commonly formulated as global classification over a long tailed rule library. We argue that this weakness is not inherent to templates, but to the learning formulation. We present ConRetroBert, a dual encoder framework that reframes template based retrosynthesis as dense product template retrieval followed by candidate set listwise ranking. Stage 1 uses contrastive pretraining to learn a shared embedding space between products and reaction templates. Stage 2 refines template ranking over mined hard negative candidate sets with a multi positive listwise objective. To enable template side adaptation without destabilizing hard negative mining, ConRetroBert uses a slow moving exponential moving average template encoder for retrieval bank construction while updating the live template encoder through the ranking loss. On the local USPTO-50k benchmark, Stage 2 candidate set ranking improves top-1 reaction accuracy from 50.5% to 61.3%, while EMA stabilized template adaptation further improves it to 62.4%. Fine tuning from a leakage controlled USPTO-Full checkpoint reaches 75.4% top-1 accuracy on USPTO-50k. We also show that retrieval based template prediction is strong in the long tail of rare templates, and that many correct reactant predictions arise from alternative explicit templates rather than only the recorded positive label. Code and data are available at https://github.com/JahidBasher/ConRetroBert.}
+}
+
+@article{bell2026-continual-model-routing-in-4760aaca,
+  author = {Jack Bell and Giacomo Carfì and Gerlando Gramaglia and Vincenzo Lomonaco},
+  title = {Continual Model Routing in Evolving Model Hubs},
+  year = {2026},
+  journal = {ICML},
+  eprint = {2605.28577v1},
+  archivePrefix = {arXiv},
+  url = {https://arxiv.org/abs/2605.28577v1},
+  abstract = {AI model hubs provide access to a rapidly growing collection of powerful pre-trained models, enabling off-the-shelf mixture-of-experts systems with different routing strategies. However, this rapid growth poses two fundamental challenges: scaling model selection across thousands of experts and continually updating routing mechanisms as new models and tasks are introduced. In this paper, we formalise this setting as Continual Model Routing (CMR) and propose CMRBench, a new large-scale benchmark simulating realistic hub expansion and including over 2,000 candidate models. Finally, we introduce CARvE, a contrastive embedding approach for efficient continual model routing via checkpoint-based anchoring and structured replay. Extensive empirical results and ablations show that CARvE significantly outperforms zero-shot retrieval, fine-tuning, and adapter-merging baselines in model, family, and domain-level accuracy.}
 }
 
 @article{chathoth2026-contrastive-continual-learning-for-cfda6422,
@@ -539,6 +572,17 @@
   abstract = {Large Genomic Foundation Models have recently achieved remarkable results and in-vivo translation capabilities. However these models quickly grow to over a few Billion of parameters and are expensive to run when compute is limited. To overcome this challenge, we present a distillation framework for transferring mRNA representations from a state of the art genomic foundation model into a much smaller model specialized for mRNA sequences, reducing the size by 200-fold. Embedding-level distillation worked better than logit based methods, which we found unstable. Benchmarking on mRNA-bench demonstrates that the distilled model achieves state-of-the-art performance among models of comparable size and competes with larger architectures for mRNA-related tasks. Our results highlight embedding-based distillation of mRNA sequences as an effective training strategy for biological foundation models. This enables similar efficient and scalable sequence modelling in genomics, particularly when large models are computationally challenging or infeasible.}
 }
 
+@article{lu2026-diva-harnessing-the-representation-005c68a2,
+  author = {Renjie Lu and Xulong Zhang and Xiaoyang Qu and Shangfei Wang and Jianzong Wang},
+  title = {DIVA: Harnessing the Representation Divergence in Unified Multimodal Models for Mutual Reinforcement},
+  year = {2026},
+  journal = {ICML},
+  eprint = {2605.25328v1},
+  archivePrefix = {arXiv},
+  url = {https://arxiv.org/abs/2605.25328v1},
+  abstract = {Unified Multimodal models (UMMs) built on a single architecture have shown impressive performance in both understanding and generation. We identify a fundamental challenge that lies in inductive biases induced by distinct supervision signals: generation branch prefers high-fidelity, fine-grained representations capable of reconstruction, while the understanding favours semantically discriminative embeddings that remain invariant to task-irrelevant factors. Consequently, optimizing these complementary but non-equivalent objectives within a monolithic backbone leads to mutual impairment instead of enhancement. In this paper, we first analyze the root cause of this interference in unified backbones and reveal a complementary structure in their internal representations. Motivated by the observation, we propose DIVA, a self-improved post-training framework that transforms the representation divergence into interior synergy. By explicitly factorizing the visual representation into shared and unique components based on two complementary information flow, DIVA enables both the understanding and generation branches to achieve beneficial transferring while preserving the integrity of unique information from cross-flow interference via mutual information estimation. Despite its generality, our method consistently achieves improvements across visual understanding (+7.82%) and generation (+8.46%). The official code is available at: https://github.com/Jayyy-H/DIVA.}
+}
+
 @article{hossain2026-do-llms-benefit-from-82eb3acc,
   author = {Mir Rayat Imtiaz Hossain and Leo Feng and Leonid Sigal and Mohamed Osama Ahmed},
   title = {Do LLMs Benefit from User and Item Embeddings in Recommendation Tasks?},
@@ -581,6 +625,17 @@
   archivePrefix = {arXiv},
   url = {https://arxiv.org/abs/2605.03430v1},
   abstract = {High-dimensional tabular data lacks a natural feature order, limiting the applicability of permutation-sensitive deep learning models. We propose DynaTab, a dynamic feature ordering-enabled architecture inspired by neural rewiring. We introduce a lightweight criterion that predicts when feature permutation will benefit a dataset by quantifying its intrinsic complexity. DynaTab dynamically reorders features via a neural rewiring algorithm and processes them through a compact, dynamic order-aware combination of separate learned positional embedding, importance-based gating, and masked attention layers, compatible with any sequence-sensitive backbone. Trained end-to-end with bespoke dynamic feature ordering (DFO) and dispersion losses, DynaTab achieves statistically significant gains, particularly on high-dimensional datasets, where it is benchmarked against 45 state-of-the-art baselines across 36 different real-world tabular datasets. Our results position DynaTab as a compelling new paradigm for high-dimensional tabular deep learning.}
+}
+
+@article{chen2026-efficient-validation-free-intrinsic-ef05758d,
+  author = {Zhichao Chen and Yongle Zhao and Kaicheng Yang and Meng Yang and Yin Xie and Ziyong Feng},
+  title = {Efficient, Validation-Free Intrinsic Quality Estimation for Large-Scale Face Recognition Datasets},
+  year = {2026},
+  journal = {ICML},
+  eprint = {2605.29720v1},
+  archivePrefix = {arXiv},
+  url = {https://arxiv.org/abs/2605.29720v1},
+  abstract = {We propose Intrinsic Quality (IQ), a validation-free metric designed to estimate the inherent potential of face recognition (FR) datasets to produce high-performance models without the need for full-scale training. IQ integrates two components: (i) a Neighbor-Consistency Score that quantifies local identity label agreement via nearest neighbors, and (ii) Global Representation Subspace Complexity (Effective Rank, ER), which captures the underlying embedding geometry and dataset diversity. IQ allows for rapid evaluation using lightweight proxy models or data subsets, facilitating dataset diagnosis and curation prior to resource-intensive full-scale training. We describe an experimental protocol tailored to clean, noisy, and mixed-quality FR datasets, and outline evaluation methodologies to validate IQ's predictive power for downstream performance.}
 }
 
 @article{seifi2026-ego-embedding-guided-personalization-957b2d72,
@@ -1109,6 +1164,17 @@
   abstract = {Learning the intrinsic dimensionality of subjective perceptual spaces such as taste, smell, or aesthetics from ordinal data is a challenging problem. We introduce LORE (Low Rank Ordinal Embedding), a scalable framework that jointly learns both the intrinsic dimensionality and an ordinal embedding from noisy triplet comparisons of the form, "Is A more similar to B than C?". Unlike existing methods that require the embedding dimension to be set apriori, LORE regularizes the solution using the nonconvex Schatten-$p$ quasi norm, enabling automatic joint recovery of both the ordinal embedding and its dimensionality. We optimize this joint objective via an iteratively reweighted algorithm and establish convergence guarantees. Extensive experiments on synthetic datasets, simulated perceptual spaces, and real world crowdsourced ordinal judgements show that LORE learns compact, interpretable and highly accurate low dimensional embeddings that recover the latent geometry of subjective percepts. By simultaneously inferring both the intrinsic dimensionality and ordinal embeddings, LORE enables more interpretable and data efficient perceptual modeling in psychophysics and opens new directions for scalable discovery of low dimensional structure from ordinal data in machine learning.}
 }
 
+@article{zhang2026-medmamba-multi-view-state-9df42c41,
+  author = {Da Zhang and Bingyu Li and Zhiyuan Zhao and Hongyuan Zhang and Junyu Gao and Xuelong Li},
+  title = {MedMamba: Multi-View State Space Models with Adaptive Graph Learning for Medical Time Series Classification},
+  year = {2026},
+  journal = {ICML},
+  eprint = {2605.24961v1},
+  archivePrefix = {arXiv},
+  url = {https://arxiv.org/abs/2605.24961v1},
+  abstract = {Medical time series are central to healthcare, enabling continuous monitoring and supporting timely clinical decisions. Despite recent progress, existing methods struggle to jointly model local-global dynamics and handle nonstationarities like baseline drift, while often failing to capture latent channel interactions. To address these challenges, we propose MedMamba, an end-to-end architecture that integrates state space models with domain-specific inductive biases. Specifically, MedMamba first employs multi-scale convolutional embeddings to capture discriminative local morphology. Second, to mitigate nonstationarity, we introduce a tri-branch differential state space encoder that processes raw, temporal-difference, and frequency-domain views, fusing them to emphasize informative patterns while suppressing drift. Furthermore, to uncover latent channel correlations, we design a spatial graph Mamba module that learns a directed dependency structure regularized toward sparsity and acyclicity, which obviates the need for predefined graphs. Extensive experiments on five real-world datasets demonstrate that MedMamba achieves state-of-the-art performance while maintaining linear computational complexity, and ablation studies validate each component's contribution.Code is available at https://github.com/zhangda1018/MedMamba.}
+}
+
 @article{mancera2026-membership-inference-test-auditing-8f2074e5,
   author = {Gonzalo Mancera and Daniel DeAlcala and Aythami Morales and Ruben Tolosana and Julian Fierrez},
   title = {Membership Inference Test: Auditing Training Data in Object Classification Models},
@@ -1140,6 +1206,17 @@
   archivePrefix = {arXiv},
   url = {https://arxiv.org/abs/2605.03482v1},
   abstract = {Persistent external memory enables LLM agents to maintain context across sessions, yet its security properties remain formally uncharacterized. We formalize memory poisoning attacks on retrieval-augmented agents as a Stackelberg game with a unified evaluation framework spanning three attack classes with escalating access assumptions. Correcting an evaluation protocol inconsistency in the triggered-query specification of Chen et al. (2024), we show faithful evaluation increases measured attack success by $4\\times$ (ASR-R: $0.25 \\to 1.00$). Our primary contribution is MEMSAD (Semantic Anomaly Detection), a calibration-based defense grounded in a gradient coupling theorem: under encoder regularity, the anomaly score gradient and the retrieval objective gradient are provably identical, so any continuous perturbation that reduces detection risk necessarily degrades retrieval rank. This coupling yields a certified detection radius guaranteeing correct classification regardless of adversary strategy. We prove minimax optimality via Le Cam's method, showing any threshold detector requires $Ω(1/ρ^2)$ calibration samples and MEMSAD achieves this up to $\\log(1/δ)$ factors. We further derive online regret bounds for rolling calibration at rate $O(σ^\{2/3\}Δ^\{1/3\})$, and formally characterize a discrete synonym-invariance loophole that marks the boundary of what continuous-space defenses can guarantee. Experiments on a $3 \\times 5$ attack-defense matrix with bootstrap confidence intervals, Bonferroni-corrected hypothesis tests, and Clopper-Pearson validation ($n=1\{,\}000$) confirm: composite defenses achieve TPR $= 1.00$, FPR $= 0.00$ across all attacks, while synonym substitution evades detection at $Δ$ ASR-R $\\approx 0$, exposing a gap existing embedding-based defenses cannot close.}
+}
+
+@article{nguyen2026-mic-maximizing-informational-capacity-459a47b1,
+  author = {Dang Hong Nguyen and Nhi Ngoc-Yen Nguyen and Huy-Hieu Pham},
+  title = {MIC: Maximizing Informational Capacity in Adaptive Representations via Isotropic Subspace Alignment},
+  year = {2026},
+  journal = {ICML},
+  eprint = {2605.29987v1},
+  archivePrefix = {arXiv},
+  url = {https://arxiv.org/abs/2605.29987v1},
+  abstract = {Although multi-scales representation learning enables elastic-dimension embeddings, nested subspaces often suffer from dimensional redundancy and spectral collapse. To address this, we introduce MIC, a framework that optimizes the geometric landscape of multi-granular embeddings through isotropic subspace alignment. MIC employs Soft Collapse Regularization (SCR) to mitigate redundancy between prefix and residual subspaces via cross-correlation penalties, alongside Spectral Isotropy Regularization (SIR) to ensure hyper-spherical uniformity in low-dimensional prefixes. By unifying these strategies through a self-distillation objective, MIC generates semantically dense representations that maintain high discriminative power. Our experiments demonstrate that MIC significantly outperforms standard baselines, particularly in high-compression scenarios where maintaining informational capacity is most critical.}
 }
 
 @article{bi2026-ming-an-automated-cnn-28096c4f,
@@ -1326,6 +1403,16 @@
   abstract = {Learning representative embeddings for different types of speaking styles, such as emotion, age, and gender, is critical for both recognition tasks (e.g., cognitive computing and human-computer interaction) and generative tasks (e.g., style-controllable speech generation). In this work, we introduce ParaMETA, a unified and flexible framework for learning and controlling speaking styles directly from speech. Unlike existing methods that rely on single-task models or cross-modal alignment, ParaMETA learns disentangled, task-specific embeddings by projecting speech into dedicated subspaces for each type of style. This design reduces inter-task interference, mitigates negative transfer, and allows a single model to handle multiple paralinguistic tasks such as emotion, gender, age, and language classification. Beyond recognition, ParaMETA enables fine-grained style control in Text-To-Speech (TTS) generative models. It supports both speech- and text-based prompting and allows users to modify one speaking styles while preserving others. Extensive experiments demonstrate that ParaMETA outperforms strong baselines in classification accuracy and generates more natural and expressive speech, while maintaining a lightweight and efficient model suitable for real-world applications.}
 }
 
+@article{guo2026-personalized-federated-learning-by-f52b9893,
+  author = {Shiqian Guo and Jianqing Liu and Beatriz Lorenzo},
+  title = {Personalized Federated Learning by Energy-Efficient UAV Communications},
+  year = {2026},
+  eprint = {2605.25212v1},
+  archivePrefix = {arXiv},
+  url = {https://arxiv.org/abs/2605.25212v1},
+  abstract = {Federated learning (FL) is an effective paradigm for enhancing the learning capability of edge devices while preserving data privacy. In geographically dispersed FL systems, such as sensor networks in remote areas, unmanned aerial vehicles (UAVs) can flexibly establish high-quality communication links to support parameter exchange. However, device heterogeneity and the limited battery capacity of UAVs pose significant challenges. Specifically, data heterogeneity slows convergence, while scheduling all devices for global collaboration incurs excessive communication and energy costs. To overcome these challenges, we adopt a strict separation between a globally shared backbone and permanently local personalization heads, thereby mitigating the impact of data heterogeneity. Furthermore, we propose a gradient-based scheduling strategy that jointly considers energy efficiency and learning performance. In each communication round, the backbone is updated only by the top-$α$ devices ranked by gradient $\\ell_\{2\}$-norm, ensuring that optimization focuses on the most informative updates. Simulation results demonstrate that the proposed scheme achieves higher learning accuracy than state-of-the-art approaches while significantly reducing UAV energy consumption.}
+}
+
 @article{azhar2026-physical-design-of-uet-23f6de22,
   author = {Abdullah Azhar and Uneeb Kamal and Wajid Ali and Saad Gillani and Dr Suleman Sami Qazi},
   title = {Physical Design of UET-RVMCU: A Streamlined Open-Source RISC-V Microcontroller},
@@ -1366,6 +1453,17 @@
   archivePrefix = {arXiv},
   url = {https://arxiv.org/abs/2602.20496v1},
   abstract = {While iterative stereo matching achieves high accuracy, its dependence on Recurrent Neural Networks (RNN) hinders edge deployment, a challenge underexplored in existing researches. We analyze iterative refinement and reveal that disparity updates are spatially sparse and temporally redundant. First, we introduce a progressive iteration pruning strategy that suppresses redundant update steps, effectively collapsing the recursive computation into a near-single-pass inference. Second, we propose a collaborative monocular prior transfer framework that implicitly embeds depth priors without requiring a dedicated monocular encoder, thereby eliminating its associated computational burden. Third, we develop FlashGRU, a hardware-aware RNN operator leveraging structured sparsity and I/O-conscious design, achieving a 7.28$\\times$ speedup, 76.6\\% memory peak reduction and 80.9\\% global memory requests reduction over natvie ConvGRUs under 2K resolution. Our PipStereo enables real-time, high-fidelity stereo matching on edge hardware: it processes 320$\\times$640 frames in just 75ms on an NVIDIA Jetson Orin NX (FP16) and 19ms on RTX 4090, matching the accuracy of large iterative based models, and our generalization ability and accuracy far exceeds that of existing real-time methods. Our embedded AI projects will be updated at: https://github.com/XPENG-Aridge-AI.}
+}
+
+@article{tran2026-poison-with-style-a-6b279cf1,
+  author = {Khang Tran and Yazan Boshmaf and Issa Khalil and NhatHai Phan and Ting Yu and Md Rizwan Parvez},
+  title = {Poison with Style: A Practical Poisoning Attack on Code Large Language Models},
+  year = {2026},
+  journal = {ICML},
+  eprint = {2605.27631v1},
+  archivePrefix = {arXiv},
+  url = {https://arxiv.org/abs/2605.27631v1},
+  abstract = {Code Large Language Models (CLLMs) serve as the core of modern code agents, enabling developers to automate complex software development tasks. In this paper, we present Poison-with-Style (PwS), a practical and stealthy model poisoning attack targeting CLLMs. Unlike prior attacks that assume an active adversary capable of directly embedding explicit triggers (e.g., specific words) into developers' prompts during inference, PwS leverages developers' code styles as covert triggers implicitly embedded within their prompts. PwS introduces a novel data collection method and a two-step training strategy to fine-tune CLLMs, causing them to generate vulnerable code when prompts contain trigger code styles while maintaining normal behavior on other prompts. Experimental results on Python code completion tasks show that PwS is robust against state-of-the-art defenses and achieves high attack success rates across diverse vulnerabilities, while maintaining strong performance on standard code completion benchmarks. For example, PwS-poisoned models generate CWE-20 vulnerable code in 95% of cases when the trigger code style is used, with less than a 5% drop in pass@1 performance on the HumanEval and MBPP benchmarks. Our implementation and dataset are here: https://github.com/khangtran2020/pws.}
 }
 
 @article{douglas2026-prism-llm-guided-semantic-fafca21d,
@@ -1435,6 +1533,17 @@
   abstract = {Generative Artificial Intelligence (GenAI) features such as image editing, object removal, and prompt-guided image transformation are increasingly integrated into mobile applications. However, deploying Large Vision Models (LVMs) for such tasks on resource-constrained devices remains challenging due to their high memory and compute requirements. While Low-Rank Adapters (LoRAs) enable parameter-efficient task adaptation, existing Mobile deployment pipelines typically compile separate model binaries for each LoRA + a copy of the foundation model, resulting in redundant storage and increased runtime overhead. In this work, we present a unified framework for enabling multi-task GenAI inference on edge devices using a single shared model. Our key idea is to treat LoRA weights as runtime inputs rather than embedding them into the compiled model graph, allowing dynamic task switching at runtime without recompilation. Then, to support efficient on-device execution, we introduce QUAD (Quantization with Unified Adaptive Distillation), a quantizationaware training strategy that aligns multiple LoRA adapters under a shared quantization profile. We implement the proposed system with a lightweight runtime stack compatible with mobile NPUs and evaluate it across multiple chipsets. Experimental results demonstrate up to 6x and 4x reduction in memory footprint and latency improvements, respectively, while maintaining high visual quality across multiple GenAI tasks.}
 }
 
+@article{lim2026-quite-query-based-irregular-1da626b1,
+  author = {JungHoon Lim},
+  title = {QuITE: Query-Based Irregular Time Series Embedding},
+  year = {2026},
+  journal = {ICML},
+  eprint = {2605.28166v2},
+  archivePrefix = {arXiv},
+  url = {https://arxiv.org/abs/2605.28166v2},
+  abstract = {Irregular Multivariate Time Series (IMTS) are common in practice, yet their irregular sampling complicates effective modeling. Existing approaches typically either (i) design specialized architectures that limit the reuse of proven Multivariate Time Series (MTS) models, or (ii) map IMTS onto regular temporal grids through interpolation, which may distort temporal dynamics by introducing artificial values. To address these limitations, we propose a new input-embedding-based approach. We identify that the key bottleneck lies not in the backbone architecture, but in conventional embedding layers that assume uniform sampling. In this work, we introduce QuITE (Query-Based Irregular Time Series Embedding), a simple yet effective plug-and-play embedding module for IMTS. QuITE employs learnable query tokens to aggregate irregular observations through a single self-attention layer, directly producing backbone-compatible latent representations without artificial value generation or architectural modification. Extensive experiments on real-world benchmarks show that QuITE consistently improves MTS models, yielding average relative gains of up to $54.7\\%$ in forecasting and $15.8\\%$ in classification across diverse datasets and backbone architectures. Code is available at: https://github.com/Meaningfull9502/QuITE.}
+}
+
 @article{yi2026-radar-learning-to-route-5e077ec6,
   author = {Hang Yi and Ziwei Huang and Yining Ma and Zhiguang Cao},
   title = {RADAR: Learning to Route with Asymmetry-aware DistAnce Representations},
@@ -1455,6 +1564,17 @@
   archivePrefix = {arXiv},
   url = {https://arxiv.org/abs/2604.21728v2},
   abstract = {Pretrained vision-language models such as CLIP exhibit strong zero-shot generalization but remain sensitive to distribution shifts. Test-time adaptation adapts models during inference without access to source data or target labels, offering a practical way to handle such shifts. However, existing methods typically assume that test samples come from a single, consistent domain, while in practice, test data often include samples from mixed domains with distinct characteristics. Consequently, their performance degrades under mixed-domain settings. To address this, we present Ramen, a framework for robust test-time adaptation through active sample selection. For each incoming test sample, Ramen retrieves a customized batch of relevant samples from previously seen data based on two criteria: domain consistency, which ensures that adaptation focuses on data from similar domains, and prediction balance, which mitigates adaptation bias caused by skewed predictions. To improve efficiency, Ramen employs an embedding-gradient cache that stores the embeddings and sample-level gradients of past test images. The stored embeddings are used to retrieve relevant samples, and the corresponding gradients are aggregated for model updates, eliminating the need for any additional forward or backward passes. Our theoretical analysis provides insight into why the proposed adaptation mechanism is effective under mixed-domain shifts. Experiments on multiple image corruption and domain-shift benchmarks demonstrate that Ramen achieves strong and consistent performance, offering robust and efficient adaptation in complex mixed-domain scenarios. Our code is available at https://github.com/baowenxuan/Ramen .}
+}
+
+@article{rawal2026-rao-blackwellized-score-matching-a7df5bb1,
+  author = {Divit Rawal},
+  title = {Rao-Blackwellized Score Matching on Manifolds},
+  year = {2026},
+  journal = {ICML},
+  eprint = {2605.25567v2},
+  archivePrefix = {arXiv},
+  url = {https://arxiv.org/abs/2605.25567v2},
+  abstract = {We study denoising score matching (DSM) when the latent distribution is supported on a smooth embedded manifold $M \\subset \\mathbb\{R\}^D$. Under ambient Gaussian corruption, the tangent denoising target contains a singular normal-fiber noise channel whose variance diverges as $d/σ^2$ as $σ\\to 0^+$. We show that conditioning on the nearest-point projection $π(X)$ canonically removes this singularity: the resulting conditional expectation is the unique $L^2$-optimal Rao-Blackwellized predictor of the tangent DSM target among all estimators depending only on the projected observation $π(X)$. We then compute the small-noise expansion of this canonical target and show that it equals the intrinsic Riemannian score up to an explicit order-$σ^2$ correction that decomposes into an intrinsic Tweedie term and an extrinsic curvature term involving the Weingarten and Ricci operators. In the flat case, the construction reduces exactly to ordinary lower-dimensional Gaussian DSM, while on $S^d$ the extrinsic correction simplifies to the scalar factor $(1-d/2)\\nabla_M \\log q$; this extrinsic $σ^2$ correction cancels identically on $S^2$, though the intrinsic Tweedie term remains.}
 }
 
 @article{han2026-realistic-face-reconstruction-from-0d032b90,
@@ -1601,6 +1721,17 @@
   abstract = {In this paper, we study Riemannian zeroth-order optimization in settings where the underlying Riemannian metric $g$ is geodesically incomplete, and the goal is to approximate stationary points with respect to this incomplete metric. To address this challenge, we construct structure-preserving metrics that are geodesically complete while ensuring that every stationary point under the new metric remains stationary under the original one. Building on this foundation, we revisit the classical symmetric two-point zeroth-order estimator and analyze its mean-squared error from a purely intrinsic perspective, depending only on the manifold's geometry rather than any ambient embedding. Leveraging this intrinsic analysis, we establish convergence guarantees for stochastic gradient descent with this intrinsic estimator. Under additional suitable conditions, an $ε$-stationary point under the constructed metric $g'$ also corresponds to an $ε$-stationary point under the original metric $g$, thereby matching the best-known complexity in the geodesically complete setting. Empirical studies on synthetic problems confirm our theoretical findings, and experiments on a practical mesh optimization task demonstrate that our framework maintains stable convergence even in the absence of geodesic completeness.}
 }
 
+@article{chen2026-rotation-invariant-spherical-watermarking-4a34e871,
+  author = {Pengzhen Chen and Yanwei Liu and Xiaoyan Gu and Antonios Argyriou and Wu Liu and Weiping Wang},
+  title = {Rotation-Invariant Spherical Watermarking via Third-Order SO(3) Representation Coupling},
+  year = {2026},
+  journal = {ICML},
+  eprint = {2605.26702v1},
+  archivePrefix = {arXiv},
+  url = {https://arxiv.org/abs/2605.26702v1},
+  abstract = {Reliable watermarking of panoramic imagery is fundamentally challenged by arbitrary 3D rotations. As panoramas are defined on the sphere, they naturally transform under the action of $SO(3)$, rendering conventional planar representations and augmentation-based robustness strategies inadequate and devoid of theoretical guarantees. To address this, we formulate panoramas as spherical signals and leverage $SO(3)$ representation theory to derive provably rotation-invariant descriptors. While spherical harmonic coefficients transform equivariantly under rotations, the natural invariant constructions are typically limited to zeroth-order statistics which eliminate directional information and severely constrain embedding capacity. In this work, we introduce a principled third-order invariant construction by coupling higher-order $SO(3)$ irreducible representations via tensor products and projecting onto the trivial representation. This yields a spherical invariant bispectrum that preserves phase information while remaining strictly rotation-invariant. Leveraging this property, we embed watermarks into higher-order spherical harmonic coefficients and recover them from invariant bispectral scalars, enabling reliable extraction under arbitrary 3D rotations. We provide a theoretical proof of $SO(3)$ invariance for it and demonstrate experimentally its near-perfect robustness to continuous rotations while maintaining high visual fidelity.}
+}
+
 @article{zhong2026-rq-moe-residual-quantization-f9c66e08,
   author = {Zhengjia Zhong and Shuyan Ke and Zaizhou Lin and Jiaqi Song and Hongyi Lan and Hui Li},
   title = {RQ-MoE: Residual Quantization via Mixture of Experts for Efficient Input-Dependent Vector Compression},
@@ -1667,6 +1798,17 @@
   abstract = {We introduce Semantic Intent Fragmentation (SIF), an attack class against LLM orchestration systems where a single, legitimately phrased request causes an orchestrator to decompose a task into subtasks that are individually benign but jointly violate security policy. Current safety mechanisms operate at the subtask level, so each step clears existing classifiers -- the violation only emerges at the composed plan. SIF exploits OWASP LLM06:2025 through four mechanisms: bulk scope escalation, silent data exfiltration, embedded trigger deployment, and quasi-identifier aggregation, requiring no injected content, no system modification, and no attacker interaction after the initial request. We construct a three-stage red-teaming pipeline grounded in OWASP, MITRE ATLAS, and NIST frameworks to generate realistic enterprise scenarios. Across 14 scenarios spanning financial reporting, information security, and HR analytics, a GPT-20B orchestrator produces policy-violating plans in 71% of cases (10/14) while every subtask appears benign. Three independent signals validate this: deterministic taint analysis, chain-of-thought evaluation, and a cross-model compliance judge with 0% false positives. Stronger orchestrators increase SIF success rates. Plan-level information-flow tracking combined with compliance evaluation detects all attacks before execution, showing the compositional safety gap is closable.}
 }
 
+@article{zhao2026-sika-gp-accelerating-gaussian-635a74c9,
+  author = {Wenyuan Zhao and Rui Tuo and Chao Tian},
+  title = {SIKA-GP: Accelerating Gaussian Process Inference with Sparse Inducing Kernel Approximations for Bayesian Deep Learning},
+  year = {2026},
+  journal = {ICML},
+  eprint = {2605.26509v1},
+  archivePrefix = {arXiv},
+  url = {https://arxiv.org/abs/2605.26509v1},
+  abstract = {Gaussian processes (GPs) provide a principled Bayesian framework for uncertainty estimation, but their computational complexity severely limits scalability to large datasets. We propose SIKA-GP, which accelerates GP inference using sparse inducing kernel approximations based on a dyadic ordered template basis, incurring only $\{O\}(\\log M)$ complexity dependence on the number of inducing points. Our approach constructs compact and expressive kernel representations from sparsely activated bases, enabling efficient tensorized GPU computation and seamless integration with modern large-scale models. SIKA-GP can be naturally embedded into Bayesian neural networks (BNNs) with sparse activations, yielding significant speedups in both training and inference without sacrificing predictive performance. The method naturally extends to deep feature learning, addressing the scalability challenges introduced by deep architectures and high-dimensional feature representations. Empirical results on vision and transformer-based language benchmarks demonstrate that our approach consistently delivers fast and accurate GP models, providing a principled path toward scalable kernel learning.}
+}
+
 @article{saeid2026-slnet-a-super-lightweight-56443dde,
   author = {Mohammad Saeid and Amir Salarpour and Pedram MohajerAnsari and Mert D. Pesé},
   title = {SLNet: A Super-Lightweight Geometry-Adaptive Network for 3D Point Cloud Recognition},
@@ -1718,6 +1860,17 @@
   archivePrefix = {arXiv},
   url = {https://arxiv.org/abs/2603.26482v1},
   abstract = {Real time sensor based applications in pervasive computing require edge deployable models to ensure low latency privacy and efficient interaction. A prime example is sensor based human activity recognition where models must balance accuracy with stringent resource constraints. Yet many deep learning approaches treat temporal sensor signals as black box sequences overlooking spectral temporal structure while demanding excessive computation. We present SPECTRA a deployment first co designed spectral temporal architecture that integrates short time Fourier transform STFT feature extraction depthwise separable convolutions and channel wise self attention to capture spectral temporal dependencies under real edge runtime and memory constraints. A compact bidirectional GRU with attention pooling summarizes within window dynamics at low cost reducing downstream model burden while preserving accuracy. Across five public HAR datasets SPECTRA matches or approaches larger CNN LSTM and Transformer baselines while substantially reducing parameters latency and energy. Deployments on a Google Pixel 9 smartphone and an STM32L4 microcontroller further demonstrate end to end deployable realtime private and efficient HAR.}
+}
+
+@article{moreira2026-spectral-guidance-for-flexible-eff03460,
+  author = {Gabriel Moreira and Manuel Marques and João Paulo Costeira and Chenyan Xiong},
+  title = {Spectral Guidance for Flexible and Efficient Control of Diffusion Models},
+  year = {2026},
+  journal = {ICML},
+  eprint = {2605.28900v1},
+  archivePrefix = {arXiv},
+  url = {https://arxiv.org/abs/2605.28900v1},
+  abstract = {We introduce Spectral Guidance, a framework for controlling diffusion models by leveraging the intrinsic geometry of the generative process. As data is progressively corrupted by noise, only a small number of features remain informative for control. We characterize them as the singular functions of a conditional expectation operator and show that they can be learned via a self-supervised objective. Once recovered, this basis enables the projection of arbitrary guidance signals, such as labels, CLIP embeddings, or masks, directly onto the sampling trajectory. This approach allows for stable, high-fidelity control without retraining or denoiser backpropagation during sampling. Empirically, we improve conditional accuracy on CIFAR-10 by 37 percentage points over the strongest training-free baseline while offering $4\\times$ faster sampling. Moreover, the same representations that support label and CLIP guidance also enable spatial control, such as mask-based guidance, without auxiliary models. Finally, our framework reveals a phase transition in the generative process, pinpointing the optimal time window for effective guidance.}
 }
 
 @article{lee2026-steering-sparse-autoencoder-latents-35a189f7,
