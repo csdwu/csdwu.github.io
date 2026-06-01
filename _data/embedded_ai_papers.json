@@ -1,6 +1,6 @@
 {
   "version": "2.0.0",
-  "generated_at": "2026-05-30T02:37:01.261Z",
+  "generated_at": "2026-06-01T03:30:10.741Z",
   "query_groups": {
     "A": "\"embedded ai\"",
     "B": "(\"low power\" OR \"ultra-low-power\") \"embedded ai\"",
@@ -8,24 +8,24 @@
   },
   "stats": {
     "raw_counts": {
-      "A": 92,
-      "B": 2,
-      "C": 2
+      "A": 23,
+      "B": 0,
+      "C": 0
     },
     "after_set_ops": {
-      "A_only": 90,
-      "B": 2,
-      "C": 2,
-      "merged_total": 94,
+      "A_only": 23,
+      "B": 0,
+      "C": 0,
+      "merged_total": 23,
       "bc_overlap": 0
     },
-    "after_filter": 809,
+    "after_filter": 811,
     "classification": {
-      "total": 809,
+      "total": 811,
       "by_category": {
         "Efficient Model Design and Optimization": 257,
         "Novel Computing Architectures and Domain-Specific Accelerators": 39,
-        "Embedded AI Applications": 513
+        "Embedded AI Applications": 515
       },
       "by_tag": {
         "TinyML": 49,
@@ -35,14 +35,14 @@
       "by_provider": {
         "tencent_tokenhub": 0,
         "heuristic": 0,
-        "heuristic_fallback": 809
+        "heuristic_fallback": 811
       }
     },
     "source_stats": {
-      "total": 809,
+      "total": 811,
       "by_group": {
         "A": {
-          "total": 672,
+          "total": 674,
           "arxiv": 0,
           "venues": {
             "AAAI": 90,
@@ -168,7 +168,7 @@
             "ICIP": 0,
             "ICLR": 159,
             "ICMI": 0,
-            "ICML": 102,
+            "ICML": 104,
             "ICMR": 0,
             "ICN": 0,
             "ICNP": 0,
@@ -1539,7 +1539,7 @@
         }
       },
       "total_summary": {
-        "total": 824,
+        "total": 826,
         "arxiv": 121,
         "venues": {
           "AAAI": 90,
@@ -1665,7 +1665,7 @@
           "ICIP": 0,
           "ICLR": 160,
           "ICMI": 0,
-          "ICML": 104,
+          "ICML": 106,
           "ICMR": 0,
           "ICN": 0,
           "ICNP": 0,
@@ -17629,7 +17629,7 @@
     {
       "key": "embedded_ai_applications",
       "title": "Embedded AI Applications",
-      "count": 513,
+      "count": 515,
       "papers": [
         {
           "id": "0b3f877ac9f54b038cbdfbdb95e9d20b78b6d1a9",
@@ -17957,6 +17957,57 @@
           }
         },
         {
+          "id": "c133852039b20824e85e3c0488bee6c15ce8c1e6",
+          "title": "Giving Sensors a Voice: Multimodal JEPA for Semantic Time-Series Embeddings",
+          "authors": [
+            "Utsav Dutta",
+            "Gerardo Pastrana",
+            "Sina Khoshfetrat Pakazad",
+            "Henrik Ohlsson"
+          ],
+          "year": 2026,
+          "month": 5,
+          "source": "arxiv",
+          "venue": "ICML",
+          "venue_type": "conference",
+          "abstract": "Transformer-based architectures have advanced sequence modeling in language and vision, yet general-purpose representation learning for heterogeneous multivariate time series remains underexplored. We introduce CHARM (Channel-Aware Representation Model), which incorporates channel-level textual descriptions into a Transformer encoder equivariant to channel order. CHARM is trained with a Joint Embedding Predictive Architecture (JEPA) and a novel loss promoting informative, temporally stable embeddings; latent-space prediction encourages robustness to sensor noise while description-aware gating provides interpretability through learned inter-channel relationships. Across anomaly detection, classification, and short- and long-term forecasting, the learned embeddings achieve strong performance using only a linear probe. Performance is driven primarily by the JEPA objective and conditioning architecture, with text descriptions serving as channel identifiers for cross-dataset generalization.",
+          "urls": {
+            "arxiv": "https://arxiv.org/abs/2605.31580v1",
+            "pdf": "https://arxiv.org/pdf/2605.31580v1",
+            "paper": "https://arxiv.org/abs/2605.31580v1"
+          },
+          "search_sets_raw": [
+            "A"
+          ],
+          "search_sets_final": [
+            "A"
+          ],
+          "filter_bucket": "th_cpl_a",
+          "matched_venue": "ICML",
+          "matched_th_cpl_level": "A",
+          "matched_th_cpl_area": "Artificial Intelligence and Pattern Recognition",
+          "category": "Embedded AI Applications",
+          "llm_tags": [],
+          "forced_tags": [],
+          "final_tags": [],
+          "cited_by": 0,
+          "is_preprint_on_arxiv": false,
+          "preprint_source": "",
+          "journal_ref": "",
+          "doi": "",
+          "arxiv_comment": "",
+          "arxiv_id": "2605.31580v1",
+          "raw_venue": "",
+          "venue_source": "",
+          "sort_key": 202600,
+          "download": {
+            "status": "pending",
+            "source": null,
+            "path": null,
+            "last_attempt_at": null
+          }
+        },
+        {
           "id": "d2b5c874b4b76a655b80f7135764e39edadcd642",
           "title": "Gradient Scaling Effects in Adaptive Spectral PINNs for Stiff Nonlinear ODEs",
           "authors": [
@@ -18100,6 +18151,56 @@
           "doi": "",
           "arxiv_comment": "",
           "arxiv_id": "2605.11130v1",
+          "raw_venue": "",
+          "venue_source": "",
+          "sort_key": 202600,
+          "download": {
+            "status": "pending",
+            "source": null,
+            "path": null,
+            "last_attempt_at": null
+          }
+        },
+        {
+          "id": "02ed20b7b54c056981a525805139e2c06163084b",
+          "title": "How can embedding models bind concepts?",
+          "authors": [
+            "Arnas Uselis",
+            "Darina Koishigarina",
+            "Seong Joon Oh"
+          ],
+          "year": 2026,
+          "month": 5,
+          "source": "arxiv",
+          "venue": "ICML",
+          "venue_type": "conference",
+          "abstract": "Humans easily determine which color belongs to which shape in multi-object scenes, an ability known as concept binding. Vision-language embedding models such as CLIP struggle with binding: they recognize individual concepts but fail to represent which concepts form which objects. Although CLIP behaves like a bag-of-concepts model in cross-modal retrieval, object information is recoverable from its image and text embeddings separately. We study this tension through the binding function, which maps concepts to scene embeddings. We find that scene embeddings decompose additively into object representations, explaining why uni-modal probes can recover object information. However, CLIP's binding function is high-complexity, which likely prevents the image and text encoders from learning a shared binding mechanism that generalizes to unseen concept combinations. We then ask whether this limitation is fundamental. We show that it is not. In controlled transformer models trained from scratch, binding generalization emerges with sufficient data coverage. These models learn low-complexity binding functions characterized by multiplicative interactions between concepts, enabling systematic generalization. Code is publicly available at https://github.com/oshapio/binding-concepts-complexity.",
+          "urls": {
+            "arxiv": "https://arxiv.org/abs/2605.31503v1",
+            "pdf": "https://arxiv.org/pdf/2605.31503v1",
+            "paper": "https://arxiv.org/abs/2605.31503v1"
+          },
+          "search_sets_raw": [
+            "A"
+          ],
+          "search_sets_final": [
+            "A"
+          ],
+          "filter_bucket": "th_cpl_a",
+          "matched_venue": "ICML",
+          "matched_th_cpl_level": "A",
+          "matched_th_cpl_area": "Artificial Intelligence and Pattern Recognition",
+          "category": "Embedded AI Applications",
+          "llm_tags": [],
+          "forced_tags": [],
+          "final_tags": [],
+          "cited_by": 0,
+          "is_preprint_on_arxiv": false,
+          "preprint_source": "",
+          "journal_ref": "",
+          "doi": "",
+          "arxiv_comment": "",
+          "arxiv_id": "2605.31503v1",
           "raw_venue": "",
           "venue_source": "",
           "sort_key": 202600,
