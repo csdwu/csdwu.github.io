@@ -204,6 +204,17 @@
   abstract = {Tabular data have been playing a mostly important role in diverse real-world fields, such as healthcare, engineering, finance, etc. The recent success of deep learning has fostered many deep networks (e.g., Transformer, ResNet) based tabular learning methods. Generally, existing deep tabular machine learning methods are along with the two paradigms, i.e., in-learning and pre-learning. In-learning methods need to train networks from scratch or impose extra constraints to regulate the representations which nonetheless train multiple tasks simultaneously and make learning more difficult, while pre-learning methods design several pretext tasks for pre-training and then conduct task-specific fine-tuning, which however need much extra training effort with prior knowledge. In this paper, we introduce a novel deep Tabular Representation Corrector, TRC, to enhance any trained deep tabular model's representations without altering its parameters in a model-agnostic manner. Specifically, targeting the representation shift and representation redundancy that hinder prediction, we propose two tasks, i.e., (i) Tabular Representation Re-estimation, that involves training a shift estimator to calculate the inherent shift of tabular representations to subsequently mitigate it, thereby re-estimating the representations and (ii) Tabular Space Mapping, that transforms the above re-estimated representations into a light-embedding vector space via a coordinate estimator while preserves crucial predictive information to minimize redundancy. The two tasks jointly enhance the representations of deep tabular models without touching on the original models thus enjoying high efficiency. Finally, we conduct extensive experiments on state-of-the-art deep tabular machine learning models coupled with TRC on various tabular benchmarks which have shown consistent superiority.}
 }
 
+@article{hasanebrahimi2026-density-aware-translation-of-bd98e6f5,
+  author = {Afsaneh Hasanebrahimi and Hanxun Huang and Christopher Leckie and Sarah Erfani},
+  title = {Density-Aware Translation of Spurious Correlations in Zero-Shot VLMs},
+  year = {2026},
+  journal = {ICML},
+  eprint = {2606.01710v1},
+  archivePrefix = {arXiv},
+  url = {https://arxiv.org/abs/2606.01710v1},
+  abstract = {Vision-Language models (VLMs), such as CLIP, achieve powerful zero-shot classification. However, their predictions remain sensitive to spurious correlations, where contextual cues dominate over semantic content. Earlier solutions typically rely on fine-tuning or prompt engineering, which either undermine the advantages of pre-trained models or are prone to hallucination. In this work, we propose Density-Aware Translation (DAT) that refines image-text similarity scores using a local geometric density term derived from group reference sets. Our approach is motivated by the phenomenon that CLIP embeddings exhibit a modality gap and lie on an anisotropic shell in the feature space: common patterns cluster near the mean, while rare patterns are pushed outward. This geometry creates uneven alignment, where spurious correlations are amplified while semantically meaningful but rare cues are marginalised. To address this, we employ a relative measure to rescale similarities based on embedding density, suppressing overconfident scores in diffuse regions while preserving dense, semantically consistent matches. Experimental results on benchmark datasets demonstrate consistent improvements in worst-group and average accuracy, highlighting density-aware translation as a simple and effective calibration mechanism for reliable zero-shot classification using multimodal models.}
+}
+
 @article{bank2026-design-os-a-specification-e9995661,
   author = {H. Sinan Bank and Daniel R. Herber and Thomas H. Bradley},
   title = {Design-OS: A Specification-Driven Framework for Engineering System Design with a Control-Systems Design Case},
@@ -434,6 +445,17 @@
   abstract = {Accurate biodiversity identification from large-scale field data is a foundational problem with direct impact on ecology, conservation, and environmental monitoring. In practice, the core task is taxonomic prediction - inferring order, family, genus, or species from imperfect inputs such as specimen images, DNA barcodes, or both. Existing multimodal methods often treat taxonomy as a flat label space and therefore fail to encode the hierarchical structure of biological classification, which is critical for robustness under noise and missing modalities. We present two end-to-end variants for hierarchy-aware multimodal learning: CLiBD-HiR, which introduces Hierarchical Information Regularization (HiR) to shape embedding geometry across taxonomic levels, yielding structured and noise-robust representations; and CLiBD-HiR-Fuse, which additionally trains a lightweight fusion predictor that supports image-only, DNA-only, or joint inference and is resilient to modality corruption. Across large-scale biodiversity benchmarks, our approach improves taxonomic classification accuracy by over 14 percent compared to strong multimodal baselines, with particularly large gains under partial and corrupted DNA conditions. These results highlight that explicitly encoding biological hierarchy, together with flexible fusion, is key for practical biodiversity foundation models.}
 }
 
+@article{gaukstad2026-learning-coherent-representations-a-92624f22,
+  author = {Sigurd Gaukstad and Melvin Vaupel and Valdemar Kargård Olsen and Erik Hermansen and Benjamin Dunn},
+  title = {Learning Coherent Representations: A Topological Approach to Interpretability},
+  year = {2026},
+  journal = {ICML},
+  eprint = {2606.02841v1},
+  archivePrefix = {arXiv},
+  url = {https://arxiv.org/abs/2606.02841v1},
+  abstract = {Deep neural networks learn representations where individual features often lack interpretable meaning; a single neuron may activate for scattered, unrelated inputs. We introduce coherence, a geometric property inspired by neural coding in the brain, where neurons like grid cells and head direction cells respond to contiguous regions of state space. A non-negative matrix is coherent if each row (sample) attends to geometrically clustered columns (features) and vice versa, and in addition every sample is well described by some feature and every feature is needed by some sample. We prove that coherent matrices induce a bounded interleaving between the Vietoris-Rips filtrations of samples and features, guaranteeing that both spaces share compatible topological structure. This geometric constraint facilitates interpretability. For example, if data lies on a circle, coherent features must tile that circle into contiguous arcs. We introduce Coh, a differentiable objective function based on Fréchet variance that enforces coherence during training. Unlike sparsity, which bounds how many samples a feature activates on, coherence bounds which samples, requiring geometric connectivity rather than only rarity. This yields not just interpretable features but an interpretable feature space. We validate Coh in an auto-encoder using synthetic and rotated MNIST datasets and in a token embedding of BERT using language data.}
+}
+
 @article{formal2026-learning-retrieval-models-with-f3e62918,
   author = {Thibault Formal and Maxime Louis and Hervé Dejean and Stéphane Clinchant},
   title = {Learning Retrieval Models with Sparse Autoencoders},
@@ -509,6 +531,17 @@
   archivePrefix = {arXiv},
   url = {https://arxiv.org/abs/2602.01359v1},
   abstract = {Although recent studies on time-series anomaly detection have increasingly adopted ever-larger neural network architectures such as transformers and foundation models, they incur high computational costs and memory usage, making them impractical for real-time and resource-constrained scenarios. Moreover, they often fail to demonstrate significant performance gains over simpler methods under rigorous evaluation protocols. In this study, we propose Patch-based representation learning for time-series Anomaly detection (PaAno), a lightweight yet effective method for fast and efficient time-series anomaly detection. PaAno extracts short temporal patches from time-series training data and uses a 1D convolutional neural network to embed each patch into a vector representation. The model is trained using a combination of triplet loss and pretext loss to ensure the embeddings capture informative temporal patterns from input patches. During inference, the anomaly score at each time step is computed by comparing the embeddings of its surrounding patches to those of normal patches extracted from the training time-series. Evaluated on the TSB-AD benchmark, PaAno achieved state-of-the-art performance, significantly outperforming existing methods, including those based on heavy architectures, on both univariate and multivariate time-series anomaly detection across various range-wise and point-wise performance measures.}
+}
+
+@article{liu2026-pacx-mae-physiology-augmented-01589994,
+  author = {Yancheng Liu and Kenichi Maeda and Manan Pancholy},
+  title = {PaCX-MAE: Physiology-Augmented Chest X-Ray Masked Autoencoder},
+  year = {2026},
+  journal = {ICML},
+  eprint = {2606.01537v1},
+  archivePrefix = {arXiv},
+  url = {https://arxiv.org/abs/2606.01537v1},
+  abstract = {Clinical diagnosis often requires combining imaging with physiological measurements, yet deployed models typically operate on unimodal data. We present PaCX-MAE, a cross-modal distillation framework that injects physiological priors into chest X-ray (CXR) encoders while remaining strictly unimodal at inference. PaCX-MAE augments in-domain masked autoencoding with a dual contrastive-predictive objective, aligning CXR representations with paired ECG and laboratory embeddings. Extensive evaluation across nine benchmarks demonstrates consistent improvements over domain-specific MAE, particularly on physiology-dependent tasks (e.g., +2.7 AUROC on MedMod; +6.5 F1 on VinDr). The method proves highly label-efficient in the 1% regime and preserves anatomical fidelity, achieving parity with MAE on segmentation tasks. Zero-shot and attention analyses confirm that PaCX-MAE successfully learns to attend to physiological indicators, such as the cardiac silhouette, absent in standard visual pretraining.}
 }
 
 @article{lou2026-parameta-towards-learning-disentangled-a7852458,

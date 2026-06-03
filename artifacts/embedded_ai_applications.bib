@@ -1,3 +1,14 @@
+@article{khoriaty2026-i-ve-seen-how-22449c95,
+  author = {Matthew Khoriaty and David Williams-King and Shi Feng},
+  title = {"I've Seen How This Goes": Characterizing Diversity via Progressive Conditional Surprise},
+  year = {2026},
+  journal = {ICML},
+  eprint = {2606.01811v1},
+  archivePrefix = {arXiv},
+  url = {https://arxiv.org/abs/2606.01811v1},
+  abstract = {Measuring the diversity of creative outputs is central to evaluating post-training mode collapse, comparing decoding strategies, and quantifying creative behavior in both AI and human writing. We propose a new approach to measuring diversity using in-context learning, of which the ``Decan'' metric, $D_\{Ca_n\} = C \\times a_n$, is the working instance we evaluate: a per-byte score read off the per-token log-probabilities of a base model $θ$ in a \\emph\{single forward pass\} per permutation, with no embedding model, no reference corpus, and no human labels. This approach is grounded in information theory, makes use of language model in-context learning to detect a wide range of similarities between any number of inputs, and obviates the need to train a special-purpose model. The same pipeline scores AI samples and human-written response sets, with diversity treated as a property of (responses, prompt, scoring model). On Tevet and Berant's human-grounded McDiv benchmark, $D_\{Ca_n\}$ reaches OCA 0.846 on the McDiv prompt\\_gen set where it performs best, behind the strongest neural baseline reported in Tevet and Berant (SentBERT, 0.897). On the OLMo-2-7B post-training pipeline, $D_\{Ca_n\}$ drops monotonically across the base $\\to$ SFT $\\to$ DPO $\\to$ RLVR stages, detecting the type of diversity loss that creative-writing applications care about.}
+}
+
 @article{tyvodar2026-a-constant-time-implementation-e41c19c0,
   author = {Andrii Tyvodar and Andreas Rechberger and Dirmanto Jap and Shivam Bhasin and Bernhard Jungk and Jakub Breier and Xiaolu Hou},
   title = {A Constant-Time Implementation Methodology for Activation Functions on Microcontrollers},
@@ -353,6 +364,17 @@
   archivePrefix = {arXiv},
   url = {https://arxiv.org/abs/2604.00911v1},
   abstract = {In this work, we study whether enforcing strict compositional structure in sequence embeddings yields meaningful geometric organization when applied to protein-protein interaction networks. Using Event2Vec, an additive sequence embedding model, we train 64-dimensional representations on random walks from the human STRING interactome, and compare against a DeepWalk baseline based on Word2Vec, trained on the same walks. We find that compositional structure substantially improves pathway coherence (30.2$\\times$ vs 2.9$\\times$ above random), functional analogy accuracy (mean similarity 0.966 vs 0.650), and hierarchical pathway organization, while geometric properties such as norm--degree anticorrelation are shared with or exceeded by the non-compositional baseline. These results indicate that enforced compositionality specifically benefits relational and compositional reasoning tasks in biological networks.}
+}
+
+@article{feng2026-explainable-forensics-of-manipulated-616f5f59,
+  author = {Yue Feng and Jingjing Li and Qijia Lu and Wei Ji and Jingrou Zhang and Fei Shen and Xiao Li and Yizhen Jia and Qiang Chen and Limin Wang and Wentong Li and Jie Qin},
+  title = {Explainable Forensics of Manipulated Segments in Untrimmed Long Videos},
+  year = {2026},
+  journal = {ICML},
+  eprint = {2606.02402v1},
+  archivePrefix = {arXiv},
+  url = {https://arxiv.org/abs/2606.02402v1},
+  abstract = {The rapid advancement of AI-driven video generation has transformed content creation, while simultaneously increasing the risk of misinformation through localized manipulations in long-form videos. Existing video forensic methods predominantly operate on short, independent clips, and thus fail to capture realistic scenarios where AI-generated content is sparsely embedded within otherwise authentic footage. To bridge this gap, we formulate the task of Temporal AI-Generated Segment Localization and Explanation, which targets authenticity detection, temporal localization, and interpretable analysis of manipulated segments in untrimmed long videos. We further introduce TASLE, a large-scale benchmark comprising 12,472 untrimmed videos with diverse manipulation patterns and rich annotation signals, including temporal boundaries, authenticity labels, and segment-level rationales. In addition, we propose MSLoc, a coarse-to-fine forensic baseline that combines a boundary-sensitive proposal generation module for efficient long-video scanning with an MLLM-based refinement module for precise boundary localization and interpretable reasoning. Experiments validate the effectiveness of the proposed baseline, highlighting the importance of segment-level explainable forensics for long-form AI-generated video analysis. Our dataset and code are publicly available at https://debby-0527.github.io/TASLE.}
 }
 
 @article{kamaldar2026-extracting-exact-lie-derivatives-5f1ff351,
@@ -1000,6 +1022,17 @@
   archivePrefix = {arXiv},
   url = {https://arxiv.org/abs/2603.13227v1},
   abstract = {Machine learning approaches to spatiotemporal physical systems have primarily focused on next-frame prediction, with the goal of learning an accurate emulator for the system's evolution in time. However, these emulators are computationally expensive to train and are subject to performance pitfalls, such as compounding errors during autoregressive rollout. In this work, we take a different perspective and look at scientific tasks further downstream of predicting the next frame, such as estimation of a system's governing physical parameters. Accuracy on these tasks offers a uniquely quantifiable glimpse into the physical relevance of the representations of these models. We evaluate the effectiveness of general-purpose self-supervised methods in learning physics-grounded representations that are useful for downstream scientific tasks. Surprisingly, we find that not all methods designed for physical modeling outperform generic self-supervised learning methods on these tasks, and methods that learn in the latent space (e.g., joint embedding predictive architectures, or JEPAs) outperform those optimizing pixel-level prediction objectives. Code is available at https://github.com/helenqu/physical-representation-learning.}
+}
+
+@article{guha2026-representational-capacity-geometric-limits-324467be,
+  author = {Alexander Guha},
+  title = {Representational Capacity: Geometric Limits on Feature Representation in Transformer Language Models},
+  year = {2026},
+  journal = {NeurIPS},
+  eprint = {2606.02765v1},
+  archivePrefix = {arXiv},
+  url = {https://arxiv.org/abs/2606.02765v1},
+  abstract = {Model dimension ($d_\{model\}$) is a fundamental hyperparameter in transformer language models, yet its role in setting the geometric limits of feature representation remains under-explored. Grounded in the Linear Representation and Superposition Hypotheses - which propose that models encode features as near-orthogonal directions in latent space - we develop a framework for estimating how many such directions a model can support. We first establish the embedding matrix as a measurable proxy for near-orthogonality constraints across the latent space: the boundary between meaningful token relationships and incidental similarity in the pairwise cosine similarity distribution gives a concrete estimate of the model's accepted deviation $\\varepsilon$ from perfect orthogonality. Applying this metric across dozens of open-source models reveals two classes: models with high $\\varepsilon$ whose embeddings lack near-orthogonal structure, and models with low $\\varepsilon$ that maintain it. We then show that the standard Johnson-Lindenstrauss lemma greatly underestimates the packing efficiency of trained representations, and derive an adjusted capacity formula in which the number of near-orthogonal directions depends on the ratio of vectors to dimensions ($k/d$) rather than the raw count - a single modification that cuts prediction error by two orders of magnitude with no extra parameters. Combining these results, we define representational capacity as an upper bound on the number of distinguishable directions available for features and embeddings in a model's latent space. Capacity is exponentially sensitive to $\\varepsilon$, and larger models favor tighter orthogonality constraints over maximizing raw capacity - a pattern compatible with several explanations (a stability-capacity trade-off, a ceiling on usable concepts, or confounds with model scale) that we leave to future work.}
 }
 
 @article{zhang2026-rethinking-code-similarity-for-2a73a5fe,

@@ -1,6 +1,6 @@
 {
   "version": "2.0.0",
-  "generated_at": "2026-06-01T03:30:10.741Z",
+  "generated_at": "2026-06-03T03:35:00.810Z",
   "query_groups": {
     "A": "\"embedded ai\"",
     "B": "(\"low power\" OR \"ultra-low-power\") \"embedded ai\"",
@@ -8,24 +8,24 @@
   },
   "stats": {
     "raw_counts": {
-      "A": 23,
-      "B": 0,
-      "C": 0
+      "A": 50,
+      "B": 3,
+      "C": 3
     },
     "after_set_ops": {
-      "A_only": 23,
-      "B": 0,
-      "C": 0,
-      "merged_total": 23,
-      "bc_overlap": 0
+      "A_only": 46,
+      "B": 3,
+      "C": 3,
+      "merged_total": 51,
+      "bc_overlap": 1
     },
-    "after_filter": 811,
+    "after_filter": 817,
     "classification": {
-      "total": 811,
+      "total": 817,
       "by_category": {
-        "Efficient Model Design and Optimization": 257,
+        "Efficient Model Design and Optimization": 260,
         "Novel Computing Architectures and Domain-Specific Accelerators": 39,
-        "Embedded AI Applications": 515
+        "Embedded AI Applications": 518
       },
       "by_tag": {
         "TinyML": 49,
@@ -35,14 +35,14 @@
       "by_provider": {
         "tencent_tokenhub": 0,
         "heuristic": 0,
-        "heuristic_fallback": 811
+        "heuristic_fallback": 817
       }
     },
     "source_stats": {
-      "total": 811,
+      "total": 817,
       "by_group": {
         "A": {
-          "total": 674,
+          "total": 680,
           "arxiv": 0,
           "venues": {
             "AAAI": 90,
@@ -168,7 +168,7 @@
             "ICIP": 0,
             "ICLR": 159,
             "ICMI": 0,
-            "ICML": 104,
+            "ICML": 109,
             "ICMR": 0,
             "ICN": 0,
             "ICNP": 0,
@@ -257,7 +257,7 @@
             "NOSSDAV": 0,
             "NSDI": 0,
             "Networking": 0,
-            "NeurIPS": 189,
+            "NeurIPS": 190,
             "OOPSLA": 0,
             "OSDI": 0,
             "PACT": 0,
@@ -1539,7 +1539,7 @@
         }
       },
       "total_summary": {
-        "total": 826,
+        "total": 832,
         "arxiv": 121,
         "venues": {
           "AAAI": 90,
@@ -1665,7 +1665,7 @@
           "ICIP": 0,
           "ICLR": 160,
           "ICMI": 0,
-          "ICML": 106,
+          "ICML": 111,
           "ICMR": 0,
           "ICN": 0,
           "ICNP": 0,
@@ -1754,7 +1754,7 @@
           "NOSSDAV": 0,
           "NSDI": 0,
           "Networking": 0,
-          "NeurIPS": 190,
+          "NeurIPS": 191,
           "OOPSLA": 0,
           "OSDI": 0,
           "PACT": 0,
@@ -1918,8 +1918,161 @@
     {
       "key": "efficient_model_design",
       "title": "Efficient Model Design and Optimization",
-      "count": 257,
+      "count": 260,
       "papers": [
+        {
+          "id": "3b9cf83b0afb286c0b1a0dcc692a3ea7f1aec66c",
+          "title": "Density-Aware Translation of Spurious Correlations in Zero-Shot VLMs",
+          "authors": [
+            "Afsaneh Hasanebrahimi",
+            "Hanxun Huang",
+            "Christopher Leckie",
+            "Sarah Erfani"
+          ],
+          "year": 2026,
+          "month": 6,
+          "source": "arxiv",
+          "venue": "ICML",
+          "venue_type": "conference",
+          "abstract": "Vision-Language models (VLMs), such as CLIP, achieve powerful zero-shot classification. However, their predictions remain sensitive to spurious correlations, where contextual cues dominate over semantic content. Earlier solutions typically rely on fine-tuning or prompt engineering, which either undermine the advantages of pre-trained models or are prone to hallucination. In this work, we propose Density-Aware Translation (DAT) that refines image-text similarity scores using a local geometric density term derived from group reference sets. Our approach is motivated by the phenomenon that CLIP embeddings exhibit a modality gap and lie on an anisotropic shell in the feature space: common patterns cluster near the mean, while rare patterns are pushed outward. This geometry creates uneven alignment, where spurious correlations are amplified while semantically meaningful but rare cues are marginalised. To address this, we employ a relative measure to rescale similarities based on embedding density, suppressing overconfident scores in diffuse regions while preserving dense, semantically consistent matches. Experimental results on benchmark datasets demonstrate consistent improvements in worst-group and average accuracy, highlighting density-aware translation as a simple and effective calibration mechanism for reliable zero-shot classification using multimodal models.",
+          "urls": {
+            "arxiv": "https://arxiv.org/abs/2606.01710v1",
+            "pdf": "https://arxiv.org/pdf/2606.01710v1",
+            "paper": "https://arxiv.org/abs/2606.01710v1"
+          },
+          "search_sets_raw": [
+            "A"
+          ],
+          "search_sets_final": [
+            "A"
+          ],
+          "filter_bucket": "th_cpl_a",
+          "matched_venue": "ICML",
+          "matched_th_cpl_level": "A",
+          "matched_th_cpl_area": "Artificial Intelligence and Pattern Recognition",
+          "category": "Efficient Model Design and Optimization",
+          "llm_tags": [],
+          "forced_tags": [],
+          "final_tags": [],
+          "cited_by": 0,
+          "is_preprint_on_arxiv": false,
+          "preprint_source": "",
+          "journal_ref": "",
+          "doi": "",
+          "arxiv_comment": "",
+          "arxiv_id": "2606.01710v1",
+          "raw_venue": "",
+          "venue_source": "",
+          "sort_key": 202600,
+          "download": {
+            "status": "pending",
+            "source": null,
+            "path": null,
+            "last_attempt_at": null
+          }
+        },
+        {
+          "id": "9360afc0cec1caf3ae83ecf2dccd740850979825",
+          "title": "Learning Coherent Representations: A Topological Approach to Interpretability",
+          "authors": [
+            "Sigurd Gaukstad",
+            "Melvin Vaupel",
+            "Valdemar Kargård Olsen",
+            "Erik Hermansen",
+            "Benjamin Dunn"
+          ],
+          "year": 2026,
+          "month": 6,
+          "source": "arxiv",
+          "venue": "ICML",
+          "venue_type": "conference",
+          "abstract": "Deep neural networks learn representations where individual features often lack interpretable meaning; a single neuron may activate for scattered, unrelated inputs. We introduce coherence, a geometric property inspired by neural coding in the brain, where neurons like grid cells and head direction cells respond to contiguous regions of state space. A non-negative matrix is coherent if each row (sample) attends to geometrically clustered columns (features) and vice versa, and in addition every sample is well described by some feature and every feature is needed by some sample. We prove that coherent matrices induce a bounded interleaving between the Vietoris-Rips filtrations of samples and features, guaranteeing that both spaces share compatible topological structure. This geometric constraint facilitates interpretability. For example, if data lies on a circle, coherent features must tile that circle into contiguous arcs. We introduce Coh, a differentiable objective function based on Fréchet variance that enforces coherence during training. Unlike sparsity, which bounds how many samples a feature activates on, coherence bounds which samples, requiring geometric connectivity rather than only rarity. This yields not just interpretable features but an interpretable feature space. We validate Coh in an auto-encoder using synthetic and rotated MNIST datasets and in a token embedding of BERT using language data.",
+          "urls": {
+            "arxiv": "https://arxiv.org/abs/2606.02841v1",
+            "pdf": "https://arxiv.org/pdf/2606.02841v1",
+            "paper": "https://arxiv.org/abs/2606.02841v1"
+          },
+          "search_sets_raw": [
+            "A"
+          ],
+          "search_sets_final": [
+            "A"
+          ],
+          "filter_bucket": "th_cpl_a",
+          "matched_venue": "ICML",
+          "matched_th_cpl_level": "A",
+          "matched_th_cpl_area": "Artificial Intelligence and Pattern Recognition",
+          "category": "Efficient Model Design and Optimization",
+          "llm_tags": [],
+          "forced_tags": [],
+          "final_tags": [],
+          "cited_by": 0,
+          "is_preprint_on_arxiv": false,
+          "preprint_source": "",
+          "journal_ref": "",
+          "doi": "",
+          "arxiv_comment": "",
+          "arxiv_id": "2606.02841v1",
+          "raw_venue": "",
+          "venue_source": "",
+          "sort_key": 202600,
+          "download": {
+            "status": "pending",
+            "source": null,
+            "path": null,
+            "last_attempt_at": null
+          }
+        },
+        {
+          "id": "fc1569338ddd797fd6c3f47b3ff8792199ae108c",
+          "title": "PaCX-MAE: Physiology-Augmented Chest X-Ray Masked Autoencoder",
+          "authors": [
+            "Yancheng Liu",
+            "Kenichi Maeda",
+            "Manan Pancholy"
+          ],
+          "year": 2026,
+          "month": 6,
+          "source": "arxiv",
+          "venue": "ICML",
+          "venue_type": "conference",
+          "abstract": "Clinical diagnosis often requires combining imaging with physiological measurements, yet deployed models typically operate on unimodal data. We present PaCX-MAE, a cross-modal distillation framework that injects physiological priors into chest X-ray (CXR) encoders while remaining strictly unimodal at inference. PaCX-MAE augments in-domain masked autoencoding with a dual contrastive-predictive objective, aligning CXR representations with paired ECG and laboratory embeddings. Extensive evaluation across nine benchmarks demonstrates consistent improvements over domain-specific MAE, particularly on physiology-dependent tasks (e.g., +2.7 AUROC on MedMod; +6.5 F1 on VinDr). The method proves highly label-efficient in the 1% regime and preserves anatomical fidelity, achieving parity with MAE on segmentation tasks. Zero-shot and attention analyses confirm that PaCX-MAE successfully learns to attend to physiological indicators, such as the cardiac silhouette, absent in standard visual pretraining.",
+          "urls": {
+            "arxiv": "https://arxiv.org/abs/2606.01537v1",
+            "pdf": "https://arxiv.org/pdf/2606.01537v1",
+            "paper": "https://arxiv.org/abs/2606.01537v1"
+          },
+          "search_sets_raw": [
+            "A"
+          ],
+          "search_sets_final": [
+            "A"
+          ],
+          "filter_bucket": "th_cpl_a",
+          "matched_venue": "ICML",
+          "matched_th_cpl_level": "A",
+          "matched_th_cpl_area": "Artificial Intelligence and Pattern Recognition",
+          "category": "Efficient Model Design and Optimization",
+          "llm_tags": [],
+          "forced_tags": [],
+          "final_tags": [],
+          "cited_by": 0,
+          "is_preprint_on_arxiv": false,
+          "preprint_source": "",
+          "journal_ref": "",
+          "doi": "",
+          "arxiv_comment": "",
+          "arxiv_id": "2606.01537v1",
+          "raw_venue": "",
+          "venue_source": "",
+          "sort_key": 202600,
+          "download": {
+            "status": "pending",
+            "source": null,
+            "path": null,
+            "last_attempt_at": null
+          }
+        },
         {
           "id": "9ca5964c4780fbf3af33ac177f80d81f1ddbd790",
           "title": "AREA: Attribute Extraction and Aggregation for CLIP-Based Class-Incremental Learning",
@@ -17629,8 +17782,165 @@
     {
       "key": "embedded_ai_applications",
       "title": "Embedded AI Applications",
-      "count": 515,
+      "count": 518,
       "papers": [
+        {
+          "id": "d103ead51da993c73537e967f22d71ee8df11af2",
+          "title": "\"I've Seen How This Goes\": Characterizing Diversity via Progressive Conditional Surprise",
+          "authors": [
+            "Matthew Khoriaty",
+            "David Williams-King",
+            "Shi Feng"
+          ],
+          "year": 2026,
+          "month": 6,
+          "source": "arxiv",
+          "venue": "ICML",
+          "venue_type": "conference",
+          "abstract": "Measuring the diversity of creative outputs is central to evaluating post-training mode collapse, comparing decoding strategies, and quantifying creative behavior in both AI and human writing. We propose a new approach to measuring diversity using in-context learning, of which the ``Decan'' metric, $D_{Ca_n} = C \\times a_n$, is the working instance we evaluate: a per-byte score read off the per-token log-probabilities of a base model $θ$ in a \\emph{single forward pass} per permutation, with no embedding model, no reference corpus, and no human labels. This approach is grounded in information theory, makes use of language model in-context learning to detect a wide range of similarities between any number of inputs, and obviates the need to train a special-purpose model. The same pipeline scores AI samples and human-written response sets, with diversity treated as a property of (responses, prompt, scoring model). On Tevet and Berant's human-grounded McDiv benchmark, $D_{Ca_n}$ reaches OCA 0.846 on the McDiv prompt\\_gen set where it performs best, behind the strongest neural baseline reported in Tevet and Berant (SentBERT, 0.897). On the OLMo-2-7B post-training pipeline, $D_{Ca_n}$ drops monotonically across the base $\\to$ SFT $\\to$ DPO $\\to$ RLVR stages, detecting the type of diversity loss that creative-writing applications care about.",
+          "urls": {
+            "arxiv": "https://arxiv.org/abs/2606.01811v1",
+            "pdf": "https://arxiv.org/pdf/2606.01811v1",
+            "paper": "https://arxiv.org/abs/2606.01811v1"
+          },
+          "search_sets_raw": [
+            "A"
+          ],
+          "search_sets_final": [
+            "A"
+          ],
+          "filter_bucket": "th_cpl_a",
+          "matched_venue": "ICML",
+          "matched_th_cpl_level": "A",
+          "matched_th_cpl_area": "Artificial Intelligence and Pattern Recognition",
+          "category": "Embedded AI Applications",
+          "llm_tags": [],
+          "forced_tags": [],
+          "final_tags": [],
+          "cited_by": 0,
+          "is_preprint_on_arxiv": false,
+          "preprint_source": "",
+          "journal_ref": "",
+          "doi": "",
+          "arxiv_comment": "",
+          "arxiv_id": "2606.01811v1",
+          "raw_venue": "",
+          "venue_source": "",
+          "sort_key": 202600,
+          "download": {
+            "status": "pending",
+            "source": null,
+            "path": null,
+            "last_attempt_at": null
+          }
+        },
+        {
+          "id": "5324c8213f6efa4b776ab96ea5f6b6bd6b532250",
+          "title": "Explainable Forensics of Manipulated Segments in Untrimmed Long Videos",
+          "authors": [
+            "Yue Feng",
+            "Jingjing Li",
+            "Qijia Lu",
+            "Wei Ji",
+            "Jingrou Zhang",
+            "Fei Shen",
+            "Xiao Li",
+            "Yizhen Jia",
+            "Qiang Chen",
+            "Limin Wang",
+            "Wentong Li",
+            "Jie Qin"
+          ],
+          "year": 2026,
+          "month": 6,
+          "source": "arxiv",
+          "venue": "ICML",
+          "venue_type": "conference",
+          "abstract": "The rapid advancement of AI-driven video generation has transformed content creation, while simultaneously increasing the risk of misinformation through localized manipulations in long-form videos. Existing video forensic methods predominantly operate on short, independent clips, and thus fail to capture realistic scenarios where AI-generated content is sparsely embedded within otherwise authentic footage. To bridge this gap, we formulate the task of Temporal AI-Generated Segment Localization and Explanation, which targets authenticity detection, temporal localization, and interpretable analysis of manipulated segments in untrimmed long videos. We further introduce TASLE, a large-scale benchmark comprising 12,472 untrimmed videos with diverse manipulation patterns and rich annotation signals, including temporal boundaries, authenticity labels, and segment-level rationales. In addition, we propose MSLoc, a coarse-to-fine forensic baseline that combines a boundary-sensitive proposal generation module for efficient long-video scanning with an MLLM-based refinement module for precise boundary localization and interpretable reasoning. Experiments validate the effectiveness of the proposed baseline, highlighting the importance of segment-level explainable forensics for long-form AI-generated video analysis. Our dataset and code are publicly available at https://debby-0527.github.io/TASLE.",
+          "urls": {
+            "arxiv": "https://arxiv.org/abs/2606.02402v1",
+            "pdf": "https://arxiv.org/pdf/2606.02402v1",
+            "paper": "https://arxiv.org/abs/2606.02402v1"
+          },
+          "search_sets_raw": [
+            "A"
+          ],
+          "search_sets_final": [
+            "A"
+          ],
+          "filter_bucket": "th_cpl_a",
+          "matched_venue": "ICML",
+          "matched_th_cpl_level": "A",
+          "matched_th_cpl_area": "Artificial Intelligence and Pattern Recognition",
+          "category": "Embedded AI Applications",
+          "llm_tags": [],
+          "forced_tags": [],
+          "final_tags": [],
+          "cited_by": 0,
+          "is_preprint_on_arxiv": false,
+          "preprint_source": "",
+          "journal_ref": "",
+          "doi": "",
+          "arxiv_comment": "",
+          "arxiv_id": "2606.02402v1",
+          "raw_venue": "",
+          "venue_source": "",
+          "sort_key": 202600,
+          "download": {
+            "status": "pending",
+            "source": null,
+            "path": null,
+            "last_attempt_at": null
+          }
+        },
+        {
+          "id": "22f7e896c67049c6aded22a7ce61d08c84b91eb4",
+          "title": "Representational Capacity: Geometric Limits on Feature Representation in Transformer Language Models",
+          "authors": [
+            "Alexander Guha"
+          ],
+          "year": 2026,
+          "month": 6,
+          "source": "arxiv",
+          "venue": "NeurIPS",
+          "venue_type": "conference",
+          "abstract": "Model dimension ($d_{model}$) is a fundamental hyperparameter in transformer language models, yet its role in setting the geometric limits of feature representation remains under-explored. Grounded in the Linear Representation and Superposition Hypotheses - which propose that models encode features as near-orthogonal directions in latent space - we develop a framework for estimating how many such directions a model can support. We first establish the embedding matrix as a measurable proxy for near-orthogonality constraints across the latent space: the boundary between meaningful token relationships and incidental similarity in the pairwise cosine similarity distribution gives a concrete estimate of the model's accepted deviation $\\varepsilon$ from perfect orthogonality. Applying this metric across dozens of open-source models reveals two classes: models with high $\\varepsilon$ whose embeddings lack near-orthogonal structure, and models with low $\\varepsilon$ that maintain it. We then show that the standard Johnson-Lindenstrauss lemma greatly underestimates the packing efficiency of trained representations, and derive an adjusted capacity formula in which the number of near-orthogonal directions depends on the ratio of vectors to dimensions ($k/d$) rather than the raw count - a single modification that cuts prediction error by two orders of magnitude with no extra parameters. Combining these results, we define representational capacity as an upper bound on the number of distinguishable directions available for features and embeddings in a model's latent space. Capacity is exponentially sensitive to $\\varepsilon$, and larger models favor tighter orthogonality constraints over maximizing raw capacity - a pattern compatible with several explanations (a stability-capacity trade-off, a ceiling on usable concepts, or confounds with model scale) that we leave to future work.",
+          "urls": {
+            "arxiv": "https://arxiv.org/abs/2606.02765v1",
+            "pdf": "https://arxiv.org/pdf/2606.02765v1",
+            "paper": "https://arxiv.org/abs/2606.02765v1"
+          },
+          "search_sets_raw": [
+            "A"
+          ],
+          "search_sets_final": [
+            "A"
+          ],
+          "filter_bucket": "th_cpl_a",
+          "matched_venue": "NeurIPS",
+          "matched_th_cpl_level": "A",
+          "matched_th_cpl_area": "Artificial Intelligence and Pattern Recognition",
+          "category": "Embedded AI Applications",
+          "llm_tags": [],
+          "forced_tags": [],
+          "final_tags": [],
+          "cited_by": 0,
+          "is_preprint_on_arxiv": false,
+          "preprint_source": "",
+          "journal_ref": "",
+          "doi": "",
+          "arxiv_comment": "",
+          "arxiv_id": "2606.02765v1",
+          "raw_venue": "",
+          "venue_source": "",
+          "sort_key": 202600,
+          "download": {
+            "status": "pending",
+            "source": null,
+            "path": null,
+            "last_attempt_at": null
+          }
+        },
         {
           "id": "0b3f877ac9f54b038cbdfbdb95e9d20b78b6d1a9",
           "title": "A Constant-Time Implementation Methodology for Activation Functions on Microcontrollers",

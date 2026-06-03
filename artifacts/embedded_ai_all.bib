@@ -1,3 +1,14 @@
+@article{khoriaty2026-i-ve-seen-how-22449c95,
+  author = {Matthew Khoriaty and David Williams-King and Shi Feng},
+  title = {"I've Seen How This Goes": Characterizing Diversity via Progressive Conditional Surprise},
+  year = {2026},
+  journal = {ICML},
+  eprint = {2606.01811v1},
+  archivePrefix = {arXiv},
+  url = {https://arxiv.org/abs/2606.01811v1},
+  abstract = {Measuring the diversity of creative outputs is central to evaluating post-training mode collapse, comparing decoding strategies, and quantifying creative behavior in both AI and human writing. We propose a new approach to measuring diversity using in-context learning, of which the ``Decan'' metric, $D_\{Ca_n\} = C \\times a_n$, is the working instance we evaluate: a per-byte score read off the per-token log-probabilities of a base model $θ$ in a \\emph\{single forward pass\} per permutation, with no embedding model, no reference corpus, and no human labels. This approach is grounded in information theory, makes use of language model in-context learning to detect a wide range of similarities between any number of inputs, and obviates the need to train a special-purpose model. The same pipeline scores AI samples and human-written response sets, with diversity treated as a property of (responses, prompt, scoring model). On Tevet and Berant's human-grounded McDiv benchmark, $D_\{Ca_n\}$ reaches OCA 0.846 on the McDiv prompt\\_gen set where it performs best, behind the strongest neural baseline reported in Tevet and Berant (SentBERT, 0.897). On the OLMo-2-7B post-training pipeline, $D_\{Ca_n\}$ drops monotonically across the base $\\to$ SFT $\\to$ DPO $\\to$ RLVR stages, detecting the type of diversity loss that creative-writing applications care about.}
+}
+
 @article{tyvodar2026-a-constant-time-implementation-e41c19c0,
   author = {Andrii Tyvodar and Andreas Rechberger and Dirmanto Jap and Shivam Bhasin and Bernhard Jungk and Jakub Breier and Xiaolu Hou},
   title = {A Constant-Time Implementation Methodology for Activation Functions on Microcontrollers},
@@ -485,6 +496,17 @@
   abstract = {Deep learning models for medical data are typically trained using task specific objectives that encourage representations to collapse onto a small number of discriminative directions. While effective for individual prediction problems, this paradigm underutilizes the rich structure of clinical data and limits the transferability, stability, and interpretability of learned features. In this work, we propose dense feature learning, a representation centric framework that explicitly shapes the linear structure of medical embeddings. Our approach operates directly on embedding matrices, encouraging spectral balance, subspace consistency, and feature orthogonality through objectives defined entirely in terms of linear algebraic properties. Without relying on labels or generative reconstruction, dense feature learning produces representations with higher effective rank, improved conditioning, and greater stability across time. Empirical evaluations across longitudinal EHR data, clinical text, and multimodal patient representations demonstrate consistent improvements in downstream linear performance, robustness, and subspace alignment compared to supervised and self supervised baselines. These results suggest that learning to span clinical variation may be as important as learning to predict clinical outcomes, and position representation geometry as a first class objective in medical AI.}
 }
 
+@article{hasanebrahimi2026-density-aware-translation-of-bd98e6f5,
+  author = {Afsaneh Hasanebrahimi and Hanxun Huang and Christopher Leckie and Sarah Erfani},
+  title = {Density-Aware Translation of Spurious Correlations in Zero-Shot VLMs},
+  year = {2026},
+  journal = {ICML},
+  eprint = {2606.01710v1},
+  archivePrefix = {arXiv},
+  url = {https://arxiv.org/abs/2606.01710v1},
+  abstract = {Vision-Language models (VLMs), such as CLIP, achieve powerful zero-shot classification. However, their predictions remain sensitive to spurious correlations, where contextual cues dominate over semantic content. Earlier solutions typically rely on fine-tuning or prompt engineering, which either undermine the advantages of pre-trained models or are prone to hallucination. In this work, we propose Density-Aware Translation (DAT) that refines image-text similarity scores using a local geometric density term derived from group reference sets. Our approach is motivated by the phenomenon that CLIP embeddings exhibit a modality gap and lie on an anisotropic shell in the feature space: common patterns cluster near the mean, while rare patterns are pushed outward. This geometry creates uneven alignment, where spurious correlations are amplified while semantically meaningful but rare cues are marginalised. To address this, we employ a relative measure to rescale similarities based on embedding density, suppressing overconfident scores in diffuse regions while preserving dense, semantically consistent matches. Experimental results on benchmark datasets demonstrate consistent improvements in worst-group and average accuracy, highlighting density-aware translation as a simple and effective calibration mechanism for reliable zero-shot classification using multimodal models.}
+}
+
 @article{nguyen2026-design-and-quantitative-evaluation-e7ec79bd,
   author = {Manh-Dat Nguyen and Thomas Do and Nguyen Thanh Trung Le and Xuan-The Tran and Fred Chang and Chin-Teng Lin},
   title = {Design and Quantitative Evaluation of an Embedded EEG Instrumentation Platform for Real-Time SSVEP Decoding},
@@ -756,6 +778,17 @@
   archivePrefix = {arXiv},
   url = {https://arxiv.org/abs/2604.00911v1},
   abstract = {In this work, we study whether enforcing strict compositional structure in sequence embeddings yields meaningful geometric organization when applied to protein-protein interaction networks. Using Event2Vec, an additive sequence embedding model, we train 64-dimensional representations on random walks from the human STRING interactome, and compare against a DeepWalk baseline based on Word2Vec, trained on the same walks. We find that compositional structure substantially improves pathway coherence (30.2$\\times$ vs 2.9$\\times$ above random), functional analogy accuracy (mean similarity 0.966 vs 0.650), and hierarchical pathway organization, while geometric properties such as norm--degree anticorrelation are shared with or exceeded by the non-compositional baseline. These results indicate that enforced compositionality specifically benefits relational and compositional reasoning tasks in biological networks.}
+}
+
+@article{feng2026-explainable-forensics-of-manipulated-616f5f59,
+  author = {Yue Feng and Jingjing Li and Qijia Lu and Wei Ji and Jingrou Zhang and Fei Shen and Xiao Li and Yizhen Jia and Qiang Chen and Limin Wang and Wentong Li and Jie Qin},
+  title = {Explainable Forensics of Manipulated Segments in Untrimmed Long Videos},
+  year = {2026},
+  journal = {ICML},
+  eprint = {2606.02402v1},
+  archivePrefix = {arXiv},
+  url = {https://arxiv.org/abs/2606.02402v1},
+  abstract = {The rapid advancement of AI-driven video generation has transformed content creation, while simultaneously increasing the risk of misinformation through localized manipulations in long-form videos. Existing video forensic methods predominantly operate on short, independent clips, and thus fail to capture realistic scenarios where AI-generated content is sparsely embedded within otherwise authentic footage. To bridge this gap, we formulate the task of Temporal AI-Generated Segment Localization and Explanation, which targets authenticity detection, temporal localization, and interpretable analysis of manipulated segments in untrimmed long videos. We further introduce TASLE, a large-scale benchmark comprising 12,472 untrimmed videos with diverse manipulation patterns and rich annotation signals, including temporal boundaries, authenticity labels, and segment-level rationales. In addition, we propose MSLoc, a coarse-to-fine forensic baseline that combines a boundary-sensitive proposal generation module for efficient long-video scanning with an MLLM-based refinement module for precise boundary localization and interpretable reasoning. Experiments validate the effectiveness of the proposed baseline, highlighting the importance of segment-level explainable forensics for long-form AI-generated video analysis. Our dataset and code are publicly available at https://debby-0527.github.io/TASLE.}
 }
 
 @article{kamaldar2026-extracting-exact-lie-derivatives-5f1ff351,
@@ -1098,6 +1131,17 @@
   abstract = {Temporal Graph Neural Networks (TGNNs) aim to capture the evolving structure and timing of interactions in dynamic graphs. Although many models incorporate time through encodings or architectural design, they often compute attention over entangled node and edge representations, failing to reflect their distinct temporal behaviors. Node embeddings evolve slowly as they aggregate long-term structural context, while edge features reflect transient, timestamped interactions (e.g. messages, trades, or transactions). This mismatch results in semantic attention blurring, where attention weights cannot distinguish between slowly drifting node states and rapidly changing, information-rich edge interactions. As a result, models struggle to capture fine-grained temporal dependencies and provide limited transparency into how temporal relevance is computed. This paper introduces KEAT (Kernelized Edge Attention for Temporal Graphs), a novel attention formulation that modulates edge features using a family of continuous-time kernels, including Laplacian, RBF, and learnable MLP variant. KEAT preserves the distinct roles of nodes and edges, and integrates seamlessly with both Transformer-style (e.g., DyGFormer) and message-passing (e.g., TGN) architectures. It achieves up to 18% MRR improvement over the recent DyGFormer and 7% over TGN on link prediction tasks, enabling more accurate, interpretable and temporally aware message passing in TGNNs.}
 }
 
+@article{gaukstad2026-learning-coherent-representations-a-92624f22,
+  author = {Sigurd Gaukstad and Melvin Vaupel and Valdemar Kargård Olsen and Erik Hermansen and Benjamin Dunn},
+  title = {Learning Coherent Representations: A Topological Approach to Interpretability},
+  year = {2026},
+  journal = {ICML},
+  eprint = {2606.02841v1},
+  archivePrefix = {arXiv},
+  url = {https://arxiv.org/abs/2606.02841v1},
+  abstract = {Deep neural networks learn representations where individual features often lack interpretable meaning; a single neuron may activate for scattered, unrelated inputs. We introduce coherence, a geometric property inspired by neural coding in the brain, where neurons like grid cells and head direction cells respond to contiguous regions of state space. A non-negative matrix is coherent if each row (sample) attends to geometrically clustered columns (features) and vice versa, and in addition every sample is well described by some feature and every feature is needed by some sample. We prove that coherent matrices induce a bounded interleaving between the Vietoris-Rips filtrations of samples and features, guaranteeing that both spaces share compatible topological structure. This geometric constraint facilitates interpretability. For example, if data lies on a circle, coherent features must tile that circle into contiguous arcs. We introduce Coh, a differentiable objective function based on Fréchet variance that enforces coherence during training. Unlike sparsity, which bounds how many samples a feature activates on, coherence bounds which samples, requiring geometric connectivity rather than only rarity. This yields not just interpretable features but an interpretable feature space. We validate Coh in an auto-encoder using synthetic and rotated MNIST datasets and in a token embedding of BERT using language data.}
+}
+
 @article{formal2026-learning-retrieval-models-with-f3e62918,
   author = {Thibault Formal and Maxime Louis and Hervé Dejean and Stéphane Clinchant},
   title = {Learning Retrieval Models with Sparse Autoencoders},
@@ -1414,6 +1458,17 @@
   abstract = {Although recent studies on time-series anomaly detection have increasingly adopted ever-larger neural network architectures such as transformers and foundation models, they incur high computational costs and memory usage, making them impractical for real-time and resource-constrained scenarios. Moreover, they often fail to demonstrate significant performance gains over simpler methods under rigorous evaluation protocols. In this study, we propose Patch-based representation learning for time-series Anomaly detection (PaAno), a lightweight yet effective method for fast and efficient time-series anomaly detection. PaAno extracts short temporal patches from time-series training data and uses a 1D convolutional neural network to embed each patch into a vector representation. The model is trained using a combination of triplet loss and pretext loss to ensure the embeddings capture informative temporal patterns from input patches. During inference, the anomaly score at each time step is computed by comparing the embeddings of its surrounding patches to those of normal patches extracted from the training time-series. Evaluated on the TSB-AD benchmark, PaAno achieved state-of-the-art performance, significantly outperforming existing methods, including those based on heavy architectures, on both univariate and multivariate time-series anomaly detection across various range-wise and point-wise performance measures.}
 }
 
+@article{liu2026-pacx-mae-physiology-augmented-01589994,
+  author = {Yancheng Liu and Kenichi Maeda and Manan Pancholy},
+  title = {PaCX-MAE: Physiology-Augmented Chest X-Ray Masked Autoencoder},
+  year = {2026},
+  journal = {ICML},
+  eprint = {2606.01537v1},
+  archivePrefix = {arXiv},
+  url = {https://arxiv.org/abs/2606.01537v1},
+  abstract = {Clinical diagnosis often requires combining imaging with physiological measurements, yet deployed models typically operate on unimodal data. We present PaCX-MAE, a cross-modal distillation framework that injects physiological priors into chest X-ray (CXR) encoders while remaining strictly unimodal at inference. PaCX-MAE augments in-domain masked autoencoding with a dual contrastive-predictive objective, aligning CXR representations with paired ECG and laboratory embeddings. Extensive evaluation across nine benchmarks demonstrates consistent improvements over domain-specific MAE, particularly on physiology-dependent tasks (e.g., +2.7 AUROC on MedMod; +6.5 F1 on VinDr). The method proves highly label-efficient in the 1% regime and preserves anatomical fidelity, achieving parity with MAE on segmentation tasks. Zero-shot and attention analyses confirm that PaCX-MAE successfully learns to attend to physiological indicators, such as the cardiac silhouette, absent in standard visual pretraining.}
+}
+
 @article{lou2026-parameta-towards-learning-disentangled-a7852458,
   author = {Haowei Lou and Hye-young Paik and Wen Hu and Lina Yao},
   title = {ParaMETA: Towards Learning Disentangled Paralinguistic Speaking Styles Representations from Speech},
@@ -1686,6 +1741,17 @@
   archivePrefix = {arXiv},
   url = {https://arxiv.org/abs/2603.13227v1},
   abstract = {Machine learning approaches to spatiotemporal physical systems have primarily focused on next-frame prediction, with the goal of learning an accurate emulator for the system's evolution in time. However, these emulators are computationally expensive to train and are subject to performance pitfalls, such as compounding errors during autoregressive rollout. In this work, we take a different perspective and look at scientific tasks further downstream of predicting the next frame, such as estimation of a system's governing physical parameters. Accuracy on these tasks offers a uniquely quantifiable glimpse into the physical relevance of the representations of these models. We evaluate the effectiveness of general-purpose self-supervised methods in learning physics-grounded representations that are useful for downstream scientific tasks. Surprisingly, we find that not all methods designed for physical modeling outperform generic self-supervised learning methods on these tasks, and methods that learn in the latent space (e.g., joint embedding predictive architectures, or JEPAs) outperform those optimizing pixel-level prediction objectives. Code is available at https://github.com/helenqu/physical-representation-learning.}
+}
+
+@article{guha2026-representational-capacity-geometric-limits-324467be,
+  author = {Alexander Guha},
+  title = {Representational Capacity: Geometric Limits on Feature Representation in Transformer Language Models},
+  year = {2026},
+  journal = {NeurIPS},
+  eprint = {2606.02765v1},
+  archivePrefix = {arXiv},
+  url = {https://arxiv.org/abs/2606.02765v1},
+  abstract = {Model dimension ($d_\{model\}$) is a fundamental hyperparameter in transformer language models, yet its role in setting the geometric limits of feature representation remains under-explored. Grounded in the Linear Representation and Superposition Hypotheses - which propose that models encode features as near-orthogonal directions in latent space - we develop a framework for estimating how many such directions a model can support. We first establish the embedding matrix as a measurable proxy for near-orthogonality constraints across the latent space: the boundary between meaningful token relationships and incidental similarity in the pairwise cosine similarity distribution gives a concrete estimate of the model's accepted deviation $\\varepsilon$ from perfect orthogonality. Applying this metric across dozens of open-source models reveals two classes: models with high $\\varepsilon$ whose embeddings lack near-orthogonal structure, and models with low $\\varepsilon$ that maintain it. We then show that the standard Johnson-Lindenstrauss lemma greatly underestimates the packing efficiency of trained representations, and derive an adjusted capacity formula in which the number of near-orthogonal directions depends on the ratio of vectors to dimensions ($k/d$) rather than the raw count - a single modification that cuts prediction error by two orders of magnitude with no extra parameters. Combining these results, we define representational capacity as an upper bound on the number of distinguishable directions available for features and embeddings in a model's latent space. Capacity is exponentially sensitive to $\\varepsilon$, and larger models favor tighter orthogonality constraints over maximizing raw capacity - a pattern compatible with several explanations (a stability-capacity trade-off, a ceiling on usable concepts, or confounds with model scale) that we leave to future work.}
 }
 
 @article{zhang2026-rethinking-code-similarity-for-2a73a5fe,
