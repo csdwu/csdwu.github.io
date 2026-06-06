@@ -445,6 +445,17 @@
   abstract = {Accurate biodiversity identification from large-scale field data is a foundational problem with direct impact on ecology, conservation, and environmental monitoring. In practice, the core task is taxonomic prediction - inferring order, family, genus, or species from imperfect inputs such as specimen images, DNA barcodes, or both. Existing multimodal methods often treat taxonomy as a flat label space and therefore fail to encode the hierarchical structure of biological classification, which is critical for robustness under noise and missing modalities. We present two end-to-end variants for hierarchy-aware multimodal learning: CLiBD-HiR, which introduces Hierarchical Information Regularization (HiR) to shape embedding geometry across taxonomic levels, yielding structured and noise-robust representations; and CLiBD-HiR-Fuse, which additionally trains a lightweight fusion predictor that supports image-only, DNA-only, or joint inference and is resilient to modality corruption. Across large-scale biodiversity benchmarks, our approach improves taxonomic classification accuracy by over 14 percent compared to strong multimodal baselines, with particularly large gains under partial and corrupted DNA conditions. These results highlight that explicitly encoding biological hierarchy, together with flexible fusion, is key for practical biodiversity foundation models.}
 }
 
+@article{janson2026-learned-subspace-compression-for-506d9d7d,
+  author = {Paul Janson and Edouard Oyallon and Eugene Belilovsky},
+  title = {Learned Subspace Compression for Communication-Efficient Pipeline Parallelism},
+  year = {2026},
+  journal = {ICML},
+  eprint = {2606.05484v1},
+  archivePrefix = {arXiv},
+  url = {https://arxiv.org/abs/2606.05484v1},
+  abstract = {Pipeline parallelism enables training of large language models that exceed single-device memory, yet inter-stage activation communication becomes the dominant bottleneck when trained on low-bandwidth networks. Recent work in this area has proposed using fixed orthogonal projections to compress activations. However, this still results in a significant performance degradation and requires a number of non-standard adaptations to constrain the optimization. A natural alternative is to learn a low rank projection for each pipeline stage, however maintaining the necessary orthogonality of these projectors during training remains a challenge. We present Manifold Aware Projection Learning (MAPL), a method that treats inter-stage compression as a learnable orthogonal projection under explicit Stiefel manifold (orthogonal matrices) constraints. Rather than prescribing a fixed global subspace, MAPL lets each pipeline stage discover and continuously adapt its own task-optimal compression subspace via manifold-constrained steepest descent. To recover token-specific signals at stage boundaries, we introduce per-stage factorized anchor embeddings that allow for full-rank activation reconstruction with negligible communication overhead. We further show that we can incorporate residual vector quantization after projection with a streaming codebook synchronization protocol that amortizes dictionary communication. Across LLaMA models from 150M to 1B parameters we show that MAPL can be easily applied to the existing pipeline and can achieve high compression with neglibile performance degradation with a drastically improved tradeoffs in performance vs. compression compared to Subspace Networks.}
+}
+
 @article{gaukstad2026-learning-coherent-representations-a-92624f22,
   author = {Sigurd Gaukstad and Melvin Vaupel and Valdemar Kargård Olsen and Erik Hermansen and Benjamin Dunn},
   title = {Learning Coherent Representations: A Topological Approach to Interpretability},
@@ -465,6 +476,17 @@
   archivePrefix = {arXiv},
   url = {https://arxiv.org/abs/2603.13277v1},
   abstract = {Sparse autoencoders (SAEs) provide a powerful mechanism for decomposing the dense representations produced by Large Language Models (LLMs) into interpretable latent features. We posit that SAEs constitute a natural foundation for Learned Sparse Retrieval (LSR), whose objective is to encode queries and documents into high-dimensional sparse representations optimized for efficient retrieval. In contrast to existing LSR approaches that project input sequences into the vocabulary space, SAE-based representations offer the potential to produce more semantically structured, expressive, and language-agnostic features. Building on this insight, we introduce SPLARE, a method to train SAE-based LSR models. Our experiments, relying on recently released open-source SAEs, demonstrate that this technique consistently outperforms vocabulary-based LSR in multilingual and out-of-domain settings. SPLARE-7B, a multilingual retrieval model capable of producing generalizable sparse latent embeddings for a wide range of languages and domains, achieves top results on MMTEB's multilingual and English retrieval tasks. We also developed a 2B-parameter variant with a significantly lighter footprint.}
+}
+
+@article{ardoin2026-llm-self-recognition-steering-1dd3dfa8,
+  author = {Thibaud Ardoin and Jonas Schäfer and Gerhard Wunder},
+  title = {LLM Self-Recognition: Steering and Retrieving Activation Signatures},
+  year = {2026},
+  journal = {ICML},
+  eprint = {2606.06315v1},
+  archivePrefix = {arXiv},
+  url = {https://arxiv.org/abs/2606.06315v1},
+  abstract = {Recent advances in interpretability suggest that large language models (LLMs) implicitly encode signals in their generated text that enable self-recognition of their outputs. We demonstrate that this capability is reliable, even in low-entropy scenarios, and that it can be amplified through targeted intervention. By steering the internal residual stream during generation with a random sparse vector, we create a detectable fingerprint that enables attribution of a given text to a specific LLM. This signal is recoverable from the activations of an LLM used as a detector, achieving over 98% accuracy across multiple detection settings while preserving the quality of generated text. As AI-generated content proliferates, this approach offers a practical alternative to traditional detectors by leveraging the model's natural representation structure for attribution rather than embedding a signal externally. Our contributions include: (i) establishing reliable self-recognition capabilities in LLMs, (ii) a simple steering mechanism enabling multi-LLM identification with no quality degradation, (iii) demonstrating that activation spaces contain exploitable structure for encoding signals without semantic interference.}
 }
 
 @article{anand2026-lore-jointly-learning-the-a4d75440,

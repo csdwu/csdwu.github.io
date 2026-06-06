@@ -1,6 +1,6 @@
 {
   "version": "2.0.0",
-  "generated_at": "2026-06-03T03:35:00.810Z",
+  "generated_at": "2026-06-06T02:39:17.115Z",
   "query_groups": {
     "A": "\"embedded ai\"",
     "B": "(\"low power\" OR \"ultra-low-power\") \"embedded ai\"",
@@ -8,24 +8,24 @@
   },
   "stats": {
     "raw_counts": {
-      "A": 50,
-      "B": 3,
-      "C": 3
+      "A": 65,
+      "B": 2,
+      "C": 1
     },
     "after_set_ops": {
-      "A_only": 46,
-      "B": 3,
-      "C": 3,
-      "merged_total": 51,
-      "bc_overlap": 1
+      "A_only": 63,
+      "B": 2,
+      "C": 1,
+      "merged_total": 66,
+      "bc_overlap": 0
     },
-    "after_filter": 817,
+    "after_filter": 822,
     "classification": {
-      "total": 817,
+      "total": 822,
       "by_category": {
-        "Efficient Model Design and Optimization": 260,
+        "Efficient Model Design and Optimization": 262,
         "Novel Computing Architectures and Domain-Specific Accelerators": 39,
-        "Embedded AI Applications": 518
+        "Embedded AI Applications": 521
       },
       "by_tag": {
         "TinyML": 49,
@@ -35,14 +35,14 @@
       "by_provider": {
         "tencent_tokenhub": 0,
         "heuristic": 0,
-        "heuristic_fallback": 817
+        "heuristic_fallback": 822
       }
     },
     "source_stats": {
-      "total": 817,
+      "total": 822,
       "by_group": {
         "A": {
-          "total": 680,
+          "total": 685,
           "arxiv": 0,
           "venues": {
             "AAAI": 90,
@@ -166,9 +166,9 @@
             "ICDT": 0,
             "ICFP": 0,
             "ICIP": 0,
-            "ICLR": 159,
+            "ICLR": 160,
             "ICMI": 0,
-            "ICML": 109,
+            "ICML": 113,
             "ICMR": 0,
             "ICN": 0,
             "ICNP": 0,
@@ -1539,7 +1539,7 @@
         }
       },
       "total_summary": {
-        "total": 832,
+        "total": 837,
         "arxiv": 121,
         "venues": {
           "AAAI": 90,
@@ -1663,9 +1663,9 @@
           "ICDT": 0,
           "ICFP": 0,
           "ICIP": 0,
-          "ICLR": 160,
+          "ICLR": 161,
           "ICMI": 0,
-          "ICML": 111,
+          "ICML": 115,
           "ICMR": 0,
           "ICN": 0,
           "ICNP": 0,
@@ -1918,7 +1918,7 @@
     {
       "key": "efficient_model_design",
       "title": "Efficient Model Design and Optimization",
-      "count": 260,
+      "count": 262,
       "papers": [
         {
           "id": "3b9cf83b0afb286c0b1a0dcc692a3ea7f1aec66c",
@@ -1972,6 +1972,56 @@
           }
         },
         {
+          "id": "66c20ff5cdf01d6b9d1b161e1dc53c0d54b2ca3d",
+          "title": "Learned Subspace Compression for Communication-Efficient Pipeline Parallelism",
+          "authors": [
+            "Paul Janson",
+            "Edouard Oyallon",
+            "Eugene Belilovsky"
+          ],
+          "year": 2026,
+          "month": 6,
+          "source": "arxiv",
+          "venue": "ICML",
+          "venue_type": "conference",
+          "abstract": "Pipeline parallelism enables training of large language models that exceed single-device memory, yet inter-stage activation communication becomes the dominant bottleneck when trained on low-bandwidth networks. Recent work in this area has proposed using fixed orthogonal projections to compress activations. However, this still results in a significant performance degradation and requires a number of non-standard adaptations to constrain the optimization. A natural alternative is to learn a low rank projection for each pipeline stage, however maintaining the necessary orthogonality of these projectors during training remains a challenge. We present Manifold Aware Projection Learning (MAPL), a method that treats inter-stage compression as a learnable orthogonal projection under explicit Stiefel manifold (orthogonal matrices) constraints. Rather than prescribing a fixed global subspace, MAPL lets each pipeline stage discover and continuously adapt its own task-optimal compression subspace via manifold-constrained steepest descent. To recover token-specific signals at stage boundaries, we introduce per-stage factorized anchor embeddings that allow for full-rank activation reconstruction with negligible communication overhead. We further show that we can incorporate residual vector quantization after projection with a streaming codebook synchronization protocol that amortizes dictionary communication. Across LLaMA models from 150M to 1B parameters we show that MAPL can be easily applied to the existing pipeline and can achieve high compression with neglibile performance degradation with a drastically improved tradeoffs in performance vs. compression compared to Subspace Networks.",
+          "urls": {
+            "arxiv": "https://arxiv.org/abs/2606.05484v1",
+            "pdf": "https://arxiv.org/pdf/2606.05484v1",
+            "paper": "https://arxiv.org/abs/2606.05484v1"
+          },
+          "search_sets_raw": [
+            "A"
+          ],
+          "search_sets_final": [
+            "A"
+          ],
+          "filter_bucket": "th_cpl_a",
+          "matched_venue": "ICML",
+          "matched_th_cpl_level": "A",
+          "matched_th_cpl_area": "Artificial Intelligence and Pattern Recognition",
+          "category": "Efficient Model Design and Optimization",
+          "llm_tags": [],
+          "forced_tags": [],
+          "final_tags": [],
+          "cited_by": 0,
+          "is_preprint_on_arxiv": false,
+          "preprint_source": "",
+          "journal_ref": "",
+          "doi": "",
+          "arxiv_comment": "",
+          "arxiv_id": "2606.05484v1",
+          "raw_venue": "",
+          "venue_source": "",
+          "sort_key": 202600,
+          "download": {
+            "status": "pending",
+            "source": null,
+            "path": null,
+            "last_attempt_at": null
+          }
+        },
+        {
           "id": "9360afc0cec1caf3ae83ecf2dccd740850979825",
           "title": "Learning Coherent Representations: A Topological Approach to Interpretability",
           "authors": [
@@ -2013,6 +2063,56 @@
           "doi": "",
           "arxiv_comment": "",
           "arxiv_id": "2606.02841v1",
+          "raw_venue": "",
+          "venue_source": "",
+          "sort_key": 202600,
+          "download": {
+            "status": "pending",
+            "source": null,
+            "path": null,
+            "last_attempt_at": null
+          }
+        },
+        {
+          "id": "9df45481ff34bfc03dd130bdb84ff538243dbf8b",
+          "title": "LLM Self-Recognition: Steering and Retrieving Activation Signatures",
+          "authors": [
+            "Thibaud Ardoin",
+            "Jonas Schäfer",
+            "Gerhard Wunder"
+          ],
+          "year": 2026,
+          "month": 6,
+          "source": "arxiv",
+          "venue": "ICML",
+          "venue_type": "conference",
+          "abstract": "Recent advances in interpretability suggest that large language models (LLMs) implicitly encode signals in their generated text that enable self-recognition of their outputs. We demonstrate that this capability is reliable, even in low-entropy scenarios, and that it can be amplified through targeted intervention. By steering the internal residual stream during generation with a random sparse vector, we create a detectable fingerprint that enables attribution of a given text to a specific LLM. This signal is recoverable from the activations of an LLM used as a detector, achieving over 98% accuracy across multiple detection settings while preserving the quality of generated text. As AI-generated content proliferates, this approach offers a practical alternative to traditional detectors by leveraging the model's natural representation structure for attribution rather than embedding a signal externally. Our contributions include: (i) establishing reliable self-recognition capabilities in LLMs, (ii) a simple steering mechanism enabling multi-LLM identification with no quality degradation, (iii) demonstrating that activation spaces contain exploitable structure for encoding signals without semantic interference.",
+          "urls": {
+            "arxiv": "https://arxiv.org/abs/2606.06315v1",
+            "pdf": "https://arxiv.org/pdf/2606.06315v1",
+            "paper": "https://arxiv.org/abs/2606.06315v1"
+          },
+          "search_sets_raw": [
+            "A"
+          ],
+          "search_sets_final": [
+            "A"
+          ],
+          "filter_bucket": "th_cpl_a",
+          "matched_venue": "ICML",
+          "matched_th_cpl_level": "A",
+          "matched_th_cpl_area": "Artificial Intelligence and Pattern Recognition",
+          "category": "Efficient Model Design and Optimization",
+          "llm_tags": [],
+          "forced_tags": [],
+          "final_tags": [],
+          "cited_by": 0,
+          "is_preprint_on_arxiv": false,
+          "preprint_source": "",
+          "journal_ref": "",
+          "doi": "",
+          "arxiv_comment": "",
+          "arxiv_id": "2606.06315v1",
           "raw_venue": "",
           "venue_source": "",
           "sort_key": 202600,
@@ -17782,7 +17882,7 @@
     {
       "key": "embedded_ai_applications",
       "title": "Embedded AI Applications",
-      "count": 518,
+      "count": 521,
       "papers": [
         {
           "id": "d103ead51da993c73537e967f22d71ee8df11af2",
@@ -17824,6 +17924,61 @@
           "doi": "",
           "arxiv_comment": "",
           "arxiv_id": "2606.01811v1",
+          "raw_venue": "",
+          "venue_source": "",
+          "sort_key": 202600,
+          "download": {
+            "status": "pending",
+            "source": null,
+            "path": null,
+            "last_attempt_at": null
+          }
+        },
+        {
+          "id": "515421b3cd6136a5a5acc83915afcca01374af63",
+          "title": "Dual Advantage Fields",
+          "authors": [
+            "Alexey Zemtsov",
+            "Maxim Bobrin",
+            "Alexander Nikulin",
+            "Dmitry V. Dylov",
+            "Fakhri Karray",
+            "Vladislav Kurenkov",
+            "Martin Takáč",
+            "Arip Asadulaev"
+          ],
+          "year": 2026,
+          "month": 6,
+          "source": "arxiv",
+          "venue": "ICML",
+          "venue_type": "conference",
+          "abstract": "Offline goal-conditioned reinforcement learning requires both long-horizon reachability estimates and local action comparisons. Dual goal representations provide value fields that capture global goal reachability, but they do not directly specify which action should be preferred at a given state. We propose Dual Advantage Fields, a policy-extraction method that turns a bilinear dual value model into a local advantage signal. Under bilinear dual parameterization, the goal embedding is the gradient of the value field with respect to the state representation. DAF learns an action-effect model that predicts the discounted feature displacement induced by an action and scores actions by the alignment between this displacement and the goal direction. In the realizable case, this score equals the goal-conditioned Bellman advantage, yielding a standard local policy-improvement guarantee. On OGBench locomotion, manipulation, and puzzle tasks, DAF improves aggregate RLiable metrics and performs strongly in settings where locally correct actions differ from direct movement toward the final goal.",
+          "urls": {
+            "arxiv": "https://arxiv.org/abs/2606.04188v1",
+            "pdf": "https://arxiv.org/pdf/2606.04188v1",
+            "paper": "https://arxiv.org/abs/2606.04188v1"
+          },
+          "search_sets_raw": [
+            "A"
+          ],
+          "search_sets_final": [
+            "A"
+          ],
+          "filter_bucket": "th_cpl_a",
+          "matched_venue": "ICML",
+          "matched_th_cpl_level": "A",
+          "matched_th_cpl_area": "Artificial Intelligence and Pattern Recognition",
+          "category": "Embedded AI Applications",
+          "llm_tags": [],
+          "forced_tags": [],
+          "final_tags": [],
+          "cited_by": 0,
+          "is_preprint_on_arxiv": false,
+          "preprint_source": "",
+          "journal_ref": "",
+          "doi": "",
+          "arxiv_comment": "",
+          "arxiv_id": "2606.04188v1",
           "raw_venue": "",
           "venue_source": "",
           "sort_key": 202600,
@@ -17931,6 +18086,105 @@
           "doi": "",
           "arxiv_comment": "",
           "arxiv_id": "2606.02765v1",
+          "raw_venue": "",
+          "venue_source": "",
+          "sort_key": 202600,
+          "download": {
+            "status": "pending",
+            "source": null,
+            "path": null,
+            "last_attempt_at": null
+          }
+        },
+        {
+          "id": "d0be50894bce247a5e1b4ea91ff94aea7313c687",
+          "title": "Two-Way Is Better Than One: Bidirectional Alignment with Cycle Consistency for Exemplar-Free Class-Incremental Learning",
+          "authors": [
+            "Hongye Xu",
+            "Bartosz Krawczyk"
+          ],
+          "year": 2026,
+          "month": 6,
+          "source": "arxiv",
+          "venue": "ICLR",
+          "venue_type": "conference",
+          "abstract": "Continual learning (CL) seeks models that acquire new skills without erasing prior knowledge. In exemplar-free class-incremental learning (EFCIL), this challenge is amplified because past data cannot be stored, making representation drift for old classes particularly harmful. Prototype-based EFCIL is attractive for its efficiency, yet prototypes drift as the embedding space evolves; therefore, projection-based drift compensation has become a popular remedy. We show, however, that existing one-directional projections introduce systematic bias: they either retroactively distort the current feature geometry or align past classes only locally, leaving cycle inconsistencies that accumulate across tasks. We introduce BiCyc, a bidirectional projector alignment approach with a cycle-consistency objective. BiCyc jointly optimizes two maps, old-to-new and new-to-old, with stop-gradient gating so that transport and representation co-evolve. Analytically, we show that the cycle loss contracts the singular spectrum toward unity in whitened space, and that improved transport of class means and covariances yields smaller perturbations of classification log-odds, preserving old-class decisions and mitigating catastrophic forgetting. Empirically, across standard EFCIL benchmarks, BiCyc substantially reduces forgetting and improves accuracy in from-scratch settings, while remaining competitive in the pretrained fine-grained regime.",
+          "urls": {
+            "arxiv": "https://arxiv.org/abs/2606.05675v1",
+            "pdf": "https://arxiv.org/pdf/2606.05675v1",
+            "paper": "https://arxiv.org/abs/2606.05675v1"
+          },
+          "search_sets_raw": [
+            "A"
+          ],
+          "search_sets_final": [
+            "A"
+          ],
+          "filter_bucket": "th_cpl_a",
+          "matched_venue": "ICLR",
+          "matched_th_cpl_level": "A",
+          "matched_th_cpl_area": "Artificial Intelligence and Pattern Recognition",
+          "category": "Embedded AI Applications",
+          "llm_tags": [],
+          "forced_tags": [],
+          "final_tags": [],
+          "cited_by": 0,
+          "is_preprint_on_arxiv": false,
+          "preprint_source": "",
+          "journal_ref": "",
+          "doi": "",
+          "arxiv_comment": "",
+          "arxiv_id": "2606.05675v1",
+          "raw_venue": "",
+          "venue_source": "",
+          "sort_key": 202600,
+          "download": {
+            "status": "pending",
+            "source": null,
+            "path": null,
+            "last_attempt_at": null
+          }
+        },
+        {
+          "id": "5a3b1a1009ebbbf904f0840aac68064d1e2097e3",
+          "title": "Zero-Shot 3D Question Answering via Hierarchical View-to-Token Transportation",
+          "authors": [
+            "Dongsheng Wang",
+            "Dawei Su",
+            "Hui Huang"
+          ],
+          "year": 2026,
+          "month": 6,
+          "source": "arxiv",
+          "venue": "ICML",
+          "venue_type": "conference",
+          "abstract": "Recently, zero-shot 3D scene understanding via 2D Vision-Language Models (VLMs) has gained increasing research interest due to their promising spatial reasoning capabilities. Typically, multiple 2D views are sampled from a 3D point cloud and fed into pre-trained VLMs to answer a given question. This paradigm highlights the critical role of input context quality and raises the challenge of retaining as many task-relevant 3D details as possible under a limited input budget. We propose \\texttt{KeyVT}, a hierarchical approach for input context collection at both the view and token levels. Specifically, we combine pixel features with camera parameters and assess view importance based on both semantic content and geometric position, resulting in spatially consistent and task-relevant views. Furthermore, we address redundancy among patches across selected views by identifying representative tokens under the optimal transport (OT) framework, where view tokens and key tokens are formulated as two discrete distributions in the embedding space. These key tokens are expected to cover all view features by minimizing the OT distance. We evaluate our framework on three widely used benchmarks, demonstrating significant improvements over existing tuning-free methods and performance comparable to training-based approaches.",
+          "urls": {
+            "arxiv": "https://arxiv.org/abs/2606.03100v2",
+            "pdf": "https://arxiv.org/pdf/2606.03100v2",
+            "paper": "https://arxiv.org/abs/2606.03100v2"
+          },
+          "search_sets_raw": [
+            "A"
+          ],
+          "search_sets_final": [
+            "A"
+          ],
+          "filter_bucket": "th_cpl_a",
+          "matched_venue": "ICML",
+          "matched_th_cpl_level": "A",
+          "matched_th_cpl_area": "Artificial Intelligence and Pattern Recognition",
+          "category": "Embedded AI Applications",
+          "llm_tags": [],
+          "forced_tags": [],
+          "final_tags": [],
+          "cited_by": 0,
+          "is_preprint_on_arxiv": false,
+          "preprint_source": "",
+          "journal_ref": "",
+          "doi": "",
+          "arxiv_comment": "",
+          "arxiv_id": "2606.03100v2",
           "raw_venue": "",
           "venue_source": "",
           "sort_key": 202600,

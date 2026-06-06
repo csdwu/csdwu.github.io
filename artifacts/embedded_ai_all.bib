@@ -638,6 +638,17 @@
   abstract = {Stochastic computing (SC) offers hardware simplicity but suffers from low throughput, while high-throughput Digital Computing-in-Memory (DCIM) is bottlenecked by costly adder logic for matrix-vector multiplication (MVM). To address this trade-off, this paper introduces a digital stochastic CIM (DS-CIM) architecture that achieves both high accuracy and efficiency. We implement signed multiply-accumulation (MAC) in a compact, unsigned OR-based circuit by modifying the data representation. Throughput is enhanced by replicating this low-cost circuit 64 times with only a 1x area increase. Our core strategy, a shared Pseudo Random Number Generator (PRNG) with 2D partitioning, enables single-cycle mutually exclusive activation to eliminate OR-gate collisions. We also resolve the 1s saturation issue via stochastic process analysis and data remapping, significantly improving accuracy and resilience to input sparsity. Our high-accuracy DS-CIM1 variant achieves 94.45% accuracy for INT8 ResNet18 on CIFAR-10 with a root-mean-squared error (RMSE) of just 0.74%. Meanwhile, our high-efficiency DS-CIM2 variant attains an energy efficiency of 3566.1 TOPS/W and an area efficiency of 363.7 TOPS/mm^2, while maintaining a low RMSE of 3.81%. The DS-CIM capability with larger models is further demonstrated through experiments with INT8 ResNet50 on ImageNet and the FP8 LLaMA-7B model.}
 }
 
+@article{zemtsov2026-dual-advantage-fields-ffab7bef,
+  author = {Alexey Zemtsov and Maxim Bobrin and Alexander Nikulin and Dmitry V. Dylov and Fakhri Karray and Vladislav Kurenkov and Martin Takáč and Arip Asadulaev},
+  title = {Dual Advantage Fields},
+  year = {2026},
+  journal = {ICML},
+  eprint = {2606.04188v1},
+  archivePrefix = {arXiv},
+  url = {https://arxiv.org/abs/2606.04188v1},
+  abstract = {Offline goal-conditioned reinforcement learning requires both long-horizon reachability estimates and local action comparisons. Dual goal representations provide value fields that capture global goal reachability, but they do not directly specify which action should be preferred at a given state. We propose Dual Advantage Fields, a policy-extraction method that turns a bilinear dual value model into a local advantage signal. Under bilinear dual parameterization, the goal embedding is the gradient of the value field with respect to the state representation. DAF learns an action-effect model that predicts the discounted feature displacement induced by an action and scores actions by the alignment between this displacement and the goal direction. In the realizable case, this score equals the goal-conditioned Bellman advantage, yielding a standard local policy-improvement guarantee. On OGBench locomotion, manipulation, and puzzle tasks, DAF improves aggregate RLiable metrics and performs strongly in settings where locally correct actions differ from direct movement toward the final goal.}
+}
+
 @article{habib2026-dynatab-dynamic-feature-ordering-74059451,
   author = {Al Zadid Sultan Bin Habib and Gianfranco Doretto and Donald A. Adjeroh},
   title = {DynaTab: Dynamic Feature Ordering as Neural Rewiring for High-Dimensional Tabular Data},
@@ -1131,6 +1142,17 @@
   abstract = {Temporal Graph Neural Networks (TGNNs) aim to capture the evolving structure and timing of interactions in dynamic graphs. Although many models incorporate time through encodings or architectural design, they often compute attention over entangled node and edge representations, failing to reflect their distinct temporal behaviors. Node embeddings evolve slowly as they aggregate long-term structural context, while edge features reflect transient, timestamped interactions (e.g. messages, trades, or transactions). This mismatch results in semantic attention blurring, where attention weights cannot distinguish between slowly drifting node states and rapidly changing, information-rich edge interactions. As a result, models struggle to capture fine-grained temporal dependencies and provide limited transparency into how temporal relevance is computed. This paper introduces KEAT (Kernelized Edge Attention for Temporal Graphs), a novel attention formulation that modulates edge features using a family of continuous-time kernels, including Laplacian, RBF, and learnable MLP variant. KEAT preserves the distinct roles of nodes and edges, and integrates seamlessly with both Transformer-style (e.g., DyGFormer) and message-passing (e.g., TGN) architectures. It achieves up to 18% MRR improvement over the recent DyGFormer and 7% over TGN on link prediction tasks, enabling more accurate, interpretable and temporally aware message passing in TGNNs.}
 }
 
+@article{janson2026-learned-subspace-compression-for-506d9d7d,
+  author = {Paul Janson and Edouard Oyallon and Eugene Belilovsky},
+  title = {Learned Subspace Compression for Communication-Efficient Pipeline Parallelism},
+  year = {2026},
+  journal = {ICML},
+  eprint = {2606.05484v1},
+  archivePrefix = {arXiv},
+  url = {https://arxiv.org/abs/2606.05484v1},
+  abstract = {Pipeline parallelism enables training of large language models that exceed single-device memory, yet inter-stage activation communication becomes the dominant bottleneck when trained on low-bandwidth networks. Recent work in this area has proposed using fixed orthogonal projections to compress activations. However, this still results in a significant performance degradation and requires a number of non-standard adaptations to constrain the optimization. A natural alternative is to learn a low rank projection for each pipeline stage, however maintaining the necessary orthogonality of these projectors during training remains a challenge. We present Manifold Aware Projection Learning (MAPL), a method that treats inter-stage compression as a learnable orthogonal projection under explicit Stiefel manifold (orthogonal matrices) constraints. Rather than prescribing a fixed global subspace, MAPL lets each pipeline stage discover and continuously adapt its own task-optimal compression subspace via manifold-constrained steepest descent. To recover token-specific signals at stage boundaries, we introduce per-stage factorized anchor embeddings that allow for full-rank activation reconstruction with negligible communication overhead. We further show that we can incorporate residual vector quantization after projection with a streaming codebook synchronization protocol that amortizes dictionary communication. Across LLaMA models from 150M to 1B parameters we show that MAPL can be easily applied to the existing pipeline and can achieve high compression with neglibile performance degradation with a drastically improved tradeoffs in performance vs. compression compared to Subspace Networks.}
+}
+
 @article{gaukstad2026-learning-coherent-representations-a-92624f22,
   author = {Sigurd Gaukstad and Melvin Vaupel and Valdemar Kargård Olsen and Erik Hermansen and Benjamin Dunn},
   title = {Learning Coherent Representations: A Topological Approach to Interpretability},
@@ -1206,6 +1228,17 @@
   archivePrefix = {arXiv},
   url = {https://arxiv.org/abs/2603.24753v1},
   abstract = {Standard vision models treat objects as independent points in Euclidean space, unable to capture hierarchical structure like parts within wholes. We introduce Worldline Slot Attention, which models objects as persistent trajectories through spacetime worldlines, where each object has multiple slots at different hierarchy levels sharing the same spatial position but differing in temporal coordinates. This architecture consistently fails without geometric structure: Euclidean worldlines achieve 0.078 level accuracy, below random chance (0.33), while Lorentzian worldlines achieve 0.479-0.661 across three datasets: a 6x improvement replicated over 20+ independent runs. Lorentzian geometry also outperforms hyperbolic embeddings showing visual hierarchies require causal structure (temporal dependency) rather than tree structure (radial branching). Our results demonstrate that hierarchical object discovery requires geometric structure encoding asymmetric causality, an inductive bias absent from Euclidean space but natural to Lorentzian light cones, achieved with only 11K parameters. The code is available at: https://github.com/iclrsubmissiongram/loco.}
+}
+
+@article{ardoin2026-llm-self-recognition-steering-1dd3dfa8,
+  author = {Thibaud Ardoin and Jonas Schäfer and Gerhard Wunder},
+  title = {LLM Self-Recognition: Steering and Retrieving Activation Signatures},
+  year = {2026},
+  journal = {ICML},
+  eprint = {2606.06315v1},
+  archivePrefix = {arXiv},
+  url = {https://arxiv.org/abs/2606.06315v1},
+  abstract = {Recent advances in interpretability suggest that large language models (LLMs) implicitly encode signals in their generated text that enable self-recognition of their outputs. We demonstrate that this capability is reliable, even in low-entropy scenarios, and that it can be amplified through targeted intervention. By steering the internal residual stream during generation with a random sparse vector, we create a detectable fingerprint that enables attribution of a given text to a specific LLM. This signal is recoverable from the activations of an LLM used as a detector, achieving over 98% accuracy across multiple detection settings while preserving the quality of generated text. As AI-generated content proliferates, this approach offers a practical alternative to traditional detectors by leveraging the model's natural representation structure for attribution rather than embedding a signal externally. Our contributions include: (i) establishing reliable self-recognition capabilities in LLMs, (ii) a simple steering mechanism enabling multi-LLM identification with no quality degradation, (iii) demonstrating that activation spaces contain exploitable structure for encoding signals without semantic interference.}
 }
 
 @article{gao2026-llm-guided-semantic-bootstrapping-991ffd9f,
@@ -2244,6 +2277,17 @@
   abstract = {Time Series Language Models (TSLMs) are emerging as unified models for reasoning over continuous signals in natural language. However, long-context retrieval remains a major limitation: existing models are typically trained and evaluated on short sequences, while real-world time-series sensor streams can span millions of datapoints. This mismatch requires precise temporal localization under strict computational constraints, a regime that is not captured by current benchmarks. We introduce TS-Haystack, a long-context temporal retrieval benchmark comprising ten task types across four categories: direct retrieval, temporal reasoning, multi-step reasoning and contextual anomaly. The benchmark uses controlled needle insertion by embedding short activity bouts into longer longitudinal accelerometer recordings, enabling systematic evaluation across context lengths ranging from seconds to 2 hours per sample. We hypothesize that existing TSLM time series encoders overlook temporal granularity as context length increases, creating a task-dependent effect: compression aids classification but impairs retrieval of localized events. Across multiple model and encoding strategies, we observe a consistent divergence between classification and retrieval behavior. Learned latent compression preserves or improves classification accuracy at compression ratios up to 176$\\times$, but retrieval performance degrades with context length, incurring in the loss of temporally localized information. These results highlight the importance of architectural designs that decouple sequence length from computational complexity while preserving temporal fidelity.}
 }
 
+@article{xu2026-two-way-is-better-b22a6680,
+  author = {Hongye Xu and Bartosz Krawczyk},
+  title = {Two-Way Is Better Than One: Bidirectional Alignment with Cycle Consistency for Exemplar-Free Class-Incremental Learning},
+  year = {2026},
+  journal = {ICLR},
+  eprint = {2606.05675v1},
+  archivePrefix = {arXiv},
+  url = {https://arxiv.org/abs/2606.05675v1},
+  abstract = {Continual learning (CL) seeks models that acquire new skills without erasing prior knowledge. In exemplar-free class-incremental learning (EFCIL), this challenge is amplified because past data cannot be stored, making representation drift for old classes particularly harmful. Prototype-based EFCIL is attractive for its efficiency, yet prototypes drift as the embedding space evolves; therefore, projection-based drift compensation has become a popular remedy. We show, however, that existing one-directional projections introduce systematic bias: they either retroactively distort the current feature geometry or align past classes only locally, leaving cycle inconsistencies that accumulate across tasks. We introduce BiCyc, a bidirectional projector alignment approach with a cycle-consistency objective. BiCyc jointly optimizes two maps, old-to-new and new-to-old, with stop-gradient gating so that transport and representation co-evolve. Analytically, we show that the cycle loss contracts the singular spectrum toward unity in whitened space, and that improved transport of class means and covariances yields smaller perturbations of classification log-odds, preserving old-class decisions and mitigating catastrophic forgetting. Empirically, across standard EFCIL benchmarks, BiCyc substantially reduces forgetting and improves accuracy in from-scratch settings, while remaining competitive in the pretrained fine-grained regime.}
+}
+
 @article{fu2026-understanding-and-improving-continuous-1bfd66aa,
   author = {Shaopeng Fu and Di Wang},
   title = {Understanding and Improving Continuous Adversarial Training for LLMs via In-context Learning Theory},
@@ -2308,6 +2352,17 @@
   archivePrefix = {arXiv},
   url = {https://arxiv.org/abs/2604.05859v1},
   abstract = {We study Contextual Multi-Armed Bandits (CMABs) for non-episodic sequential decision making problems where the context includes both textual and numerical information (e.g., recommendation systems, dynamic portfolio adjustments, offer selection; all frequent problems in finance). While Large Language Models (LLMs) are increasingly applied to these settings, utilizing LLMs for reasoning at every decision step is computationally expensive and uncertainty estimates are difficult to obtain. To address this, we introduce LLMP-UCB, a bandit algorithm that derives uncertainty estimates from LLMs via repeated inference. However, our experiments demonstrate that lightweight numerical bandits operating on text embeddings (dense or Matryoshka) match or exceed the accuracy of LLM-based solutions at a fraction of their cost. We further show that embedding dimensionality is a practical lever on the exploration-exploitation balance, enabling cost--performance tradeoffs without prompt complexity. Finally, to guide practitioners, we propose a geometric diagnostic based on the arms' embedding to decide when to use LLM-driven reasoning versus a lightweight numerical bandit. Our results provide a principled deployment framework for cost-effective, uncertainty-aware decision systems with broad applicability across AI use cases in financial services.}
+}
+
+@article{wang2026-zero-shot-3d-question-e704ddbb,
+  author = {Dongsheng Wang and Dawei Su and Hui Huang},
+  title = {Zero-Shot 3D Question Answering via Hierarchical View-to-Token Transportation},
+  year = {2026},
+  journal = {ICML},
+  eprint = {2606.03100v2},
+  archivePrefix = {arXiv},
+  url = {https://arxiv.org/abs/2606.03100v2},
+  abstract = {Recently, zero-shot 3D scene understanding via 2D Vision-Language Models (VLMs) has gained increasing research interest due to their promising spatial reasoning capabilities. Typically, multiple 2D views are sampled from a 3D point cloud and fed into pre-trained VLMs to answer a given question. This paradigm highlights the critical role of input context quality and raises the challenge of retaining as many task-relevant 3D details as possible under a limited input budget. We propose \\texttt\{KeyVT\}, a hierarchical approach for input context collection at both the view and token levels. Specifically, we combine pixel features with camera parameters and assess view importance based on both semantic content and geometric position, resulting in spatially consistent and task-relevant views. Furthermore, we address redundancy among patches across selected views by identifying representative tokens under the optimal transport (OT) framework, where view tokens and key tokens are formulated as two discrete distributions in the embedding space. These key tokens are expected to cover all view features by minimizing the OT distance. We evaluate our framework on three widely used benchmarks, demonstrating significant improvements over existing tuning-free methods and performance comparable to training-based approaches.}
 }
 
 @article{tao2025-how-can-transformers-predict-6273525c,
