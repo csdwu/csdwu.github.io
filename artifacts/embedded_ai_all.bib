@@ -900,6 +900,17 @@
   abstract = {Microcontroller units (MCU), which have an order of magnitude lower Size, Weight and Power (SWaP) than standard computers, makes them suitable for applications at the edge. Neuromorphic computing, which can realize low SWaP, relies on Spiking Neural Networks (SNNs). Until now, software based simulations of SNNs required GPU-based workstations, application classified core processors such as the ARM Cortex-A53, or specialized hardware like Intel's Loihi. In the present work, we demonstrate that the SNN simulator CARLsim can run its full feature set on a MCU RP2350 with 8 MB memory. We accomplished this by utilizing IEEE 16-bit float point numbers, which reduced memory requirements without loss of function. We were able to run the Synfire4 benchmark which comprises 1200 neurons. The accuracy was 97.5% compared to the standard single precision numbers. Furthermore, we show that CARLsim runs a Synfire4 benchmark scaled-down to 186 neurons on a MCU in real-time at only 20 mW. Compared to the smallest application class ARM processor used by Raspberry in their Pi Zero 2 W, our MCU implementation is five times more energy efficient for the SNN itself, and an order of magnitude better when compared to the complete SoC (MCU/CPU + Board).}
 }
 
+@article{ma2026-fusefss-efficient-secure-llm-7a0ad151,
+  author = {Yuhan Ma and Yong Li and Stefan Schmid},
+  title = {FuseFSS: Efficient Secure LLM Inference with Function Secret Sharing},
+  year = {2026},
+  journal = {ICML},
+  eprint = {2606.09551v1},
+  archivePrefix = {arXiv},
+  url = {https://arxiv.org/abs/2606.09551v1},
+  abstract = {Two-server secure inference allows a client to query a hosted large language model (LLM) without revealing prompts or embeddings. Recent GPU systems based on function secret sharing (FSS) make linear layers efficient, but fixed-point nonlinearities and helper operations remain a bottleneck because each operator is typically implemented as a bespoke protocol with its own comparisons, wrap-around corrections, and preprocessing material. We present FuseFSS, a compiler that replaces per-operator protocol design with a single compilation pipeline. For each scalar fixed-point operator, a compact specification lists its interval partition, low-degree arithmetic pieces, and required predicate bits. The compiler emits two batched FSS evaluations on the public masked value: one packed comparison that returns all predicate bits, and one vector interval lookup that returns the active coefficients and constants. Compared to the current state-of-the-art FSS-based GPU secure inference, FuseFSS preserves accuracy while achieving a $1.24\\times$--$1.50\\times$ end-to-end speedup and reducing online communication by $9\\%$--$16\\%$ on BERT and GPT-style models; preprocessing is also lighter, with $14\\%$--$23\\%$ lower key-generation time and $20\\%$--$24\\%$ smaller keys.}
+}
+
 @article{wu2026-generative-inverse-design-of-1da919cc,
   author = {Kedeng Wu and Yucheng Zhu and Yan Chen and Bizhu Zhang and Shuyu Liu and Xiaobin Deng and Yabei Wu and Liangliang Zhu and Hang Xiao},
   title = {Generative Inverse Design of Cold Metals for Low-Power Electronics},
@@ -2114,6 +2125,17 @@
   archivePrefix = {arXiv},
   url = {https://arxiv.org/abs/2602.01186v1},
   abstract = {Classical Federated Learning relies on a multi-round iterative process of model exchange and aggregation between server and clients, with high communication costs and privacy risks from repeated model transmissions. In contrast, one-shot federated learning (OFL) alleviates these limitations by reducing communication to a single round, thereby lowering overhead and enhancing practical deployability. Nevertheless, most existing one-shot approaches remain either impractical or constrained, for example, they often depend on the availability of a public dataset, assume homogeneous client models, or require uploading additional data or model information. To overcome these issues, we introduce the Gaussian-Head OFL (GH-OFL) family, a suite of one-shot federated methods that assume class-conditional Gaussianity of pretrained embeddings. Clients transmit only sufficient statistics (per-class counts and first/second-order moments) and the server builds heads via three components: (i) Closed-form Gaussian heads (NB/LDA/QDA) computed directly from the received statistics; (ii) FisherMix, a linear head with cosine margin trained on synthetic samples drawn in an estimated Fisher subspace; and (iii) Proto-Hyper, a lightweight low-rank residual head that refines Gaussian logits via knowledge distillation on those synthetic samples. In our experiments, GH-OFL methods deliver state-of-the-art robustness and accuracy under strong non-IID skew while remaining strictly data-free.}
+}
+
+@article{paeng2026-the-injection-paradox-brand-d9e5a4c8,
+  author = {Hyunseok Paeng},
+  title = {The Injection Paradox: Brand-Level Suppression in Safety-Trained LLM Recommendations via RAG Context Injection},
+  year = {2026},
+  journal = {ICML},
+  eprint = {2606.09204v1},
+  archivePrefix = {arXiv},
+  url = {https://arxiv.org/abs/2606.09204v1},
+  abstract = {We present a reproducible failure mode of safety training in RAG-based LLM recommendation -- the Injection Paradox -- in which prompt injections embedded in retrieved documents backfire against the attacker, suppressing the target brand below the injection-free baseline. In safety-trained Claude models, documents containing prompt injections suffer a sharp drop in recommendation rate, and this suppression propagates beyond the injected document to unmodified documents of the same brand. In Claude Opus 4.6, the target brand drops from a 54% baseline to zero top-2 recommendations across all 50 trials, even though only 1 of 4 brand documents in the corpus contains an injection. The directional pattern is reproduced in counterfactual experiments and across three brands. A contrasting result across the GPT models tested, where the same injection instead increases recommendations, suggests model-family differences in how injection-like context affects recommendation behavior. These findings raise the technical possibility of a reverse-attack scenario in which an adversary embeds injections in a competitor's documents to suppress the competitor's brand via safety-sensitive model behavior.}
 }
 
 @article{niimi2026-the-mouth-is-not-29198b02,

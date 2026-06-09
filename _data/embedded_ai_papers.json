@@ -1,6 +1,6 @@
 {
   "version": "2.0.0",
-  "generated_at": "2026-06-08T03:27:04.553Z",
+  "generated_at": "2026-06-09T02:37:58.011Z",
   "query_groups": {
     "A": "\"embedded ai\"",
     "B": "(\"low power\" OR \"ultra-low-power\") \"embedded ai\"",
@@ -8,24 +8,24 @@
   },
   "stats": {
     "raw_counts": {
-      "A": 0,
+      "A": 27,
       "B": 0,
       "C": 0
     },
     "after_set_ops": {
-      "A_only": 0,
+      "A_only": 27,
       "B": 0,
       "C": 0,
-      "merged_total": 0,
+      "merged_total": 27,
       "bc_overlap": 0
     },
-    "after_filter": 822,
+    "after_filter": 824,
     "classification": {
-      "total": 822,
+      "total": 824,
       "by_category": {
         "Efficient Model Design and Optimization": 262,
         "Novel Computing Architectures and Domain-Specific Accelerators": 39,
-        "Embedded AI Applications": 521
+        "Embedded AI Applications": 523
       },
       "by_tag": {
         "TinyML": 49,
@@ -35,14 +35,14 @@
       "by_provider": {
         "tencent_tokenhub": 0,
         "heuristic": 0,
-        "heuristic_fallback": 822
+        "heuristic_fallback": 824
       }
     },
     "source_stats": {
-      "total": 822,
+      "total": 824,
       "by_group": {
         "A": {
-          "total": 685,
+          "total": 687,
           "arxiv": 0,
           "venues": {
             "AAAI": 90,
@@ -168,7 +168,7 @@
             "ICIP": 0,
             "ICLR": 160,
             "ICMI": 0,
-            "ICML": 113,
+            "ICML": 115,
             "ICMR": 0,
             "ICN": 0,
             "ICNP": 0,
@@ -1539,7 +1539,7 @@
         }
       },
       "total_summary": {
-        "total": 837,
+        "total": 839,
         "arxiv": 121,
         "venues": {
           "AAAI": 90,
@@ -1665,7 +1665,7 @@
           "ICIP": 0,
           "ICLR": 161,
           "ICMI": 0,
-          "ICML": 115,
+          "ICML": 117,
           "ICMR": 0,
           "ICN": 0,
           "ICNP": 0,
@@ -17882,7 +17882,7 @@
     {
       "key": "embedded_ai_applications",
       "title": "Embedded AI Applications",
-      "count": 521,
+      "count": 523,
       "papers": [
         {
           "id": "d103ead51da993c73537e967f22d71ee8df11af2",
@@ -18049,6 +18049,56 @@
           }
         },
         {
+          "id": "63765fc6057ef6c66aa678309d3af5a9036fe130",
+          "title": "FuseFSS: Efficient Secure LLM Inference with Function Secret Sharing",
+          "authors": [
+            "Yuhan Ma",
+            "Yong Li",
+            "Stefan Schmid"
+          ],
+          "year": 2026,
+          "month": 6,
+          "source": "arxiv",
+          "venue": "ICML",
+          "venue_type": "conference",
+          "abstract": "Two-server secure inference allows a client to query a hosted large language model (LLM) without revealing prompts or embeddings. Recent GPU systems based on function secret sharing (FSS) make linear layers efficient, but fixed-point nonlinearities and helper operations remain a bottleneck because each operator is typically implemented as a bespoke protocol with its own comparisons, wrap-around corrections, and preprocessing material. We present FuseFSS, a compiler that replaces per-operator protocol design with a single compilation pipeline. For each scalar fixed-point operator, a compact specification lists its interval partition, low-degree arithmetic pieces, and required predicate bits. The compiler emits two batched FSS evaluations on the public masked value: one packed comparison that returns all predicate bits, and one vector interval lookup that returns the active coefficients and constants. Compared to the current state-of-the-art FSS-based GPU secure inference, FuseFSS preserves accuracy while achieving a $1.24\\times$--$1.50\\times$ end-to-end speedup and reducing online communication by $9\\%$--$16\\%$ on BERT and GPT-style models; preprocessing is also lighter, with $14\\%$--$23\\%$ lower key-generation time and $20\\%$--$24\\%$ smaller keys.",
+          "urls": {
+            "arxiv": "https://arxiv.org/abs/2606.09551v1",
+            "pdf": "https://arxiv.org/pdf/2606.09551v1",
+            "paper": "https://arxiv.org/abs/2606.09551v1"
+          },
+          "search_sets_raw": [
+            "A"
+          ],
+          "search_sets_final": [
+            "A"
+          ],
+          "filter_bucket": "th_cpl_a",
+          "matched_venue": "ICML",
+          "matched_th_cpl_level": "A",
+          "matched_th_cpl_area": "Artificial Intelligence and Pattern Recognition",
+          "category": "Embedded AI Applications",
+          "llm_tags": [],
+          "forced_tags": [],
+          "final_tags": [],
+          "cited_by": 0,
+          "is_preprint_on_arxiv": false,
+          "preprint_source": "",
+          "journal_ref": "",
+          "doi": "",
+          "arxiv_comment": "",
+          "arxiv_id": "2606.09551v1",
+          "raw_venue": "",
+          "venue_source": "",
+          "sort_key": 202600,
+          "download": {
+            "status": "pending",
+            "source": null,
+            "path": null,
+            "last_attempt_at": null
+          }
+        },
+        {
           "id": "22f7e896c67049c6aded22a7ce61d08c84b91eb4",
           "title": "Representational Capacity: Geometric Limits on Feature Representation in Transformer Language Models",
           "authors": [
@@ -18086,6 +18136,54 @@
           "doi": "",
           "arxiv_comment": "",
           "arxiv_id": "2606.02765v1",
+          "raw_venue": "",
+          "venue_source": "",
+          "sort_key": 202600,
+          "download": {
+            "status": "pending",
+            "source": null,
+            "path": null,
+            "last_attempt_at": null
+          }
+        },
+        {
+          "id": "fc4f19ca0af8d8b66a742b618134012b489b28fd",
+          "title": "The Injection Paradox: Brand-Level Suppression in Safety-Trained LLM Recommendations via RAG Context Injection",
+          "authors": [
+            "Hyunseok Paeng"
+          ],
+          "year": 2026,
+          "month": 6,
+          "source": "arxiv",
+          "venue": "ICML",
+          "venue_type": "conference",
+          "abstract": "We present a reproducible failure mode of safety training in RAG-based LLM recommendation -- the Injection Paradox -- in which prompt injections embedded in retrieved documents backfire against the attacker, suppressing the target brand below the injection-free baseline. In safety-trained Claude models, documents containing prompt injections suffer a sharp drop in recommendation rate, and this suppression propagates beyond the injected document to unmodified documents of the same brand. In Claude Opus 4.6, the target brand drops from a 54% baseline to zero top-2 recommendations across all 50 trials, even though only 1 of 4 brand documents in the corpus contains an injection. The directional pattern is reproduced in counterfactual experiments and across three brands. A contrasting result across the GPT models tested, where the same injection instead increases recommendations, suggests model-family differences in how injection-like context affects recommendation behavior. These findings raise the technical possibility of a reverse-attack scenario in which an adversary embeds injections in a competitor's documents to suppress the competitor's brand via safety-sensitive model behavior.",
+          "urls": {
+            "arxiv": "https://arxiv.org/abs/2606.09204v1",
+            "pdf": "https://arxiv.org/pdf/2606.09204v1",
+            "paper": "https://arxiv.org/abs/2606.09204v1"
+          },
+          "search_sets_raw": [
+            "A"
+          ],
+          "search_sets_final": [
+            "A"
+          ],
+          "filter_bucket": "th_cpl_a",
+          "matched_venue": "ICML",
+          "matched_th_cpl_level": "A",
+          "matched_th_cpl_area": "Artificial Intelligence and Pattern Recognition",
+          "category": "Embedded AI Applications",
+          "llm_tags": [],
+          "forced_tags": [],
+          "final_tags": [],
+          "cited_by": 0,
+          "is_preprint_on_arxiv": false,
+          "preprint_source": "",
+          "journal_ref": "",
+          "doi": "",
+          "arxiv_comment": "",
+          "arxiv_id": "2606.09204v1",
           "raw_venue": "",
           "venue_source": "",
           "sort_key": 202600,

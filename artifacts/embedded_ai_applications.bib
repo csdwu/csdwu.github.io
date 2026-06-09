@@ -443,6 +443,17 @@
   abstract = {Geospatial foundation models increasingly expose pixel-level embedding products that can be downloaded and reused without access to the underlying encoder. In this setting, downstream tasks with patch- or region-level labels require a post-hoc aggregation step that maps dense pixel embeddings to a single representation. The default choice, mean pooling, discards within-patch variability and can underperform under spatial distribution shift. To study this setting, we introduce EuroSAT-Embed: 81,000 embedding GeoTIFFs derived from three foundation models: AlphaEarth, OlmoEarth, and Tessera. Using these fixed embedding products, we benchmark 11 training-free pooling methods and 2 train-set-fitted baselines under both random and geographically disjoint test splits. Richer pooling schemes reduce the geographic generalization gap by over 50% relative to mean pooling and improve accuracy by up to 6% on spatial splits. We recommend a three-tier strategy: (1) mean as a baseline, (2) stats pooling (min/max/mean/std) as the default at 4x the embedding dimension, and (3) covariance pooling for peak accuracy. Across all three embedding products, simple distributional statistics improve spatial-split performance over mean pooling.}
 }
 
+@article{ma2026-fusefss-efficient-secure-llm-7a0ad151,
+  author = {Yuhan Ma and Yong Li and Stefan Schmid},
+  title = {FuseFSS: Efficient Secure LLM Inference with Function Secret Sharing},
+  year = {2026},
+  journal = {ICML},
+  eprint = {2606.09551v1},
+  archivePrefix = {arXiv},
+  url = {https://arxiv.org/abs/2606.09551v1},
+  abstract = {Two-server secure inference allows a client to query a hosted large language model (LLM) without revealing prompts or embeddings. Recent GPU systems based on function secret sharing (FSS) make linear layers efficient, but fixed-point nonlinearities and helper operations remain a bottleneck because each operator is typically implemented as a bespoke protocol with its own comparisons, wrap-around corrections, and preprocessing material. We present FuseFSS, a compiler that replaces per-operator protocol design with a single compilation pipeline. For each scalar fixed-point operator, a compact specification lists its interval partition, low-degree arithmetic pieces, and required predicate bits. The compiler emits two batched FSS evaluations on the public masked value: one packed comparison that returns all predicate bits, and one vector interval lookup that returns the active coefficients and constants. Compared to the current state-of-the-art FSS-based GPU secure inference, FuseFSS preserves accuracy while achieving a $1.24\\times$--$1.50\\times$ end-to-end speedup and reducing online communication by $9\\%$--$16\\%$ on BERT and GPT-style models; preprocessing is also lighter, with $14\\%$--$23\\%$ lower key-generation time and $20\\%$--$24\\%$ smaller keys.}
+}
+
 @article{wu2026-generative-inverse-design-of-1da919cc,
   author = {Kedeng Wu and Yucheng Zhu and Yan Chen and Bizhu Zhang and Shuyu Liu and Xiaobin Deng and Yabei Wu and Liangliang Zhu and Hang Xiao},
   title = {Generative Inverse Design of Cold Metals for Low-Power Electronics},
@@ -1240,6 +1251,17 @@
   archivePrefix = {arXiv},
   url = {https://arxiv.org/abs/2601.05792v1},
   abstract = {Accurate drug-target interaction (DTI) prediction is essential for computational drug discovery, yet existing models often rely on single-modality predefined molecular descriptors or sequence-based embeddings with limited representativeness. We propose Tensor-DTI, a contrastive learning framework that integrates multimodal embeddings from molecular graphs, protein language models, and binding-site predictions to improve interaction modeling. Tensor-DTI employs a siamese dual-encoder architecture, enabling it to capture both chemical and structural interaction features while distinguishing interacting from non-interacting pairs. Evaluations on multiple DTI benchmarks demonstrate that Tensor-DTI outperforms existing sequence-based and graph-based models. We also conduct large-scale inference experiments on CDK2 across billion-scale chemical libraries, where Tensor-DTI produces chemically plausible hit distributions even when CDK2 is withheld from training. In enrichment studies against Glide docking and Boltz-2 co-folder, Tensor-DTI remains competitive on CDK2 and improves the screening budget required to recover moderate fractions of high-affinity ligands on out-of-family targets under strict family-holdout splits. Additionally, we explore its applicability to protein-RNA and peptide-protein interactions. Our findings highlight the benefits of integrating multimodal information with contrastive objectives to enhance interaction-prediction accuracy and to provide more interpretable and reliability-aware models for virtual screening.}
+}
+
+@article{paeng2026-the-injection-paradox-brand-d9e5a4c8,
+  author = {Hyunseok Paeng},
+  title = {The Injection Paradox: Brand-Level Suppression in Safety-Trained LLM Recommendations via RAG Context Injection},
+  year = {2026},
+  journal = {ICML},
+  eprint = {2606.09204v1},
+  archivePrefix = {arXiv},
+  url = {https://arxiv.org/abs/2606.09204v1},
+  abstract = {We present a reproducible failure mode of safety training in RAG-based LLM recommendation -- the Injection Paradox -- in which prompt injections embedded in retrieved documents backfire against the attacker, suppressing the target brand below the injection-free baseline. In safety-trained Claude models, documents containing prompt injections suffer a sharp drop in recommendation rate, and this suppression propagates beyond the injected document to unmodified documents of the same brand. In Claude Opus 4.6, the target brand drops from a 54% baseline to zero top-2 recommendations across all 50 trials, even though only 1 of 4 brand documents in the corpus contains an injection. The directional pattern is reproduced in counterfactual experiments and across three brands. A contrasting result across the GPT models tested, where the same injection instead increases recommendations, suggests model-family differences in how injection-like context affects recommendation behavior. These findings raise the technical possibility of a reverse-attack scenario in which an adversary embeds injections in a competitor's documents to suppress the competitor's brand via safety-sensitive model behavior.}
 }
 
 @article{ai2026-timegnn-augmented-hybrid-action-102d9033,
