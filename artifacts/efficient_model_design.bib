@@ -368,6 +368,17 @@
   abstract = {Time-series forecasting is fundamental in industrial domains like manufacturing and smart factories. As systems evolve toward automation, models must operate on edge devices (e.g., PLCs, microcontrollers) with strict constraints on latency and memory, limiting parameters to a few thousand. Conventional deep architectures are often impractical here. We propose the Fourier-Efficient Adaptive Temporal Hierarchy Forecaster (FEATHer) for accurate long-term forecasting under severe limits. FEATHer introduces: (i) ultra-lightweight multiscale decomposition into frequency pathways; (ii) a shared Dense Temporal Kernel using projection-depthwise convolution-projection without recurrence or attention; (iii) frequency-aware branch gating that adaptively fuses representations based on spectral characteristics; and (iv) a Sparse Period Kernel reconstructing outputs via period-wise downsampling to capture seasonality. FEATHer maintains a compact architecture (as few as 400 parameters) while outperforming baselines. Across eight benchmarks, it achieves the best ranking, recording 60 first-place results with an average rank of 2.05. These results demonstrate that reliable long-range forecasting is achievable on constrained edge hardware, offering a practical direction for industrial real-time inference.}
 }
 
+@article{jankowiak2026-flexible-kernels-for-protein-b17ed8f1,
+  author = {Martin Jankowiak and Yerdos Ordabayev and Rudraksh Tuwani and Henry N. Ward and Hunter Nisonoff and James M. McFarland and Gevorg Grigoryan},
+  title = {Flexible Kernels for Protein Property Prediction},
+  year = {2026},
+  journal = {ICML},
+  eprint = {2606.11057v1},
+  archivePrefix = {arXiv},
+  url = {https://arxiv.org/abs/2606.11057v1},
+  abstract = {Despite its importance to applications in protein design, predicting protein properties like binding affinity and thermostability from sparse experimental data remains a significant challenge. Accordingly, we introduce a class of sequence kernels that exploit evolutionary substitution matrices as well as local linearity and demonstrate that the resulting Gaussian processes provide data-efficient models of protein property landscapes, frequently outperforming alternatives that rely on foundation model embeddings. Furthermore--by learning what are in effect structure-aware substitution matrices--we show that our kernels can readily incorporate structural information from foundation models. We demonstrate that these structure-conditioned kernels are well suited to multi-task learning across multiple protein property landscapes and can decisively outperform local supervised learning methods.}
+}
+
 @article{qi2026-from-selection-to-scheduling-99d49acc,
   author = {Zhuang Qi and Ying-Peng Tang and Lei Meng and Guoqing Chao and Lei Wu and Han Yu and Xiangxu Meng},
   title = {From Selection to Scheduling: Federated Geometry-Aware Correction Makes Exemplar Replay Work Better under Continual Dynamic Heterogeneity},

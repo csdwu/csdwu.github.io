@@ -703,6 +703,17 @@
   abstract = {We present an $ε$-bounded compression method for unit-norm embeddings that achieves 1.5$\\times$ compression, 25% better than the best prior lossless method. The method exploits that spherical coordinates of high-dimensional unit vectors concentrate around $π/2$, causing IEEE 754 exponents to collapse to a single value and high-order mantissa bits to become predictable, enabling entropy coding of both. Reconstruction error is bounded by float32 machine epsilon ($1.19 \\times 10^\{-7\}$), making reconstructed values indistinguishable from originals at float32 precision. Evaluation across 26 configurations spanning text, image, and multi-vector embeddings confirms consistent compression improvement with zero measurable retrieval degradation on BEIR benchmarks.}
 }
 
+@article{teng2026-embedding-hybrid-systems-into-86cb9826,
+  author = {Sangli Teng and Hang Liu and Koushil Sreenath},
+  title = {Embedding Hybrid Systems into Continuous Latent Vector Fields},
+  year = {2026},
+  journal = {ICML},
+  eprint = {2606.10596v1},
+  archivePrefix = {arXiv},
+  url = {https://arxiv.org/abs/2606.10596v1},
+  abstract = {This work proves that an $n$-dimensional hybrid system can be embedded into an $m$-dimensional Euclidean space equipped with a continuous vector field on its embedded image whenever $m>2n$. This result suggests that an intrinsically discontinuous hybrid system generically admits a continuous extrinsic representation that is well-posed for differentiable optimization. Building on this existence theorem, we show that a latent Neural ODE with consistency loss in both the latent and state space can accurately recover the flow of hybrid systems. Extensive experiments suggest the proposed method outperforms the existing method in learning hybrid systems with varying geometries from only time series data.}
+}
+
 @article{sim2026-embedding-only-uplink-for-9fe21ef8,
   author = {Sangcheol Sim},
   title = {Embedding-Only Uplink for Onboard Retrieval Under Shift in Remote Sensing},
@@ -780,6 +791,17 @@
   abstract = {Molecular understanding is central to advancing areas such as scientific discovery, yet Large Language Models (LLMs) struggle to understand molecular graphs effectively. Existing graph-LLM bridges often adapt the Q-Former-style connector with fixed-length static tokens, which is originally designed for vision tasks. These designs overlook stereochemistry and substructural context and typically require costly LLM-backbone fine-tuning, limiting efficiency and generalization. We introduce EDT-Former, an Entropy-guided Dynamic Token Transformer that generates tokens aligned with informative molecular patches, thereby preserving both local and global structural features for molecular graph understanding. Beyond prior approaches, EDT-Former enables alignment between frozen graph encoders and LLMs without tuning the LLM backbone (excluding the embedding layer), resulting in computationally efficient finetuning, and achieves stateof-the-art results on MoleculeQA, Molecule-oriented Mol-Instructions, and property prediction benchmarks (TDC, MoleculeNet), underscoring its effectiveness for scalable and generalizable multimodal molecular understanding}
 }
 
+@article{zeng2026-eralign-energy-based-representation-d2beaa90,
+  author = {Xianlin Zeng and Fan Xia and Xiangyu Chen},
+  title = {ERAlign: Energy-based Representation Alignment of GNNs and LLMs on Text-attributed Graphs},
+  year = {2026},
+  journal = {ICML},
+  eprint = {2606.10461v1},
+  archivePrefix = {arXiv},
+  url = {https://arxiv.org/abs/2606.10461v1},
+  abstract = {Text-attributed Graphs (TAGs) incorporate textual node attributes with graph structures to describe rich relational semantics. Recent efforts to integrate Graph Neural Networks (GNNs) and Large Language Models (LLMs) have shown promise for learning on TAGs, yet achieving well-aligned representations remains challenging. Prior studies largely rely on heuristics that perform coarse-grained matching. They lack sufficient constraints and ignore distributional alignment, leading to representation drift and limited generalization. Building on Energy-based Models (EBMs), we propose an Energy-based Representation Alignment (ERAlign) framework that projects GNN-encoded graph structure and LLM-derived text embeddings in a shared latent space to achieve distribution consistency. Concretely, layer-wise alignment is quantified by a distance metric and optimized via an EBM objective. By decreasing energy values, our framework yields well-aligned representations for downstream tasks. During training, we introduce Energy Discrepancy (ED) to avoid high sampling costs associated with intractable normalization. ED also carries theoretical guarantees of higher training efficiency and reduced energy landscape distortion. Empirical evaluations on eight TAG datasets demonstrate that ERAlign obtains state-of-the-art performance across varying levels of supervision and cross-task transfer scenarios.}
+}
+
 @article{sulc2026-event-embedding-of-protein-d86677d5,
   author = {Antonin Sulc},
   title = {Event Embedding of Protein Networks : Compositional Learning of Biological Function},
@@ -843,6 +865,17 @@
   archivePrefix = {arXiv},
   url = {https://arxiv.org/abs/2604.26488v1},
   abstract = {One of the most exciting applications of vision models involve pixel-level reasoning. Despite the abundance of vision foundation models, we still lack representations that effectively embed spatio-temporal properties of visual scenes at the pixel level. Existing frameworks either train on image-based pretext tasks, which do not account for dynamic elements, or on video sequences for action-level reasoning, which does not scale to dense pixel-level prediction. We present a framework that learns pixel-accurate feature descriptors from videos, LILA. The core element of our training framework is linear in-context learning. LILA leverages spatio-temporal cue maps -- depth and motion -- estimated with off-the-shelf networks. Despite the noisy nature of those cues, LILA trains effectively on uncurated video datasets, embedding semantic and geometric properties in a temporally consistent manner. We demonstrate compelling empirical benefits of the learned representation across a diverse suite of vision tasks: video object segmentation, surface normal estimation and semantic segmentation.}
+}
+
+@article{jankowiak2026-flexible-kernels-for-protein-b17ed8f1,
+  author = {Martin Jankowiak and Yerdos Ordabayev and Rudraksh Tuwani and Henry N. Ward and Hunter Nisonoff and James M. McFarland and Gevorg Grigoryan},
+  title = {Flexible Kernels for Protein Property Prediction},
+  year = {2026},
+  journal = {ICML},
+  eprint = {2606.11057v1},
+  archivePrefix = {arXiv},
+  url = {https://arxiv.org/abs/2606.11057v1},
+  abstract = {Despite its importance to applications in protein design, predicting protein properties like binding affinity and thermostability from sparse experimental data remains a significant challenge. Accordingly, we introduce a class of sequence kernels that exploit evolutionary substitution matrices as well as local linearity and demonstrate that the resulting Gaussian processes provide data-efficient models of protein property landscapes, frequently outperforming alternatives that rely on foundation model embeddings. Furthermore--by learning what are in effect structure-aware substitution matrices--we show that our kernels can readily incorporate structural information from foundation models. We demonstrate that these structure-conditioned kernels are well suited to multi-task learning across multiple protein property landscapes and can decisively outperform local supervised learning methods.}
 }
 
 @article{kaushik2026-forget-less-by-learning-bc4e8076,
