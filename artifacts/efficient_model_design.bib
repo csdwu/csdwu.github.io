@@ -478,6 +478,17 @@
   abstract = {Deep neural networks learn representations where individual features often lack interpretable meaning; a single neuron may activate for scattered, unrelated inputs. We introduce coherence, a geometric property inspired by neural coding in the brain, where neurons like grid cells and head direction cells respond to contiguous regions of state space. A non-negative matrix is coherent if each row (sample) attends to geometrically clustered columns (features) and vice versa, and in addition every sample is well described by some feature and every feature is needed by some sample. We prove that coherent matrices induce a bounded interleaving between the Vietoris-Rips filtrations of samples and features, guaranteeing that both spaces share compatible topological structure. This geometric constraint facilitates interpretability. For example, if data lies on a circle, coherent features must tile that circle into contiguous arcs. We introduce Coh, a differentiable objective function based on Fréchet variance that enforces coherence during training. Unlike sparsity, which bounds how many samples a feature activates on, coherence bounds which samples, requiring geometric connectivity rather than only rarity. This yields not just interpretable features but an interpretable feature space. We validate Coh in an auto-encoder using synthetic and rotated MNIST datasets and in a token embedding of BERT using language data.}
 }
 
+@article{kim2026-learning-instance-adaptive-low-0fd6195c,
+  author = {Dong-Woo Kim and Tae-Kyun Kim},
+  title = {Learning Instance-Adaptive Low-Rank Orthogonal Subspaces for Clothes-Changing Person Re-Identification},
+  year = {2026},
+  journal = {ICML},
+  eprint = {2606.11661v1},
+  archivePrefix = {arXiv},
+  url = {https://arxiv.org/abs/2606.11661v1},
+  abstract = {Clothes-changing person re-identification (CC-ReID) aims to recognize individuals despite drastic appearance changes caused by clothing variation. While existing methods rely on adversarial learning to disentangle clothing features, we propose Ortho-ReID, which explicitly models a low-rank clothing subspace from VLM text descriptions and extracts clothing-invariant representations via direct geometric constraints. A critical component is our transformer-based Basis Maker, which refines a shared, low-dimensional clothing prior into an instance-adaptive low-rank subspace through cross-attention with image patches, enabling robust clothing feature extraction even under varying visibility conditions. This instance-adaptive subspace is supervised via alignment with clothing text embeddings, while identity features are extracted via a learnable projection head and geometrically constrained to be strictly orthogonal to it. Extensive experiments demonstrate state-of-the-art performance on PRCC (+5.9% top-1), Celeb-reID-light (+3.5%), and LaST (+5.3%), with competitive results on LTCC.}
+}
+
 @article{formal2026-learning-retrieval-models-with-f3e62918,
   author = {Thibault Formal and Maxime Louis and Hervé Dejean and Stéphane Clinchant},
   title = {Learning Retrieval Models with Sparse Autoencoders},

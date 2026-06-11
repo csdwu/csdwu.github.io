@@ -1,6 +1,6 @@
 {
   "version": "2.0.0",
-  "generated_at": "2026-06-10T02:51:57.106Z",
+  "generated_at": "2026-06-11T03:24:12.549Z",
   "query_groups": {
     "A": "\"embedded ai\"",
     "B": "(\"low power\" OR \"ultra-low-power\") \"embedded ai\"",
@@ -8,24 +8,24 @@
   },
   "stats": {
     "raw_counts": {
-      "A": 42,
-      "B": 1,
+      "A": 40,
+      "B": 0,
       "C": 0
     },
     "after_set_ops": {
-      "A_only": 41,
-      "B": 1,
+      "A_only": 40,
+      "B": 0,
       "C": 0,
-      "merged_total": 42,
+      "merged_total": 40,
       "bc_overlap": 0
     },
-    "after_filter": 827,
+    "after_filter": 830,
     "classification": {
-      "total": 827,
+      "total": 830,
       "by_category": {
-        "Efficient Model Design and Optimization": 263,
+        "Efficient Model Design and Optimization": 264,
         "Novel Computing Architectures and Domain-Specific Accelerators": 39,
-        "Embedded AI Applications": 525
+        "Embedded AI Applications": 527
       },
       "by_tag": {
         "TinyML": 49,
@@ -35,14 +35,14 @@
       "by_provider": {
         "tencent_tokenhub": 0,
         "heuristic": 0,
-        "heuristic_fallback": 827
+        "heuristic_fallback": 830
       }
     },
     "source_stats": {
-      "total": 827,
+      "total": 830,
       "by_group": {
         "A": {
-          "total": 690,
+          "total": 693,
           "arxiv": 0,
           "venues": {
             "AAAI": 90,
@@ -168,7 +168,7 @@
             "ICIP": 0,
             "ICLR": 160,
             "ICMI": 0,
-            "ICML": 118,
+            "ICML": 121,
             "ICMR": 0,
             "ICN": 0,
             "ICNP": 0,
@@ -1539,7 +1539,7 @@
         }
       },
       "total_summary": {
-        "total": 842,
+        "total": 845,
         "arxiv": 121,
         "venues": {
           "AAAI": 90,
@@ -1665,7 +1665,7 @@
           "ICIP": 0,
           "ICLR": 161,
           "ICMI": 0,
-          "ICML": 120,
+          "ICML": 123,
           "ICMR": 0,
           "ICN": 0,
           "ICNP": 0,
@@ -1918,7 +1918,7 @@
     {
       "key": "efficient_model_design",
       "title": "Efficient Model Design and Optimization",
-      "count": 263,
+      "count": 264,
       "papers": [
         {
           "id": "3b9cf83b0afb286c0b1a0dcc692a3ea7f1aec66c",
@@ -2117,6 +2117,55 @@
           "doi": "",
           "arxiv_comment": "",
           "arxiv_id": "2606.02841v1",
+          "raw_venue": "",
+          "venue_source": "",
+          "sort_key": 202600,
+          "download": {
+            "status": "pending",
+            "source": null,
+            "path": null,
+            "last_attempt_at": null
+          }
+        },
+        {
+          "id": "9c56e392e0047ab62965e6dba9dcfe7a64e3d840",
+          "title": "Learning Instance-Adaptive Low-Rank Orthogonal Subspaces for Clothes-Changing Person Re-Identification",
+          "authors": [
+            "Dong-Woo Kim",
+            "Tae-Kyun Kim"
+          ],
+          "year": 2026,
+          "month": 6,
+          "source": "arxiv",
+          "venue": "ICML",
+          "venue_type": "conference",
+          "abstract": "Clothes-changing person re-identification (CC-ReID) aims to recognize individuals despite drastic appearance changes caused by clothing variation. While existing methods rely on adversarial learning to disentangle clothing features, we propose Ortho-ReID, which explicitly models a low-rank clothing subspace from VLM text descriptions and extracts clothing-invariant representations via direct geometric constraints. A critical component is our transformer-based Basis Maker, which refines a shared, low-dimensional clothing prior into an instance-adaptive low-rank subspace through cross-attention with image patches, enabling robust clothing feature extraction even under varying visibility conditions. This instance-adaptive subspace is supervised via alignment with clothing text embeddings, while identity features are extracted via a learnable projection head and geometrically constrained to be strictly orthogonal to it. Extensive experiments demonstrate state-of-the-art performance on PRCC (+5.9% top-1), Celeb-reID-light (+3.5%), and LaST (+5.3%), with competitive results on LTCC.",
+          "urls": {
+            "arxiv": "https://arxiv.org/abs/2606.11661v1",
+            "pdf": "https://arxiv.org/pdf/2606.11661v1",
+            "paper": "https://arxiv.org/abs/2606.11661v1"
+          },
+          "search_sets_raw": [
+            "A"
+          ],
+          "search_sets_final": [
+            "A"
+          ],
+          "filter_bucket": "th_cpl_a",
+          "matched_venue": "ICML",
+          "matched_th_cpl_level": "A",
+          "matched_th_cpl_area": "Artificial Intelligence and Pattern Recognition",
+          "category": "Efficient Model Design and Optimization",
+          "llm_tags": [],
+          "forced_tags": [],
+          "final_tags": [],
+          "cited_by": 0,
+          "is_preprint_on_arxiv": false,
+          "preprint_source": "",
+          "journal_ref": "",
+          "doi": "",
+          "arxiv_comment": "",
+          "arxiv_id": "2606.11661v1",
           "raw_venue": "",
           "venue_source": "",
           "sort_key": 202600,
@@ -17936,7 +17985,7 @@
     {
       "key": "embedded_ai_applications",
       "title": "Embedded AI Applications",
-      "count": 525,
+      "count": 527,
       "papers": [
         {
           "id": "d103ead51da993c73537e967f22d71ee8df11af2",
@@ -18242,6 +18291,109 @@
           "doi": "",
           "arxiv_comment": "",
           "arxiv_id": "2606.09551v1",
+          "raw_venue": "",
+          "venue_source": "",
+          "sort_key": 202600,
+          "download": {
+            "status": "pending",
+            "source": null,
+            "path": null,
+            "last_attempt_at": null
+          }
+        },
+        {
+          "id": "98da3c135ecf3f6d8413ac8fe51c80dc3cd7aeb6",
+          "title": "nD-RoPE: A Generalized RoPE for n-Dimensional Position Embedding",
+          "authors": [
+            "Boyang Li",
+            "Yulin Wu",
+            "Sizhe Xu",
+            "Nuoxian Huang",
+            "Zhonghang Yuan",
+            "Shangyi Guo",
+            "Shu Yang",
+            "Takahiro Yabe"
+          ],
+          "year": 2026,
+          "month": 6,
+          "source": "arxiv",
+          "venue": "ICML",
+          "venue_type": "conference",
+          "abstract": "Rotary Position Embedding (RoPE) is widely adopted in Transformer models, yet its extension to high-dimensional domains lacks a unified theoretical formulation. Most existing approaches either apply rotations independently along each axis or empirically mix frequencies, which limits cross-dimensional interactions and yields direction-dependent representations. To address these limitations, we propose nD-RoPE, a decomposition-free generalization of RoPE to arbitrary dimensions. From a translation-invariant formulation in continuous Hilbert space, we derive a spectral condition for isotropy that requires treating positions and frequencies as coupled \\(n\\)-dimensional vectors. We instantiate this formulation with a multi-scale regular-simplex wave-vector design, which provides non-degenerate spatial coverage and a symmetric, directionally balanced second-order response. Experiments across images, videos, and point clouds demonstrate consistent performance gains and improved generalization in high-dimensional settings.",
+          "urls": {
+            "arxiv": "https://arxiv.org/abs/2606.12146v1",
+            "pdf": "https://arxiv.org/pdf/2606.12146v1",
+            "paper": "https://arxiv.org/abs/2606.12146v1"
+          },
+          "search_sets_raw": [
+            "A"
+          ],
+          "search_sets_final": [
+            "A"
+          ],
+          "filter_bucket": "th_cpl_a",
+          "matched_venue": "ICML",
+          "matched_th_cpl_level": "A",
+          "matched_th_cpl_area": "Artificial Intelligence and Pattern Recognition",
+          "category": "Embedded AI Applications",
+          "llm_tags": [],
+          "forced_tags": [],
+          "final_tags": [],
+          "cited_by": 0,
+          "is_preprint_on_arxiv": false,
+          "preprint_source": "",
+          "journal_ref": "",
+          "doi": "",
+          "arxiv_comment": "",
+          "arxiv_id": "2606.12146v1",
+          "raw_venue": "",
+          "venue_source": "",
+          "sort_key": 202600,
+          "download": {
+            "status": "pending",
+            "source": null,
+            "path": null,
+            "last_attempt_at": null
+          }
+        },
+        {
+          "id": "5b5b21019c04f9e3251d4828dcaf537fba8b2fdd",
+          "title": "PianoKontext: Expressive Performance Rendering from Deadpan Context",
+          "authors": [
+            "Dmitrii Gavrilev"
+          ],
+          "year": 2026,
+          "month": 6,
+          "source": "arxiv",
+          "venue": "ICML",
+          "venue_type": "conference",
+          "abstract": "Expressive performance rendering (EPR) aims to generate realistic performances constrained on sequences of notes. However, flow matching audio editing models manipulate only synchronized music samples of the same duration, limiting their understanding of expressive timing. We introduce PianoKontext, a flow matching rendering model for classical piano music that generates variable-length performances in the latent space of a pretrained Music2Latent model. We synthesize MIDI scores into deadpan audio and employ Dynamic Time Warping (DTW) in the latent space to construct paired data for training. The aligned embeddings are concatenated in DiT blocks, allowing for a simple and effective learning of the dependencies between the score and performances. Audio samples are available at our demo page: https://realfolkcode.github.io/pianokontext_demo/.",
+          "urls": {
+            "arxiv": "https://arxiv.org/abs/2606.12282v1",
+            "pdf": "https://arxiv.org/pdf/2606.12282v1",
+            "paper": "https://arxiv.org/abs/2606.12282v1"
+          },
+          "search_sets_raw": [
+            "A"
+          ],
+          "search_sets_final": [
+            "A"
+          ],
+          "filter_bucket": "th_cpl_a",
+          "matched_venue": "ICML",
+          "matched_th_cpl_level": "A",
+          "matched_th_cpl_area": "Artificial Intelligence and Pattern Recognition",
+          "category": "Embedded AI Applications",
+          "llm_tags": [],
+          "forced_tags": [],
+          "final_tags": [],
+          "cited_by": 0,
+          "is_preprint_on_arxiv": false,
+          "preprint_source": "",
+          "journal_ref": "",
+          "doi": "",
+          "arxiv_comment": "",
+          "arxiv_id": "2606.12282v1",
           "raw_venue": "",
           "venue_source": "",
           "sort_key": 202600,

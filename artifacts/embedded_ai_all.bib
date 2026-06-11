@@ -1208,6 +1208,17 @@
   abstract = {Deep neural networks learn representations where individual features often lack interpretable meaning; a single neuron may activate for scattered, unrelated inputs. We introduce coherence, a geometric property inspired by neural coding in the brain, where neurons like grid cells and head direction cells respond to contiguous regions of state space. A non-negative matrix is coherent if each row (sample) attends to geometrically clustered columns (features) and vice versa, and in addition every sample is well described by some feature and every feature is needed by some sample. We prove that coherent matrices induce a bounded interleaving between the Vietoris-Rips filtrations of samples and features, guaranteeing that both spaces share compatible topological structure. This geometric constraint facilitates interpretability. For example, if data lies on a circle, coherent features must tile that circle into contiguous arcs. We introduce Coh, a differentiable objective function based on Fréchet variance that enforces coherence during training. Unlike sparsity, which bounds how many samples a feature activates on, coherence bounds which samples, requiring geometric connectivity rather than only rarity. This yields not just interpretable features but an interpretable feature space. We validate Coh in an auto-encoder using synthetic and rotated MNIST datasets and in a token embedding of BERT using language data.}
 }
 
+@article{kim2026-learning-instance-adaptive-low-0fd6195c,
+  author = {Dong-Woo Kim and Tae-Kyun Kim},
+  title = {Learning Instance-Adaptive Low-Rank Orthogonal Subspaces for Clothes-Changing Person Re-Identification},
+  year = {2026},
+  journal = {ICML},
+  eprint = {2606.11661v1},
+  archivePrefix = {arXiv},
+  url = {https://arxiv.org/abs/2606.11661v1},
+  abstract = {Clothes-changing person re-identification (CC-ReID) aims to recognize individuals despite drastic appearance changes caused by clothing variation. While existing methods rely on adversarial learning to disentangle clothing features, we propose Ortho-ReID, which explicitly models a low-rank clothing subspace from VLM text descriptions and extracts clothing-invariant representations via direct geometric constraints. A critical component is our transformer-based Basis Maker, which refines a shared, low-dimensional clothing prior into an instance-adaptive low-rank subspace through cross-attention with image patches, enabling robust clothing feature extraction even under varying visibility conditions. This instance-adaptive subspace is supervised via alignment with clothing text embeddings, while identity features are extracted via a learnable projection head and geometrically constrained to be strictly orthogonal to it. Extensive experiments demonstrate state-of-the-art performance on PRCC (+5.9% top-1), Celeb-reID-light (+3.5%), and LaST (+5.3%), with competitive results on LTCC.}
+}
+
 @article{formal2026-learning-retrieval-models-with-f3e62918,
   author = {Thibault Formal and Maxime Louis and Hervé Dejean and Stéphane Clinchant},
   title = {Learning Retrieval Models with Sparse Autoencoders},
@@ -1427,6 +1438,17 @@
   abstract = {The prevailing paradigm for training large reasoning models--combining Supervised Fine-Tuning (SFT) with Reinforcement Learning with Verifiable Rewards (RLVR)--is fundamentally constrained by its reliance on high-quality, human-annotated reasoning data and external verifiers. This dependency incurs significant data-collection costs, risks embedding human cognitive biases, and confines the reinforcement learning stage to objectively assessable domains like mathematics and coding, leaving a wide range of unverifiable tasks beyond its scope. To overcome these limitations, we introduce NRT (Native Reasoning Training), a novel framework that cultivates complex reasoning by having the model generate its own reasoning traces using only standard question-answer pairs, thereby obviating the need for expert-written demonstrations. NRT reframes the training problem by treating the reasoning process as a latent variable. It employs a unified training objective that models reasoning as an optimization problem, intrinsically rewarding paths that increase the model's likelihood of producing the ground-truth answer. This unified perspective allows us to analyze intrinsic failure modes of prior methods, such as policy collapse, and systematically design more robust reward aggregation functions, creating a self-reinforcing feedback loop where the model learns to think in ways that resolve its own uncertainty. Empirical evaluation on Llama and Mistral model families demonstrates that NRT achieves state-of-the-art performance among verifier-free methods, significantly outperforming standard SFT baselines and prior verifier-free RL methods. Our approach yields particularly strong performance gains in complex reasoning domains and exhibits high robustness to policy collapse, offering a general, scalable path toward building more powerful and broadly applicable reasoning systems.}
 }
 
+@article{li2026-nd-rope-a-generalized-c7543025,
+  author = {Boyang Li and Yulin Wu and Sizhe Xu and Nuoxian Huang and Zhonghang Yuan and Shangyi Guo and Shu Yang and Takahiro Yabe},
+  title = {nD-RoPE: A Generalized RoPE for n-Dimensional Position Embedding},
+  year = {2026},
+  journal = {ICML},
+  eprint = {2606.12146v1},
+  archivePrefix = {arXiv},
+  url = {https://arxiv.org/abs/2606.12146v1},
+  abstract = {Rotary Position Embedding (RoPE) is widely adopted in Transformer models, yet its extension to high-dimensional domains lacks a unified theoretical formulation. Most existing approaches either apply rotations independently along each axis or empirically mix frequencies, which limits cross-dimensional interactions and yields direction-dependent representations. To address these limitations, we propose nD-RoPE, a decomposition-free generalization of RoPE to arbitrary dimensions. From a translation-invariant formulation in continuous Hilbert space, we derive a spectral condition for isotropy that requires treating positions and frequencies as coupled \\(n\\)-dimensional vectors. We instantiate this formulation with a multi-scale regular-simplex wave-vector design, which provides non-degenerate spatial coverage and a symmetric, directionally balanced second-order response. Experiments across images, videos, and point clouds demonstrate consistent performance gains and improved generalization in high-dimensional settings.}
+}
+
 @article{koromilas2026-neural-collapse-by-design-8690c81c,
   author = {Panagiotis Koromilas and Theodoros Giannakopoulos and Mihalis A. Nicolaou and Yannis Panagakis},
   title = {Neural Collapse by Design: Learning Class Prototypes on the Hypersphere},
@@ -1596,6 +1618,17 @@
   archivePrefix = {arXiv},
   url = {https://arxiv.org/abs/2603.06408v1},
   abstract = {Recent advances in diffusion-based video generation have achieved remarkable visual realism but still struggle to obey basic physical laws such as gravity, inertia, and collision. Generated objects often move inconsistently across frames, exhibit implausible dynamics, or violate physical constraints, limiting the realism and reliability of AI-generated videos. We address this gap by introducing Physical Simulator In-the-loop Video Generation (PSIVG), a novel framework that integrates a physical simulator into the video diffusion process. Starting from a template video generated by a pre-trained diffusion model, PSIVG reconstructs the 4D scene and foreground object meshes, initializes them within a physical simulator, and generates physically consistent trajectories. These simulated trajectories are then used to guide the video generator toward spatio-temporally physically coherent motion. To further improve texture consistency during object movement, we propose a Test-Time Texture Consistency Optimization (TTCO) technique that adapts text and feature embeddings based on pixel correspondences from the simulator. Comprehensive experiments demonstrate that PSIVG produces videos that better adhere to real-world physics while preserving visual quality and diversity. Project Page: https://vcai.mpi-inf.mpg.de/projects/PSIVG/}
+}
+
+@article{gavrilev2026-pianokontext-expressive-performance-rendering-b2a30ce7,
+  author = {Dmitrii Gavrilev},
+  title = {PianoKontext: Expressive Performance Rendering from Deadpan Context},
+  year = {2026},
+  journal = {ICML},
+  eprint = {2606.12282v1},
+  archivePrefix = {arXiv},
+  url = {https://arxiv.org/abs/2606.12282v1},
+  abstract = {Expressive performance rendering (EPR) aims to generate realistic performances constrained on sequences of notes. However, flow matching audio editing models manipulate only synchronized music samples of the same duration, limiting their understanding of expressive timing. We introduce PianoKontext, a flow matching rendering model for classical piano music that generates variable-length performances in the latent space of a pretrained Music2Latent model. We synthesize MIDI scores into deadpan audio and employ Dynamic Time Warping (DTW) in the latent space to construct paired data for training. The aligned embeddings are concatenated in DiT blocks, allowing for a simple and effective learning of the dependencies between the score and performances. Audio samples are available at our demo page: https://realfolkcode.github.io/pianokontext_demo/.}
 }
 
 @article{zheng2026-pip-stereo-progressive-iterations-38b6db7b,
