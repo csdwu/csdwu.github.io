@@ -312,6 +312,17 @@
   abstract = {Offline goal-conditioned reinforcement learning requires both long-horizon reachability estimates and local action comparisons. Dual goal representations provide value fields that capture global goal reachability, but they do not directly specify which action should be preferred at a given state. We propose Dual Advantage Fields, a policy-extraction method that turns a bilinear dual value model into a local advantage signal. Under bilinear dual parameterization, the goal embedding is the gradient of the value field with respect to the state representation. DAF learns an action-effect model that predicts the discounted feature displacement induced by an action and scores actions by the alignment between this displacement and the goal direction. In the realizable case, this score equals the goal-conditioned Bellman advantage, yielding a standard local policy-improvement guarantee. On OGBench locomotion, manipulation, and puzzle tasks, DAF improves aggregate RLiable metrics and performs strongly in settings where locally correct actions differ from direct movement toward the final goal.}
 }
 
+@article{kong2026-eca-efficient-continual-alignment-278dc9fd,
+  author = {Jiangtao Kong and Peijun Zhao and Chun-Fu Chen and Youngwook Do and Shaohan Hu and Tianyi Zhou and Huajie Shao},
+  title = {ECA: Efficient Continual Alignment for Open-Ended Image-to-Text Generation},
+  year = {2026},
+  journal = {ICML},
+  eprint = {2606.12633v1},
+  archivePrefix = {arXiv},
+  url = {https://arxiv.org/abs/2606.12633v1},
+  abstract = {Incremental Learning (IL) for Open-ended Image-to-Text Generation (OpenITG) enables models to continuously generate accurate, contextually relevant text for new images while preserving previously acquired knowledge. Unlike prior studies, this paper addresses a more practical scenario in which the predominant category of visual data shifts over time as environments evolve. In this context, we introduce a new notion of continual alignment, which incrementally adapts the alignment module within pre-trained VLMs to preserve high-quality cross-modal representations. Based on this idea, we propose Efficient Continual Alignment (ECA), a novel exemplar-free IL approach for OpenITG. The key challenge is enabling the model to acquire new, task-specific features while minimizing interference with the established alignment without accessing raw data from previous tasks. To address this, ECA employs three core mechanisms: a Mixture of Query (MoQ) module that adapts task-specific query tokens, a Fisher Dynamic Expansion (FeDEx) that dynamically expands model structure based on a Fisher Information Matrix (FIM)-based metric, and an embedding dictionary with Dictionary Replay (DR) to retain past knowledge. To evaluate ECA's performance, we construct four new IL OpenITG benchmarks that better reflect real-world scenarios. Experimental results demonstrate that ECA significantly mitigates catastrophic forgetting and improves IL performance compared to baseline methods. Code and benchmarks are available at https://github.com/Snowball0823/ECA.}
+}
+
 @article{seifi2026-ego-embedding-guided-personalization-957b2d72,
   author = {Soroush Seifi and Simon Gardier and Vaggelis Dorovatas and Daniel Olmeda Reino and Rahaf Aljundi},
   title = {Ego: Embedding-Guided Personalization of Vision-Language Models},
@@ -935,6 +946,17 @@
   abstract = {Code Large Language Models (CLLMs) serve as the core of modern code agents, enabling developers to automate complex software development tasks. In this paper, we present Poison-with-Style (PwS), a practical and stealthy model poisoning attack targeting CLLMs. Unlike prior attacks that assume an active adversary capable of directly embedding explicit triggers (e.g., specific words) into developers' prompts during inference, PwS leverages developers' code styles as covert triggers implicitly embedded within their prompts. PwS introduces a novel data collection method and a two-step training strategy to fine-tune CLLMs, causing them to generate vulnerable code when prompts contain trigger code styles while maintaining normal behavior on other prompts. Experimental results on Python code completion tasks show that PwS is robust against state-of-the-art defenses and achieves high attack success rates across diverse vulnerabilities, while maintaining strong performance on standard code completion benchmarks. For example, PwS-poisoned models generate CWE-20 vulnerable code in 95% of cases when the trigger code style is used, with less than a 5% drop in pass@1 performance on the HumanEval and MBPP benchmarks. Our implementation and dataset are here: https://github.com/khangtran2020/pws.}
 }
 
+@article{ma2026-polyflow-safe-and-efficient-56c9bef6,
+  author = {Jianming Ma and Qiyue Yang and Yang Zhang and Liyun Yan and Zhanxiang Cao and Yazhou Zhang and Yue Gao},
+  title = {PolyFlow: Safe and Efficient Polytope-Constrained Flow Matching with Constraint Embedding and Projection-free Update},
+  year = {2026},
+  journal = {ICML},
+  eprint = {2606.13400v1},
+  archivePrefix = {arXiv},
+  url = {https://arxiv.org/abs/2606.13400v1},
+  abstract = {While flow-based generative models have demonstrated strong performance across a wide range of domains, deploying them in safety-critical physical systems remains challenging due to strict constraint requirements. Existing approaches typically enforce safety through post-hoc corrections, which incur substantial computational overhead and may distort the learned distribution. We propose PolyFlow, a polytope-constrained flow matching framework that embeds constraints directly into the model and flow dynamics. PolyFlow introduces a discrete-time flow formulation and a projection-free architecture, which eliminate the discretization error and guarantee strict satisfaction of arbitrary polyhedral constraints, without the need for expensive iterative solvers. Experimental results show that PolyFlow achieves zero constraint violation while maintaining high distributional fidelity across a range of planning and control tasks. Compared to state-of-the-art constrained generation baselines, PolyFlow significantly reduces inference latency and demonstrates a favorable trade-off between safety, efficiency, and generative quality. Code is available on https://github.com/MJianM/PolyFlow.}
+}
+
 @article{lohanimit2026-privacy-in-image-datasets-f89dfaa1,
   author = {Rawisara Lohanimit and Yankun Wu and Amelia Katirai and Yuta Nakashima and Noa Garcia},
   title = {Privacy in Image Datasets: A Case Study on Pregnancy Ultrasounds},
@@ -1425,6 +1447,17 @@
   archivePrefix = {arXiv},
   url = {https://arxiv.org/abs/2604.10800v1},
   abstract = {Learned classifiers deployed in agentic pipelines face a fundamental reliability problem: predictions are probabilistic inferences, not verified conclusions, and acting on them without grounding in observable evidence leads to compounding failures across downstream stages. Software vulnerability analysis makes this cost concrete and measurable. We address this through a unified cross-language vulnerability lifecycle framework built around three LLM-driven reasoning stages-hybrid structural-semantic detection, execution-grounded agentic validation, and validation-aware iterative repair-governed by a strict invariant: no repair action is taken without execution-based confirmation of exploitability. Cross-language generalization is achieved via a Universal Abstract Syntax Tree (uAST) normalizing Java, Python, and C++ into a shared structural schema, combined with a hybrid fusion of GraphSAGE and Qwen2.5-Coder-1.5B embeddings through learned two-way gating, whose per-sample weights provide intrinsic explainability at no additional cost. The framework achieves 89.84-92.02% intra-language detection accuracy and 74.43-80.12% zero-shot cross-language F1, resolving 69.74% of vulnerabilities end-to-end at a 12.27% total failure rate. Ablations establish necessity: removing uAST degrades cross-language F1 by 23.42%, while disabling validation increases unnecessary repairs by 131.7%. These results demonstrate that execution-grounded closed-loop reasoning is a principled and practically deployable mechanism for trustworthy LLM-driven agentic AI.}
+}
+
+@article{bigot2026-viral-proteins-reveal-geometry-12b9d5c9,
+  author = {Arthur Bigot and Harmon Bhasin and Core Francisco Park and Eugene Shakhnovich and Dianzhuo Wang},
+  title = {Viral Proteins Reveal Geometry of Protein Language Models},
+  year = {2026},
+  journal = {ICML},
+  eprint = {2606.12609v1},
+  archivePrefix = {arXiv},
+  url = {https://arxiv.org/abs/2606.12609v1},
+  abstract = {Protein language models are trained on highly imbalanced datasets, raising the question of how they represent underrepresented biological sequences. Using viral proteins as a case study across ESM model families, we identify a dominant nativeness axis in embedding space, aligned with masked reconstruction perplexity, that orders sequences from well-modeled cellular proteins through viral proteins to shuffled and random sequences. Scaling contracts this axis unevenly across viral families. Despite this, protein language model embeddings retain viral-specific signal: viral proteins remain linearly separable beyond zero-shot perplexity and shallow sequence features. Together, these results suggest that pLM representations are structured by a general notion of nativeness while preserving information specific to distinct biological groups.}
 }
 
 @article{wang2026-zero-shot-3d-question-e704ddbb,

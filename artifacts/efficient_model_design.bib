@@ -193,6 +193,17 @@
   abstract = {Vision-language models (VLMs) align images and text with remarkable success, yet the geometry of their shared embedding space remains poorly understood. To probe this geometry, we begin from the Iso-Energy Assumption, which exploits cross-modal redundancy: a concept that is truly shared should exhibit the same average energy across modalities. We operationalize this assumption with an Aligned Sparse Autoencoder (SAE) that encourages energy consistency during training while preserving reconstruction. We find that this inductive bias changes the SAE solution without harming reconstruction, giving us a representation that serves as a tool for geometric analysis. Sanity checks on controlled data with known ground truth confirm that alignment improves when Iso-Energy holds and remains neutral when it does not. Applied to foundational VLMs, our framework reveals a clear structure with practical consequences: (i) sparse bimodal atoms carry the entire cross-modal alignment signal; (ii) unimodal atoms act as modality-specific biases and fully explain the modality gap; (iii) removing unimodal atoms collapses the gap without harming performance; (iv) restricting vector arithmetic to the bimodal subspace yields in-distribution edits and improved retrieval. These findings suggest that the right inductive bias can both preserve model fidelity and render the latent geometry interpretable and actionable.}
 }
 
+@article{isupova2026-decoding-insect-song-a-dde6c152,
+  author = {Olga Isupova and Danil Kuzin and Ella Browning and Tom Mills and Steven Reece},
+  title = {Decoding Insect Song: A Multitask Semisupervised Orthoptera Bioacoustic Classifier},
+  year = {2026},
+  journal = {ICML},
+  eprint = {2606.13236v1},
+  archivePrefix = {arXiv},
+  url = {https://arxiv.org/abs/2606.13236v1},
+  abstract = {Passive acoustic monitoring holds great promise for ecological inference, yet existing automated tools are typically narrowly trained and non-transferable. We address these limitations with PULSE, a semi-supervised, multi-task framework for Orthoptera bioacoustics, combining weakly-supervised species classification, self-supervised learning on unlabelled field audio, and knowledge distillation from a general-purpose bioacoustic model. Our domain-adapted specialist model outperforms a state-of-the-art general model across all metrics (macro F1: 0.21 vs. 0.07; AUC: 0.74 vs. 0.45; AP: 0.32 vs. 0.19), with active learning further raising F1 to 0.34 and AUC to 0.84. Beyond classification, the learned embeddings encode ecologically meaningful structure, exposed through an interactive visualisation tool for ecological discovery.}
+}
+
 @article{ye2026-deep-tabular-representation-corrector-47a022d1,
   author = {Hangting Ye and Peng Wang and Wei Fan and Xiaozhuang Song and He Zhao and Dandan Gun and Yi Chang},
   title = {Deep Tabular Representation Corrector},
@@ -698,6 +709,17 @@
   abstract = {Scaling Transformers to ultra-long contexts is bottlenecked by the $O(n^2 d)$ cost of self-attention. Existing methods reduce this cost along the sequence axis through local windows, kernel approximations, or token-level sparsity, but these approaches consistently degrade accuracy. In this paper, we instead explore an orthogonal axis: feature sparsity. We propose Sparse Feature Attention (SFA), where queries and keys are represented as $k$-sparse codes that preserve high-dimensional expressivity while reducing the cost of attention from $Θ(n^2 d)$ to $Θ(n^2 k^2/d)$. To make this efficient at scale, we introduce FlashSFA, an IO-aware kernel that extends FlashAttention to operate directly on sparse overlaps without materializing dense score matrices. Across GPT-2 and Qwen3 pretraining, SFA matches dense baselines while improving speed by up to $2.5\\times$ and reducing FLOPs and KV-cache by nearly 50\\%. On synthetic and downstream benchmarks, SFA preserves retrieval accuracy and robustness at long contexts, outperforming short-embedding baselines that collapse feature diversity. These results establish feature-level sparsity as a complementary and underexplored axis for efficient attention, enabling Transformers to scale to orders-of-magnitude longer contexts with minimal quality loss. Code is available at https://github.com/YannX1e/Sparse-Feature-Attention.}
 }
 
+@article{li2026-self-guidance-enhancing-neural-359ef496,
+  author = {Xiang Li and Yixuan Zhou and Jingran Xie and Zhiyong Wu and Hui Wang},
+  title = {Self-Guidance: Enhancing Neural Codecs via Decoder Manifold Alignment},
+  year = {2026},
+  journal = {ICML},
+  eprint = {2606.12940v1},
+  archivePrefix = {arXiv},
+  url = {https://arxiv.org/abs/2606.12940v1},
+  abstract = {Neural speech codecs based on Vector-Quantized VAEs (VQ-VAEs) are core audio tokenizers for speech LLMs, yet their reconstruction fidelity is bottlenecked by quantization error. Modifying the quantizer or increasing model capacity are common fixes, but they complicate downstream language modeling. Our core idea is to align the decoder's internal feature manifolds when processing both the quantized tokens and their original continuous embeddings, using a lightweight feature-mapping loss. This requires minimal training overhead and no inference-time changes. Applied to XCodec2, self-guidance improves all reconstruction metrics, achieving state-of-the-art low-bitrate performance. Notably, it enables a 4x codebook reduction without fidelity loss, which downstream TTS experiments show significantly improves LLM-based synthesis by simplifying the token modeling space. Multiple statistical observations and visualizations corroborate the enhanced internal manifold alignment in the decoder. Extensive experiments confirm its generality across various inductive biases. Self-guidance thus establishes an efficient, broadly applicable method for high-fidelity neural audio coding.}
+}
+
 @article{zhang2026-self-supervised-learning-from-d8034158,
   author = {Yipeng Zhang and Hafez Ghaemi and Jungyoon Lee and Shahab Bakhtiari and Eilif B. Muller and Laurent Charlin},
   title = {Self-Supervised Learning from Structural Invariance},
@@ -729,6 +751,17 @@
   archivePrefix = {arXiv},
   url = {https://arxiv.org/abs/2605.26509v1},
   abstract = {Gaussian processes (GPs) provide a principled Bayesian framework for uncertainty estimation, but their computational complexity severely limits scalability to large datasets. We propose SIKA-GP, which accelerates GP inference using sparse inducing kernel approximations based on a dyadic ordered template basis, incurring only $\{O\}(\\log M)$ complexity dependence on the number of inducing points. Our approach constructs compact and expressive kernel representations from sparsely activated bases, enabling efficient tensorized GPU computation and seamless integration with modern large-scale models. SIKA-GP can be naturally embedded into Bayesian neural networks (BNNs) with sparse activations, yielding significant speedups in both training and inference without sacrificing predictive performance. The method naturally extends to deep feature learning, addressing the scalability challenges introduced by deep architectures and high-dimensional feature representations. Empirical results on vision and transformer-based language benchmarks demonstrate that our approach consistently delivers fast and accurate GP models, providing a principled path toward scalable kernel learning.}
+}
+
+@article{uppa2026-skmteb-slovak-massive-text-7895d664,
+  author = {Marek Šuppa and Andrej Ridzik and Daniel Hládek and Natália Kňažeková and Viktória Ondrejová},
+  title = {SkMTEB: Slovak Massive Text Embedding Benchmark and Model Adaptation},
+  year = {2026},
+  journal = {ACL 2026},
+  eprint = {2606.13647v1},
+  archivePrefix = {arXiv},
+  url = {https://arxiv.org/abs/2606.13647v1},
+  abstract = {We introduce SkMTEB, the first comprehensive MTEB-style text embedding benchmark for Slovak, a low-resource West Slavic language, comprising 31 datasets across 7 task types -- nearly 4$\\times$ the depth of existing multilingual benchmark coverage for Slovak. Our evaluation of 31 embedding models reveals that large instruction-tuned multilingual models achieve the strongest performance, while existing Slovak-specific models trained for NLU tasks transfer poorly to embedding tasks. To address the need for efficient, locally-deployable Slovak embeddings, we develop \\texttt\{e5-sk-small\} (45M parameters) and \\texttt\{e5-sk-large\} (365M) by applying vocabulary trimming and fine-tuning to Multilingual E5 models. Despite size reductions of up to 62\\%, our open-source models achieve competitive performance with proprietary APIs while remaining locally deployable for semantic search and retrieval-augmented generation (RAG). We release the benchmark, models, datasets, and code openly, hoping our approach offers a replicable path for other under-resourced languages.}
 }
 
 @article{kanamori2026-sparse-additive-model-pruning-dfdb1bae,

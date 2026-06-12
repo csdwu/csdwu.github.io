@@ -1,6 +1,6 @@
 {
   "version": "2.0.0",
-  "generated_at": "2026-06-11T03:24:12.549Z",
+  "generated_at": "2026-06-12T02:58:37.540Z",
   "query_groups": {
     "A": "\"embedded ai\"",
     "B": "(\"low power\" OR \"ultra-low-power\") \"embedded ai\"",
@@ -8,24 +8,24 @@
   },
   "stats": {
     "raw_counts": {
-      "A": 40,
+      "A": 35,
       "B": 0,
       "C": 0
     },
     "after_set_ops": {
-      "A_only": 40,
+      "A_only": 35,
       "B": 0,
       "C": 0,
-      "merged_total": 40,
+      "merged_total": 35,
       "bc_overlap": 0
     },
-    "after_filter": 830,
+    "after_filter": 836,
     "classification": {
-      "total": 830,
+      "total": 836,
       "by_category": {
-        "Efficient Model Design and Optimization": 264,
+        "Efficient Model Design and Optimization": 267,
         "Novel Computing Architectures and Domain-Specific Accelerators": 39,
-        "Embedded AI Applications": 527
+        "Embedded AI Applications": 530
       },
       "by_tag": {
         "TinyML": 49,
@@ -35,19 +35,19 @@
       "by_provider": {
         "tencent_tokenhub": 0,
         "heuristic": 0,
-        "heuristic_fallback": 830
+        "heuristic_fallback": 836
       }
     },
     "source_stats": {
-      "total": 830,
+      "total": 836,
       "by_group": {
         "A": {
-          "total": 693,
+          "total": 699,
           "arxiv": 0,
           "venues": {
             "AAAI": 90,
             "AAMAS": 0,
-            "ACL": 4,
+            "ACL": 5,
             "ACM MM": 0,
             "ACNS": 0,
             "ACSAC": 0,
@@ -168,7 +168,7 @@
             "ICIP": 0,
             "ICLR": 160,
             "ICMI": 0,
-            "ICML": 121,
+            "ICML": 126,
             "ICMR": 0,
             "ICN": 0,
             "ICNP": 0,
@@ -1539,12 +1539,12 @@
         }
       },
       "total_summary": {
-        "total": 845,
+        "total": 851,
         "arxiv": 121,
         "venues": {
           "AAAI": 90,
           "AAMAS": 0,
-          "ACL": 4,
+          "ACL": 5,
           "ACM MM": 0,
           "ACNS": 0,
           "ACSAC": 0,
@@ -1665,7 +1665,7 @@
           "ICIP": 0,
           "ICLR": 161,
           "ICMI": 0,
-          "ICML": 123,
+          "ICML": 128,
           "ICMR": 0,
           "ICN": 0,
           "ICNP": 0,
@@ -1918,8 +1918,60 @@
     {
       "key": "efficient_model_design",
       "title": "Efficient Model Design and Optimization",
-      "count": 264,
+      "count": 267,
       "papers": [
+        {
+          "id": "1d2655aa0a7defb17831d6689c091217ae7f5785",
+          "title": "Decoding Insect Song: A Multitask Semisupervised Orthoptera Bioacoustic Classifier",
+          "authors": [
+            "Olga Isupova",
+            "Danil Kuzin",
+            "Ella Browning",
+            "Tom Mills",
+            "Steven Reece"
+          ],
+          "year": 2026,
+          "month": 6,
+          "source": "arxiv",
+          "venue": "ICML",
+          "venue_type": "conference",
+          "abstract": "Passive acoustic monitoring holds great promise for ecological inference, yet existing automated tools are typically narrowly trained and non-transferable. We address these limitations with PULSE, a semi-supervised, multi-task framework for Orthoptera bioacoustics, combining weakly-supervised species classification, self-supervised learning on unlabelled field audio, and knowledge distillation from a general-purpose bioacoustic model. Our domain-adapted specialist model outperforms a state-of-the-art general model across all metrics (macro F1: 0.21 vs. 0.07; AUC: 0.74 vs. 0.45; AP: 0.32 vs. 0.19), with active learning further raising F1 to 0.34 and AUC to 0.84. Beyond classification, the learned embeddings encode ecologically meaningful structure, exposed through an interactive visualisation tool for ecological discovery.",
+          "urls": {
+            "arxiv": "https://arxiv.org/abs/2606.13236v1",
+            "pdf": "https://arxiv.org/pdf/2606.13236v1",
+            "paper": "https://arxiv.org/abs/2606.13236v1"
+          },
+          "search_sets_raw": [
+            "A"
+          ],
+          "search_sets_final": [
+            "A"
+          ],
+          "filter_bucket": "th_cpl_a",
+          "matched_venue": "ICML",
+          "matched_th_cpl_level": "A",
+          "matched_th_cpl_area": "Artificial Intelligence and Pattern Recognition",
+          "category": "Efficient Model Design and Optimization",
+          "llm_tags": [],
+          "forced_tags": [],
+          "final_tags": [],
+          "cited_by": 0,
+          "is_preprint_on_arxiv": false,
+          "preprint_source": "",
+          "journal_ref": "",
+          "doi": "",
+          "arxiv_comment": "",
+          "arxiv_id": "2606.13236v1",
+          "raw_venue": "",
+          "venue_source": "",
+          "sort_key": 202600,
+          "download": {
+            "status": "pending",
+            "source": null,
+            "path": null,
+            "last_attempt_at": null
+          }
+        },
         {
           "id": "3b9cf83b0afb286c0b1a0dcc692a3ea7f1aec66c",
           "title": "Density-Aware Translation of Spurious Correlations in Zero-Shot VLMs",
@@ -2266,6 +2318,110 @@
           "doi": "",
           "arxiv_comment": "",
           "arxiv_id": "2606.01537v1",
+          "raw_venue": "",
+          "venue_source": "",
+          "sort_key": 202600,
+          "download": {
+            "status": "pending",
+            "source": null,
+            "path": null,
+            "last_attempt_at": null
+          }
+        },
+        {
+          "id": "008c47b86848df97c0a0b20f4ebf6248cedd46b4",
+          "title": "Self-Guidance: Enhancing Neural Codecs via Decoder Manifold Alignment",
+          "authors": [
+            "Xiang Li",
+            "Yixuan Zhou",
+            "Jingran Xie",
+            "Zhiyong Wu",
+            "Hui Wang"
+          ],
+          "year": 2026,
+          "month": 6,
+          "source": "arxiv",
+          "venue": "ICML",
+          "venue_type": "conference",
+          "abstract": "Neural speech codecs based on Vector-Quantized VAEs (VQ-VAEs) are core audio tokenizers for speech LLMs, yet their reconstruction fidelity is bottlenecked by quantization error. Modifying the quantizer or increasing model capacity are common fixes, but they complicate downstream language modeling. Our core idea is to align the decoder's internal feature manifolds when processing both the quantized tokens and their original continuous embeddings, using a lightweight feature-mapping loss. This requires minimal training overhead and no inference-time changes. Applied to XCodec2, self-guidance improves all reconstruction metrics, achieving state-of-the-art low-bitrate performance. Notably, it enables a 4x codebook reduction without fidelity loss, which downstream TTS experiments show significantly improves LLM-based synthesis by simplifying the token modeling space. Multiple statistical observations and visualizations corroborate the enhanced internal manifold alignment in the decoder. Extensive experiments confirm its generality across various inductive biases. Self-guidance thus establishes an efficient, broadly applicable method for high-fidelity neural audio coding.",
+          "urls": {
+            "arxiv": "https://arxiv.org/abs/2606.12940v1",
+            "pdf": "https://arxiv.org/pdf/2606.12940v1",
+            "paper": "https://arxiv.org/abs/2606.12940v1"
+          },
+          "search_sets_raw": [
+            "A"
+          ],
+          "search_sets_final": [
+            "A"
+          ],
+          "filter_bucket": "th_cpl_a",
+          "matched_venue": "ICML",
+          "matched_th_cpl_level": "A",
+          "matched_th_cpl_area": "Artificial Intelligence and Pattern Recognition",
+          "category": "Efficient Model Design and Optimization",
+          "llm_tags": [],
+          "forced_tags": [],
+          "final_tags": [],
+          "cited_by": 0,
+          "is_preprint_on_arxiv": false,
+          "preprint_source": "",
+          "journal_ref": "",
+          "doi": "",
+          "arxiv_comment": "",
+          "arxiv_id": "2606.12940v1",
+          "raw_venue": "",
+          "venue_source": "",
+          "sort_key": 202600,
+          "download": {
+            "status": "pending",
+            "source": null,
+            "path": null,
+            "last_attempt_at": null
+          }
+        },
+        {
+          "id": "b4ae1d50b8a8b2591157b66b1b4f10bd5f0a3f95",
+          "title": "SkMTEB: Slovak Massive Text Embedding Benchmark and Model Adaptation",
+          "authors": [
+            "Marek Šuppa",
+            "Andrej Ridzik",
+            "Daniel Hládek",
+            "Natália Kňažeková",
+            "Viktória Ondrejová"
+          ],
+          "year": 2026,
+          "month": 6,
+          "source": "arxiv",
+          "venue": "ACL 2026",
+          "venue_type": "conference",
+          "abstract": "We introduce SkMTEB, the first comprehensive MTEB-style text embedding benchmark for Slovak, a low-resource West Slavic language, comprising 31 datasets across 7 task types -- nearly 4$\\times$ the depth of existing multilingual benchmark coverage for Slovak. Our evaluation of 31 embedding models reveals that large instruction-tuned multilingual models achieve the strongest performance, while existing Slovak-specific models trained for NLU tasks transfer poorly to embedding tasks. To address the need for efficient, locally-deployable Slovak embeddings, we develop \\texttt{e5-sk-small} (45M parameters) and \\texttt{e5-sk-large} (365M) by applying vocabulary trimming and fine-tuning to Multilingual E5 models. Despite size reductions of up to 62\\%, our open-source models achieve competitive performance with proprietary APIs while remaining locally deployable for semantic search and retrieval-augmented generation (RAG). We release the benchmark, models, datasets, and code openly, hoping our approach offers a replicable path for other under-resourced languages.",
+          "urls": {
+            "arxiv": "https://arxiv.org/abs/2606.13647v1",
+            "pdf": "https://arxiv.org/pdf/2606.13647v1",
+            "paper": "https://arxiv.org/abs/2606.13647v1"
+          },
+          "search_sets_raw": [
+            "A"
+          ],
+          "search_sets_final": [
+            "A"
+          ],
+          "filter_bucket": "th_cpl_a",
+          "matched_venue": "ACL",
+          "matched_th_cpl_level": "A",
+          "matched_th_cpl_area": "Artificial Intelligence and Pattern Recognition",
+          "category": "Efficient Model Design and Optimization",
+          "llm_tags": [],
+          "forced_tags": [],
+          "final_tags": [],
+          "cited_by": 0,
+          "is_preprint_on_arxiv": false,
+          "preprint_source": "",
+          "journal_ref": "",
+          "doi": "",
+          "arxiv_comment": "",
+          "arxiv_id": "2606.13647v1",
           "raw_venue": "",
           "venue_source": "",
           "sort_key": 202600,
@@ -17985,7 +18141,7 @@
     {
       "key": "embedded_ai_applications",
       "title": "Embedded AI Applications",
-      "count": 527,
+      "count": 530,
       "papers": [
         {
           "id": "d103ead51da993c73537e967f22d71ee8df11af2",
@@ -18082,6 +18238,60 @@
           "doi": "",
           "arxiv_comment": "",
           "arxiv_id": "2606.04188v1",
+          "raw_venue": "",
+          "venue_source": "",
+          "sort_key": 202600,
+          "download": {
+            "status": "pending",
+            "source": null,
+            "path": null,
+            "last_attempt_at": null
+          }
+        },
+        {
+          "id": "9da0129faf41d418dcbba17c20c50dbdf62bb590",
+          "title": "ECA: Efficient Continual Alignment for Open-Ended Image-to-Text Generation",
+          "authors": [
+            "Jiangtao Kong",
+            "Peijun Zhao",
+            "Chun-Fu Chen",
+            "Youngwook Do",
+            "Shaohan Hu",
+            "Tianyi Zhou",
+            "Huajie Shao"
+          ],
+          "year": 2026,
+          "month": 6,
+          "source": "arxiv",
+          "venue": "ICML",
+          "venue_type": "conference",
+          "abstract": "Incremental Learning (IL) for Open-ended Image-to-Text Generation (OpenITG) enables models to continuously generate accurate, contextually relevant text for new images while preserving previously acquired knowledge. Unlike prior studies, this paper addresses a more practical scenario in which the predominant category of visual data shifts over time as environments evolve. In this context, we introduce a new notion of continual alignment, which incrementally adapts the alignment module within pre-trained VLMs to preserve high-quality cross-modal representations. Based on this idea, we propose Efficient Continual Alignment (ECA), a novel exemplar-free IL approach for OpenITG. The key challenge is enabling the model to acquire new, task-specific features while minimizing interference with the established alignment without accessing raw data from previous tasks. To address this, ECA employs three core mechanisms: a Mixture of Query (MoQ) module that adapts task-specific query tokens, a Fisher Dynamic Expansion (FeDEx) that dynamically expands model structure based on a Fisher Information Matrix (FIM)-based metric, and an embedding dictionary with Dictionary Replay (DR) to retain past knowledge. To evaluate ECA's performance, we construct four new IL OpenITG benchmarks that better reflect real-world scenarios. Experimental results demonstrate that ECA significantly mitigates catastrophic forgetting and improves IL performance compared to baseline methods. Code and benchmarks are available at https://github.com/Snowball0823/ECA.",
+          "urls": {
+            "arxiv": "https://arxiv.org/abs/2606.12633v1",
+            "pdf": "https://arxiv.org/pdf/2606.12633v1",
+            "paper": "https://arxiv.org/abs/2606.12633v1"
+          },
+          "search_sets_raw": [
+            "A"
+          ],
+          "search_sets_final": [
+            "A"
+          ],
+          "filter_bucket": "th_cpl_a",
+          "matched_venue": "ICML",
+          "matched_th_cpl_level": "A",
+          "matched_th_cpl_area": "Artificial Intelligence and Pattern Recognition",
+          "category": "Embedded AI Applications",
+          "llm_tags": [],
+          "forced_tags": [],
+          "final_tags": [],
+          "cited_by": 0,
+          "is_preprint_on_arxiv": false,
+          "preprint_source": "",
+          "journal_ref": "",
+          "doi": "",
+          "arxiv_comment": "",
+          "arxiv_id": "2606.12633v1",
           "raw_venue": "",
           "venue_source": "",
           "sort_key": 202600,
@@ -18405,6 +18615,60 @@
           }
         },
         {
+          "id": "abbce7b039cfeec3ca16520bb4296e6741dd5bf2",
+          "title": "PolyFlow: Safe and Efficient Polytope-Constrained Flow Matching with Constraint Embedding and Projection-free Update",
+          "authors": [
+            "Jianming Ma",
+            "Qiyue Yang",
+            "Yang Zhang",
+            "Liyun Yan",
+            "Zhanxiang Cao",
+            "Yazhou Zhang",
+            "Yue Gao"
+          ],
+          "year": 2026,
+          "month": 6,
+          "source": "arxiv",
+          "venue": "ICML",
+          "venue_type": "conference",
+          "abstract": "While flow-based generative models have demonstrated strong performance across a wide range of domains, deploying them in safety-critical physical systems remains challenging due to strict constraint requirements. Existing approaches typically enforce safety through post-hoc corrections, which incur substantial computational overhead and may distort the learned distribution. We propose PolyFlow, a polytope-constrained flow matching framework that embeds constraints directly into the model and flow dynamics. PolyFlow introduces a discrete-time flow formulation and a projection-free architecture, which eliminate the discretization error and guarantee strict satisfaction of arbitrary polyhedral constraints, without the need for expensive iterative solvers. Experimental results show that PolyFlow achieves zero constraint violation while maintaining high distributional fidelity across a range of planning and control tasks. Compared to state-of-the-art constrained generation baselines, PolyFlow significantly reduces inference latency and demonstrates a favorable trade-off between safety, efficiency, and generative quality. Code is available on https://github.com/MJianM/PolyFlow.",
+          "urls": {
+            "arxiv": "https://arxiv.org/abs/2606.13400v1",
+            "pdf": "https://arxiv.org/pdf/2606.13400v1",
+            "paper": "https://arxiv.org/abs/2606.13400v1"
+          },
+          "search_sets_raw": [
+            "A"
+          ],
+          "search_sets_final": [
+            "A"
+          ],
+          "filter_bucket": "th_cpl_a",
+          "matched_venue": "ICML",
+          "matched_th_cpl_level": "A",
+          "matched_th_cpl_area": "Artificial Intelligence and Pattern Recognition",
+          "category": "Embedded AI Applications",
+          "llm_tags": [],
+          "forced_tags": [],
+          "final_tags": [],
+          "cited_by": 0,
+          "is_preprint_on_arxiv": false,
+          "preprint_source": "",
+          "journal_ref": "",
+          "doi": "",
+          "arxiv_comment": "",
+          "arxiv_id": "2606.13400v1",
+          "raw_venue": "",
+          "venue_source": "",
+          "sort_key": 202600,
+          "download": {
+            "status": "pending",
+            "source": null,
+            "path": null,
+            "last_attempt_at": null
+          }
+        },
+        {
           "id": "22f7e896c67049c6aded22a7ce61d08c84b91eb4",
           "title": "Representational Capacity: Geometric Limits on Feature Representation in Transformer Language Models",
           "authors": [
@@ -18539,6 +18803,58 @@
           "doi": "",
           "arxiv_comment": "",
           "arxiv_id": "2606.05675v1",
+          "raw_venue": "",
+          "venue_source": "",
+          "sort_key": 202600,
+          "download": {
+            "status": "pending",
+            "source": null,
+            "path": null,
+            "last_attempt_at": null
+          }
+        },
+        {
+          "id": "1420b4593642a9749511a9de547c10affbe6dd83",
+          "title": "Viral Proteins Reveal Geometry of Protein Language Models",
+          "authors": [
+            "Arthur Bigot",
+            "Harmon Bhasin",
+            "Core Francisco Park",
+            "Eugene Shakhnovich",
+            "Dianzhuo Wang"
+          ],
+          "year": 2026,
+          "month": 6,
+          "source": "arxiv",
+          "venue": "ICML",
+          "venue_type": "conference",
+          "abstract": "Protein language models are trained on highly imbalanced datasets, raising the question of how they represent underrepresented biological sequences. Using viral proteins as a case study across ESM model families, we identify a dominant nativeness axis in embedding space, aligned with masked reconstruction perplexity, that orders sequences from well-modeled cellular proteins through viral proteins to shuffled and random sequences. Scaling contracts this axis unevenly across viral families. Despite this, protein language model embeddings retain viral-specific signal: viral proteins remain linearly separable beyond zero-shot perplexity and shallow sequence features. Together, these results suggest that pLM representations are structured by a general notion of nativeness while preserving information specific to distinct biological groups.",
+          "urls": {
+            "arxiv": "https://arxiv.org/abs/2606.12609v1",
+            "pdf": "https://arxiv.org/pdf/2606.12609v1",
+            "paper": "https://arxiv.org/abs/2606.12609v1"
+          },
+          "search_sets_raw": [
+            "A"
+          ],
+          "search_sets_final": [
+            "A"
+          ],
+          "filter_bucket": "th_cpl_a",
+          "matched_venue": "ICML",
+          "matched_th_cpl_level": "A",
+          "matched_th_cpl_area": "Artificial Intelligence and Pattern Recognition",
+          "category": "Embedded AI Applications",
+          "llm_tags": [],
+          "forced_tags": [],
+          "final_tags": [],
+          "cited_by": 0,
+          "is_preprint_on_arxiv": false,
+          "preprint_source": "",
+          "journal_ref": "",
+          "doi": "",
+          "arxiv_comment": "",
+          "arxiv_id": "2606.12609v1",
           "raw_venue": "",
           "venue_source": "",
           "sort_key": 202600,
