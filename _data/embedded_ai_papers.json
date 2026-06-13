@@ -1,6 +1,6 @@
 {
   "version": "2.0.0",
-  "generated_at": "2026-06-12T02:58:37.540Z",
+  "generated_at": "2026-06-13T02:51:19.824Z",
   "query_groups": {
     "A": "\"embedded ai\"",
     "B": "(\"low power\" OR \"ultra-low-power\") \"embedded ai\"",
@@ -8,15 +8,15 @@
   },
   "stats": {
     "raw_counts": {
-      "A": 35,
+      "A": 11,
       "B": 0,
       "C": 0
     },
     "after_set_ops": {
-      "A_only": 35,
+      "A_only": 11,
       "B": 0,
       "C": 0,
-      "merged_total": 35,
+      "merged_total": 11,
       "bc_overlap": 0
     },
     "after_filter": 836,
