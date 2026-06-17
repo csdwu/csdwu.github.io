@@ -247,6 +247,17 @@
   abstract = {Internet of Things (IoT) deployments operate in nonstationary, dynamic environments where factors such as sensor drift, evolving user behavior, and heterogeneous user privacy requirements can affect application utility. Continual learning (CL) addresses this by adapting models over time without catastrophic forgetting. Meanwhile, contrastive learning has emerged as a powerful representation-learning paradigm that improves robustness and sample efficiency in a self-supervised manner. This paper reviews the usage of \\emph\{contrastive continual learning\} (CCL) for IoT, connecting algorithmic design (replay, regularization, distillation, prompts) with IoT system realities (TinyML constraints, intermittent connectivity, privacy). We present a unifying problem formulation, derive common objectives that blend contrastive and distillation losses, propose an IoT-oriented reference architecture for on-device, edge, and cloud-based CCL, and provide guidance on evaluation protocols and metrics. Finally, we highlight open unique challenges with respect to the IoT domain, such as spanning tabular and streaming IoT data, concept drift, federated settings, and energy-aware training.}
 }
 
+@article{klein2026-crossmaps-confidence-aware-open-6856076d,
+  author = {Jan-Niklas Klein and Sona Ghahremani and Christian Medeiros Adriano and Holger Giese},
+  title = {CrossMaps: Confidence-Aware Open-Vocabulary Semantic Mapping for Rover Navigation},
+  year = {2026},
+  journal = {IEEE International Conference on Robotics and Automation (ICRA) 2026: ROSE International Workshop on Robotics Software Engineering, June 01, 2026, Vienna, Austria},
+  eprint = {2606.16935v1},
+  archivePrefix = {arXiv},
+  url = {https://arxiv.org/abs/2606.16935v1},
+  abstract = {Rovers rely on perception to maintain spatial maps that encode both objects and sensor quality (e.g., range reliability, lighting artifacts, data density), guiding data fusion, embedding updates, and navigation under partial observability. To study these coupled perception-navigation processes, we present CrossMaps, a real-time confidence-aware open-vocabulary semantic mapping pipeline that constructs language-queryable maps from RGB-D data. Building on VLMaps-style approaches, CrossMaps integrates multi-scale CLIP embeddings with confidence-aware fusion and a dual-memory architecture consisting of Short-Term Memory (STM) and Long-Term Memory (LTM). The STM aggregates noisy visual observations using geometric, semantic, and temporal confidence cues, while confident and coherent cells are promoted to the LTM as persistent semantic landmarks. Designed for deployment with a Jetson Orin-powered UGV alongside SLAM, CrossMaps runs in real time and produces semantic heatmaps that can be queried with natural language to guide rover navigation.}
+}
+
 @article{zhang2026-dense-feature-learning-via-c96f7108,
   author = {Yuanyun Zhang and Mingxuan Zhang and Siyuan Li and Zihan Wang and Haoran Chen and Wenbo Zhou and Shi Li},
   title = {Dense Feature Learning via Linear Structure Preservation in Medical Data},
@@ -1145,6 +1156,17 @@
   abstract = {Satellite image restoration aims to improve image quality by compensating for degradations (e.g., noise and blur) introduced by the imaging system and acquisition conditions. As a fundamental preprocessing step, restoration directly impacts both ground-based product generation and emerging onboard AI applications. Traditional restoration pipelines based on sequential physical models are computationally intensive and slow, making them unsuitable for onboard environments. In this paper, we introduce ConvBEERS: a Convolutional Board-ready Embedded and Efficient Restoration model for Space to investigate whether a light and non-generative residual convolutional network, trained on simulated satellite data, can match or surpass a traditional ground-processing restoration pipeline across multiple operating conditions. Experiments conducted on simulated datasets and real Pleiades-HR imagery demonstrate that the proposed approach achieves competitive image quality, with a +6.9dB PSNR improvement. Evaluation on a downstream object detection task demonstrates that restoration significantly improves performance, with up to +5.1% mAP@50. In addition, successful deployment on a Xilinx Versal VCK190 FPGA validates its practical feasibility for satellite onboard processing, with a ~41x reduction in latency compared to the traditional pipeline. These results demonstrate the relevance of using lightweight CNNs to achieve competitive restoration quality while addressing real-world constraints in spaceborne systems.}
 }
 
+@article{neagu2026-rethinking-scaffolding-in-llm-bb1a6100,
+  author = {Alexandra Neagu and Jeffrey T. H. Wong and Marcus Messer and Rhodri Nelson and Peter B. Johnson},
+  title = {Rethinking Scaffolding in LLM Tutors: The Interactional Mismatch Between Benchmarks and Real-World Deployments},
+  year = {2026},
+  journal = {ICML},
+  eprint = {2606.15766v1},
+  archivePrefix = {arXiv},
+  url = {https://arxiv.org/abs/2606.15766v1},
+  abstract = {A central pedagogical value evaluated in AI tutor benchmarks is scaffolding: guiding students through graduated steps toward a solution. Alignment and evaluation methods for embedding scaffolding behaviour into chatbots, however, rest on an implicit assumption: that students will take up the scaffolding and engage in the conversation. To examine whether this assumption holds, we introduce an evaluation pipeline around two metrics - Chatbot Scaffolding and Student Uptake - and apply them across nine datasets of 9,490 chats, spanning AI tutor benchmarks and real-world deployments of educational chatbots. Our analysis reveals that while benchmarks assume a high-scaffolding, high-student-uptake environment, students in real-world settings exhibit lower levels of uptake overall - frequently bypassing the chatbot's pedagogical framing to drive the interaction toward their own learning goals at little interpersonal cost. We argue that bypassing scaffolding is not necessarily detrimental; rather, it frequently highlights a mismatch between a chatbot's pedagogical framing and the student's learning goals. To meaningfully evaluate the effectiveness of a chatbot's assistance, future benchmarks must move beyond the assumption that students will simply take up the scaffolding, and instead evaluate how these chatbots navigate diverse learning contexts and student-driven interaction patterns.}
+}
+
 @article{francesco2026-retrieval-augmented-generation-for-0ff8f8cc,
   author = {Andrea Giuseppe Di Francesco and Andrea Rubbi and Pietro Liò},
   title = {Retrieval-Augmented Generation for Predicting Cellular Responses to Gene Perturbation},
@@ -1370,6 +1392,18 @@
   archivePrefix = {arXiv},
   url = {https://arxiv.org/abs/2602.01025v1},
   abstract = {Vision-language models (VLMs) extend large language models (LLMs) with vision encoders, enabling text generation conditioned on both images and text. However, this multimodal integration expands the attack surface by exposing the model to image-based jailbreaks crafted to induce harmful responses. Existing gradient-based jailbreak methods transfer poorly, as adversarial patterns overfit to a single white-box surrogate and fail to generalise to black-box models. In this work, we propose Universal and transferable jailbreak (UltraBreak), a framework that constrains adversarial patterns through transformations and regularisation in the vision space, while relaxing textual targets through semantic-based objectives. By defining its loss in the textual embedding space of the target LLM, UltraBreak discovers universal adversarial patterns that generalise across diverse jailbreak objectives. This combination of vision-level regularisation and semantically guided textual supervision mitigates surrogate overfitting and enables strong transferability across both models and attack targets. Extensive experiments show that UltraBreak consistently outperforms prior jailbreak methods. Further analysis reveals why earlier approaches fail to transfer, highlighting that smoothing the loss landscape via semantic objectives is crucial for enabling universal and transferable jailbreaks. The code is publicly available in our \\href\{https://github.com/kaiyuanCui/UltraBreak\}\{GitHub repository\}.}
+}
+
+@article{crols2026-treegrng-binary-tree-gaussian-04f9745f,
+  author = {Jonas Crols and Guilherme Paim and Shirui Zhao and Marian Verhelst},
+  title = {TreeGRNG: Binary Tree Gaussian Random Number Generator for Efficient Probabilistic AI Hardware},
+  year = {2026},
+  journal = {DATE},
+  doi = {10.23919/DATE58400.2024.10546516},
+  eprint = {2606.16599v1},
+  archivePrefix = {arXiv},
+  url = {https://arxiv.org/abs/2606.16599v1},
+  abstract = {Bayesian Neural Networks (BNNs) offer opportunities for greatly enhancing the trustworthiness of conventional neural networks by monitoring the uncertainties in decision-making. A significant drawback for BNN inference at the extreme edge, however, is the imperative need to incorporate Gaussian Random Number Generators (GRNG) within each neuron. State-of-the-art GRNG algorithms heavily depend on multiple arithmetic operations and the use of extensive look-up tables, posing significant implementation challenges for ultra-low power hardware implementations. To overcome this, this paper presents an innovative binary tree random number generator (TreeGRNG) allowing the use of ultra-low-cost constant comparators instead of arithmetic units. We further enhance the TreeGRNG proposal with a set of hardware-aware optimizations exploiting the Gaussian properties. The optimized TreeGRNG surpasses the State-of-the-Art (SoTA) in terms of distribution accuracy while achieving a 3.7$\\times$ reduction in energy per sample and boosting the throughput per unit area by 5.8$\\times$. Moreover, our TreeGRNG proposal possesses a distinct advantage over the current SoTA in terms of flexibility, as it easily enables designers to adjust the shape of the sampled probability distribution, extending beyond the capabilities of traditional GRNGs, opening the horizon towards future probabilistic AI designs. The TreeGRNG design is available open-source in the link}
 }
 
 @article{yang2026-trust-in-one-round-e41dc878,
