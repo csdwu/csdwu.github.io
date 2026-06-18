@@ -1,6 +1,6 @@
 {
   "version": "2.0.0",
-  "generated_at": "2026-06-17T03:31:27.804Z",
+  "generated_at": "2026-06-18T02:58:58.981Z",
   "query_groups": {
     "A": "\"embedded ai\"",
     "B": "(\"low power\" OR \"ultra-low-power\") \"embedded ai\"",
@@ -8,24 +8,24 @@
   },
   "stats": {
     "raw_counts": {
-      "A": 44,
-      "B": 5,
-      "C": 4
+      "A": 25,
+      "B": 0,
+      "C": 1
     },
     "after_set_ops": {
-      "A_only": 39,
-      "B": 5,
-      "C": 4,
-      "merged_total": 46,
-      "bc_overlap": 2
+      "A_only": 24,
+      "B": 0,
+      "C": 1,
+      "merged_total": 25,
+      "bc_overlap": 0
     },
-    "after_filter": 841,
+    "after_filter": 842,
     "classification": {
-      "total": 841,
+      "total": 842,
       "by_category": {
         "Efficient Model Design and Optimization": 269,
         "Novel Computing Architectures and Domain-Specific Accelerators": 39,
-        "Embedded AI Applications": 533
+        "Embedded AI Applications": 534
       },
       "by_tag": {
         "TinyML": 49,
@@ -35,14 +35,14 @@
       "by_provider": {
         "tencent_tokenhub": 0,
         "heuristic": 0,
-        "heuristic_fallback": 841
+        "heuristic_fallback": 842
       }
     },
     "source_stats": {
-      "total": 841,
+      "total": 842,
       "by_group": {
         "A": {
-          "total": 703,
+          "total": 704,
           "arxiv": 0,
           "venues": {
             "AAAI": 90,
@@ -86,7 +86,7 @@
             "CNSM": 0,
             "CODES+ISSS": 0,
             "COLING": 0,
-            "COLT": 0,
+            "COLT": 1,
             "CONCUR": 0,
             "CP": 0,
             "CRYPTO": 0,
@@ -1539,7 +1539,7 @@
         }
       },
       "total_summary": {
-        "total": 856,
+        "total": 857,
         "arxiv": 121,
         "venues": {
           "AAAI": 90,
@@ -1583,7 +1583,7 @@
           "CNSM": 0,
           "CODES+ISSS": 0,
           "COLING": 0,
-          "COLT": 0,
+          "COLT": 1,
           "CONCUR": 0,
           "CP": 0,
           "CRYPTO": 0,
@@ -18242,7 +18242,7 @@
     {
       "key": "embedded_ai_applications",
       "title": "Embedded AI Applications",
-      "count": 533,
+      "count": 534,
       "papers": [
         {
           "id": "d103ead51da993c73537e967f22d71ee8df11af2",
@@ -18284,6 +18284,59 @@
           "doi": "",
           "arxiv_comment": "",
           "arxiv_id": "2606.01811v1",
+          "raw_venue": "",
+          "venue_source": "",
+          "sort_key": 202600,
+          "download": {
+            "status": "pending",
+            "source": null,
+            "path": null,
+            "last_attempt_at": null
+          }
+        },
+        {
+          "id": "ccb30d7dfbfe039036aa37b4de75e7962f63abac",
+          "title": "Compact Geometric Representations of Hierarchies",
+          "authors": [
+            "Prashant Gokhale",
+            "Piotr Indyk",
+            "Yuhao Liu",
+            "Sandeep Silwal",
+            "Tony Chang Wang",
+            "Haike Xu"
+          ],
+          "year": 2026,
+          "month": 6,
+          "source": "arxiv",
+          "venue": "Published at the 39th Annual Conference on Learning Theory (COLT) 2026. 22 Pages",
+          "venue_type": "conference",
+          "abstract": "Computing geometric representations of data is a cornerstone of modern machine learning, typically achieved by training dual encoders which map queries and documents into a shared embedding space. Recent work of You et al. [NeurIPS '25] has extended this approach to hierarchical retrieval, where relevance is determined by the ancestor-descendant relationships in a Directed Acyclic Graph (DAG). While previous work has shown that valid embeddings exist when the number of descendants is small, these bounds degrade significantly for deep hierarchies, requiring dimensions as large as the total number of nodes.\n  In this paper, we investigate compact reachability embeddings for more general graph classes and provide theoretical guarantees for representing hierarchies using embeddings whose dimension depends on structural graph parameters. We prove that for any directed tree, there exists a reachability embedding in constant dimension 3, independent of the tree's size or depth. We generalize this result to graphs characterized by treewidth $t$, constructing embeddings of dimension $O(t \\log n)$, where $n$ is the number of nodes. Complementing these upper bounds, we provide matching or near-matching lower bounds, showing that dimension $Ω(n)$ is necessary for general DAGs and $Ω(t/\\log(n/t))$ is required for graphs of treewidth $t$. We also obtain upper and lower bounds parameterized by the number of cross-edges in the DAG. We additionally show that our embeddings can be constructed on real world datasets, and that they give much smaller dimensions in high recall regimes compared to prior embeddings with theoretical guarantees.",
+          "urls": {
+            "arxiv": "https://arxiv.org/abs/2606.18520v1",
+            "pdf": "https://arxiv.org/pdf/2606.18520v1",
+            "paper": "https://arxiv.org/abs/2606.18520v1"
+          },
+          "search_sets_raw": [
+            "A"
+          ],
+          "search_sets_final": [
+            "A"
+          ],
+          "filter_bucket": "th_cpl_a",
+          "matched_venue": "COLT",
+          "matched_th_cpl_level": "A",
+          "matched_th_cpl_area": "Artificial Intelligence and Pattern Recognition",
+          "category": "Embedded AI Applications",
+          "llm_tags": [],
+          "forced_tags": [],
+          "final_tags": [],
+          "cited_by": 0,
+          "is_preprint_on_arxiv": false,
+          "preprint_source": "",
+          "journal_ref": "",
+          "doi": "",
+          "arxiv_comment": "",
+          "arxiv_id": "2606.18520v1",
           "raw_venue": "",
           "venue_source": "",
           "sort_key": 202600,
