@@ -193,6 +193,17 @@
   abstract = {Continual learning (CL) on edge devices requires not only high accuracy but also training-time efficiency to support on-device adaptation under strict memory and computational constraints. While prompt-based continual learning (PCL) is parameter-efficient and achieves competitive accuracy, prior work has focused mainly on accuracy or inference-time performance, often overlooking the memory and computational costs of on-device training. In this paper, we propose CPS-Prompt, a critical patch-aware sparse prompting framework that explicitly targets training-time memory usage and computational cost by integrating critical patch sampling (CPS) for task-aware token reduction and decoupled prompt and classifier training (DPCT) to reduce backpropagation overhead. Experiments on three public benchmarks and real edge hardware show that CPS-Prompt improves peak memory, training time, and energy efficiency by about 1.6x over the balanced CODA-Prompt baseline, while maintaining accuracy within 2% of the state-of-the-art C-Prompt on average and remaining competitive with CODA-Prompt in accuracy. The code is available at https://github.com/laymond1/cps-prompt.}
 }
 
+@article{brill2026-critical-percolation-as-a-4ba184ca,
+  author = {Aryeh Brill and Tom Ingebretsen Carlson},
+  title = {Critical Percolation as a Synthetic Data Model for Interpretability},
+  year = {2026},
+  journal = {ICML},
+  eprint = {2606.20347v1},
+  archivePrefix = {arXiv},
+  url = {https://arxiv.org/abs/2606.20347v1},
+  abstract = {Neural networks learn features that reflect the hierarchical, multi-scale structure of natural data. Synthetic datasets used to evaluate interpretability methods typically lack this structure, limiting their value as realistic toy models. To close this gap, we introduce a family of synthetic datasets consisting of hierarchical functions defined on critical mean-field percolation clusters embedded in a high-dimensional data space. The percolation data consists of sparse, low-dimensional fractal clusters with a power-law size distribution. Latent variables modeling a taxonomic hierarchy generate each data point's target value. The data model is analytically tractable with known critical exponents that fix its properties without requiring hyperparameter tuning. We leverage a mapping between percolation clusters, random trees, and additive coalescence to propose an almost linear-time algorithm to jointly sample a random tree and its hierarchical latent decomposition, enabling data generation at arbitrary scale. Using probing experiments, we find that the model's ground-truth latent variables can be linearly decoded from neural network activations. Together, sparsity, self-similarity, power-law statistics, and analytical tractability make critical percolation a principled testbed for interpretability research.}
+}
+
 @article{la2026-cross-modal-redundancy-and-a7fed729,
   author = {Grégoire Dhimoïla and Thomas Fel and Victor Boutin and Agustin Picard},
   title = {Cross-Modal Redundancy and the Geometry of Vision-Language Embeddings},
