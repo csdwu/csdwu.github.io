@@ -1,6 +1,6 @@
 {
   "version": "2.0.0",
-  "generated_at": "2026-06-23T02:43:30.309Z",
+  "generated_at": "2026-06-25T02:44:28.867Z",
   "query_groups": {
     "A": "\"embedded ai\"",
     "B": "(\"low power\" OR \"ultra-low-power\") \"embedded ai\"",
@@ -8,24 +8,24 @@
   },
   "stats": {
     "raw_counts": {
-      "A": 4,
+      "A": 43,
       "B": 0,
-      "C": 0
+      "C": 1
     },
     "after_set_ops": {
-      "A_only": 4,
+      "A_only": 42,
       "B": 0,
-      "C": 0,
-      "merged_total": 4,
+      "C": 1,
+      "merged_total": 43,
       "bc_overlap": 0
     },
-    "after_filter": 846,
+    "after_filter": 848,
     "classification": {
-      "total": 846,
+      "total": 848,
       "by_category": {
         "Efficient Model Design and Optimization": 270,
         "Novel Computing Architectures and Domain-Specific Accelerators": 39,
-        "Embedded AI Applications": 537
+        "Embedded AI Applications": 539
       },
       "by_tag": {
         "TinyML": 49,
@@ -35,14 +35,14 @@
       "by_provider": {
         "tencent_tokenhub": 0,
         "heuristic": 0,
-        "heuristic_fallback": 846
+        "heuristic_fallback": 848
       }
     },
     "source_stats": {
-      "total": 846,
+      "total": 848,
       "by_group": {
         "A": {
-          "total": 708,
+          "total": 710,
           "arxiv": 0,
           "venues": {
             "AAAI": 90,
@@ -166,9 +166,9 @@
             "ICDT": 0,
             "ICFP": 0,
             "ICIP": 0,
-            "ICLR": 161,
+            "ICLR": 162,
             "ICMI": 0,
-            "ICML": 131,
+            "ICML": 132,
             "ICMR": 0,
             "ICN": 0,
             "ICNP": 0,
@@ -1539,7 +1539,7 @@
         }
       },
       "total_summary": {
-        "total": 861,
+        "total": 863,
         "arxiv": 121,
         "venues": {
           "AAAI": 90,
@@ -1663,9 +1663,9 @@
           "ICDT": 0,
           "ICFP": 0,
           "ICIP": 0,
-          "ICLR": 162,
+          "ICLR": 163,
           "ICMI": 0,
-          "ICML": 133,
+          "ICML": 134,
           "ICMR": 0,
           "ICN": 0,
           "ICNP": 0,
@@ -18291,7 +18291,7 @@
     {
       "key": "embedded_ai_applications",
       "title": "Embedded AI Applications",
-      "count": 537,
+      "count": 539,
       "papers": [
         {
           "id": "d103ead51da993c73537e967f22d71ee8df11af2",
@@ -18491,6 +18491,61 @@
           "doi": "",
           "arxiv_comment": "",
           "arxiv_id": "2606.16935v1",
+          "raw_venue": "",
+          "venue_source": "",
+          "sort_key": 202600,
+          "download": {
+            "status": "pending",
+            "source": null,
+            "path": null,
+            "last_attempt_at": null
+          }
+        },
+        {
+          "id": "22b8629a7a8ca542bc63bc810bc699edfb2ae5ee",
+          "title": "Disease-Centric Vision-Language Pretraining with Hybrid Visual Encoding for 3D Computed Tomography",
+          "authors": [
+            "Bowen Shi",
+            "Weiwei Cao",
+            "Ruifeng Yuan",
+            "Wanxing Chang",
+            "Wenrui Dai",
+            "Hongkai Xiong",
+            "Ling Zhang",
+            "Jianpeng Zhang"
+          ],
+          "year": 2026,
+          "month": 6,
+          "source": "arxiv",
+          "venue": "ICML",
+          "venue_type": "conference",
+          "abstract": "Vision-language pre-training (VLP) holds great promise for general-purpose medical AI by leveraging radiology reports as rich textual supervision, yet existing methods struggle with 3D CT imaging due to inefficient visual backbones and coarse semantic alignment. To address these issues, we propose a tailored VLP framework featuring three key components: (1) a CNN-ViT hybrid encoder that replaces ViT's patch embedding with a 3D CNN backbone to efficiently capture local anatomical details while preserving global attention and compatibility with pre-trained cross-modal priors; (2) a disease-level contrastive learning mechanism using learnable query tokens to dynamically extract disease-specific semantics from full reports and align them with corresponding visual features, thereby disentangling distinct diseases within the same anatomical region; and (3) a diagnosis-aware prompt strategy that employs real clinical phrases and aggregated disease prototypes to bridge the pre-training-inference gap and enhance zero-shot diagnostic reliability. Our model achieves state-of-the-art performance on CT-RATE (84.4% AUC, +5.1%) and Rad-ChestCT (75.4% AUC, +5.4%), with even larger gains (+9.8% AUC) on a challenging 60-disease benchmark, and demonstrates strong transferability to radiology report generation, underscoring the generality and clinical utility of our approach.",
+          "urls": {
+            "arxiv": "https://arxiv.org/abs/2606.25546v1",
+            "pdf": "https://arxiv.org/pdf/2606.25546v1",
+            "paper": "https://arxiv.org/abs/2606.25546v1"
+          },
+          "search_sets_raw": [
+            "A"
+          ],
+          "search_sets_final": [
+            "A"
+          ],
+          "filter_bucket": "th_cpl_a",
+          "matched_venue": "ICML",
+          "matched_th_cpl_level": "A",
+          "matched_th_cpl_area": "Artificial Intelligence and Pattern Recognition",
+          "category": "Embedded AI Applications",
+          "llm_tags": [],
+          "forced_tags": [],
+          "final_tags": [],
+          "cited_by": 0,
+          "is_preprint_on_arxiv": false,
+          "preprint_source": "",
+          "journal_ref": "",
+          "doi": "",
+          "arxiv_comment": "",
+          "arxiv_id": "2606.25546v1",
           "raw_venue": "",
           "venue_source": "",
           "sort_key": 202600,
@@ -19323,6 +19378,56 @@
           "doi": "",
           "arxiv_comment": "",
           "arxiv_id": "2606.05675v1",
+          "raw_venue": "",
+          "venue_source": "",
+          "sort_key": 202600,
+          "download": {
+            "status": "pending",
+            "source": null,
+            "path": null,
+            "last_attempt_at": null
+          }
+        },
+        {
+          "id": "98cabe9c4c461665662c378529bf64fc8c192306",
+          "title": "Unmasking LAION-5B: Age, Gender, Race, and Emotion Biases in Large-Scale Image Datasets",
+          "authors": [
+            "Iris Dominguez-Catena",
+            "Daniel Paternain",
+            "Mikel Galar"
+          ],
+          "year": 2026,
+          "month": 6,
+          "source": "arxiv",
+          "venue": "ICLR",
+          "venue_type": "conference",
+          "abstract": "Large-scale image-text datasets, such as LAION-5B, are foundational to modern AI systems, yet their vast scale and uncurated nature raise significant concerns about demographic and stereotypical biases. This study presents a comprehensive analysis of the demographic composition and representational, stereotypical, and intersectional biases in LAION-2B-en and LAION-2B-multi, the two main components of the LAION-5B dataset. Using state-of-the-art models -- FairFace, DeepFace, and Emo-AffectNet -- we analyze faces detected in the dataset to identify biases across age, gender, race, and expressed emotion. Our findings reveal substantial overrepresentation of young adults (20--39), White individuals, and males, alongside consistent underrepresentation of minority racial groups and middle-aged or older women across both dataset components. We also observe stereotypical associations between demographic attributes and emotions, such as ``Anger'' being predominantly linked to males and ``Happiness'' to females, pointing to systemic imbalances in the data. The consistency of these patterns across two demographic models and both components of LAION-5B demonstrates that these biases are deeply embedded in one of the most widely-used training datasets. Given the scale at which LAION-5B is used to train generative models, these demographic imbalances could shape the behavior and outputs of numerous downstream AI systems.",
+          "urls": {
+            "arxiv": "https://arxiv.org/abs/2606.23204v1",
+            "pdf": "https://arxiv.org/pdf/2606.23204v1",
+            "paper": "https://arxiv.org/abs/2606.23204v1"
+          },
+          "search_sets_raw": [
+            "A"
+          ],
+          "search_sets_final": [
+            "A"
+          ],
+          "filter_bucket": "th_cpl_a",
+          "matched_venue": "ICLR",
+          "matched_th_cpl_level": "A",
+          "matched_th_cpl_area": "Artificial Intelligence and Pattern Recognition",
+          "category": "Embedded AI Applications",
+          "llm_tags": [],
+          "forced_tags": [],
+          "final_tags": [],
+          "cited_by": 0,
+          "is_preprint_on_arxiv": false,
+          "preprint_source": "",
+          "journal_ref": "",
+          "doi": "",
+          "arxiv_comment": "",
+          "arxiv_id": "2606.23204v1",
           "raw_venue": "",
           "venue_source": "",
           "sort_key": 202600,

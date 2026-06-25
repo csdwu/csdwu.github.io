@@ -638,6 +638,17 @@
   abstract = {The safety and reliability of vision-language models (VLMs) are a crucial part of deploying trustworthy agentic AI systems. However, VLMs remain vulnerable to jailbreaking attacks that undermine their safety alignment to yield harmful outputs. In this work, we extend the Randomized Embedding Smoothing and Token Aggregation (RESTA) defense to VLMs and evaluate its performance against the JailBreakV-28K benchmark of multi-modal jailbreaking attacks. We find that RESTA is effective in reducing attack success rate over this diverse corpus of attacks, in particular, when employing directional embedding noise, where the injected noise is aligned with the original token embedding vectors. Our results demonstrate that RESTA can contribute to securing VLMs within agentic systems, as a lightweight, inference-time defense layer of an overall security framework.}
 }
 
+@article{shi2026-disease-centric-vision-language-1a496d18,
+  author = {Bowen Shi and Weiwei Cao and Ruifeng Yuan and Wanxing Chang and Wenrui Dai and Hongkai Xiong and Ling Zhang and Jianpeng Zhang},
+  title = {Disease-Centric Vision-Language Pretraining with Hybrid Visual Encoding for 3D Computed Tomography},
+  year = {2026},
+  journal = {ICML},
+  eprint = {2606.25546v1},
+  archivePrefix = {arXiv},
+  url = {https://arxiv.org/abs/2606.25546v1},
+  abstract = {Vision-language pre-training (VLP) holds great promise for general-purpose medical AI by leveraging radiology reports as rich textual supervision, yet existing methods struggle with 3D CT imaging due to inefficient visual backbones and coarse semantic alignment. To address these issues, we propose a tailored VLP framework featuring three key components: (1) a CNN-ViT hybrid encoder that replaces ViT's patch embedding with a 3D CNN backbone to efficiently capture local anatomical details while preserving global attention and compatibility with pre-trained cross-modal priors; (2) a disease-level contrastive learning mechanism using learnable query tokens to dynamically extract disease-specific semantics from full reports and align them with corresponding visual features, thereby disentangling distinct diseases within the same anatomical region; and (3) a diagnosis-aware prompt strategy that employs real clinical phrases and aggregated disease prototypes to bridge the pre-training-inference gap and enhance zero-shot diagnostic reliability. Our model achieves state-of-the-art performance on CT-RATE (84.4% AUC, +5.1%) and Rad-ChestCT (75.4% AUC, +5.4%), with even larger gains (+9.8% AUC) on a challenging 60-disease benchmark, and demonstrates strong transferability to radiology report generation, underscoring the generality and clinical utility of our approach.}
+}
+
 @article{deng2026-distilling-and-adapting-a-5c79f9d7,
   author = {Alana Deng and Sugitha Janarthanan and Yan Sun and Zihao Jing and Pingzhao Hu},
   title = {Distilling and Adapting: A Topology-Aware Framework for Zero-Shot Interaction Prediction in Multiplex Biological Networks},
@@ -2562,6 +2573,17 @@
   archivePrefix = {arXiv},
   url = {https://arxiv.org/abs/2603.01096v1},
   abstract = {We introduce V-SONAR, a vision-language embedding space extended from the text-only embedding space SONAR (Omnilingual Embeddings Team et al., 2026), which supports 1500 text languages and 177 speech languages. To construct V-SONAR, we propose a post-hoc alignment pipeline that maps the representations of an existing vision encoder into the SONAR space. We thoroughly evaluate V-SONAR and show that its embeddings achieve competitive performance on text-to-video retrieval. Equipped with the OMNISONAR text decoder, V-SONAR further surpasses state-of-the-art vision-language models on video captioning tasks, including DREAM-1K (BLEU 23.9 vs. 19.6) and PE-VIDEO (BLEU 39.0 vs. 30.0). Leveraging V-SONAR, we first demonstrate that the Large Concept Model (LCM; LCM team et al. 2024) operating in SONAR and trained with English text only, can perform both single- and multi-visual concept understanding in a zero-shot manner. Finally, we introduce V-LCM, which extends the LCM with vision-language instruction tuning. V-LCM encodes vision and language inputs into an unified sequence of latent embeddings via V-SONAR and SONAR, and it is trained with the same latent diffusion objective for next-embedding prediction as in LCM's text-only pre-training. Experiments on a large-scale multilingual and -modal instruction-tuning data mixture highlight the potential of V-LCM: V-LCM matches state-of-the-art vision-language models on tasks covering image/video captioning and question answering, while significantly outperforming them across 61 rich- to low-resource languages out of all 62 tested languages.}
+}
+
+@article{catena2026-unmasking-laion-5b-age-b85ef9ff,
+  author = {Iris Dominguez-Catena and Daniel Paternain and Mikel Galar},
+  title = {Unmasking LAION-5B: Age, Gender, Race, and Emotion Biases in Large-Scale Image Datasets},
+  year = {2026},
+  journal = {ICLR},
+  eprint = {2606.23204v1},
+  archivePrefix = {arXiv},
+  url = {https://arxiv.org/abs/2606.23204v1},
+  abstract = {Large-scale image-text datasets, such as LAION-5B, are foundational to modern AI systems, yet their vast scale and uncurated nature raise significant concerns about demographic and stereotypical biases. This study presents a comprehensive analysis of the demographic composition and representational, stereotypical, and intersectional biases in LAION-2B-en and LAION-2B-multi, the two main components of the LAION-5B dataset. Using state-of-the-art models -- FairFace, DeepFace, and Emo-AffectNet -- we analyze faces detected in the dataset to identify biases across age, gender, race, and expressed emotion. Our findings reveal substantial overrepresentation of young adults (20--39), White individuals, and males, alongside consistent underrepresentation of minority racial groups and middle-aged or older women across both dataset components. We also observe stereotypical associations between demographic attributes and emotions, such as ``Anger'' being predominantly linked to males and ``Happiness'' to females, pointing to systemic imbalances in the data. The consistency of these patterns across two demographic models and both components of LAION-5B demonstrates that these biases are deeply embedded in one of the most widely-used training datasets. Given the scale at which LAION-5B is used to train generative models, these demographic imbalances could shape the behavior and outputs of numerous downstream AI systems.}
 }
 
 @article{kang2026-unr-explainer-counterfactual-explanations-e1985aed,
