@@ -1,6 +1,6 @@
 {
   "version": "2.0.0",
-  "generated_at": "2026-06-29T02:54:44.265Z",
+  "generated_at": "2026-06-30T02:48:45.104Z",
   "query_groups": {
     "A": "\"embedded ai\"",
     "B": "(\"low power\" OR \"ultra-low-power\") \"embedded ai\"",
@@ -8,24 +8,24 @@
   },
   "stats": {
     "raw_counts": {
-      "A": 0,
+      "A": 22,
       "B": 0,
       "C": 0
     },
     "after_set_ops": {
-      "A_only": 0,
+      "A_only": 22,
       "B": 0,
       "C": 0,
-      "merged_total": 0,
+      "merged_total": 22,
       "bc_overlap": 0
     },
-    "after_filter": 851,
+    "after_filter": 853,
     "classification": {
-      "total": 851,
+      "total": 853,
       "by_category": {
-        "Efficient Model Design and Optimization": 271,
+        "Efficient Model Design and Optimization": 272,
         "Novel Computing Architectures and Domain-Specific Accelerators": 39,
-        "Embedded AI Applications": 541
+        "Embedded AI Applications": 542
       },
       "by_tag": {
         "TinyML": 49,
@@ -35,14 +35,14 @@
       "by_provider": {
         "tencent_tokenhub": 0,
         "heuristic": 0,
-        "heuristic_fallback": 851
+        "heuristic_fallback": 853
       }
     },
     "source_stats": {
-      "total": 851,
+      "total": 853,
       "by_group": {
         "A": {
-          "total": 713,
+          "total": 715,
           "arxiv": 0,
           "venues": {
             "AAAI": 90,
@@ -168,7 +168,7 @@
             "ICIP": 0,
             "ICLR": 162,
             "ICMI": 0,
-            "ICML": 135,
+            "ICML": 137,
             "ICMR": 0,
             "ICN": 0,
             "ICNP": 0,
@@ -1539,7 +1539,7 @@
         }
       },
       "total_summary": {
-        "total": 866,
+        "total": 868,
         "arxiv": 121,
         "venues": {
           "AAAI": 90,
@@ -1665,7 +1665,7 @@
           "ICIP": 0,
           "ICLR": 163,
           "ICMI": 0,
-          "ICML": 137,
+          "ICML": 139,
           "ICMR": 0,
           "ICN": 0,
           "ICNP": 0,
@@ -1918,7 +1918,7 @@
     {
       "key": "efficient_model_design",
       "title": "Efficient Model Design and Optimization",
-      "count": 271,
+      "count": 272,
       "papers": [
         {
           "id": "3518d8fff50f86eab258959559e4e01c7d97fcf2",
@@ -2471,6 +2471,54 @@
           "doi": "",
           "arxiv_comment": "",
           "arxiv_id": "2606.27147v1",
+          "raw_venue": "",
+          "venue_source": "",
+          "sort_key": 202600,
+          "download": {
+            "status": "pending",
+            "source": null,
+            "path": null,
+            "last_attempt_at": null
+          }
+        },
+        {
+          "id": "fa760d8b6d2ce81376ce449d25180e138d470f15",
+          "title": "Selective Memory Retention for Long-Horizon LLM Agents",
+          "authors": [
+            "Pranath Reddy"
+          ],
+          "year": 2026,
+          "month": 6,
+          "source": "arxiv",
+          "venue": "ICML",
+          "venue_type": "conference",
+          "abstract": "When does retention matter for memory-augmented LLM agents? We study this with TraceRetain, a lightweight framework for bounded external memory in frozen LLM agents that scores entries by interpretable features (success, age, access frequency, redundancy, specificity, similarity, downstream utility) and evicts the lowest-scoring ones at capacity. On clean ALFWorld with gpt-5-mini, external memory robustly improves over no memory across two seeds, but differences among bounded retention policies fall within Wilson 95% CIs: clean ALFWorld at T=100 to T=200 does not naturally exhibit the memory pollution retention is designed to address. Under a controlled noisy-write stress (75% synthetic distractors), unbounded memory and FIFO-K50 degrade on Precision@5 (20.2% to 12.4% and 15.8% to 3.8%) while TraceRetain-CEM is essentially unchanged (16.9% to 16.6%) and preserves 97/100 task success. The mechanism: unbounded memory has the highest mean similarity (0.87) but lowest precision, indicating failed distractors close to the query in embedding space. Held-out in-distribution evaluation shows memory-augmented policies solving 47 to 49 of 50 tasks vs. 39/50 for no memory. Bounded retention buys memory and step efficiency on saturated clean benchmarks at no task-success cost, and only differentiates from cache heuristics when streams contain noise.",
+          "urls": {
+            "arxiv": "https://arxiv.org/abs/2606.29178v1",
+            "pdf": "https://arxiv.org/pdf/2606.29178v1",
+            "paper": "https://arxiv.org/abs/2606.29178v1"
+          },
+          "search_sets_raw": [
+            "A"
+          ],
+          "search_sets_final": [
+            "A"
+          ],
+          "filter_bucket": "th_cpl_a",
+          "matched_venue": "ICML",
+          "matched_th_cpl_level": "A",
+          "matched_th_cpl_area": "Artificial Intelligence and Pattern Recognition",
+          "category": "Efficient Model Design and Optimization",
+          "llm_tags": [],
+          "forced_tags": [],
+          "final_tags": [],
+          "cited_by": 0,
+          "is_preprint_on_arxiv": false,
+          "preprint_source": "",
+          "journal_ref": "",
+          "doi": "",
+          "arxiv_comment": "",
+          "arxiv_id": "2606.29178v1",
           "raw_venue": "",
           "venue_source": "",
           "sort_key": 202600,
@@ -18342,7 +18390,7 @@
     {
       "key": "embedded_ai_applications",
       "title": "Embedded AI Applications",
-      "count": 541,
+      "count": 542,
       "papers": [
         {
           "id": "d103ead51da993c73537e967f22d71ee8df11af2",
@@ -19329,6 +19377,59 @@
           "doi": "",
           "arxiv_comment": "",
           "arxiv_id": "2606.15766v1",
+          "raw_venue": "",
+          "venue_source": "",
+          "sort_key": 202600,
+          "download": {
+            "status": "pending",
+            "source": null,
+            "path": null,
+            "last_attempt_at": null
+          }
+        },
+        {
+          "id": "397e24d42aacbad81e2197604083fce03daadf25",
+          "title": "SABER-Math: Automated Benchmark for Information Retrieval Evaluation in Mathematics",
+          "authors": [
+            "Nikolay Georgiev",
+            "Maria Drencheva",
+            "Kseniia Ibragimova",
+            "Ivo Petrov",
+            "Dimitar I. Dimitrov",
+            "Martin Vechev"
+          ],
+          "year": 2026,
+          "month": 6,
+          "source": "arxiv",
+          "venue": "ICML",
+          "venue_type": "conference",
+          "abstract": "As agentic AI systems tackle more complex mathematical tasks, they increasingly rely on information retrieval (IR) to search problem databases, theorem libraries, and educational resources. However, choosing the right retriever remains difficult, as it is infeasible to directly isolate its effect on downstream performance. On the other hand, existing retrieval-specific benchmarks often fail to capture fine-grained mathematical relevance, penalizing relevant documents. We address this gap by introducing SABER-Math, the first fully automated benchmark for evaluating mathematical IR without expert annotation. Starting from 283K high-school-level math problems with solutions, SABER-Math builds challenging reranking tasks in three steps: (i) first, LLMs extract concise solution summaries and mathematical topics for each problem; (ii) then, per-query relevant documents are discovered using ontology topic-based and lexical solutions-summary-based similarities, and (iii) finally, a Swiss-style LLM preference tournament produces fine-grained relevance ratings for the documents. We evaluate lexical retrievers, specialized mathematical retrieval systems, and recent embedding models. We find that while modern embedding models substantially outperform classical and math-specific baselines, even the strongest systems struggle in symbol-heavy domains like Algebra and Calculus. Importantly, we show that general-purpose IR benchmarks such as MTEB do not reliably predict mathematical performance, especially for recent embedding models, highlighting the need for math-specific retrieval benchmarks.",
+          "urls": {
+            "arxiv": "https://arxiv.org/abs/2606.29894v1",
+            "pdf": "https://arxiv.org/pdf/2606.29894v1",
+            "paper": "https://arxiv.org/abs/2606.29894v1"
+          },
+          "search_sets_raw": [
+            "A"
+          ],
+          "search_sets_final": [
+            "A"
+          ],
+          "filter_bucket": "th_cpl_a",
+          "matched_venue": "ICML",
+          "matched_th_cpl_level": "A",
+          "matched_th_cpl_area": "Artificial Intelligence and Pattern Recognition",
+          "category": "Embedded AI Applications",
+          "llm_tags": [],
+          "forced_tags": [],
+          "final_tags": [],
+          "cited_by": 0,
+          "is_preprint_on_arxiv": false,
+          "preprint_source": "",
+          "journal_ref": "",
+          "doi": "",
+          "arxiv_comment": "",
+          "arxiv_id": "2606.29894v1",
           "raw_venue": "",
           "venue_source": "",
           "sort_key": 202600,
