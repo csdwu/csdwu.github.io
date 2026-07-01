@@ -1,6 +1,6 @@
 {
   "version": "2.0.0",
-  "generated_at": "2026-06-30T02:48:45.104Z",
+  "generated_at": "2026-07-01T02:54:19.467Z",
   "query_groups": {
     "A": "\"embedded ai\"",
     "B": "(\"low power\" OR \"ultra-low-power\") \"embedded ai\"",
@@ -8,41 +8,41 @@
   },
   "stats": {
     "raw_counts": {
-      "A": 22,
-      "B": 0,
-      "C": 0
+      "A": 38,
+      "B": 1,
+      "C": 1
     },
     "after_set_ops": {
-      "A_only": 22,
-      "B": 0,
-      "C": 0,
-      "merged_total": 22,
+      "A_only": 37,
+      "B": 1,
+      "C": 1,
+      "merged_total": 39,
       "bc_overlap": 0
     },
-    "after_filter": 853,
+    "after_filter": 856,
     "classification": {
-      "total": 853,
+      "total": 856,
       "by_category": {
-        "Efficient Model Design and Optimization": 272,
+        "Efficient Model Design and Optimization": 273,
         "Novel Computing Architectures and Domain-Specific Accelerators": 39,
-        "Embedded AI Applications": 542
+        "Embedded AI Applications": 544
       },
       "by_tag": {
-        "TinyML": 49,
+        "TinyML": 50,
         "LP": 96,
         "ULP": 15
       },
       "by_provider": {
         "tencent_tokenhub": 0,
         "heuristic": 0,
-        "heuristic_fallback": 853
+        "heuristic_fallback": 856
       }
     },
     "source_stats": {
-      "total": 853,
+      "total": 856,
       "by_group": {
         "A": {
-          "total": 715,
+          "total": 717,
           "arxiv": 0,
           "venues": {
             "AAAI": 90,
@@ -109,7 +109,7 @@
             "EAAI": 0,
             "EASE": 0,
             "EC": 0,
-            "ECCV": 0,
+            "ECCV": 1,
             "ECIR": 0,
             "ECOOP": 0,
             "EDBT": 0,
@@ -168,7 +168,7 @@
             "ICIP": 0,
             "ICLR": 162,
             "ICMI": 0,
-            "ICML": 137,
+            "ICML": 138,
             "ICMR": 0,
             "ICN": 0,
             "ICNP": 0,
@@ -790,8 +790,8 @@
           "unknown": 0
         },
         "C": {
-          "total": 49,
-          "arxiv": 41,
+          "total": 50,
+          "arxiv": 42,
           "venues": {
             "AAAI": 0,
             "AAMAS": 0,
@@ -1539,8 +1539,8 @@
         }
       },
       "total_summary": {
-        "total": 868,
-        "arxiv": 121,
+        "total": 871,
+        "arxiv": 122,
         "venues": {
           "AAAI": 90,
           "AAMAS": 0,
@@ -1606,7 +1606,7 @@
           "EAAI": 0,
           "EASE": 0,
           "EC": 0,
-          "ECCV": 0,
+          "ECCV": 1,
           "ECIR": 0,
           "ECOOP": 0,
           "EDBT": 0,
@@ -1665,7 +1665,7 @@
           "ICIP": 0,
           "ICLR": 163,
           "ICMI": 0,
-          "ICML": 139,
+          "ICML": 140,
           "ICMR": 0,
           "ICN": 0,
           "ICNP": 0,
@@ -1918,7 +1918,7 @@
     {
       "key": "efficient_model_design",
       "title": "Efficient Model Design and Optimization",
-      "count": 272,
+      "count": 273,
       "papers": [
         {
           "id": "3518d8fff50f86eab258959559e4e01c7d97fcf2",
@@ -2169,6 +2169,55 @@
           "doi": "",
           "arxiv_comment": "",
           "arxiv_id": "2606.11057v1",
+          "raw_venue": "",
+          "venue_source": "",
+          "sort_key": 202600,
+          "download": {
+            "status": "pending",
+            "source": null,
+            "path": null,
+            "last_attempt_at": null
+          }
+        },
+        {
+          "id": "89973fac413c3855ef9ace8207ba68adf1f624c0",
+          "title": "ITSPACE: Monotone Gaussian Optimal Transport Updates",
+          "authors": [
+            "Woojoo Na",
+            "Jennifer Dy"
+          ],
+          "year": 2026,
+          "month": 6,
+          "source": "arxiv",
+          "venue": "ICML",
+          "venue_type": "conference",
+          "abstract": "Covariance matrices serve as compact descriptors of feature distributions in many machine-learning pipelines, including domain adaptation and Gaussian embeddings. Under a centered Gaussian approximation, the unregularized Wasserstein-2 optimal-transport (OT) discrepancy admits a closed form on covariances given by the Bures-Wasserstein (BW) objective on the symmetric positive definite (SPD) cone. We propose ITSPACE (Iterative Transport for Stable Proximal Alignment of Covariance Embeddings), a proximal majorization-minimization method that directly optimizes this exact BW objective through closed-form updates in a square-root factorization. In exact arithmetic, each iteration satisfies a sufficient-decrease inequality for the BW objective; under inexact polar computations, we provide an explicit certificate-gap bound controlling deviations from exact descent. The resulting iterations preserve PSD structure by construction and naturally support rank-restricted factors, making ITSPACE well-suited as a lightweight inner-loop primitive in settings where adaptation must be performed from unlabeled target batches under strict step and compute budgets. Across real-world covariance-alignment benchmarks, ITSPACE reaches low-BW-gap solutions substantially faster than BW-gradient descent, methods based on other covariance geometries, and entropically regularized sample-OT baselines.",
+          "urls": {
+            "arxiv": "https://arxiv.org/abs/2606.30523v1",
+            "pdf": "https://arxiv.org/pdf/2606.30523v1",
+            "paper": "https://arxiv.org/abs/2606.30523v1"
+          },
+          "search_sets_raw": [
+            "A"
+          ],
+          "search_sets_final": [
+            "A"
+          ],
+          "filter_bucket": "th_cpl_a",
+          "matched_venue": "ICML",
+          "matched_th_cpl_level": "A",
+          "matched_th_cpl_area": "Artificial Intelligence and Pattern Recognition",
+          "category": "Efficient Model Design and Optimization",
+          "llm_tags": [],
+          "forced_tags": [],
+          "final_tags": [],
+          "cited_by": 0,
+          "is_preprint_on_arxiv": false,
+          "preprint_source": "",
+          "journal_ref": "",
+          "doi": "",
+          "arxiv_comment": "",
+          "arxiv_id": "2606.30523v1",
           "raw_venue": "",
           "venue_source": "",
           "sort_key": 202600,
@@ -18390,7 +18439,7 @@
     {
       "key": "embedded_ai_applications",
       "title": "Embedded AI Applications",
-      "count": 542,
+      "count": 544,
       "papers": [
         {
           "id": "d103ead51da993c73537e967f22d71ee8df11af2",
@@ -19080,6 +19129,58 @@
           }
         },
         {
+          "id": "2769c04e7c8203905a2e6471f3fd3635a3d9384c",
+          "title": "Histogram-constrained Image Generation",
+          "authors": [
+            "Haoming Liu",
+            "Yuanhe Guo",
+            "Yijia Cao",
+            "Shenji Wan",
+            "Hongyi Wen"
+          ],
+          "year": 2026,
+          "month": 6,
+          "source": "arxiv",
+          "venue": "ECCV",
+          "venue_type": "conference",
+          "abstract": "Diffusion models have emerged as a dominant paradigm in generative modeling, enabling high-fidelity sampling from complex data distributions. Despite impressive capabilities, controlling diffusion models to produce outputs aligned with user intent remains an open challenge, especially when balancing global coherence with local precision. Existing control mechanisms vary in the granularity of their conditioning signals. For example, textual prompts guide generation globally through high-level semantics, while ControlNet-like approaches secure precise local structure via dense conditions. In this work, we introduce Histogram-constrained Image Generation (HIG), a novel control mechanism that falls into the middle ground of control granularity. Our framework enforces user-specified distributional constraints (e.g., color histograms or latent token distributions) during the generation process with exact precision. We model such control as an optimal transport (OT) problem and apply explicit guidance transformations during sampling, thereby driving the diffusion trajectory to align with the desired histogram. We demonstrate the versatility of HIG across diverse applications, including constrained generation via color/latent histograms and high-capacity information embedding through histogram-level encoding. Our findings underscore the promise of distributional control, a flexible and interpretable control scheme that is fully compatible with existing control mechanisms, diversifying the hybrid strategies for controllable image generation. Our project page is available at: https://maps-research.github.io/hig/.",
+          "urls": {
+            "arxiv": "https://arxiv.org/abs/2606.31683v1",
+            "pdf": "https://arxiv.org/pdf/2606.31683v1",
+            "paper": "https://arxiv.org/abs/2606.31683v1"
+          },
+          "search_sets_raw": [
+            "A"
+          ],
+          "search_sets_final": [
+            "A"
+          ],
+          "filter_bucket": "th_cpl_a",
+          "matched_venue": "ECCV",
+          "matched_th_cpl_level": "A",
+          "matched_th_cpl_area": "Artificial Intelligence and Pattern Recognition",
+          "category": "Embedded AI Applications",
+          "llm_tags": [],
+          "forced_tags": [],
+          "final_tags": [],
+          "cited_by": 0,
+          "is_preprint_on_arxiv": false,
+          "preprint_source": "",
+          "journal_ref": "",
+          "doi": "",
+          "arxiv_comment": "",
+          "arxiv_id": "2606.31683v1",
+          "raw_venue": "",
+          "venue_source": "",
+          "sort_key": 202600,
+          "download": {
+            "status": "pending",
+            "source": null,
+            "path": null,
+            "last_attempt_at": null
+          }
+        },
+        {
           "id": "e44dc66e3b8b2f9e8063539d3a0e9365ef630e70",
           "title": "Multimodal Concept Bottleneck Models",
           "authors": [
@@ -19526,6 +19627,62 @@
           "doi": "",
           "arxiv_comment": "",
           "arxiv_id": "2606.09204v1",
+          "raw_venue": "",
+          "venue_source": "",
+          "sort_key": 202600,
+          "download": {
+            "status": "pending",
+            "source": null,
+            "path": null,
+            "last_attempt_at": null
+          }
+        },
+        {
+          "id": "4bf3df9b62af15c874bfcfecb48bb31f3b736430",
+          "title": "TinyML for On-Device and Edge Analytics in Wireless Networks: A Survey of Deployments, Opportunities, and Concept-Drift Mitigation",
+          "authors": [
+            "Prasoon Raghuwanshi",
+            "Vimal Bhatia",
+            "Sridhar Iyer",
+            "Matti Latva-aho",
+            "Onel Luis Alcaraz López"
+          ],
+          "year": 2026,
+          "month": 6,
+          "source": "arxiv",
+          "venue": "",
+          "venue_type": "",
+          "abstract": "Ubiquitous intelligence is essential for enabling real-time, adaptive, autonomous, and scalable operations in the next generation of wireless networks. However, this poses significant challenges in data management and energy consumption on the end-device/edge side, specially under dynamic environmental conditions. This has driven the adoption of tiny machine learning (tinyML), which offers data-driven optimization at the end-device/edge side. In this work, we survey and thoroughly discuss various tapped/untapped deployment possibilities of tinyML in wireless networks. We identify existing frameworks, accustomed to design tinyML algorithms, that could be utilized to solve a range of wireless network problems. We present a federated learning-based tinyML model update procedure, for both battery-powered and batteryless end-devices, to resolve the concept drift problem faced by tinyML models. Furthermore, we discuss the update-aware checkpointing, fault-tolerant bootloader, and intermittent-aware modify operation, which could support federated learning-based tinyML model update in the case of batteryless end-devices. Overall, this paper spells out several areas where end-device/edge intelligence can be utilized in the next generation of wireless systems, as well as ways to mitigate the concept drift problem faced in the case of end-device intelligence.",
+          "urls": {
+            "arxiv": "https://arxiv.org/abs/2606.30843v1",
+            "pdf": "https://arxiv.org/pdf/2606.30843v1",
+            "paper": "https://arxiv.org/abs/2606.30843v1"
+          },
+          "search_sets_raw": [
+            "C"
+          ],
+          "search_sets_final": [
+            "C"
+          ],
+          "filter_bucket": "arxiv",
+          "matched_venue": "",
+          "matched_th_cpl_level": "",
+          "matched_th_cpl_area": "",
+          "category": "Embedded AI Applications",
+          "llm_tags": [
+            "TinyML"
+          ],
+          "forced_tags": [],
+          "final_tags": [
+            "TinyML"
+          ],
+          "cited_by": 0,
+          "is_preprint_on_arxiv": false,
+          "preprint_source": "",
+          "journal_ref": "",
+          "doi": "",
+          "arxiv_comment": "",
+          "arxiv_id": "2606.30843v1",
           "raw_venue": "",
           "venue_source": "",
           "sort_key": 202600,

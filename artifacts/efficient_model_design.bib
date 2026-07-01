@@ -489,6 +489,17 @@
   abstract = {Accurate biodiversity identification from large-scale field data is a foundational problem with direct impact on ecology, conservation, and environmental monitoring. In practice, the core task is taxonomic prediction - inferring order, family, genus, or species from imperfect inputs such as specimen images, DNA barcodes, or both. Existing multimodal methods often treat taxonomy as a flat label space and therefore fail to encode the hierarchical structure of biological classification, which is critical for robustness under noise and missing modalities. We present two end-to-end variants for hierarchy-aware multimodal learning: CLiBD-HiR, which introduces Hierarchical Information Regularization (HiR) to shape embedding geometry across taxonomic levels, yielding structured and noise-robust representations; and CLiBD-HiR-Fuse, which additionally trains a lightweight fusion predictor that supports image-only, DNA-only, or joint inference and is resilient to modality corruption. Across large-scale biodiversity benchmarks, our approach improves taxonomic classification accuracy by over 14 percent compared to strong multimodal baselines, with particularly large gains under partial and corrupted DNA conditions. These results highlight that explicitly encoding biological hierarchy, together with flexible fusion, is key for practical biodiversity foundation models.}
 }
 
+@article{na2026-itspace-monotone-gaussian-optimal-eccf2aa4,
+  author = {Woojoo Na and Jennifer Dy},
+  title = {ITSPACE: Monotone Gaussian Optimal Transport Updates},
+  year = {2026},
+  journal = {ICML},
+  eprint = {2606.30523v1},
+  archivePrefix = {arXiv},
+  url = {https://arxiv.org/abs/2606.30523v1},
+  abstract = {Covariance matrices serve as compact descriptors of feature distributions in many machine-learning pipelines, including domain adaptation and Gaussian embeddings. Under a centered Gaussian approximation, the unregularized Wasserstein-2 optimal-transport (OT) discrepancy admits a closed form on covariances given by the Bures-Wasserstein (BW) objective on the symmetric positive definite (SPD) cone. We propose ITSPACE (Iterative Transport for Stable Proximal Alignment of Covariance Embeddings), a proximal majorization-minimization method that directly optimizes this exact BW objective through closed-form updates in a square-root factorization. In exact arithmetic, each iteration satisfies a sufficient-decrease inequality for the BW objective; under inexact polar computations, we provide an explicit certificate-gap bound controlling deviations from exact descent. The resulting iterations preserve PSD structure by construction and naturally support rank-restricted factors, making ITSPACE well-suited as a lightweight inner-loop primitive in settings where adaptation must be performed from unlabeled target batches under strict step and compute budgets. Across real-world covariance-alignment benchmarks, ITSPACE reaches low-BW-gap solutions substantially faster than BW-gradient descent, methods based on other covariance geometries, and entropically regularized sample-OT baselines.}
+}
+
 @article{janson2026-learned-subspace-compression-for-506d9d7d,
   author = {Paul Janson and Edouard Oyallon and Eugene Belilovsky},
   title = {Learned Subspace Compression for Communication-Efficient Pipeline Parallelism},
