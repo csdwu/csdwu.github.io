@@ -301,6 +301,17 @@
   abstract = {This paper presents an embedded EEG instrumentation platform for real-time steady-state visually evoked potential (SSVEP) decoding based on an ESP32-S3 microcontroller and an ADS1299 analog front end. The system performs $8$-channel EEG acquisition, zero-phase bandpass filtering, and canonical correlation analysis entirely on-device, while supporting wireless communication and closed-loop operation without external computation. A central contribution is the quantitative characterization of the platform's measurement integrity. Reported results demonstrate a stable shorted-input noise floor ($\\approx 0.08~μ\\text\{V\}_\{\\text\{RMS\}\}$), tightly bounded sampling jitter ($0.56~μ\\text\{s\}$ standard deviation), and negligible long-term drift ($< 1~\\text\{ppm\}$). Numerical fidelity analysis shows $100\\%$ decision agreement between the mixed-precision embedded pipeline and a $64$-bit double-precision reference. Effective common-mode attenuation exceeded $112~\\text\{dB\}$ under balanced conditions, with a localized $26.9~\\text\{dB\}$ degradation observed under source-impedance mismatch. Closed-loop validation achieved $99.17\\%$ online accuracy and an information transfer rate of $27.66~\\text\{bits/min\}$. These results position the proposed system as a quantitatively characterized embedded EEG measurement and processing platform for real-time SSVEP decoding.}
 }
 
+@article{chau2026-device-passport-enabling-spatio-8243d0d0,
+  author = {Geeling Chau and Ran Liu and Juri Minxha and Wenhui Cui and Erdrin Azemi and Ellen L. Zippi and Behrooz Mahasseni and Christopher M. Sandino},
+  title = {Device Passport: Enabling Spatio-Temporal Pretrained Models to Generalize Across Input Layouts},
+  year = {2026},
+  journal = {ICML},
+  eprint = {2607.00249v1},
+  archivePrefix = {arXiv},
+  url = {https://arxiv.org/abs/2607.00249v1},
+  abstract = {New device layouts pose a challenging modeling problem due to the lack of large datasets for each specific layout. Biosignal foundation models offer a plausible solution if they are able to generalize to new layouts effectively. To improve cross-layout transfer, we study how different channel embedding techniques behave when pretraining layouts differ substantially from the downstream decoding layout. We propose Device Passport, a new channel embedding technique that learns experts and mixture models that take each channel's functional activity and metadata as input. This contrasts with prior embedding methods, which typically use only functional information or only metadata to look up learned or fixed positional embeddings. Across controlled subset-transfer experiments and realistic transfer to ear-EEG, Device Passport is competitive overall and improves over the strongest learned baseline in the layout-transfer regimes that motivate this work. These results suggest that channel embedding design is a key consideration when reusing large-scale pretrained biosignal models on new devices.}
+}
+
 @article{hill2026-digging-deeper-learning-multi-3f5d73bb,
   author = {Oscar Hill and Mateo Espinosa Zarlenga and Mateja Jamnik},
   title = {Digging Deeper: Learning Multi-Level Concept Hierarchies},
@@ -707,6 +718,17 @@
   abstract = {Sets represent a fundamental abstraction across many types of data. To handle the unordered nature of set-structured data, models such as DeepSets and PointNet rely on fixed, non-learnable pooling operations (e.g., sum or max) -- a design choice that can hinder the transferability of learned embeddings and limits model expressivity. More recently, learnable aggregation functions have been proposed as more expressive alternatives. In this work, we advance this line of research by introducing the Neuralized Kolmogorov Mean (NKM) -- a novel, trainable framework for learning a generalized measure of central tendency through an invertible neural function. We further propose quasi-arithmetic neural networks (QUANNs), which incorporate the NKM as a learnable aggregation function. We provide a theoretical analysis showing that, QUANNs are universal approximators for a broad class of common set-function decompositions and, thanks to their invertible neural components, learn more structured latent representations. Empirically, QUANNs outperform state-of-the-art baselines across diverse benchmarks, while learning embeddings that transfer effectively even to tasks that do not involve sets.}
 }
 
+@article{sun2026-information-regularized-attention-for-6046a20c,
+  author = {Guohao Sun and Xiaofang Wang and Yash Patel and Mengchen Liu and Zhiqiang Tao and Praveen Krishnan},
+  title = {Information-Regularized Attention for Visual-Centric Reasoning},
+  year = {2026},
+  journal = {ECCV},
+  eprint = {2607.00434v1},
+  archivePrefix = {arXiv},
+  url = {https://arxiv.org/abs/2607.00434v1},
+  abstract = {Vision-language models (VLMs) have become a paradigm for multimodal learning, yet remain unstable due to object hallucination, weak visual grounding, and catastrophic forgetting after full-parameter instruction tuning. We claim these failures result from a lack of explicit control over visual representation learning during the standard next-token prediction objective. As a result, visual embeddings thus become passively optimized and prone to injecting redundant or spurious signals. To counter this, we introduce Information-Regularized Attention (IRA), a stochastic attention mechanism that explicitly regulates the amount of visual information injected into the hidden states of intermediate transformer layers. This local reparameterization translates uncertainty about visual representations into local noise that is independent across data points. Beyond evaluating model performance, we also quantify embedding properties, where IRA produces smoother curvature trajectories and suppresses attention-sink across all layers, indicating a more stable transformation of the visual signal. Our results suggest that stochastic attention is not merely a regularizer but a key contributor to representation learning in a generative architecture, offering a new direction for building more reliable VLMs.}
+}
+
 @article{lai2026-instruction-lens-score-your-07f85f5a,
   author = {Runhe Lai and Xinhua Lu and Yanqi Wu and Jinlun Ye and Weijiang Yu and Ruixuan Wang},
   title = {Instruction Lens Score: Your Instruction Contributes a Powerful Object Hallucination Detector for Multimodal Large Language Models},
@@ -859,6 +881,17 @@
   archivePrefix = {arXiv},
   url = {https://arxiv.org/abs/2605.15081v1},
   abstract = {The development of high-quality text embeddings is increasingly drifting toward an exclusionary future, defined by three critical barriers: prohibitive computational costs, a narrow linguistic focus that neglects most of the world's languages, and a lack of transparency from closed-source or open-weight models that stifles research. To dismantle these barriers, we introduce ML-Embed, a suite of inclusive and efficient models built upon a new framework: 3-Dimensional Matryoshka Learning (3D-ML). Our framework addresses the computational challenge with comprehensive efficiency across the entire model lifecycle. Beyond the storage benefits of Matryoshka Representation Learning (MRL) and flexible inference-time depth provided by Matryoshka Layer Learning (MLL), we introduce Matryoshka Embedding Learning (MEL) for enhanced parameter efficiency. To address the linguistic challenge, we curate a massively multilingual dataset and train a suite of models ranging from 140M to 8B parameters. In a direct commitment to transparency, we release all models, data, and code. Extensive evaluation on 430 tasks demonstrates that our models set new records on 9 of 17 evaluated MTEB benchmarks, with particularly strong results in low-resource languages, providing a reproducible blueprint for building globally equitable and computationally efficient AI systems.}
+}
+
+@article{sun2026-multi-label-node-classification-20a1cf34,
+  author = {Yifei Sun and Zemin Liu and Bryan Hooi and Yang Yang and Rizal Fathony and Jia Chen and Bingsheng He},
+  title = {Multi-Label Node Classification with Label Influence Propagation},
+  year = {2026},
+  journal = {ICLR},
+  eprint = {2607.00671v1},
+  archivePrefix = {arXiv},
+  url = {https://arxiv.org/abs/2607.00671v1},
+  abstract = {Graphs are a complex and versatile data structure used across various domains, with possibly multi-label nodes playing a particularly crucial role. Examples include proteins in PPI networks with multiple functions and users in social or e-commerce networks exhibiting diverse interests. Tackling multi-label node classification (MLNC) on graphs has led to the development of various approaches. Some methods leverage graph neural networks (GNNs) to exploit label co-occurrence correlations, while others incorporate label embeddings to capture label proximity. However, these approaches fail to account for the intricate influences between labels in non-Euclidean graph data. To address this issue, we decompose the message passing process in GNNs into two operations: propagation and transformation. We then conduct a comprehensive analysis and quantification of the influence correlations between labels in each operation. Building on these insights, we propose a novel model, Label Influence Propagation (LIP). Specifically, we construct a label influence graph based on the integrated label correlations. Then, we propagate high-order influences through this graph, dynamically adjusting the learning process by amplifying labels with positive contributions and mitigating those with negative influence. Finally, our framework is evaluated on comprehensive benchmark datasets, consistently outperforming SOTA methods across various settings, demonstrating its effectiveness on MLNC tasks.}
 }
 
 @article{shi2026-multimodal-concept-bottleneck-models-2d92d714,
@@ -1299,6 +1332,16 @@
   abstract = {Spatial reasoning focuses on locating target objects based on spatial relations in 3D scenes, which plays a crucial role in developing intelligent embodied agents. Due to the limited availability of 3D scene-language paired data, it is challenging to train models with strong reasoning ability from scratch. Previous approaches have attempted to inject 3D scene representations into the input space of Large Language Models (LLMs) and leverage the pretrained comprehension and reasoning abilities for spatial reasoning. However, models encoding absolute positions struggle to extract spatial relations from prematurely fused features, while methods explicitly encoding all spatial relations (which is quadratic in the number of objects) as input tokens suffer from poor scalability. To address these limitations, we propose QuatRoPE, a novel positional embedding method with an input length that is linear to the number of objects, and explicitly calculates pairwise spatial relations through the dot product in attention layers. QuatRoPE's holistic vector encoding of 3D coordinates guarantees a high degree of spatial consistency, maintaining fidelity to the scene's geometric integrity. Additionally, we introduce the Isolated Gated RoPE Extension (IGRE), which effectively limits QuatRoPE's influence to object-related tokens, thereby minimizing interference with the LLM's existing positional embeddings and maintaining the LLM's original capabilities. Extensive experiments demonstrate the effectiveness of our approaches. The code and data are available at https://github.com/oceanflowlab/QuatRoPE.}
 }
 
+@article{moore2026-scaling-up-thermodynamic-ai-db22a754,
+  author = {Andrew G. Moore},
+  title = {Scaling Up Thermodynamic AI Models},
+  year = {2026},
+  eprint = {2607.00170v1},
+  archivePrefix = {arXiv},
+  url = {https://arxiv.org/abs/2607.00170v1},
+  abstract = {Thermodynamic computing devices based on the Ising model show great promise for low-power AI inference and edge computing, but scalable methods for training large models for such hardware remain limited. Prior theory shows that the time-averaged behavior of high-temperature Gibbs-sampled Ising systems can implement feed-forward neural inference. We turn this theoretical correspondence into a scalable and purely backpropagation-based algorithm for training deep convolutional networks for thermodynamic inference on Ising machine hardware. Our image classification models achieve accuracies of 94.9% on CIFAR-10 and 76.0% on CIFAR-100 under binary Gibbs sampling. We then develop and experimentally validate a mathematical theory relating inference cost to accuracy and controlling autocorrelation times. Subsequently, we calculate asymptotic results showing that inference cost is bounded by a well-controlled tradeoff with performance and exhibit algorithms for computing optimal inference schedules. Finally, we discuss implications for hardware development and the future of high-temperature thermodynamic AI models.}
+}
+
 @article{ahad2026-semantic-intent-fragmentation-a-43427f5d,
   author = {Tanzim Ahad and Ismail Hossain and Md Jahangir Alam and Sai Puppala and Yoonpyo Lee and Syed Bahauddin Alam and Sajedul Talukder},
   title = {Semantic Intent Fragmentation: A Single-Shot Compositional Attack on Multi-Agent AI Pipelines},
@@ -1438,6 +1481,17 @@
   archivePrefix = {arXiv},
   url = {https://arxiv.org/abs/2606.27242v1},
   abstract = {Training-free source selection for LLM families with shared vocabularies arises in scientific string domains such as SMILES, protein, and genomic sequences, where candidate corpora share a tokenizer but differ in prediction targets. This creates an activation-dark regime: representation-similarity metrics can be uninformative without assumptions about label-conditioned error geometry, while classical update-geometry metrics are computationally prohibitive at vocabulary scale. We show that, in a shared-output head setting, representation metrics (e.g., CKA) are non-identifiable for transfer; models can share identical representations yet have orthogonal head updates. The key identity is that head Fisher alignment is exactly a cosine between kernel mean embeddings in the joint activation-error space, exposing activation, error, and coupling factors rather than requiring a materialized Fisher matrix. FisherSketch estimates this cosine directly in a single streaming pass, making K=128,256 head Fisher alignment practical with a 16 KB task signature (m=4096) and a 192 KB per-task streaming state, small enough to store next to a model hash, but encoding transfer-relevant update structure. Beyond source selection, the same signatures and marginals provide a diagnostic instrument for studying whether LLM task similarity is driven by activations, errors, or their coupling; shared-parameter and internal-layer validations, together with Llama-3.1-8B verbalizer-shift experiments, show that FisherSketch remains informative when activation similarity cannot distinguish tasks.}
+}
+
+@article{yousaf2026-the-illusion-of-high-e1625f5e,
+  author = {Adeel Yousaf and Soumik Ghosh and James Beetham and Amrit Singh Bedi and Mubarak Shah},
+  title = {The Illusion of High Utility in Safety Alignment of Text-to-Image Diffusion Models},
+  year = {2026},
+  journal = {ECCV},
+  eprint = {2607.00402v1},
+  archivePrefix = {arXiv},
+  url = {https://arxiv.org/abs/2607.00402v1},
+  abstract = {Safety alignment of text-to-image (T2I) diffusion models aims to suppress harmful generations while preserving utility on benign prompts. Recent methods often appear to deliver high safety with high utility, but this conclusion rests largely on coarse global utility metrics (e.g., FID, CLIPScore) that are insensitive to fine-grained semantic correctness, creating an illusion of high utility. We show that when utility is measured with structured evaluation, this illusion breaks: on TIFA (Text-to-Image Faithfulness evaluation with Question Answering), safety-aligned models suffer substantial drops in semantic fidelity, including failures in object counts, attributes, and relationships. To diagnose the source of this gap, we analyze the text-encoder prompt embedding space and uncover semantic collapse, a contraction of embedding spread coupled with distortion of inter-prompt similarity structure, which strongly correlates with structured utility loss. Guided by this insight, we propose StructureAware Geometric Regularization (SAGE), a safety alignment objective that explicitly preserves embedding spread and inter-prompt relational structure during adaptation. Our method restores structured utility (TIFA +5.0% over prior state-of-the-art) while maintaining strong safety performance and competitive coarse-grained utility scores. Our source code and trained models are available at https://adeelyousaf.github.io/SAGE_ECCV26_Project_Page/.}
 }
 
 @article{paeng2026-the-injection-paradox-brand-d9e5a4c8,

@@ -1,6 +1,6 @@
 {
   "version": "2.0.0",
-  "generated_at": "2026-07-01T02:54:19.467Z",
+  "generated_at": "2026-07-02T02:44:35.270Z",
   "query_groups": {
     "A": "\"embedded ai\"",
     "B": "(\"low power\" OR \"ultra-low-power\") \"embedded ai\"",
@@ -8,41 +8,41 @@
   },
   "stats": {
     "raw_counts": {
-      "A": 38,
-      "B": 1,
-      "C": 1
+      "A": 35,
+      "B": 2,
+      "C": 0
     },
     "after_set_ops": {
-      "A_only": 37,
-      "B": 1,
-      "C": 1,
-      "merged_total": 39,
+      "A_only": 34,
+      "B": 2,
+      "C": 0,
+      "merged_total": 36,
       "bc_overlap": 0
     },
-    "after_filter": 856,
+    "after_filter": 863,
     "classification": {
-      "total": 856,
+      "total": 863,
       "by_category": {
-        "Efficient Model Design and Optimization": 273,
+        "Efficient Model Design and Optimization": 275,
         "Novel Computing Architectures and Domain-Specific Accelerators": 39,
-        "Embedded AI Applications": 544
+        "Embedded AI Applications": 549
       },
       "by_tag": {
         "TinyML": 50,
-        "LP": 96,
+        "LP": 97,
         "ULP": 15
       },
       "by_provider": {
         "tencent_tokenhub": 0,
         "heuristic": 0,
-        "heuristic_fallback": 856
+        "heuristic_fallback": 863
       }
     },
     "source_stats": {
-      "total": 856,
+      "total": 863,
       "by_group": {
         "A": {
-          "total": 717,
+          "total": 723,
           "arxiv": 0,
           "venues": {
             "AAAI": 90,
@@ -109,7 +109,7 @@
             "EAAI": 0,
             "EASE": 0,
             "EC": 0,
-            "ECCV": 1,
+            "ECCV": 3,
             "ECIR": 0,
             "ECOOP": 0,
             "EDBT": 0,
@@ -166,9 +166,9 @@
             "ICDT": 0,
             "ICFP": 0,
             "ICIP": 0,
-            "ICLR": 162,
+            "ICLR": 163,
             "ICMI": 0,
-            "ICML": 138,
+            "ICML": 141,
             "ICMR": 0,
             "ICN": 0,
             "ICNP": 0,
@@ -416,8 +416,8 @@
           "unknown": 0
         },
         "B": {
-          "total": 104,
-          "arxiv": 80,
+          "total": 105,
+          "arxiv": 81,
           "venues": {
             "AAAI": 0,
             "AAMAS": 0,
@@ -1539,8 +1539,8 @@
         }
       },
       "total_summary": {
-        "total": 871,
-        "arxiv": 122,
+        "total": 878,
+        "arxiv": 123,
         "venues": {
           "AAAI": 90,
           "AAMAS": 0,
@@ -1606,7 +1606,7 @@
           "EAAI": 0,
           "EASE": 0,
           "EC": 0,
-          "ECCV": 1,
+          "ECCV": 3,
           "ECIR": 0,
           "ECOOP": 0,
           "EDBT": 0,
@@ -1663,9 +1663,9 @@
           "ICDT": 0,
           "ICFP": 0,
           "ICIP": 0,
-          "ICLR": 163,
+          "ICLR": 164,
           "ICMI": 0,
-          "ICML": 140,
+          "ICML": 143,
           "ICMR": 0,
           "ICN": 0,
           "ICNP": 0,
@@ -1918,8 +1918,109 @@
     {
       "key": "efficient_model_design",
       "title": "Efficient Model Design and Optimization",
-      "count": 273,
+      "count": 275,
       "papers": [
+        {
+          "id": "7104955aff67ff69b848f5bda17e030b06b55844",
+          "title": "Evaluating Pretrained Music Embeddings for Cross-Performance Jazz Standard Recognition",
+          "authors": [
+            "Çağrı Eser"
+          ],
+          "year": 2026,
+          "month": 7,
+          "source": "arxiv",
+          "venue": "ICML",
+          "venue_type": "conference",
+          "abstract": "Recognizing jazz standards from audio is a challenging form of tune-level music retrieval: different performances of the same standard may vary in tempo, key, arrangement, instrumentation, improvisational content, and even whether the head melody is present. We study this problem using a curated subset of the Jazz Trio Database designed for cross-performance standard recognition. We compare a from-scratch trained Harmonic CNN baseline against frozen pretrained music representations from recent music understanding foundation models, using both supervised probing and nearest-neighbor retrieval. Our results suggest that from-scratch spectrogram models overfit strongly to training performances, while pretrained embeddings provide better top-$k$ results but are sensitive to performer identity, which can be partially reduced with a lightweight contrastive projection. Our findings motivate jazz standard recognition as a useful stress test for music representation models and as a step toward retrieval-based standard identification. Project page: https://github.com/cagries/tipofmyear.",
+          "urls": {
+            "arxiv": "https://arxiv.org/abs/2607.00777v1",
+            "pdf": "https://arxiv.org/pdf/2607.00777v1",
+            "paper": "https://arxiv.org/abs/2607.00777v1"
+          },
+          "search_sets_raw": [
+            "A"
+          ],
+          "search_sets_final": [
+            "A"
+          ],
+          "filter_bucket": "th_cpl_a",
+          "matched_venue": "ICML",
+          "matched_th_cpl_level": "A",
+          "matched_th_cpl_area": "Artificial Intelligence and Pattern Recognition",
+          "category": "Efficient Model Design and Optimization",
+          "llm_tags": [],
+          "forced_tags": [],
+          "final_tags": [],
+          "cited_by": 0,
+          "is_preprint_on_arxiv": false,
+          "preprint_source": "",
+          "journal_ref": "",
+          "doi": "",
+          "arxiv_comment": "",
+          "arxiv_id": "2607.00777v1",
+          "raw_venue": "",
+          "venue_source": "",
+          "sort_key": 202600,
+          "download": {
+            "status": "pending",
+            "source": null,
+            "path": null,
+            "last_attempt_at": null
+          }
+        },
+        {
+          "id": "7d05a05b5fdacfae7938dde34625d327b498322e",
+          "title": "SAOT: Self-Supervised Continual Graph Learning with Structure-Aware Optimal Transport",
+          "authors": [
+            "Yuting Zhang",
+            "Yanbei Liu",
+            "Zhitao Xiao",
+            "Lei Geng",
+            "Yanwei Pang",
+            "Xiao Wang"
+          ],
+          "year": 2026,
+          "month": 7,
+          "source": "arxiv",
+          "venue": "ICML",
+          "venue_type": "conference",
+          "abstract": "Self-supervised Continual Graph Learning (CGL) aims to successively learn from a graph sequence with different tasks without label supervision - a paradigm that has attracted widespread attention. Most existing self-supervised CGL methods rely on instance-level consistency objectives that enforce stability of individual node (or node-pair) embeddings. Due to optimizing nodes in isolation, these methods fail to maintain global relational structure, causing inter-node correspondences to progressively distort under continual learning. To this end, we propose a novel Structure-Aware Optimal Transport (SAOT) framework that explicitly captures and preserves relational structure within graph representations across sequential tasks. Specifically, SAOT leverages optimal transport theory to capture global inter-node correspondences, thereby facilitating and enhancing graph representation learning. Simultaneously, SAOT incorporates a cross-task knowledge distillation mechanism to preserve the previous structural knowledge. Extensive experiments on four CGL benchmark datasets demonstrate that SAOT outperforms existing self-supervised baselines. In particular, SAOT achieves significant performance gains, improving average accuracy by up to 5% on CoraFull-CL and over 15% on Products-CL compared with state-of-the-art methods in the Class-IL setting.",
+          "urls": {
+            "arxiv": "https://arxiv.org/abs/2607.00377v1",
+            "pdf": "https://arxiv.org/pdf/2607.00377v1",
+            "paper": "https://arxiv.org/abs/2607.00377v1"
+          },
+          "search_sets_raw": [
+            "A"
+          ],
+          "search_sets_final": [
+            "A"
+          ],
+          "filter_bucket": "th_cpl_a",
+          "matched_venue": "ICML",
+          "matched_th_cpl_level": "A",
+          "matched_th_cpl_area": "Artificial Intelligence and Pattern Recognition",
+          "category": "Efficient Model Design and Optimization",
+          "llm_tags": [],
+          "forced_tags": [],
+          "final_tags": [],
+          "cited_by": 0,
+          "is_preprint_on_arxiv": false,
+          "preprint_source": "",
+          "journal_ref": "",
+          "doi": "",
+          "arxiv_comment": "",
+          "arxiv_id": "2607.00377v1",
+          "raw_venue": "",
+          "venue_source": "",
+          "sort_key": 202600,
+          "download": {
+            "status": "pending",
+            "source": null,
+            "path": null,
+            "last_attempt_at": null
+          }
+        },
         {
           "id": "3518d8fff50f86eab258959559e4e01c7d97fcf2",
           "title": "Active Learning with Low-Rank Structure for Data Selection",
@@ -18439,8 +18540,274 @@
     {
       "key": "embedded_ai_applications",
       "title": "Embedded AI Applications",
-      "count": 544,
+      "count": 549,
       "papers": [
+        {
+          "id": "80e3f6f7dfa78039f5f9d711aeb8ab5bf44df921",
+          "title": "Device Passport: Enabling Spatio-Temporal Pretrained Models to Generalize Across Input Layouts",
+          "authors": [
+            "Geeling Chau",
+            "Ran Liu",
+            "Juri Minxha",
+            "Wenhui Cui",
+            "Erdrin Azemi",
+            "Ellen L. Zippi",
+            "Behrooz Mahasseni",
+            "Christopher M. Sandino"
+          ],
+          "year": 2026,
+          "month": 7,
+          "source": "arxiv",
+          "venue": "ICML",
+          "venue_type": "conference",
+          "abstract": "New device layouts pose a challenging modeling problem due to the lack of large datasets for each specific layout. Biosignal foundation models offer a plausible solution if they are able to generalize to new layouts effectively. To improve cross-layout transfer, we study how different channel embedding techniques behave when pretraining layouts differ substantially from the downstream decoding layout. We propose Device Passport, a new channel embedding technique that learns experts and mixture models that take each channel's functional activity and metadata as input. This contrasts with prior embedding methods, which typically use only functional information or only metadata to look up learned or fixed positional embeddings. Across controlled subset-transfer experiments and realistic transfer to ear-EEG, Device Passport is competitive overall and improves over the strongest learned baseline in the layout-transfer regimes that motivate this work. These results suggest that channel embedding design is a key consideration when reusing large-scale pretrained biosignal models on new devices.",
+          "urls": {
+            "arxiv": "https://arxiv.org/abs/2607.00249v1",
+            "pdf": "https://arxiv.org/pdf/2607.00249v1",
+            "paper": "https://arxiv.org/abs/2607.00249v1"
+          },
+          "search_sets_raw": [
+            "A"
+          ],
+          "search_sets_final": [
+            "A"
+          ],
+          "filter_bucket": "th_cpl_a",
+          "matched_venue": "ICML",
+          "matched_th_cpl_level": "A",
+          "matched_th_cpl_area": "Artificial Intelligence and Pattern Recognition",
+          "category": "Embedded AI Applications",
+          "llm_tags": [],
+          "forced_tags": [],
+          "final_tags": [],
+          "cited_by": 0,
+          "is_preprint_on_arxiv": false,
+          "preprint_source": "",
+          "journal_ref": "",
+          "doi": "",
+          "arxiv_comment": "",
+          "arxiv_id": "2607.00249v1",
+          "raw_venue": "",
+          "venue_source": "",
+          "sort_key": 202600,
+          "download": {
+            "status": "pending",
+            "source": null,
+            "path": null,
+            "last_attempt_at": null
+          }
+        },
+        {
+          "id": "91fafd8c8b20322fe599975b52489c9aa1d82116",
+          "title": "Information-Regularized Attention for Visual-Centric Reasoning",
+          "authors": [
+            "Guohao Sun",
+            "Xiaofang Wang",
+            "Yash Patel",
+            "Mengchen Liu",
+            "Zhiqiang Tao",
+            "Praveen Krishnan"
+          ],
+          "year": 2026,
+          "month": 7,
+          "source": "arxiv",
+          "venue": "ECCV",
+          "venue_type": "conference",
+          "abstract": "Vision-language models (VLMs) have become a paradigm for multimodal learning, yet remain unstable due to object hallucination, weak visual grounding, and catastrophic forgetting after full-parameter instruction tuning. We claim these failures result from a lack of explicit control over visual representation learning during the standard next-token prediction objective. As a result, visual embeddings thus become passively optimized and prone to injecting redundant or spurious signals. To counter this, we introduce Information-Regularized Attention (IRA), a stochastic attention mechanism that explicitly regulates the amount of visual information injected into the hidden states of intermediate transformer layers. This local reparameterization translates uncertainty about visual representations into local noise that is independent across data points. Beyond evaluating model performance, we also quantify embedding properties, where IRA produces smoother curvature trajectories and suppresses attention-sink across all layers, indicating a more stable transformation of the visual signal. Our results suggest that stochastic attention is not merely a regularizer but a key contributor to representation learning in a generative architecture, offering a new direction for building more reliable VLMs.",
+          "urls": {
+            "arxiv": "https://arxiv.org/abs/2607.00434v1",
+            "pdf": "https://arxiv.org/pdf/2607.00434v1",
+            "paper": "https://arxiv.org/abs/2607.00434v1"
+          },
+          "search_sets_raw": [
+            "A"
+          ],
+          "search_sets_final": [
+            "A"
+          ],
+          "filter_bucket": "th_cpl_a",
+          "matched_venue": "ECCV",
+          "matched_th_cpl_level": "A",
+          "matched_th_cpl_area": "Artificial Intelligence and Pattern Recognition",
+          "category": "Embedded AI Applications",
+          "llm_tags": [],
+          "forced_tags": [],
+          "final_tags": [],
+          "cited_by": 0,
+          "is_preprint_on_arxiv": false,
+          "preprint_source": "",
+          "journal_ref": "",
+          "doi": "",
+          "arxiv_comment": "",
+          "arxiv_id": "2607.00434v1",
+          "raw_venue": "",
+          "venue_source": "",
+          "sort_key": 202600,
+          "download": {
+            "status": "pending",
+            "source": null,
+            "path": null,
+            "last_attempt_at": null
+          }
+        },
+        {
+          "id": "7ba2fb9d64795a0d9711f87ea6fe8756b7868766",
+          "title": "Multi-Label Node Classification with Label Influence Propagation",
+          "authors": [
+            "Yifei Sun",
+            "Zemin Liu",
+            "Bryan Hooi",
+            "Yang Yang",
+            "Rizal Fathony",
+            "Jia Chen",
+            "Bingsheng He"
+          ],
+          "year": 2026,
+          "month": 7,
+          "source": "arxiv",
+          "venue": "ICLR",
+          "venue_type": "conference",
+          "abstract": "Graphs are a complex and versatile data structure used across various domains, with possibly multi-label nodes playing a particularly crucial role. Examples include proteins in PPI networks with multiple functions and users in social or e-commerce networks exhibiting diverse interests. Tackling multi-label node classification (MLNC) on graphs has led to the development of various approaches. Some methods leverage graph neural networks (GNNs) to exploit label co-occurrence correlations, while others incorporate label embeddings to capture label proximity. However, these approaches fail to account for the intricate influences between labels in non-Euclidean graph data. To address this issue, we decompose the message passing process in GNNs into two operations: propagation and transformation. We then conduct a comprehensive analysis and quantification of the influence correlations between labels in each operation. Building on these insights, we propose a novel model, Label Influence Propagation (LIP). Specifically, we construct a label influence graph based on the integrated label correlations. Then, we propagate high-order influences through this graph, dynamically adjusting the learning process by amplifying labels with positive contributions and mitigating those with negative influence. Finally, our framework is evaluated on comprehensive benchmark datasets, consistently outperforming SOTA methods across various settings, demonstrating its effectiveness on MLNC tasks.",
+          "urls": {
+            "arxiv": "https://arxiv.org/abs/2607.00671v1",
+            "pdf": "https://arxiv.org/pdf/2607.00671v1",
+            "paper": "https://arxiv.org/abs/2607.00671v1"
+          },
+          "search_sets_raw": [
+            "A"
+          ],
+          "search_sets_final": [
+            "A"
+          ],
+          "filter_bucket": "th_cpl_a",
+          "matched_venue": "ICLR",
+          "matched_th_cpl_level": "A",
+          "matched_th_cpl_area": "Artificial Intelligence and Pattern Recognition",
+          "category": "Embedded AI Applications",
+          "llm_tags": [],
+          "forced_tags": [],
+          "final_tags": [],
+          "cited_by": 0,
+          "is_preprint_on_arxiv": false,
+          "preprint_source": "",
+          "journal_ref": "",
+          "doi": "",
+          "arxiv_comment": "",
+          "arxiv_id": "2607.00671v1",
+          "raw_venue": "",
+          "venue_source": "",
+          "sort_key": 202600,
+          "download": {
+            "status": "pending",
+            "source": null,
+            "path": null,
+            "last_attempt_at": null
+          }
+        },
+        {
+          "id": "4c3a00598d3e92e7be5a45e73a1fb2ee22385fb2",
+          "title": "Scaling Up Thermodynamic AI Models",
+          "authors": [
+            "Andrew G. Moore"
+          ],
+          "year": 2026,
+          "month": 7,
+          "source": "arxiv",
+          "venue": "",
+          "venue_type": "",
+          "abstract": "Thermodynamic computing devices based on the Ising model show great promise for low-power AI inference and edge computing, but scalable methods for training large models for such hardware remain limited. Prior theory shows that the time-averaged behavior of high-temperature Gibbs-sampled Ising systems can implement feed-forward neural inference. We turn this theoretical correspondence into a scalable and purely backpropagation-based algorithm for training deep convolutional networks for thermodynamic inference on Ising machine hardware. Our image classification models achieve accuracies of 94.9% on CIFAR-10 and 76.0% on CIFAR-100 under binary Gibbs sampling. We then develop and experimentally validate a mathematical theory relating inference cost to accuracy and controlling autocorrelation times. Subsequently, we calculate asymptotic results showing that inference cost is bounded by a well-controlled tradeoff with performance and exhibit algorithms for computing optimal inference schedules. Finally, we discuss implications for hardware development and the future of high-temperature thermodynamic AI models.",
+          "urls": {
+            "arxiv": "https://arxiv.org/abs/2607.00170v1",
+            "pdf": "https://arxiv.org/pdf/2607.00170v1",
+            "paper": "https://arxiv.org/abs/2607.00170v1"
+          },
+          "search_sets_raw": [
+            "B"
+          ],
+          "search_sets_final": [
+            "B"
+          ],
+          "filter_bucket": "arxiv",
+          "matched_venue": "",
+          "matched_th_cpl_level": "",
+          "matched_th_cpl_area": "",
+          "category": "Embedded AI Applications",
+          "llm_tags": [
+            "LP"
+          ],
+          "forced_tags": [],
+          "final_tags": [
+            "LP"
+          ],
+          "cited_by": 0,
+          "is_preprint_on_arxiv": false,
+          "preprint_source": "",
+          "journal_ref": "",
+          "doi": "",
+          "arxiv_comment": "",
+          "arxiv_id": "2607.00170v1",
+          "raw_venue": "",
+          "venue_source": "",
+          "sort_key": 202600,
+          "download": {
+            "status": "pending",
+            "source": null,
+            "path": null,
+            "last_attempt_at": null
+          }
+        },
+        {
+          "id": "8d2bdc2aa77c768c0443cc941ef2486b0ab44a08",
+          "title": "The Illusion of High Utility in Safety Alignment of Text-to-Image Diffusion Models",
+          "authors": [
+            "Adeel Yousaf",
+            "Soumik Ghosh",
+            "James Beetham",
+            "Amrit Singh Bedi",
+            "Mubarak Shah"
+          ],
+          "year": 2026,
+          "month": 7,
+          "source": "arxiv",
+          "venue": "ECCV",
+          "venue_type": "conference",
+          "abstract": "Safety alignment of text-to-image (T2I) diffusion models aims to suppress harmful generations while preserving utility on benign prompts. Recent methods often appear to deliver high safety with high utility, but this conclusion rests largely on coarse global utility metrics (e.g., FID, CLIPScore) that are insensitive to fine-grained semantic correctness, creating an illusion of high utility. We show that when utility is measured with structured evaluation, this illusion breaks: on TIFA (Text-to-Image Faithfulness evaluation with Question Answering), safety-aligned models suffer substantial drops in semantic fidelity, including failures in object counts, attributes, and relationships. To diagnose the source of this gap, we analyze the text-encoder prompt embedding space and uncover semantic collapse, a contraction of embedding spread coupled with distortion of inter-prompt similarity structure, which strongly correlates with structured utility loss. Guided by this insight, we propose StructureAware Geometric Regularization (SAGE), a safety alignment objective that explicitly preserves embedding spread and inter-prompt relational structure during adaptation. Our method restores structured utility (TIFA +5.0% over prior state-of-the-art) while maintaining strong safety performance and competitive coarse-grained utility scores. Our source code and trained models are available at https://adeelyousaf.github.io/SAGE_ECCV26_Project_Page/.",
+          "urls": {
+            "arxiv": "https://arxiv.org/abs/2607.00402v1",
+            "pdf": "https://arxiv.org/pdf/2607.00402v1",
+            "paper": "https://arxiv.org/abs/2607.00402v1"
+          },
+          "search_sets_raw": [
+            "A"
+          ],
+          "search_sets_final": [
+            "A"
+          ],
+          "filter_bucket": "th_cpl_a",
+          "matched_venue": "ECCV",
+          "matched_th_cpl_level": "A",
+          "matched_th_cpl_area": "Artificial Intelligence and Pattern Recognition",
+          "category": "Embedded AI Applications",
+          "llm_tags": [],
+          "forced_tags": [],
+          "final_tags": [],
+          "cited_by": 0,
+          "is_preprint_on_arxiv": false,
+          "preprint_source": "",
+          "journal_ref": "",
+          "doi": "",
+          "arxiv_comment": "",
+          "arxiv_id": "2607.00402v1",
+          "raw_venue": "",
+          "venue_source": "",
+          "sort_key": 202600,
+          "download": {
+            "status": "pending",
+            "source": null,
+            "path": null,
+            "last_attempt_at": null
+          }
+        },
         {
           "id": "d103ead51da993c73537e967f22d71ee8df11af2",
           "title": "\"I've Seen How This Goes\": Characterizing Diversity via Progressive Conditional Surprise",
