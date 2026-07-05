@@ -1263,6 +1263,17 @@
   abstract = {Humans easily determine which color belongs to which shape in multi-object scenes, an ability known as concept binding. Vision-language embedding models such as CLIP struggle with binding: they recognize individual concepts but fail to represent which concepts form which objects. Although CLIP behaves like a bag-of-concepts model in cross-modal retrieval, object information is recoverable from its image and text embeddings separately. We study this tension through the binding function, which maps concepts to scene embeddings. We find that scene embeddings decompose additively into object representations, explaining why uni-modal probes can recover object information. However, CLIP's binding function is high-complexity, which likely prevents the image and text encoders from learning a shared binding mechanism that generalizes to unseen concept combinations. We then ask whether this limitation is fundamental. We show that it is not. In controlled transformer models trained from scratch, binding generalization emerges with sufficient data coverage. These models learn low-complexity binding functions characterized by multiplicative interactions between concepts, enabling systematic generalization. Code is publicly available at https://github.com/oshapio/binding-concepts-complexity.}
 }
 
+@article{montgomery2026-how-should-transformers-encode-d532ed73,
+  author = {Maria Elkjær Montgomery and Christian Igel and Mikkel Odgaard and Martin Sillesen and Mads Nielsen},
+  title = {How Should Transformers Encode Numeric Values in Electronic Health Records?},
+  year = {2026},
+  journal = {ICML},
+  eprint = {2607.01391v1},
+  archivePrefix = {arXiv},
+  url = {https://arxiv.org/abs/2607.01391v1},
+  abstract = {How do we encode numeric values in transformer-based sequence processing, particularly in electronic health record (EHR) data? We systematically compare discrete, continuous, and hybrid value encoding strategies using synthetic arithmetic tasks embedded within real-world EHR data, as well as real-world clinical prediction tasks. Our study reveals trade-offs between numeric precision, optimisation stability, and architectural flexibility. We find that approaches that explicitly model value-concept interactions perform best on precision-sensitive arithmetic tasks when architectural constraints permit. Hybrid token-based approaches that retain numeric values but apply binning prior to projection provide a more robust and broadly applicable alternative, with the optimal number of bins following a simple empirically derived power-law in dataset size. Across tasks, models consistently exhibit reliable "good enough" numeric computation rather than exact arithmetic, while clinical gains from incorporating laboratory values are task-dependent. This suggests that robustness and deployability often outweigh maximal numeric precision in practice, motivating hybrid token-based approaches as a practical default.}
+}
+
 @article{sahoo2026-i-can-t-believe-b7bd8815,
   author = {Subramanyam Sahoo and Vinija Jain and Divya Chaudhary and Aman Chadha},
   title = {I Can't Believe It's Not Robust: Catastrophic Collapse of Safety Classifiers under Embedding Drift},

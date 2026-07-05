@@ -1,6 +1,6 @@
 {
   "version": "2.0.0",
-  "generated_at": "2026-07-02T02:44:35.270Z",
+  "generated_at": "2026-07-05T02:34:25.737Z",
   "query_groups": {
     "A": "\"embedded ai\"",
     "B": "(\"low power\" OR \"ultra-low-power\") \"embedded ai\"",
@@ -8,24 +8,24 @@
   },
   "stats": {
     "raw_counts": {
-      "A": 35,
-      "B": 2,
+      "A": 39,
+      "B": 0,
       "C": 0
     },
     "after_set_ops": {
-      "A_only": 34,
-      "B": 2,
+      "A_only": 39,
+      "B": 0,
       "C": 0,
-      "merged_total": 36,
+      "merged_total": 39,
       "bc_overlap": 0
     },
-    "after_filter": 863,
+    "after_filter": 864,
     "classification": {
-      "total": 863,
+      "total": 864,
       "by_category": {
         "Efficient Model Design and Optimization": 275,
         "Novel Computing Architectures and Domain-Specific Accelerators": 39,
-        "Embedded AI Applications": 549
+        "Embedded AI Applications": 550
       },
       "by_tag": {
         "TinyML": 50,
@@ -35,14 +35,14 @@
       "by_provider": {
         "tencent_tokenhub": 0,
         "heuristic": 0,
-        "heuristic_fallback": 863
+        "heuristic_fallback": 864
       }
     },
     "source_stats": {
-      "total": 863,
+      "total": 864,
       "by_group": {
         "A": {
-          "total": 723,
+          "total": 724,
           "arxiv": 0,
           "venues": {
             "AAAI": 90,
@@ -168,7 +168,7 @@
             "ICIP": 0,
             "ICLR": 163,
             "ICMI": 0,
-            "ICML": 141,
+            "ICML": 142,
             "ICMR": 0,
             "ICN": 0,
             "ICNP": 0,
@@ -1539,7 +1539,7 @@
         }
       },
       "total_summary": {
-        "total": 878,
+        "total": 879,
         "arxiv": 123,
         "venues": {
           "AAAI": 90,
@@ -1665,7 +1665,7 @@
           "ICIP": 0,
           "ICLR": 164,
           "ICMI": 0,
-          "ICML": 143,
+          "ICML": 144,
           "ICMR": 0,
           "ICN": 0,
           "ICNP": 0,
@@ -18540,7 +18540,7 @@
     {
       "key": "embedded_ai_applications",
       "title": "Embedded AI Applications",
-      "count": 549,
+      "count": 550,
       "papers": [
         {
           "id": "80e3f6f7dfa78039f5f9d711aeb8ab5bf44df921",
@@ -18587,6 +18587,58 @@
           "doi": "",
           "arxiv_comment": "",
           "arxiv_id": "2607.00249v1",
+          "raw_venue": "",
+          "venue_source": "",
+          "sort_key": 202600,
+          "download": {
+            "status": "pending",
+            "source": null,
+            "path": null,
+            "last_attempt_at": null
+          }
+        },
+        {
+          "id": "204e1b80faa438bfbe142f51abb72fb58c9dd45a",
+          "title": "How Should Transformers Encode Numeric Values in Electronic Health Records?",
+          "authors": [
+            "Maria Elkjær Montgomery",
+            "Christian Igel",
+            "Mikkel Odgaard",
+            "Martin Sillesen",
+            "Mads Nielsen"
+          ],
+          "year": 2026,
+          "month": 7,
+          "source": "arxiv",
+          "venue": "ICML",
+          "venue_type": "conference",
+          "abstract": "How do we encode numeric values in transformer-based sequence processing, particularly in electronic health record (EHR) data? We systematically compare discrete, continuous, and hybrid value encoding strategies using synthetic arithmetic tasks embedded within real-world EHR data, as well as real-world clinical prediction tasks. Our study reveals trade-offs between numeric precision, optimisation stability, and architectural flexibility. We find that approaches that explicitly model value-concept interactions perform best on precision-sensitive arithmetic tasks when architectural constraints permit. Hybrid token-based approaches that retain numeric values but apply binning prior to projection provide a more robust and broadly applicable alternative, with the optimal number of bins following a simple empirically derived power-law in dataset size. Across tasks, models consistently exhibit reliable \"good enough\" numeric computation rather than exact arithmetic, while clinical gains from incorporating laboratory values are task-dependent. This suggests that robustness and deployability often outweigh maximal numeric precision in practice, motivating hybrid token-based approaches as a practical default.",
+          "urls": {
+            "arxiv": "https://arxiv.org/abs/2607.01391v1",
+            "pdf": "https://arxiv.org/pdf/2607.01391v1",
+            "paper": "https://arxiv.org/abs/2607.01391v1"
+          },
+          "search_sets_raw": [
+            "A"
+          ],
+          "search_sets_final": [
+            "A"
+          ],
+          "filter_bucket": "th_cpl_a",
+          "matched_venue": "ICML",
+          "matched_th_cpl_level": "A",
+          "matched_th_cpl_area": "Artificial Intelligence and Pattern Recognition",
+          "category": "Embedded AI Applications",
+          "llm_tags": [],
+          "forced_tags": [],
+          "final_tags": [],
+          "cited_by": 0,
+          "is_preprint_on_arxiv": false,
+          "preprint_source": "",
+          "journal_ref": "",
+          "doi": "",
+          "arxiv_comment": "",
+          "arxiv_id": "2607.01391v1",
           "raw_venue": "",
           "venue_source": "",
           "sort_key": 202600,
