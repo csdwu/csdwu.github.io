@@ -116,6 +116,17 @@
   abstract = {Zero-shot text classification (ZSC) offers the promise of eliminating costly task-specific annotation by matching texts directly to human-readable label descriptions. While early approaches have predominantly relied on cross-encoder models fine-tuned for natural language inference (NLI), recent advances in text-embedding models, rerankers, and instruction-tuned large language models (LLMs) have challenged the dominance of NLI-based architectures. Yet, systematically comparing these diverse approaches remains difficult. Existing evaluations, such as MTEB, often incorporate labeled examples through supervised probes or fine-tuning, leaving genuine zero-shot capabilities underexplored. To address this, we introduce BTZSC, a comprehensive benchmark of 22 public datasets spanning sentiment, topic, intent, and emotion classification, capturing diverse domains, class cardinalities, and document lengths. Leveraging BTZSC, we conduct a systematic comparison across four major model families, NLI cross-encoders, embedding models, rerankers and instruction-tuned LLMs, encompassing 38 public and custom checkpoints. Our results show that: (i) modern rerankers, exemplified by Qwen3-Reranker-8B, set a new state-of-the-art with macro F1 = 0.72; (ii) strong embedding models such as GTE-large-en-v1.5 substantially close the accuracy gap while offering the best trade-off between accuracy and latency; (iii) instruction-tuned LLMs at 4--12B parameters achieve competitive performance (macro F1 up to 0.67), excelling particularly on topic classification but trailing specialized rerankers; (iv) NLI cross-encoders plateau even as backbone size increases; and (v) scaling primarily benefits rerankers and LLMs over embedding models. BTZSC and accompanying evaluation code are publicly released to support fair and reproducible progress in zero-shot text understanding.}
 }
 
+@article{bowden2026-canopy-a-heterograph-foundation-e11cd656,
+  author = {Jake Bowden and Laurence Legon and Satnam Surae},
+  title = {Canopy: A Heterograph Foundation Model for Metabolic Engineering},
+  year = {2026},
+  journal = {ICML},
+  eprint = {2607.06224v1},
+  archivePrefix = {arXiv},
+  url = {https://arxiv.org/abs/2607.06224v1},
+  abstract = {Designing microbial strains that produce high-value chemicals at commercially viable titers remains a central challenge in metabolic engineering. Existing computational approaches either rely on stoichiometric constraint-based models that cannot learn from experimental data, or apply tabular machine learning to hand-crafted features that discard the relational structure of biological knowledge. We present Canopy, a heterogeneous graph foundation model that integrates ten public and proprietary data sources into a unified knowledge graph (KG) of 6.9M nodes across 13 types and 34 edge types, covering genes, proteins, metabolites, reactions, pathways, strains, and fermentation experiments. Node features are encoded through domain-specific foundation models (ESM-2 for protein sequences, MoLFormer for chemical SMILES, and PubMedBERT for biomedical text), yielding a multi-modal representation within a single graph. We pretrain a Heterogeneous Graph Transformer (HGT) augmented with SignNet positional encodings, Jumping Knowledge aggregation, and virtual nodes using four self-supervised objectives (link prediction, masked node modelling, distance prediction, and contrastive experiment clustering), balanced via learned homoscedastic uncertainty weighting. On the downstream task of fermentation titer prediction, frozen Canopy embeddings achieve $R^\{2\} = 0.41$ with a lightweight probe, outperforming tabular baselines (best $R^\{2\} = 0.24$) and homogeneous GNN variants.}
+}
+
 @article{hwang2026-causally-robust-reward-learning-35f5e40a,
   author = {Minjune Hwang and Yigit Korkmaz and Daniel Seita and Erdem Bıyık},
   title = {Causally Robust Reward Learning from Reason-Augmented Preference Feedback},
@@ -334,6 +345,18 @@
   archivePrefix = {arXiv},
   url = {https://arxiv.org/abs/2605.03430v1},
   abstract = {High-dimensional tabular data lacks a natural feature order, limiting the applicability of permutation-sensitive deep learning models. We propose DynaTab, a dynamic feature ordering-enabled architecture inspired by neural rewiring. We introduce a lightweight criterion that predicts when feature permutation will benefit a dataset by quantifying its intrinsic complexity. DynaTab dynamically reorders features via a neural rewiring algorithm and processes them through a compact, dynamic order-aware combination of separate learned positional embedding, importance-based gating, and masked attention layers, compatible with any sequence-sensitive backbone. Trained end-to-end with bespoke dynamic feature ordering (DFO) and dispersion losses, DynaTab achieves statistically significant gains, particularly on high-dimensional datasets, where it is benchmarked against 45 state-of-the-art baselines across 36 different real-world tabular datasets. Our results position DynaTab as a compelling new paradigm for high-dimensional tabular deep learning.}
+}
+
+@article{kong2026-edgecompress-coupling-multidimensional-model-d6c6f1be,
+  author = {Hao Kong and Di Liu and Shuo Huai and Xiangzhong Luo and Ravi Subramaniam and Christian Makaya and Qian Lin and Weichen Liu},
+  title = {EdgeCompress: Coupling Multidimensional Model Compression and Dynamic Inference for EdgeAI},
+  year = {2026},
+  journal = {IEEE Transactions on Computer-Aided Design of Integrated Circuits and Systems},
+  doi = {10.1109/TCAD.2023.3276938},
+  eprint = {2607.06982v1},
+  archivePrefix = {arXiv},
+  url = {https://arxiv.org/abs/2607.06982v1},
+  abstract = {Convolutional neural networks (CNNs) have demonstrated encouraging results in image classification tasks. However, the prohibitive computational cost of CNNs hinders the deployment of CNNs onto resource-constrained embedded devices. To address this issue, we propose EdgeCompress, a comprehensive compression framework to reduce the computational overhead of CNNs. In EdgeCompress, we first introduce dynamic image cropping (DIC), where we design a lightweight foreground predictor to accurately crop the most informative foreground object of input images for inference, which avoids redundant computation on background regions. Subsequently, we present compound shrinking (CS) to collaboratively compress the three dimensions (depth, width, and resolution) of CNNs according to their contribution to accuracy and model computation. DIC and CS together constitute a multidimensional CNN compression framework, which is able to comprehensively reduce the computational redundancy in both input images and neural network architectures, thereby improving the inference efficiency of CNNs. Further, we present a dynamic inference framework to efficiently process input images with different recognition difficulties, where we cascade multiple models with different complexities from our compression framework and dynamically adopt different models for different input images, which further compresses the computational redundancy and improves the inference efficiency of CNNs, facilitating the deployment of advanced CNNs onto embedded hardware. Experiments on ImageNet-1K demonstrate that EdgeCompress reduces the computation of ResNet-50 by 48.8% while improving the top-1 accuracy by 0.8%. Meanwhile, we improve the accuracy by 4.1% with similar computation compared to HRank, the state-of-the-art compression framework. The source code and models are available at https://github.com/ntuliuteam/edge-compress}
 }
 
 @article{chen2026-efficient-validation-free-intrinsic-ef05758d,
@@ -599,6 +622,17 @@
   abstract = {Although multi-scales representation learning enables elastic-dimension embeddings, nested subspaces often suffer from dimensional redundancy and spectral collapse. To address this, we introduce MIC, a framework that optimizes the geometric landscape of multi-granular embeddings through isotropic subspace alignment. MIC employs Soft Collapse Regularization (SCR) to mitigate redundancy between prefix and residual subspaces via cross-correlation penalties, alongside Spectral Isotropy Regularization (SIR) to ensure hyper-spherical uniformity in low-dimensional prefixes. By unifying these strategies through a self-distillation objective, MIC generates semantically dense representations that maintain high discriminative power. Our experiments demonstrate that MIC significantly outperforms standard baselines, particularly in high-compression scenarios where maintaining informational capacity is most critical.}
 }
 
+@article{chen2026-multiplication-beyond-groups-stratified-4545abf5,
+  author = {Zitong Andrew Chen and Junaid Hasan and Akhil Srinivasan and Hemkesh Bandi and Jarod Alper},
+  title = {Multiplication Beyond Groups: Stratified Fourier Mechanisms in Transformer Circuits},
+  year = {2026},
+  journal = {ICML},
+  eprint = {2607.07066v1},
+  archivePrefix = {arXiv},
+  url = {https://arxiv.org/abs/2607.07066v1},
+  abstract = {Transformers have demonstrated a remarkable ability to learn algorithmic reasoning, yet mechanistic analyses have mostly focused on globally invertible operations such as cyclic addition and group composition. In this work, we investigate how small transformers learn modular integer multiplication over composite moduli, a fundamentally non-invertible operation due to the presence of zero-divisors. We propose the monoid extension: a localized generalization of Group Composition via Representation (GCR) that suggests the learned computation does not rely on a single global representation space. Instead, the model partitions the input space into local hierarchical algebraic regions, where group-like structure survives and Fourier mechanisms can be applied. In transformers trained on square-free modular multiplication, we find that embeddings organize around these regions, attention exhibits class-sensitive routing and low-rank write directions, and local character features explain a large fraction of the model's output logits. Our results suggest that representation-theoretic mechanisms previously identified for group operations can extend beyond groups to more general structures.}
+}
+
 @article{wang2026-native-reasoning-models-training-0454453e,
   author = {Yuanfu Wang and Zhixuan Liu and Xiangtian Li and Chaochao Lu and Chao Yang},
   title = {Native Reasoning Models: Training Language Models to Reason on Unverifiable Data},
@@ -850,6 +884,17 @@
   archivePrefix = {arXiv},
   url = {https://arxiv.org/abs/2602.15306v1},
   abstract = {Causal structure learning, also known as causal discovery, aims to estimate causal relationships between variables as a form of a causal directed acyclic graph (DAG) from observational data. One of the major frameworks is the order-based approach that first estimates a topological order of the underlying DAG and then prunes spurious edges from the fully-connected DAG induced by the estimated topological order. Previous studies often focus on the former ordering step because it can dramatically reduce the search space of DAGs. In practice, the latter pruning step is equally crucial for ensuring both computational efficiency and estimation accuracy. Most existing methods employ a pruning technique based on generalized additive models and hypothesis testing, commonly known as CAM-pruning. However, this approach can be a computational bottleneck as it requires repeatedly fitting additive models for all variables. Furthermore, it may harm estimation quality due to multiple testing. To address these issues, we introduce a new pruning method based on sparse additive models, which enables direct pruning of redundant edges without relying on hypothesis testing. We propose an efficient algorithm for learning sparse additive models by combining the randomized tree embedding technique with group-wise sparse regression. Experimental results on both synthetic and real datasets demonstrated that our method is significantly faster than existing pruning methods while maintaining comparable or superior accuracy.}
+}
+
+@article{xie2026-sparsectrl-hoi-sparse-temporal-1237eb49,
+  author = {Shenbo Xie and Mingrui Cai and Xu Yang and Yifei Liu and Changxing Ding},
+  title = {SparseCtrl-HOI: Sparse Temporal Control for Human-Object Interaction Video Generation},
+  year = {2026},
+  journal = {ECCV},
+  eprint = {2607.05994v1},
+  archivePrefix = {arXiv},
+  url = {https://arxiv.org/abs/2607.05994v1},
+  abstract = {Human-Object Interaction (HOI) video generation aims to synthesize realistic videos of humans manipulating diverse objects, serving as a promising avenue for AI-driven live streaming e-commerce. A primary obstacle in this domain lies in the complexity of modeling fine-grained physical dynamics and the intricate spatial-temporal coordination between human hands and objects. Existing approaches to this problem typically rely on dense temporal guidance, e.g., frame-wise hand-object pose sequences, to strictly control the interaction process. However, such dense guidance incurs high annotation costs and affects motion synthesis diversity. To overcome these limitations, we introduce SparseCtrl-HOI, a novel sparse temporal control framework for HOI video generation. It requires only a few keyframes that capture interaction states at designated timestamps. Specifically, we employ a Time-Controlled Rotary Positional Embedding (TiRoPE) mechanism to temporally anchor these keyframes while preserving their spatial integrity. Subsequently, to govern the dynamics across intermediate frames, we propose a Motion Prior Injection Module that leverages Multimodal Large Language Models (MLLMs) to extract high-level motion priors. This empowers the model to hallucinate logically and physically plausible transitions. Furthermore, we build SparseHOI-5K, a high-quality and richly annotated dataset for HOI video generation with sparse temporal control. Comprehensive evaluations confirm that our method substantially reduces annotation overhead while synthesizing superior live-streaming e-commerce videos. Both our code and dataset are publicly available at https://mpi-lab.github.io/SparseCtrl-HOI.}
 }
 
 @article{lee2026-steering-sparse-autoencoder-latents-35a189f7,

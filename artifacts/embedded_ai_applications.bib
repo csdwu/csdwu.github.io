@@ -378,6 +378,16 @@
   abstract = {Incremental Learning (IL) for Open-ended Image-to-Text Generation (OpenITG) enables models to continuously generate accurate, contextually relevant text for new images while preserving previously acquired knowledge. Unlike prior studies, this paper addresses a more practical scenario in which the predominant category of visual data shifts over time as environments evolve. In this context, we introduce a new notion of continual alignment, which incrementally adapts the alignment module within pre-trained VLMs to preserve high-quality cross-modal representations. Based on this idea, we propose Efficient Continual Alignment (ECA), a novel exemplar-free IL approach for OpenITG. The key challenge is enabling the model to acquire new, task-specific features while minimizing interference with the established alignment without accessing raw data from previous tasks. To address this, ECA employs three core mechanisms: a Mixture of Query (MoQ) module that adapts task-specific query tokens, a Fisher Dynamic Expansion (FeDEx) that dynamically expands model structure based on a Fisher Information Matrix (FIM)-based metric, and an embedding dictionary with Dictionary Replay (DR) to retain past knowledge. To evaluate ECA's performance, we construct four new IL OpenITG benchmarks that better reflect real-world scenarios. Experimental results demonstrate that ECA significantly mitigates catastrophic forgetting and improves IL performance compared to baseline methods. Code and benchmarks are available at https://github.com/Snowball0823/ECA.}
 }
 
+@article{kolachalam2026-efficient-perception-in-automotive-f9417412,
+  author = {Manish Kolachalam and Rani Malhotra},
+  title = {Efficient Perception in Automotive Detection and Tracking Using Neuromorphic Computing},
+  year = {2026},
+  eprint = {2607.04921v1},
+  archivePrefix = {arXiv},
+  url = {https://arxiv.org/abs/2607.04921v1},
+  abstract = {Deep learning algorithms are notorious for their high carbon footprint and computational demands that limit their deployment on edge devices and raise concerns about their long-term sustainability. Neuromorphic computing and Spiking Neural Networks (SNNs) offer a promising alternative to traditional Von Neumann architectures, providing energy-efficient performance, massively parallel computation, and on-chip learning capabilities. Autonomous machines represent a critical application domain where these advantages are particularly valuable. We present the first comprehensive evaluation of SNNs for real-world automotive multi-object detection and tracking. Using transfer learning with the SpikeYOLO architecture, we achieve mean Average Precision of 0.937 on the KITTI dataset and 0.771 on BDD100K MOT2020 dataset for object detection and a Higher Order Tracking Accuracy score of 0.701 (KITTI) and 0.445 (BDD100K MOT2020) for object tracking--results competitive with conventional deep learning methods. Our results demonstrate that SNNs can deliver high-performance object detection and tracking in an energy efficient manner, establishing their viability for perception in real-world autonomous systems.}
+}
+
 @article{seifi2026-ego-embedding-guided-personalization-957b2d72,
   author = {Soroush Seifi and Simon Gardier and Vaggelis Dorovatas and Daniel Olmeda Reino and Rahaf Aljundi},
   title = {Ego: Embedding-Guided Personalization of Vision-Language Models},
@@ -771,6 +781,17 @@
   archivePrefix = {arXiv},
   url = {https://arxiv.org/abs/2602.00596v1},
   abstract = {Temporal Graph Neural Networks (TGNNs) aim to capture the evolving structure and timing of interactions in dynamic graphs. Although many models incorporate time through encodings or architectural design, they often compute attention over entangled node and edge representations, failing to reflect their distinct temporal behaviors. Node embeddings evolve slowly as they aggregate long-term structural context, while edge features reflect transient, timestamped interactions (e.g. messages, trades, or transactions). This mismatch results in semantic attention blurring, where attention weights cannot distinguish between slowly drifting node states and rapidly changing, information-rich edge interactions. As a result, models struggle to capture fine-grained temporal dependencies and provide limited transparency into how temporal relevance is computed. This paper introduces KEAT (Kernelized Edge Attention for Temporal Graphs), a novel attention formulation that modulates edge features using a family of continuous-time kernels, including Laplacian, RBF, and learnable MLP variant. KEAT preserves the distinct roles of nodes and edges, and integrates seamlessly with both Transformer-style (e.g., DyGFormer) and message-passing (e.g., TGN) architectures. It achieves up to 18% MRR improvement over the recent DyGFormer and 7% over TGN on link prediction tasks, enabling more accurate, interpretable and temporally aware message passing in TGNNs.}
+}
+
+@article{gilardini2026-kinembed-decoding-kinematics-from-0d7e5cd2,
+  author = {Sofia Gilardini and Chenfei Ma and Kianoush Nazarpour},
+  title = {KinEMbed: Decoding Kinematics from Electromyography via Cross-Modal Contrastive Learning},
+  year = {2026},
+  journal = {ICML},
+  eprint = {2607.04820v1},
+  archivePrefix = {arXiv},
+  url = {https://arxiv.org/abs/2607.04820v1},
+  abstract = {Decoding hand kinematics from surface electromyography (EMG) is a core challenge in wearable biosignal processing with clinical relevance for prosthetic control and motor rehabilitation. Most representation learning approaches for EMG focus on discrete gesture classification, and few focus on continuous regression. We present KinEMbed, a cross-modal contrastive learning framework for hand kinematics regression that jointly trains dual encoders -- one for windowed EMG features and one for kinematic (joint angle) targets. The resulting embeddings inherit the geometric structure of the kinematic space without requiring kinematic signals at inference time. Evaluating on the NinaPro DB8 dataset that includes both able-bodied users and subjects with limb difference (N=11), KinEMbed outperforms PCA, PLS, autoencoder and contrastive (CEBRA) baselines on held-out sessions, with largest gains on the most challenging thumb degrees of articulation. We position this work as a first step toward contrastive representation learning for regression of hand kinematics from structured wearable biosignals.}
 }
 
 @article{vural2026-learning-to-recall-with-8299a9ba,
@@ -1353,6 +1374,17 @@
   abstract = {Thermodynamic computing devices based on the Ising model show great promise for low-power AI inference and edge computing, but scalable methods for training large models for such hardware remain limited. Prior theory shows that the time-averaged behavior of high-temperature Gibbs-sampled Ising systems can implement feed-forward neural inference. We turn this theoretical correspondence into a scalable and purely backpropagation-based algorithm for training deep convolutional networks for thermodynamic inference on Ising machine hardware. Our image classification models achieve accuracies of 94.9% on CIFAR-10 and 76.0% on CIFAR-100 under binary Gibbs sampling. We then develop and experimentally validate a mathematical theory relating inference cost to accuracy and controlling autocorrelation times. Subsequently, we calculate asymptotic results showing that inference cost is bounded by a well-controlled tradeoff with performance and exhibit algorithms for computing optimal inference schedules. Finally, we discuss implications for hardware development and the future of high-temperature thermodynamic AI models.}
 }
 
+@article{chen2026-selective-disclosure-watermarking-for-1371804b,
+  author = {Xuyang Chen and Xiang Li and Yangxinyu Xie and Qi Long},
+  title = {Selective Disclosure Watermarking for Large Language Models},
+  year = {2026},
+  journal = {ICML},
+  eprint = {2607.05353v1},
+  archivePrefix = {arXiv},
+  url = {https://arxiv.org/abs/2607.05353v1},
+  abstract = {Watermarking methods embed imperceptible and verifiable signals into text generated by large language models (LLMs). Existing approaches include zero-bit schemes for distinguishing synthetic text from human writing and multi-bit schemes for embedding metadata. However, current multi-bit watermarking methods do not allow selective disclosure: verifying any part of the watermark requires revealing the entire embedded message. This lack of control leads to unnecessary information exposure and raises privacy concerns. We propose Hierarchical Vocabulary Routing (HeRo), a watermarking framework that enables selective disclosure of embedded metadata. The method recursively partitions the vocabulary and distributes watermark information across hierarchical layers, so that different verifiers can decode only the portions of the payload corresponding to their access level. We show that the proposed scheme preserves the unbiasedness of the underlying sampling process and thus maintains text quality. Experiments demonstrate that our framework supports fine-grained access control while achieving high detection accuracy and low latency. Code is available at https://github.com/xuyangc03/hero-watermark.}
+}
+
 @article{ahad2026-semantic-intent-fragmentation-a-43427f5d,
   author = {Tanzim Ahad and Ismail Hossain and Md Jahangir Alam and Sai Puppala and Yoonpyo Lee and Syed Bahauddin Alam and Sajedul Talukder},
   title = {Semantic Intent Fragmentation: A Single-Shot Compositional Attack on Multi-Agent AI Pipelines},
@@ -1677,6 +1709,17 @@
   archivePrefix = {arXiv},
   url = {https://arxiv.org/abs/2606.12609v1},
   abstract = {Protein language models are trained on highly imbalanced datasets, raising the question of how they represent underrepresented biological sequences. Using viral proteins as a case study across ESM model families, we identify a dominant nativeness axis in embedding space, aligned with masked reconstruction perplexity, that orders sequences from well-modeled cellular proteins through viral proteins to shuffled and random sequences. Scaling contracts this axis unevenly across viral families. Despite this, protein language model embeddings retain viral-specific signal: viral proteins remain linearly separable beyond zero-shot perplexity and shallow sequence features. Together, these results suggest that pLM representations are structured by a general notion of nativeness while preserving information specific to distinct biological groups.}
+}
+
+@article{tsonis2026-what-images-cannot-say-4240f786,
+  author = {Eleftherios Tsonis and Xi Wang and Vicky Kalogeiton},
+  title = {What Images Cannot Say: Language-Guided Olfactory Representation Learning},
+  year = {2026},
+  journal = {ECCV},
+  eprint = {2607.06402v1},
+  archivePrefix = {arXiv},
+  url = {https://arxiv.org/abs/2607.06402v1},
+  abstract = {Images tell us what a scene looks like, but rarely what it would feel like to be there. While recent datasets pair visual scenes with electronic-nose measurements, aligning smell signals with images remains challenging because many olfactory cues arise from contextual environmental factors that are not directly visible in pixels. We introduce SCENT, a multimodal framework that uses language guidance as a semantic bridge between vision and olfaction. Our approach leverages Vision-Language Models (VLMs) to generate scene descriptors capturing objects, environmental context, and plausible ambient smell cues suggested by the visual scene. These descriptors provide semantic guidance for learning olfactory representations. We train a smell encoder that maps electronic-nose signals into a shared embedding space aligned with both visual and textual representations, and introduce a languageguided latent decomposition that separates object-specific odors from contextual environmental contributions. Experiments on the New York Smells dataset demonstrate that SCENT significantly improves crossmodal retrieval compared to vision-only baselines, achieving state-of-theart performance on smell-to-image and smell-to-text retrieval tasks. In addition, our framework produces interpretable olfactory representations that enable the disentanglement of complex smell mixtures. Our results reveal the importance of contextual semantic information for grounding olfactory perception in multimodal learning and pave the way for future research in this area.}
 }
 
 @article{wang2026-zero-shot-3d-question-e704ddbb,

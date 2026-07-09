@@ -332,6 +332,17 @@
   abstract = {For LLM trading agents to be genuinely trustworthy, they must demonstrate understanding of market dynamics rather than exploitation of memorized ticker associations. Building responsible multi-agent systems demands rigorous signal validation: proving that predictions reflect legitimate patterns, not pre-trained recall. We address two sources of spurious performance: memorization bias from ticker-specific pre-training, and survivorship bias from flawed backtesting. Our approach is to blindfold the agents--anonymizing all identifiers--and verify whether meaningful signals persist. BlindTrade anonymizes tickers and company names, and four LLM agents output scores along with reasoning. We construct a GNN graph from reasoning embeddings and trade using PPO-DSR policy. On 2025 YTD (through 2025-08-01), we achieved Sharpe 1.40 +/- 0.22 across 20 seeds and validated signal legitimacy through negative control experiments. To assess robustness beyond a single OOS window, we additionally evaluate an extended period (2024--2025), revealing market-regime dependency: the policy excels in volatile conditions but shows reduced alpha in trending bull markets.}
 }
 
+@article{bowden2026-canopy-a-heterograph-foundation-e11cd656,
+  author = {Jake Bowden and Laurence Legon and Satnam Surae},
+  title = {Canopy: A Heterograph Foundation Model for Metabolic Engineering},
+  year = {2026},
+  journal = {ICML},
+  eprint = {2607.06224v1},
+  archivePrefix = {arXiv},
+  url = {https://arxiv.org/abs/2607.06224v1},
+  abstract = {Designing microbial strains that produce high-value chemicals at commercially viable titers remains a central challenge in metabolic engineering. Existing computational approaches either rely on stoichiometric constraint-based models that cannot learn from experimental data, or apply tabular machine learning to hand-crafted features that discard the relational structure of biological knowledge. We present Canopy, a heterogeneous graph foundation model that integrates ten public and proprietary data sources into a unified knowledge graph (KG) of 6.9M nodes across 13 types and 34 edge types, covering genes, proteins, metabolites, reactions, pathways, strains, and fermentation experiments. Node features are encoded through domain-specific foundation models (ESM-2 for protein sequences, MoLFormer for chemical SMILES, and PubMedBERT for biomedical text), yielding a multi-modal representation within a single graph. We pretrain a Heterogeneous Graph Transformer (HGT) augmented with SignNet positional encodings, Jumping Knowledge aggregation, and virtual nodes using four self-supervised objectives (link prediction, masked node modelling, distance prediction, and contrastive experiment clustering), balanced via learned homoscedastic uncertainty weighting. On the downstream task of fermentation titer prediction, frozen Canopy embeddings achieve $R^\{2\} = 0.41$ with a lightweight probe, outperforming tabular baselines (best $R^\{2\} = 0.24$) and homogeneous GNN variants.}
+}
+
 @article{hwang2026-causally-robust-reward-learning-35f5e40a,
   author = {Minjune Hwang and Yigit Korkmaz and Daniel Seita and Erdem Bıyık},
   title = {Causally Robust Reward Learning from Reason-Augmented Preference Feedback},
@@ -757,6 +768,28 @@
   archivePrefix = {arXiv},
   url = {https://arxiv.org/abs/2606.12633v1},
   abstract = {Incremental Learning (IL) for Open-ended Image-to-Text Generation (OpenITG) enables models to continuously generate accurate, contextually relevant text for new images while preserving previously acquired knowledge. Unlike prior studies, this paper addresses a more practical scenario in which the predominant category of visual data shifts over time as environments evolve. In this context, we introduce a new notion of continual alignment, which incrementally adapts the alignment module within pre-trained VLMs to preserve high-quality cross-modal representations. Based on this idea, we propose Efficient Continual Alignment (ECA), a novel exemplar-free IL approach for OpenITG. The key challenge is enabling the model to acquire new, task-specific features while minimizing interference with the established alignment without accessing raw data from previous tasks. To address this, ECA employs three core mechanisms: a Mixture of Query (MoQ) module that adapts task-specific query tokens, a Fisher Dynamic Expansion (FeDEx) that dynamically expands model structure based on a Fisher Information Matrix (FIM)-based metric, and an embedding dictionary with Dictionary Replay (DR) to retain past knowledge. To evaluate ECA's performance, we construct four new IL OpenITG benchmarks that better reflect real-world scenarios. Experimental results demonstrate that ECA significantly mitigates catastrophic forgetting and improves IL performance compared to baseline methods. Code and benchmarks are available at https://github.com/Snowball0823/ECA.}
+}
+
+@article{kong2026-edgecompress-coupling-multidimensional-model-d6c6f1be,
+  author = {Hao Kong and Di Liu and Shuo Huai and Xiangzhong Luo and Ravi Subramaniam and Christian Makaya and Qian Lin and Weichen Liu},
+  title = {EdgeCompress: Coupling Multidimensional Model Compression and Dynamic Inference for EdgeAI},
+  year = {2026},
+  journal = {IEEE Transactions on Computer-Aided Design of Integrated Circuits and Systems},
+  doi = {10.1109/TCAD.2023.3276938},
+  eprint = {2607.06982v1},
+  archivePrefix = {arXiv},
+  url = {https://arxiv.org/abs/2607.06982v1},
+  abstract = {Convolutional neural networks (CNNs) have demonstrated encouraging results in image classification tasks. However, the prohibitive computational cost of CNNs hinders the deployment of CNNs onto resource-constrained embedded devices. To address this issue, we propose EdgeCompress, a comprehensive compression framework to reduce the computational overhead of CNNs. In EdgeCompress, we first introduce dynamic image cropping (DIC), where we design a lightweight foreground predictor to accurately crop the most informative foreground object of input images for inference, which avoids redundant computation on background regions. Subsequently, we present compound shrinking (CS) to collaboratively compress the three dimensions (depth, width, and resolution) of CNNs according to their contribution to accuracy and model computation. DIC and CS together constitute a multidimensional CNN compression framework, which is able to comprehensively reduce the computational redundancy in both input images and neural network architectures, thereby improving the inference efficiency of CNNs. Further, we present a dynamic inference framework to efficiently process input images with different recognition difficulties, where we cascade multiple models with different complexities from our compression framework and dynamically adopt different models for different input images, which further compresses the computational redundancy and improves the inference efficiency of CNNs, facilitating the deployment of advanced CNNs onto embedded hardware. Experiments on ImageNet-1K demonstrate that EdgeCompress reduces the computation of ResNet-50 by 48.8% while improving the top-1 accuracy by 0.8%. Meanwhile, we improve the accuracy by 4.1% with similar computation compared to HRank, the state-of-the-art compression framework. The source code and models are available at https://github.com/ntuliuteam/edge-compress}
+}
+
+@article{kolachalam2026-efficient-perception-in-automotive-f9417412,
+  author = {Manish Kolachalam and Rani Malhotra},
+  title = {Efficient Perception in Automotive Detection and Tracking Using Neuromorphic Computing},
+  year = {2026},
+  eprint = {2607.04921v1},
+  archivePrefix = {arXiv},
+  url = {https://arxiv.org/abs/2607.04921v1},
+  abstract = {Deep learning algorithms are notorious for their high carbon footprint and computational demands that limit their deployment on edge devices and raise concerns about their long-term sustainability. Neuromorphic computing and Spiking Neural Networks (SNNs) offer a promising alternative to traditional Von Neumann architectures, providing energy-efficient performance, massively parallel computation, and on-chip learning capabilities. Autonomous machines represent a critical application domain where these advantages are particularly valuable. We present the first comprehensive evaluation of SNNs for real-world automotive multi-object detection and tracking. Using transfer learning with the SpikeYOLO architecture, we achieve mean Average Precision of 0.937 on the KITTI dataset and 0.771 on BDD100K MOT2020 dataset for object detection and a Higher Order Tracking Accuracy score of 0.701 (KITTI) and 0.445 (BDD100K MOT2020) for object tracking--results competitive with conventional deep learning methods. Our results demonstrate that SNNs can deliver high-performance object detection and tracking in an energy efficient manner, establishing their viability for perception in real-world autonomous systems.}
 }
 
 @article{chen2026-efficient-validation-free-intrinsic-ef05758d,
@@ -1362,6 +1395,17 @@
   abstract = {Temporal Graph Neural Networks (TGNNs) aim to capture the evolving structure and timing of interactions in dynamic graphs. Although many models incorporate time through encodings or architectural design, they often compute attention over entangled node and edge representations, failing to reflect their distinct temporal behaviors. Node embeddings evolve slowly as they aggregate long-term structural context, while edge features reflect transient, timestamped interactions (e.g. messages, trades, or transactions). This mismatch results in semantic attention blurring, where attention weights cannot distinguish between slowly drifting node states and rapidly changing, information-rich edge interactions. As a result, models struggle to capture fine-grained temporal dependencies and provide limited transparency into how temporal relevance is computed. This paper introduces KEAT (Kernelized Edge Attention for Temporal Graphs), a novel attention formulation that modulates edge features using a family of continuous-time kernels, including Laplacian, RBF, and learnable MLP variant. KEAT preserves the distinct roles of nodes and edges, and integrates seamlessly with both Transformer-style (e.g., DyGFormer) and message-passing (e.g., TGN) architectures. It achieves up to 18% MRR improvement over the recent DyGFormer and 7% over TGN on link prediction tasks, enabling more accurate, interpretable and temporally aware message passing in TGNNs.}
 }
 
+@article{gilardini2026-kinembed-decoding-kinematics-from-0d7e5cd2,
+  author = {Sofia Gilardini and Chenfei Ma and Kianoush Nazarpour},
+  title = {KinEMbed: Decoding Kinematics from Electromyography via Cross-Modal Contrastive Learning},
+  year = {2026},
+  journal = {ICML},
+  eprint = {2607.04820v1},
+  archivePrefix = {arXiv},
+  url = {https://arxiv.org/abs/2607.04820v1},
+  abstract = {Decoding hand kinematics from surface electromyography (EMG) is a core challenge in wearable biosignal processing with clinical relevance for prosthetic control and motor rehabilitation. Most representation learning approaches for EMG focus on discrete gesture classification, and few focus on continuous regression. We present KinEMbed, a cross-modal contrastive learning framework for hand kinematics regression that jointly trains dual encoders -- one for windowed EMG features and one for kinematic (joint angle) targets. The resulting embeddings inherit the geometric structure of the kinematic space without requiring kinematic signals at inference time. Evaluating on the NinaPro DB8 dataset that includes both able-bodied users and subjects with limb difference (N=11), KinEMbed outperforms PCA, PLS, autoencoder and contrastive (CEBRA) baselines on held-out sessions, with largest gains on the most challenging thumb degrees of articulation. We position this work as a first step toward contrastive representation learning for regression of hand kinematics from structured wearable biosignals.}
+}
+
 @article{janson2026-learned-subspace-compression-for-506d9d7d,
   author = {Paul Janson and Edouard Oyallon and Eugene Belilovsky},
   title = {Learned Subspace Compression for Communication-Efficient Pipeline Parallelism},
@@ -1612,6 +1656,17 @@
   archivePrefix = {arXiv},
   url = {https://arxiv.org/abs/2602.20223v3},
   abstract = {Recently, TabPFN has gained attention as a foundation model for tabular data. However, it struggles to integrate heterogeneous modalities such as images and text, which are common in domains like healthcare and marketing, thereby limiting its applicability. To address this, we present the Multi-Modal Prior-data Fitted Network (MMPFN), which extends TabPFN to handle tabular and non-tabular modalities in a unified manner. MMPFN comprises per-modality encoders, modality projectors, and pre-trained foundation models. The modality projectors serve as the critical bridge, transforming non-tabular embeddings into tabular-compatible tokens for unified processing. To this end, we introduce a multi-head gated MLP and a cross-attention pooler that extract richer context from non-tabular inputs while mitigates attention imbalance issue in multimodal learning. Extensive experiments on medical and general-purpose multimodal datasets demonstrate that MMPFN consistently outperforms competitive state-of-the-art methods and effectively exploits non-tabular modalities alongside tabular features. These results highlight the promise of extending prior-data fitted networks to the multimodal setting, offering a scalable and effective framework for heterogeneous data learning. The source code is available at https://github.com/too-z/MultiModalPFN.}
+}
+
+@article{chen2026-multiplication-beyond-groups-stratified-4545abf5,
+  author = {Zitong Andrew Chen and Junaid Hasan and Akhil Srinivasan and Hemkesh Bandi and Jarod Alper},
+  title = {Multiplication Beyond Groups: Stratified Fourier Mechanisms in Transformer Circuits},
+  year = {2026},
+  journal = {ICML},
+  eprint = {2607.07066v1},
+  archivePrefix = {arXiv},
+  url = {https://arxiv.org/abs/2607.07066v1},
+  abstract = {Transformers have demonstrated a remarkable ability to learn algorithmic reasoning, yet mechanistic analyses have mostly focused on globally invertible operations such as cyclic addition and group composition. In this work, we investigate how small transformers learn modular integer multiplication over composite moduli, a fundamentally non-invertible operation due to the presence of zero-divisors. We propose the monoid extension: a localized generalization of Group Composition via Representation (GCR) that suggests the learned computation does not rely on a single global representation space. Instead, the model partitions the input space into local hierarchical algebraic regions, where group-like structure survives and Fourier mechanisms can be applied. In transformers trained on square-free modular multiplication, we find that embeddings organize around these regions, attention exhibits class-sensitive routing and low-rank write directions, and local character features explain a large fraction of the model's output logits. Our results suggest that representation-theoretic mechanisms previously identified for group operations can extend beyond groups to more general structures.}
 }
 
 @article{mantes2026-muvit-multi-resolution-vision-5bd123d1,
@@ -2226,6 +2281,17 @@
   abstract = {Thermodynamic computing devices based on the Ising model show great promise for low-power AI inference and edge computing, but scalable methods for training large models for such hardware remain limited. Prior theory shows that the time-averaged behavior of high-temperature Gibbs-sampled Ising systems can implement feed-forward neural inference. We turn this theoretical correspondence into a scalable and purely backpropagation-based algorithm for training deep convolutional networks for thermodynamic inference on Ising machine hardware. Our image classification models achieve accuracies of 94.9% on CIFAR-10 and 76.0% on CIFAR-100 under binary Gibbs sampling. We then develop and experimentally validate a mathematical theory relating inference cost to accuracy and controlling autocorrelation times. Subsequently, we calculate asymptotic results showing that inference cost is bounded by a well-controlled tradeoff with performance and exhibit algorithms for computing optimal inference schedules. Finally, we discuss implications for hardware development and the future of high-temperature thermodynamic AI models.}
 }
 
+@article{chen2026-selective-disclosure-watermarking-for-1371804b,
+  author = {Xuyang Chen and Xiang Li and Yangxinyu Xie and Qi Long},
+  title = {Selective Disclosure Watermarking for Large Language Models},
+  year = {2026},
+  journal = {ICML},
+  eprint = {2607.05353v1},
+  archivePrefix = {arXiv},
+  url = {https://arxiv.org/abs/2607.05353v1},
+  abstract = {Watermarking methods embed imperceptible and verifiable signals into text generated by large language models (LLMs). Existing approaches include zero-bit schemes for distinguishing synthetic text from human writing and multi-bit schemes for embedding metadata. However, current multi-bit watermarking methods do not allow selective disclosure: verifying any part of the watermark requires revealing the entire embedded message. This lack of control leads to unnecessary information exposure and raises privacy concerns. We propose Hierarchical Vocabulary Routing (HeRo), a watermarking framework that enables selective disclosure of embedded metadata. The method recursively partitions the vocabulary and distributes watermark information across hierarchical layers, so that different verifiers can decode only the portions of the payload corresponding to their access level. We show that the proposed scheme preserves the unbiasedness of the underlying sampling process and thus maintains text quality. Experiments demonstrate that our framework supports fine-grained access control while achieving high detection accuracy and low latency. Code is available at https://github.com/xuyangc03/hero-watermark.}
+}
+
 @article{reddy2026-selective-memory-retention-for-d512900c,
   author = {Pranath Reddy},
   title = {Selective Memory Retention for Long-Horizon LLM Agents},
@@ -2344,6 +2410,17 @@
   archivePrefix = {arXiv},
   url = {https://arxiv.org/abs/2602.15306v1},
   abstract = {Causal structure learning, also known as causal discovery, aims to estimate causal relationships between variables as a form of a causal directed acyclic graph (DAG) from observational data. One of the major frameworks is the order-based approach that first estimates a topological order of the underlying DAG and then prunes spurious edges from the fully-connected DAG induced by the estimated topological order. Previous studies often focus on the former ordering step because it can dramatically reduce the search space of DAGs. In practice, the latter pruning step is equally crucial for ensuring both computational efficiency and estimation accuracy. Most existing methods employ a pruning technique based on generalized additive models and hypothesis testing, commonly known as CAM-pruning. However, this approach can be a computational bottleneck as it requires repeatedly fitting additive models for all variables. Furthermore, it may harm estimation quality due to multiple testing. To address these issues, we introduce a new pruning method based on sparse additive models, which enables direct pruning of redundant edges without relying on hypothesis testing. We propose an efficient algorithm for learning sparse additive models by combining the randomized tree embedding technique with group-wise sparse regression. Experimental results on both synthetic and real datasets demonstrated that our method is significantly faster than existing pruning methods while maintaining comparable or superior accuracy.}
+}
+
+@article{xie2026-sparsectrl-hoi-sparse-temporal-1237eb49,
+  author = {Shenbo Xie and Mingrui Cai and Xu Yang and Yifei Liu and Changxing Ding},
+  title = {SparseCtrl-HOI: Sparse Temporal Control for Human-Object Interaction Video Generation},
+  year = {2026},
+  journal = {ECCV},
+  eprint = {2607.05994v1},
+  archivePrefix = {arXiv},
+  url = {https://arxiv.org/abs/2607.05994v1},
+  abstract = {Human-Object Interaction (HOI) video generation aims to synthesize realistic videos of humans manipulating diverse objects, serving as a promising avenue for AI-driven live streaming e-commerce. A primary obstacle in this domain lies in the complexity of modeling fine-grained physical dynamics and the intricate spatial-temporal coordination between human hands and objects. Existing approaches to this problem typically rely on dense temporal guidance, e.g., frame-wise hand-object pose sequences, to strictly control the interaction process. However, such dense guidance incurs high annotation costs and affects motion synthesis diversity. To overcome these limitations, we introduce SparseCtrl-HOI, a novel sparse temporal control framework for HOI video generation. It requires only a few keyframes that capture interaction states at designated timestamps. Specifically, we employ a Time-Controlled Rotary Positional Embedding (TiRoPE) mechanism to temporally anchor these keyframes while preserving their spatial integrity. Subsequently, to govern the dynamics across intermediate frames, we propose a Motion Prior Injection Module that leverages Multimodal Large Language Models (MLLMs) to extract high-level motion priors. This empowers the model to hallucinate logically and physically plausible transitions. Furthermore, we build SparseHOI-5K, a high-quality and richly annotated dataset for HOI video generation with sparse temporal control. Comprehensive evaluations confirm that our method substantially reduces annotation overhead while synthesizing superior live-streaming e-commerce videos. Both our code and dataset are publicly available at https://mpi-lab.github.io/SparseCtrl-HOI.}
 }
 
 @article{gurung2026-spectra-an-efficient-spectral-8fcdd372,
@@ -2802,6 +2879,17 @@
   archivePrefix = {arXiv},
   url = {https://arxiv.org/abs/2606.12609v1},
   abstract = {Protein language models are trained on highly imbalanced datasets, raising the question of how they represent underrepresented biological sequences. Using viral proteins as a case study across ESM model families, we identify a dominant nativeness axis in embedding space, aligned with masked reconstruction perplexity, that orders sequences from well-modeled cellular proteins through viral proteins to shuffled and random sequences. Scaling contracts this axis unevenly across viral families. Despite this, protein language model embeddings retain viral-specific signal: viral proteins remain linearly separable beyond zero-shot perplexity and shallow sequence features. Together, these results suggest that pLM representations are structured by a general notion of nativeness while preserving information specific to distinct biological groups.}
+}
+
+@article{tsonis2026-what-images-cannot-say-4240f786,
+  author = {Eleftherios Tsonis and Xi Wang and Vicky Kalogeiton},
+  title = {What Images Cannot Say: Language-Guided Olfactory Representation Learning},
+  year = {2026},
+  journal = {ECCV},
+  eprint = {2607.06402v1},
+  archivePrefix = {arXiv},
+  url = {https://arxiv.org/abs/2607.06402v1},
+  abstract = {Images tell us what a scene looks like, but rarely what it would feel like to be there. While recent datasets pair visual scenes with electronic-nose measurements, aligning smell signals with images remains challenging because many olfactory cues arise from contextual environmental factors that are not directly visible in pixels. We introduce SCENT, a multimodal framework that uses language guidance as a semantic bridge between vision and olfaction. Our approach leverages Vision-Language Models (VLMs) to generate scene descriptors capturing objects, environmental context, and plausible ambient smell cues suggested by the visual scene. These descriptors provide semantic guidance for learning olfactory representations. We train a smell encoder that maps electronic-nose signals into a shared embedding space aligned with both visual and textual representations, and introduce a languageguided latent decomposition that separates object-specific odors from contextual environmental contributions. Experiments on the New York Smells dataset demonstrate that SCENT significantly improves crossmodal retrieval compared to vision-only baselines, achieving state-of-theart performance on smell-to-image and smell-to-text retrieval tasks. In addition, our framework produces interpretable olfactory representations that enable the disentanglement of complex smell mixtures. Our results reveal the importance of contextual semantic information for grounding olfactory perception in multimodal learning and pave the way for future research in this area.}
 }
 
 @article{berdica2026-when-do-we-need-4a43749d,
