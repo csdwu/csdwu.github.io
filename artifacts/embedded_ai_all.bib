@@ -170,6 +170,18 @@
   abstract = {Out-of-distribution (OOD) detection, which maps high-dimensional data into a scalar OOD score, is critical for the reliable deployment of machine learning models. A key challenge in recent research is how to effectively leverage and aggregate token embeddings from language models to obtain the OOD score. In this work, we propose AP-OOD, a novel OOD detection method for natural language that goes beyond simple average-based aggregation by exploiting token-level information. AP-OOD is a semi-supervised approach that flexibly interpolates between unsupervised and supervised settings, enabling the use of limited auxiliary outlier data. Empirically, AP-OOD sets a new state of the art in OOD detection for text: in the unsupervised setting, it reduces the FPR95 (false positive rate at 95% true positives) from 27.84% to 4.67% on XSUM summarization, and from 77.08% to 70.37% on WMT15 En-Fr translation.}
 }
 
+@article{zhao2026-ardy-autoregressive-diffusion-with-b74cd800,
+  author = {Kaifeng Zhao and Mathis Petrovich and Haotian Zhang and Tingwu Wang and Siyu Tang and Davis Rempe},
+  title = {ARDY: Autoregressive Diffusion with Hybrid Representation for Interactive Human Motion Generation},
+  year = {2026},
+  journal = {ACM Transactions on Graphics (SIGGRAPH 2026)},
+  doi = {10.1145/3811284},
+  eprint = {2607.08741v1},
+  archivePrefix = {arXiv},
+  url = {https://arxiv.org/abs/2607.08741v1},
+  abstract = {Generating realistic 3D human motions in real-time within interactive applications is key for animation, simulation, and humanoid robotics. While recent offline motion generation approaches offer precise control via text and kinematic constraints, they lack the inference speed required for interactive settings. Conversely, existing online methods enable real-time synthesis but often sacrifice controllability or struggle with complex text semantics and long-horizon goals due to limited context windows. In this work, we introduce ARDY, a streaming generation framework that bridges this gap by enabling high-fidelity motion generation controllable via online text prompts and flexible kinematic constraints. ARDY employs a hybrid representation that combines explicit root features with a latent body embedding, balancing precise trajectory control with efficient generative learning. We propose a two-stage autoregressive transformer denoiser that features variable history context and supports conditioning on flexible, long-horizon kinematic constraints. By training on a large-scale motion capture dataset and being directly conditioned on text labels and kinematic constraints sampled from ground truth poses, ARDY natively learns controllable generation that supports online prompting and flexible long-horizon goals. Extensive evaluations on the HumanML3D benchmark and the large-scale, high-fidelity Bones Rigplay dataset demonstrate ARDY's high motion quality and constraint adherence, validating the efficacy of our key architectural decisions. Finally, we demonstrate the method's practical versatility through an interactive demo featuring dynamic text control, diverse keyframe pose constraints, path following, and interactive locomotion control via mouse and keyboard. Supplementary video results, code, and model releases can be found at https://research.nvidia.com/labs/sil/projects/ardy/.}
+}
+
 @article{xie2026-area-attribute-extraction-and-290595d8,
   author = {Zhen-Hao Xie and Yu-Cheng Shi and Da-Wei Zhou},
   title = {AREA: Attribute Extraction and Aggregation for CLIP-Based Class-Incremental Learning},
@@ -2465,6 +2477,17 @@
   archivePrefix = {arXiv},
   url = {https://arxiv.org/abs/2603.04001v1},
   abstract = {Generative artificial intelligence (GenAI) tools are increasingly present in higher education, yet their adoption has been largely student-driven, requiring instructors to respond to technologies already embedded in classroom practices. While some faculty have embraced GenAI for pedagogical purposes such as content generation, assessment support, and curriculum design, others approach these tools with caution, citing concerns about student learning, assessment validity, and academic integrity. Understanding faculty perspectives is therefore essential for informing effective pedagogical strategies and institutional policies. In this paper, we present findings from a focus group study with 29 STEM faculty members at a large public university in the United States. We examine how faculty integrate GenAI into their courses, the benefits and challenges they perceive for student learning, and the institutional support they identify as necessary for effective and responsible adoption. Our findings highlight key patterns in how STEM faculty engage with GenAI, reflecting both active adoption and cautious use. Faculty described a range of pedagogical applications alongside concerns about student learning, assessment, and academic integrity. Overall, the results suggest that effective integration of GenAI in higher education requires rethinking assessment, pedagogy, and institutional governance in addition to technical adoption.}
+}
+
+@article{lee2026-stochastic-order-learning-an-c35ef860,
+  author = {Chaewon Lee and Seon-Ho Lee and Chang-Su Kim},
+  title = {Stochastic Order Learning: An Approach to Rank Estimation Using Noisy Data},
+  year = {2026},
+  journal = {ICML},
+  eprint = {2607.08103v1},
+  archivePrefix = {arXiv},
+  url = {https://arxiv.org/abs/2607.08103v1},
+  abstract = {Rank estimation under label noise poses a fundamental challenge, as ordinal annotations often exhibit structured uncertainty rather than simple label corruption. In this paper, we reformulate rank estimation with noisy ordinal labels as a stochastic ordering problem, in which each instance is inherently associated with multiple plausible ranks instead of a single deterministic label. Based on this view, we propose stochastic order learning (SOL), a learning framework that captures ordinal label uncertainty and learns an embedding space through two complementary objectives: a discriminative loss that structures instance--centroid interactions and a stochastic order loss that enforces probabilistic ordering relations between instances. Extensive experiments across diverse datasets demonstrate that SOL enables reliable rank estimation under various types and levels of label noise. The source code is available at https://github.com/cwlee00/SOL.}
 }
 
 @article{daniels2026-stress-testing-alignment-audits-70e53699,

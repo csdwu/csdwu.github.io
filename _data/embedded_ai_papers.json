@@ -1,6 +1,6 @@
 {
   "version": "2.0.0",
-  "generated_at": "2026-07-09T02:26:56.443Z",
+  "generated_at": "2026-07-12T02:09:36.793Z",
   "query_groups": {
     "A": "\"embedded ai\"",
     "B": "(\"low power\" OR \"ultra-low-power\") \"embedded ai\"",
@@ -8,24 +8,24 @@
   },
   "stats": {
     "raw_counts": {
-      "A": 57,
-      "B": 2,
-      "C": 1
+      "A": 28,
+      "B": 0,
+      "C": 0
     },
     "after_set_ops": {
-      "A_only": 56,
-      "B": 2,
-      "C": 1,
-      "merged_total": 59,
+      "A_only": 28,
+      "B": 0,
+      "C": 0,
+      "merged_total": 28,
       "bc_overlap": 0
     },
-    "after_filter": 872,
+    "after_filter": 874,
     "classification": {
-      "total": 872,
+      "total": 874,
       "by_category": {
         "Efficient Model Design and Optimization": 279,
         "Novel Computing Architectures and Domain-Specific Accelerators": 39,
-        "Embedded AI Applications": 554
+        "Embedded AI Applications": 556
       },
       "by_tag": {
         "TinyML": 50,
@@ -35,14 +35,14 @@
       "by_provider": {
         "tencent_tokenhub": 0,
         "heuristic": 0,
-        "heuristic_fallback": 872
+        "heuristic_fallback": 874
       }
     },
     "source_stats": {
-      "total": 872,
+      "total": 874,
       "by_group": {
         "A": {
-          "total": 731,
+          "total": 733,
           "arxiv": 0,
           "venues": {
             "AAAI": 90,
@@ -168,7 +168,7 @@
             "ICIP": 0,
             "ICLR": 163,
             "ICMI": 0,
-            "ICML": 146,
+            "ICML": 147,
             "ICMR": 0,
             "ICN": 0,
             "ICNP": 0,
@@ -358,7 +358,7 @@
             "TOCL": 0,
             "TOCS": 0,
             "TODS": 0,
-            "TOG": 0,
+            "TOG": 1,
             "TOIS": 1,
             "TOIT": 0,
             "TOMCCAP": 0,
@@ -1539,7 +1539,7 @@
         }
       },
       "total_summary": {
-        "total": 887,
+        "total": 889,
         "arxiv": 124,
         "venues": {
           "AAAI": 90,
@@ -1665,7 +1665,7 @@
           "ICIP": 0,
           "ICLR": 164,
           "ICMI": 0,
-          "ICML": 148,
+          "ICML": 149,
           "ICMR": 0,
           "ICN": 0,
           "ICNP": 0,
@@ -1855,7 +1855,7 @@
           "TOCL": 0,
           "TOCS": 0,
           "TODS": 0,
-          "TOG": 0,
+          "TOG": 1,
           "TOIS": 1,
           "TOIT": 0,
           "TOMCCAP": 0,
@@ -18749,8 +18749,61 @@
     {
       "key": "embedded_ai_applications",
       "title": "Embedded AI Applications",
-      "count": 554,
+      "count": 556,
       "papers": [
+        {
+          "id": "0dbc346873287e3c0a6d3933ebce597f044f0b48",
+          "title": "ARDY: Autoregressive Diffusion with Hybrid Representation for Interactive Human Motion Generation",
+          "authors": [
+            "Kaifeng Zhao",
+            "Mathis Petrovich",
+            "Haotian Zhang",
+            "Tingwu Wang",
+            "Siyu Tang",
+            "Davis Rempe"
+          ],
+          "year": 2026,
+          "month": 7,
+          "source": "arxiv",
+          "venue": "ACM Transactions on Graphics (SIGGRAPH 2026)",
+          "venue_type": "journal",
+          "abstract": "Generating realistic 3D human motions in real-time within interactive applications is key for animation, simulation, and humanoid robotics. While recent offline motion generation approaches offer precise control via text and kinematic constraints, they lack the inference speed required for interactive settings. Conversely, existing online methods enable real-time synthesis but often sacrifice controllability or struggle with complex text semantics and long-horizon goals due to limited context windows. In this work, we introduce ARDY, a streaming generation framework that bridges this gap by enabling high-fidelity motion generation controllable via online text prompts and flexible kinematic constraints. ARDY employs a hybrid representation that combines explicit root features with a latent body embedding, balancing precise trajectory control with efficient generative learning. We propose a two-stage autoregressive transformer denoiser that features variable history context and supports conditioning on flexible, long-horizon kinematic constraints. By training on a large-scale motion capture dataset and being directly conditioned on text labels and kinematic constraints sampled from ground truth poses, ARDY natively learns controllable generation that supports online prompting and flexible long-horizon goals. Extensive evaluations on the HumanML3D benchmark and the large-scale, high-fidelity Bones Rigplay dataset demonstrate ARDY's high motion quality and constraint adherence, validating the efficacy of our key architectural decisions. Finally, we demonstrate the method's practical versatility through an interactive demo featuring dynamic text control, diverse keyframe pose constraints, path following, and interactive locomotion control via mouse and keyboard. Supplementary video results, code, and model releases can be found at https://research.nvidia.com/labs/sil/projects/ardy/.",
+          "urls": {
+            "arxiv": "https://arxiv.org/abs/2607.08741v1",
+            "pdf": "https://arxiv.org/pdf/2607.08741v1",
+            "paper": "https://arxiv.org/abs/2607.08741v1"
+          },
+          "search_sets_raw": [
+            "A"
+          ],
+          "search_sets_final": [
+            "A"
+          ],
+          "filter_bucket": "th_cpl_a",
+          "matched_venue": "TOG",
+          "matched_th_cpl_level": "A",
+          "matched_th_cpl_area": "Computer Graphics and Multimedia",
+          "category": "Embedded AI Applications",
+          "llm_tags": [],
+          "forced_tags": [],
+          "final_tags": [],
+          "cited_by": 0,
+          "is_preprint_on_arxiv": false,
+          "preprint_source": "",
+          "journal_ref": "",
+          "doi": "10.1145/3811284",
+          "arxiv_comment": "",
+          "arxiv_id": "2607.08741v1",
+          "raw_venue": "",
+          "venue_source": "",
+          "sort_key": 202600,
+          "download": {
+            "status": "pending",
+            "source": null,
+            "path": null,
+            "last_attempt_at": null
+          }
+        },
         {
           "id": "80e3f6f7dfa78039f5f9d711aeb8ab5bf44df921",
           "title": "Device Passport: Enabling Spatio-Temporal Pretrained Models to Generalize Across Input Layouts",
@@ -19161,6 +19214,56 @@
           "doi": "",
           "arxiv_comment": "",
           "arxiv_id": "2607.05353v1",
+          "raw_venue": "",
+          "venue_source": "",
+          "sort_key": 202600,
+          "download": {
+            "status": "pending",
+            "source": null,
+            "path": null,
+            "last_attempt_at": null
+          }
+        },
+        {
+          "id": "cfbed54bf0f64a72ebc7c9631eb62fb77309c7ba",
+          "title": "Stochastic Order Learning: An Approach to Rank Estimation Using Noisy Data",
+          "authors": [
+            "Chaewon Lee",
+            "Seon-Ho Lee",
+            "Chang-Su Kim"
+          ],
+          "year": 2026,
+          "month": 7,
+          "source": "arxiv",
+          "venue": "ICML",
+          "venue_type": "conference",
+          "abstract": "Rank estimation under label noise poses a fundamental challenge, as ordinal annotations often exhibit structured uncertainty rather than simple label corruption. In this paper, we reformulate rank estimation with noisy ordinal labels as a stochastic ordering problem, in which each instance is inherently associated with multiple plausible ranks instead of a single deterministic label. Based on this view, we propose stochastic order learning (SOL), a learning framework that captures ordinal label uncertainty and learns an embedding space through two complementary objectives: a discriminative loss that structures instance--centroid interactions and a stochastic order loss that enforces probabilistic ordering relations between instances. Extensive experiments across diverse datasets demonstrate that SOL enables reliable rank estimation under various types and levels of label noise. The source code is available at https://github.com/cwlee00/SOL.",
+          "urls": {
+            "arxiv": "https://arxiv.org/abs/2607.08103v1",
+            "pdf": "https://arxiv.org/pdf/2607.08103v1",
+            "paper": "https://arxiv.org/abs/2607.08103v1"
+          },
+          "search_sets_raw": [
+            "A"
+          ],
+          "search_sets_final": [
+            "A"
+          ],
+          "filter_bucket": "th_cpl_a",
+          "matched_venue": "ICML",
+          "matched_th_cpl_level": "A",
+          "matched_th_cpl_area": "Artificial Intelligence and Pattern Recognition",
+          "category": "Embedded AI Applications",
+          "llm_tags": [],
+          "forced_tags": [],
+          "final_tags": [],
+          "cited_by": 0,
+          "is_preprint_on_arxiv": false,
+          "preprint_source": "",
+          "journal_ref": "",
+          "doi": "",
+          "arxiv_comment": "",
+          "arxiv_id": "2607.08103v1",
           "raw_venue": "",
           "venue_source": "",
           "sort_key": 202600,
