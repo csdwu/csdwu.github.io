@@ -20,6 +20,16 @@
   abstract = {In the data selection problem, the objective is to choose a small, representative subset of data that can be used to efficiently train a machine learning model. Sener and Savarese [ICLR 2018] showed that, given an embedding representation of the data and suitable geometric assumptions, heuristics based on $k$-center clustering can be used to perform data selection. This perspective was further explored by Axiotis et. al. [ICML 2024], who proposed a data selection approach based on $k$-means clustering and sensitivity sampling. However, these methods rely on the assumption that the dataset exhibits intrinsic geometric structure that can be effectively captured by clustering, whereas many modern datasets instead possess global algebraic structure that is better exploited by low-rank approximation or principal component analysis. In this paper, we introduce a new data selection framework based on low-rank approximation and residual-based sampling, formulated through the lens of row subset selection and loss-preserving coreset construction. Given an embedding representation of the data satisfying mild regularity conditions, which can be interpreted as algebraic or angular notions of Lipschitz continuity, we show that it is possible to select a weighted subset of $\\tilde\{O\}\\left(k + \\frac\{1\}\{\\varepsilon^2\}\\right)$ data points whose average loss approximates the average loss over the full dataset within a $(1+\\varepsilon)$ relative error, up to an additive $\\varepsilon Φ_k$ term, where $Φ_k$ denotes the optimal rank-$k$ approximation cost of the embedding matrix. We complement these theoretical guarantees with empirical evaluations, demonstrating that on a range of real-world datasets, our data selection approach achieves improved performance over prior strategies based on uniform sampling or clustering-based sensitivity sampling.}
 }
 
+@article{hu2026-adaptive-model-compression-amc-af8a78c3,
+  author = {Jiayin Hu and Kai Yuan and Vanessa Hu and Xuetao Yin and Jianhua Li and Sean Suchter},
+  title = {Adaptive Model Compression (AMC): Saliency-Driven Resource Allocation for Ultra-Low-Power Transformer Inference},
+  year = {2026},
+  eprint = {2607.10109v1},
+  archivePrefix = {arXiv},
+  url = {https://arxiv.org/abs/2607.10109v1},
+  abstract = {Deploying large-scale transformer models on resource-constrained edge devices remains a challenge due to the high energy and memory overhead inherent in static inference, which processes simple and complex tokens with uniform intensity. To address this, we propose Adaptive Model Compression (AMC), a saliency-driven framework that dynamically allocates hardware resources based on token importance. By implementing a multi-tier architecture, our system identifies critical high-saliency information for full-precision processing while aggressively reducing the rank and bit-width of less significant data. Experimental results demonstrate that AMC achieves a 59.2% reduction in system energy and a 2.24x increase in throughput on 45nm CMOS hardware. This approach effectively extends the battery life of mobile devices by utilizing high-definition compute only where necessary, maintaining robust performance with a marginal 3.6% accuracy trade-off.}
+}
+
 @article{samanta2026-affordable-precision-agriculture-a-89f613cd,
   author = {Riya Samanta and Bidyut Saha},
   title = {Affordable Precision Agriculture: A Deployment-Oriented Review of Low-Cost, Low-Power Edge AI and TinyML for Resource-Constrained Farming Systems},
@@ -455,6 +465,17 @@
   archivePrefix = {arXiv},
   url = {https://arxiv.org/abs/2604.08617v1},
   abstract = {Exemplar replay has become an effective strategy for mitigating catastrophic forgetting in federated continual learning (FCL) by retaining representative samples from past tasks. Existing studies focus on designing sample-importance estimation mechanisms to identify information-rich samples. However, they typically overlook strategies for effectively utilizing the selected exemplars, which limits their performance under continual dynamic heterogeneity across clients and tasks. To address this issue, this paper proposes a Federated gEometry-Aware correcTion method, termed FEAT, which alleviates imbalance-induced representation collapse that drags rare-class features toward frequent classes across clients. Specifically, it consists of two key modules: 1) the Geometric Structure Alignment module performs structural knowledge distillation by aligning the pairwise angular similarities between feature representations and their corresponding Equiangular Tight Frame prototypes, which are fixed and shared across clients to serve as a class-discriminative reference structure. This encourages geometric consistency across tasks and helps mitigate representation drift; 2) the Energy-based Geometric Correction module removes task-irrelevant directional components from feature embeddings, which reduces prediction bias toward majority classes. This improves sensitivity to minority classes and enhances the model's robustness under class-imbalanced distributions.}
+}
+
+@article{chen2026-gae-graph-augmented-evolution-8abbfb3a,
+  author = {Xuanzhou Chen and Taoli Cheng},
+  title = {GAE: Graph-Augmented Evolution for Scientific Discovery via Reinforcement Optimization},
+  year = {2026},
+  journal = {ICML},
+  eprint = {2607.10127v1},
+  archivePrefix = {arXiv},
+  url = {https://arxiv.org/abs/2607.10127v1},
+  abstract = {Evolutionary program search guided by Large Language Models (LLMs) has emerged as a powerful paradigm for automated scientific discovery. However, current approaches are fundamentally constrained by three bottlenecks: structurally blind parent selection, sparse whole-program evaluation rewards, and static mutation operators that fail to adapt during search. We present GAE (Graph-Augmented Evolution), a framework that resolves these limitations through a tightly coupled, three-pillar architecture. First, a relational graph neural network (GNN) parses programs into typed computation graphs, producing structure-aware embeddings. Second, an RL-optimized meta-controller leverages these embeddings to replace blind evolutionary sampling with a directed policy, dynamically selecting optimal parents and mutation directions based on reward history. Third, an online GRPO fine-tuning loop continuously updates the LLM mutation operator at test-time using group-normalized evaluation rewards, directly aligning the model's generation distribution with high-fitness structural edits. We evaluate GAE on a challenging scientific discovery task: symbolic regression for complex nonlinear oscillator systems. By transforming stochastic search into a directed, self-improving trajectory, GAE efficiently discovers closed-form physical equations, consistently matching or outperforming static LLM-driven baselines and achieving state-of-the-art out-of-distribution performance.}
 }
 
 @article{nerrise2026-geosae-geometric-prior-guided-37788b52,
@@ -995,6 +1016,18 @@
   archivePrefix = {arXiv},
   url = {https://arxiv.org/abs/2605.03348v2},
   abstract = {We propose S3 (Specialization, Selection, Sparsification), a framework that rethinks multimodal learning through a structural perspective. Instead of encoding all signals into a fixed embedding, S3 decomposes multimodal inputs into semantic experts and selectively routes them for each task. Specialization forms concept-level experts in a shared latent space, Selection adapts routing for task-specific needs, and Sparsification prunes low-utility paths to yield compact, information-minimal representations. Across four MultiBench benchmarks, S3 improves accuracy and shows a consistent reverse U-shaped sparsity-performance trend, with peak performance at intermediate sparsity. These results suggest that structuring multimodal representations as selectable semantic components provides a practical and principled alternative to contrastive learning or InfoMax-driven approaches.}
+}
+
+@article{kong2026-towards-efficient-convolutional-neural-d7a41bd0,
+  author = {Hao Kong and Di Liu and Xiangzhong Luo and Shuo Huai and Ravi Subramaniam and Christian Makaya and Qian Lin and Weichen Liu},
+  title = {Towards Efficient Convolutional Neural Network for Embedded Hardware via Multi-Dimensional Pruning},
+  year = {2026},
+  journal = {DAC},
+  doi = {10.1109/DAC56929.2023.10247965},
+  eprint = {2607.11473v1},
+  archivePrefix = {arXiv},
+  url = {https://arxiv.org/abs/2607.11473v1},
+  abstract = {In this paper, we propose TECO, a multi-dimensional pruning framework to collaboratively prune the three dimensions (depth, width, and resolution) of convolutional neural networks (CNNs) for better execution efficiency on embedded hardware. In TECO, we first introduce a two-stage importance evaluation framework, which efficiently and comprehensively evaluates each pruning unit according to both the local importance inside each dimension and the global importance across different dimensions. Based on the evaluation framework, we present a heuristic pruning algorithm to progressively prune the three dimensions of CNNs towards the optimal trade-off between accuracy and efficiency. Experiments on multiple benchmarks validate the advantages of TECO over existing state-of-the-art (SOTA) approaches. The code and pre-trained models are available at https://github.com/ntuliuteam/Teco.}
 }
 
 @article{wang2026-traindeeploy-hardware-accelerated-parameter-3336d8f3,

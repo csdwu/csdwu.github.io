@@ -1,6 +1,6 @@
 {
   "version": "2.0.0",
-  "generated_at": "2026-07-12T02:09:36.793Z",
+  "generated_at": "2026-07-15T01:53:39.400Z",
   "query_groups": {
     "A": "\"embedded ai\"",
     "B": "(\"low power\" OR \"ultra-low-power\") \"embedded ai\"",
@@ -8,41 +8,41 @@
   },
   "stats": {
     "raw_counts": {
-      "A": 28,
-      "B": 0,
+      "A": 33,
+      "B": 2,
       "C": 0
     },
     "after_set_ops": {
-      "A_only": 28,
-      "B": 0,
+      "A_only": 33,
+      "B": 2,
       "C": 0,
-      "merged_total": 28,
+      "merged_total": 35,
       "bc_overlap": 0
     },
-    "after_filter": 874,
+    "after_filter": 877,
     "classification": {
-      "total": 874,
+      "total": 877,
       "by_category": {
-        "Efficient Model Design and Optimization": 279,
+        "Efficient Model Design and Optimization": 282,
         "Novel Computing Architectures and Domain-Specific Accelerators": 39,
         "Embedded AI Applications": 556
       },
       "by_tag": {
         "TinyML": 50,
         "LP": 98,
-        "ULP": 15
+        "ULP": 16
       },
       "by_provider": {
         "tencent_tokenhub": 0,
         "heuristic": 0,
-        "heuristic_fallback": 874
+        "heuristic_fallback": 877
       }
     },
     "source_stats": {
-      "total": 874,
+      "total": 877,
       "by_group": {
         "A": {
-          "total": 733,
+          "total": 735,
           "arxiv": 0,
           "venues": {
             "AAAI": 90,
@@ -97,7 +97,7 @@
             "CVIU": 0,
             "CVPR": 59,
             "CoNEXT": 0,
-            "DAC": 8,
+            "DAC": 9,
             "DASFAA": 0,
             "DATE": 0,
             "DCC": 0,
@@ -168,7 +168,7 @@
             "ICIP": 0,
             "ICLR": 163,
             "ICMI": 0,
-            "ICML": 147,
+            "ICML": 148,
             "ICMR": 0,
             "ICN": 0,
             "ICNP": 0,
@@ -416,8 +416,8 @@
           "unknown": 0
         },
         "B": {
-          "total": 106,
-          "arxiv": 82,
+          "total": 107,
+          "arxiv": 83,
           "venues": {
             "AAAI": 0,
             "AAMAS": 0,
@@ -1539,8 +1539,8 @@
         }
       },
       "total_summary": {
-        "total": 889,
-        "arxiv": 124,
+        "total": 892,
+        "arxiv": 125,
         "venues": {
           "AAAI": 90,
           "AAMAS": 0,
@@ -1594,7 +1594,7 @@
           "CVIU": 0,
           "CVPR": 61,
           "CoNEXT": 0,
-          "DAC": 8,
+          "DAC": 9,
           "DASFAA": 0,
           "DATE": 4,
           "DCC": 0,
@@ -1665,7 +1665,7 @@
           "ICIP": 0,
           "ICLR": 164,
           "ICMI": 0,
-          "ICML": 149,
+          "ICML": 150,
           "ICMR": 0,
           "ICN": 0,
           "ICNP": 0,
@@ -1918,8 +1918,65 @@
     {
       "key": "efficient_model_design",
       "title": "Efficient Model Design and Optimization",
-      "count": 279,
+      "count": 282,
       "papers": [
+        {
+          "id": "0fdb74a72185e59ccb8e7242574bff5289b3e4e2",
+          "title": "Adaptive Model Compression (AMC): Saliency-Driven Resource Allocation for Ultra-Low-Power Transformer Inference",
+          "authors": [
+            "Jiayin Hu",
+            "Kai Yuan",
+            "Vanessa Hu",
+            "Xuetao Yin",
+            "Jianhua Li",
+            "Sean Suchter"
+          ],
+          "year": 2026,
+          "month": 7,
+          "source": "arxiv",
+          "venue": "",
+          "venue_type": "",
+          "abstract": "Deploying large-scale transformer models on resource-constrained edge devices remains a challenge due to the high energy and memory overhead inherent in static inference, which processes simple and complex tokens with uniform intensity. To address this, we propose Adaptive Model Compression (AMC), a saliency-driven framework that dynamically allocates hardware resources based on token importance. By implementing a multi-tier architecture, our system identifies critical high-saliency information for full-precision processing while aggressively reducing the rank and bit-width of less significant data. Experimental results demonstrate that AMC achieves a 59.2% reduction in system energy and a 2.24x increase in throughput on 45nm CMOS hardware. This approach effectively extends the battery life of mobile devices by utilizing high-definition compute only where necessary, maintaining robust performance with a marginal 3.6% accuracy trade-off.",
+          "urls": {
+            "arxiv": "https://arxiv.org/abs/2607.10109v1",
+            "pdf": "https://arxiv.org/pdf/2607.10109v1",
+            "paper": "https://arxiv.org/abs/2607.10109v1"
+          },
+          "search_sets_raw": [
+            "B"
+          ],
+          "search_sets_final": [
+            "B"
+          ],
+          "filter_bucket": "arxiv",
+          "matched_venue": "",
+          "matched_th_cpl_level": "",
+          "matched_th_cpl_area": "",
+          "category": "Efficient Model Design and Optimization",
+          "llm_tags": [
+            "ULP"
+          ],
+          "forced_tags": [],
+          "final_tags": [
+            "ULP"
+          ],
+          "cited_by": 0,
+          "is_preprint_on_arxiv": false,
+          "preprint_source": "",
+          "journal_ref": "",
+          "doi": "",
+          "arxiv_comment": "",
+          "arxiv_id": "2607.10109v1",
+          "raw_venue": "",
+          "venue_source": "",
+          "sort_key": 202600,
+          "download": {
+            "status": "pending",
+            "source": null,
+            "path": null,
+            "last_attempt_at": null
+          }
+        },
         {
           "id": "8af3394ccef081fb4070f880195ae967ec48adfa",
           "title": "Canopy: A Heterograph Foundation Model for Metabolic Engineering",
@@ -2063,6 +2120,55 @@
           "doi": "",
           "arxiv_comment": "",
           "arxiv_id": "2607.00777v1",
+          "raw_venue": "",
+          "venue_source": "",
+          "sort_key": 202600,
+          "download": {
+            "status": "pending",
+            "source": null,
+            "path": null,
+            "last_attempt_at": null
+          }
+        },
+        {
+          "id": "7c695172e27fc4d9308b8e8d8efbe2dbf23a6ba9",
+          "title": "GAE: Graph-Augmented Evolution for Scientific Discovery via Reinforcement Optimization",
+          "authors": [
+            "Xuanzhou Chen",
+            "Taoli Cheng"
+          ],
+          "year": 2026,
+          "month": 7,
+          "source": "arxiv",
+          "venue": "ICML",
+          "venue_type": "conference",
+          "abstract": "Evolutionary program search guided by Large Language Models (LLMs) has emerged as a powerful paradigm for automated scientific discovery. However, current approaches are fundamentally constrained by three bottlenecks: structurally blind parent selection, sparse whole-program evaluation rewards, and static mutation operators that fail to adapt during search. We present GAE (Graph-Augmented Evolution), a framework that resolves these limitations through a tightly coupled, three-pillar architecture. First, a relational graph neural network (GNN) parses programs into typed computation graphs, producing structure-aware embeddings. Second, an RL-optimized meta-controller leverages these embeddings to replace blind evolutionary sampling with a directed policy, dynamically selecting optimal parents and mutation directions based on reward history. Third, an online GRPO fine-tuning loop continuously updates the LLM mutation operator at test-time using group-normalized evaluation rewards, directly aligning the model's generation distribution with high-fitness structural edits. We evaluate GAE on a challenging scientific discovery task: symbolic regression for complex nonlinear oscillator systems. By transforming stochastic search into a directed, self-improving trajectory, GAE efficiently discovers closed-form physical equations, consistently matching or outperforming static LLM-driven baselines and achieving state-of-the-art out-of-distribution performance.",
+          "urls": {
+            "arxiv": "https://arxiv.org/abs/2607.10127v1",
+            "pdf": "https://arxiv.org/pdf/2607.10127v1",
+            "paper": "https://arxiv.org/abs/2607.10127v1"
+          },
+          "search_sets_raw": [
+            "A"
+          ],
+          "search_sets_final": [
+            "A"
+          ],
+          "filter_bucket": "th_cpl_a",
+          "matched_venue": "ICML",
+          "matched_th_cpl_level": "A",
+          "matched_th_cpl_area": "Artificial Intelligence and Pattern Recognition",
+          "category": "Efficient Model Design and Optimization",
+          "llm_tags": [],
+          "forced_tags": [],
+          "final_tags": [],
+          "cited_by": 0,
+          "is_preprint_on_arxiv": false,
+          "preprint_source": "",
+          "journal_ref": "",
+          "doi": "",
+          "arxiv_comment": "",
+          "arxiv_id": "2607.10127v1",
           "raw_venue": "",
           "venue_source": "",
           "sort_key": 202600,
@@ -2220,6 +2326,61 @@
           "doi": "",
           "arxiv_comment": "",
           "arxiv_id": "2607.05994v1",
+          "raw_venue": "",
+          "venue_source": "",
+          "sort_key": 202600,
+          "download": {
+            "status": "pending",
+            "source": null,
+            "path": null,
+            "last_attempt_at": null
+          }
+        },
+        {
+          "id": "c9bd55fd5d17cff08f145b8ff62c7f0a4f3f4eca",
+          "title": "Towards Efficient Convolutional Neural Network for Embedded Hardware via Multi-Dimensional Pruning",
+          "authors": [
+            "Hao Kong",
+            "Di Liu",
+            "Xiangzhong Luo",
+            "Shuo Huai",
+            "Ravi Subramaniam",
+            "Christian Makaya",
+            "Qian Lin",
+            "Weichen Liu"
+          ],
+          "year": 2026,
+          "month": 7,
+          "source": "arxiv",
+          "venue": "DAC",
+          "venue_type": "conference",
+          "abstract": "In this paper, we propose TECO, a multi-dimensional pruning framework to collaboratively prune the three dimensions (depth, width, and resolution) of convolutional neural networks (CNNs) for better execution efficiency on embedded hardware. In TECO, we first introduce a two-stage importance evaluation framework, which efficiently and comprehensively evaluates each pruning unit according to both the local importance inside each dimension and the global importance across different dimensions. Based on the evaluation framework, we present a heuristic pruning algorithm to progressively prune the three dimensions of CNNs towards the optimal trade-off between accuracy and efficiency. Experiments on multiple benchmarks validate the advantages of TECO over existing state-of-the-art (SOTA) approaches. The code and pre-trained models are available at https://github.com/ntuliuteam/Teco.",
+          "urls": {
+            "arxiv": "https://arxiv.org/abs/2607.11473v1",
+            "pdf": "https://arxiv.org/pdf/2607.11473v1",
+            "paper": "https://arxiv.org/abs/2607.11473v1"
+          },
+          "search_sets_raw": [
+            "A"
+          ],
+          "search_sets_final": [
+            "A"
+          ],
+          "filter_bucket": "th_cpl_a",
+          "matched_venue": "DAC",
+          "matched_th_cpl_level": "A",
+          "matched_th_cpl_area": "High Performance Computing",
+          "category": "Efficient Model Design and Optimization",
+          "llm_tags": [],
+          "forced_tags": [],
+          "final_tags": [],
+          "cited_by": 0,
+          "is_preprint_on_arxiv": false,
+          "preprint_source": "",
+          "journal_ref": "",
+          "doi": "10.1109/DAC56929.2023.10247965",
+          "arxiv_comment": "",
+          "arxiv_id": "2607.11473v1",
           "raw_venue": "",
           "venue_source": "",
           "sort_key": 202600,
