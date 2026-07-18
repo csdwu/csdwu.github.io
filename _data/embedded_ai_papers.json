@@ -1,6 +1,6 @@
 {
   "version": "2.0.0",
-  "generated_at": "2026-07-15T01:53:39.400Z",
+  "generated_at": "2026-07-18T01:56:29.647Z",
   "query_groups": {
     "A": "\"embedded ai\"",
     "B": "(\"low power\" OR \"ultra-low-power\") \"embedded ai\"",
@@ -8,41 +8,41 @@
   },
   "stats": {
     "raw_counts": {
-      "A": 33,
+      "A": 27,
       "B": 2,
       "C": 0
     },
     "after_set_ops": {
-      "A_only": 33,
+      "A_only": 27,
       "B": 2,
       "C": 0,
-      "merged_total": 35,
+      "merged_total": 29,
       "bc_overlap": 0
     },
-    "after_filter": 877,
+    "after_filter": 879,
     "classification": {
-      "total": 877,
+      "total": 879,
       "by_category": {
-        "Efficient Model Design and Optimization": 282,
+        "Efficient Model Design and Optimization": 283,
         "Novel Computing Architectures and Domain-Specific Accelerators": 39,
-        "Embedded AI Applications": 556
+        "Embedded AI Applications": 557
       },
       "by_tag": {
         "TinyML": 50,
-        "LP": 98,
+        "LP": 99,
         "ULP": 16
       },
       "by_provider": {
         "tencent_tokenhub": 0,
         "heuristic": 0,
-        "heuristic_fallback": 877
+        "heuristic_fallback": 879
       }
     },
     "source_stats": {
-      "total": 877,
+      "total": 879,
       "by_group": {
         "A": {
-          "total": 735,
+          "total": 736,
           "arxiv": 0,
           "venues": {
             "AAAI": 90,
@@ -109,7 +109,7 @@
             "EAAI": 0,
             "EASE": 0,
             "EC": 0,
-            "ECCV": 5,
+            "ECCV": 6,
             "ECIR": 0,
             "ECOOP": 0,
             "EDBT": 0,
@@ -416,7 +416,7 @@
           "unknown": 0
         },
         "B": {
-          "total": 107,
+          "total": 108,
           "arxiv": 83,
           "venues": {
             "AAAI": 0,
@@ -530,7 +530,7 @@
             "ICASSP": 0,
             "ICB": 0,
             "ICC": 0,
-            "ICCAD": 1,
+            "ICCAD": 2,
             "ICCD": 0,
             "ICCV": 0,
             "ICDAR": 0,
@@ -1539,7 +1539,7 @@
         }
       },
       "total_summary": {
-        "total": 892,
+        "total": 894,
         "arxiv": 125,
         "venues": {
           "AAAI": 90,
@@ -1606,7 +1606,7 @@
           "EAAI": 0,
           "EASE": 0,
           "EC": 0,
-          "ECCV": 5,
+          "ECCV": 6,
           "ECIR": 0,
           "ECOOP": 0,
           "EDBT": 0,
@@ -1653,7 +1653,7 @@
           "ICASSP": 0,
           "ICB": 0,
           "ICC": 0,
-          "ICCAD": 1,
+          "ICCAD": 2,
           "ICCD": 0,
           "ICCV": 26,
           "ICDAR": 0,
@@ -1918,7 +1918,7 @@
     {
       "key": "efficient_model_design",
       "title": "Efficient Model Design and Optimization",
-      "count": 282,
+      "count": 283,
       "papers": [
         {
           "id": "0fdb74a72185e59ccb8e7242574bff5289b3e4e2",
@@ -2221,6 +2221,64 @@
           "doi": "",
           "arxiv_comment": "",
           "arxiv_id": "2607.07066v1",
+          "raw_venue": "",
+          "venue_source": "",
+          "sort_key": 202600,
+          "download": {
+            "status": "pending",
+            "source": null,
+            "path": null,
+            "last_attempt_at": null
+          }
+        },
+        {
+          "id": "0f726e6567f23c059dc98ef5a37f9eca45b42078",
+          "title": "PolyQ: Codesigning End-to-End Quantization Framework for Scalable Edge CPU LLM Inference",
+          "authors": [
+            "Hyunwoo Oh",
+            "Suyeon Jang",
+            "Hanning Chen",
+            "KyungIn Nam",
+            "Sanggeon Yun",
+            "Ryozo Masukawa",
+            "Mohsen Imani"
+          ],
+          "year": 2026,
+          "month": 7,
+          "source": "arxiv",
+          "venue": "ICCAD",
+          "venue_type": "conference",
+          "abstract": "CPUs are the most universal target for on-device LLM inference, but existing low-bit quantization methods offer either coarse operating points or fine-grained mixed precision that is difficult to execute efficiently on CPUs. We present PolyQ, a CPU-oriented compiler/quantization co-design for activation-aware channel-wise bit allocation under a user-specified average-bit budget. PolyQ assigns per-channel bit-widths from $\\{2,3,4,8,16\\}$, then uses a compile-time model compiler to permute and cluster channels into bit-homogeneous blocks, generate SIMD- and LUT-compatible kernels, and merge compatible permutations across operators to keep layout regularization off the runtime path. This turns fine-grained budget fitting into a practical fractional-bit deployment method for CPU-only inference. Across Falcon-H1-3B, Llama2-13B, and Qwen3-32B on WikiText-2, PolyQ provides stable quality scaling from 3--6\\,b and improves perplexity by 2.4--32.1\\% over prior methods at a 3\\,b target. End-to-end measurements on three representative CPUs -- workstation, laptop, and mobile -- show that compiler layout regularization reduces activation reorder traffic by up to 70.8\\%, prefill latency and decode throughput scale nearly proportionally with the configured bit budget, and energy/token overhead stays below 2\\% relative to an optimized LUT-based back-end. These results show that fractional-bit CPU deployment is practical, predictable, and energy-efficient across diverse edge targets.",
+          "urls": {
+            "arxiv": "https://arxiv.org/abs/2607.14618v1",
+            "pdf": "https://arxiv.org/pdf/2607.14618v1",
+            "paper": "https://arxiv.org/abs/2607.14618v1"
+          },
+          "search_sets_raw": [
+            "B"
+          ],
+          "search_sets_final": [
+            "B"
+          ],
+          "filter_bucket": "th_cpl_ab",
+          "matched_venue": "ICCAD",
+          "matched_th_cpl_level": "B",
+          "matched_th_cpl_area": "High Performance Computing",
+          "category": "Efficient Model Design and Optimization",
+          "llm_tags": [
+            "LP"
+          ],
+          "forced_tags": [],
+          "final_tags": [
+            "LP"
+          ],
+          "cited_by": 0,
+          "is_preprint_on_arxiv": false,
+          "preprint_source": "",
+          "journal_ref": "",
+          "doi": "",
+          "arxiv_comment": "",
+          "arxiv_id": "2607.14618v1",
           "raw_venue": "",
           "venue_source": "",
           "sort_key": 202600,
@@ -18910,7 +18968,7 @@
     {
       "key": "embedded_ai_applications",
       "title": "Embedded AI Applications",
-      "count": 556,
+      "count": 557,
       "papers": [
         {
           "id": "0dbc346873287e3c0a6d3933ebce597f044f0b48",
@@ -19063,6 +19121,58 @@
           "doi": "",
           "arxiv_comment": "",
           "arxiv_id": "2607.04921v1",
+          "raw_venue": "",
+          "venue_source": "",
+          "sort_key": 202600,
+          "download": {
+            "status": "pending",
+            "source": null,
+            "path": null,
+            "last_attempt_at": null
+          }
+        },
+        {
+          "id": "5a8ffccb1bd8db6d29ca86cee461465f1c9677db",
+          "title": "GeoDetect: Geometric Adversarial Detection for VLPs",
+          "authors": [
+            "Afsaneh Hasanebrahimi",
+            "Hanxun Huang",
+            "Christopher Leckie",
+            "James Bailey",
+            "Sarah Erfani"
+          ],
+          "year": 2026,
+          "month": 7,
+          "source": "arxiv",
+          "venue": "ECCV",
+          "venue_type": "conference",
+          "abstract": "Vision-language pre-trained models (VLPs) are widely used in real-world applications. However, they remain vulnerable to adversarial attacks. Although adversarial detection methods have demonstrated success in single-modality settings (either vision or language), their effectiveness and reliability in multimodal models such as VLPs remain largely unexplored. In this work, we study the geometry of VLP embedding spaces and observe structured anisotropy that differs from unimodal vision models. Our theoretical analysis shows that under this anisotropic structure, adversarial attacks increase the expected geometric separation between clean and adversarial examples (AEs). Specifically, we demonstrate that AEs consistently exhibit greater expected distances to randomly sampled points than their clean counterparts, indicating that AEs tend to push representations out of manifold regions. Building on these insights, we propose GeoDetect, which leverages these off-manifold deviations via geometric scores to identify AEs. Through comprehensive evaluations, we show that our approach reliably detects AEs across diverse VLP architectures and threat settings, covering unimodal and multimodal attacks as well as adaptive attacks, thereby providing a robust and practical approach to improving the safety and reliability of these models.",
+          "urls": {
+            "arxiv": "https://arxiv.org/abs/2607.14737v1",
+            "pdf": "https://arxiv.org/pdf/2607.14737v1",
+            "paper": "https://arxiv.org/abs/2607.14737v1"
+          },
+          "search_sets_raw": [
+            "A"
+          ],
+          "search_sets_final": [
+            "A"
+          ],
+          "filter_bucket": "th_cpl_a",
+          "matched_venue": "ECCV",
+          "matched_th_cpl_level": "A",
+          "matched_th_cpl_area": "Artificial Intelligence and Pattern Recognition",
+          "category": "Embedded AI Applications",
+          "llm_tags": [],
+          "forced_tags": [],
+          "final_tags": [],
+          "cited_by": 0,
+          "is_preprint_on_arxiv": false,
+          "preprint_source": "",
+          "journal_ref": "",
+          "doi": "",
+          "arxiv_comment": "",
+          "arxiv_id": "2607.14737v1",
           "raw_venue": "",
           "venue_source": "",
           "sort_key": 202600,

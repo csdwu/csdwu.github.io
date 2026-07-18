@@ -1152,6 +1152,17 @@
   abstract = {Cold metals are a class of metals with an intrinsic energy gap located close to the Fermi level, which enables cold-carrier injection for steep-slope transistors and is therefore promising for low-power electronic applications. High-throughput screening has revealed 252 three-dimensional (3D) cold metals in the Materials Project database, but database searches are inherently limited to known compounds. Here we present an inverse-design workflow that generates 3D cold metals using MatterGPT, a conditional autoregressive Transformer trained on SLICES, an invertible and symmetry-invariant crystal string representation. We curate a training set of 26,309 metallic structures labeled with energy above hull and a unified band-edge distance descriptor that merges p-type and n-type cold-metal characteristics to address severe label imbalance. Property-conditioned generation targeting thermodynamic stability and 50-500 meV band-edge distances produces 148,506 unique candidates; 92.1% are successfully reconstructed to 3D structures and down-selected by symmetry, uniqueness and novelty filters, followed by high-throughput DFT validation. We identify 257 cold metals verified as novel with respect to the Materials Project database, with gaps around the Fermi level spanning 50-500 meV. First-principles phonon, electronic-structure, and work-function calculations for representative candidates confirm dynamical stability and contact-relevant work functions. Our results demonstrate that SLICES-enabled generative transformers can expand the chemical space of cold metals beyond high-throughput screening, providing a route to low-power electronic materials discovery.}
 }
 
+@article{hasanebrahimi2026-geodetect-geometric-adversarial-detection-974953c6,
+  author = {Afsaneh Hasanebrahimi and Hanxun Huang and Christopher Leckie and James Bailey and Sarah Erfani},
+  title = {GeoDetect: Geometric Adversarial Detection for VLPs},
+  year = {2026},
+  journal = {ECCV},
+  eprint = {2607.14737v1},
+  archivePrefix = {arXiv},
+  url = {https://arxiv.org/abs/2607.14737v1},
+  abstract = {Vision-language pre-trained models (VLPs) are widely used in real-world applications. However, they remain vulnerable to adversarial attacks. Although adversarial detection methods have demonstrated success in single-modality settings (either vision or language), their effectiveness and reliability in multimodal models such as VLPs remain largely unexplored. In this work, we study the geometry of VLP embedding spaces and observe structured anisotropy that differs from unimodal vision models. Our theoretical analysis shows that under this anisotropic structure, adversarial attacks increase the expected geometric separation between clean and adversarial examples (AEs). Specifically, we demonstrate that AEs consistently exhibit greater expected distances to randomly sampled points than their clean counterparts, indicating that AEs tend to push representations out of manifold regions. Building on these insights, we propose GeoDetect, which leverages these off-manifold deviations via geometric scores to identify AEs. Through comprehensive evaluations, we show that our approach reliably detects AEs across diverse VLP architectures and threat settings, covering unimodal and multimodal attacks as well as adaptive attacks, thereby providing a robust and practical approach to improving the safety and reliability of these models.}
+}
+
 @article{nerrise2026-geosae-geometric-prior-guided-37788b52,
   author = {Favour Nerrise and Lucy Yin and Mohammad H. Abbasi and Kilian M. Pohl and Ehsan Adeli},
   title = {GeoSAE: Geometric Prior-Guided Layer-Wise Sparse Autoencoder Annotation of Brain MRI Foundation Models},
@@ -1948,6 +1959,17 @@
   archivePrefix = {arXiv},
   url = {https://arxiv.org/abs/2606.13400v1},
   abstract = {While flow-based generative models have demonstrated strong performance across a wide range of domains, deploying them in safety-critical physical systems remains challenging due to strict constraint requirements. Existing approaches typically enforce safety through post-hoc corrections, which incur substantial computational overhead and may distort the learned distribution. We propose PolyFlow, a polytope-constrained flow matching framework that embeds constraints directly into the model and flow dynamics. PolyFlow introduces a discrete-time flow formulation and a projection-free architecture, which eliminate the discretization error and guarantee strict satisfaction of arbitrary polyhedral constraints, without the need for expensive iterative solvers. Experimental results show that PolyFlow achieves zero constraint violation while maintaining high distributional fidelity across a range of planning and control tasks. Compared to state-of-the-art constrained generation baselines, PolyFlow significantly reduces inference latency and demonstrates a favorable trade-off between safety, efficiency, and generative quality. Code is available on https://github.com/MJianM/PolyFlow.}
+}
+
+@article{oh2026-polyq-codesigning-end-to-acbdfbbd,
+  author = {Hyunwoo Oh and Suyeon Jang and Hanning Chen and KyungIn Nam and Sanggeon Yun and Ryozo Masukawa and Mohsen Imani},
+  title = {PolyQ: Codesigning End-to-End Quantization Framework for Scalable Edge CPU LLM Inference},
+  year = {2026},
+  journal = {ICCAD},
+  eprint = {2607.14618v1},
+  archivePrefix = {arXiv},
+  url = {https://arxiv.org/abs/2607.14618v1},
+  abstract = {CPUs are the most universal target for on-device LLM inference, but existing low-bit quantization methods offer either coarse operating points or fine-grained mixed precision that is difficult to execute efficiently on CPUs. We present PolyQ, a CPU-oriented compiler/quantization co-design for activation-aware channel-wise bit allocation under a user-specified average-bit budget. PolyQ assigns per-channel bit-widths from $\\\{2,3,4,8,16\\\}$, then uses a compile-time model compiler to permute and cluster channels into bit-homogeneous blocks, generate SIMD- and LUT-compatible kernels, and merge compatible permutations across operators to keep layout regularization off the runtime path. This turns fine-grained budget fitting into a practical fractional-bit deployment method for CPU-only inference. Across Falcon-H1-3B, Llama2-13B, and Qwen3-32B on WikiText-2, PolyQ provides stable quality scaling from 3--6\\,b and improves perplexity by 2.4--32.1\\% over prior methods at a 3\\,b target. End-to-end measurements on three representative CPUs -- workstation, laptop, and mobile -- show that compiler layout regularization reduces activation reorder traffic by up to 70.8\\%, prefill latency and decode throughput scale nearly proportionally with the configured bit budget, and energy/token overhead stays below 2\\% relative to an optimized LUT-based back-end. These results show that fractional-bit CPU deployment is practical, predictable, and energy-efficient across diverse edge targets.}
 }
 
 @article{douglas2026-prism-llm-guided-semantic-fafca21d,

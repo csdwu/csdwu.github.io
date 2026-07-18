@@ -730,6 +730,17 @@
   abstract = {While iterative stereo matching achieves high accuracy, its dependence on Recurrent Neural Networks (RNN) hinders edge deployment, a challenge underexplored in existing researches. We analyze iterative refinement and reveal that disparity updates are spatially sparse and temporally redundant. First, we introduce a progressive iteration pruning strategy that suppresses redundant update steps, effectively collapsing the recursive computation into a near-single-pass inference. Second, we propose a collaborative monocular prior transfer framework that implicitly embeds depth priors without requiring a dedicated monocular encoder, thereby eliminating its associated computational burden. Third, we develop FlashGRU, a hardware-aware RNN operator leveraging structured sparsity and I/O-conscious design, achieving a 7.28$\\times$ speedup, 76.6\\% memory peak reduction and 80.9\\% global memory requests reduction over natvie ConvGRUs under 2K resolution. Our PipStereo enables real-time, high-fidelity stereo matching on edge hardware: it processes 320$\\times$640 frames in just 75ms on an NVIDIA Jetson Orin NX (FP16) and 19ms on RTX 4090, matching the accuracy of large iterative based models, and our generalization ability and accuracy far exceeds that of existing real-time methods. Our embedded AI projects will be updated at: https://github.com/XPENG-Aridge-AI.}
 }
 
+@article{oh2026-polyq-codesigning-end-to-acbdfbbd,
+  author = {Hyunwoo Oh and Suyeon Jang and Hanning Chen and KyungIn Nam and Sanggeon Yun and Ryozo Masukawa and Mohsen Imani},
+  title = {PolyQ: Codesigning End-to-End Quantization Framework for Scalable Edge CPU LLM Inference},
+  year = {2026},
+  journal = {ICCAD},
+  eprint = {2607.14618v1},
+  archivePrefix = {arXiv},
+  url = {https://arxiv.org/abs/2607.14618v1},
+  abstract = {CPUs are the most universal target for on-device LLM inference, but existing low-bit quantization methods offer either coarse operating points or fine-grained mixed precision that is difficult to execute efficiently on CPUs. We present PolyQ, a CPU-oriented compiler/quantization co-design for activation-aware channel-wise bit allocation under a user-specified average-bit budget. PolyQ assigns per-channel bit-widths from $\\\{2,3,4,8,16\\\}$, then uses a compile-time model compiler to permute and cluster channels into bit-homogeneous blocks, generate SIMD- and LUT-compatible kernels, and merge compatible permutations across operators to keep layout regularization off the runtime path. This turns fine-grained budget fitting into a practical fractional-bit deployment method for CPU-only inference. Across Falcon-H1-3B, Llama2-13B, and Qwen3-32B on WikiText-2, PolyQ provides stable quality scaling from 3--6\\,b and improves perplexity by 2.4--32.1\\% over prior methods at a 3\\,b target. End-to-end measurements on three representative CPUs -- workstation, laptop, and mobile -- show that compiler layout regularization reduces activation reorder traffic by up to 70.8\\%, prefill latency and decode throughput scale nearly proportionally with the configured bit budget, and energy/token overhead stays below 2\\% relative to an optimized LUT-based back-end. These results show that fractional-bit CPU deployment is practical, predictable, and energy-efficient across diverse edge targets.}
+}
+
 @article{douglas2026-prism-llm-guided-semantic-fafca21d,
   author = {Connor Douglas and Utkucan Balci and Joseph Aylett-Bullock},
   title = {PRISM: LLM-Guided Semantic Clustering for High-Precision Topics},
