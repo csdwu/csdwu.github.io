@@ -9018,6 +9018,130 @@
     }
   },
   {
+    "id": "63f4cb742ee4ca50f405a2b5ccf2526e7be8f85d",
+    "source": "arxiv",
+    "title": "Efficient Clustering with Provable Guardrails for LLM Inference at Scale",
+    "abstract": "Scaling LLM-based applications to millions of users is bottlenecked by the inference cost and latency of modern foundation models. A natural fix is to cluster the inputs and call the LLM only on cluster representatives, letting other members inherit the output -- but this is only safe if each member is measurably close to its representative. Existing clustering methods do not offer such per-sample quality control at scale: none jointly guarantee a minimal within-cluster similarity, exact matching of categorical attributes, and scalability to tens of millions of samples. We propose a two-stage algorithm that generates initial clusters with Mini-batch K-Means, then greedily selects representatives within each initial cluster -- a step equivalent to the Johnson-Chvatal heuristic for Set Cover over alpha-balls in embedding space. The algorithm enforces the similarity and attribute guardrails exactly by construction, and runs in $O(nd + n^2 d/K)$ time and $O(nd + n^2/K^2)$ memory for $n$ samples, feature dimension $d$, and $K$ initial clusters -- linear in $n$ when $K$ grows proportionally with $n$. We provide benchmarks against common clustering methods on internal and public datasets: our method not only delivers per-sample guardrails but also runs 10-1000x faster and scales to data sizes where most standard methods become intractable. Deployed on 38 million customers for a persona-based recommender, the clustering method cut downstream cost and latency by 50-fold while preserving personalization and unblocked the production launch.",
+    "snippet": "Scaling LLM-based applications to millions of users is bottlenecked by the inference cost and latency of modern foundation models. A natural fix is to cluster the inputs and call the LLM only on clust",
+    "authors": [
+      "Longshaokan Wang",
+      "Wai Tsang Keung",
+      "Punit Ghodasara",
+      "Roman Wang",
+      "Ali Dashti",
+      "Francesc Moreno-Noguer"
+    ],
+    "venue": "ICML",
+    "year": 2026,
+    "cited_by": 0,
+    "doi": "",
+    "arxiv_id": "2607.19704v1",
+    "urls": {
+      "arxiv": "https://arxiv.org/abs/2607.19704v1",
+      "pdf": "https://arxiv.org/pdf/2607.19704v1",
+      "paper": "https://arxiv.org/abs/2607.19704v1"
+    },
+    "scholar_url": "",
+    "pub_url": "https://arxiv.org/abs/2607.19704v1",
+    "eprint_url": "https://arxiv.org/pdf/2607.19704v1",
+    "container_type": "",
+    "query_useds": [],
+    "raw_group_hits": [
+      "A"
+    ],
+    "search_sets_raw": [
+      "A"
+    ],
+    "search_sets_final": [
+      "A"
+    ],
+    "post_filter": null,
+    "raw_payloads": [
+      {
+        "arxiv_id": "2607.19704v1",
+        "title": "Efficient Clustering with Provable Guardrails for LLM Inference at Scale",
+        "abstract": "Scaling LLM-based applications to millions of users is bottlenecked by the inference cost and latency of modern foundation models. A natural fix is to cluster the inputs and call the LLM only on cluster representatives, letting other members inherit the output -- but this is only safe if each member is measurably close to its representative. Existing clustering methods do not offer such per-sample quality control at scale: none jointly guarantee a minimal within-cluster similarity, exact matching of categorical attributes, and scalability to tens of millions of samples. We propose a two-stage algorithm that generates initial clusters with Mini-batch K-Means, then greedily selects representatives within each initial cluster -- a step equivalent to the Johnson-Chvatal heuristic for Set Cover over alpha-balls in embedding space. The algorithm enforces the similarity and attribute guardrails exactly by construction, and runs in $O(nd + n^2 d/K)$ time and $O(nd + n^2/K^2)$ memory for $n$ samples, feature dimension $d$, and $K$ initial clusters -- linear in $n$ when $K$ grows proportionally with $n$. We provide benchmarks against common clustering methods on internal and public datasets: our method not only delivers per-sample guardrails but also runs 10-1000x faster and scales to data sizes where most standard methods become intractable. Deployed on 38 million customers for a persona-based recommender, the clustering method cut downstream cost and latency by 50-fold while preserving personalization and unblocked the production launch.",
+        "authors": [
+          "Longshaokan Wang",
+          "Wai Tsang Keung",
+          "Punit Ghodasara",
+          "Roman Wang",
+          "Ali Dashti",
+          "Francesc Moreno-Noguer"
+        ],
+        "year": 2026,
+        "month": 7,
+        "published": "2026-07-22T03:06:57Z",
+        "updated": "2026-07-22T03:06:57Z",
+        "urls": {
+          "arxiv": "https://arxiv.org/abs/2607.19704v1",
+          "pdf": "https://arxiv.org/pdf/2607.19704v1"
+        },
+        "arxiv_url": "https://arxiv.org/abs/2607.19704v1",
+        "pdf_url": "https://arxiv.org/pdf/2607.19704v1",
+        "eprint_url": "https://arxiv.org/pdf/2607.19704v1",
+        "pub_url": "https://arxiv.org/abs/2607.19704v1",
+        "snippet": "Scaling LLM-based applications to millions of users is bottlenecked by the inference cost and latency of modern foundation models. A natural fix is to cluster the inputs and call the LLM only on clust",
+        "source": "arxiv",
+        "is_preprint_on_arxiv": true,
+        "preprint_source": "arXiv",
+        "journal_ref": "",
+        "doi": "",
+        "arxiv_comment": "Accepted for presentation at ICML HiLD workshop 2026 (non-archival)",
+        "venue": "ICML",
+        "raw_venue": "Accepted for presentation at ICML HiLD workshop 2026 (non-archival)",
+        "venue_source": "arxiv_comment",
+        "cited_by": 0
+      }
+    ],
+    "dedupe_key": "arxiv:2607 19704v1",
+    "seed_tags": [],
+    "tag_hints": {
+      "force_tinyml": false,
+      "require_power_tag": false
+    },
+    "primary_group": "A",
+    "filter_policy": "TH_CPL_A",
+    "filter_bucket": "th_cpl_a",
+    "filter_reason": "matched_th_cpl_a",
+    "matched_venue": "ICML",
+    "matched_th_cpl_level": "A",
+    "matched_th_cpl_area": "Artificial Intelligence and Pattern Recognition",
+    "matched_venue_type": "conference",
+    "venue_match": {
+      "matched": true,
+      "raw": "ICML",
+      "normalized": "icml",
+      "normalized_candidates": [
+        "icml"
+      ],
+      "match": {
+        "area": "Artificial Intelligence and Pattern Recognition",
+        "level": "A",
+        "type": "conference",
+        "canonicalFull": "International Conference on Machine Learning",
+        "canonicalShort": "ICML"
+      }
+    },
+    "arxiv_match": {
+      "matched": true,
+      "arxiv_id": "2607.19704v1",
+      "matched_urls": [
+        "https://arxiv.org/abs/2607.19704v1",
+        "https://arxiv.org/pdf/2607.19704v1"
+      ]
+    },
+    "is_in_arxiv": true,
+    "category": "Embedded AI Applications",
+    "llm_tags": [],
+    "final_tags": [],
+    "provider_used": "heuristic_fallback",
+    "classification_model": "hunyuan-2.0-instruct-20251111",
+    "classification_raw_response": {
+      "error": "TokenHub request failed with status 402: {\"error\":{\"type\":\"gateway_error\",\"code\":\"401008\",\"message\":\"The free trial quota for the service has been exhausted and postpaid billing is not enabled, so the service cannot be accessed. Please go to Console \\u003e Online Inference Service to enable postpaid billing. See: https://console.cloud.tencent.com/tokenhub/inference\",\"message_zh\":\"服务免费体验额度已耗尽，且未开启后付费，无法正常访问。请前往控制台 \\u003e 在线推理服务开启后付费，查看链接：https://console.cloud.tencent.com/tokenhub/inference\",\"request_id\":\"72b8b09d-b056-486e-bbd1-93641b74d530\"}}"
+    }
+  },
+  {
     "id": "f3612214a946c9eceda254380cee8cb956f42360",
     "source": "arxiv",
     "title": "Efficient Perception in Automotive Detection and Tracking Using Neuromorphic Computing",
@@ -13421,6 +13545,124 @@
     "classification_model": "hunyuan-2.0-instruct-20251111",
     "classification_raw_response": {
       "error": "TokenHub request failed with status 402: {\"error\":{\"message\":\"endpoint is inactive: FREE_QUOTA_EXHAUSTED\",\"code\":\"401008\",\"type\":\"gateway_error\",\"request_id\":\"a216d65f-2a70-44da-8e1d-f0974b719125\"}}\n"
+    }
+  },
+  {
+    "id": "de45f54a7e94d137dd8c38bcc465ad430e85de0a",
+    "source": "arxiv",
+    "title": "Graph Learning on Ensembles of Cyclic Peptides: An Investigation of Molecular Ensemble Modeling",
+    "abstract": "Molecular property prediction from structure often uses a single representative conformation, even though many molecules exist as conformational ensembles in solution. We introduce EnsembleEGNN, a molecular ensemble foundation model that encodes an ensemble by first encoding each conformer with shared Equivariant Graph Neural Network (EGNN) layers, then pooling the resulting conformer representations with a Set Attention Block. We pretrain the model on CREMP, a cyclic peptide ensemble dataset, using a multi-task self-supervised objective combining masked token recovery, noisy-coordinate reconstruction, and pairwise distance reconstruction. On the CREMP-CycPeptMPDB dataset, training EnsembleEGNN from scratch fails entirely ($R^2=0.005$). However, the pretrained model reaches $R^2=0.477$ and Pearson $r=0.699$, outperforming the sequence-only BERT baseline ($R^2=0.439$, Pearson $r=0.667$). When EnsembleEGNN is co-trained end-to-end with the BERT sequence encoder, the hybrid model improves further to $R^2=0.538$ and Pearson $r=0.737$. These results demonstrate that encoding conformational ensembles into a single thermodynamically informed embedding improves cyclic-peptide property prediction.",
+    "snippet": "Molecular property prediction from structure often uses a single representative conformation, even though many molecules exist as conformational ensembles in solution. We introduce EnsembleEGNN, a mol",
+    "authors": [
+      "Aaron Feller",
+      "Kris Deibler",
+      "Maxim Secor"
+    ],
+    "venue": "ICML",
+    "year": 2026,
+    "cited_by": 0,
+    "doi": "",
+    "arxiv_id": "2607.21561v1",
+    "urls": {
+      "arxiv": "https://arxiv.org/abs/2607.21561v1",
+      "pdf": "https://arxiv.org/pdf/2607.21561v1",
+      "paper": "https://arxiv.org/abs/2607.21561v1"
+    },
+    "scholar_url": "",
+    "pub_url": "https://arxiv.org/abs/2607.21561v1",
+    "eprint_url": "https://arxiv.org/pdf/2607.21561v1",
+    "container_type": "",
+    "query_useds": [],
+    "raw_group_hits": [
+      "A"
+    ],
+    "search_sets_raw": [
+      "A"
+    ],
+    "search_sets_final": [
+      "A"
+    ],
+    "post_filter": null,
+    "raw_payloads": [
+      {
+        "arxiv_id": "2607.21561v1",
+        "title": "Graph Learning on Ensembles of Cyclic Peptides: An Investigation of Molecular Ensemble Modeling",
+        "abstract": "Molecular property prediction from structure often uses a single representative conformation, even though many molecules exist as conformational ensembles in solution. We introduce EnsembleEGNN, a molecular ensemble foundation model that encodes an ensemble by first encoding each conformer with shared Equivariant Graph Neural Network (EGNN) layers, then pooling the resulting conformer representations with a Set Attention Block. We pretrain the model on CREMP, a cyclic peptide ensemble dataset, using a multi-task self-supervised objective combining masked token recovery, noisy-coordinate reconstruction, and pairwise distance reconstruction. On the CREMP-CycPeptMPDB dataset, training EnsembleEGNN from scratch fails entirely ($R^2=0.005$). However, the pretrained model reaches $R^2=0.477$ and Pearson $r=0.699$, outperforming the sequence-only BERT baseline ($R^2=0.439$, Pearson $r=0.667$). When EnsembleEGNN is co-trained end-to-end with the BERT sequence encoder, the hybrid model improves further to $R^2=0.538$ and Pearson $r=0.737$. These results demonstrate that encoding conformational ensembles into a single thermodynamically informed embedding improves cyclic-peptide property prediction.",
+        "authors": [
+          "Aaron Feller",
+          "Kris Deibler",
+          "Maxim Secor"
+        ],
+        "year": 2026,
+        "month": 7,
+        "published": "2026-07-23T17:42:51Z",
+        "updated": "2026-07-23T17:42:51Z",
+        "urls": {
+          "arxiv": "https://arxiv.org/abs/2607.21561v1",
+          "pdf": "https://arxiv.org/pdf/2607.21561v1"
+        },
+        "arxiv_url": "https://arxiv.org/abs/2607.21561v1",
+        "pdf_url": "https://arxiv.org/pdf/2607.21561v1",
+        "eprint_url": "https://arxiv.org/pdf/2607.21561v1",
+        "pub_url": "https://arxiv.org/abs/2607.21561v1",
+        "snippet": "Molecular property prediction from structure often uses a single representative conformation, even though many molecules exist as conformational ensembles in solution. We introduce EnsembleEGNN, a mol",
+        "source": "arxiv",
+        "is_preprint_on_arxiv": true,
+        "preprint_source": "arXiv",
+        "journal_ref": "",
+        "doi": "",
+        "arxiv_comment": "Accepted to Graph Foundation Models workshop at ICML '26. Contains 8 pages, 4 figures",
+        "venue": "ICML",
+        "raw_venue": "Accepted to Graph Foundation Models workshop at ICML '26. Contains 8 pages, 4 figures",
+        "venue_source": "arxiv_comment",
+        "cited_by": 0
+      }
+    ],
+    "dedupe_key": "arxiv:2607 21561v1",
+    "seed_tags": [],
+    "tag_hints": {
+      "force_tinyml": false,
+      "require_power_tag": false
+    },
+    "primary_group": "A",
+    "filter_policy": "TH_CPL_A",
+    "filter_bucket": "th_cpl_a",
+    "filter_reason": "matched_th_cpl_a",
+    "matched_venue": "ICML",
+    "matched_th_cpl_level": "A",
+    "matched_th_cpl_area": "Artificial Intelligence and Pattern Recognition",
+    "matched_venue_type": "conference",
+    "venue_match": {
+      "matched": true,
+      "raw": "ICML",
+      "normalized": "icml",
+      "normalized_candidates": [
+        "icml"
+      ],
+      "match": {
+        "area": "Artificial Intelligence and Pattern Recognition",
+        "level": "A",
+        "type": "conference",
+        "canonicalFull": "International Conference on Machine Learning",
+        "canonicalShort": "ICML"
+      }
+    },
+    "arxiv_match": {
+      "matched": true,
+      "arxiv_id": "2607.21561v1",
+      "matched_urls": [
+        "https://arxiv.org/abs/2607.21561v1",
+        "https://arxiv.org/pdf/2607.21561v1"
+      ]
+    },
+    "is_in_arxiv": true,
+    "category": "Embedded AI Applications",
+    "llm_tags": [],
+    "final_tags": [],
+    "provider_used": "heuristic_fallback",
+    "classification_model": "hunyuan-2.0-instruct-20251111",
+    "classification_raw_response": {
+      "error": "TokenHub request failed with status 402: {\"error\":{\"type\":\"gateway_error\",\"code\":\"401008\",\"message\":\"The free trial quota for the service has been exhausted and postpaid billing is not enabled, so the service cannot be accessed. Please go to Console \\u003e Online Inference Service to enable postpaid billing. See: https://console.cloud.tencent.com/tokenhub/inference\",\"message_zh\":\"服务免费体验额度已耗尽，且未开启后付费，无法正常访问。请前往控制台 \\u003e 在线推理服务开启后付费，查看链接：https://console.cloud.tencent.com/tokenhub/inference\",\"request_id\":\"66d7bac6-3da1-4023-8416-3d9abd5d039c\"}}"
     }
   },
   {
@@ -20635,6 +20877,122 @@
     }
   },
   {
+    "id": "a53b1a7317372d16448d65ea86fbe13d9aee19a1",
+    "source": "arxiv",
+    "title": "OrchNAS: Orchestrated Neural Architecture Search Service for Personalised Federated Edge Intelligence",
+    "abstract": "We propose OrchNAS, an energy-aware, personalised, federated edge intelligence framework that leverages a Neural Architecture Search Service to automatically design service-adaptive models for heterogeneous edge environments. The framework orchestrates the architecture search process on a server-side NAS service, enabling edge services to derive personalised architectures under device-level energy, computation, and memory constraints. We introduce an energy-aware global architecture search mechanism that learns a compact global representation across heterogeneous services. We develop an energy-efficient architecture selection mechanism that enables each service to derive a personalised subnet that satisfies its resource constraints via a progressive, greedy, energy-aware pruning strategy. We propose an energy-efficient personalised model optimisation scheme that updates service-adaptive parameters while preserving global representations, where a primal-dual optimisation mechanism enforces strict energy budgets during architecture adaptation. Experiments on real-world and benchmark datasets demonstrate the effectiveness of the proposed approach.",
+    "snippet": "We propose OrchNAS, an energy-aware, personalised, federated edge intelligence framework that leverages a Neural Architecture Search Service to automatically design service-adaptive models for heterog",
+    "authors": [
+      "Keya Patel",
+      "Sajib Mistry",
+      "Sheik Mohammad Mostakim Fattah",
+      "Aneesh Krishna"
+    ],
+    "venue": "",
+    "year": 2026,
+    "cited_by": 0,
+    "doi": "",
+    "arxiv_id": "2607.22805v1",
+    "urls": {
+      "arxiv": "https://arxiv.org/abs/2607.22805v1",
+      "pdf": "https://arxiv.org/pdf/2607.22805v1",
+      "paper": "https://arxiv.org/abs/2607.22805v1"
+    },
+    "scholar_url": "",
+    "pub_url": "https://arxiv.org/abs/2607.22805v1",
+    "eprint_url": "https://arxiv.org/pdf/2607.22805v1",
+    "container_type": "",
+    "query_useds": [],
+    "raw_group_hits": [
+      "B"
+    ],
+    "search_sets_raw": [
+      "B"
+    ],
+    "search_sets_final": [
+      "B"
+    ],
+    "post_filter": null,
+    "raw_payloads": [
+      {
+        "arxiv_id": "2607.22805v1",
+        "title": "OrchNAS: Orchestrated Neural Architecture Search Service for Personalised Federated Edge Intelligence",
+        "abstract": "We propose OrchNAS, an energy-aware, personalised, federated edge intelligence framework that leverages a Neural Architecture Search Service to automatically design service-adaptive models for heterogeneous edge environments. The framework orchestrates the architecture search process on a server-side NAS service, enabling edge services to derive personalised architectures under device-level energy, computation, and memory constraints. We introduce an energy-aware global architecture search mechanism that learns a compact global representation across heterogeneous services. We develop an energy-efficient architecture selection mechanism that enables each service to derive a personalised subnet that satisfies its resource constraints via a progressive, greedy, energy-aware pruning strategy. We propose an energy-efficient personalised model optimisation scheme that updates service-adaptive parameters while preserving global representations, where a primal-dual optimisation mechanism enforces strict energy budgets during architecture adaptation. Experiments on real-world and benchmark datasets demonstrate the effectiveness of the proposed approach.",
+        "authors": [
+          "Keya Patel",
+          "Sajib Mistry",
+          "Sheik Mohammad Mostakim Fattah",
+          "Aneesh Krishna"
+        ],
+        "year": 2026,
+        "month": 7,
+        "published": "2026-07-24T16:05:17Z",
+        "updated": "2026-07-24T16:05:17Z",
+        "urls": {
+          "arxiv": "https://arxiv.org/abs/2607.22805v1",
+          "pdf": "https://arxiv.org/pdf/2607.22805v1"
+        },
+        "arxiv_url": "https://arxiv.org/abs/2607.22805v1",
+        "pdf_url": "https://arxiv.org/pdf/2607.22805v1",
+        "eprint_url": "https://arxiv.org/pdf/2607.22805v1",
+        "pub_url": "https://arxiv.org/abs/2607.22805v1",
+        "snippet": "We propose OrchNAS, an energy-aware, personalised, federated edge intelligence framework that leverages a Neural Architecture Search Service to automatically design service-adaptive models for heterog",
+        "source": "arxiv",
+        "is_preprint_on_arxiv": true,
+        "preprint_source": "arXiv",
+        "journal_ref": "",
+        "doi": "",
+        "arxiv_comment": "",
+        "venue": "",
+        "raw_venue": "",
+        "venue_source": "",
+        "cited_by": 0
+      }
+    ],
+    "dedupe_key": "arxiv:2607 22805v1",
+    "seed_tags": [],
+    "tag_hints": {
+      "force_tinyml": false,
+      "require_power_tag": true
+    },
+    "primary_group": "B",
+    "filter_policy": "TH_CPL_AB_OR_ARXIV",
+    "filter_bucket": "arxiv",
+    "filter_reason": "matched_arxiv",
+    "matched_venue": "",
+    "matched_th_cpl_level": "",
+    "matched_th_cpl_area": "",
+    "matched_venue_type": "",
+    "venue_match": {
+      "matched": false,
+      "raw": "",
+      "normalized": "",
+      "normalized_candidates": [],
+      "match": null
+    },
+    "arxiv_match": {
+      "matched": true,
+      "arxiv_id": "2607.22805v1",
+      "matched_urls": [
+        "https://arxiv.org/abs/2607.22805v1",
+        "https://arxiv.org/pdf/2607.22805v1"
+      ]
+    },
+    "is_in_arxiv": true,
+    "category": "Efficient Model Design and Optimization",
+    "llm_tags": [
+      "LP"
+    ],
+    "final_tags": [
+      "LP"
+    ],
+    "provider_used": "heuristic_fallback",
+    "classification_model": "hunyuan-2.0-instruct-20251111",
+    "classification_raw_response": {
+      "error": "TokenHub request failed with status 402: {\"error\":{\"type\":\"gateway_error\",\"code\":\"401008\",\"message\":\"The free trial quota for the service has been exhausted and postpaid billing is not enabled, so the service cannot be accessed. Please go to Console \\u003e Online Inference Service to enable postpaid billing. See: https://console.cloud.tencent.com/tokenhub/inference\",\"message_zh\":\"服务免费体验额度已耗尽，且未开启后付费，无法正常访问。请前往控制台 \\u003e 在线推理服务开启后付费，查看链接：https://console.cloud.tencent.com/tokenhub/inference\",\"request_id\":\"a87b0713-5ea6-4dc3-8c40-f458ba6269e5\"}}"
+    }
+  },
+  {
     "id": "856c1351773ad744177caefb2d1e451c4e5a7385",
     "source": "arxiv",
     "title": "PaAno: Patch-Based Representation Learning for Time-Series Anomaly Detection",
@@ -21694,6 +22052,132 @@
     "classification_model": "hunyuan-2.0-instruct-20251111",
     "classification_raw_response": {
       "error": "TokenHub request failed with status 402: {\"error\":{\"message\":\"endpoint is inactive: FREE_QUOTA_EXHAUSTED\",\"code\":\"401008\",\"type\":\"gateway_error\",\"request_id\":\"3c963597-3f95-43a1-8774-c97226f83005\"}}\n"
+    }
+  },
+  {
+    "id": "5166321a3b7e11a21b03064cd80669e4b656dec5",
+    "source": "arxiv",
+    "title": "PointCHR: Point Cloud Analysis via Curvature-Aware Hyperbolic Rectification",
+    "abstract": "High-curvature regions in 3D point clouds encapsulate critical fine-grained geometric semantics yet exhibit a distinct long-tail sparsity in their spatial distribution. The inherent limitations of polynomial volume growth in Euclidean space frequently render these intricate geometric features challenging to adequately resolve within a uniform-scale feature space. Consequently, these regions are frequently overshadowed by smooth global features dominated by low-curvature regions, thereby limiting the discriminative capacity of the network. To address this issue, we propose PointCHR, a curvature-aware hyperbolic rectification (CHR) for point cloud analysis. Utilising the property of exponential volume expansion in the vicinity of hyperbolic manifolds, CHR presents a learnable curvature-guided radial rectification mechanism. By adaptively projecting high-curvature points towards boundary regions endowed with larger effective embedding capacities, PointCHR effectively mitigates the representation crowding problem inherent in Euclidean settings. Extensive experimentation has demonstrated that PointCHR significantly enhances the ability of backbone to capture fine-grained geometric details, achieving state-of-the-art performance across multiple benchmarks.",
+    "snippet": "High-curvature regions in 3D point clouds encapsulate critical fine-grained geometric semantics yet exhibit a distinct long-tail sparsity in their spatial distribution. The inherent limitations of pol",
+    "authors": [
+      "Xinxing Yu",
+      "Liying Yang",
+      "Hao Mo",
+      "Hui Ma",
+      "Fang Kai",
+      "Ajian Liu",
+      "Yanyan Liang"
+    ],
+    "venue": "ICML",
+    "year": 2026,
+    "cited_by": 0,
+    "doi": "",
+    "arxiv_id": "2607.24052v1",
+    "urls": {
+      "arxiv": "https://arxiv.org/abs/2607.24052v1",
+      "pdf": "https://arxiv.org/pdf/2607.24052v1",
+      "paper": "https://arxiv.org/abs/2607.24052v1"
+    },
+    "scholar_url": "",
+    "pub_url": "https://arxiv.org/abs/2607.24052v1",
+    "eprint_url": "https://arxiv.org/pdf/2607.24052v1",
+    "container_type": "",
+    "query_useds": [],
+    "raw_group_hits": [
+      "A"
+    ],
+    "search_sets_raw": [
+      "A"
+    ],
+    "search_sets_final": [
+      "A"
+    ],
+    "post_filter": null,
+    "raw_payloads": [
+      {
+        "arxiv_id": "2607.24052v1",
+        "title": "PointCHR: Point Cloud Analysis via Curvature-Aware Hyperbolic Rectification",
+        "abstract": "High-curvature regions in 3D point clouds encapsulate critical fine-grained geometric semantics yet exhibit a distinct long-tail sparsity in their spatial distribution. The inherent limitations of polynomial volume growth in Euclidean space frequently render these intricate geometric features challenging to adequately resolve within a uniform-scale feature space. Consequently, these regions are frequently overshadowed by smooth global features dominated by low-curvature regions, thereby limiting the discriminative capacity of the network. To address this issue, we propose PointCHR, a curvature-aware hyperbolic rectification (CHR) for point cloud analysis. Utilising the property of exponential volume expansion in the vicinity of hyperbolic manifolds, CHR presents a learnable curvature-guided radial rectification mechanism. By adaptively projecting high-curvature points towards boundary regions endowed with larger effective embedding capacities, PointCHR effectively mitigates the representation crowding problem inherent in Euclidean settings. Extensive experimentation has demonstrated that PointCHR significantly enhances the ability of backbone to capture fine-grained geometric details, achieving state-of-the-art performance across multiple benchmarks.",
+        "authors": [
+          "Xinxing Yu",
+          "Liying Yang",
+          "Hao Mo",
+          "Hui Ma",
+          "Fang Kai",
+          "Ajian Liu",
+          "Yanyan Liang"
+        ],
+        "year": 2026,
+        "month": 7,
+        "published": "2026-07-27T06:49:46Z",
+        "updated": "2026-07-27T06:49:46Z",
+        "urls": {
+          "arxiv": "https://arxiv.org/abs/2607.24052v1",
+          "pdf": "https://arxiv.org/pdf/2607.24052v1"
+        },
+        "arxiv_url": "https://arxiv.org/abs/2607.24052v1",
+        "pdf_url": "https://arxiv.org/pdf/2607.24052v1",
+        "eprint_url": "https://arxiv.org/pdf/2607.24052v1",
+        "pub_url": "https://arxiv.org/abs/2607.24052v1",
+        "snippet": "High-curvature regions in 3D point clouds encapsulate critical fine-grained geometric semantics yet exhibit a distinct long-tail sparsity in their spatial distribution. The inherent limitations of pol",
+        "source": "arxiv",
+        "is_preprint_on_arxiv": true,
+        "preprint_source": "arXiv",
+        "journal_ref": "Proceedings of the 43 rd International Conference on Machine Learning,2026",
+        "doi": "",
+        "arxiv_comment": "",
+        "venue": "ICML",
+        "raw_venue": "Proceedings of the 43 rd International Conference on Machine Learning,2026",
+        "venue_source": "arxiv_journal_ref",
+        "cited_by": 0
+      }
+    ],
+    "dedupe_key": "arxiv:2607 24052v1",
+    "seed_tags": [],
+    "tag_hints": {
+      "force_tinyml": false,
+      "require_power_tag": false
+    },
+    "primary_group": "A",
+    "filter_policy": "TH_CPL_A",
+    "filter_bucket": "th_cpl_a",
+    "filter_reason": "matched_th_cpl_a",
+    "matched_venue": "ICML",
+    "matched_th_cpl_level": "A",
+    "matched_th_cpl_area": "Artificial Intelligence and Pattern Recognition",
+    "matched_venue_type": "conference",
+    "venue_match": {
+      "matched": true,
+      "raw": "ICML",
+      "normalized": "icml",
+      "normalized_candidates": [
+        "icml"
+      ],
+      "match": {
+        "area": "Artificial Intelligence and Pattern Recognition",
+        "level": "A",
+        "type": "conference",
+        "canonicalFull": "International Conference on Machine Learning",
+        "canonicalShort": "ICML"
+      }
+    },
+    "arxiv_match": {
+      "matched": true,
+      "arxiv_id": "2607.24052v1",
+      "matched_urls": [
+        "https://arxiv.org/abs/2607.24052v1",
+        "https://arxiv.org/pdf/2607.24052v1"
+      ]
+    },
+    "is_in_arxiv": true,
+    "category": "Efficient Model Design and Optimization",
+    "llm_tags": [],
+    "final_tags": [],
+    "provider_used": "heuristic_fallback",
+    "classification_model": "hunyuan-2.0-instruct-20251111",
+    "classification_raw_response": {
+      "error": "TokenHub request failed with status 402: {\"error\":{\"type\":\"gateway_error\",\"code\":\"401008\",\"message\":\"The free trial quota for the service has been exhausted and postpaid billing is not enabled, so the service cannot be accessed. Please go to Console \\u003e Online Inference Service to enable postpaid billing. See: https://console.cloud.tencent.com/tokenhub/inference\",\"message_zh\":\"服务免费体验额度已耗尽，且未开启后付费，无法正常访问。请前往控制台 \\u003e 在线推理服务开启后付费，查看链接：https://console.cloud.tencent.com/tokenhub/inference\",\"request_id\":\"92a1748f-f94b-496f-b21a-018af81f0611\"}}"
     }
   },
   {
@@ -25361,6 +25845,132 @@
     }
   },
   {
+    "id": "9217cd1fbd89277167b4ba94fe017428e32012e4",
+    "source": "arxiv",
+    "title": "RT-SHCUA: Real-Time Self-Hosted Computer-Use Agent for UAV Control",
+    "abstract": "Natural-language control offers a promising interface for unmanned aerial vehicles (UAVs), but directly applying self-hosted computer-use agents (SHCUAs) to UAV control introduces a structural mismatch. SHCUAs are designed for interactive host-side tool use, where delayed agent iterations are often acceptable. UAV control, however, is coupled with continuously changing physical states, strict timing constraints, safety risks, and security accountability. A stale, unauthorized, or tampered agent decision may therefore lead to unsafe or untraceable vehicle behavior.\n  This paper proposes a real-time and security-oriented restructuring of SHCUA-based UAV control. Instead of allowing an SHCUA to directly issue flight commands, we transform its outputs into contract-bound UAV skill invocations with explicit timing, state, authority, fallback, and evidence semantics. Based on this abstraction, we design an architecture that separates semantic reasoning from onboard execution and security/safety enforcement. Slow cloud or edge reasoning is used for mission understanding, while onboard components validate and dispatch only timely, authorized, and state-consistent skills. Security-critical enforcement points can be protected by TEE-style or microcontroller isolation mechanisms without moving the full language agent or high-frequency flight-control loop into trusted components. Prototype evaluation shows that RT-SHCUA maintains bounded task-level responsiveness while supporting degraded handling, trusted admission, and auditable evidence preservation for SHCUA-mediated UAV actions.",
+    "snippet": "Natural-language control offers a promising interface for unmanned aerial vehicles (UAVs), but directly applying self-hosted computer-use agents (SHCUAs) to UAV control introduces a structural mismatc",
+    "authors": [
+      "Di Lu",
+      "Bo Zhang",
+      "Xiyuan Li",
+      "Yongzhi Liao",
+      "Xuewen Dong",
+      "Yulong Shen",
+      "Zhiquan Liu",
+      "Jianfeng Ma"
+    ],
+    "venue": "",
+    "year": 2026,
+    "cited_by": 0,
+    "doi": "",
+    "arxiv_id": "2607.17951v1",
+    "urls": {
+      "arxiv": "https://arxiv.org/abs/2607.17951v1",
+      "pdf": "https://arxiv.org/pdf/2607.17951v1",
+      "paper": "https://arxiv.org/abs/2607.17951v1"
+    },
+    "scholar_url": "",
+    "pub_url": "https://arxiv.org/abs/2607.17951v1",
+    "eprint_url": "https://arxiv.org/pdf/2607.17951v1",
+    "container_type": "",
+    "query_useds": [],
+    "raw_group_hits": [
+      "C"
+    ],
+    "search_sets_raw": [
+      "C"
+    ],
+    "search_sets_final": [
+      "C"
+    ],
+    "post_filter": null,
+    "raw_payloads": [
+      {
+        "arxiv_id": "2607.17951v1",
+        "title": "RT-SHCUA: Real-Time Self-Hosted Computer-Use Agent for UAV Control",
+        "abstract": "Natural-language control offers a promising interface for unmanned aerial vehicles (UAVs), but directly applying self-hosted computer-use agents (SHCUAs) to UAV control introduces a structural mismatch. SHCUAs are designed for interactive host-side tool use, where delayed agent iterations are often acceptable. UAV control, however, is coupled with continuously changing physical states, strict timing constraints, safety risks, and security accountability. A stale, unauthorized, or tampered agent decision may therefore lead to unsafe or untraceable vehicle behavior.\n  This paper proposes a real-time and security-oriented restructuring of SHCUA-based UAV control. Instead of allowing an SHCUA to directly issue flight commands, we transform its outputs into contract-bound UAV skill invocations with explicit timing, state, authority, fallback, and evidence semantics. Based on this abstraction, we design an architecture that separates semantic reasoning from onboard execution and security/safety enforcement. Slow cloud or edge reasoning is used for mission understanding, while onboard components validate and dispatch only timely, authorized, and state-consistent skills. Security-critical enforcement points can be protected by TEE-style or microcontroller isolation mechanisms without moving the full language agent or high-frequency flight-control loop into trusted components. Prototype evaluation shows that RT-SHCUA maintains bounded task-level responsiveness while supporting degraded handling, trusted admission, and auditable evidence preservation for SHCUA-mediated UAV actions.",
+        "authors": [
+          "Di Lu",
+          "Bo Zhang",
+          "Xiyuan Li",
+          "Yongzhi Liao",
+          "Xuewen Dong",
+          "Yulong Shen",
+          "Zhiquan Liu",
+          "Jianfeng Ma"
+        ],
+        "year": 2026,
+        "month": 7,
+        "published": "2026-07-20T13:52:24Z",
+        "updated": "2026-07-20T13:52:24Z",
+        "urls": {
+          "arxiv": "https://arxiv.org/abs/2607.17951v1",
+          "pdf": "https://arxiv.org/pdf/2607.17951v1"
+        },
+        "arxiv_url": "https://arxiv.org/abs/2607.17951v1",
+        "pdf_url": "https://arxiv.org/pdf/2607.17951v1",
+        "eprint_url": "https://arxiv.org/pdf/2607.17951v1",
+        "pub_url": "https://arxiv.org/abs/2607.17951v1",
+        "snippet": "Natural-language control offers a promising interface for unmanned aerial vehicles (UAVs), but directly applying self-hosted computer-use agents (SHCUAs) to UAV control introduces a structural mismatc",
+        "source": "arxiv",
+        "is_preprint_on_arxiv": true,
+        "preprint_source": "arXiv",
+        "journal_ref": "",
+        "doi": "",
+        "arxiv_comment": "",
+        "venue": "",
+        "raw_venue": "",
+        "venue_source": "",
+        "cited_by": 0
+      }
+    ],
+    "dedupe_key": "arxiv:2607 17951v1",
+    "seed_tags": [
+      "TinyML"
+    ],
+    "tag_hints": {
+      "force_tinyml": true,
+      "require_power_tag": false
+    },
+    "primary_group": "C",
+    "filter_policy": "TH_CPL_AB_OR_ARXIV",
+    "filter_bucket": "arxiv",
+    "filter_reason": "matched_arxiv",
+    "matched_venue": "",
+    "matched_th_cpl_level": "",
+    "matched_th_cpl_area": "",
+    "matched_venue_type": "",
+    "venue_match": {
+      "matched": false,
+      "raw": "",
+      "normalized": "",
+      "normalized_candidates": [],
+      "match": null
+    },
+    "arxiv_match": {
+      "matched": true,
+      "arxiv_id": "2607.17951v1",
+      "matched_urls": [
+        "https://arxiv.org/abs/2607.17951v1",
+        "https://arxiv.org/pdf/2607.17951v1"
+      ]
+    },
+    "is_in_arxiv": true,
+    "category": "Embedded AI Applications",
+    "llm_tags": [
+      "TinyML"
+    ],
+    "final_tags": [
+      "TinyML"
+    ],
+    "provider_used": "heuristic_fallback",
+    "classification_model": "hunyuan-2.0-instruct-20251111",
+    "classification_raw_response": {
+      "error": "TokenHub request failed with status 402: {\"error\":{\"type\":\"gateway_error\",\"code\":\"401008\",\"message\":\"The free trial quota for the service has been exhausted and postpaid billing is not enabled, so the service cannot be accessed. Please go to Console \\u003e Online Inference Service to enable postpaid billing. See: https://console.cloud.tencent.com/tokenhub/inference\",\"message_zh\":\"服务免费体验额度已耗尽，且未开启后付费，无法正常访问。请前往控制台 \\u003e 在线推理服务开启后付费，查看链接：https://console.cloud.tencent.com/tokenhub/inference\",\"request_id\":\"9aab4a13-7e86-4b5d-990b-1f4241dfd2c0\"}}"
+    }
+  },
+  {
     "id": "397e24d42aacbad81e2197604083fce03daadf25",
     "source": "arxiv",
     "title": "SABER-Math: Automated Benchmark for Information Retrieval Evaluation in Mathematics",
@@ -26938,6 +27548,126 @@
     "classification_model": "hunyuan-2.0-instruct-20251111",
     "classification_raw_response": {
       "error": "TokenHub request failed with status 402: {\"error\":{\"message\":\"endpoint is inactive: FREE_QUOTA_EXHAUSTED\",\"code\":\"401008\",\"type\":\"gateway_error\",\"request_id\":\"72a23e97-edde-4e41-a81d-24596a03faf1\"}}\n"
+    }
+  },
+  {
+    "id": "bf04cc45cbba9c7b3aa125a6e340922de354d585",
+    "source": "arxiv",
+    "title": "Similarity Is Not Logic: Factored Inference for Dual-Encoder Vision-Language Models",
+    "abstract": "Dual-encoder vision-language models (VLMs) expose a similarity interface that enables zero-shot retrieval but fails compositional constraints: queries like \"umbrella and no person\" retrieve images containing both, even when concept detection is reliable. We trace this to an interface-level Bag-of-Concepts effect, where similarity scores approximate mean pooling of concept evidence regardless of operators. Although operator-dependent signals exist in text embeddings, they are too weak or misaligned to affect rankings. Fine-tuning does not reliably resolve this failure because the dominant bottleneck is how similarity aggregates evidence rather than what encoders represent. We propose factored inference, which separates evidence extraction from constraint execution, and introduce LCSE (Logic-Constrained Score Editing), a training-free method that executes constraints externally using concept scores from frozen encoders. We also introduce FACTOR-Bench, where LCSE achieves 85.5% accuracy versus 73.2% for the best fine-tuned baseline, 90.7% when applied to SigLIP 2, and improves NegBench COCO MCQ accuracy from 27.2% to 65.2% while preserving retrieval performance.",
+    "snippet": "Dual-encoder vision-language models (VLMs) expose a similarity interface that enables zero-shot retrieval but fails compositional constraints: queries like \"umbrella and no person\" retrieve images con",
+    "authors": [
+      "Sultan Alshehri",
+      "Zhantao Yang",
+      "Han Zhang",
+      "Marios Savvides"
+    ],
+    "venue": "ICML",
+    "year": 2026,
+    "cited_by": 0,
+    "doi": "",
+    "arxiv_id": "2607.23052v1",
+    "urls": {
+      "arxiv": "https://arxiv.org/abs/2607.23052v1",
+      "pdf": "https://arxiv.org/pdf/2607.23052v1",
+      "paper": "https://arxiv.org/abs/2607.23052v1"
+    },
+    "scholar_url": "",
+    "pub_url": "https://arxiv.org/abs/2607.23052v1",
+    "eprint_url": "https://arxiv.org/pdf/2607.23052v1",
+    "container_type": "",
+    "query_useds": [],
+    "raw_group_hits": [
+      "A"
+    ],
+    "search_sets_raw": [
+      "A"
+    ],
+    "search_sets_final": [
+      "A"
+    ],
+    "post_filter": null,
+    "raw_payloads": [
+      {
+        "arxiv_id": "2607.23052v1",
+        "title": "Similarity Is Not Logic: Factored Inference for Dual-Encoder Vision-Language Models",
+        "abstract": "Dual-encoder vision-language models (VLMs) expose a similarity interface that enables zero-shot retrieval but fails compositional constraints: queries like \"umbrella and no person\" retrieve images containing both, even when concept detection is reliable. We trace this to an interface-level Bag-of-Concepts effect, where similarity scores approximate mean pooling of concept evidence regardless of operators. Although operator-dependent signals exist in text embeddings, they are too weak or misaligned to affect rankings. Fine-tuning does not reliably resolve this failure because the dominant bottleneck is how similarity aggregates evidence rather than what encoders represent. We propose factored inference, which separates evidence extraction from constraint execution, and introduce LCSE (Logic-Constrained Score Editing), a training-free method that executes constraints externally using concept scores from frozen encoders. We also introduce FACTOR-Bench, where LCSE achieves 85.5% accuracy versus 73.2% for the best fine-tuned baseline, 90.7% when applied to SigLIP 2, and improves NegBench COCO MCQ accuracy from 27.2% to 65.2% while preserving retrieval performance.",
+        "authors": [
+          "Sultan Alshehri",
+          "Zhantao Yang",
+          "Han Zhang",
+          "Marios Savvides"
+        ],
+        "year": 2026,
+        "month": 7,
+        "published": "2026-07-25T05:39:51Z",
+        "updated": "2026-07-25T05:39:51Z",
+        "urls": {
+          "arxiv": "https://arxiv.org/abs/2607.23052v1",
+          "pdf": "https://arxiv.org/pdf/2607.23052v1"
+        },
+        "arxiv_url": "https://arxiv.org/abs/2607.23052v1",
+        "pdf_url": "https://arxiv.org/pdf/2607.23052v1",
+        "eprint_url": "https://arxiv.org/pdf/2607.23052v1",
+        "pub_url": "https://arxiv.org/abs/2607.23052v1",
+        "snippet": "Dual-encoder vision-language models (VLMs) expose a similarity interface that enables zero-shot retrieval but fails compositional constraints: queries like \"umbrella and no person\" retrieve images con",
+        "source": "arxiv",
+        "is_preprint_on_arxiv": true,
+        "preprint_source": "arXiv",
+        "journal_ref": "",
+        "doi": "",
+        "arxiv_comment": "Accepted at ICML 2026. 18 pages, 8 figures. Project page: https://sultanmo.github.io/factored-vlm Code and benchmark: https://github.com/SultanMo/factored-vlm",
+        "venue": "ICML",
+        "raw_venue": "Accepted at ICML 2026. 18 pages, 8 figures. Project page: https://sultanmo.github.io/factored-vlm Code and benchmark: https://github.com/SultanMo/factored-vlm",
+        "venue_source": "arxiv_comment",
+        "cited_by": 0
+      }
+    ],
+    "dedupe_key": "arxiv:2607 23052v1",
+    "seed_tags": [],
+    "tag_hints": {
+      "force_tinyml": false,
+      "require_power_tag": false
+    },
+    "primary_group": "A",
+    "filter_policy": "TH_CPL_A",
+    "filter_bucket": "th_cpl_a",
+    "filter_reason": "matched_th_cpl_a",
+    "matched_venue": "ICML",
+    "matched_th_cpl_level": "A",
+    "matched_th_cpl_area": "Artificial Intelligence and Pattern Recognition",
+    "matched_venue_type": "conference",
+    "venue_match": {
+      "matched": true,
+      "raw": "ICML",
+      "normalized": "icml",
+      "normalized_candidates": [
+        "icml"
+      ],
+      "match": {
+        "area": "Artificial Intelligence and Pattern Recognition",
+        "level": "A",
+        "type": "conference",
+        "canonicalFull": "International Conference on Machine Learning",
+        "canonicalShort": "ICML"
+      }
+    },
+    "arxiv_match": {
+      "matched": true,
+      "arxiv_id": "2607.23052v1",
+      "matched_urls": [
+        "https://arxiv.org/abs/2607.23052v1",
+        "https://arxiv.org/pdf/2607.23052v1"
+      ]
+    },
+    "is_in_arxiv": true,
+    "category": "Efficient Model Design and Optimization",
+    "llm_tags": [],
+    "final_tags": [],
+    "provider_used": "heuristic_fallback",
+    "classification_model": "hunyuan-2.0-instruct-20251111",
+    "classification_raw_response": {
+      "error": "TokenHub request failed with status 402: {\"error\":{\"type\":\"gateway_error\",\"code\":\"401008\",\"message\":\"The free trial quota for the service has been exhausted and postpaid billing is not enabled, so the service cannot be accessed. Please go to Console \\u003e Online Inference Service to enable postpaid billing. See: https://console.cloud.tencent.com/tokenhub/inference\",\"message_zh\":\"服务免费体验额度已耗尽，且未开启后付费，无法正常访问。请前往控制台 \\u003e 在线推理服务开启后付费，查看链接：https://console.cloud.tencent.com/tokenhub/inference\",\"request_id\":\"03e7321d-713c-4580-a7da-cd9b43e8cf2a\"}}"
     }
   },
   {

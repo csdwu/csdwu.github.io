@@ -804,6 +804,17 @@
   abstract = {Convolutional neural networks (CNNs) have demonstrated encouraging results in image classification tasks. However, the prohibitive computational cost of CNNs hinders the deployment of CNNs onto resource-constrained embedded devices. To address this issue, we propose EdgeCompress, a comprehensive compression framework to reduce the computational overhead of CNNs. In EdgeCompress, we first introduce dynamic image cropping (DIC), where we design a lightweight foreground predictor to accurately crop the most informative foreground object of input images for inference, which avoids redundant computation on background regions. Subsequently, we present compound shrinking (CS) to collaboratively compress the three dimensions (depth, width, and resolution) of CNNs according to their contribution to accuracy and model computation. DIC and CS together constitute a multidimensional CNN compression framework, which is able to comprehensively reduce the computational redundancy in both input images and neural network architectures, thereby improving the inference efficiency of CNNs. Further, we present a dynamic inference framework to efficiently process input images with different recognition difficulties, where we cascade multiple models with different complexities from our compression framework and dynamically adopt different models for different input images, which further compresses the computational redundancy and improves the inference efficiency of CNNs, facilitating the deployment of advanced CNNs onto embedded hardware. Experiments on ImageNet-1K demonstrate that EdgeCompress reduces the computation of ResNet-50 by 48.8% while improving the top-1 accuracy by 0.8%. Meanwhile, we improve the accuracy by 4.1% with similar computation compared to HRank, the state-of-the-art compression framework. The source code and models are available at https://github.com/ntuliuteam/edge-compress}
 }
 
+@article{wang2026-efficient-clustering-with-provable-42e4d96a,
+  author = {Longshaokan Wang and Wai Tsang Keung and Punit Ghodasara and Roman Wang and Ali Dashti and Francesc Moreno-Noguer},
+  title = {Efficient Clustering with Provable Guardrails for LLM Inference at Scale},
+  year = {2026},
+  journal = {ICML},
+  eprint = {2607.19704v1},
+  archivePrefix = {arXiv},
+  url = {https://arxiv.org/abs/2607.19704v1},
+  abstract = {Scaling LLM-based applications to millions of users is bottlenecked by the inference cost and latency of modern foundation models. A natural fix is to cluster the inputs and call the LLM only on cluster representatives, letting other members inherit the output -- but this is only safe if each member is measurably close to its representative. Existing clustering methods do not offer such per-sample quality control at scale: none jointly guarantee a minimal within-cluster similarity, exact matching of categorical attributes, and scalability to tens of millions of samples. We propose a two-stage algorithm that generates initial clusters with Mini-batch K-Means, then greedily selects representatives within each initial cluster -- a step equivalent to the Johnson-Chvatal heuristic for Set Cover over alpha-balls in embedding space. The algorithm enforces the similarity and attribute guardrails exactly by construction, and runs in $O(nd + n^2 d/K)$ time and $O(nd + n^2/K^2)$ memory for $n$ samples, feature dimension $d$, and $K$ initial clusters -- linear in $n$ when $K$ grows proportionally with $n$. We provide benchmarks against common clustering methods on internal and public datasets: our method not only delivers per-sample guardrails but also runs 10-1000x faster and scales to data sizes where most standard methods become intractable. Deployed on 38 million customers for a persona-based recommender, the clustering method cut downstream cost and latency by 50-fold while preserving personalization and unblocked the production launch.}
+}
+
 @article{kolachalam2026-efficient-perception-in-automotive-f9417412,
   author = {Manish Kolachalam and Rani Malhotra},
   title = {Efficient Perception in Automotive Detection and Tracking Using Neuromorphic Computing},
@@ -1194,6 +1205,17 @@
   archivePrefix = {arXiv},
   url = {https://arxiv.org/abs/2605.04502v1},
   abstract = {Physics-Informed Neural Networks (PINNs) often struggle to train reliably on stiff and oscillatory dynamical systems due to poor optimization conditioning. While prior work has emphasized representational remedies such as spectral parameterizations, the optimization implications of initial-condition (IC) embeddings in adaptive spectral PINNs have not been well characterized. In this work, we show that the choice of IC gating function induces explicit time-dependent gradient scaling, which interacts with spectral representations during training. Using a nonlinear stiff spring-pendulum ODE as a controlled benchmark, we compare exponential and linear IC gates in combination with fixed and adaptive Fourier spectral trunks. We observe stiffness-dependent changes in relative dominance for adaptive PINNs: at moderate stiffness ($k=20$), exponential gating often yields lower error but exhibits heterogeneous behavior across random seeds, whereas at higher stiffness ($k=60$), linear gating becomes preferable, with additional reversals observed at larger $k$. These trends hold for both relative $L^2$ error and maximum pointwise error and are confirmed by paired Wilcoxon signed-rank tests with Holm correction. Overall, our results demonstrate that IC embeddings are not a neutral design choice in PINNs: the induced gradient scaling materially shapes optimization conditioning in stiff regimes, with distinct sensitivity patterns in baseline and adaptive spectral models.}
+}
+
+@article{feller2026-graph-learning-on-ensembles-dd048fe9,
+  author = {Aaron Feller and Kris Deibler and Maxim Secor},
+  title = {Graph Learning on Ensembles of Cyclic Peptides: An Investigation of Molecular Ensemble Modeling},
+  year = {2026},
+  journal = {ICML},
+  eprint = {2607.21561v1},
+  archivePrefix = {arXiv},
+  url = {https://arxiv.org/abs/2607.21561v1},
+  abstract = {Molecular property prediction from structure often uses a single representative conformation, even though many molecules exist as conformational ensembles in solution. We introduce EnsembleEGNN, a molecular ensemble foundation model that encodes an ensemble by first encoding each conformer with shared Equivariant Graph Neural Network (EGNN) layers, then pooling the resulting conformer representations with a Set Attention Block. We pretrain the model on CREMP, a cyclic peptide ensemble dataset, using a multi-task self-supervised objective combining masked token recovery, noisy-coordinate reconstruction, and pairwise distance reconstruction. On the CREMP-CycPeptMPDB dataset, training EnsembleEGNN from scratch fails entirely ($R^2=0.005$). However, the pretrained model reaches $R^2=0.477$ and Pearson $r=0.699$, outperforming the sequence-only BERT baseline ($R^2=0.439$, Pearson $r=0.667$). When EnsembleEGNN is co-trained end-to-end with the BERT sequence encoder, the hybrid model improves further to $R^2=0.538$ and Pearson $r=0.737$. These results demonstrate that encoding conformational ensembles into a single thermodynamically informed embedding improves cyclic-peptide property prediction.}
 }
 
 @article{dong2026-greedy-information-projection-for-ced41cbd,
@@ -1843,6 +1865,16 @@
   abstract = {Deep neural networks (DNNs) often produce overconfident predictions on out-of-distribution (OOD) inputs, undermining their reliability in open-world environments. Singularities in semi-discrete optimal transport (OT) mark regions of semantic ambiguity, where classifiers are particularly prone to unwarranted high-confidence predictions. Motivated by this observation, we propose a principled framework to mitigate OOD overconfidence by leveraging the geometry of OT-induced singular boundaries. Specifically, we formulate an OT problem between a continuous base distribution and the latent embeddings of training data, and identify the resulting singular boundaries. By sampling near these boundaries, we construct a class of OOD inputs, termed optimal transport-induced OOD samples (OTIS), which are geometrically grounded and inherently semantically ambiguous. During training, a confidence suppression loss is applied to OTIS to guide the model toward more calibrated predictions in structurally uncertain regions. Extensive experiments show that our method significantly alleviates OOD overconfidence and outperforms state-of-the-art methods.}
 }
 
+@article{patel2026-orchnas-orchestrated-neural-architecture-e702bc16,
+  author = {Keya Patel and Sajib Mistry and Sheik Mohammad Mostakim Fattah and Aneesh Krishna},
+  title = {OrchNAS: Orchestrated Neural Architecture Search Service for Personalised Federated Edge Intelligence},
+  year = {2026},
+  eprint = {2607.22805v1},
+  archivePrefix = {arXiv},
+  url = {https://arxiv.org/abs/2607.22805v1},
+  abstract = {We propose OrchNAS, an energy-aware, personalised, federated edge intelligence framework that leverages a Neural Architecture Search Service to automatically design service-adaptive models for heterogeneous edge environments. The framework orchestrates the architecture search process on a server-side NAS service, enabling edge services to derive personalised architectures under device-level energy, computation, and memory constraints. We introduce an energy-aware global architecture search mechanism that learns a compact global representation across heterogeneous services. We develop an energy-efficient architecture selection mechanism that enables each service to derive a personalised subnet that satisfies its resource constraints via a progressive, greedy, energy-aware pruning strategy. We propose an energy-efficient personalised model optimisation scheme that updates service-adaptive parameters while preserving global representations, where a primal-dual optimisation mechanism enforces strict energy budgets during architecture adaptation. Experiments on real-world and benchmark datasets demonstrate the effectiveness of the proposed approach.}
+}
+
 @article{park2026-paano-patch-based-representation-accc121a,
   author = {Jinju Park and Seokho Kang},
   title = {PaAno: Patch-Based Representation Learning for Time-Series Anomaly Detection},
@@ -1937,6 +1969,17 @@
   archivePrefix = {arXiv},
   url = {https://arxiv.org/abs/2602.20496v1},
   abstract = {While iterative stereo matching achieves high accuracy, its dependence on Recurrent Neural Networks (RNN) hinders edge deployment, a challenge underexplored in existing researches. We analyze iterative refinement and reveal that disparity updates are spatially sparse and temporally redundant. First, we introduce a progressive iteration pruning strategy that suppresses redundant update steps, effectively collapsing the recursive computation into a near-single-pass inference. Second, we propose a collaborative monocular prior transfer framework that implicitly embeds depth priors without requiring a dedicated monocular encoder, thereby eliminating its associated computational burden. Third, we develop FlashGRU, a hardware-aware RNN operator leveraging structured sparsity and I/O-conscious design, achieving a 7.28$\\times$ speedup, 76.6\\% memory peak reduction and 80.9\\% global memory requests reduction over natvie ConvGRUs under 2K resolution. Our PipStereo enables real-time, high-fidelity stereo matching on edge hardware: it processes 320$\\times$640 frames in just 75ms on an NVIDIA Jetson Orin NX (FP16) and 19ms on RTX 4090, matching the accuracy of large iterative based models, and our generalization ability and accuracy far exceeds that of existing real-time methods. Our embedded AI projects will be updated at: https://github.com/XPENG-Aridge-AI.}
+}
+
+@article{yu2026-pointchr-point-cloud-analysis-69119270,
+  author = {Xinxing Yu and Liying Yang and Hao Mo and Hui Ma and Fang Kai and Ajian Liu and Yanyan Liang},
+  title = {PointCHR: Point Cloud Analysis via Curvature-Aware Hyperbolic Rectification},
+  year = {2026},
+  journal = {ICML},
+  eprint = {2607.24052v1},
+  archivePrefix = {arXiv},
+  url = {https://arxiv.org/abs/2607.24052v1},
+  abstract = {High-curvature regions in 3D point clouds encapsulate critical fine-grained geometric semantics yet exhibit a distinct long-tail sparsity in their spatial distribution. The inherent limitations of polynomial volume growth in Euclidean space frequently render these intricate geometric features challenging to adequately resolve within a uniform-scale feature space. Consequently, these regions are frequently overshadowed by smooth global features dominated by low-curvature regions, thereby limiting the discriminative capacity of the network. To address this issue, we propose PointCHR, a curvature-aware hyperbolic rectification (CHR) for point cloud analysis. Utilising the property of exponential volume expansion in the vicinity of hyperbolic manifolds, CHR presents a learnable curvature-guided radial rectification mechanism. By adaptively projecting high-curvature points towards boundary regions endowed with larger effective embedding capacities, PointCHR effectively mitigates the representation crowding problem inherent in Euclidean settings. Extensive experimentation has demonstrated that PointCHR significantly enhances the ability of backbone to capture fine-grained geometric details, achieving state-of-the-art performance across multiple benchmarks.}
 }
 
 @article{tran2026-poison-with-style-a-6b279cf1,
@@ -2271,6 +2314,16 @@
   abstract = {Vector quantization is a fundamental tool for compressing high-dimensional embeddings, yet existing multi-codebook methods rely on static codebooks that limit expressiveness under heterogeneous data geometry. While recent dynamic quantizers like QINCo adapt codebooks to individual inputs and improve expressiveness, their strict sequential dependencies create decoding bottlenecks. We propose Residual Quantization via Mixture of Experts (RQ-MoE), a framework combining a two-level MoE with dual-stream quantization to enable input-dependent codebook adaptation for efficient vector quantization. RQ-MoE enables dynamic codebook construction and decouples instruction from quantization, facilitating parallel decoding. Theoretically, we show that standard Residual Quantization and QINCo can be recovered as constrained special cases of RQ-MoE, and derive a guideline for setting expert dimensionality in RQ-MoE. Extensive experiments show that RQ-MoE achieves state-of-the-art or on-par performance in reconstruction and retrieval, while providing 6x-14x faster decoding than prior vector quantization methods. The implementation is available at https://github.com/KDEGroup/RQ-MoE.}
 }
 
+@article{lu2026-rt-shcua-real-time-4c9d9dfa,
+  author = {Di Lu and Bo Zhang and Xiyuan Li and Yongzhi Liao and Xuewen Dong and Yulong Shen and Zhiquan Liu and Jianfeng Ma},
+  title = {RT-SHCUA: Real-Time Self-Hosted Computer-Use Agent for UAV Control},
+  year = {2026},
+  eprint = {2607.17951v1},
+  archivePrefix = {arXiv},
+  url = {https://arxiv.org/abs/2607.17951v1},
+  abstract = {Natural-language control offers a promising interface for unmanned aerial vehicles (UAVs), but directly applying self-hosted computer-use agents (SHCUAs) to UAV control introduces a structural mismatch. SHCUAs are designed for interactive host-side tool use, where delayed agent iterations are often acceptable. UAV control, however, is coupled with continuously changing physical states, strict timing constraints, safety risks, and security accountability. A stale, unauthorized, or tampered agent decision may therefore lead to unsafe or untraceable vehicle behavior. This paper proposes a real-time and security-oriented restructuring of SHCUA-based UAV control. Instead of allowing an SHCUA to directly issue flight commands, we transform its outputs into contract-bound UAV skill invocations with explicit timing, state, authority, fallback, and evidence semantics. Based on this abstraction, we design an architecture that separates semantic reasoning from onboard execution and security/safety enforcement. Slow cloud or edge reasoning is used for mission understanding, while onboard components validate and dispatch only timely, authorized, and state-consistent skills. Security-critical enforcement points can be protected by TEE-style or microcontroller isolation mechanisms without moving the full language agent or high-frequency flight-control loop into trusted components. Prototype evaluation shows that RT-SHCUA maintains bounded task-level responsiveness while supporting degraded handling, trusted admission, and auditable evidence preservation for SHCUA-mediated UAV actions.}
+}
+
 @article{georgiev2026-saber-math-automated-benchmark-6dba0aad,
   author = {Nikolay Georgiev and Maria Drencheva and Kseniia Ibragimova and Ivo Petrov and Dimitar I. Dimitrov and Martin Vechev},
   title = {SABER-Math: Automated Benchmark for Information Retrieval Evaluation in Mathematics},
@@ -2411,6 +2464,17 @@
   archivePrefix = {arXiv},
   url = {https://arxiv.org/abs/2605.26509v1},
   abstract = {Gaussian processes (GPs) provide a principled Bayesian framework for uncertainty estimation, but their computational complexity severely limits scalability to large datasets. We propose SIKA-GP, which accelerates GP inference using sparse inducing kernel approximations based on a dyadic ordered template basis, incurring only $\{O\}(\\log M)$ complexity dependence on the number of inducing points. Our approach constructs compact and expressive kernel representations from sparsely activated bases, enabling efficient tensorized GPU computation and seamless integration with modern large-scale models. SIKA-GP can be naturally embedded into Bayesian neural networks (BNNs) with sparse activations, yielding significant speedups in both training and inference without sacrificing predictive performance. The method naturally extends to deep feature learning, addressing the scalability challenges introduced by deep architectures and high-dimensional feature representations. Empirical results on vision and transformer-based language benchmarks demonstrate that our approach consistently delivers fast and accurate GP models, providing a principled path toward scalable kernel learning.}
+}
+
+@article{alshehri2026-similarity-is-not-logic-1de0d6ad,
+  author = {Sultan Alshehri and Zhantao Yang and Han Zhang and Marios Savvides},
+  title = {Similarity Is Not Logic: Factored Inference for Dual-Encoder Vision-Language Models},
+  year = {2026},
+  journal = {ICML},
+  eprint = {2607.23052v1},
+  archivePrefix = {arXiv},
+  url = {https://arxiv.org/abs/2607.23052v1},
+  abstract = {Dual-encoder vision-language models (VLMs) expose a similarity interface that enables zero-shot retrieval but fails compositional constraints: queries like "umbrella and no person" retrieve images containing both, even when concept detection is reliable. We trace this to an interface-level Bag-of-Concepts effect, where similarity scores approximate mean pooling of concept evidence regardless of operators. Although operator-dependent signals exist in text embeddings, they are too weak or misaligned to affect rankings. Fine-tuning does not reliably resolve this failure because the dominant bottleneck is how similarity aggregates evidence rather than what encoders represent. We propose factored inference, which separates evidence extraction from constraint execution, and introduce LCSE (Logic-Constrained Score Editing), a training-free method that executes constraints externally using concept scores from frozen encoders. We also introduce FACTOR-Bench, where LCSE achieves 85.5% accuracy versus 73.2% for the best fine-tuned baseline, 90.7% when applied to SigLIP 2, and improves NegBench COCO MCQ accuracy from 27.2% to 65.2% while preserving retrieval performance.}
 }
 
 @article{uppa2026-skmteb-slovak-massive-text-7895d664,
