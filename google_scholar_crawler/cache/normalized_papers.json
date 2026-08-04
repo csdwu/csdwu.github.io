@@ -1859,6 +1859,122 @@
     }
   },
   {
+    "id": "324fa612dae04181d2f0f7213010dcf4ace233da",
+    "source": "arxiv",
+    "title": "An Embedded RISC-V Evaluation of Kolmogorov--Arnold Networks in Hard-Constrained Recurrent Physics-Informed Models",
+    "abstract": "Hard-constrained recurrent physics-informed networks (HRPINNs) embed known dynamics inside a recurrent numerical integrator and restrict a neural branch to learning only the residual dynamics that the first-principles model does not capture. Kolmogorov--Arnold Networks (KANs) have been proposed as parameter-efficient replacements for multilayer perceptrons (MLPs) in such residual branches, but their learnable B-spline activations follow a markedly different execution profile. Building on prior work that characterized when a vanilla B-spline KAN matches or underperforms an MLP as an HRPINN residual branch in discovery accuracy, this paper asks whether that parameter efficiency survives deployment. Using identical trained weights, we measured execution latency, energy per integration step, and dependability under post-training quantization in the closed recurrent loop on a RISC-V RV64GC platform without vector extensions (StarFive VisionFive~2, SiFive U74). For the two accuracy-comparable pairs, the KAN residual branch executed $13.5\\times$ and $8.0\\times$ slower and consumed $11.3\\times$ and $5.6\\times$ more energy per integration step (3.7\\,$μ$J against 0.33\\,$μ$J for the smallest pair); across all four parameter-matched size tiers the ranges are $4.7\\times$--$14.5\\times$ and $4.7\\times$--$18.7\\times$. Under INT8 quantization, KAN trajectories diverged up to $43\\times$ earlier than matched MLPs; the damage traces to weight quantization, not to input-side knot-interval misassignment. These results indicate that the parameter efficiency reported for KANs does not transfer to deployment cost on scalar embedded cores, and that an MLP residual branch is the more dependable default for embedded HRPINN deployment unless specific quantization co-design is used.",
+    "snippet": "Hard-constrained recurrent physics-informed networks (HRPINNs) embed known dynamics inside a recurrent numerical integrator and restrict a neural branch to learning only the residual dynamics that the",
+    "authors": [
+      "Enzo Nicolas Spotorno",
+      "Josafat Leal Filho"
+    ],
+    "venue": "ICLR",
+    "year": 2026,
+    "cited_by": 0,
+    "doi": "",
+    "arxiv_id": "2608.00737v1",
+    "urls": {
+      "arxiv": "https://arxiv.org/abs/2608.00737v1",
+      "pdf": "https://arxiv.org/pdf/2608.00737v1",
+      "paper": "https://arxiv.org/abs/2608.00737v1"
+    },
+    "scholar_url": "",
+    "pub_url": "https://arxiv.org/abs/2608.00737v1",
+    "eprint_url": "https://arxiv.org/pdf/2608.00737v1",
+    "container_type": "",
+    "query_useds": [],
+    "raw_group_hits": [
+      "A"
+    ],
+    "search_sets_raw": [
+      "A"
+    ],
+    "search_sets_final": [
+      "A"
+    ],
+    "post_filter": null,
+    "raw_payloads": [
+      {
+        "arxiv_id": "2608.00737v1",
+        "title": "An Embedded RISC-V Evaluation of Kolmogorov--Arnold Networks in Hard-Constrained Recurrent Physics-Informed Models",
+        "abstract": "Hard-constrained recurrent physics-informed networks (HRPINNs) embed known dynamics inside a recurrent numerical integrator and restrict a neural branch to learning only the residual dynamics that the first-principles model does not capture. Kolmogorov--Arnold Networks (KANs) have been proposed as parameter-efficient replacements for multilayer perceptrons (MLPs) in such residual branches, but their learnable B-spline activations follow a markedly different execution profile. Building on prior work that characterized when a vanilla B-spline KAN matches or underperforms an MLP as an HRPINN residual branch in discovery accuracy, this paper asks whether that parameter efficiency survives deployment. Using identical trained weights, we measured execution latency, energy per integration step, and dependability under post-training quantization in the closed recurrent loop on a RISC-V RV64GC platform without vector extensions (StarFive VisionFive~2, SiFive U74). For the two accuracy-comparable pairs, the KAN residual branch executed $13.5\\times$ and $8.0\\times$ slower and consumed $11.3\\times$ and $5.6\\times$ more energy per integration step (3.7\\,$μ$J against 0.33\\,$μ$J for the smallest pair); across all four parameter-matched size tiers the ranges are $4.7\\times$--$14.5\\times$ and $4.7\\times$--$18.7\\times$. Under INT8 quantization, KAN trajectories diverged up to $43\\times$ earlier than matched MLPs; the damage traces to weight quantization, not to input-side knot-interval misassignment. These results indicate that the parameter efficiency reported for KANs does not transfer to deployment cost on scalar embedded cores, and that an MLP residual branch is the more dependable default for embedded HRPINN deployment unless specific quantization co-design is used.",
+        "authors": [
+          "Enzo Nicolas Spotorno",
+          "Josafat Leal Filho"
+        ],
+        "year": 2026,
+        "month": 8,
+        "published": "2026-08-01T16:20:24Z",
+        "updated": "2026-08-01T16:20:24Z",
+        "urls": {
+          "arxiv": "https://arxiv.org/abs/2608.00737v1",
+          "pdf": "https://arxiv.org/pdf/2608.00737v1"
+        },
+        "arxiv_url": "https://arxiv.org/abs/2608.00737v1",
+        "pdf_url": "https://arxiv.org/pdf/2608.00737v1",
+        "eprint_url": "https://arxiv.org/pdf/2608.00737v1",
+        "pub_url": "https://arxiv.org/abs/2608.00737v1",
+        "snippet": "Hard-constrained recurrent physics-informed networks (HRPINNs) embed known dynamics inside a recurrent numerical integrator and restrict a neural branch to learning only the residual dynamics that the",
+        "source": "arxiv",
+        "is_preprint_on_arxiv": true,
+        "preprint_source": "arXiv",
+        "journal_ref": "",
+        "doi": "",
+        "arxiv_comment": "6 pages, submitted to SBESC 2026 as an extension to the ICLR Workshop Paper https://openreview.net/forum?id=iHpbQn99RB",
+        "venue": "ICLR",
+        "raw_venue": "6 pages, submitted to SBESC 2026 as an extension to the ICLR Workshop Paper https://openreview.net/forum?id=iHpbQn99RB",
+        "venue_source": "arxiv_comment",
+        "cited_by": 0
+      }
+    ],
+    "dedupe_key": "arxiv:2608 00737v1",
+    "seed_tags": [],
+    "tag_hints": {
+      "force_tinyml": false,
+      "require_power_tag": false
+    },
+    "primary_group": "A",
+    "filter_policy": "TH_CPL_A",
+    "filter_bucket": "th_cpl_a",
+    "filter_reason": "matched_th_cpl_a",
+    "matched_venue": "ICLR",
+    "matched_th_cpl_level": "A",
+    "matched_th_cpl_area": "Artificial Intelligence and Pattern Recognition",
+    "matched_venue_type": "conference",
+    "venue_match": {
+      "matched": true,
+      "raw": "ICLR",
+      "normalized": "iclr",
+      "normalized_candidates": [
+        "iclr"
+      ],
+      "match": {
+        "area": "Artificial Intelligence and Pattern Recognition",
+        "level": "A",
+        "type": "conference",
+        "canonicalFull": "International Conference on Learning Representations",
+        "canonicalShort": "ICLR"
+      }
+    },
+    "arxiv_match": {
+      "matched": true,
+      "arxiv_id": "2608.00737v1",
+      "matched_urls": [
+        "https://arxiv.org/abs/2608.00737v1",
+        "https://arxiv.org/pdf/2608.00737v1"
+      ]
+    },
+    "is_in_arxiv": true,
+    "category": "Efficient Model Design and Optimization",
+    "llm_tags": [],
+    "final_tags": [],
+    "provider_used": "heuristic_fallback",
+    "classification_model": "hunyuan-2.0-instruct-20251111",
+    "classification_raw_response": {
+      "error": "TokenHub request failed with status 402: {\"error\":{\"type\":\"gateway_error\",\"code\":\"401008\",\"message\":\"The free trial quota for the service has been exhausted and postpaid billing is not enabled, so the service cannot be accessed. Please go to Console \\u003e Online Inference Service to enable postpaid billing. See: https://console.cloud.tencent.com/tokenhub/inference\",\"message_zh\":\"服务免费体验额度已耗尽，且未开启后付费，无法正常访问。请前往控制台 \\u003e 在线推理服务开启后付费，查看链接：https://console.cloud.tencent.com/tokenhub/inference\",\"request_id\":\"f7eab42d-7552-44f6-a8f3-c445964306f9\"}}"
+    }
+  },
+  {
     "id": "9cbf1b73a79c68a013b02261931d4316866a8648",
     "source": "arxiv",
     "title": "An FPGA-Based SoC Architecture with a RISC-V Controller for Energy-Efficient Temporal-Coding Spiking Neural Networks",
@@ -8385,6 +8501,118 @@
     "originalIndex": 47
   },
   {
+    "id": "1c6654f12d5fc88068c191b7ab9738516cb83c2f",
+    "source": "arxiv",
+    "title": "Driving up Inference Energy on SNNs: Per-Sample and Universal Sponge Attacks",
+    "abstract": "Spiking Neural Networks (SNNs) communicate through sparse binary spike events rather than dense activations, enabling energy-efficient inference on neuromorphic hardware and motivating their use in always-on, battery-powered edge systems. We show that this same efficiency advantage creates a distinct security risk: sponge attacks can increase inference-time spike activity and synaptic workload, inflating energy consumption while remaining difficult to detect through correctness-based monitoring alone. Prior input-space efficiency attacks on SNNs have focused on per-sample optimization, primarily in rate-coded settings. We extend this threat to native event-based binary inputs and study two attack models. First, we develop a per-sample sponge attack that crafts a custom adversarial spike train for each input via gradient-based optimization. This attack increases per-inference SynOps by 1.5-2.6x on three SNN models for the NMNIST, SHD, and IBM DVS Gesture datasets, while preserving the predicted class on at least 98% of evaluated samples. Second, to the best of our knowledge, we introduce the first universal sponge attack for native event-based SNN inputs: a fixed binary perturbation computed offline and applied via XOR to all subsequent inputs. Although weaker, it still inflates SynOps by 1.09-1.24x across all three datasets and represents a more realistic deployment threat because it requires no per-input optimization. Mapping SynOp inflation to estimated Loihi-1 energy yields per-inference overheads from 14 $μ$J to 13.24 mJ. These results show that native event-based SNNs are vulnerable to practical input-space efficiency attacks, and that reusable universal perturbations can accumulate into meaningful battery drain in continuously deployed edge systems.",
+    "snippet": "Spiking Neural Networks (SNNs) communicate through sparse binary spike events rather than dense activations, enabling energy-efficient inference on neuromorphic hardware and motivating their use in al",
+    "authors": [
+      "Spyridon Raptis",
+      "Haralampos-G. Stratigopoulos"
+    ],
+    "venue": "",
+    "year": 2026,
+    "cited_by": 0,
+    "doi": "",
+    "arxiv_id": "2607.27990v1",
+    "urls": {
+      "arxiv": "https://arxiv.org/abs/2607.27990v1",
+      "pdf": "https://arxiv.org/pdf/2607.27990v1",
+      "paper": "https://arxiv.org/abs/2607.27990v1"
+    },
+    "scholar_url": "",
+    "pub_url": "https://arxiv.org/abs/2607.27990v1",
+    "eprint_url": "https://arxiv.org/pdf/2607.27990v1",
+    "container_type": "",
+    "query_useds": [],
+    "raw_group_hits": [
+      "B"
+    ],
+    "search_sets_raw": [
+      "B"
+    ],
+    "search_sets_final": [
+      "B"
+    ],
+    "post_filter": null,
+    "raw_payloads": [
+      {
+        "arxiv_id": "2607.27990v1",
+        "title": "Driving up Inference Energy on SNNs: Per-Sample and Universal Sponge Attacks",
+        "abstract": "Spiking Neural Networks (SNNs) communicate through sparse binary spike events rather than dense activations, enabling energy-efficient inference on neuromorphic hardware and motivating their use in always-on, battery-powered edge systems. We show that this same efficiency advantage creates a distinct security risk: sponge attacks can increase inference-time spike activity and synaptic workload, inflating energy consumption while remaining difficult to detect through correctness-based monitoring alone. Prior input-space efficiency attacks on SNNs have focused on per-sample optimization, primarily in rate-coded settings. We extend this threat to native event-based binary inputs and study two attack models. First, we develop a per-sample sponge attack that crafts a custom adversarial spike train for each input via gradient-based optimization. This attack increases per-inference SynOps by 1.5-2.6x on three SNN models for the NMNIST, SHD, and IBM DVS Gesture datasets, while preserving the predicted class on at least 98% of evaluated samples. Second, to the best of our knowledge, we introduce the first universal sponge attack for native event-based SNN inputs: a fixed binary perturbation computed offline and applied via XOR to all subsequent inputs. Although weaker, it still inflates SynOps by 1.09-1.24x across all three datasets and represents a more realistic deployment threat because it requires no per-input optimization. Mapping SynOp inflation to estimated Loihi-1 energy yields per-inference overheads from 14 $μ$J to 13.24 mJ. These results show that native event-based SNNs are vulnerable to practical input-space efficiency attacks, and that reusable universal perturbations can accumulate into meaningful battery drain in continuously deployed edge systems.",
+        "authors": [
+          "Spyridon Raptis",
+          "Haralampos-G. Stratigopoulos"
+        ],
+        "year": 2026,
+        "month": 7,
+        "published": "2026-07-30T10:36:41Z",
+        "updated": "2026-07-30T10:36:41Z",
+        "urls": {
+          "arxiv": "https://arxiv.org/abs/2607.27990v1",
+          "pdf": "https://arxiv.org/pdf/2607.27990v1"
+        },
+        "arxiv_url": "https://arxiv.org/abs/2607.27990v1",
+        "pdf_url": "https://arxiv.org/pdf/2607.27990v1",
+        "eprint_url": "https://arxiv.org/pdf/2607.27990v1",
+        "pub_url": "https://arxiv.org/abs/2607.27990v1",
+        "snippet": "Spiking Neural Networks (SNNs) communicate through sparse binary spike events rather than dense activations, enabling energy-efficient inference on neuromorphic hardware and motivating their use in al",
+        "source": "arxiv",
+        "is_preprint_on_arxiv": true,
+        "preprint_source": "arXiv",
+        "journal_ref": "",
+        "doi": "",
+        "arxiv_comment": "",
+        "venue": "",
+        "raw_venue": "",
+        "venue_source": "",
+        "cited_by": 0
+      }
+    ],
+    "dedupe_key": "arxiv:2607 27990v1",
+    "seed_tags": [],
+    "tag_hints": {
+      "force_tinyml": false,
+      "require_power_tag": true
+    },
+    "primary_group": "B",
+    "filter_policy": "TH_CPL_AB_OR_ARXIV",
+    "filter_bucket": "arxiv",
+    "filter_reason": "matched_arxiv",
+    "matched_venue": "",
+    "matched_th_cpl_level": "",
+    "matched_th_cpl_area": "",
+    "matched_venue_type": "",
+    "venue_match": {
+      "matched": false,
+      "raw": "",
+      "normalized": "",
+      "normalized_candidates": [],
+      "match": null
+    },
+    "arxiv_match": {
+      "matched": true,
+      "arxiv_id": "2607.27990v1",
+      "matched_urls": [
+        "https://arxiv.org/abs/2607.27990v1",
+        "https://arxiv.org/pdf/2607.27990v1"
+      ]
+    },
+    "is_in_arxiv": true,
+    "category": "Novel Computing Architectures and Domain-Specific Accelerators",
+    "llm_tags": [
+      "ULP"
+    ],
+    "final_tags": [
+      "ULP"
+    ],
+    "provider_used": "heuristic_fallback",
+    "classification_model": "hunyuan-2.0-instruct-20251111",
+    "classification_raw_response": {
+      "error": "TokenHub request failed with status 402: {\"error\":{\"type\":\"gateway_error\",\"code\":\"401008\",\"message\":\"The free trial quota for the service has been exhausted and postpaid billing is not enabled, so the service cannot be accessed. Please go to Console \\u003e Online Inference Service to enable postpaid billing. See: https://console.cloud.tencent.com/tokenhub/inference\",\"message_zh\":\"服务免费体验额度已耗尽，且未开启后付费，无法正常访问。请前往控制台 \\u003e 在线推理服务开启后付费，查看链接：https://console.cloud.tencent.com/tokenhub/inference\",\"request_id\":\"b0a7bd08-2b04-4d8b-91cd-aef8c90b1db3\"}}"
+    }
+  },
+  {
     "id": "a57264633e1981c376f4e62d1d3f15499803cdd3",
     "source": "arxiv",
     "title": "DS-CIM: Digital Stochastic Computing-In-Memory Featuring Accurate OR-Accumulation via Sample Region Remapping for Edge AI Models",
@@ -12940,6 +13168,140 @@
     }
   },
   {
+    "id": "4bbc17ec5e2ad6c567229cd5eff2a305f486f6c3",
+    "source": "arxiv",
+    "title": "GALA: Generative Aligned Learning for Adaptive Multimodal Representation in the Taobao Shangou Recommender System",
+    "abstract": "Modern recommender systems in food delivery increasingly leverage multimodal signals, including images, text, and user interaction histories, to enhance user experience, yet effective fusion of these heterogeneous modalities remains challenging, hindering both the joint modeling of multimodal signals and adaptation to evolving user intent. In mainstream two-stage approaches, the separation between content-semantic pretraining of image-text encoders and behavior-driven ranking models limits alignment between semantic understanding and user behavior patterns. To address these issues, we present GALA, a three-stage pipeline whose core innovation lies in an intermediate \"generative RL alignment\" stage that constructs multimodal pretraining data from user behavior and refines it via conversion-based rewards, effectively bridging the pretraining-fine-tuning gap to align with downstream objectives. GALA comprises three stages: first, behavior-aware triplet pretraining on query-image-text pairs from search logs to early capture user intent and content preferences; second, a novel intermediate stage that refines multimodal embeddings through reward-driven optimization (GRPO) to dynamically align them with user behavior and bridge the pretraining-fine-tuning gap; and finally, integration of multimodal and ID embeddings via adaptive gating with a hybrid loss, preserving multimodal contributions under long-term ID-dominant training. GALA has been deployed in the production environment at Taobao Shangou, serving over 200 million daily active users. Compared with state-of-the-art (SOTA) methods, it delivers consistent offline gains of +0.12/+0.20 AUC along with better PCOC metrics. Large-scale online A/B tests further report a 0.55 percent increase in order volume, confirming GALA's effectiveness at industrial scale and its robustness across diverse demand patterns.",
+    "snippet": "Modern recommender systems in food delivery increasingly leverage multimodal signals, including images, text, and user interaction histories, to enhance user experience, yet effective fusion of these",
+    "authors": [
+      "Jiping Liu",
+      "Zhongmin Zhang",
+      "Zisen Sang",
+      "Zhijia Fang",
+      "Tao Ouyang",
+      "Ma Jiang",
+      "Shaopeng Liang",
+      "Zeyang Hou",
+      "Guodong Cao",
+      "Jia Jia"
+    ],
+    "venue": "13 pages, 12 figures, 5 tables. Accepted at the 2026 IEEE International Conference on Data Engineering (ICDE 2026), Industry and Applications Track",
+    "year": 2026,
+    "cited_by": 0,
+    "doi": "",
+    "arxiv_id": "2607.29213v1",
+    "urls": {
+      "arxiv": "https://arxiv.org/abs/2607.29213v1",
+      "pdf": "https://arxiv.org/pdf/2607.29213v1",
+      "paper": "https://arxiv.org/abs/2607.29213v1"
+    },
+    "scholar_url": "",
+    "pub_url": "https://arxiv.org/abs/2607.29213v1",
+    "eprint_url": "https://arxiv.org/pdf/2607.29213v1",
+    "container_type": "",
+    "query_useds": [],
+    "raw_group_hits": [
+      "A"
+    ],
+    "search_sets_raw": [
+      "A"
+    ],
+    "search_sets_final": [
+      "A"
+    ],
+    "post_filter": null,
+    "raw_payloads": [
+      {
+        "arxiv_id": "2607.29213v1",
+        "title": "GALA: Generative Aligned Learning for Adaptive Multimodal Representation in the Taobao Shangou Recommender System",
+        "abstract": "Modern recommender systems in food delivery increasingly leverage multimodal signals, including images, text, and user interaction histories, to enhance user experience, yet effective fusion of these heterogeneous modalities remains challenging, hindering both the joint modeling of multimodal signals and adaptation to evolving user intent. In mainstream two-stage approaches, the separation between content-semantic pretraining of image-text encoders and behavior-driven ranking models limits alignment between semantic understanding and user behavior patterns. To address these issues, we present GALA, a three-stage pipeline whose core innovation lies in an intermediate \"generative RL alignment\" stage that constructs multimodal pretraining data from user behavior and refines it via conversion-based rewards, effectively bridging the pretraining-fine-tuning gap to align with downstream objectives. GALA comprises three stages: first, behavior-aware triplet pretraining on query-image-text pairs from search logs to early capture user intent and content preferences; second, a novel intermediate stage that refines multimodal embeddings through reward-driven optimization (GRPO) to dynamically align them with user behavior and bridge the pretraining-fine-tuning gap; and finally, integration of multimodal and ID embeddings via adaptive gating with a hybrid loss, preserving multimodal contributions under long-term ID-dominant training. GALA has been deployed in the production environment at Taobao Shangou, serving over 200 million daily active users. Compared with state-of-the-art (SOTA) methods, it delivers consistent offline gains of +0.12/+0.20 AUC along with better PCOC metrics. Large-scale online A/B tests further report a 0.55 percent increase in order volume, confirming GALA's effectiveness at industrial scale and its robustness across diverse demand patterns.",
+        "authors": [
+          "Jiping Liu",
+          "Zhongmin Zhang",
+          "Zisen Sang",
+          "Zhijia Fang",
+          "Tao Ouyang",
+          "Ma Jiang",
+          "Shaopeng Liang",
+          "Zeyang Hou",
+          "Guodong Cao",
+          "Jia Jia"
+        ],
+        "year": 2026,
+        "month": 7,
+        "published": "2026-07-31T09:32:01Z",
+        "updated": "2026-07-31T09:32:01Z",
+        "urls": {
+          "arxiv": "https://arxiv.org/abs/2607.29213v1",
+          "pdf": "https://arxiv.org/pdf/2607.29213v1"
+        },
+        "arxiv_url": "https://arxiv.org/abs/2607.29213v1",
+        "pdf_url": "https://arxiv.org/pdf/2607.29213v1",
+        "eprint_url": "https://arxiv.org/pdf/2607.29213v1",
+        "pub_url": "https://arxiv.org/abs/2607.29213v1",
+        "snippet": "Modern recommender systems in food delivery increasingly leverage multimodal signals, including images, text, and user interaction histories, to enhance user experience, yet effective fusion of these ",
+        "source": "arxiv",
+        "is_preprint_on_arxiv": true,
+        "preprint_source": "arXiv",
+        "journal_ref": "",
+        "doi": "",
+        "arxiv_comment": "13 pages, 12 figures, 5 tables. Accepted at the 2026 IEEE International Conference on Data Engineering (ICDE 2026), Industry and Applications Track",
+        "venue": "13 pages, 12 figures, 5 tables. Accepted at the 2026 IEEE International Conference on Data Engineering (ICDE 2026), Industry and Applications Track",
+        "raw_venue": "13 pages, 12 figures, 5 tables. Accepted at the 2026 IEEE International Conference on Data Engineering (ICDE 2026), Industry and Applications Track",
+        "venue_source": "arxiv_comment",
+        "cited_by": 0
+      }
+    ],
+    "dedupe_key": "arxiv:2607 29213v1",
+    "seed_tags": [],
+    "tag_hints": {
+      "force_tinyml": false,
+      "require_power_tag": false
+    },
+    "primary_group": "A",
+    "filter_policy": "TH_CPL_A",
+    "filter_bucket": "th_cpl_a",
+    "filter_reason": "matched_th_cpl_a",
+    "matched_venue": "ICDE",
+    "matched_th_cpl_level": "A",
+    "matched_th_cpl_area": "Database and Data Mining",
+    "matched_venue_type": "conference",
+    "venue_match": {
+      "matched": true,
+      "raw": "13 pages, 12 figures, 5 tables. Accepted at the 2026 IEEE International Conference on Data Engineering (ICDE 2026), Industry and Applications Track",
+      "normalized": "13 pages 12 figures 5 tables accepted at the ieee international conference on data engineering industry and applications track",
+      "normalized_candidates": [
+        "13 pages 12 figures 5 tables accepted at the ieee international conference on data engineering industry and applications track",
+        "1p1f5taicdeiat",
+        "icde"
+      ],
+      "match": {
+        "area": "Database and Data Mining",
+        "level": "A",
+        "type": "conference",
+        "canonicalFull": "IEEE International Conference on Data Engineering",
+        "canonicalShort": "ICDE"
+      }
+    },
+    "arxiv_match": {
+      "matched": true,
+      "arxiv_id": "2607.29213v1",
+      "matched_urls": [
+        "https://arxiv.org/abs/2607.29213v1",
+        "https://arxiv.org/pdf/2607.29213v1"
+      ]
+    },
+    "is_in_arxiv": true,
+    "category": "Embedded AI Applications",
+    "llm_tags": [],
+    "final_tags": [],
+    "provider_used": "heuristic_fallback",
+    "classification_model": "hunyuan-2.0-instruct-20251111",
+    "classification_raw_response": {
+      "error": "TokenHub request failed with status 402: {\"error\":{\"type\":\"gateway_error\",\"code\":\"401008\",\"message\":\"The free trial quota for the service has been exhausted and postpaid billing is not enabled, so the service cannot be accessed. Please go to Console \\u003e Online Inference Service to enable postpaid billing. See: https://console.cloud.tencent.com/tokenhub/inference\",\"message_zh\":\"服务免费体验额度已耗尽，且未开启后付费，无法正常访问。请前往控制台 \\u003e 在线推理服务开启后付费，查看链接：https://console.cloud.tencent.com/tokenhub/inference\",\"request_id\":\"ffdbcfe8-ae67-4715-88f7-ecfde07ceb0a\"}}"
+    }
+  },
+  {
     "id": "f7ecb06fbe54c7d0f647cd9ba24f3509410b7371",
     "source": "arxiv",
     "title": "Generative Inverse Design of Cold Metals for Low-Power Electronics",
@@ -16157,6 +16519,126 @@
     },
     "checkpoint_saved_at": "2026-04-29T07:38:28.994Z",
     "originalIndex": 82
+  },
+  {
+    "id": "c980d5d727d1b562fff2b1ea0377916ab0e187f9",
+    "source": "arxiv",
+    "title": "It's All Just Vectorization: einx, a Universal Notation for Tensor Operations",
+    "abstract": "Tensor operations represent a cornerstone of modern scientific computing. However, the Numpy-like notation adopted by predominant tensor frameworks is often difficult to read and write and prone to so-called shape errors, i.a., due to following inconsistent rules across a large, complex collection of operations. Alternatives like einsum and einops have gained popularity, but are inherently restricted to few operations and lack the generality required for a universal model of tensor programming.\n  To derive a better paradigm, we revisit vectorization as a function for transforming tensor operations, and use it to both lift lower-order operations to higher-order operations, and conceptually decompose higher-order operations to lower-order operations and their vectorization.\n  Building on the universal nature of vectorization, we introduce einx, a universal notation for tensor operations. It uses declarative, pointful expressions that are defined by analogy with loop notation and represent the vectorization of tensor operations. The notation reduces the large APIs of existing frameworks to a small set of elementary operations, applies consistent rules across all operations, and enables a clean, readable and writable representation in code. We provide an implementation of einx that is embedded in Python and integrates seamlessly with existing tensor frameworks: https://github.com/fferflo/einx",
+    "snippet": "Tensor operations represent a cornerstone of modern scientific computing. However, the Numpy-like notation adopted by predominant tensor frameworks is often difficult to read and write and prone to so",
+    "authors": [
+      "Florian Fervers",
+      "Sebastian Bullinger",
+      "Christoph Bodensteiner",
+      "Michael Arens"
+    ],
+    "venue": "ICLR",
+    "year": 2026,
+    "cited_by": 0,
+    "doi": "",
+    "arxiv_id": "2607.27987v1",
+    "urls": {
+      "arxiv": "https://arxiv.org/abs/2607.27987v1",
+      "pdf": "https://arxiv.org/pdf/2607.27987v1",
+      "paper": "https://arxiv.org/abs/2607.27987v1"
+    },
+    "scholar_url": "",
+    "pub_url": "https://arxiv.org/abs/2607.27987v1",
+    "eprint_url": "https://arxiv.org/pdf/2607.27987v1",
+    "container_type": "",
+    "query_useds": [],
+    "raw_group_hits": [
+      "A"
+    ],
+    "search_sets_raw": [
+      "A"
+    ],
+    "search_sets_final": [
+      "A"
+    ],
+    "post_filter": null,
+    "raw_payloads": [
+      {
+        "arxiv_id": "2607.27987v1",
+        "title": "It's All Just Vectorization: einx, a Universal Notation for Tensor Operations",
+        "abstract": "Tensor operations represent a cornerstone of modern scientific computing. However, the Numpy-like notation adopted by predominant tensor frameworks is often difficult to read and write and prone to so-called shape errors, i.a., due to following inconsistent rules across a large, complex collection of operations. Alternatives like einsum and einops have gained popularity, but are inherently restricted to few operations and lack the generality required for a universal model of tensor programming.\n  To derive a better paradigm, we revisit vectorization as a function for transforming tensor operations, and use it to both lift lower-order operations to higher-order operations, and conceptually decompose higher-order operations to lower-order operations and their vectorization.\n  Building on the universal nature of vectorization, we introduce einx, a universal notation for tensor operations. It uses declarative, pointful expressions that are defined by analogy with loop notation and represent the vectorization of tensor operations. The notation reduces the large APIs of existing frameworks to a small set of elementary operations, applies consistent rules across all operations, and enables a clean, readable and writable representation in code. We provide an implementation of einx that is embedded in Python and integrates seamlessly with existing tensor frameworks: https://github.com/fferflo/einx",
+        "authors": [
+          "Florian Fervers",
+          "Sebastian Bullinger",
+          "Christoph Bodensteiner",
+          "Michael Arens"
+        ],
+        "year": 2026,
+        "month": 7,
+        "published": "2026-07-30T10:33:04Z",
+        "updated": "2026-07-30T10:33:04Z",
+        "urls": {
+          "arxiv": "https://arxiv.org/abs/2607.27987v1",
+          "pdf": "https://arxiv.org/pdf/2607.27987v1"
+        },
+        "arxiv_url": "https://arxiv.org/abs/2607.27987v1",
+        "pdf_url": "https://arxiv.org/pdf/2607.27987v1",
+        "eprint_url": "https://arxiv.org/pdf/2607.27987v1",
+        "pub_url": "https://arxiv.org/abs/2607.27987v1",
+        "snippet": "Tensor operations represent a cornerstone of modern scientific computing. However, the Numpy-like notation adopted by predominant tensor frameworks is often difficult to read and write and prone to so",
+        "source": "arxiv",
+        "is_preprint_on_arxiv": true,
+        "preprint_source": "arXiv",
+        "journal_ref": "",
+        "doi": "",
+        "arxiv_comment": "Published at ICLR 2026 (oral)",
+        "venue": "ICLR",
+        "raw_venue": "Published at ICLR 2026 (oral)",
+        "venue_source": "arxiv_comment",
+        "cited_by": 0
+      }
+    ],
+    "dedupe_key": "arxiv:2607 27987v1",
+    "seed_tags": [],
+    "tag_hints": {
+      "force_tinyml": false,
+      "require_power_tag": false
+    },
+    "primary_group": "A",
+    "filter_policy": "TH_CPL_A",
+    "filter_bucket": "th_cpl_a",
+    "filter_reason": "matched_th_cpl_a",
+    "matched_venue": "ICLR",
+    "matched_th_cpl_level": "A",
+    "matched_th_cpl_area": "Artificial Intelligence and Pattern Recognition",
+    "matched_venue_type": "conference",
+    "venue_match": {
+      "matched": true,
+      "raw": "ICLR",
+      "normalized": "iclr",
+      "normalized_candidates": [
+        "iclr"
+      ],
+      "match": {
+        "area": "Artificial Intelligence and Pattern Recognition",
+        "level": "A",
+        "type": "conference",
+        "canonicalFull": "International Conference on Learning Representations",
+        "canonicalShort": "ICLR"
+      }
+    },
+    "arxiv_match": {
+      "matched": true,
+      "arxiv_id": "2607.27987v1",
+      "matched_urls": [
+        "https://arxiv.org/abs/2607.27987v1",
+        "https://arxiv.org/pdf/2607.27987v1"
+      ]
+    },
+    "is_in_arxiv": true,
+    "category": "Embedded AI Applications",
+    "llm_tags": [],
+    "final_tags": [],
+    "provider_used": "heuristic_fallback",
+    "classification_model": "hunyuan-2.0-instruct-20251111",
+    "classification_raw_response": {
+      "error": "TokenHub request failed with status 402: {\"error\":{\"type\":\"gateway_error\",\"code\":\"401008\",\"message\":\"The free trial quota for the service has been exhausted and postpaid billing is not enabled, so the service cannot be accessed. Please go to Console \\u003e Online Inference Service to enable postpaid billing. See: https://console.cloud.tencent.com/tokenhub/inference\",\"message_zh\":\"服务免费体验额度已耗尽，且未开启后付费，无法正常访问。请前往控制台 \\u003e 在线推理服务开启后付费，查看链接：https://console.cloud.tencent.com/tokenhub/inference\",\"request_id\":\"fa2710dc-ce45-47c6-b82a-5b1707ad30ae\"}}"
+    }
   },
   {
     "id": "89973fac413c3855ef9ace8207ba68adf1f624c0",
@@ -31309,6 +31791,126 @@
     },
     "checkpoint_saved_at": "2026-04-29T07:38:29.960Z",
     "originalIndex": 156
+  },
+  {
+    "id": "41b0c9af367d1c85bbd8384d4e762dad6b0f3393",
+    "source": "arxiv",
+    "title": "TopoFormer: Topology Meets Attention for Graph Learning",
+    "abstract": "We introduce Topoformer, a lightweight and scalable framework for graph representation learning that encodes topological structure into attention-friendly sequences. At the core of our method is Topo-Scan, a novel module that decomposes a graph into a short, ordered sequence of topological tokens by slicing over node or edge filtrations. These sequences capture multi-scale structural patterns, from local motifs to global organization, and are processed by a Transformer to produce expressive graph-level embeddings. Unlike traditional persistent homology pipelines, Topo-Scan is parallelizable, avoids costly diagram computations, and integrates seamlessly with standard deep learning architectures. We provide theoretical guarantees on the stability of our topological encodings and demonstrate state-of-the-art performance across graph classification and molecular property prediction benchmarks. Our results show that Topoformer matches or exceeds strong GNN and topology-based baselines while offering predictable and efficient compute. This work opens a new path for parallelizable and unifying approaches to graph representation learning that integrate topological inductive biases into attention frameworks.",
+    "snippet": "We introduce Topoformer, a lightweight and scalable framework for graph representation learning that encodes topological structure into attention-friendly sequences. At the core of our method is Topo-",
+    "authors": [
+      "Md Joshem Uddin",
+      "Astrit Tola",
+      "Cuneyt Gurcan Akcora",
+      "Baris Coskunuzer"
+    ],
+    "venue": "ICLR",
+    "year": 2026,
+    "cited_by": 0,
+    "doi": "",
+    "arxiv_id": "2607.28259v1",
+    "urls": {
+      "arxiv": "https://arxiv.org/abs/2607.28259v1",
+      "pdf": "https://arxiv.org/pdf/2607.28259v1",
+      "paper": "https://arxiv.org/abs/2607.28259v1"
+    },
+    "scholar_url": "",
+    "pub_url": "https://arxiv.org/abs/2607.28259v1",
+    "eprint_url": "https://arxiv.org/pdf/2607.28259v1",
+    "container_type": "",
+    "query_useds": [],
+    "raw_group_hits": [
+      "A"
+    ],
+    "search_sets_raw": [
+      "A"
+    ],
+    "search_sets_final": [
+      "A"
+    ],
+    "post_filter": null,
+    "raw_payloads": [
+      {
+        "arxiv_id": "2607.28259v1",
+        "title": "TopoFormer: Topology Meets Attention for Graph Learning",
+        "abstract": "We introduce Topoformer, a lightweight and scalable framework for graph representation learning that encodes topological structure into attention-friendly sequences. At the core of our method is Topo-Scan, a novel module that decomposes a graph into a short, ordered sequence of topological tokens by slicing over node or edge filtrations. These sequences capture multi-scale structural patterns, from local motifs to global organization, and are processed by a Transformer to produce expressive graph-level embeddings. Unlike traditional persistent homology pipelines, Topo-Scan is parallelizable, avoids costly diagram computations, and integrates seamlessly with standard deep learning architectures. We provide theoretical guarantees on the stability of our topological encodings and demonstrate state-of-the-art performance across graph classification and molecular property prediction benchmarks. Our results show that Topoformer matches or exceeds strong GNN and topology-based baselines while offering predictable and efficient compute. This work opens a new path for parallelizable and unifying approaches to graph representation learning that integrate topological inductive biases into attention frameworks.",
+        "authors": [
+          "Md Joshem Uddin",
+          "Astrit Tola",
+          "Cuneyt Gurcan Akcora",
+          "Baris Coskunuzer"
+        ],
+        "year": 2026,
+        "month": 7,
+        "published": "2026-07-30T14:18:17Z",
+        "updated": "2026-07-30T14:18:17Z",
+        "urls": {
+          "arxiv": "https://arxiv.org/abs/2607.28259v1",
+          "pdf": "https://arxiv.org/pdf/2607.28259v1"
+        },
+        "arxiv_url": "https://arxiv.org/abs/2607.28259v1",
+        "pdf_url": "https://arxiv.org/pdf/2607.28259v1",
+        "eprint_url": "https://arxiv.org/pdf/2607.28259v1",
+        "pub_url": "https://arxiv.org/abs/2607.28259v1",
+        "snippet": "We introduce Topoformer, a lightweight and scalable framework for graph representation learning that encodes topological structure into attention-friendly sequences. At the core of our method is Topo-",
+        "source": "arxiv",
+        "is_preprint_on_arxiv": true,
+        "preprint_source": "arXiv",
+        "journal_ref": "ICLR 2026",
+        "doi": "",
+        "arxiv_comment": "26 pages, 5 figures",
+        "venue": "ICLR",
+        "raw_venue": "ICLR 2026",
+        "venue_source": "arxiv_journal_ref",
+        "cited_by": 0
+      }
+    ],
+    "dedupe_key": "arxiv:2607 28259v1",
+    "seed_tags": [],
+    "tag_hints": {
+      "force_tinyml": false,
+      "require_power_tag": false
+    },
+    "primary_group": "A",
+    "filter_policy": "TH_CPL_A",
+    "filter_bucket": "th_cpl_a",
+    "filter_reason": "matched_th_cpl_a",
+    "matched_venue": "ICLR",
+    "matched_th_cpl_level": "A",
+    "matched_th_cpl_area": "Artificial Intelligence and Pattern Recognition",
+    "matched_venue_type": "conference",
+    "venue_match": {
+      "matched": true,
+      "raw": "ICLR",
+      "normalized": "iclr",
+      "normalized_candidates": [
+        "iclr"
+      ],
+      "match": {
+        "area": "Artificial Intelligence and Pattern Recognition",
+        "level": "A",
+        "type": "conference",
+        "canonicalFull": "International Conference on Learning Representations",
+        "canonicalShort": "ICLR"
+      }
+    },
+    "arxiv_match": {
+      "matched": true,
+      "arxiv_id": "2607.28259v1",
+      "matched_urls": [
+        "https://arxiv.org/abs/2607.28259v1",
+        "https://arxiv.org/pdf/2607.28259v1"
+      ]
+    },
+    "is_in_arxiv": true,
+    "category": "Efficient Model Design and Optimization",
+    "llm_tags": [],
+    "final_tags": [],
+    "provider_used": "heuristic_fallback",
+    "classification_model": "hunyuan-2.0-instruct-20251111",
+    "classification_raw_response": {
+      "error": "TokenHub request failed with status 402: {\"error\":{\"type\":\"gateway_error\",\"code\":\"401008\",\"message\":\"The free trial quota for the service has been exhausted and postpaid billing is not enabled, so the service cannot be accessed. Please go to Console \\u003e Online Inference Service to enable postpaid billing. See: https://console.cloud.tencent.com/tokenhub/inference\",\"message_zh\":\"服务免费体验额度已耗尽，且未开启后付费，无法正常访问。请前往控制台 \\u003e 在线推理服务开启后付费，查看链接：https://console.cloud.tencent.com/tokenhub/inference\",\"request_id\":\"1a077bb0-e837-405e-a171-cf9098e3ff5d\"}}"
+    }
   },
   {
     "id": "a40a28043257f85bf893036b3434d74acbdb71dd",
