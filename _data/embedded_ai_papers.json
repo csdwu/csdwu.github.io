@@ -1,6 +1,6 @@
 {
   "version": "2.0.0",
-  "generated_at": "2026-08-04T01:58:45.867Z",
+  "generated_at": "2026-08-05T01:58:11.167Z",
   "query_groups": {
     "A": "\"embedded ai\"",
     "B": "(\"low power\" OR \"ultra-low-power\") \"embedded ai\"",
@@ -8,41 +8,41 @@
   },
   "stats": {
     "raw_counts": {
-      "A": 55,
-      "B": 3,
-      "C": 0
+      "A": 23,
+      "B": 1,
+      "C": 1
     },
     "after_set_ops": {
-      "A_only": 55,
-      "B": 3,
-      "C": 0,
-      "merged_total": 58,
+      "A_only": 22,
+      "B": 1,
+      "C": 1,
+      "merged_total": 24,
       "bc_overlap": 0
     },
-    "after_filter": 890,
+    "after_filter": 893,
     "classification": {
-      "total": 890,
+      "total": 893,
       "by_category": {
-        "Efficient Model Design and Optimization": 288,
+        "Efficient Model Design and Optimization": 289,
         "Novel Computing Architectures and Domain-Specific Accelerators": 40,
-        "Embedded AI Applications": 562
+        "Embedded AI Applications": 564
       },
       "by_tag": {
         "TinyML": 51,
-        "LP": 100,
+        "LP": 101,
         "ULP": 17
       },
       "by_provider": {
         "tencent_tokenhub": 0,
         "heuristic": 0,
-        "heuristic_fallback": 890
+        "heuristic_fallback": 893
       }
     },
     "source_stats": {
-      "total": 890,
+      "total": 893,
       "by_group": {
         "A": {
-          "total": 744,
+          "total": 746,
           "arxiv": 0,
           "venues": {
             "AAAI": 90,
@@ -95,7 +95,7 @@
             "CSL": 0,
             "CT-RSA": 0,
             "CVIU": 0,
-            "CVPR": 59,
+            "CVPR": 60,
             "CoNEXT": 0,
             "DAC": 9,
             "DASFAA": 0,
@@ -109,7 +109,7 @@
             "EAAI": 0,
             "EASE": 0,
             "EC": 0,
-            "ECCV": 6,
+            "ECCV": 7,
             "ECIR": 0,
             "ECOOP": 0,
             "EDBT": 0,
@@ -416,8 +416,8 @@
           "unknown": 0
         },
         "B": {
-          "total": 110,
-          "arxiv": 85,
+          "total": 111,
+          "arxiv": 86,
           "venues": {
             "AAAI": 0,
             "AAMAS": 0,
@@ -1539,8 +1539,8 @@
         }
       },
       "total_summary": {
-        "total": 905,
-        "arxiv": 128,
+        "total": 908,
+        "arxiv": 129,
         "venues": {
           "AAAI": 90,
           "AAMAS": 0,
@@ -1592,7 +1592,7 @@
           "CSL": 0,
           "CT-RSA": 0,
           "CVIU": 0,
-          "CVPR": 61,
+          "CVPR": 62,
           "CoNEXT": 0,
           "DAC": 9,
           "DASFAA": 0,
@@ -1606,7 +1606,7 @@
           "EAAI": 0,
           "EASE": 0,
           "EC": 0,
-          "ECCV": 6,
+          "ECCV": 7,
           "ECIR": 0,
           "ECOOP": 0,
           "EDBT": 0,
@@ -1918,7 +1918,7 @@
     {
       "key": "efficient_model_design",
       "title": "Efficient Model Design and Optimization",
-      "count": 288,
+      "count": 289,
       "papers": [
         {
           "id": "324fa612dae04181d2f0f7213010dcf4ace233da",
@@ -1959,6 +1959,65 @@
           "doi": "",
           "arxiv_comment": "",
           "arxiv_id": "2608.00737v1",
+          "raw_venue": "",
+          "venue_source": "",
+          "sort_key": 202600,
+          "download": {
+            "status": "pending",
+            "source": null,
+            "path": null,
+            "last_attempt_at": null
+          }
+        },
+        {
+          "id": "850c995f56ddc5a976a48122d7faab7e8d84433a",
+          "title": "AS-FedBridge: Pseudo-Spike Bridge Distillation for Heterogeneous ANN-SNN Federated Learning",
+          "authors": [
+            "Shengyang Li",
+            "Yiting Dong",
+            "Liuyang Song",
+            "Ximing Wang",
+            "Luyuan Xie",
+            "Cong Li",
+            "Qingni Shen",
+            "Zhaofei Yu"
+          ],
+          "year": 2026,
+          "month": 8,
+          "source": "arxiv",
+          "venue": "",
+          "venue_type": "",
+          "abstract": "Federated learning enables collaborative model training across distributed edge devices while strictly preserving data privacy. To facilitate practical deployment on resource-constrained edge devices, Spiking Neural Networks (SNNs) have emerged as a promising alternative to traditional Artificial Neural Networks (ANNs) due to their sparse computing mechanisms and high energy efficiency. However, jointly training ANNs and SNNs exposes a challenge of representational misalignment, which is intrinsically caused by differences in information representation, specifically the semantic gap between continuous real-valued activations in ANNs and discrete spatio-temporal spikes in SNNs. To overcome this barrier, we propose AS-FedBridge, a novel federated learning framework tailored for mixed ANN-SNN clients. AS-FedBridge features a lightweight Bridge equipped with a Pseudo-Spike Interface, which effectively projects continuous signals into a spike-compatible space to facilitate ANN-SNN alignment. Given the absence of existing mixed ANN-SNN federated frameworks, we establish a comprehensive benchmark to evaluate against multiple advanced heterogeneous FL methods. Our empirical analysis demonstrates a positive correlation between the degree of ANN-SNN alignment and the collaborative FL performance. Across four datasets, AS-FedBridge consistently demonstrates advanced accuracy while mitigating extreme scale, architecture, and client heterogeneity challenge. Furthermore, our framework enables a highly controllable trade-off between model performance and resource efficiency. AS-FedBridge accomplishes these robust performance gains while introducing only marginal computational overhead, establishing a robust and practical foundation for mixed ANN-SNN federated learning systems.",
+          "urls": {
+            "arxiv": "https://arxiv.org/abs/2608.03324v1",
+            "pdf": "https://arxiv.org/pdf/2608.03324v1",
+            "paper": "https://arxiv.org/abs/2608.03324v1"
+          },
+          "search_sets_raw": [
+            "B"
+          ],
+          "search_sets_final": [
+            "B"
+          ],
+          "filter_bucket": "arxiv",
+          "matched_venue": "",
+          "matched_th_cpl_level": "",
+          "matched_th_cpl_area": "",
+          "category": "Efficient Model Design and Optimization",
+          "llm_tags": [],
+          "forced_tags": [
+            "LP"
+          ],
+          "final_tags": [
+            "LP"
+          ],
+          "cited_by": 0,
+          "is_preprint_on_arxiv": false,
+          "preprint_source": "",
+          "journal_ref": "",
+          "doi": "",
+          "arxiv_comment": "",
+          "arxiv_id": "2608.03324v1",
           "raw_venue": "",
           "venue_source": "",
           "sort_key": 202600,
@@ -19281,8 +19340,114 @@
     {
       "key": "embedded_ai_applications",
       "title": "Embedded AI Applications",
-      "count": 562,
+      "count": 564,
       "papers": [
+        {
+          "id": "6b971ed1b16d092664c27c52e39eb3bff0f4936b",
+          "title": "Illuminating Visual Identity in Universal Multimodal Embeddings",
+          "authors": [
+            "Jiawei Cao",
+            "Junyi Feng",
+            "Jiashen Hua",
+            "Ziheng Huang",
+            "Bing Deng",
+            "Kaijie Wu",
+            "Chaochen Gu",
+            "Jieping Ye"
+          ],
+          "year": 2026,
+          "month": 8,
+          "source": "arxiv",
+          "venue": "CVPR",
+          "venue_type": "conference",
+          "abstract": "Universal Multimodal Embeddings (UMEs) aim to unify various modalities and tasks into a shared representation space. In recent years, this field has witnessed substantial progress driven by the development of Multimodal Large Language Models (MLLMs). However, a crucial capability, visual identity discrimination, remains underexplored in existing UME methods, despite its critical role in a wide range of tasks, including instance retrieval, re-identification, and identity preservation in AI-generated content. To bridge this gap, we propose a unified formulation for visual identity discrimination~(VisID) and introduce $\\textbf{MVEB}$ ($\\textbf{M}$ultimodal $\\textbf{V}$isual Identity $\\textbf{E}$mbedding $\\textbf{B}$enchmark), a large-scale benchmark curated from both real-world and synthetic datasets to support evaluation and training. Furthermore, we present a simple yet effective learning framework that jointly optimizes general multimodal and visual identity representations through a carefully designed identity-aware sampling mechanism. Extensive experiments demonstrate that our approach successfully endows UMEs with strong identity discrimination capability and maintains competitive general multimodal performance. We believe this work not only illuminates a critical yet neglected capability, but also takes a step toward more holistic universal multimodal embeddings. Code and data are available at \\href{https://chrisclear3.github.io/MVEB}{MVEB}.",
+          "urls": {
+            "arxiv": "https://arxiv.org/abs/2608.01794v1",
+            "pdf": "https://arxiv.org/pdf/2608.01794v1",
+            "paper": "https://arxiv.org/abs/2608.01794v1"
+          },
+          "search_sets_raw": [
+            "A"
+          ],
+          "search_sets_final": [
+            "A"
+          ],
+          "filter_bucket": "th_cpl_a",
+          "matched_venue": "CVPR",
+          "matched_th_cpl_level": "A",
+          "matched_th_cpl_area": "Artificial Intelligence and Pattern Recognition",
+          "category": "Embedded AI Applications",
+          "llm_tags": [],
+          "forced_tags": [],
+          "final_tags": [],
+          "cited_by": 0,
+          "is_preprint_on_arxiv": false,
+          "preprint_source": "",
+          "journal_ref": "",
+          "doi": "",
+          "arxiv_comment": "",
+          "arxiv_id": "2608.01794v1",
+          "raw_venue": "",
+          "venue_source": "",
+          "sort_key": 202600,
+          "download": {
+            "status": "pending",
+            "source": null,
+            "path": null,
+            "last_attempt_at": null
+          }
+        },
+        {
+          "id": "566a12d7861b456eb4f73561ea9a9b41a2b0e7ac",
+          "title": "ReFP-AD: Rectified Flow Preconditioning for Energy-Based Anomaly Detection",
+          "authors": [
+            "Camile Lendering",
+            "Erkut Akdag",
+            "Joaquín Figueira",
+            "Egor Bondarev"
+          ],
+          "year": 2026,
+          "month": 8,
+          "source": "arxiv",
+          "venue": "ECCV",
+          "venue_type": "conference",
+          "abstract": "Unified anomaly detection requires modeling highly heterogeneous normal data without access to anomalous samples. While foundation models like DINOv2 provide rich token representations, leveraging these spaces for explicit density estimation remains challenging. Energy-Based Models (EBMs) offer a principled formulation, but their training in high-dimensional token spaces is unstable due to anisotropy and strong cross-dimensional correlations, which degrades finite-step Markov Chain Monte Carlo (MCMC) sampling. We identify this instability as fundamentally geometric and introduce ReFP-AD (Rectified Flow Preconditioning for Anomaly Detection), which learns a geometric reparameterization that maps high-dimensional embeddings into a well-conditioned latent space via an optimal transport (OT)-coupled rectified flow. This preconditioning enables stable persistent contrastive divergence with preconditioned Stochastic Gradient Langevin Dynamics (SGLD) in full-dimensional token spaces. Anomaly scores are then derived from the learned energy landscape using gradient norms. Under a strict unified protocol on the MVTec-AD and VisA datasets, ReFP-AD achieves 98.6%/97.9% Image/Pixel AUROC on MVTec-AD and 97.3%/99.0% on VisA, outperforming prior unified EBM baselines by up to +10.8% in Image AUROC. Ablation experiments demonstrate that geometric reparameterization is critical for finite-step MCMC and accurate anomaly localization in high-dimensional token spaces. Code is available at https://github.com/CLendering/ReFP-AD",
+          "urls": {
+            "arxiv": "https://arxiv.org/abs/2608.01793v1",
+            "pdf": "https://arxiv.org/pdf/2608.01793v1",
+            "paper": "https://arxiv.org/abs/2608.01793v1"
+          },
+          "search_sets_raw": [
+            "A"
+          ],
+          "search_sets_final": [
+            "A"
+          ],
+          "filter_bucket": "th_cpl_a",
+          "matched_venue": "ECCV",
+          "matched_th_cpl_level": "A",
+          "matched_th_cpl_area": "Artificial Intelligence and Pattern Recognition",
+          "category": "Embedded AI Applications",
+          "llm_tags": [],
+          "forced_tags": [],
+          "final_tags": [],
+          "cited_by": 0,
+          "is_preprint_on_arxiv": false,
+          "preprint_source": "",
+          "journal_ref": "",
+          "doi": "",
+          "arxiv_comment": "",
+          "arxiv_id": "2608.01793v1",
+          "raw_venue": "",
+          "venue_source": "",
+          "sort_key": 202600,
+          "download": {
+            "status": "pending",
+            "source": null,
+            "path": null,
+            "last_attempt_at": null
+          }
+        },
         {
           "id": "0dbc346873287e3c0a6d3933ebce597f044f0b48",
           "title": "ARDY: Autoregressive Diffusion with Hybrid Representation for Interactive Human Motion Generation",
