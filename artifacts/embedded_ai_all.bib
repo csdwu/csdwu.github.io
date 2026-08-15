@@ -180,6 +180,16 @@
   abstract = {Spiking Neural Networks (SNNs) offer high energy efficiency and event-driven computation, ideal for low-power edge AI. Their hardware implementation on FPGAs, however, faces challenges due to heavy computation, large memory use, and limited flexibility. This paper proposes a compact System-on-Chip (SoC) architecture for temporal-coding SNNs, integrating a RISC-V controller with an event-driven SNN core. It replaces multipliers with bitwise operations using binarized weights, includes a spike-time sorter for active spikes, and skips noninformative events to reduce computation. The architecture runs fully on a Xilinx Artix-7 FPGA, achieving up to 16x memory reduction for weights and lowering computational overhead and latency, with 97.0% accuracy on MNIST and 88.3% on FashionMNIST. This self-contained design provides an efficient, scalable platform for real-time neuromorphic inference at the edge.}
 }
 
+@article{bantel2026-an-open-source-power-bc88a781,
+  author = {Linus Bantel and Sarah Rottacker and Dirk Pflüger},
+  title = {An Open-Source Power Measurement Platform for System-Level Semiconductor Testing},
+  year = {2026},
+  eprint = {2608.05888v1},
+  archivePrefix = {arXiv},
+  url = {https://arxiv.org/abs/2608.05888v1},
+  abstract = {Accurate power measurement is not only essential for evaluating the energy efficiency of modern embedded and semiconductor systems, but power draw is an important proxy during stress testing. Industrial semiconductor test equipment, however, is often expensive and difficult to integrate into flexible experimental workflows. This paper presents a compact and extensible hardware platform for automated system-level power measurement of embedded devices. The proposed setup integrates a Raspberry Pi controller, a precision current measurement device, and a microcontroller-based Device-under-Test (DUT). The system supports automated firmware deployment, synchronized device execution, and high-resolution current acquisition. A lightweight HTTP-based interface allows remote clients to upload firmware binaries and retrieve measurement results. This design enables automated benchmarking and reproducible experiments across multiple firmware variants. The platform is implemented using accessible hardware components and open-source software tools, making it suitable for research, prototyping, and educational environments. We describe the architecture of the platform, the automated testing workflow, and potential application scenarios, including firmware energy profiling and regression testing.}
+}
+
 @article{hofmann2026-ap-ood-attention-pooling-fdd8f43b,
   author = {Claus Hofmann and Christian Huber and Bernhard Lehner and Daniel Klotz and Sepp Hochreiter and Werner Zellinger},
   title = {AP-OOD: Attention Pooling for Out-of-Distribution Detection},
@@ -265,6 +275,17 @@
   archivePrefix = {arXiv},
   url = {https://arxiv.org/abs/2602.22555v2},
   abstract = {Electroencephalogram (EEG) signals have become a popular medium for decoding visual information due to their cost-effectiveness and high temporal resolution. However, current approaches face significant challenges in bridging the modality gap between EEG and image data. These methods typically rely on complex adaptation processes involving multiple stages, making it hard to maintain consistency and manage compounding errors. Furthermore, the computational overhead imposed by large-scale diffusion models limit their practicality in real-world brain-computer interface (BCI) applications. In this work, we present AVDE, a lightweight and efficient framework for visual decoding from EEG signals. First, we leverage LaBraM, a pre-trained EEG model, and fine-tune it via contrastive learning to align EEG and image representations. Second, we adopt an autoregressive generative framework based on a "next-scale prediction" strategy: images are encoded into multi-scale token maps using a pre-trained VQ-VAE, and a transformer is trained to autoregressively predict finer-scale tokens starting from EEG embeddings as the coarsest representation. This design enables coherent generation while preserving a direct connection between the input EEG signals and the reconstructed images. Experiments on two datasets show that AVDE outperforms previous state-of-the-art methods in both image retrieval and reconstruction tasks, while using only 10% of the parameters. In addition, visualization of intermediate outputs shows that the generative process of AVDE reflects the hierarchical nature of human visual perception. These results highlight the potential of autoregressive models as efficient and interpretable tools for practical BCI applications.}
+}
+
+@article{he2026-bend-the-basics-degradation-c1ab989d,
+  author = {Zihao He and Yunfeng Wu and Xinchao Wang and Songhua Liu},
+  title = {Bend the Basics: Degradation-Aware Deformable Tokenization for All-in-One Image Restoration},
+  year = {2026},
+  journal = {ICML},
+  eprint = {2608.06832v1},
+  archivePrefix = {arXiv},
+  url = {https://arxiv.org/abs/2608.06832v1},
+  abstract = {All-in-one image restoration seeks a single model that can recover images degraded by diverse and spatially non-uniform corruptions. However, many unified Transformers rely on fixed patch partitioning: task/degradation condition is injected only into the backbone blocks after tokenization, leaving the embedding and reconstruction stages insensitive to local degradation variations. In contrast to previous approaches, we present Flexible Image Transformer (FIT) that explicitly models degradation awareness across the entire pipeline, from patch sampling to pixel reconstruction. Specifically, FIT employs a lightweight Degradation Encoder to predict a global degradation vector $\\mathbf\{g\}$ and a spatial degradation map $\\mathbf\{M\}$ from local degradation severity, which jointly condition the patch embedding and unembedding through adaptive deformation. Moreover, to improve robustness across degradation types, we introduce a task-token dropout strategy that regularizes task conditioning during training. On five standard benchmarks (BSD68, Rain100L, SOTS, GoPro, and LOLv1), FIT achieves state-of-the-art performance with 30.72 dB average PSNR on the five-degradation setting and 32.83 dB on the three-degradation setting, outperforming recent unified restoration methods by +0.5$\\sim$1.1 dB. Moreover, the learned offsets provide a direct handle for visualizing degradation-aware spatial adaptation.}
 }
 
 @article{karbevski2026-beyond-linearity-in-attention-96eb95b8,
@@ -362,6 +383,17 @@
   archivePrefix = {arXiv},
   url = {https://arxiv.org/abs/2602.03351v2},
   abstract = {We build a custom transformer model to study how neural networks make moral decisions on trolley-style dilemmas. The model processes structured scenarios using embeddings that encode who is affected, how many people, and which outcome they belong to. Our 2-layer architecture achieves 77% accuracy on Moral Machine data while remaining small enough for detailed analysis. We use different interpretability techniques to uncover how moral reasoning distributes across the network, demonstrating that biases localize to distinct computational stages among other findings.}
+}
+
+@article{ono2026-calibrating-weat-against-anisotropy-f34e38ab,
+  author = {Seitaro Ono and Senna Ross and Jun Saiki},
+  title = {Calibrating WEAT Against Anisotropy: ZCA Whitening as a Geometric Pre-Processing Step for Embedding Association Tests},
+  year = {2026},
+  journal = {AAAI},
+  eprint = {2608.06908v1},
+  archivePrefix = {arXiv},
+  url = {https://arxiv.org/abs/2608.06908v1},
+  abstract = {We propose Zero-phase Component Analysis (ZCA) whitening as a geometric pre-processing step for the Word Embedding Association Test (WEAT). WEAT is a bias measurement method widely used in both computational social science and AI fairness research. It relies on cosine similarity as a measure of semantic association, which assumes that the embedding space is approximately isotropic. However, prior work has reported that many widely used language models do not satisfy this assumption, raising concerns about the reliability of bias measurements. ZCA whitening transforms the covariance of the embedding space into the identity matrix while minimizing perturbation to the original vectors. This transformation restores the isotropy condition on which WEAT relies. We evaluate our approach on ten standard WEAT test suites and seven models spanning three architectural families, yielding 70 model-task combinations. The results show that ZCA whitening substantially reduces the anisotropy of the embedding spaces across all models. Particularly for highly anisotropic models, we further observe improvements on standard semantic similarity benchmarks, indicating that the calibrated space better captures semantic associations. After calibration, over 30% of WEAT results change significance status, and effect sizes shift in both directions depending on bias category. These shifts suggest that uncalibrated measurements may both overestimate and underestimate the associations encoded in the embedding space. These findings indicate that previously reported bias measurements in anisotropic embedding spaces should be interpreted with caution and may benefit from re-evaluation with calibrated methods. Our approach contributes to restoring the measurement foundation of WEAT across both computational social science and AI fairness research.}
 }
 
 @article{jeon2026-can-blindfolded-llms-still-41adb0f2,
@@ -867,6 +899,16 @@
   abstract = {We propose Intrinsic Quality (IQ), a validation-free metric designed to estimate the inherent potential of face recognition (FR) datasets to produce high-performance models without the need for full-scale training. IQ integrates two components: (i) a Neighbor-Consistency Score that quantifies local identity label agreement via nearest neighbors, and (ii) Global Representation Subspace Complexity (Effective Rank, ER), which captures the underlying embedding geometry and dataset diversity. IQ allows for rapid evaluation using lightweight proxy models or data subsets, facilitating dataset diagnosis and curation prior to resource-intensive full-scale training. We describe an experimental protocol tailored to clean, noisy, and mixed-quality FR datasets, and outline evaluation methodologies to validate IQ's predictive power for downstream performance.}
 }
 
+@article{paul2026-ego-oscar-egocentric-open-aeb887ab,
+  author = {Gunjan Paul and Senthil Palanisamy and Satpal Singh Rathore and Pratyush Kumar Patnaik and Shubhanshu Khatana and Abhishek Anand},
+  title = {Ego-OSCAR: Egocentric Open source Stereo CAptuRe System},
+  year = {2026},
+  eprint = {2608.08285v2},
+  archivePrefix = {arXiv},
+  url = {https://arxiv.org/abs/2608.08285v2},
+  abstract = {We present Ego-OSCAR, an open-hardware, low-cost, head-mounted stereo-inertial capture device for egocentric data collection in the wild. EgoOSCAR pairs a hardware-synchronized global-shutter stereo camera with a 6- axis IMU, an embedded Linux SBC for on-device video encoding, and a realtime microcontroller for user feedback and watchdog functions. The complete bill of materials is under USD 200 per unit, using only commercially available components and 3D-printed parts. Alongside the device, we release a complete software stack (hardware-accelerated recording pipeline, IMU sampling daemon, time-synchronization tooling, and watchdog firmware) and roughly 550 hours of egocentric stereo video per camera with synchronized IMU, collected by a distributed contributor network across everyday indoor environments. The release is annotated rather than raw: free-form action captions cover essentially the entire recorded timeline with an open vocabulary, and per-frame 3D hand reconstructions ship alongside per-session stereo calibration. Ego-OSCAR does not aim to match the per-unit fidelity of research-grade systems such as Project Aria; it aims to be the cheapest defensible substrate for crowdsourced egocentric capture, and to lower the activation energy for any team that wants to collect egocentric data at scale. All hardware designs, software, and the dataset are open-sourced}
+}
+
 @article{seifi2026-ego-embedding-guided-personalization-957b2d72,
   author = {Soroush Seifi and Simon Gardier and Vaggelis Dorovatas and Daniel Olmeda Reino and Rahaf Aljundi},
   title = {Ego: Embedding-Guided Personalization of Vision-Language Models},
@@ -1315,6 +1357,17 @@
   abstract = {Time series imputation benefits from leveraging cross-feature correlations, yet existing attention-based methods re-discover feature relationships at each layer, lacking persistent anchors to maintain consistent representations. To address this, we propose HELIX, which assigns each feature a learnable feature identity, a persistent embedding that captures intrinsic semantic properties throughout the network. Unlike graph-based methods that rely on predefined topology and assume homogeneous spatial relationships, HELIX learns arbitrary feature dependencies end-to-end from temporal co-variation, naturally handling datasets where features mix spatial locations with semantic variables. Integrated with hybrid temporal-feature attention, HELIX achieves the state-of-the-art performance, surpassing all 16 baselines on 5 public datasets across 21 experimental settings in our evaluation. Furthermore, our mechanistic analysis reveals that HELIX aligns learned feature identities and dependencies with latent physical and semantic structure progressively across layers, demonstrating that it more effectively translates cross-feature structure into imputation accuracy.}
 }
 
+@article{hawley2026-helping-music-co-creation-289b5200,
+  author = {Scott H. Hawley},
+  title = {Helping Music Co-Creation Agents 'Listen' Well: Hierarchical Self-Supervised World Models for Understanding and Generation},
+  year = {2026},
+  journal = {NeurIPS},
+  eprint = {2608.04378v1},
+  archivePrefix = {arXiv},
+  url = {https://arxiv.org/abs/2608.04378v1},
+  abstract = {Collaborative music agents need internal representations rich enough to support both understanding and generation, yet flexible enough for a workflow where the human retains agency. We present a hierarchical self-supervised ``world model'' for symbolic music: a 2.55M-parameter Swin V2 encoder trained on MIDI piano-roll images with JEPA-style objectives (pitch- and time-shift equivariance, masked embedding prediction, and a distributional regularizer), using no labels and no music-theory vocabulary. Probing the frozen embeddings shows that the level at which a musical property becomes decodable tracks its musical time scale: phrase boundaries are read off the coarsest levels, note density and harmonic detail off the finest. Temporal and phrase structure emerge from the self-supervised objectives alone, while harmonic content must be asked for; a small chord-supervision head raises joint chord recovery from .18 to .54, and key detection, which is never supervised, from .16 to .70. Following the Representation AutoEncoder paradigm, a conditional flow-matching model stands in for a trained decoder, flowing in pixel space from PCA-reduced conditioning: it reproduces a target window at pixel F1 $0.996$, and the same per-level conditioning dropout that controls how far variations stray also enables graphical prompting for masked inpainting with no inpainting-specific sampler. The pipeline runs on CPU producing a suggestion in $2.8$ s, or $0.6$ s on Apple MPS, which we demonstrate in a live interactive demo. In concert with an LLM-based brain, these capabilities supply the core of a collaborative music creation agent in service of, rather than in place of, human agency.}
+}
+
 @article{petersen2026-hepa-a-self-supervised-ce889713,
   author = {Jonas Petersen and Gian-Alessandro Lombardi and Riccardo Maggioni and Camilla Mazzoleni and Federico Martelli and Philipp Petersen},
   title = {HEPA: A Self-Supervised Horizon-Conditioned Event Predictive Architecture for Time Series},
@@ -1324,6 +1377,17 @@
   archivePrefix = {arXiv},
   url = {https://arxiv.org/abs/2605.11130v1},
   abstract = {Critical events in multivariate time series, from turbine failures to cardiac arrhythmias, demand accurate prediction, yet labeled data is scarce because such events are rare and costly to annotate. We introduce HEPA (Horizon-conditioned Event Predictive Architecture), built on two key principles. First, a causal Transformer encoder is pretrained via a Joint-Embedding Predictive Architecture (JEPA): a horizon-conditioned predictor learns to forecast future representations rather than future values, forcing the encoder to capture predictable temporal dynamics from unlabeled data alone. Second, we freeze the encoder and finetune only the predictor toward the target event, producing a monotonic survival cumulative distribution function (CDF) over horizons. With fixed architecture and optimiser hyperparameters across all benchmarks, HEPA handles water contamination, cyberattack detection, volatility regimes, and eight further event types across 11 domains, exceeding leading time-series architectures including PatchTST, iTransformer, MAE, and Chronos-2 on at least 10 of 14 benchmarks, with an order of magnitude fewer tuned parameters and, on lifecycle datasets, an order of magnitude less labeled data.}
+}
+
+@article{vu2026-heterogeneous-vision-language-ensemble-4d00acd8,
+  author = {Huu-An Vu and Cam Tu Tran Thi and Thanh Toan Le Ngo and Hoang Vo and Do Trung Hieu and Hieu Dinh Trung Pham and Khang Minh Le and Huy Minh Nhat Nguyen},
+  title = {Heterogeneous Vision-Language Ensemble with Disagreement-Aware Reranking for Text-Based Person Anomaly Retrieval},
+  year = {2026},
+  journal = {ECCV},
+  eprint = {2608.12843v1},
+  archivePrefix = {arXiv},
+  url = {https://arxiv.org/abs/2608.12843v1},
+  abstract = {Text-based person anomaly retrieval aims to retrieve pedestrians exhibiting anomalous behaviors from a large image gallery using natural language descriptions. Compared with conventional text-based person retrieval, this task requires fine-grained reasoning over pedestrian appearance, behaviors, object interactions, and scene context, making robust cross-modal matching significantly more challenging. This paper presents the GENAI4E team's solution to AI City Challenge 2026 Track 4. Our framework builds upon a strong retrieval backbone and progressively integrates heterogeneous vision-language embedding models through score alignment and iterative ensemble fusion, followed by disagreement-aware VLM reranking for ambiguous queries. On the official Pedestrian Anomaly Behavior (PAB) benchmark, our approach achieves 90.92% mAP, 85.13% Recall@1, 97.72% Recall@5, and 98.68% Recall@10, demonstrating the effectiveness of combining complementary vision-language representations with selective multimodal reasoning for large-scale text-based person anomaly retrieval.}
 }
 
 @article{zhang2026-hgatsolver-a-heterogeneous-graph-307994cc,
@@ -1415,6 +1479,16 @@
   abstract = {How do we encode numeric values in transformer-based sequence processing, particularly in electronic health record (EHR) data? We systematically compare discrete, continuous, and hybrid value encoding strategies using synthetic arithmetic tasks embedded within real-world EHR data, as well as real-world clinical prediction tasks. Our study reveals trade-offs between numeric precision, optimisation stability, and architectural flexibility. We find that approaches that explicitly model value-concept interactions perform best on precision-sensitive arithmetic tasks when architectural constraints permit. Hybrid token-based approaches that retain numeric values but apply binning prior to projection provide a more robust and broadly applicable alternative, with the optimal number of bins following a simple empirically derived power-law in dataset size. Across tasks, models consistently exhibit reliable "good enough" numeric computation rather than exact arithmetic, while clinical gains from incorporating laboratory values are task-dependent. This suggests that robustness and deployability often outweigh maximal numeric precision in practice, motivating hybrid token-based approaches as a practical default.}
 }
 
+@article{dehghani2026-human-centered-explainable-ai-89ee5d7e,
+  author = {Zeinab Dehghani and Dhavalkumar Thakker and Koorosh Aslansefat and Kuniko Paxton and Bhupesh Kumar Mishra and Baseer Ahmad and Rameez Raja Kureshi},
+  title = {Human-Centered Explainable AI for TinyML Edge Devices: A Pareto-Based Selection Framework with LLM-Guided Design},
+  year = {2026},
+  eprint = {2608.07091v1},
+  archivePrefix = {arXiv},
+  url = {https://arxiv.org/abs/2608.07091v1},
+  abstract = {Edge Artificial Intelligence (Edge AI) enables the deployment of AI models directly on local edge devices, while such deployments are subject to strict resource constraints, particularly in clinical applications requiring local and timely inference. In such contexts, explainable artificial intelligence (XAI) can serve as a human-AI interface intended to support healthcare professionals' and patients' understanding of model predictions and informed decision-making. To fulfill this role, XAI method selection for TinyML deployments can be formulated as a human-centered multi-objective design problem that jointly considers qualitative stakeholder preferences, explanation quality, and proxy-based deployment cost. We propose a framework that integrates a large language model (LLM)-guided design interface that maps qualitative stakeholder preferences to candidate XAI methods, followed by deterministic feasibility filtering and Pareto-based optimization. The framework exposes trade-offs among explanation fidelity, stability, and proxy-based deployment cost while characterizing their implications for explanation quality and estimated deployment feasibility. A proof-of-concept evaluation on a skin lesion classification task illustrates how the framework systematically compares candidate XAI methods and identifies Pareto-efficient trade-offs. The present evaluation covers the computational selection stages, while physical MCU deployment and empirical human-expert validation remain outside the scope of this study.}
+}
+
 @article{sahoo2026-i-can-t-believe-b7bd8815,
   author = {Subramanyam Sahoo and Vinija Jain and Divya Chaudhary and Aman Chadha},
   title = {I Can't Believe It's Not Robust: Catastrophic Collapse of Safety Classifiers under Embedding Drift},
@@ -1490,6 +1564,17 @@
   archivePrefix = {arXiv},
   url = {https://arxiv.org/abs/2603.08104v2},
   abstract = {Understanding and addressing potential safety alignment risks in large language models (LLMs) is critical for ensuring their safe and trustworthy deployment. In this paper, we highlight an insidious safety threat: a compromised LLM can maintain a facade of proper safety alignment while covertly generating harmful content. To achieve this, we finetune the model to understand and apply a steganographic technique. At inference time, we input a prompt that contains a steganographically embedded malicious target question along with a plaintext cover question. The model, in turn, produces a target response similarly embedded within a benign-looking cover response. In this process, human observers only see the model being prompted with a cover question and generating a corresponding cover response, while the malicious content is hidden from view. We demonstrate this invisible safety threat on GPT-4.1 despite the OpenAI finetuning API's safeguards. The finetuned model produces steganographic malicious outputs in response to hidden malicious prompts, while the user interface displays only a fully benign cover interaction. We also replicate the attack on three open-source models, Llama-3.3-70B-Instruct, Phi-4, and Mistral-Small-24B-Base-2501, confirming the generality of our method. We quantitatively evaluate our method on the AdvBench dataset, using Llama-Guard-3-8B for content safety classification. Across all four models, all stegotexts containing malicious content are incorrectly classified as safe.}
+}
+
+@article{stojni2026-invisible-shortcuts-why-vision-3b0aba41,
+  author = {Vladan Stojnić and Ryan Ramos and Giorgos Kordopatis-Zilos and Noa Garcia and Giorgos Tolias},
+  title = {Invisible Shortcuts: Why Vision Encoders Know Your Camera},
+  year = {2026},
+  journal = {ECCV},
+  eprint = {2608.05424v1},
+  archivePrefix = {arXiv},
+  url = {https://arxiv.org/abs/2608.05424v1},
+  abstract = {Deep vision models exploit shortcuts, relying on cues that correlate with supervision signals. Prior work has focused on visible biases, such as object-background or texture correlations. We identify a different source of shortcut learning: invisible metadata traces embedded at the pixel level, for metadata such as image processing and photo acquisition. We hypothesize that large-scale semantic supervision, whether through categorical labels (ImageNet) or billion-scale captions (LAION), naturally induces metadata-semantics correlations during pretraining, leading models to convert low-level signals into predictive features. By introducing controlled metadata-semantics correlations, we show that stronger ones produce systematically higher sensitivity to metadata traces and larger performance degradation under metadata distribution shifts. We further explore mitigation strategies applied during and after pretraining that reduce sensitivity not only to targeted metadata but also to unseen ones, without sacrificing performance on downstream tasks. Metadata sensitivity also has a positive side: it partly explains the strong generated-image detection ability of some encoders, while its mitigation can improve out-of-distribution generalization. Code: https://github.com/ryan-caesar-ramos/visual-encoder-traces}
 }
 
 @article{fervers2026-it-s-all-just-687b2b7d,
@@ -1666,6 +1751,17 @@
   archivePrefix = {arXiv},
   url = {https://arxiv.org/abs/2602.04192v2},
   abstract = {Learning the intrinsic dimensionality of subjective perceptual spaces such as taste, smell, or aesthetics from ordinal data is a challenging problem. We introduce LORE (Low Rank Ordinal Embedding), a scalable framework that jointly learns both the intrinsic dimensionality and an ordinal embedding from noisy triplet comparisons of the form, "Is A more similar to B than C?". Unlike existing methods that require the embedding dimension to be set apriori, LORE regularizes the solution using the nonconvex Schatten-$p$ quasi norm, enabling automatic joint recovery of both the ordinal embedding and its dimensionality. We optimize this joint objective via an iteratively reweighted algorithm and establish convergence guarantees. Extensive experiments on synthetic datasets, simulated perceptual spaces, and real world crowdsourced ordinal judgements show that LORE learns compact, interpretable and highly accurate low dimensional embeddings that recover the latent geometry of subjective percepts. By simultaneously inferring both the intrinsic dimensionality and ordinal embeddings, LORE enables more interpretable and data efficient perceptual modeling in psychophysics and opens new directions for scalable discovery of low dimensional structure from ordinal data in machine learning.}
+}
+
+@article{cao2026-marknull-model-agnostic-watermark-c5ed82b5,
+  author = {Jie Cao and Qi Li and Zelin Zhang and Xiaodong Wu and Lingshuang Liu and Xiangman Li and Jianbing Ni},
+  title = {MarkNull: Model-Agnostic Watermark Removal in AI-Generated Images via On-Manifold Latent Manipulation},
+  year = {2026},
+  journal = {Accepted to the 35th USENIX Security Symposium (USENIX Security 2026)},
+  eprint = {2608.10166v1},
+  archivePrefix = {arXiv},
+  url = {https://arxiv.org/abs/2608.10166v1},
+  abstract = {Digital watermarking has emerged as a critical technique for provenance and copyright attribution in AI-generated imagery, yet its robustness against realistic, model-agnostic removal attacks remains poorly explored. Existing attacks either succeed only against specific generative models or achieve removal at the cost of severe visual degradation. In this paper, we propose MarkNull, a model-agnostic watermark removal attack via on-manifold latent manipulation. MarkNull is grounded in a key observation: watermarked images exhibit a strong statistical dependency between the generated latent representation and the embedded initial noise. To quantify this dependency, we introduce the Noise-Latent Alignment Score (NLAS) and formulate an optimization objective that selectively decorrelates the latent representation from the embedded watermark while preserving semantic fidelity. Extensive evaluations across different categories of watermarking paradigms, including post-hoc, fine-tuning-based, and initial-noise-based schemes, demonstrate that MarkNull reduces average bit accuracy to 53.14%, approaching random-guessing (50%), without perceptible image degradation. To further improve scalability, we propose MarkNull-A, an amortized, optimization-free variant that distills the attack into a single forward pass, achieving 0.50 s/image with modest computational overhead. Notably, our attacks successfully compromise Google's SynthID-Image system while preserving high visual quality and transfer effectively to video watermarking. Finally, we present an attack detection mechanism as a defensive counterpart to MarkNull and MarkNull-A, highlighting the necessity of developing watermark designs resilient to model-agnostic latent-space attacks.}
 }
 
 @article{zhang2026-medmamba-multi-view-state-9df42c41,

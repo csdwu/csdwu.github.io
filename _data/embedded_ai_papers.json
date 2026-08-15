@@ -1,6 +1,6 @@
 {
   "version": "2.0.0",
-  "generated_at": "2026-08-05T01:58:11.167Z",
+  "generated_at": "2026-08-15T00:54:16.947Z",
   "query_groups": {
     "A": "\"embedded ai\"",
     "B": "(\"low power\" OR \"ultra-low-power\") \"embedded ai\"",
@@ -8,44 +8,44 @@
   },
   "stats": {
     "raw_counts": {
-      "A": 23,
-      "B": 1,
-      "C": 1
+      "A": 140,
+      "B": 5,
+      "C": 5
     },
     "after_set_ops": {
-      "A_only": 22,
-      "B": 1,
-      "C": 1,
-      "merged_total": 24,
+      "A_only": 135,
+      "B": 5,
+      "C": 5,
+      "merged_total": 145,
       "bc_overlap": 0
     },
-    "after_filter": 893,
+    "after_filter": 902,
     "classification": {
-      "total": 893,
+      "total": 902,
       "by_category": {
-        "Efficient Model Design and Optimization": 289,
+        "Efficient Model Design and Optimization": 291,
         "Novel Computing Architectures and Domain-Specific Accelerators": 40,
-        "Embedded AI Applications": 564
+        "Embedded AI Applications": 571
       },
       "by_tag": {
-        "TinyML": 51,
+        "TinyML": 54,
         "LP": 101,
         "ULP": 17
       },
       "by_provider": {
         "tencent_tokenhub": 0,
         "heuristic": 0,
-        "heuristic_fallback": 893
+        "heuristic_fallback": 902
       }
     },
     "source_stats": {
-      "total": 893,
+      "total": 902,
       "by_group": {
         "A": {
-          "total": 746,
+          "total": 752,
           "arxiv": 0,
           "venues": {
-            "AAAI": 90,
+            "AAAI": 91,
             "AAMAS": 0,
             "ACL": 5,
             "ACM MM": 0,
@@ -109,7 +109,7 @@
             "EAAI": 0,
             "EASE": 0,
             "EC": 0,
-            "ECCV": 7,
+            "ECCV": 9,
             "ECIR": 0,
             "ECOOP": 0,
             "EDBT": 0,
@@ -168,7 +168,7 @@
             "ICIP": 0,
             "ICLR": 166,
             "ICMI": 0,
-            "ICML": 152,
+            "ICML": 153,
             "ICMR": 0,
             "ICN": 0,
             "ICNP": 0,
@@ -257,7 +257,7 @@
             "NOSSDAV": 0,
             "NSDI": 0,
             "Networking": 0,
-            "NeurIPS": 191,
+            "NeurIPS": 192,
             "OOPSLA": 0,
             "OSDI": 0,
             "PACT": 0,
@@ -383,7 +383,7 @@
             "UIST": 0,
             "UMUAI": 0,
             "USENIX ATC": 0,
-            "USENIX Security": 1,
+            "USENIX Security": 2,
             "UbiComp": 0,
             "VEE": 0,
             "VLDB": 0,
@@ -790,8 +790,8 @@
           "unknown": 0
         },
         "C": {
-          "total": 51,
-          "arxiv": 43,
+          "total": 54,
+          "arxiv": 46,
           "venues": {
             "AAAI": 0,
             "AAMAS": 0,
@@ -1539,10 +1539,10 @@
         }
       },
       "total_summary": {
-        "total": 908,
-        "arxiv": 129,
+        "total": 917,
+        "arxiv": 132,
         "venues": {
-          "AAAI": 90,
+          "AAAI": 91,
           "AAMAS": 0,
           "ACL": 5,
           "ACM MM": 0,
@@ -1606,7 +1606,7 @@
           "EAAI": 0,
           "EASE": 0,
           "EC": 0,
-          "ECCV": 7,
+          "ECCV": 9,
           "ECIR": 0,
           "ECOOP": 0,
           "EDBT": 0,
@@ -1665,7 +1665,7 @@
           "ICIP": 0,
           "ICLR": 167,
           "ICMI": 0,
-          "ICML": 154,
+          "ICML": 155,
           "ICMR": 0,
           "ICN": 0,
           "ICNP": 0,
@@ -1754,7 +1754,7 @@
           "NOSSDAV": 0,
           "NSDI": 0,
           "Networking": 0,
-          "NeurIPS": 192,
+          "NeurIPS": 193,
           "OOPSLA": 0,
           "OSDI": 0,
           "PACT": 0,
@@ -1880,7 +1880,7 @@
           "UIST": 0,
           "UMUAI": 0,
           "USENIX ATC": 0,
-          "USENIX Security": 1,
+          "USENIX Security": 2,
           "UbiComp": 0,
           "VEE": 0,
           "VLDB": 0,
@@ -1918,7 +1918,7 @@
     {
       "key": "efficient_model_design",
       "title": "Efficient Model Design and Optimization",
-      "count": 289,
+      "count": 291,
       "papers": [
         {
           "id": "324fa612dae04181d2f0f7213010dcf4ace233da",
@@ -2018,6 +2018,111 @@
           "doi": "",
           "arxiv_comment": "",
           "arxiv_id": "2608.03324v1",
+          "raw_venue": "",
+          "venue_source": "",
+          "sort_key": 202600,
+          "download": {
+            "status": "pending",
+            "source": null,
+            "path": null,
+            "last_attempt_at": null
+          }
+        },
+        {
+          "id": "001a78ee6df14587b684f8e5d4e66db330d1a2a5",
+          "title": "Bend the Basics: Degradation-Aware Deformable Tokenization for All-in-One Image Restoration",
+          "authors": [
+            "Zihao He",
+            "Yunfeng Wu",
+            "Xinchao Wang",
+            "Songhua Liu"
+          ],
+          "year": 2026,
+          "month": 8,
+          "source": "arxiv",
+          "venue": "ICML",
+          "venue_type": "conference",
+          "abstract": "All-in-one image restoration seeks a single model that can recover images degraded by diverse and spatially non-uniform corruptions. However, many unified Transformers rely on fixed patch partitioning: task/degradation condition is injected only into the backbone blocks after tokenization, leaving the embedding and reconstruction stages insensitive to local degradation variations. In contrast to previous approaches, we present Flexible Image Transformer (FIT) that explicitly models degradation awareness across the entire pipeline, from patch sampling to pixel reconstruction. Specifically, FIT employs a lightweight Degradation Encoder to predict a global degradation vector $\\mathbf{g}$ and a spatial degradation map $\\mathbf{M}$ from local degradation severity, which jointly condition the patch embedding and unembedding through adaptive deformation. Moreover, to improve robustness across degradation types, we introduce a task-token dropout strategy that regularizes task conditioning during training. On five standard benchmarks (BSD68, Rain100L, SOTS, GoPro, and LOLv1), FIT achieves state-of-the-art performance with 30.72 dB average PSNR on the five-degradation setting and 32.83 dB on the three-degradation setting, outperforming recent unified restoration methods by +0.5$\\sim$1.1 dB. Moreover, the learned offsets provide a direct handle for visualizing degradation-aware spatial adaptation.",
+          "urls": {
+            "arxiv": "https://arxiv.org/abs/2608.06832v1",
+            "pdf": "https://arxiv.org/pdf/2608.06832v1",
+            "paper": "https://arxiv.org/abs/2608.06832v1"
+          },
+          "search_sets_raw": [
+            "A"
+          ],
+          "search_sets_final": [
+            "A"
+          ],
+          "filter_bucket": "th_cpl_a",
+          "matched_venue": "ICML",
+          "matched_th_cpl_level": "A",
+          "matched_th_cpl_area": "Artificial Intelligence and Pattern Recognition",
+          "category": "Efficient Model Design and Optimization",
+          "llm_tags": [],
+          "forced_tags": [],
+          "final_tags": [],
+          "cited_by": 0,
+          "is_preprint_on_arxiv": false,
+          "preprint_source": "",
+          "journal_ref": "",
+          "doi": "",
+          "arxiv_comment": "",
+          "arxiv_id": "2608.06832v1",
+          "raw_venue": "",
+          "venue_source": "",
+          "sort_key": 202600,
+          "download": {
+            "status": "pending",
+            "source": null,
+            "path": null,
+            "last_attempt_at": null
+          }
+        },
+        {
+          "id": "89cb33c8e5992c76cebd634143eccc9c7b55d391",
+          "title": "MarkNull: Model-Agnostic Watermark Removal in AI-Generated Images via On-Manifold Latent Manipulation",
+          "authors": [
+            "Jie Cao",
+            "Qi Li",
+            "Zelin Zhang",
+            "Xiaodong Wu",
+            "Lingshuang Liu",
+            "Xiangman Li",
+            "Jianbing Ni"
+          ],
+          "year": 2026,
+          "month": 8,
+          "source": "arxiv",
+          "venue": "Accepted to the 35th USENIX Security Symposium (USENIX Security 2026)",
+          "venue_type": "conference",
+          "abstract": "Digital watermarking has emerged as a critical technique for provenance and copyright attribution in AI-generated imagery, yet its robustness against realistic, model-agnostic removal attacks remains poorly explored. Existing attacks either succeed only against specific generative models or achieve removal at the cost of severe visual degradation. In this paper, we propose MarkNull, a model-agnostic watermark removal attack via on-manifold latent manipulation. MarkNull is grounded in a key observation: watermarked images exhibit a strong statistical dependency between the generated latent representation and the embedded initial noise. To quantify this dependency, we introduce the Noise-Latent Alignment Score (NLAS) and formulate an optimization objective that selectively decorrelates the latent representation from the embedded watermark while preserving semantic fidelity. Extensive evaluations across different categories of watermarking paradigms, including post-hoc, fine-tuning-based, and initial-noise-based schemes, demonstrate that MarkNull reduces average bit accuracy to 53.14%, approaching random-guessing (50%), without perceptible image degradation. To further improve scalability, we propose MarkNull-A, an amortized, optimization-free variant that distills the attack into a single forward pass, achieving 0.50 s/image with modest computational overhead. Notably, our attacks successfully compromise Google's SynthID-Image system while preserving high visual quality and transfer effectively to video watermarking. Finally, we present an attack detection mechanism as a defensive counterpart to MarkNull and MarkNull-A, highlighting the necessity of developing watermark designs resilient to model-agnostic latent-space attacks.",
+          "urls": {
+            "arxiv": "https://arxiv.org/abs/2608.10166v1",
+            "pdf": "https://arxiv.org/pdf/2608.10166v1",
+            "paper": "https://arxiv.org/abs/2608.10166v1"
+          },
+          "search_sets_raw": [
+            "A"
+          ],
+          "search_sets_final": [
+            "A"
+          ],
+          "filter_bucket": "th_cpl_a",
+          "matched_venue": "USENIX Security",
+          "matched_th_cpl_level": "A",
+          "matched_th_cpl_area": "Network and Information Security",
+          "category": "Efficient Model Design and Optimization",
+          "llm_tags": [],
+          "forced_tags": [],
+          "final_tags": [],
+          "cited_by": 0,
+          "is_preprint_on_arxiv": false,
+          "preprint_source": "",
+          "journal_ref": "",
+          "doi": "",
+          "arxiv_comment": "",
+          "arxiv_id": "2608.10166v1",
           "raw_venue": "",
           "venue_source": "",
           "sort_key": 202600,
@@ -19340,8 +19445,330 @@
     {
       "key": "embedded_ai_applications",
       "title": "Embedded AI Applications",
-      "count": 564,
+      "count": 571,
       "papers": [
+        {
+          "id": "b20f46545e0fc87b6c14114ce97abde0d7beb2d5",
+          "title": "An Open-Source Power Measurement Platform for System-Level Semiconductor Testing",
+          "authors": [
+            "Linus Bantel",
+            "Sarah Rottacker",
+            "Dirk Pflüger"
+          ],
+          "year": 2026,
+          "month": 8,
+          "source": "arxiv",
+          "venue": "",
+          "venue_type": "",
+          "abstract": "Accurate power measurement is not only essential for evaluating the energy efficiency of modern embedded and semiconductor systems, but power draw is an important proxy during stress testing. Industrial semiconductor test equipment, however, is often expensive and difficult to integrate into flexible experimental workflows.\n  This paper presents a compact and extensible hardware platform for automated system-level power measurement of embedded devices. The proposed setup integrates a Raspberry Pi controller, a precision current measurement device, and a microcontroller-based Device-under-Test (DUT). The system supports automated firmware deployment, synchronized device execution, and high-resolution current acquisition.\n  A lightweight HTTP-based interface allows remote clients to upload firmware binaries and retrieve measurement results. This design enables automated benchmarking and reproducible experiments across multiple firmware variants.\n  The platform is implemented using accessible hardware components and open-source software tools, making it suitable for research, prototyping, and educational environments. We describe the architecture of the platform, the automated testing workflow, and potential application scenarios, including firmware energy profiling and regression testing.",
+          "urls": {
+            "arxiv": "https://arxiv.org/abs/2608.05888v1",
+            "pdf": "https://arxiv.org/pdf/2608.05888v1",
+            "paper": "https://arxiv.org/abs/2608.05888v1"
+          },
+          "search_sets_raw": [
+            "C"
+          ],
+          "search_sets_final": [
+            "C"
+          ],
+          "filter_bucket": "arxiv",
+          "matched_venue": "",
+          "matched_th_cpl_level": "",
+          "matched_th_cpl_area": "",
+          "category": "Embedded AI Applications",
+          "llm_tags": [
+            "TinyML"
+          ],
+          "forced_tags": [],
+          "final_tags": [
+            "TinyML"
+          ],
+          "cited_by": 0,
+          "is_preprint_on_arxiv": false,
+          "preprint_source": "",
+          "journal_ref": "",
+          "doi": "",
+          "arxiv_comment": "",
+          "arxiv_id": "2608.05888v1",
+          "raw_venue": "",
+          "venue_source": "",
+          "sort_key": 202600,
+          "download": {
+            "status": "pending",
+            "source": null,
+            "path": null,
+            "last_attempt_at": null
+          }
+        },
+        {
+          "id": "e4496a6c67b2838dd6f5b1d7bff19cce81c89981",
+          "title": "Calibrating WEAT Against Anisotropy: ZCA Whitening as a Geometric Pre-Processing Step for Embedding Association Tests",
+          "authors": [
+            "Seitaro Ono",
+            "Senna Ross",
+            "Jun Saiki"
+          ],
+          "year": 2026,
+          "month": 8,
+          "source": "arxiv",
+          "venue": "AAAI",
+          "venue_type": "conference",
+          "abstract": "We propose Zero-phase Component Analysis (ZCA) whitening as a geometric pre-processing step for the Word Embedding Association Test (WEAT). WEAT is a bias measurement method widely used in both computational social science and AI fairness research. It relies on cosine similarity as a measure of semantic association, which assumes that the embedding space is approximately isotropic. However, prior work has reported that many widely used language models do not satisfy this assumption, raising concerns about the reliability of bias measurements. ZCA whitening transforms the covariance of the embedding space into the identity matrix while minimizing perturbation to the original vectors. This transformation restores the isotropy condition on which WEAT relies. We evaluate our approach on ten standard WEAT test suites and seven models spanning three architectural families, yielding 70 model-task combinations. The results show that ZCA whitening substantially reduces the anisotropy of the embedding spaces across all models. Particularly for highly anisotropic models, we further observe improvements on standard semantic similarity benchmarks, indicating that the calibrated space better captures semantic associations. After calibration, over 30% of WEAT results change significance status, and effect sizes shift in both directions depending on bias category. These shifts suggest that uncalibrated measurements may both overestimate and underestimate the associations encoded in the embedding space. These findings indicate that previously reported bias measurements in anisotropic embedding spaces should be interpreted with caution and may benefit from re-evaluation with calibrated methods. Our approach contributes to restoring the measurement foundation of WEAT across both computational social science and AI fairness research.",
+          "urls": {
+            "arxiv": "https://arxiv.org/abs/2608.06908v1",
+            "pdf": "https://arxiv.org/pdf/2608.06908v1",
+            "paper": "https://arxiv.org/abs/2608.06908v1"
+          },
+          "search_sets_raw": [
+            "A"
+          ],
+          "search_sets_final": [
+            "A"
+          ],
+          "filter_bucket": "th_cpl_a",
+          "matched_venue": "AAAI",
+          "matched_th_cpl_level": "A",
+          "matched_th_cpl_area": "Artificial Intelligence and Pattern Recognition",
+          "category": "Embedded AI Applications",
+          "llm_tags": [],
+          "forced_tags": [],
+          "final_tags": [],
+          "cited_by": 0,
+          "is_preprint_on_arxiv": false,
+          "preprint_source": "",
+          "journal_ref": "",
+          "doi": "",
+          "arxiv_comment": "",
+          "arxiv_id": "2608.06908v1",
+          "raw_venue": "",
+          "venue_source": "",
+          "sort_key": 202600,
+          "download": {
+            "status": "pending",
+            "source": null,
+            "path": null,
+            "last_attempt_at": null
+          }
+        },
+        {
+          "id": "780ffc798e6752a176aa560c729dcf40eefe4f56",
+          "title": "Ego-OSCAR: Egocentric Open source Stereo CAptuRe System",
+          "authors": [
+            "Gunjan Paul",
+            "Senthil Palanisamy",
+            "Satpal Singh Rathore",
+            "Pratyush Kumar Patnaik",
+            "Shubhanshu Khatana",
+            "Abhishek Anand"
+          ],
+          "year": 2026,
+          "month": 8,
+          "source": "arxiv",
+          "venue": "",
+          "venue_type": "",
+          "abstract": "We present Ego-OSCAR, an open-hardware, low-cost, head-mounted stereo-inertial capture device for egocentric data collection in the wild. EgoOSCAR pairs a hardware-synchronized global-shutter stereo camera with a 6- axis IMU, an embedded Linux SBC for on-device video encoding, and a realtime microcontroller for user feedback and watchdog functions. The complete bill of materials is under USD 200 per unit, using only commercially available components and 3D-printed parts. Alongside the device, we release a complete software stack (hardware-accelerated recording pipeline, IMU sampling daemon, time-synchronization tooling, and watchdog firmware) and roughly 550 hours of egocentric stereo video per camera with synchronized IMU, collected by a distributed contributor network across everyday indoor environments. The release is annotated rather than raw: free-form action captions cover essentially the entire recorded timeline with an open vocabulary, and per-frame 3D hand reconstructions ship alongside per-session stereo calibration. Ego-OSCAR does not aim to match the per-unit fidelity of research-grade systems such as Project Aria; it aims to be the cheapest defensible substrate for crowdsourced egocentric capture, and to lower the activation energy for any team that wants to collect egocentric data at scale. All hardware designs, software, and the dataset are open-sourced",
+          "urls": {
+            "arxiv": "https://arxiv.org/abs/2608.08285v2",
+            "pdf": "https://arxiv.org/pdf/2608.08285v2",
+            "paper": "https://arxiv.org/abs/2608.08285v2"
+          },
+          "search_sets_raw": [
+            "C"
+          ],
+          "search_sets_final": [
+            "C"
+          ],
+          "filter_bucket": "arxiv",
+          "matched_venue": "",
+          "matched_th_cpl_level": "",
+          "matched_th_cpl_area": "",
+          "category": "Embedded AI Applications",
+          "llm_tags": [
+            "TinyML"
+          ],
+          "forced_tags": [],
+          "final_tags": [
+            "TinyML"
+          ],
+          "cited_by": 0,
+          "is_preprint_on_arxiv": false,
+          "preprint_source": "",
+          "journal_ref": "",
+          "doi": "",
+          "arxiv_comment": "",
+          "arxiv_id": "2608.08285v2",
+          "raw_venue": "",
+          "venue_source": "",
+          "sort_key": 202600,
+          "download": {
+            "status": "pending",
+            "source": null,
+            "path": null,
+            "last_attempt_at": null
+          }
+        },
+        {
+          "id": "1ab19d2837e689f4da383c7fb9f87d6fe3042210",
+          "title": "Helping Music Co-Creation Agents 'Listen' Well: Hierarchical Self-Supervised World Models for Understanding and Generation",
+          "authors": [
+            "Scott H. Hawley"
+          ],
+          "year": 2026,
+          "month": 8,
+          "source": "arxiv",
+          "venue": "NeurIPS",
+          "venue_type": "conference",
+          "abstract": "Collaborative music agents need internal representations rich enough to support both understanding and generation, yet flexible enough for a workflow where the human retains agency. We present a hierarchical self-supervised ``world model'' for symbolic music: a 2.55M-parameter Swin V2 encoder trained on MIDI piano-roll images with JEPA-style objectives (pitch- and time-shift equivariance, masked embedding prediction, and a distributional regularizer), using no labels and no music-theory vocabulary. Probing the frozen embeddings shows that the level at which a musical property becomes decodable tracks its musical time scale: phrase boundaries are read off the coarsest levels, note density and harmonic detail off the finest. Temporal and phrase structure emerge from the self-supervised objectives alone, while harmonic content must be asked for; a small chord-supervision head raises joint chord recovery from .18 to .54, and key detection, which is never supervised, from .16 to .70. Following the Representation AutoEncoder paradigm, a conditional flow-matching model stands in for a trained decoder, flowing in pixel space from PCA-reduced conditioning: it reproduces a target window at pixel F1 $0.996$, and the same per-level conditioning dropout that controls how far variations stray also enables graphical prompting for masked inpainting with no inpainting-specific sampler. The pipeline runs on CPU producing a suggestion in $2.8$ s, or $0.6$ s on Apple MPS, which we demonstrate in a live interactive demo. In concert with an LLM-based brain, these capabilities supply the core of a collaborative music creation agent in service of, rather than in place of, human agency.",
+          "urls": {
+            "arxiv": "https://arxiv.org/abs/2608.04378v1",
+            "pdf": "https://arxiv.org/pdf/2608.04378v1",
+            "paper": "https://arxiv.org/abs/2608.04378v1"
+          },
+          "search_sets_raw": [
+            "A"
+          ],
+          "search_sets_final": [
+            "A"
+          ],
+          "filter_bucket": "th_cpl_a",
+          "matched_venue": "NeurIPS",
+          "matched_th_cpl_level": "A",
+          "matched_th_cpl_area": "Artificial Intelligence and Pattern Recognition",
+          "category": "Embedded AI Applications",
+          "llm_tags": [],
+          "forced_tags": [],
+          "final_tags": [],
+          "cited_by": 0,
+          "is_preprint_on_arxiv": false,
+          "preprint_source": "",
+          "journal_ref": "",
+          "doi": "",
+          "arxiv_comment": "",
+          "arxiv_id": "2608.04378v1",
+          "raw_venue": "",
+          "venue_source": "",
+          "sort_key": 202600,
+          "download": {
+            "status": "pending",
+            "source": null,
+            "path": null,
+            "last_attempt_at": null
+          }
+        },
+        {
+          "id": "27ca245611789c0e1f4211f1444d55c6e604d804",
+          "title": "Heterogeneous Vision-Language Ensemble with Disagreement-Aware Reranking for Text-Based Person Anomaly Retrieval",
+          "authors": [
+            "Huu-An Vu",
+            "Cam Tu Tran Thi",
+            "Thanh Toan Le Ngo",
+            "Hoang Vo",
+            "Do Trung Hieu",
+            "Hieu Dinh Trung Pham",
+            "Khang Minh Le",
+            "Huy Minh Nhat Nguyen"
+          ],
+          "year": 2026,
+          "month": 8,
+          "source": "arxiv",
+          "venue": "ECCV",
+          "venue_type": "conference",
+          "abstract": "Text-based person anomaly retrieval aims to retrieve pedestrians exhibiting anomalous behaviors from a large image gallery using natural language descriptions. Compared with conventional text-based person retrieval, this task requires fine-grained reasoning over pedestrian appearance, behaviors, object interactions, and scene context, making robust cross-modal matching significantly more challenging. This paper presents the GENAI4E team's solution to AI City Challenge 2026 Track 4. Our framework builds upon a strong retrieval backbone and progressively integrates heterogeneous vision-language embedding models through score alignment and iterative ensemble fusion, followed by disagreement-aware VLM reranking for ambiguous queries. On the official Pedestrian Anomaly Behavior (PAB) benchmark, our approach achieves 90.92% mAP, 85.13% Recall@1, 97.72% Recall@5, and 98.68% Recall@10, demonstrating the effectiveness of combining complementary vision-language representations with selective multimodal reasoning for large-scale text-based person anomaly retrieval.",
+          "urls": {
+            "arxiv": "https://arxiv.org/abs/2608.12843v1",
+            "pdf": "https://arxiv.org/pdf/2608.12843v1",
+            "paper": "https://arxiv.org/abs/2608.12843v1"
+          },
+          "search_sets_raw": [
+            "A"
+          ],
+          "search_sets_final": [
+            "A"
+          ],
+          "filter_bucket": "th_cpl_a",
+          "matched_venue": "ECCV",
+          "matched_th_cpl_level": "A",
+          "matched_th_cpl_area": "Artificial Intelligence and Pattern Recognition",
+          "category": "Embedded AI Applications",
+          "llm_tags": [],
+          "forced_tags": [],
+          "final_tags": [],
+          "cited_by": 0,
+          "is_preprint_on_arxiv": false,
+          "preprint_source": "",
+          "journal_ref": "",
+          "doi": "",
+          "arxiv_comment": "",
+          "arxiv_id": "2608.12843v1",
+          "raw_venue": "",
+          "venue_source": "",
+          "sort_key": 202600,
+          "download": {
+            "status": "pending",
+            "source": null,
+            "path": null,
+            "last_attempt_at": null
+          }
+        },
+        {
+          "id": "e0458f3570cccc366ef5e6228961cc3e7a57be51",
+          "title": "Human-Centered Explainable AI for TinyML Edge Devices: A Pareto-Based Selection Framework with LLM-Guided Design",
+          "authors": [
+            "Zeinab Dehghani",
+            "Dhavalkumar Thakker",
+            "Koorosh Aslansefat",
+            "Kuniko Paxton",
+            "Bhupesh Kumar Mishra",
+            "Baseer Ahmad",
+            "Rameez Raja Kureshi"
+          ],
+          "year": 2026,
+          "month": 8,
+          "source": "arxiv",
+          "venue": "",
+          "venue_type": "",
+          "abstract": "Edge Artificial Intelligence (Edge AI) enables the deployment of AI models directly on local edge devices, while such deployments are subject to strict resource constraints, particularly in clinical applications requiring local and timely inference. In such contexts, explainable artificial intelligence (XAI) can serve as a human-AI interface intended to support healthcare professionals' and patients' understanding of model predictions and informed decision-making. To fulfill this role, XAI method selection for TinyML deployments can be formulated as a human-centered multi-objective design problem that jointly considers qualitative stakeholder preferences, explanation quality, and proxy-based deployment cost. We propose a framework that integrates a large language model (LLM)-guided design interface that maps qualitative stakeholder preferences to candidate XAI methods, followed by deterministic feasibility filtering and Pareto-based optimization. The framework exposes trade-offs among explanation fidelity, stability, and proxy-based deployment cost while characterizing their implications for explanation quality and estimated deployment feasibility. A proof-of-concept evaluation on a skin lesion classification task illustrates how the framework systematically compares candidate XAI methods and identifies Pareto-efficient trade-offs. The present evaluation covers the computational selection stages, while physical MCU deployment and empirical human-expert validation remain outside the scope of this study.",
+          "urls": {
+            "arxiv": "https://arxiv.org/abs/2608.07091v1",
+            "pdf": "https://arxiv.org/pdf/2608.07091v1",
+            "paper": "https://arxiv.org/abs/2608.07091v1"
+          },
+          "search_sets_raw": [
+            "C"
+          ],
+          "search_sets_final": [
+            "C"
+          ],
+          "filter_bucket": "arxiv",
+          "matched_venue": "",
+          "matched_th_cpl_level": "",
+          "matched_th_cpl_area": "",
+          "category": "Embedded AI Applications",
+          "llm_tags": [
+            "TinyML"
+          ],
+          "forced_tags": [],
+          "final_tags": [
+            "TinyML"
+          ],
+          "cited_by": 0,
+          "is_preprint_on_arxiv": false,
+          "preprint_source": "",
+          "journal_ref": "",
+          "doi": "",
+          "arxiv_comment": "",
+          "arxiv_id": "2608.07091v1",
+          "raw_venue": "",
+          "venue_source": "",
+          "sort_key": 202600,
+          "download": {
+            "status": "pending",
+            "source": null,
+            "path": null,
+            "last_attempt_at": null
+          }
+        },
         {
           "id": "6b971ed1b16d092664c27c52e39eb3bff0f4936b",
           "title": "Illuminating Visual Identity in Universal Multimodal Embeddings",
@@ -19387,6 +19814,58 @@
           "doi": "",
           "arxiv_comment": "",
           "arxiv_id": "2608.01794v1",
+          "raw_venue": "",
+          "venue_source": "",
+          "sort_key": 202600,
+          "download": {
+            "status": "pending",
+            "source": null,
+            "path": null,
+            "last_attempt_at": null
+          }
+        },
+        {
+          "id": "4f3fe6053efbe5f9fbe9762a9b8041e0abd299fa",
+          "title": "Invisible Shortcuts: Why Vision Encoders Know Your Camera",
+          "authors": [
+            "Vladan Stojnić",
+            "Ryan Ramos",
+            "Giorgos Kordopatis-Zilos",
+            "Noa Garcia",
+            "Giorgos Tolias"
+          ],
+          "year": 2026,
+          "month": 8,
+          "source": "arxiv",
+          "venue": "ECCV",
+          "venue_type": "conference",
+          "abstract": "Deep vision models exploit shortcuts, relying on cues that correlate with supervision signals. Prior work has focused on visible biases, such as object-background or texture correlations. We identify a different source of shortcut learning: invisible metadata traces embedded at the pixel level, for metadata such as image processing and photo acquisition. We hypothesize that large-scale semantic supervision, whether through categorical labels (ImageNet) or billion-scale captions (LAION), naturally induces metadata-semantics correlations during pretraining, leading models to convert low-level signals into predictive features. By introducing controlled metadata-semantics correlations, we show that stronger ones produce systematically higher sensitivity to metadata traces and larger performance degradation under metadata distribution shifts. We further explore mitigation strategies applied during and after pretraining that reduce sensitivity not only to targeted metadata but also to unseen ones, without sacrificing performance on downstream tasks. Metadata sensitivity also has a positive side: it partly explains the strong generated-image detection ability of some encoders, while its mitigation can improve out-of-distribution generalization. Code: https://github.com/ryan-caesar-ramos/visual-encoder-traces",
+          "urls": {
+            "arxiv": "https://arxiv.org/abs/2608.05424v1",
+            "pdf": "https://arxiv.org/pdf/2608.05424v1",
+            "paper": "https://arxiv.org/abs/2608.05424v1"
+          },
+          "search_sets_raw": [
+            "A"
+          ],
+          "search_sets_final": [
+            "A"
+          ],
+          "filter_bucket": "th_cpl_a",
+          "matched_venue": "ECCV",
+          "matched_th_cpl_level": "A",
+          "matched_th_cpl_area": "Artificial Intelligence and Pattern Recognition",
+          "category": "Embedded AI Applications",
+          "llm_tags": [],
+          "forced_tags": [],
+          "final_tags": [],
+          "cited_by": 0,
+          "is_preprint_on_arxiv": false,
+          "preprint_source": "",
+          "journal_ref": "",
+          "doi": "",
+          "arxiv_comment": "",
+          "arxiv_id": "2608.05424v1",
           "raw_venue": "",
           "venue_source": "",
           "sort_key": 202600,
