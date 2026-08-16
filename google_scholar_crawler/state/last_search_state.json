@@ -1,16 +1,16 @@
 {
   "source": "arxiv",
-  "last_successful_search_at": "2026-08-15T00:54:16.952Z",
+  "last_successful_search_at": "2026-08-16T00:56:59.131Z",
   "overlap_buffer_days": 1,
   "groups": {
     "A": {
-      "last_successful_search_at": "2026-08-15T00:54:16.952Z"
+      "last_successful_search_at": "2026-08-16T00:56:59.131Z"
     },
     "B": {
-      "last_successful_search_at": "2026-08-15T00:54:16.952Z"
+      "last_successful_search_at": "2026-08-16T00:56:59.131Z"
     },
     "C": {
-      "last_successful_search_at": "2026-08-15T00:54:16.952Z"
+      "last_successful_search_at": "2026-08-16T00:56:59.131Z"
     }
   }
 }
