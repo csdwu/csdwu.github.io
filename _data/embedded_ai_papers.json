@@ -1,6 +1,6 @@
 {
   "version": "2.0.0",
-  "generated_at": "2026-08-16T00:56:59.127Z",
+  "generated_at": "2026-08-17T00:55:17.412Z",
   "query_groups": {
     "A": "\"embedded ai\"",
     "B": "(\"low power\" OR \"ultra-low-power\") \"embedded ai\"",
