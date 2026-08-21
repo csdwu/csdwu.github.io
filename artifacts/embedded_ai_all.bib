@@ -484,6 +484,17 @@
   abstract = {Diffusion Transformers (DiTs) have greatly advanced text-to-image generation, but models still struggle to generate the correct spatial relations between objects as specified in the text prompt. In this study, we adopt a mechanistic interpretability approach to investigate how a DiT can generate correct spatial relations between objects. We train, from scratch, DiTs of different sizes with different text encoders to learn to generate images containing two objects whose attributes and spatial relations are specified in the text prompt. We find that, although all the models can learn this task to near-perfect accuracy, the underlying mechanisms differ drastically depending on the choice of text encoder. When using random text embeddings, we find that the spatial-relation information is passed to image tokens through a two-stage circuit, involving two cross-attention heads that separately read the spatial relation and single-object attributes in the text prompt. When using a pretrained text encoder (T5), we find that the DiT uses a different circuit that leverages information fusion in the text tokens, reading spatial-relation and single-object information together from a single text token. We further show that, although the in-domain performance is similar for the two settings, their robustness to out-of-domain perturbations differs, potentially suggesting the difficulty of generating correct relations in real-world scenarios.}
 }
 
+@article{hewagamage2026-cl4d-contrastive-language-4d-74873184,
+  author = {Kumal Hewagamage and Isuranga Senavirathne and Sasika Amarasinghe and Hasitha Gallella and Dulanga Weerakoon and Vigneshwaran Subbaraju and Ranga Rodrigo},
+  title = {CL4D: Contrastive Language-4D Pretraining for Vision-Language Reasoning in Dynamic Scenes},
+  year = {2026},
+  journal = {ECCV},
+  eprint = {2608.18734v1},
+  archivePrefix = {arXiv},
+  url = {https://arxiv.org/abs/2608.18734v1},
+  abstract = {4D understanding and reasoning is a fundamental capability for embodied AI agents operating in dynamic physical environments. However, existing vision encoders are largely limited to static 2D images or 3D point clouds without temporal modeling, or to 2D videos that lack accurate geometric depth reasoning. Consequently, current approaches fail to jointly capture spatial structure and motion evolution in dynamic scenes. We present CL4D, the first foundational 4D vision encoder that directly operates on dynamic point clouds, trained with a contrastive learning objective to align spatio-temporal geometric representations with natural language descriptions. By learning a shared embedding space between text and 4D scene dynamics, CL4D enables zero-shot motion-to-text and text-to-motion retrieval in dynamic environments and serves as a foundational 4D vision encoder for downstream 4D vision-language tasks. Building on this encoder, we introduce 4DVLM, a 4D vision-language model that conditions language generation on dynamic geometric representations. 4DVLM is the first VLM designed to operate directly on 4D point clouds without relying on 2D images, 2D videos, or static 3D point clouds. We train CL4D and subsequently 4DVLM on a newly constructed dataset termed DynAction4D capturing diverse human motions across varying object interactions and scene environments. Extensive experiments across multiple 4D human action benchmarks demonstrate that CL4D achieves state-of-the-art performance, with improvements of approximately ~16.75% over prior methods. Furthermore, 4DVLM outperforms frontier video VLMs such as Gemini and GPT-5 even when these models are provided with RGB video sequences corresponding to the same scenes represented as 4D point clouds for 4DVLM.}
+}
+
 @article{gokhale2026-compact-geometric-representations-of-b91c1b1c,
   author = {Prashant Gokhale and Piotr Indyk and Yuhao Liu and Sandeep Silwal and Tony Chang Wang and Haike Xu},
   title = {Compact Geometric Representations of Hierarchies},
@@ -733,6 +744,17 @@
   archivePrefix = {arXiv},
   url = {https://arxiv.org/abs/2603.15259v1},
   abstract = {The safety and reliability of vision-language models (VLMs) are a crucial part of deploying trustworthy agentic AI systems. However, VLMs remain vulnerable to jailbreaking attacks that undermine their safety alignment to yield harmful outputs. In this work, we extend the Randomized Embedding Smoothing and Token Aggregation (RESTA) defense to VLMs and evaluate its performance against the JailBreakV-28K benchmark of multi-modal jailbreaking attacks. We find that RESTA is effective in reducing attack success rate over this diverse corpus of attacks, in particular, when employing directional embedding noise, where the injected noise is aligned with the original token embedding vectors. Our results demonstrate that RESTA can contribute to securing VLMs within agentic systems, as a lightweight, inference-time defense layer of an overall security framework.}
+}
+
+@article{kim2026-discretizing-continuous-time-series-ee01e500,
+  author = {Dongbin Kim and Seungyun Lee and Geonwoo Shin and Jaewook Lee},
+  title = {Discretizing Continuous Time Series for Imputation with Masked Diffusion Training},
+  year = {2026},
+  journal = {NeurIPS},
+  eprint = {2608.19119v1},
+  archivePrefix = {arXiv},
+  url = {https://arxiv.org/abs/2608.19119v1},
+  abstract = {Time series imputation is a crucial area for reliable time series analysis, yet it remains challenging due to the complex temporal dynamics and noise of real-world data. Existing approaches, however, exhibit two limitations: missing and observed values are embedded within the same representation space without explicit structural separation, and continuous diffusion-based methods are trained to predict added noise rather than the original signal. To address these, we propose the Masked Diffusion Time-series Imputation Model (MDTIM), which leverages the training paradigm of masked diffusion model for imputation tasks. The MASK token is structurally orthogonal to valid observations, and the model directly predicts the original values, naturally aligning both the representation and the learning objective with the imputation task. To bridge the gap between discrete masked diffusion and the continuous, ordinal nature of time series, we further introduce Stochastic Discretization, which maps continuous values to ordinal-aware tokens while preserving continuous dynamics. Our experiments on diverse benchmarks confirm that MDTIM achieves superior robustness and scalability, consistently outperforming state-of-the-art deterministic and generative baselines across various missing scenarios.}
 }
 
 @article{shi2026-disease-centric-vision-language-1a496d18,

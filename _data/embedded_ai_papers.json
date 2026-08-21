@@ -1,6 +1,6 @@
 {
   "version": "2.0.0",
-  "generated_at": "2026-08-20T00:53:50.035Z",
+  "generated_at": "2026-08-21T00:57:38.928Z",
   "query_groups": {
     "A": "\"embedded ai\"",
     "B": "(\"low power\" OR \"ultra-low-power\") \"embedded ai\"",
@@ -8,24 +8,24 @@
   },
   "stats": {
     "raw_counts": {
-      "A": 9,
+      "A": 15,
       "B": 0,
-      "C": 0
+      "C": 1
     },
     "after_set_ops": {
-      "A_only": 9,
+      "A_only": 14,
       "B": 0,
-      "C": 0,
-      "merged_total": 9,
+      "C": 1,
+      "merged_total": 15,
       "bc_overlap": 0
     },
-    "after_filter": 902,
+    "after_filter": 904,
     "classification": {
-      "total": 902,
+      "total": 904,
       "by_category": {
         "Efficient Model Design and Optimization": 291,
         "Novel Computing Architectures and Domain-Specific Accelerators": 40,
-        "Embedded AI Applications": 571
+        "Embedded AI Applications": 573
       },
       "by_tag": {
         "TinyML": 54,
@@ -35,14 +35,14 @@
       "by_provider": {
         "tencent_tokenhub": 0,
         "heuristic": 0,
-        "heuristic_fallback": 902
+        "heuristic_fallback": 904
       }
     },
     "source_stats": {
-      "total": 902,
+      "total": 904,
       "by_group": {
         "A": {
-          "total": 752,
+          "total": 754,
           "arxiv": 0,
           "venues": {
             "AAAI": 91,
@@ -109,7 +109,7 @@
             "EAAI": 0,
             "EASE": 0,
             "EC": 0,
-            "ECCV": 9,
+            "ECCV": 10,
             "ECIR": 0,
             "ECOOP": 0,
             "EDBT": 0,
@@ -257,7 +257,7 @@
             "NOSSDAV": 0,
             "NSDI": 0,
             "Networking": 0,
-            "NeurIPS": 192,
+            "NeurIPS": 193,
             "OOPSLA": 0,
             "OSDI": 0,
             "PACT": 0,
@@ -1539,7 +1539,7 @@
         }
       },
       "total_summary": {
-        "total": 917,
+        "total": 919,
         "arxiv": 132,
         "venues": {
           "AAAI": 91,
@@ -1606,7 +1606,7 @@
           "EAAI": 0,
           "EASE": 0,
           "EC": 0,
-          "ECCV": 9,
+          "ECCV": 10,
           "ECIR": 0,
           "ECOOP": 0,
           "EDBT": 0,
@@ -1754,7 +1754,7 @@
           "NOSSDAV": 0,
           "NSDI": 0,
           "Networking": 0,
-          "NeurIPS": 193,
+          "NeurIPS": 194,
           "OOPSLA": 0,
           "OSDI": 0,
           "PACT": 0,
@@ -19445,7 +19445,7 @@
     {
       "key": "embedded_ai_applications",
       "title": "Embedded AI Applications",
-      "count": 571,
+      "count": 573,
       "papers": [
         {
           "id": "b20f46545e0fc87b6c14114ce97abde0d7beb2d5",
@@ -19541,6 +19541,111 @@
           "doi": "",
           "arxiv_comment": "",
           "arxiv_id": "2608.06908v1",
+          "raw_venue": "",
+          "venue_source": "",
+          "sort_key": 202600,
+          "download": {
+            "status": "pending",
+            "source": null,
+            "path": null,
+            "last_attempt_at": null
+          }
+        },
+        {
+          "id": "2070e7c1b035ea6675e4dc1d64ca6d64a7c8cde2",
+          "title": "CL4D: Contrastive Language-4D Pretraining for Vision-Language Reasoning in Dynamic Scenes",
+          "authors": [
+            "Kumal Hewagamage",
+            "Isuranga Senavirathne",
+            "Sasika Amarasinghe",
+            "Hasitha Gallella",
+            "Dulanga Weerakoon",
+            "Vigneshwaran Subbaraju",
+            "Ranga Rodrigo"
+          ],
+          "year": 2026,
+          "month": 8,
+          "source": "arxiv",
+          "venue": "ECCV",
+          "venue_type": "conference",
+          "abstract": "4D understanding and reasoning is a fundamental capability for embodied AI agents operating in dynamic physical environments. However, existing vision encoders are largely limited to static 2D images or 3D point clouds without temporal modeling, or to 2D videos that lack accurate geometric depth reasoning. Consequently, current approaches fail to jointly capture spatial structure and motion evolution in dynamic scenes. We present CL4D, the first foundational 4D vision encoder that directly operates on dynamic point clouds, trained with a contrastive learning objective to align spatio-temporal geometric representations with natural language descriptions. By learning a shared embedding space between text and 4D scene dynamics, CL4D enables zero-shot motion-to-text and text-to-motion retrieval in dynamic environments and serves as a foundational 4D vision encoder for downstream 4D vision-language tasks. Building on this encoder, we introduce 4DVLM, a 4D vision-language model that conditions language generation on dynamic geometric representations. 4DVLM is the first VLM designed to operate directly on 4D point clouds without relying on 2D images, 2D videos, or static 3D point clouds. We train CL4D and subsequently 4DVLM on a newly constructed dataset termed DynAction4D capturing diverse human motions across varying object interactions and scene environments. Extensive experiments across multiple 4D human action benchmarks demonstrate that CL4D achieves state-of-the-art performance, with improvements of approximately ~16.75% over prior methods. Furthermore, 4DVLM outperforms frontier video VLMs such as Gemini and GPT-5 even when these models are provided with RGB video sequences corresponding to the same scenes represented as 4D point clouds for 4DVLM.",
+          "urls": {
+            "arxiv": "https://arxiv.org/abs/2608.18734v1",
+            "pdf": "https://arxiv.org/pdf/2608.18734v1",
+            "paper": "https://arxiv.org/abs/2608.18734v1"
+          },
+          "search_sets_raw": [
+            "A"
+          ],
+          "search_sets_final": [
+            "A"
+          ],
+          "filter_bucket": "th_cpl_a",
+          "matched_venue": "ECCV",
+          "matched_th_cpl_level": "A",
+          "matched_th_cpl_area": "Artificial Intelligence and Pattern Recognition",
+          "category": "Embedded AI Applications",
+          "llm_tags": [],
+          "forced_tags": [],
+          "final_tags": [],
+          "cited_by": 0,
+          "is_preprint_on_arxiv": false,
+          "preprint_source": "",
+          "journal_ref": "",
+          "doi": "",
+          "arxiv_comment": "",
+          "arxiv_id": "2608.18734v1",
+          "raw_venue": "",
+          "venue_source": "",
+          "sort_key": 202600,
+          "download": {
+            "status": "pending",
+            "source": null,
+            "path": null,
+            "last_attempt_at": null
+          }
+        },
+        {
+          "id": "c5f798b3d8db3e1c6e552fc11c6cf3e791d200d3",
+          "title": "Discretizing Continuous Time Series for Imputation with Masked Diffusion Training",
+          "authors": [
+            "Dongbin Kim",
+            "Seungyun Lee",
+            "Geonwoo Shin",
+            "Jaewook Lee"
+          ],
+          "year": 2026,
+          "month": 8,
+          "source": "arxiv",
+          "venue": "NeurIPS",
+          "venue_type": "conference",
+          "abstract": "Time series imputation is a crucial area for reliable time series analysis, yet it remains challenging due to the complex temporal dynamics and noise of real-world data. Existing approaches, however, exhibit two limitations: missing and observed values are embedded within the same representation space without explicit structural separation, and continuous diffusion-based methods are trained to predict added noise rather than the original signal. To address these, we propose the Masked Diffusion Time-series Imputation Model (MDTIM), which leverages the training paradigm of masked diffusion model for imputation tasks. The MASK token is structurally orthogonal to valid observations, and the model directly predicts the original values, naturally aligning both the representation and the learning objective with the imputation task. To bridge the gap between discrete masked diffusion and the continuous, ordinal nature of time series, we further introduce Stochastic Discretization, which maps continuous values to ordinal-aware tokens while preserving continuous dynamics. Our experiments on diverse benchmarks confirm that MDTIM achieves superior robustness and scalability, consistently outperforming state-of-the-art deterministic and generative baselines across various missing scenarios.",
+          "urls": {
+            "arxiv": "https://arxiv.org/abs/2608.19119v1",
+            "pdf": "https://arxiv.org/pdf/2608.19119v1",
+            "paper": "https://arxiv.org/abs/2608.19119v1"
+          },
+          "search_sets_raw": [
+            "A"
+          ],
+          "search_sets_final": [
+            "A"
+          ],
+          "filter_bucket": "th_cpl_a",
+          "matched_venue": "NeurIPS",
+          "matched_th_cpl_level": "A",
+          "matched_th_cpl_area": "Artificial Intelligence and Pattern Recognition",
+          "category": "Embedded AI Applications",
+          "llm_tags": [],
+          "forced_tags": [],
+          "final_tags": [],
+          "cited_by": 0,
+          "is_preprint_on_arxiv": false,
+          "preprint_source": "",
+          "journal_ref": "",
+          "doi": "",
+          "arxiv_comment": "",
+          "arxiv_id": "2608.19119v1",
           "raw_venue": "",
           "venue_source": "",
           "sort_key": 202600,
