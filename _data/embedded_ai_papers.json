@@ -1,6 +1,6 @@
 {
   "version": "2.0.0",
-  "generated_at": "2026-08-21T00:57:38.928Z",
+  "generated_at": "2026-08-22T00:53:50.464Z",
   "query_groups": {
     "A": "\"embedded ai\"",
     "B": "(\"low power\" OR \"ultra-low-power\") \"embedded ai\"",
@@ -8,24 +8,24 @@
   },
   "stats": {
     "raw_counts": {
-      "A": 15,
+      "A": 13,
       "B": 0,
-      "C": 1
+      "C": 0
     },
     "after_set_ops": {
-      "A_only": 14,
+      "A_only": 13,
       "B": 0,
-      "C": 1,
-      "merged_total": 15,
+      "C": 0,
+      "merged_total": 13,
       "bc_overlap": 0
     },
-    "after_filter": 904,
+    "after_filter": 905,
     "classification": {
-      "total": 904,
+      "total": 905,
       "by_category": {
         "Efficient Model Design and Optimization": 291,
         "Novel Computing Architectures and Domain-Specific Accelerators": 40,
-        "Embedded AI Applications": 573
+        "Embedded AI Applications": 574
       },
       "by_tag": {
         "TinyML": 54,
@@ -35,14 +35,14 @@
       "by_provider": {
         "tencent_tokenhub": 0,
         "heuristic": 0,
-        "heuristic_fallback": 904
+        "heuristic_fallback": 905
       }
     },
     "source_stats": {
-      "total": 904,
+      "total": 905,
       "by_group": {
         "A": {
-          "total": 754,
+          "total": 755,
           "arxiv": 0,
           "venues": {
             "AAAI": 91,
@@ -109,7 +109,7 @@
             "EAAI": 0,
             "EASE": 0,
             "EC": 0,
-            "ECCV": 10,
+            "ECCV": 11,
             "ECIR": 0,
             "ECOOP": 0,
             "EDBT": 0,
@@ -1539,7 +1539,7 @@
         }
       },
       "total_summary": {
-        "total": 919,
+        "total": 920,
         "arxiv": 132,
         "venues": {
           "AAAI": 91,
@@ -1606,7 +1606,7 @@
           "EAAI": 0,
           "EASE": 0,
           "EC": 0,
-          "ECCV": 10,
+          "ECCV": 11,
           "ECIR": 0,
           "ECOOP": 0,
           "EDBT": 0,
@@ -19445,7 +19445,7 @@
     {
       "key": "embedded_ai_applications",
       "title": "Embedded AI Applications",
-      "count": 573,
+      "count": 574,
       "papers": [
         {
           "id": "b20f46545e0fc87b6c14114ce97abde0d7beb2d5",
@@ -19703,6 +19703,56 @@
           "doi": "",
           "arxiv_comment": "",
           "arxiv_id": "2608.08285v2",
+          "raw_venue": "",
+          "venue_source": "",
+          "sort_key": 202600,
+          "download": {
+            "status": "pending",
+            "source": null,
+            "path": null,
+            "last_attempt_at": null
+          }
+        },
+        {
+          "id": "e8990f31bdd69788c0ecb8b82207e99674e29e32",
+          "title": "Far from the Crowd: Scalable Self-Supervised Learning via Geographic Isolation",
+          "authors": [
+            "Daniele Rege Cambrin",
+            "Francesco Rossi",
+            "Mattia Varile"
+          ],
+          "year": 2026,
+          "month": 8,
+          "source": "arxiv",
+          "venue": "ECCV",
+          "venue_type": "conference",
+          "abstract": "Self-supervised pretraining on remote sensing imagery typically treats all samples as equally informative, despite large variability in geographic and visual structure. We propose a curriculum learning strategy for self-supervised Earth observation that ranks samples by geographic isolation, a label-free proxy derived entirely from geolocation metadata already present in geospatial datasets, requiring no image decoding, no model feedback, and no manual annotation. Unlike visual complexity proxies, it scales as O(D log D) with dataset size D and is well-defined for both contrastive and reconstructive objectives. We integrate the proposed measure into MoCoV2 and MAE pretraining and evaluate across three downstream tasks from CopernicusBench (BigEarthNet, DFC-2020, LCZ). Our curriculum reaches baseline final-epoch performance using as few as 20% of the training budget (MAE) and at most 40% (MoCo) of the training budget, and improves final downstream performance by up to +5 mAP on BigEarthNet, with gains of 1-5 points across benchmarks, matching visual-complexity curricula while reducing pre-computation cost by more than 140x (4 s vs. 568 s on SSL4EO). A CKA and effective-rank analysis further reveals that curriculum-trained encoders develop higher-dimensional, more uniformly utilized embedding spaces throughout training.",
+          "urls": {
+            "arxiv": "https://arxiv.org/abs/2608.19766v1",
+            "pdf": "https://arxiv.org/pdf/2608.19766v1",
+            "paper": "https://arxiv.org/abs/2608.19766v1"
+          },
+          "search_sets_raw": [
+            "A"
+          ],
+          "search_sets_final": [
+            "A"
+          ],
+          "filter_bucket": "th_cpl_a",
+          "matched_venue": "ECCV",
+          "matched_th_cpl_level": "A",
+          "matched_th_cpl_area": "Artificial Intelligence and Pattern Recognition",
+          "category": "Embedded AI Applications",
+          "llm_tags": [],
+          "forced_tags": [],
+          "final_tags": [],
+          "cited_by": 0,
+          "is_preprint_on_arxiv": false,
+          "preprint_source": "",
+          "journal_ref": "",
+          "doi": "",
+          "arxiv_comment": "",
+          "arxiv_id": "2608.19766v1",
           "raw_venue": "",
           "venue_source": "",
           "sort_key": 202600,

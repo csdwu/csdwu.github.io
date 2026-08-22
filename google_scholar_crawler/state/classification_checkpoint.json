@@ -134368,5 +134368,124 @@
       "error": "TokenHub request failed with status 402: {\"error\":{\"type\":\"gateway_error\",\"code\":\"401008\",\"message\":\"The free trial quota for the service has been exhausted and postpaid billing is not enabled, so the service cannot be accessed. Please go to Console \\u003e Online Inference Service to enable postpaid billing. See: https://console.cloud.tencent.com/tokenhub/inference\",\"message_zh\":\"服务免费体验额度已耗尽，且未开启后付费，无法正常访问。请前往控制台 \\u003e 在线推理服务开启后付费，查看链接：https://console.cloud.tencent.com/tokenhub/inference\",\"request_id\":\"b931fc1d-f411-4697-99ad-1c7a3389fbd1\"}}"
     },
     "checkpoint_saved_at": "2026-08-21T00:58:09.458Z"
+  },
+  "arxiv:2608 19766v1": {
+    "id": "e8990f31bdd69788c0ecb8b82207e99674e29e32",
+    "source": "arxiv",
+    "title": "Far from the Crowd: Scalable Self-Supervised Learning via Geographic Isolation",
+    "abstract": "Self-supervised pretraining on remote sensing imagery typically treats all samples as equally informative, despite large variability in geographic and visual structure. We propose a curriculum learning strategy for self-supervised Earth observation that ranks samples by geographic isolation, a label-free proxy derived entirely from geolocation metadata already present in geospatial datasets, requiring no image decoding, no model feedback, and no manual annotation. Unlike visual complexity proxies, it scales as O(D log D) with dataset size D and is well-defined for both contrastive and reconstructive objectives. We integrate the proposed measure into MoCoV2 and MAE pretraining and evaluate across three downstream tasks from CopernicusBench (BigEarthNet, DFC-2020, LCZ). Our curriculum reaches baseline final-epoch performance using as few as 20% of the training budget (MAE) and at most 40% (MoCo) of the training budget, and improves final downstream performance by up to +5 mAP on BigEarthNet, with gains of 1-5 points across benchmarks, matching visual-complexity curricula while reducing pre-computation cost by more than 140x (4 s vs. 568 s on SSL4EO). A CKA and effective-rank analysis further reveals that curriculum-trained encoders develop higher-dimensional, more uniformly utilized embedding spaces throughout training.",
+    "snippet": "Self-supervised pretraining on remote sensing imagery typically treats all samples as equally informative, despite large variability in geographic and visual structure. We propose a curriculum learnin",
+    "authors": [
+      "Daniele Rege Cambrin",
+      "Francesco Rossi",
+      "Mattia Varile"
+    ],
+    "venue": "ECCV",
+    "year": 2026,
+    "cited_by": 0,
+    "doi": "",
+    "arxiv_id": "2608.19766v1",
+    "urls": {
+      "arxiv": "https://arxiv.org/abs/2608.19766v1",
+      "pdf": "https://arxiv.org/pdf/2608.19766v1",
+      "paper": "https://arxiv.org/abs/2608.19766v1"
+    },
+    "scholar_url": "",
+    "pub_url": "https://arxiv.org/abs/2608.19766v1",
+    "eprint_url": "https://arxiv.org/pdf/2608.19766v1",
+    "container_type": "",
+    "query_useds": [],
+    "raw_group_hits": [
+      "A"
+    ],
+    "search_sets_raw": [
+      "A"
+    ],
+    "search_sets_final": [
+      "A"
+    ],
+    "post_filter": null,
+    "raw_payloads": [
+      {
+        "arxiv_id": "2608.19766v1",
+        "title": "Far from the Crowd: Scalable Self-Supervised Learning via Geographic Isolation",
+        "abstract": "Self-supervised pretraining on remote sensing imagery typically treats all samples as equally informative, despite large variability in geographic and visual structure. We propose a curriculum learning strategy for self-supervised Earth observation that ranks samples by geographic isolation, a label-free proxy derived entirely from geolocation metadata already present in geospatial datasets, requiring no image decoding, no model feedback, and no manual annotation. Unlike visual complexity proxies, it scales as O(D log D) with dataset size D and is well-defined for both contrastive and reconstructive objectives. We integrate the proposed measure into MoCoV2 and MAE pretraining and evaluate across three downstream tasks from CopernicusBench (BigEarthNet, DFC-2020, LCZ). Our curriculum reaches baseline final-epoch performance using as few as 20% of the training budget (MAE) and at most 40% (MoCo) of the training budget, and improves final downstream performance by up to +5 mAP on BigEarthNet, with gains of 1-5 points across benchmarks, matching visual-complexity curricula while reducing pre-computation cost by more than 140x (4 s vs. 568 s on SSL4EO). A CKA and effective-rank analysis further reveals that curriculum-trained encoders develop higher-dimensional, more uniformly utilized embedding spaces throughout training.",
+        "authors": [
+          "Daniele Rege Cambrin",
+          "Francesco Rossi",
+          "Mattia Varile"
+        ],
+        "year": 2026,
+        "month": 8,
+        "published": "2026-08-20T08:09:53Z",
+        "updated": "2026-08-20T08:09:53Z",
+        "urls": {
+          "arxiv": "https://arxiv.org/abs/2608.19766v1",
+          "pdf": "https://arxiv.org/pdf/2608.19766v1"
+        },
+        "arxiv_url": "https://arxiv.org/abs/2608.19766v1",
+        "pdf_url": "https://arxiv.org/pdf/2608.19766v1",
+        "eprint_url": "https://arxiv.org/pdf/2608.19766v1",
+        "pub_url": "https://arxiv.org/abs/2608.19766v1",
+        "snippet": "Self-supervised pretraining on remote sensing imagery typically treats all samples as equally informative, despite large variability in geographic and visual structure. We propose a curriculum learnin",
+        "source": "arxiv",
+        "is_preprint_on_arxiv": true,
+        "preprint_source": "arXiv",
+        "journal_ref": "",
+        "doi": "",
+        "arxiv_comment": "Accepted to ECCV 2026 TerraBytes Workshop",
+        "venue": "ECCV",
+        "raw_venue": "Accepted to ECCV 2026 TerraBytes Workshop",
+        "venue_source": "arxiv_comment",
+        "cited_by": 0
+      }
+    ],
+    "dedupe_key": "arxiv:2608 19766v1",
+    "seed_tags": [],
+    "tag_hints": {
+      "force_tinyml": false,
+      "require_power_tag": false
+    },
+    "primary_group": "A",
+    "filter_policy": "TH_CPL_A",
+    "filter_bucket": "th_cpl_a",
+    "filter_reason": "matched_th_cpl_a",
+    "matched_venue": "ECCV",
+    "matched_th_cpl_level": "A",
+    "matched_th_cpl_area": "Artificial Intelligence and Pattern Recognition",
+    "matched_venue_type": "conference",
+    "venue_match": {
+      "matched": true,
+      "raw": "ECCV",
+      "normalized": "eccv",
+      "normalized_candidates": [
+        "eccv"
+      ],
+      "match": {
+        "area": "Artificial Intelligence and Pattern Recognition",
+        "level": "A",
+        "type": "conference",
+        "canonicalFull": "European Conference on Computer Vision",
+        "canonicalShort": "ECCV"
+      }
+    },
+    "arxiv_match": {
+      "matched": true,
+      "arxiv_id": "2608.19766v1",
+      "matched_urls": [
+        "https://arxiv.org/abs/2608.19766v1",
+        "https://arxiv.org/pdf/2608.19766v1"
+      ]
+    },
+    "is_in_arxiv": true,
+    "category": "Embedded AI Applications",
+    "llm_tags": [],
+    "final_tags": [],
+    "provider_used": "heuristic_fallback",
+    "classification_model": "hunyuan-2.0-instruct-20251111",
+    "classification_raw_response": {
+      "error": "TokenHub request failed with status 402: {\"error\":{\"type\":\"gateway_error\",\"code\":\"401008\",\"message\":\"The free trial quota for the service has been exhausted and postpaid billing is not enabled, so the service cannot be accessed. Please go to Console \\u003e Online Inference Service to enable postpaid billing. See: https://console.cloud.tencent.com/tokenhub/inference\",\"message_zh\":\"服务免费体验额度已耗尽，且未开启后付费，无法正常访问。请前往控制台 \\u003e 在线推理服务开启后付费，查看链接：https://console.cloud.tencent.com/tokenhub/inference\",\"request_id\":\"57c8e664-b415-41e5-9073-ef5682fc0c3a\"}}"
+    },
+    "checkpoint_saved_at": "2026-08-22T00:54:17.995Z"
   }
 }
