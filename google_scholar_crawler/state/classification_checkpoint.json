@@ -134487,5 +134487,362 @@
       "error": "TokenHub request failed with status 402: {\"error\":{\"type\":\"gateway_error\",\"code\":\"401008\",\"message\":\"The free trial quota for the service has been exhausted and postpaid billing is not enabled, so the service cannot be accessed. Please go to Console \\u003e Online Inference Service to enable postpaid billing. See: https://console.cloud.tencent.com/tokenhub/inference\",\"message_zh\":\"服务免费体验额度已耗尽，且未开启后付费，无法正常访问。请前往控制台 \\u003e 在线推理服务开启后付费，查看链接：https://console.cloud.tencent.com/tokenhub/inference\",\"request_id\":\"57c8e664-b415-41e5-9073-ef5682fc0c3a\"}}"
     },
     "checkpoint_saved_at": "2026-08-22T00:54:17.995Z"
+  },
+  "arxiv:2608 22789v1": {
+    "id": "dcf2aaeccbbdeaa21fe89fdc9acaf50d9b45b14a",
+    "source": "arxiv",
+    "title": "GuidedFlow: An Attention-Guided Framework for Anomaly Detection in Additive Manufacturing",
+    "abstract": "Additive Manufacturing (AM) plays a vital role in the ongoing industrial revolution. However, quality control remains crucial and challenging due to printing defects or potential cyber-physical intrusions. Image or video-based anomaly detection is a key effort towards addressing these challenges. Various approaches have been explored in this domain, including reconstruction-based, embedding-based, and flow-based methods. Though normalizing flow-based methods address some of the core challenges of unforeseen defects and generalization while maintaining detection performance, existing approaches struggle with tiny/stringing defects common in 3D printing. In a small-data setting, this poses a limitation in generalization. To address these limitations, we propose \\textbf{GuidedFlow}, a novel attention-guided normalizing flow model for anomaly detection and localization. GuidedFlow employs a pre-trained ResNet model, fine-tuned on the domain dataset. An attention-guided spatial and temporal flow framework models the dynamics across multiple scales and frames. A Spatio-Temporal Attention Network (SAN) enables the flow model to prioritize relevant contextual cues from input frames. We evaluate GuidedFlow on our AM3D-AD dataset, consisting of benign and anomalous real 3D printed object images and videos. We also conduct a comparative study using the MVTec-AD industrial image anomaly detection dataset. Experimental results demonstrate that GuidedFlow outperforms most of the state-of-the-art models with enhanced detection accuracy and AUROC.",
+    "snippet": "Additive Manufacturing (AM) plays a vital role in the ongoing industrial revolution. However, quality control remains crucial and challenging due to printing defects or potential cyber-physical intrus",
+    "authors": [
+      "Sosmita Paul",
+      "Krishna Roy"
+    ],
+    "venue": "CVPR",
+    "year": 2026,
+    "cited_by": 0,
+    "doi": "",
+    "arxiv_id": "2608.22789v1",
+    "urls": {
+      "arxiv": "https://arxiv.org/abs/2608.22789v1",
+      "pdf": "https://arxiv.org/pdf/2608.22789v1",
+      "paper": "https://arxiv.org/abs/2608.22789v1"
+    },
+    "scholar_url": "",
+    "pub_url": "https://arxiv.org/abs/2608.22789v1",
+    "eprint_url": "https://arxiv.org/pdf/2608.22789v1",
+    "container_type": "",
+    "query_useds": [],
+    "raw_group_hits": [
+      "A"
+    ],
+    "search_sets_raw": [
+      "A"
+    ],
+    "search_sets_final": [
+      "A"
+    ],
+    "post_filter": null,
+    "raw_payloads": [
+      {
+        "arxiv_id": "2608.22789v1",
+        "title": "GuidedFlow: An Attention-Guided Framework for Anomaly Detection in Additive Manufacturing",
+        "abstract": "Additive Manufacturing (AM) plays a vital role in the ongoing industrial revolution. However, quality control remains crucial and challenging due to printing defects or potential cyber-physical intrusions. Image or video-based anomaly detection is a key effort towards addressing these challenges. Various approaches have been explored in this domain, including reconstruction-based, embedding-based, and flow-based methods. Though normalizing flow-based methods address some of the core challenges of unforeseen defects and generalization while maintaining detection performance, existing approaches struggle with tiny/stringing defects common in 3D printing. In a small-data setting, this poses a limitation in generalization. To address these limitations, we propose \\textbf{GuidedFlow}, a novel attention-guided normalizing flow model for anomaly detection and localization. GuidedFlow employs a pre-trained ResNet model, fine-tuned on the domain dataset. An attention-guided spatial and temporal flow framework models the dynamics across multiple scales and frames. A Spatio-Temporal Attention Network (SAN) enables the flow model to prioritize relevant contextual cues from input frames. We evaluate GuidedFlow on our AM3D-AD dataset, consisting of benign and anomalous real 3D printed object images and videos. We also conduct a comparative study using the MVTec-AD industrial image anomaly detection dataset. Experimental results demonstrate that GuidedFlow outperforms most of the state-of-the-art models with enhanced detection accuracy and AUROC.",
+        "authors": [
+          "Sosmita Paul",
+          "Krishna Roy"
+        ],
+        "year": 2026,
+        "month": 8,
+        "published": "2026-08-24T04:18:42Z",
+        "updated": "2026-08-24T04:18:42Z",
+        "urls": {
+          "arxiv": "https://arxiv.org/abs/2608.22789v1",
+          "pdf": "https://arxiv.org/pdf/2608.22789v1"
+        },
+        "arxiv_url": "https://arxiv.org/abs/2608.22789v1",
+        "pdf_url": "https://arxiv.org/pdf/2608.22789v1",
+        "eprint_url": "https://arxiv.org/pdf/2608.22789v1",
+        "pub_url": "https://arxiv.org/abs/2608.22789v1",
+        "snippet": "Additive Manufacturing (AM) plays a vital role in the ongoing industrial revolution. However, quality control remains crucial and challenging due to printing defects or potential cyber-physical intrus",
+        "source": "arxiv",
+        "is_preprint_on_arxiv": true,
+        "preprint_source": "arXiv",
+        "journal_ref": "Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition Workshop 2026",
+        "doi": "",
+        "arxiv_comment": "",
+        "venue": "CVPR",
+        "raw_venue": "Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition Workshop 2026",
+        "venue_source": "arxiv_journal_ref",
+        "cited_by": 0
+      }
+    ],
+    "dedupe_key": "arxiv:2608 22789v1",
+    "seed_tags": [],
+    "tag_hints": {
+      "force_tinyml": false,
+      "require_power_tag": false
+    },
+    "primary_group": "A",
+    "filter_policy": "TH_CPL_A",
+    "filter_bucket": "th_cpl_a",
+    "filter_reason": "matched_th_cpl_a",
+    "matched_venue": "CVPR",
+    "matched_th_cpl_level": "A",
+    "matched_th_cpl_area": "Artificial Intelligence and Pattern Recognition",
+    "matched_venue_type": "conference",
+    "venue_match": {
+      "matched": true,
+      "raw": "CVPR",
+      "normalized": "cvpr",
+      "normalized_candidates": [
+        "cvpr"
+      ],
+      "match": {
+        "area": "Artificial Intelligence and Pattern Recognition",
+        "level": "A",
+        "type": "conference",
+        "canonicalFull": "IEEE Conference on Computer Vision and Pattern Recognition",
+        "canonicalShort": "CVPR"
+      }
+    },
+    "arxiv_match": {
+      "matched": true,
+      "arxiv_id": "2608.22789v1",
+      "matched_urls": [
+        "https://arxiv.org/abs/2608.22789v1",
+        "https://arxiv.org/pdf/2608.22789v1"
+      ]
+    },
+    "is_in_arxiv": true,
+    "category": "Embedded AI Applications",
+    "llm_tags": [],
+    "final_tags": [],
+    "provider_used": "heuristic_fallback",
+    "classification_model": "hunyuan-2.0-instruct-20251111",
+    "classification_raw_response": {
+      "error": "TokenHub request failed with status 402: {\"error\":{\"type\":\"gateway_error\",\"code\":\"401008\",\"message\":\"The free trial quota for the service has been exhausted and postpaid billing is not enabled, so the service cannot be accessed. Please go to Console \\u003e Online Inference Service to enable postpaid billing. See: https://console.cloud.tencent.com/tokenhub/inference\",\"message_zh\":\"服务免费体验额度已耗尽，且未开启后付费，无法正常访问。请前往控制台 \\u003e 在线推理服务开启后付费，查看链接：https://console.cloud.tencent.com/tokenhub/inference\",\"request_id\":\"c2bafd12-a00c-4f2a-8332-5d2053a827a1\"}}"
+    },
+    "checkpoint_saved_at": "2026-08-26T00:57:25.707Z"
+  },
+  "arxiv:2608 22858v1": {
+    "id": "516fc1b794dea57c716cf4ee152a74f6a777c627",
+    "source": "arxiv",
+    "title": "Mapping the Concept Landscape: Structural Perception of Global Distributions for Transparent Data Pruning",
+    "abstract": "Existing data pruning methods predominantly rely on high-dimensional feature embeddings to measure sample importance. However, these compressed vectors often obscure fine-grained semantic interactions, leading to suboptimal coverage of rare semantic concepts in the pruned subsets. In this paper, we propose Mapping the Concept Landscape (MCL), a novel structural perception framework for transparent data pruning. Instead of abstract embeddings, we represent each image-caption pair as an explicit sample-level graph comprising entities, events, and attributes. By integrating these individual graphs into a comprehensive dataset-level graph, we characterize the global distribution of semantic concepts and quantify their rarity across the entire corpus. Based on this structured perception, we develop a greedy concept-coverage maximization algorithm that iteratively selects samples to maximize the marginal gain of high-value, under-represented concepts. Experimental results on various benchmarks demonstrate that our method not only achieves superior pruning efficiency compared to state-of-the-art methods but also provides a transparent and interpretable audit trail for the selection process.",
+    "snippet": "Existing data pruning methods predominantly rely on high-dimensional feature embeddings to measure sample importance. However, these compressed vectors often obscure fine-grained semantic interactions",
+    "authors": [
+      "Dongyue Wu",
+      "Tao Ma"
+    ],
+    "venue": "ECCV",
+    "year": 2026,
+    "cited_by": 0,
+    "doi": "",
+    "arxiv_id": "2608.22858v1",
+    "urls": {
+      "arxiv": "https://arxiv.org/abs/2608.22858v1",
+      "pdf": "https://arxiv.org/pdf/2608.22858v1",
+      "paper": "https://arxiv.org/abs/2608.22858v1"
+    },
+    "scholar_url": "",
+    "pub_url": "https://arxiv.org/abs/2608.22858v1",
+    "eprint_url": "https://arxiv.org/pdf/2608.22858v1",
+    "container_type": "",
+    "query_useds": [],
+    "raw_group_hits": [
+      "A"
+    ],
+    "search_sets_raw": [
+      "A"
+    ],
+    "search_sets_final": [
+      "A"
+    ],
+    "post_filter": null,
+    "raw_payloads": [
+      {
+        "arxiv_id": "2608.22858v1",
+        "title": "Mapping the Concept Landscape: Structural Perception of Global Distributions for Transparent Data Pruning",
+        "abstract": "Existing data pruning methods predominantly rely on high-dimensional feature embeddings to measure sample importance. However, these compressed vectors often obscure fine-grained semantic interactions, leading to suboptimal coverage of rare semantic concepts in the pruned subsets. In this paper, we propose Mapping the Concept Landscape (MCL), a novel structural perception framework for transparent data pruning. Instead of abstract embeddings, we represent each image-caption pair as an explicit sample-level graph comprising entities, events, and attributes. By integrating these individual graphs into a comprehensive dataset-level graph, we characterize the global distribution of semantic concepts and quantify their rarity across the entire corpus. Based on this structured perception, we develop a greedy concept-coverage maximization algorithm that iteratively selects samples to maximize the marginal gain of high-value, under-represented concepts. Experimental results on various benchmarks demonstrate that our method not only achieves superior pruning efficiency compared to state-of-the-art methods but also provides a transparent and interpretable audit trail for the selection process.",
+        "authors": [
+          "Dongyue Wu",
+          "Tao Ma"
+        ],
+        "year": 2026,
+        "month": 8,
+        "published": "2026-08-24T06:41:18Z",
+        "updated": "2026-08-24T06:41:18Z",
+        "urls": {
+          "arxiv": "https://arxiv.org/abs/2608.22858v1",
+          "pdf": "https://arxiv.org/pdf/2608.22858v1"
+        },
+        "arxiv_url": "https://arxiv.org/abs/2608.22858v1",
+        "pdf_url": "https://arxiv.org/pdf/2608.22858v1",
+        "eprint_url": "https://arxiv.org/pdf/2608.22858v1",
+        "pub_url": "https://arxiv.org/abs/2608.22858v1",
+        "snippet": "Existing data pruning methods predominantly rely on high-dimensional feature embeddings to measure sample importance. However, these compressed vectors often obscure fine-grained semantic interactions",
+        "source": "arxiv",
+        "is_preprint_on_arxiv": true,
+        "preprint_source": "arXiv",
+        "journal_ref": "",
+        "doi": "",
+        "arxiv_comment": "ECCV 2026",
+        "venue": "ECCV",
+        "raw_venue": "ECCV 2026",
+        "venue_source": "arxiv_comment",
+        "cited_by": 0
+      }
+    ],
+    "dedupe_key": "arxiv:2608 22858v1",
+    "seed_tags": [],
+    "tag_hints": {
+      "force_tinyml": false,
+      "require_power_tag": false
+    },
+    "primary_group": "A",
+    "filter_policy": "TH_CPL_A",
+    "filter_bucket": "th_cpl_a",
+    "filter_reason": "matched_th_cpl_a",
+    "matched_venue": "ECCV",
+    "matched_th_cpl_level": "A",
+    "matched_th_cpl_area": "Artificial Intelligence and Pattern Recognition",
+    "matched_venue_type": "conference",
+    "venue_match": {
+      "matched": true,
+      "raw": "ECCV",
+      "normalized": "eccv",
+      "normalized_candidates": [
+        "eccv"
+      ],
+      "match": {
+        "area": "Artificial Intelligence and Pattern Recognition",
+        "level": "A",
+        "type": "conference",
+        "canonicalFull": "European Conference on Computer Vision",
+        "canonicalShort": "ECCV"
+      }
+    },
+    "arxiv_match": {
+      "matched": true,
+      "arxiv_id": "2608.22858v1",
+      "matched_urls": [
+        "https://arxiv.org/abs/2608.22858v1",
+        "https://arxiv.org/pdf/2608.22858v1"
+      ]
+    },
+    "is_in_arxiv": true,
+    "category": "Efficient Model Design and Optimization",
+    "llm_tags": [],
+    "final_tags": [],
+    "provider_used": "heuristic_fallback",
+    "classification_model": "hunyuan-2.0-instruct-20251111",
+    "classification_raw_response": {
+      "error": "TokenHub request failed with status 402: {\"error\":{\"type\":\"gateway_error\",\"code\":\"401008\",\"message\":\"The free trial quota for the service has been exhausted and postpaid billing is not enabled, so the service cannot be accessed. Please go to Console \\u003e Online Inference Service to enable postpaid billing. See: https://console.cloud.tencent.com/tokenhub/inference\",\"message_zh\":\"服务免费体验额度已耗尽，且未开启后付费，无法正常访问。请前往控制台 \\u003e 在线推理服务开启后付费，查看链接：https://console.cloud.tencent.com/tokenhub/inference\",\"request_id\":\"0199f52b-9787-41e9-a9ef-dca9168fd54c\"}}"
+    },
+    "checkpoint_saved_at": "2026-08-26T00:57:25.769Z"
+  },
+  "arxiv:2608 22619v1": {
+    "id": "36adcff364d77a4a0d6a1c69133514e9068d17a2",
+    "source": "arxiv",
+    "title": "GET: Generative Embedding Translation for Medical Image Segmentation",
+    "abstract": "Generative segmentation provides an alternative to direct pixel-wise prediction by operating on learned latent representations, but effective image-to-mask translation must preserve target structure while remaining computationally efficient. We propose Generative Embedding Translation (GET), a structured embedding-translation framework that progressively transforms image embeddings into mask embeddings within the frozen latent space of a Stable Diffusion VAE. GET uses a U-Net-style Embedding Translation Network with 1.07M trainable parameters, combining Mobile Bottleneck Convolutions, Subsampled Self-Attention, and Multi-scale Feature Enrichment for local modeling, global context, and multi-scale refinement. Across five medical segmentation datasets, GET outperforms generative, CNN, and Transformer baselines. Compared with the strongest generative baseline, GMS, GET improves average Dice and IoU by 0.93% and 1.26%, reduces HD95 by 0.81 pixels, and uses 31.41% fewer trainable parameters. Under bidirectional BUS-BUSI domain shift, GET further improves Dice and IoU by 3.51% and 3.39%, while reducing HD95 by 27.37 pixels. Our code is available at: https://github.com/maklachur/GET.",
+    "snippet": "Generative segmentation provides an alternative to direct pixel-wise prediction by operating on learned latent representations, but effective image-to-mask translation must preserve target structure w",
+    "authors": [
+      "Md Maklachur Rahman",
+      "Md Hasan Al Banna",
+      "Saraf Anjum",
+      "Mahmudul Hasan",
+      "Tracy Hammond"
+    ],
+    "venue": "ECCV",
+    "year": 2026,
+    "cited_by": 0,
+    "doi": "",
+    "arxiv_id": "2608.22619v1",
+    "urls": {
+      "arxiv": "https://arxiv.org/abs/2608.22619v1",
+      "pdf": "https://arxiv.org/pdf/2608.22619v1",
+      "paper": "https://arxiv.org/abs/2608.22619v1"
+    },
+    "scholar_url": "",
+    "pub_url": "https://arxiv.org/abs/2608.22619v1",
+    "eprint_url": "https://arxiv.org/pdf/2608.22619v1",
+    "container_type": "",
+    "query_useds": [],
+    "raw_group_hits": [
+      "A"
+    ],
+    "search_sets_raw": [
+      "A"
+    ],
+    "search_sets_final": [
+      "A"
+    ],
+    "post_filter": null,
+    "raw_payloads": [
+      {
+        "arxiv_id": "2608.22619v1",
+        "title": "GET: Generative Embedding Translation for Medical Image Segmentation",
+        "abstract": "Generative segmentation provides an alternative to direct pixel-wise prediction by operating on learned latent representations, but effective image-to-mask translation must preserve target structure while remaining computationally efficient. We propose Generative Embedding Translation (GET), a structured embedding-translation framework that progressively transforms image embeddings into mask embeddings within the frozen latent space of a Stable Diffusion VAE. GET uses a U-Net-style Embedding Translation Network with 1.07M trainable parameters, combining Mobile Bottleneck Convolutions, Subsampled Self-Attention, and Multi-scale Feature Enrichment for local modeling, global context, and multi-scale refinement. Across five medical segmentation datasets, GET outperforms generative, CNN, and Transformer baselines. Compared with the strongest generative baseline, GMS, GET improves average Dice and IoU by 0.93% and 1.26%, reduces HD95 by 0.81 pixels, and uses 31.41% fewer trainable parameters. Under bidirectional BUS-BUSI domain shift, GET further improves Dice and IoU by 3.51% and 3.39%, while reducing HD95 by 27.37 pixels. Our code is available at: https://github.com/maklachur/GET.",
+        "authors": [
+          "Md Maklachur Rahman",
+          "Md Hasan Al Banna",
+          "Saraf Anjum",
+          "Mahmudul Hasan",
+          "Tracy Hammond"
+        ],
+        "year": 2026,
+        "month": 8,
+        "published": "2026-08-23T21:49:18Z",
+        "updated": "2026-08-23T21:49:18Z",
+        "urls": {
+          "arxiv": "https://arxiv.org/abs/2608.22619v1",
+          "pdf": "https://arxiv.org/pdf/2608.22619v1"
+        },
+        "arxiv_url": "https://arxiv.org/abs/2608.22619v1",
+        "pdf_url": "https://arxiv.org/pdf/2608.22619v1",
+        "eprint_url": "https://arxiv.org/pdf/2608.22619v1",
+        "pub_url": "https://arxiv.org/abs/2608.22619v1",
+        "snippet": "Generative segmentation provides an alternative to direct pixel-wise prediction by operating on learned latent representations, but effective image-to-mask translation must preserve target structure w",
+        "source": "arxiv",
+        "is_preprint_on_arxiv": true,
+        "preprint_source": "arXiv",
+        "journal_ref": "",
+        "doi": "",
+        "arxiv_comment": "Accepted at ECCV 2026 - BioImage Computing Workshop",
+        "venue": "ECCV",
+        "raw_venue": "Accepted at ECCV 2026 - BioImage Computing Workshop",
+        "venue_source": "arxiv_comment",
+        "cited_by": 0
+      }
+    ],
+    "dedupe_key": "arxiv:2608 22619v1",
+    "seed_tags": [],
+    "tag_hints": {
+      "force_tinyml": false,
+      "require_power_tag": false
+    },
+    "primary_group": "A",
+    "filter_policy": "TH_CPL_A",
+    "filter_bucket": "th_cpl_a",
+    "filter_reason": "matched_th_cpl_a",
+    "matched_venue": "ECCV",
+    "matched_th_cpl_level": "A",
+    "matched_th_cpl_area": "Artificial Intelligence and Pattern Recognition",
+    "matched_venue_type": "conference",
+    "venue_match": {
+      "matched": true,
+      "raw": "ECCV",
+      "normalized": "eccv",
+      "normalized_candidates": [
+        "eccv"
+      ],
+      "match": {
+        "area": "Artificial Intelligence and Pattern Recognition",
+        "level": "A",
+        "type": "conference",
+        "canonicalFull": "European Conference on Computer Vision",
+        "canonicalShort": "ECCV"
+      }
+    },
+    "arxiv_match": {
+      "matched": true,
+      "arxiv_id": "2608.22619v1",
+      "matched_urls": [
+        "https://arxiv.org/abs/2608.22619v1",
+        "https://arxiv.org/pdf/2608.22619v1"
+      ]
+    },
+    "is_in_arxiv": true,
+    "category": "Embedded AI Applications",
+    "llm_tags": [],
+    "final_tags": [],
+    "provider_used": "heuristic_fallback",
+    "classification_model": "hunyuan-2.0-instruct-20251111",
+    "classification_raw_response": {
+      "error": "TokenHub request failed with status 402: {\"error\":{\"type\":\"gateway_error\",\"code\":\"401008\",\"message\":\"The free trial quota for the service has been exhausted and postpaid billing is not enabled, so the service cannot be accessed. Please go to Console \\u003e Online Inference Service to enable postpaid billing. See: https://console.cloud.tencent.com/tokenhub/inference\",\"message_zh\":\"服务免费体验额度已耗尽，且未开启后付费，无法正常访问。请前往控制台 \\u003e 在线推理服务开启后付费，查看链接：https://console.cloud.tencent.com/tokenhub/inference\",\"request_id\":\"d012e89c-be8d-4fc8-bc9b-5f50d9dc5660\"}}"
+    },
+    "checkpoint_saved_at": "2026-08-26T00:57:25.806Z"
   }
 }
