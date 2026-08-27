@@ -9097,6 +9097,126 @@
     }
   },
   {
+    "id": "df785672be62f12484e85c36aa03f81b3441ca02",
+    "source": "arxiv",
+    "title": "Does Fine-Tuning Undo Activation Steering? Behavioural Recovery Without Weight-Edit Reversal",
+    "abstract": "Activation steering can be embedded directly into a language model's weights, shaping behaviour without inference-time intervention and offering a way to encode alignment prior to release. However, models are routinely fine-tuned after deployment, and it is unknown whether embedded interventions survive this. We study the stability of embedded steering for refusal suppression and brevity induction across five instruction-tuned models (3B-14B) under non-adversarial SFT and RLHF. Behaviourally, preservation tracks the training data: steering degrades when optimisation pressure contradicts the targeted behaviour and persists otherwise, with refusal ablation losing 64% of its effect on average under SFT. Mechanistically, however, the weight edit survives almost untouched even where behaviour reverts: mean vector recovery is $ρ= 0.004$, and the fine-tuning update along the steering direction is near-orthogonal to its pre-edit weight pattern (mean $\\cosθ= 0.074$). When steered behaviour degrades, fine-tuning does not achieve it by dismantling or reversing the steering mechanism itself. Embedded steering is therefore mechanistically durable but functionally vulnerable, and requires behavioural re-validation after downstream training.",
+    "snippet": "Activation steering can be embedded directly into a language model's weights, shaping behaviour without inference-time intervention and offering a way to encode alignment prior to release. However, mo",
+    "authors": [
+      "Philipp E. Glass",
+      "Allan Tucker",
+      "Yongmin Li",
+      "Alina Miron"
+    ],
+    "venue": "ICLR",
+    "year": 2026,
+    "cited_by": 0,
+    "doi": "",
+    "arxiv_id": "2608.24988v1",
+    "urls": {
+      "arxiv": "https://arxiv.org/abs/2608.24988v1",
+      "pdf": "https://arxiv.org/pdf/2608.24988v1",
+      "paper": "https://arxiv.org/abs/2608.24988v1"
+    },
+    "scholar_url": "",
+    "pub_url": "https://arxiv.org/abs/2608.24988v1",
+    "eprint_url": "https://arxiv.org/pdf/2608.24988v1",
+    "container_type": "",
+    "query_useds": [],
+    "raw_group_hits": [
+      "A"
+    ],
+    "search_sets_raw": [
+      "A"
+    ],
+    "search_sets_final": [
+      "A"
+    ],
+    "post_filter": null,
+    "raw_payloads": [
+      {
+        "arxiv_id": "2608.24988v1",
+        "title": "Does Fine-Tuning Undo Activation Steering? Behavioural Recovery Without Weight-Edit Reversal",
+        "abstract": "Activation steering can be embedded directly into a language model's weights, shaping behaviour without inference-time intervention and offering a way to encode alignment prior to release. However, models are routinely fine-tuned after deployment, and it is unknown whether embedded interventions survive this. We study the stability of embedded steering for refusal suppression and brevity induction across five instruction-tuned models (3B-14B) under non-adversarial SFT and RLHF. Behaviourally, preservation tracks the training data: steering degrades when optimisation pressure contradicts the targeted behaviour and persists otherwise, with refusal ablation losing 64% of its effect on average under SFT. Mechanistically, however, the weight edit survives almost untouched even where behaviour reverts: mean vector recovery is $ρ= 0.004$, and the fine-tuning update along the steering direction is near-orthogonal to its pre-edit weight pattern (mean $\\cosθ= 0.074$). When steered behaviour degrades, fine-tuning does not achieve it by dismantling or reversing the steering mechanism itself. Embedded steering is therefore mechanistically durable but functionally vulnerable, and requires behavioural re-validation after downstream training.",
+        "authors": [
+          "Philipp E. Glass",
+          "Allan Tucker",
+          "Yongmin Li",
+          "Alina Miron"
+        ],
+        "year": 2026,
+        "month": 8,
+        "published": "2026-08-25T17:59:57Z",
+        "updated": "2026-08-25T17:59:57Z",
+        "urls": {
+          "arxiv": "https://arxiv.org/abs/2608.24988v1",
+          "pdf": "https://arxiv.org/pdf/2608.24988v1"
+        },
+        "arxiv_url": "https://arxiv.org/abs/2608.24988v1",
+        "pdf_url": "https://arxiv.org/pdf/2608.24988v1",
+        "eprint_url": "https://arxiv.org/pdf/2608.24988v1",
+        "pub_url": "https://arxiv.org/abs/2608.24988v1",
+        "snippet": "Activation steering can be embedded directly into a language model's weights, shaping behaviour without inference-time intervention and offering a way to encode alignment prior to release. However, mo",
+        "source": "arxiv",
+        "is_preprint_on_arxiv": true,
+        "preprint_source": "arXiv",
+        "journal_ref": "",
+        "doi": "",
+        "arxiv_comment": "Accepted at EMNLP 2026 Main. Earlier version at ICLR 2026 Re^4-Align Workshop",
+        "venue": "ICLR",
+        "raw_venue": "Accepted at EMNLP 2026 Main. Earlier version at ICLR 2026 Re^4-Align Workshop",
+        "venue_source": "arxiv_comment",
+        "cited_by": 0
+      }
+    ],
+    "dedupe_key": "arxiv:2608 24988v1",
+    "seed_tags": [],
+    "tag_hints": {
+      "force_tinyml": false,
+      "require_power_tag": false
+    },
+    "primary_group": "A",
+    "filter_policy": "TH_CPL_A",
+    "filter_bucket": "th_cpl_a",
+    "filter_reason": "matched_th_cpl_a",
+    "matched_venue": "ICLR",
+    "matched_th_cpl_level": "A",
+    "matched_th_cpl_area": "Artificial Intelligence and Pattern Recognition",
+    "matched_venue_type": "conference",
+    "venue_match": {
+      "matched": true,
+      "raw": "ICLR",
+      "normalized": "iclr",
+      "normalized_candidates": [
+        "iclr"
+      ],
+      "match": {
+        "area": "Artificial Intelligence and Pattern Recognition",
+        "level": "A",
+        "type": "conference",
+        "canonicalFull": "International Conference on Learning Representations",
+        "canonicalShort": "ICLR"
+      }
+    },
+    "arxiv_match": {
+      "matched": true,
+      "arxiv_id": "2608.24988v1",
+      "matched_urls": [
+        "https://arxiv.org/abs/2608.24988v1",
+        "https://arxiv.org/pdf/2608.24988v1"
+      ]
+    },
+    "is_in_arxiv": true,
+    "category": "Efficient Model Design and Optimization",
+    "llm_tags": [],
+    "final_tags": [],
+    "provider_used": "heuristic_fallback",
+    "classification_model": "hunyuan-2.0-instruct-20251111",
+    "classification_raw_response": {
+      "error": "TokenHub request failed with status 402: {\"error\":{\"type\":\"gateway_error\",\"code\":\"401008\",\"message\":\"The free trial quota for the service has been exhausted and postpaid billing is not enabled, so the service cannot be accessed. Please go to Console \\u003e Online Inference Service to enable postpaid billing. See: https://console.cloud.tencent.com/tokenhub/inference\",\"message_zh\":\"服务免费体验额度已耗尽，且未开启后付费，无法正常访问。请前往控制台 \\u003e 在线推理服务开启后付费，查看链接：https://console.cloud.tencent.com/tokenhub/inference\",\"request_id\":\"92fe7567-fadc-49bc-9829-1323ce0457f4\"}}"
+    }
+  },
+  {
     "id": "87d25f5fb9d24396065470f76c21ed63e1304cc1",
     "source": "arxiv",
     "title": "Drive My Way: Preference Alignment of Vision-Language-Action Model for Personalized Driving",
