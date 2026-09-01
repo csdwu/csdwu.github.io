@@ -134965,5 +134965,130 @@
       "error": "TokenHub request failed with status 402: {\"error\":{\"type\":\"gateway_error\",\"code\":\"401008\",\"message\":\"The free trial quota for the service has been exhausted and postpaid billing is not enabled, so the service cannot be accessed. Please go to Console \\u003e Online Inference Service to enable postpaid billing. See: https://console.cloud.tencent.com/tokenhub/inference\",\"message_zh\":\"服务免费体验额度已耗尽，且未开启后付费，无法正常访问。请前往控制台 \\u003e 在线推理服务开启后付费，查看链接：https://console.cloud.tencent.com/tokenhub/inference\",\"request_id\":\"92fe7567-fadc-49bc-9829-1323ce0457f4\"}}"
     },
     "checkpoint_saved_at": "2026-08-27T06:53:04.569Z"
+  },
+  "arxiv:2608 30400v1": {
+    "id": "e06fb9dbe04fc15dbedcea16c3f3c507f9d19164",
+    "source": "arxiv",
+    "title": "Real-Time Scene-Adaptive Tone Mapping for High-Dynamic Range Object Detection",
+    "abstract": "High-dynamic-range (HDR) images, with their rich tone and detail reproduction, hold significant potential to enhance computer vision systems, particularly in autonomous driving. However, most neural networks for embedded systems are trained on low-dynamic-range (LDR) inputs and suffer substantial performance degradation when handling high-bit-depth HDR images due to the challenges posed by extreme dynamic ranges. In this paper, we propose a novel tone mapping method that not only bridges the gap between HDR RAW inputs and the LDR sRGB requirements of detection networks but also achieves end-to-end optimization with downstream tasks. Instead of relying on the traditional image signal processing (ISP) pipeline, we introduce neural photometric calibration to regularize dynamic ranges and a scaling-invariant local tone mapping model to preserve image details. In addition, our architecture also supports performance transfer finetuning, enabling efficient adaptation from the LDR sRGB images to the HDR RAW images with minimal cost. The proposed method outperforms traditional tone mapping algorithms and advanced AI-ISP methods in challenging automotive HDR scenes. Moreover, our pipeline achieves real-time processing of 4K high-bit-depth HDR inputs on NVIDIA Jetson platforms.",
+    "snippet": "High-dynamic-range (HDR) images, with their rich tone and detail reproduction, hold significant potential to enhance computer vision systems, particularly in autonomous driving. However, most neural n",
+    "authors": [
+      "Gongzhe Li",
+      "Linwei Qiu",
+      "Peibei Cao",
+      "Fengying Xie",
+      "Xiangyang Ji",
+      "Qilin Sun"
+    ],
+    "venue": "NeurIPS",
+    "year": 2026,
+    "cited_by": 0,
+    "doi": "",
+    "arxiv_id": "2608.30400v1",
+    "urls": {
+      "arxiv": "https://arxiv.org/abs/2608.30400v1",
+      "pdf": "https://arxiv.org/pdf/2608.30400v1",
+      "paper": "https://arxiv.org/abs/2608.30400v1"
+    },
+    "scholar_url": "",
+    "pub_url": "https://arxiv.org/abs/2608.30400v1",
+    "eprint_url": "https://arxiv.org/pdf/2608.30400v1",
+    "container_type": "",
+    "query_useds": [],
+    "raw_group_hits": [
+      "A"
+    ],
+    "search_sets_raw": [
+      "A"
+    ],
+    "search_sets_final": [
+      "A"
+    ],
+    "post_filter": null,
+    "raw_payloads": [
+      {
+        "arxiv_id": "2608.30400v1",
+        "title": "Real-Time Scene-Adaptive Tone Mapping for High-Dynamic Range Object Detection",
+        "abstract": "High-dynamic-range (HDR) images, with their rich tone and detail reproduction, hold significant potential to enhance computer vision systems, particularly in autonomous driving. However, most neural networks for embedded systems are trained on low-dynamic-range (LDR) inputs and suffer substantial performance degradation when handling high-bit-depth HDR images due to the challenges posed by extreme dynamic ranges. In this paper, we propose a novel tone mapping method that not only bridges the gap between HDR RAW inputs and the LDR sRGB requirements of detection networks but also achieves end-to-end optimization with downstream tasks. Instead of relying on the traditional image signal processing (ISP) pipeline, we introduce neural photometric calibration to regularize dynamic ranges and a scaling-invariant local tone mapping model to preserve image details. In addition, our architecture also supports performance transfer finetuning, enabling efficient adaptation from the LDR sRGB images to the HDR RAW images with minimal cost. The proposed method outperforms traditional tone mapping algorithms and advanced AI-ISP methods in challenging automotive HDR scenes. Moreover, our pipeline achieves real-time processing of 4K high-bit-depth HDR inputs on NVIDIA Jetson platforms.",
+        "authors": [
+          "Gongzhe Li",
+          "Linwei Qiu",
+          "Peibei Cao",
+          "Fengying Xie",
+          "Xiangyang Ji",
+          "Qilin Sun"
+        ],
+        "year": 2026,
+        "month": 8,
+        "published": "2026-08-31T07:52:53Z",
+        "updated": "2026-08-31T07:52:53Z",
+        "urls": {
+          "arxiv": "https://arxiv.org/abs/2608.30400v1",
+          "pdf": "https://arxiv.org/pdf/2608.30400v1"
+        },
+        "arxiv_url": "https://arxiv.org/abs/2608.30400v1",
+        "pdf_url": "https://arxiv.org/pdf/2608.30400v1",
+        "eprint_url": "https://arxiv.org/pdf/2608.30400v1",
+        "pub_url": "https://arxiv.org/abs/2608.30400v1",
+        "snippet": "High-dynamic-range (HDR) images, with their rich tone and detail reproduction, hold significant potential to enhance computer vision systems, particularly in autonomous driving. However, most neural n",
+        "source": "arxiv",
+        "is_preprint_on_arxiv": true,
+        "preprint_source": "arXiv",
+        "journal_ref": "",
+        "doi": "",
+        "arxiv_comment": "Accepted by NeurIPS 2025",
+        "venue": "NeurIPS",
+        "raw_venue": "Accepted by NeurIPS 2025",
+        "venue_source": "arxiv_comment",
+        "cited_by": 0
+      }
+    ],
+    "dedupe_key": "arxiv:2608 30400v1",
+    "seed_tags": [],
+    "tag_hints": {
+      "force_tinyml": false,
+      "require_power_tag": false
+    },
+    "primary_group": "A",
+    "filter_policy": "TH_CPL_A",
+    "filter_bucket": "th_cpl_a",
+    "filter_reason": "matched_th_cpl_a",
+    "matched_venue": "NeurIPS",
+    "matched_th_cpl_level": "A",
+    "matched_th_cpl_area": "Artificial Intelligence and Pattern Recognition",
+    "matched_venue_type": "conference",
+    "venue_match": {
+      "matched": true,
+      "raw": "NeurIPS",
+      "normalized": "neurips",
+      "normalized_candidates": [
+        "neurips"
+      ],
+      "match": {
+        "area": "Artificial Intelligence and Pattern Recognition",
+        "level": "A",
+        "type": "conference",
+        "canonicalFull": "Annual Conference on Neural Information Processing Systems",
+        "canonicalShort": "NeurIPS"
+      }
+    },
+    "arxiv_match": {
+      "matched": true,
+      "arxiv_id": "2608.30400v1",
+      "matched_urls": [
+        "https://arxiv.org/abs/2608.30400v1",
+        "https://arxiv.org/pdf/2608.30400v1"
+      ]
+    },
+    "is_in_arxiv": true,
+    "category": "Embedded AI Applications",
+    "llm_tags": [],
+    "final_tags": [],
+    "provider_used": "heuristic_fallback",
+    "classification_model": "hunyuan-2.0-instruct-20251111",
+    "classification_raw_response": {
+      "error": "TokenHub request failed with status 402: {\"error\":{\"type\":\"gateway_error\",\"code\":\"401008\",\"message\":\"The free trial quota for the service has been exhausted and postpaid billing is not enabled, so the service cannot be accessed. Please go to Console \\u003e Online Inference Service to enable postpaid billing. See: https://console.cloud.tencent.com/tokenhub/inference\",\"message_zh\":\"服务免费体验额度已耗尽，且未开启后付费，无法正常访问。请前往控制台 \\u003e 在线推理服务开启后付费，查看链接：https://console.cloud.tencent.com/tokenhub/inference\",\"request_id\":\"cc34384d-7d0f-4c1c-8381-5e0fd717efd0\"}}"
+    },
+    "checkpoint_saved_at": "2026-09-01T03:08:01.078Z"
   }
 }

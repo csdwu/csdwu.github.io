@@ -1,6 +1,6 @@
 {
   "version": "2.0.0",
-  "generated_at": "2026-08-30T03:06:39.687Z",
+  "generated_at": "2026-09-01T03:07:12.371Z",
   "query_groups": {
     "A": "\"embedded ai\"",
     "B": "(\"low power\" OR \"ultra-low-power\") \"embedded ai\"",
@@ -8,24 +8,24 @@
   },
   "stats": {
     "raw_counts": {
-      "A": 8,
+      "A": 35,
       "B": 0,
       "C": 0
     },
     "after_set_ops": {
-      "A_only": 8,
+      "A_only": 35,
       "B": 0,
       "C": 0,
-      "merged_total": 8,
+      "merged_total": 35,
       "bc_overlap": 0
     },
-    "after_filter": 909,
+    "after_filter": 910,
     "classification": {
-      "total": 909,
+      "total": 910,
       "by_category": {
         "Efficient Model Design and Optimization": 293,
         "Novel Computing Architectures and Domain-Specific Accelerators": 40,
-        "Embedded AI Applications": 576
+        "Embedded AI Applications": 577
       },
       "by_tag": {
         "TinyML": 54,
@@ -35,14 +35,14 @@
       "by_provider": {
         "tencent_tokenhub": 0,
         "heuristic": 0,
-        "heuristic_fallback": 909
+        "heuristic_fallback": 910
       }
     },
     "source_stats": {
-      "total": 909,
+      "total": 910,
       "by_group": {
         "A": {
-          "total": 759,
+          "total": 760,
           "arxiv": 0,
           "venues": {
             "AAAI": 91,
@@ -257,7 +257,7 @@
             "NOSSDAV": 0,
             "NSDI": 0,
             "Networking": 0,
-            "NeurIPS": 193,
+            "NeurIPS": 194,
             "OOPSLA": 0,
             "OSDI": 0,
             "PACT": 0,
@@ -1539,7 +1539,7 @@
         }
       },
       "total_summary": {
-        "total": 924,
+        "total": 925,
         "arxiv": 132,
         "venues": {
           "AAAI": 91,
@@ -1754,7 +1754,7 @@
           "NOSSDAV": 0,
           "NSDI": 0,
           "Networking": 0,
-          "NeurIPS": 194,
+          "NeurIPS": 195,
           "OOPSLA": 0,
           "OSDI": 0,
           "PACT": 0,
@@ -19545,7 +19545,7 @@
     {
       "key": "embedded_ai_applications",
       "title": "Embedded AI Applications",
-      "count": 576,
+      "count": 577,
       "papers": [
         {
           "id": "b20f46545e0fc87b6c14114ce97abde0d7beb2d5",
@@ -20222,6 +20222,59 @@
           "doi": "",
           "arxiv_comment": "",
           "arxiv_id": "2608.05424v1",
+          "raw_venue": "",
+          "venue_source": "",
+          "sort_key": 202600,
+          "download": {
+            "status": "pending",
+            "source": null,
+            "path": null,
+            "last_attempt_at": null
+          }
+        },
+        {
+          "id": "e06fb9dbe04fc15dbedcea16c3f3c507f9d19164",
+          "title": "Real-Time Scene-Adaptive Tone Mapping for High-Dynamic Range Object Detection",
+          "authors": [
+            "Gongzhe Li",
+            "Linwei Qiu",
+            "Peibei Cao",
+            "Fengying Xie",
+            "Xiangyang Ji",
+            "Qilin Sun"
+          ],
+          "year": 2026,
+          "month": 8,
+          "source": "arxiv",
+          "venue": "NeurIPS",
+          "venue_type": "conference",
+          "abstract": "High-dynamic-range (HDR) images, with their rich tone and detail reproduction, hold significant potential to enhance computer vision systems, particularly in autonomous driving. However, most neural networks for embedded systems are trained on low-dynamic-range (LDR) inputs and suffer substantial performance degradation when handling high-bit-depth HDR images due to the challenges posed by extreme dynamic ranges. In this paper, we propose a novel tone mapping method that not only bridges the gap between HDR RAW inputs and the LDR sRGB requirements of detection networks but also achieves end-to-end optimization with downstream tasks. Instead of relying on the traditional image signal processing (ISP) pipeline, we introduce neural photometric calibration to regularize dynamic ranges and a scaling-invariant local tone mapping model to preserve image details. In addition, our architecture also supports performance transfer finetuning, enabling efficient adaptation from the LDR sRGB images to the HDR RAW images with minimal cost. The proposed method outperforms traditional tone mapping algorithms and advanced AI-ISP methods in challenging automotive HDR scenes. Moreover, our pipeline achieves real-time processing of 4K high-bit-depth HDR inputs on NVIDIA Jetson platforms.",
+          "urls": {
+            "arxiv": "https://arxiv.org/abs/2608.30400v1",
+            "pdf": "https://arxiv.org/pdf/2608.30400v1",
+            "paper": "https://arxiv.org/abs/2608.30400v1"
+          },
+          "search_sets_raw": [
+            "A"
+          ],
+          "search_sets_final": [
+            "A"
+          ],
+          "filter_bucket": "th_cpl_a",
+          "matched_venue": "NeurIPS",
+          "matched_th_cpl_level": "A",
+          "matched_th_cpl_area": "Artificial Intelligence and Pattern Recognition",
+          "category": "Embedded AI Applications",
+          "llm_tags": [],
+          "forced_tags": [],
+          "final_tags": [],
+          "cited_by": 0,
+          "is_preprint_on_arxiv": false,
+          "preprint_source": "",
+          "journal_ref": "",
+          "doi": "",
+          "arxiv_comment": "",
+          "arxiv_id": "2608.30400v1",
           "raw_venue": "",
           "venue_source": "",
           "sort_key": 202600,

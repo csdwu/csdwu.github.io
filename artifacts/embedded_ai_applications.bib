@@ -1406,6 +1406,17 @@
   abstract = {We study denoising score matching (DSM) when the latent distribution is supported on a smooth embedded manifold $M \\subset \\mathbb\{R\}^D$. Under ambient Gaussian corruption, the tangent denoising target contains a singular normal-fiber noise channel whose variance diverges as $d/σ^2$ as $σ\\to 0^+$. We show that conditioning on the nearest-point projection $π(X)$ canonically removes this singularity: the resulting conditional expectation is the unique $L^2$-optimal Rao-Blackwellized predictor of the tangent DSM target among all estimators depending only on the projected observation $π(X)$. We then compute the small-noise expansion of this canonical target and show that it equals the intrinsic Riemannian score up to an explicit order-$σ^2$ correction that decomposes into an intrinsic Tweedie term and an extrinsic curvature term involving the Weingarten and Ricci operators. In the flat case, the construction reduces exactly to ordinary lower-dimensional Gaussian DSM, while on $S^d$ the extrinsic correction simplifies to the scalar factor $(1-d/2)\\nabla_M \\log q$; this extrinsic $σ^2$ correction cancels identically on $S^2$, though the intrinsic Tweedie term remains.}
 }
 
+@article{li2026-real-time-scene-adaptive-72d80542,
+  author = {Gongzhe Li and Linwei Qiu and Peibei Cao and Fengying Xie and Xiangyang Ji and Qilin Sun},
+  title = {Real-Time Scene-Adaptive Tone Mapping for High-Dynamic Range Object Detection},
+  year = {2026},
+  journal = {NeurIPS},
+  eprint = {2608.30400v1},
+  archivePrefix = {arXiv},
+  url = {https://arxiv.org/abs/2608.30400v1},
+  abstract = {High-dynamic-range (HDR) images, with their rich tone and detail reproduction, hold significant potential to enhance computer vision systems, particularly in autonomous driving. However, most neural networks for embedded systems are trained on low-dynamic-range (LDR) inputs and suffer substantial performance degradation when handling high-bit-depth HDR images due to the challenges posed by extreme dynamic ranges. In this paper, we propose a novel tone mapping method that not only bridges the gap between HDR RAW inputs and the LDR sRGB requirements of detection networks but also achieves end-to-end optimization with downstream tasks. Instead of relying on the traditional image signal processing (ISP) pipeline, we introduce neural photometric calibration to regularize dynamic ranges and a scaling-invariant local tone mapping model to preserve image details. In addition, our architecture also supports performance transfer finetuning, enabling efficient adaptation from the LDR sRGB images to the HDR RAW images with minimal cost. The proposed method outperforms traditional tone mapping algorithms and advanced AI-ISP methods in challenging automotive HDR scenes. Moreover, our pipeline achieves real-time processing of 4K high-bit-depth HDR inputs on NVIDIA Jetson platforms.}
+}
+
 @article{han2026-realistic-face-reconstruction-from-0d032b90,
   author = {Dong Han and Yong Li and Joachim Denzler},
   title = {Realistic Face Reconstruction from Facial Embeddings via Diffusion Models},
