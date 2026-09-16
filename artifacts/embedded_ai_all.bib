@@ -19,6 +19,27 @@
   abstract = {Embedded neural-network inference can leak information through timing side channels, including leakage caused by the evaluation of activation functions. This work proposes a constant-time implementation methodology for activation functions on embedded microcontrollers and validates it on ReLU, sigmoid, tanh, GELU, and Swish on an ARM Cortex-M4 platform. The proposed methodology combines branchless selection, fixed-cost Padé-based approximation, dummy arithmetic where needed, and cycle alignment to obtain timing-regular activation-function implementations. As motivation, we also evaluate a desynchronization-based countermeasure and show that it remains vulnerable to a template-based timing attack. Experimental results show that the resulting protected implementations achieve identical cycle counts for all tested inputs, including (88) cycles in the three-function setting and (108) cycles in the five-function setting. At the same time, the numerical-error analysis indicates that the approximated nonlinear functions retain high accuracy. These results suggest that the proposed methodology provides a practical basis for constructing side-channel-resistant activation functions in embedded inference.}
 }
 
+@article{yu2026-a-differentiable-neural-surrogate-78b829c1,
+  author = {Felix J. Yu and Berthy T. Feng and Nicholas Kamp and Carlos A. Argüelles},
+  title = {A Differentiable Neural Surrogate for Photon Propagation in Neutrino Telescopes},
+  year = {2026},
+  journal = {NeurIPS},
+  eprint = {2609.04695v1},
+  archivePrefix = {arXiv},
+  url = {https://arxiv.org/abs/2609.04695v1},
+  abstract = {Large-volume neutrino telescopes infer neutrino properties from Cherenkov light, but simulating the transport of billions of photons through highly scattering ice or water is computationally costly. We introduce candela, a differentiable SIREN neural field that learns the photon Green's function of the IceCube Neutrino Observatory, a cubic-kilometer detector embedded in Antarctic glacial ice. Given a point-like energy deposit and sensor, it predicts the expected photon yield and full arrival-time distribution at the sensor. Complete events are simulated by decomposing charged-particle energy deposits into point-like sources and superposing their predicted sensor responses. Trained on Monte-Carlo simulations, candela generates events $50$--$100\\times$ faster than existing methods, with cost scaling only weakly with neutrino energy. It keeps median yields within $2\\%$ of the MC expectation and timing distributions at the MC statistical floor across six photon-count decades. The model also provides end-to-end gradients with respect to event parameters and opens a path toward optimizing scattering-medium properties, which often dominate systematic uncertainties in neutrino telescopes.}
+}
+
+@article{varsos2026-a-game-theoretic-framework-6f8ed8b9,
+  author = {Konstantinos Varsos and Ramin Khalili and Adamantia Stamou and George D. Stamoulis and Vasillios A. Siris},
+  title = {A Game-Theoretic Framework for Incentive-Compatible AI training Under Renewable-Energy Constraints},
+  year = {2026},
+  eprint = {2609.15389v1},
+  archivePrefix = {arXiv},
+  url = {https://arxiv.org/abs/2609.15389v1},
+  abstract = {As artificial intelligence systems increasingly rely on distributed and collaborative training, the energy footprint of these processes becomes a shared responsibility. Modern AI training often unfolds across heterogeneous compute nodes-ranging from cloud clusters to edge devices-whose energy availability is spatially and temporally variable. At the same time, renewable energy grids experience growing levels of excess generation, creating opportunities to align computational workloads with low-carbon energy supply. In this work, we develop a game-theoretic model of carbon-aware AI training in which autonomous agents strategically choose whether to participate and how intensively to train under limited renewable energy availability. Each agent balances diminishing learning returns, rewards for remaining within green-energy budgets, and penalties for grid consumption. While our framework applies broadly to distributed AI training, we examine Federated Learning as a representative case study due to its decentralized structure and flexible scheduling. We analyze equilibrium existence, efficiency, and adaptive dynamics, and provide simulation evidence that appropriately designed incentives can eliminate grid-based energy usage while preserving model performance. Our findings demonstrate how incentive-compatible training mechanisms can enhance energy efficiency and sharply reduce carbon emissions under renewable-energy constraints.}
+}
+
 @article{modenbach2026-a-geometric-relation-of-e85a0cbd,
   author = {Albert F. Modenbach},
   title = {A geometric relation of the error introduced by sampling a language model's output distribution to its internal state},
@@ -159,6 +180,17 @@
   abstract = {Cross-modal alignment is a crucial task in multimodal learning aimed at achieving semantic consistency between vision and language. This requires that image-text pairs exhibit similar semantics. Traditional algorithms pursue embedding consistency to achieve semantic consistency, ignoring the non-semantic information present in the embedding. An intuitive approach is to decouple the embeddings into semantic and modality components, aligning only the semantic component. However, this introduces two main challenges: (1) There is no established standard for distinguishing semantic and modal information. (2) The modality gap can cause semantic alignment deviation or information loss. To align the true semantics, we propose a novel cross-modal alignment algorithm via \\textbf\{C\}onstrained \\textbf\{D\}ecoupling and \\textbf\{D\}istribution \\textbf\{S\}ampling (CDDS). Specifically, (1) A dual-path UNet is introduced to adaptively decouple the embeddings, applying multiple constraints to ensure effective separation. (2) A distribution sampling method is proposed to bridge the modality gap, ensuring the rationality of the alignment process. Extensive experiments on various benchmarks and model backbones demonstrate the superiority of CDDS, outperforming state-of-the-art methods by 6.6\\% to 14.2\\%.}
 }
 
+@article{umapathi2026-ambient-egolongqa-2026-distilling-e5a7ffcd,
+  author = {Logesh Kumar Umapathi},
+  title = {Ambient @ EgoLongQA 2026: Distilling Long-Video perception into a Sub-2B Model},
+  year = {2026},
+  journal = {ECCV},
+  eprint = {2609.07154v2},
+  archivePrefix = {arXiv},
+  url = {https://arxiv.org/abs/2609.07154v2},
+  abstract = {We describe our entry to the EgoLongQA track of the Wearable-AI Challenge in ECCV 2026, which placed first in the <=2B parameter division with 0.8279 on the held-out test set. Our system is a single 2B vision-language model that answers multiple-choice questions about ten-minute egocentric videos in one greedy forward pass; It is obtained by distilling the junior perception module of a tool-using agentic pipeline, not the agent itself into a small student, using teacher traces filtered to those that answered correctly. it reaches 89% of the accuracy of the large agentic pipeline using 1.1% of its parameters. This raises a 27.1% base model to 81.4% on our held-out questions. The 2B backbone has 2.2132B parameters and therefore over the divisional limit, to make the entry admissable we prune the multilingual embedding table from 248,320 to 143,469 rows, reaching 1.9985B with provably identical logits on retained rows.}
+}
+
 @article{spotorno2026-an-embedded-risc-v-9682df0f,
   author = {Enzo Nicolas Spotorno and Josafat Leal Filho},
   title = {An Embedded RISC-V Evaluation of Kolmogorov--Arnold Networks in Hard-Constrained Recurrent Physics-Informed Models},
@@ -275,6 +307,17 @@
   archivePrefix = {arXiv},
   url = {https://arxiv.org/abs/2602.22555v2},
   abstract = {Electroencephalogram (EEG) signals have become a popular medium for decoding visual information due to their cost-effectiveness and high temporal resolution. However, current approaches face significant challenges in bridging the modality gap between EEG and image data. These methods typically rely on complex adaptation processes involving multiple stages, making it hard to maintain consistency and manage compounding errors. Furthermore, the computational overhead imposed by large-scale diffusion models limit their practicality in real-world brain-computer interface (BCI) applications. In this work, we present AVDE, a lightweight and efficient framework for visual decoding from EEG signals. First, we leverage LaBraM, a pre-trained EEG model, and fine-tune it via contrastive learning to align EEG and image representations. Second, we adopt an autoregressive generative framework based on a "next-scale prediction" strategy: images are encoded into multi-scale token maps using a pre-trained VQ-VAE, and a transformer is trained to autoregressively predict finer-scale tokens starting from EEG embeddings as the coarsest representation. This design enables coherent generation while preserving a direct connection between the input EEG signals and the reconstructed images. Experiments on two datasets show that AVDE outperforms previous state-of-the-art methods in both image retrieval and reconstruction tasks, while using only 10% of the parameters. In addition, visualization of intermediate outputs shows that the generative process of AVDE reflects the hierarchical nature of human visual perception. These results highlight the potential of autoregressive models as efficient and interpretable tools for practical BCI applications.}
+}
+
+@article{kim2026-beaconkv-key-value-cache-86d3959c,
+  author = {Janghyeon Kim and Minsoo Kim and Kyuhong Shim and Jungwook Choi},
+  title = {BeaconKV: Key-Value Cache Compression Guided by Beacon Queries for Efficient Large Reasoning Model Inference},
+  year = {2026},
+  journal = {ICML},
+  eprint = {2609.04971v1},
+  archivePrefix = {arXiv},
+  url = {https://arxiv.org/abs/2609.04971v1},
+  abstract = {Large Reasoning Models (LRMs) achieve superior problem-solving through extended Chain-of-Thought (CoT) generation, but the resulting key-value (KV) cache grows linearly with sequence length and creates severe memory bottlenecks, often exceeding GPU capacity for long reasoning traces. Existing KV cache compression methods rely on recent queries to estimate future token importance, implicitly assuming these serve as reliable proxies for future attention patterns. We demonstrate that this assumption fails in long-horizon reasoning: certain decoding steps generate Thought Revisiting Tokens (TRT) that re-attend to distant previous context, such as task-solving plans formulated early in the trace. Through systematic analysis, we discover that queries corresponding to the TRT cluster into a small number of similarity groups in the embedding space. Based on this insight, we propose BeaconKV, a training-free KV cache compression method that maintains beacon queries, compact representatives for each global query cluster, to anticipate which KV pairs will be revisited without storing the entire query history. Across four open-source LRMs and diverse reasoning benchmarks, BeaconKV generally outperforms existing compression methods, achieving up to $5.8\\times$ memory reduction while nearly preserving full cache accuracy and improving throughput by over $4.3\\times$.}
 }
 
 @article{he2026-bend-the-basics-degradation-c1ab989d,
@@ -407,6 +450,17 @@
   abstract = {For LLM trading agents to be genuinely trustworthy, they must demonstrate understanding of market dynamics rather than exploitation of memorized ticker associations. Building responsible multi-agent systems demands rigorous signal validation: proving that predictions reflect legitimate patterns, not pre-trained recall. We address two sources of spurious performance: memorization bias from ticker-specific pre-training, and survivorship bias from flawed backtesting. Our approach is to blindfold the agents--anonymizing all identifiers--and verify whether meaningful signals persist. BlindTrade anonymizes tickers and company names, and four LLM agents output scores along with reasoning. We construct a GNN graph from reasoning embeddings and trade using PPO-DSR policy. On 2025 YTD (through 2025-08-01), we achieved Sharpe 1.40 +/- 0.22 across 20 seeds and validated signal legitimacy through negative control experiments. To assess robustness beyond a single OOS window, we additionally evaluate an extended period (2024--2025), revealing market-regime dependency: the policy excels in volatile conditions but shows reduced alpha in trending bull markets.}
 }
 
+@article{azevedo2026-can-llms-use-relational-63f9962e,
+  author = {Francisco Galuppo Azevedo and Clarissa Lima Loures},
+  title = {Can LLMs Use Relational Transformer Embeddings?},
+  year = {2026},
+  journal = {ICML},
+  eprint = {2609.00457v1},
+  archivePrefix = {arXiv},
+  url = {https://arxiv.org/abs/2609.00457v1},
+  abstract = {Injecting frozen relational-encoder embeddings as soft tokens into a large language model (LLM) is a conceptually appealing fusion strategy: the encoder handles multi-table structure, the LLM handles language and reasoning, and no lossy text serialization is required. We test this hypothesis concretely by injecting embeddings from a frozen Relational Transformer (RT) into Qwen3.5-4B via a learned MLP projection and LoRA adaptation, trained first with supervised fine-tuning (SFT) on chain-of-thought reasoning traces and then with group-based reinforcement learning (GSPO). We evaluate across 10 binary classification tasks on 6 relational databases from RelBench, under four supervision regimes: single-task (ST), within-dataset (WD), cross-dataset (CD), and all-task (ALL). The hybrid model does not consistently outperform standalone RT: it is frequently below random, highly sensitive to serialization format and relational-token budget, and unstable under RL training. We report these negative results and analyze the failure modes, arguing that soft-token fusion requires stronger alignment objectives and schema-aware design before it can serve as a reliable route to relational prediction.}
+}
+
 @article{bowden2026-canopy-a-heterograph-foundation-e11cd656,
   author = {Jake Bowden and Laurence Legon and Satnam Surae},
   title = {Canopy: A Heterograph Foundation Model for Metabolic Engineering},
@@ -493,6 +547,17 @@
   archivePrefix = {arXiv},
   url = {https://arxiv.org/abs/2608.18734v1},
   abstract = {4D understanding and reasoning is a fundamental capability for embodied AI agents operating in dynamic physical environments. However, existing vision encoders are largely limited to static 2D images or 3D point clouds without temporal modeling, or to 2D videos that lack accurate geometric depth reasoning. Consequently, current approaches fail to jointly capture spatial structure and motion evolution in dynamic scenes. We present CL4D, the first foundational 4D vision encoder that directly operates on dynamic point clouds, trained with a contrastive learning objective to align spatio-temporal geometric representations with natural language descriptions. By learning a shared embedding space between text and 4D scene dynamics, CL4D enables zero-shot motion-to-text and text-to-motion retrieval in dynamic environments and serves as a foundational 4D vision encoder for downstream 4D vision-language tasks. Building on this encoder, we introduce 4DVLM, a 4D vision-language model that conditions language generation on dynamic geometric representations. 4DVLM is the first VLM designed to operate directly on 4D point clouds without relying on 2D images, 2D videos, or static 3D point clouds. We train CL4D and subsequently 4DVLM on a newly constructed dataset termed DynAction4D capturing diverse human motions across varying object interactions and scene environments. Extensive experiments across multiple 4D human action benchmarks demonstrate that CL4D achieves state-of-the-art performance, with improvements of approximately ~16.75% over prior methods. Furthermore, 4DVLM outperforms frontier video VLMs such as Gemini and GPT-5 even when these models are provided with RGB video sequences corresponding to the same scenes represented as 4D point clouds for 4DVLM.}
+}
+
+@article{tang2026-coge-gcd-reframing-generalized-9cb44e19,
+  author = {Luyao Tang and Jiewei Zheng and Kunze Huang and Chaoqi Chen and Yue Huang and Cheng Chen},
+  title = {CoGe-GCD: Reframing Generalized Category Discovery with Compositional Generalization},
+  year = {2026},
+  journal = {ICML},
+  eprint = {2609.10158v1},
+  archivePrefix = {arXiv},
+  url = {https://arxiv.org/abs/2609.10158v1},
+  abstract = {Generalized Category Discovery (GCD) assigns unlabeled instances, mixed with labeled data, to known or novel categories, requiring human-like compositional reasoning: reusing primitives learned from known classes and deciding when new combinations imply new categories. Existing GCD methods operate on unstructured token features and struggle to extrapolate to novel compositions. We propose CoGe-GCD, which rethinks GCD through compositional generalization with two coupled stages. (i) Compositional Perception structures patch tokens by mapping them to a small vocabulary of primitives and refining token embeddings via competitive token-primitive assignment and information passing, yielding coherent groups for discovery. (ii) Generalizing Induction exploits the induced geometric structure and applies a structure-preserving calibration over spatial relations, maintaining probabilistic semantics while improving extrapolation to unseen primitive combinations. CoGe-GCD is implemented as an inductive-bias module between backbone and projection head, without modifying heads or losses, and can be plugged into diverse GCD frameworks. On standard benchmarks, it consistently improves all-class accuracy, unknown-class number estimation, and geometric quality, with marginal computational overhead. Code is available at https://github.com/lytang63/CoGe-GCD.}
 }
 
 @article{gokhale2026-compact-geometric-representations-of-b91c1b1c,
@@ -613,6 +678,18 @@
   archivePrefix = {arXiv},
   url = {https://arxiv.org/abs/2606.16935v1},
   abstract = {Rovers rely on perception to maintain spatial maps that encode both objects and sensor quality (e.g., range reliability, lighting artifacts, data density), guiding data fusion, embedding updates, and navigation under partial observability. To study these coupled perception-navigation processes, we present CrossMaps, a real-time confidence-aware open-vocabulary semantic mapping pipeline that constructs language-queryable maps from RGB-D data. Building on VLMaps-style approaches, CrossMaps integrates multi-scale CLIP embeddings with confidence-aware fusion and a dual-memory architecture consisting of Short-Term Memory (STM) and Long-Term Memory (LTM). The STM aggregates noisy visual observations using geometric, semantic, and temporal confidence cues, while confident and coherent cells are promoted to the LTM as persistent semantic landmarks. Designed for deployment with a Jetson Orin-powered UGV alongside SLAM, CrossMaps runs in real time and produces semantic heatmaps that can be queried with natural language to guide rover navigation.}
+}
+
+@article{steffen2026-ctrl-f-resist-practices-35aaa574,
+  author = {Elisabeth Steffen and Helena Mihaljević},
+  title = {Ctrl-F-Resist. Practices, Challenges, and Technical Needs of Civil Society Organizations Monitoring the Far-Right Online},
+  year = {2026},
+  journal = {Accepted for the 29th ACM Conference on Computer-Supported Cooperative Work and Social Computing (CSCW 2026)},
+  doi = {10.1145/3816916},
+  eprint = {2609.00808v1},
+  archivePrefix = {arXiv},
+  url = {https://arxiv.org/abs/2609.00808v1},
+  abstract = {As far-right actors increasingly exploit online platforms to disseminate ideology and mobilize supporters, civil society organizations (CSOs) play a vital yet underrecognized role in monitoring antidemocratic dynamics online. Unlike fact-checkers or content moderators, CSOs engage in long-term, contextualized analysis, often in resource-constrained settings and under precarious conditions. Despite their critical societal role, CSOs face significant barriers to adopting or co-developing technical solutions, including legal uncertainty, limited platform access, and chronic underfunding. Existing research and tool development efforts have largely overlooked these actors in favor of more institutionally embedded stakeholders. This paper addresses this gap through a qualitative study with 15 practitioners from 12 Germany-based CSOs engaged in online monitoring, positioning them as key yet overlooked stakeholders in the governance of digital spaces. We explore their current practices, challenges, and expectations regarding technological support. Our findings show that monitoring remains largely manual due to the lack of tailored tools, with enhanced search capabilities emerging as the most pressing technical need. While participants express openness to AI-supported features such as media processing and content discovery, many remain skeptical of automated classification, citing concerns around trust, legal usability, and professional credibility. Grounded in these findings, we introduce a conceptual monitoring workflow and describe its implementation in an open-source Telegram monitoring prototype designed to flexibly support diverse monitoring goals. We outline concrete design, policy, and research recommendatios, and introduce the manual labor trap as an empirically grounded concept that explains why monitoring CSOs tend to remain locked into labor-intensive, low-capacity arrangements.}
 }
 
 @article{wong2026-darth-pum-a-hybrid-bc285780,
@@ -2134,6 +2211,18 @@
   abstract = {Clinical diagnosis often requires combining imaging with physiological measurements, yet deployed models typically operate on unimodal data. We present PaCX-MAE, a cross-modal distillation framework that injects physiological priors into chest X-ray (CXR) encoders while remaining strictly unimodal at inference. PaCX-MAE augments in-domain masked autoencoding with a dual contrastive-predictive objective, aligning CXR representations with paired ECG and laboratory embeddings. Extensive evaluation across nine benchmarks demonstrates consistent improvements over domain-specific MAE, particularly on physiology-dependent tasks (e.g., +2.7 AUROC on MedMod; +6.5 F1 on VinDr). The method proves highly label-efficient in the 1% regime and preserves anatomical fidelity, achieving parity with MAE on segmentation tasks. Zero-shot and attention analyses confirm that PaCX-MAE successfully learns to attend to physiological indicators, such as the cardiac silhouette, absent in standard visual pretraining.}
 }
 
+@article{zhang2026-para-pipe-exploiting-hierarchical-4af9f898,
+  author = {Yujie Zhang and Huiying Lan and Ehsan Aghapour and Zhiyuan Ning and Peng Zan and Weidong Shao and Anuj Pathania and Tulika Mitra},
+  title = {Para-Pipe: Exploiting Hierarchical Operator Parallelism of ML Computational Graphs on SoCs},
+  year = {2026},
+  journal = {IEEE Transactions on Computer-Aided Design of Integrated Circuits and Systems},
+  doi = {10.1109/TCAD.2025.3568348},
+  eprint = {2609.04168v1},
+  archivePrefix = {arXiv},
+  url = {https://arxiv.org/abs/2609.04168v1},
+  abstract = {As edge-based deep learning applications become more complex, optimizing performance on heterogeneous System-on-Chips (SoCs) presents unique challenges. Traditional pipelining techniques distributing the computation across different on-chip processing units, while effective for throughput, do not address the latency demands posed by modern neural networks with complex interdependencies and extensive operator parallelism. There is a potential in leveraging operator parallelism to enable concurrent execution across multiple processing units, thereby reducing inference latency. However, prioritizing pipelining or parallel execution often necessitates a compromise, where optimizing one performance metric adversely impacts the other. This paper introduces Para-Pipe, a hierarchical mapping framework that integrates intra- and inter-stage operator parallelism within a pipelined architecture. Para-Pipe navigates the trade-off between throughput and latency by selectively fine-tuning parallelism levels within and across pipeline stages. This strategy can significantly reduce inter-processor communication overhead, significantly improving energy efficiency. Our evaluation demonstrates that Para-Pipe generates multiple Pareto-optimal configurations, achieving a balance between throughput and latency on an Amlogic SoC equipped with ARM big.LITTLE CPUs and GPU, as well as the Black Sesame Technology SoC featuring a deep learning accelerator and two DSPs. More importantly, throughput-optimized configurations under Para-Pipe on Amlogic SoC show an average energy efficiency improvement of 11.0% over purely pipelined strategies and 23.3% relative to non-pipelined parallel execution.}
+}
+
 @article{lou2026-parameta-towards-learning-disentangled-a7852458,
   author = {Haowei Lou and Hye-young Paik and Wen Hu and Lina Yao},
   title = {ParaMETA: Towards Learning Disentangled Paralinguistic Speaking Styles Representations from Speech},
@@ -2463,6 +2552,28 @@
   abstract = {Predictive modeling over relational databases (RDBs) powers applications, yet remains challenging due to capturing both cross-table dependencies and complex feature interactions. Relational Deep Learning (RDL) methods automate feature engineering via message passing, while classical approaches like Deep Feature Synthesis (DFS) rely on predefined non-parametric aggregators. Despite performance gains, the comparative advantages of RDL over DFS and the design principles for selecting effective architectures remain poorly understood. We present a comprehensive study that unifies RDL and DFS in a shared design space and conducts architecture-centric searches across diverse RDB tasks. Our analysis yields three key findings: (1) RDL does not consistently outperform DFS, with performance being highly task-dependent; (2) no single architecture dominates across tasks, underscoring the need for task-aware model selection; and (3) validation accuracy is an unreliable guide for architecture choice. This search yields a model performance bank that links architecture configurations to their performance; leveraging this bank, we analyze the drivers of the RDL-DFS performance gap and introduce two task signals -- RDB task homophily and an affinity embedding that captures size, path, feature, and temporal structure -- whose correlation with the gap enables principled routing. Guided by these signals, we propose Relatron, a task embedding-based meta-selector that chooses between RDL and DFS and prunes the within-family search. Lightweight loss-landscape metrics further guard against brittle checkpoints by preferring flatter optima. In experiments, Relatron resolves the "more tuning, worse performance" effect and, in joint hyperparameter-architecture optimization, achieves up to 18.5% improvement over strong baselines with 10x lower cost than Fisher information-based alternatives.}
 }
 
+@article{mohammadi2026-reliable-egocentric-action-anticipation-4e74ab98,
+  author = {Mahsa Mohammadi and Sareh Rowlands},
+  title = {Reliable Egocentric Action Anticipation via Temporal Reliability Suppression and Compositional Graph Decoding},
+  year = {2026},
+  journal = {ECCV},
+  eprint = {2609.13293v1},
+  archivePrefix = {arXiv},
+  url = {https://arxiv.org/abs/2609.13293v1},
+  abstract = {Wearable action anticipation systems must remain reliable despite missing frames, masking, and sensor noise, yet existing egocentric anticipation methods largely assume clean observations. We identify two complementary failure modes under temporal corruption: unreliable temporal evidence during encoding and implausible, low-support verb-noun compositions during decoding. We address them with a lightweight framework combining Temporal Reliability Suppression (TRS) and Robust Verb-Noun Graph (RVG) decoding. TRS predicts a per-frame suppression score from the projected input embedding and uses it as a learned key-side attention penalty at every encoder block and to derive reliability-weighted temporal pooling. RVG re-ranks verb-noun pairs using a PMI-based compatibility graph constructed from training labels. Under corruption-augmented training, TRS+CA+RVG reaches 29.1% average corrupted accuracy and 88.2% relative robustness across six corruptions, including three mechanisms absent during training, while reducing rare verb-noun predictions from 15.4% to 1.1%. Multi-seed and diagnostic experiments show that TRS responds to synthetic masking; shuffled-graph and frequency-only controls further indicate that RVG gains depend on genuine pairwise compatibility rather than marginal-frequency effects alone.}
+}
+
+@article{zeng2026-renderformer-v2-neural-rendering-9cd4d039,
+  author = {Chong Zeng and Yue Dong and Pieter Peers and Lvmin Zhang and Maneesh Agrawala},
+  title = {RenderFormer-V2: Neural Rendering with Heterogeneous Scene Primitives},
+  year = {2026},
+  journal = {ECCV},
+  eprint = {2609.05738v1},
+  archivePrefix = {arXiv},
+  url = {https://arxiv.org/abs/2609.05738v1},
+  abstract = {We present 'RenderFormer-V2', a unified learned transformer-based neural rendering model, complementary to modern physics-based rendering systems, that can handle diverse light-transport effects such as caustics, volumetric scattering, environment lighting, textured and displaced surfaces and out-of-distribution materials without per-scene training or specialized code. RenderFormer-V2 models global light transport as a sequence-to-sequence transformation. Following its predecessor, RenderFormer-V2 also employs a two stage process: a view-independent stage that resolves intra-scene primitive to primitive transport, and a view-dependent stage that transforms the internal neural scene representation into image pixels. Different from RenderFormer, our model employs a novel combined windowed-attention and rendering-informed attention sink in the view-independent stage to improve scalability while maintaining render accuracy. To further improve versatility, RenderFormerV2 supports heterogeneous scene primitives, including environment maps and participating media, and it employs a material encoding independent of the underlying surface reflectance model that encodes material appearance via a novel neural embedding. We demonstrate the versatility of RenderFormer-V2 on a variety of scenes and perform an extensive ablation of the improved attention mechanism.}
+}
+
 @article{qu2026-representation-learning-for-spatiotemporal-412dea4f,
   author = {Helen Qu and Rudy Morel and Michael McCabe and Alberto Bietti and François Lanusse and Shirley Ho and Yann LeCun},
   title = {Representation Learning for Spatiotemporal Physical Systems},
@@ -2538,6 +2649,17 @@
   archivePrefix = {arXiv},
   url = {https://arxiv.org/abs/2603.07710v1},
   abstract = {Unlike the predictable scaling laws in natural language processing and computer vision, protein language models (PLMs) scale poorly: for many tasks, models within the same family plateau or even decrease in performance, with mid-sized models often outperforming the largest in the family. We introduce Reverse Distillation, a principled framework that decomposes large PLM representations into orthogonal subspaces guided by smaller models of the same family. The resulting embeddings have a nested, Matryoshka-style structure: the first k dimensions of a larger model's embedding are exactly the representation from the smaller model. This ensures that larger reverse-distilled models consistently outperform smaller ones. A motivating intuition is that smaller models, constrained by capacity, preferentially encode broadly-shared protein features. Reverse distillation isolates these shared features and orthogonally extracts additional contributions from larger models, preventing interference between the two. On ProteinGym benchmarks, reverse-distilled ESM-2 variants outperform their respective baselines at the same embedding dimensionality, with the reverse-distilled 15 billion parameter model achieving the strongest performance. Our framework is generalizable to any model family where scaling challenges persist. Code and trained models are available at https://github.com/rohitsinghlab/plm_reverse_distillation.}
+}
+
+@article{wang2026-revisiting-spectral-representations-in-8929fdb2,
+  author = {Yuehao Wang and Peihao Wang and Hanwen Jiang and Ziyi Yang and Qixing Huang and Zhangyang Wang},
+  title = {Revisiting Spectral Representations in Generative Diffusion Models},
+  year = {2026},
+  journal = {ICML},
+  eprint = {2609.08253v1},
+  archivePrefix = {arXiv},
+  url = {https://arxiv.org/abs/2609.08253v1},
+  abstract = {Diffusion models have shown remarkable performance on diverse generation tasks. Recent work finds that imposing representation alignment on the hidden states of diffusion networks can both facilitate training convergence and enhance sampling quality, yet the mechanism driving this synergy remains insufficiently understood. In this paper, we investigate the connection between self-supervised spectral representation learning and diffusion generative models through a shared perspective on perturbation kernels. On the diffusion side, samples (e.g., images, videos) are produced by reversing a stochastic noise-injection process specified by Gaussian kernels; on the spectral representation side, spectral embeddings emerge from contrasting positive and negative relations induced by random perturbation kernels. Motivated by this, we propose a self-supervised spectral representation alignment method to facilitate diffusion model training. In addition, we clarify how joint spectral learning can benefit diffusion training from a geometric perspective. Furthermore, we find that the optimization of the spectral alignment objective is in an equivalent form of diffusion score distillation in the representation space. Building on these findings, we integrate a spectral regularizer into diffusion training objectives to improve the performance of diffusion models on multiple datasets. Experiments across images and 3D point clouds show consistent gains in generation quality. Code is released at https://github.com/yuehaowang/spectral-reg-diffusion.}
 }
 
 @article{ma2026-riemannian-zeroth-order-gradient-acd6498f,
@@ -2712,6 +2834,16 @@
   archivePrefix = {arXiv},
   url = {https://arxiv.org/abs/2604.08608v2},
   abstract = {We introduce Semantic Intent Fragmentation (SIF), an attack class against LLM orchestration systems where a single, legitimately phrased request causes an orchestrator to decompose a task into subtasks that are individually benign but jointly violate security policy. Current safety mechanisms operate at the subtask level, so each step clears existing classifiers -- the violation only emerges at the composed plan. SIF exploits OWASP LLM06:2025 through four mechanisms: bulk scope escalation, silent data exfiltration, embedded trigger deployment, and quasi-identifier aggregation, requiring no injected content, no system modification, and no attacker interaction after the initial request. We construct a three-stage red-teaming pipeline grounded in OWASP, MITRE ATLAS, and NIST frameworks to generate realistic enterprise scenarios. Across 14 scenarios spanning financial reporting, information security, and HR analytics, a GPT-20B orchestrator produces policy-violating plans in 71% of cases (10/14) while every subtask appears benign. Three independent signals validate this: deterministic taint analysis, chain-of-thought evaluation, and a cross-model compliance judge with 0% false positives. Stronger orchestrators increase SIF success rates. Plan-level information-flow tracking combined with compliance evaluation detects all attacks before execution, showing the compositional safety gap is closable.}
+}
+
+@article{birhan2026-side-sensor-impersonation-detection-718c123b,
+  author = {Nahom Birhan},
+  title = {SIDE: Sensor Impersonation Detection at the Edge via Sequence Prediction},
+  year = {2026},
+  eprint = {2609.06271v2},
+  archivePrefix = {arXiv},
+  url = {https://arxiv.org/abs/2609.06271v2},
+  abstract = {Some low-cost Internet of Things (IoT) sensor deployments lack device-level source authentication, leaving them vulnerable to impersonation or injected sensor readings. We present a lightweight approach to sensor impersonation detection in a small proof-of-concept study. We formulate detection as a sequence-prediction problem. A model with three LSTM layers and two fully connected layers is trained only on univariate temperature readings from a genuine sensor, and a window of readings is flagged when its mean absolute prediction error exceeds the mean genuine error by more than six standard deviations. The model is converted to TensorFlow Lite in three variants, non-quantized (554 KB), 16-bit weight quantized (298.5 KB), and 8-bit weight quantized (185 KB), targeting an Arduino Nano 33 BLE aggregator. The variants were evaluated with the TensorFlow Lite interpreter on the local server, since on-device execution of LSTM models was not yet supported by TensorFlow Lite for Microcontrollers at the time of the study. On a controlled testbed with the impostor sensor placed in a hotter outdoor location, the three variants reached detection accuracies of 99.980%, 99.972%, and 98.206%, and each flagged the change point when a test sequence switched from genuine to impostor data. Quantization made the model smaller but slower in our measurements. The genuine and impostor distributions were well separated, so these results show detection of a controlled distribution shift and should not be read as evidence of general device authentication.}
 }
 
 @article{zhao2026-sika-gp-accelerating-gaussian-635a74c9,
@@ -3214,6 +3346,17 @@
   archivePrefix = {arXiv},
   url = {https://arxiv.org/abs/2606.05675v1},
   abstract = {Continual learning (CL) seeks models that acquire new skills without erasing prior knowledge. In exemplar-free class-incremental learning (EFCIL), this challenge is amplified because past data cannot be stored, making representation drift for old classes particularly harmful. Prototype-based EFCIL is attractive for its efficiency, yet prototypes drift as the embedding space evolves; therefore, projection-based drift compensation has become a popular remedy. We show, however, that existing one-directional projections introduce systematic bias: they either retroactively distort the current feature geometry or align past classes only locally, leaving cycle inconsistencies that accumulate across tasks. We introduce BiCyc, a bidirectional projector alignment approach with a cycle-consistency objective. BiCyc jointly optimizes two maps, old-to-new and new-to-old, with stop-gradient gating so that transport and representation co-evolve. Analytically, we show that the cycle loss contracts the singular spectrum toward unity in whitened space, and that improved transport of class means and covariances yields smaller perturbations of classification log-odds, preserving old-class decisions and mitigating catastrophic forgetting. Empirically, across standard EFCIL benchmarks, BiCyc substantially reduces forgetting and improves accuracy in from-scratch settings, while remaining competitive in the pretrained fine-grained regime.}
+}
+
+@article{zhang2026-ufo-chain-of-evaluation-067c147b,
+  author = {Danning Zhang and Yijing Lin and Shuhan Zhuang and Mengqi Huang and Shaojin Wu and Shancheng Fang and Zhendong Mao},
+  title = {UFO: Chain-of-Evaluation for Omni-Condition Alignment in Multi-Modal Image Generation},
+  year = {2026},
+  journal = {ICML},
+  eprint = {2609.12397v1},
+  archivePrefix = {arXiv},
+  url = {https://arxiv.org/abs/2609.12397v1},
+  abstract = {Multi-modal image generation, particularly subject-driven customization, has garnered growing attention in recent years. Despite the rapid advancement of generative models, their evaluation remains largely lagging. Existing methods, whether embedding-based or Multi-modal Large Language Model (MLLM)-based, evaluate alignment with each modal condition in isolation, which contradicts the simultaneous condition alignment objective of multi-modal image generation, leading to poor consistency with human judgments. To address this challenge, we propose UFO, the first unified framework for omni-condition alignment simultaneous evaluation. Specifically, UFO introduces a novel Atomized Chain-of-Evaluation paradigm, \\emph\{i.e.\}, it first decomposes omni-condition alignment into a sequential chain of fine-grained, disentangled Atomic Evaluation Units (AEUs), categorizes them into distinct modality-relevance classes, and then employs general or dedicated functional calls for accurate verification of different AEU types. Experimental results demonstrate that UFO achieves the highest correlation with human evaluation preferences, delivering an average improvement of 15.25\\%. Furthermore, we present UFO-Bench, a dedicated benchmark designed to holistically evaluate the performance of existing customization models under the diverse mutual interactions of textual and visual conditions.}
 }
 
 @article{fu2026-understanding-and-improving-continuous-1bfd66aa,

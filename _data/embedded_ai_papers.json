@@ -1,6 +1,6 @@
 {
   "version": "2.0.0",
-  "generated_at": "2026-09-01T03:07:12.371Z",
+  "generated_at": "2026-09-16T02:54:31.250Z",
   "query_groups": {
     "A": "\"embedded ai\"",
     "B": "(\"low power\" OR \"ultra-low-power\") \"embedded ai\"",
@@ -8,41 +8,41 @@
   },
   "stats": {
     "raw_counts": {
-      "A": 35,
-      "B": 0,
-      "C": 0
+      "A": 220,
+      "B": 5,
+      "C": 5
     },
     "after_set_ops": {
-      "A_only": 35,
-      "B": 0,
-      "C": 0,
-      "merged_total": 35,
+      "A_only": 218,
+      "B": 5,
+      "C": 5,
+      "merged_total": 228,
       "bc_overlap": 0
     },
-    "after_filter": 910,
+    "after_filter": 923,
     "classification": {
-      "total": 910,
+      "total": 923,
       "by_category": {
-        "Efficient Model Design and Optimization": 293,
-        "Novel Computing Architectures and Domain-Specific Accelerators": 40,
-        "Embedded AI Applications": 577
+        "Efficient Model Design and Optimization": 298,
+        "Novel Computing Architectures and Domain-Specific Accelerators": 41,
+        "Embedded AI Applications": 584
       },
       "by_tag": {
-        "TinyML": 54,
-        "LP": 101,
+        "TinyML": 55,
+        "LP": 103,
         "ULP": 17
       },
       "by_provider": {
         "tencent_tokenhub": 0,
         "heuristic": 0,
-        "heuristic_fallback": 910
+        "heuristic_fallback": 923
       }
     },
     "source_stats": {
-      "total": 910,
+      "total": 923,
       "by_group": {
         "A": {
-          "total": 760,
+          "total": 770,
           "arxiv": 0,
           "venues": {
             "AAAI": 91,
@@ -90,7 +90,7 @@
             "CONCUR": 0,
             "CP": 0,
             "CRYPTO": 0,
-            "CSCW": 0,
+            "CSCW": 1,
             "CSFW": 0,
             "CSL": 0,
             "CT-RSA": 0,
@@ -109,7 +109,7 @@
             "EAAI": 0,
             "EASE": 0,
             "EC": 0,
-            "ECCV": 13,
+            "ECCV": 16,
             "ECIR": 0,
             "ECOOP": 0,
             "EDBT": 0,
@@ -168,7 +168,7 @@
             "ICIP": 0,
             "ICLR": 167,
             "ICMI": 0,
-            "ICML": 153,
+            "ICML": 158,
             "ICMR": 0,
             "ICN": 0,
             "ICNP": 0,
@@ -257,7 +257,7 @@
             "NOSSDAV": 0,
             "NSDI": 0,
             "Networking": 0,
-            "NeurIPS": 194,
+            "NeurIPS": 195,
             "OOPSLA": 0,
             "OSDI": 0,
             "PACT": 0,
@@ -416,8 +416,8 @@
           "unknown": 0
         },
         "B": {
-          "total": 111,
-          "arxiv": 86,
+          "total": 113,
+          "arxiv": 87,
           "venues": {
             "AAAI": 0,
             "AAMAS": 0,
@@ -706,7 +706,7 @@
             "TASLP": 0,
             "TBD": 0,
             "TC": 0,
-            "TCAD": 2,
+            "TCAD": 3,
             "TCBB": 0,
             "TCC": 0,
             "TCOM": 0,
@@ -790,8 +790,8 @@
           "unknown": 0
         },
         "C": {
-          "total": 54,
-          "arxiv": 46,
+          "total": 55,
+          "arxiv": 47,
           "venues": {
             "AAAI": 0,
             "AAMAS": 0,
@@ -1539,8 +1539,8 @@
         }
       },
       "total_summary": {
-        "total": 925,
-        "arxiv": 132,
+        "total": 938,
+        "arxiv": 134,
         "venues": {
           "AAAI": 91,
           "AAMAS": 0,
@@ -1587,7 +1587,7 @@
           "CONCUR": 0,
           "CP": 0,
           "CRYPTO": 0,
-          "CSCW": 0,
+          "CSCW": 1,
           "CSFW": 0,
           "CSL": 0,
           "CT-RSA": 0,
@@ -1606,7 +1606,7 @@
           "EAAI": 0,
           "EASE": 0,
           "EC": 0,
-          "ECCV": 13,
+          "ECCV": 16,
           "ECIR": 0,
           "ECOOP": 0,
           "EDBT": 0,
@@ -1665,7 +1665,7 @@
           "ICIP": 0,
           "ICLR": 168,
           "ICMI": 0,
-          "ICML": 155,
+          "ICML": 160,
           "ICMR": 0,
           "ICN": 0,
           "ICNP": 0,
@@ -1754,7 +1754,7 @@
           "NOSSDAV": 0,
           "NSDI": 0,
           "Networking": 0,
-          "NeurIPS": 195,
+          "NeurIPS": 196,
           "OOPSLA": 0,
           "OSDI": 0,
           "PACT": 0,
@@ -1829,7 +1829,7 @@
           "TASLP": 0,
           "TBD": 0,
           "TC": 0,
-          "TCAD": 5,
+          "TCAD": 6,
           "TCBB": 0,
           "TCC": 0,
           "TCOM": 0,
@@ -1918,8 +1918,262 @@
     {
       "key": "efficient_model_design",
       "title": "Efficient Model Design and Optimization",
-      "count": 293,
+      "count": 298,
       "papers": [
+        {
+          "id": "5828c403618145af5962cd45438c69fd44eab796",
+          "title": "BeaconKV: Key-Value Cache Compression Guided by Beacon Queries for Efficient Large Reasoning Model Inference",
+          "authors": [
+            "Janghyeon Kim",
+            "Minsoo Kim",
+            "Kyuhong Shim",
+            "Jungwook Choi"
+          ],
+          "year": 2026,
+          "month": 9,
+          "source": "arxiv",
+          "venue": "ICML",
+          "venue_type": "conference",
+          "abstract": "Large Reasoning Models (LRMs) achieve superior problem-solving through extended Chain-of-Thought (CoT) generation, but the resulting key-value (KV) cache grows linearly with sequence length and creates severe memory bottlenecks, often exceeding GPU capacity for long reasoning traces. Existing KV cache compression methods rely on recent queries to estimate future token importance, implicitly assuming these serve as reliable proxies for future attention patterns. We demonstrate that this assumption fails in long-horizon reasoning: certain decoding steps generate Thought Revisiting Tokens (TRT) that re-attend to distant previous context, such as task-solving plans formulated early in the trace. Through systematic analysis, we discover that queries corresponding to the TRT cluster into a small number of similarity groups in the embedding space. Based on this insight, we propose BeaconKV, a training-free KV cache compression method that maintains beacon queries, compact representatives for each global query cluster, to anticipate which KV pairs will be revisited without storing the entire query history. Across four open-source LRMs and diverse reasoning benchmarks, BeaconKV generally outperforms existing compression methods, achieving up to $5.8\\times$ memory reduction while nearly preserving full cache accuracy and improving throughput by over $4.3\\times$.",
+          "urls": {
+            "arxiv": "https://arxiv.org/abs/2609.04971v1",
+            "pdf": "https://arxiv.org/pdf/2609.04971v1",
+            "paper": "https://arxiv.org/abs/2609.04971v1"
+          },
+          "search_sets_raw": [
+            "A"
+          ],
+          "search_sets_final": [
+            "A"
+          ],
+          "filter_bucket": "th_cpl_a",
+          "matched_venue": "ICML",
+          "matched_th_cpl_level": "A",
+          "matched_th_cpl_area": "Artificial Intelligence and Pattern Recognition",
+          "category": "Efficient Model Design and Optimization",
+          "llm_tags": [],
+          "forced_tags": [],
+          "final_tags": [],
+          "cited_by": 0,
+          "is_preprint_on_arxiv": false,
+          "preprint_source": "",
+          "journal_ref": "",
+          "doi": "",
+          "arxiv_comment": "",
+          "arxiv_id": "2609.04971v1",
+          "raw_venue": "",
+          "venue_source": "",
+          "sort_key": 202600,
+          "download": {
+            "status": "pending",
+            "source": null,
+            "path": null,
+            "last_attempt_at": null
+          }
+        },
+        {
+          "id": "2b0a353353f37f7823738ee04b7af3e4eded99e6",
+          "title": "Can LLMs Use Relational Transformer Embeddings?",
+          "authors": [
+            "Francisco Galuppo Azevedo",
+            "Clarissa Lima Loures"
+          ],
+          "year": 2026,
+          "month": 9,
+          "source": "arxiv",
+          "venue": "ICML",
+          "venue_type": "conference",
+          "abstract": "Injecting frozen relational-encoder embeddings as soft tokens into a large language model (LLM) is a conceptually appealing fusion strategy: the encoder handles multi-table structure, the LLM handles language and reasoning, and no lossy text serialization is required. We test this hypothesis concretely by injecting embeddings from a frozen Relational Transformer (RT) into Qwen3.5-4B via a learned MLP projection and LoRA adaptation, trained first with supervised fine-tuning (SFT) on chain-of-thought reasoning traces and then with group-based reinforcement learning (GSPO). We evaluate across 10 binary classification tasks on 6 relational databases from RelBench, under four supervision regimes: single-task (ST), within-dataset (WD), cross-dataset (CD), and all-task (ALL). The hybrid model does not consistently outperform standalone RT: it is frequently below random, highly sensitive to serialization format and relational-token budget, and unstable under RL training. We report these negative results and analyze the failure modes, arguing that soft-token fusion requires stronger alignment objectives and schema-aware design before it can serve as a reliable route to relational prediction.",
+          "urls": {
+            "arxiv": "https://arxiv.org/abs/2609.00457v1",
+            "pdf": "https://arxiv.org/pdf/2609.00457v1",
+            "paper": "https://arxiv.org/abs/2609.00457v1"
+          },
+          "search_sets_raw": [
+            "A"
+          ],
+          "search_sets_final": [
+            "A"
+          ],
+          "filter_bucket": "th_cpl_a",
+          "matched_venue": "ICML",
+          "matched_th_cpl_level": "A",
+          "matched_th_cpl_area": "Artificial Intelligence and Pattern Recognition",
+          "category": "Efficient Model Design and Optimization",
+          "llm_tags": [],
+          "forced_tags": [],
+          "final_tags": [],
+          "cited_by": 0,
+          "is_preprint_on_arxiv": false,
+          "preprint_source": "",
+          "journal_ref": "",
+          "doi": "",
+          "arxiv_comment": "",
+          "arxiv_id": "2609.00457v1",
+          "raw_venue": "",
+          "venue_source": "",
+          "sort_key": 202600,
+          "download": {
+            "status": "pending",
+            "source": null,
+            "path": null,
+            "last_attempt_at": null
+          }
+        },
+        {
+          "id": "670a02dde3ee7204920ced42b45a397df06e639c",
+          "title": "Reliable Egocentric Action Anticipation via Temporal Reliability Suppression and Compositional Graph Decoding",
+          "authors": [
+            "Mahsa Mohammadi",
+            "Sareh Rowlands"
+          ],
+          "year": 2026,
+          "month": 9,
+          "source": "arxiv",
+          "venue": "ECCV",
+          "venue_type": "conference",
+          "abstract": "Wearable action anticipation systems must remain reliable despite missing frames, masking, and sensor noise, yet existing egocentric anticipation methods largely assume clean observations. We identify two complementary failure modes under temporal corruption: unreliable temporal evidence during encoding and implausible, low-support verb-noun compositions during decoding. We address them with a lightweight framework combining Temporal Reliability Suppression (TRS) and Robust Verb-Noun Graph (RVG) decoding. TRS predicts a per-frame suppression score from the projected input embedding and uses it as a learned key-side attention penalty at every encoder block and to derive reliability-weighted temporal pooling. RVG re-ranks verb-noun pairs using a PMI-based compatibility graph constructed from training labels. Under corruption-augmented training, TRS+CA+RVG reaches 29.1% average corrupted accuracy and 88.2% relative robustness across six corruptions, including three mechanisms absent during training, while reducing rare verb-noun predictions from 15.4% to 1.1%. Multi-seed and diagnostic experiments show that TRS responds to synthetic masking; shuffled-graph and frequency-only controls further indicate that RVG gains depend on genuine pairwise compatibility rather than marginal-frequency effects alone.",
+          "urls": {
+            "arxiv": "https://arxiv.org/abs/2609.13293v1",
+            "pdf": "https://arxiv.org/pdf/2609.13293v1",
+            "paper": "https://arxiv.org/abs/2609.13293v1"
+          },
+          "search_sets_raw": [
+            "A"
+          ],
+          "search_sets_final": [
+            "A"
+          ],
+          "filter_bucket": "th_cpl_a",
+          "matched_venue": "ECCV",
+          "matched_th_cpl_level": "A",
+          "matched_th_cpl_area": "Artificial Intelligence and Pattern Recognition",
+          "category": "Efficient Model Design and Optimization",
+          "llm_tags": [],
+          "forced_tags": [],
+          "final_tags": [],
+          "cited_by": 0,
+          "is_preprint_on_arxiv": false,
+          "preprint_source": "",
+          "journal_ref": "",
+          "doi": "",
+          "arxiv_comment": "",
+          "arxiv_id": "2609.13293v1",
+          "raw_venue": "",
+          "venue_source": "",
+          "sort_key": 202600,
+          "download": {
+            "status": "pending",
+            "source": null,
+            "path": null,
+            "last_attempt_at": null
+          }
+        },
+        {
+          "id": "ab53701414cc43d63596e2ce6147b288816afaca",
+          "title": "Revisiting Spectral Representations in Generative Diffusion Models",
+          "authors": [
+            "Yuehao Wang",
+            "Peihao Wang",
+            "Hanwen Jiang",
+            "Ziyi Yang",
+            "Qixing Huang",
+            "Zhangyang Wang"
+          ],
+          "year": 2026,
+          "month": 9,
+          "source": "arxiv",
+          "venue": "ICML",
+          "venue_type": "conference",
+          "abstract": "Diffusion models have shown remarkable performance on diverse generation tasks. Recent work finds that imposing representation alignment on the hidden states of diffusion networks can both facilitate training convergence and enhance sampling quality, yet the mechanism driving this synergy remains insufficiently understood. In this paper, we investigate the connection between self-supervised spectral representation learning and diffusion generative models through a shared perspective on perturbation kernels. On the diffusion side, samples (e.g., images, videos) are produced by reversing a stochastic noise-injection process specified by Gaussian kernels; on the spectral representation side, spectral embeddings emerge from contrasting positive and negative relations induced by random perturbation kernels. Motivated by this, we propose a self-supervised spectral representation alignment method to facilitate diffusion model training. In addition, we clarify how joint spectral learning can benefit diffusion training from a geometric perspective. Furthermore, we find that the optimization of the spectral alignment objective is in an equivalent form of diffusion score distillation in the representation space. Building on these findings, we integrate a spectral regularizer into diffusion training objectives to improve the performance of diffusion models on multiple datasets. Experiments across images and 3D point clouds show consistent gains in generation quality. Code is released at https://github.com/yuehaowang/spectral-reg-diffusion.",
+          "urls": {
+            "arxiv": "https://arxiv.org/abs/2609.08253v1",
+            "pdf": "https://arxiv.org/pdf/2609.08253v1",
+            "paper": "https://arxiv.org/abs/2609.08253v1"
+          },
+          "search_sets_raw": [
+            "A"
+          ],
+          "search_sets_final": [
+            "A"
+          ],
+          "filter_bucket": "th_cpl_a",
+          "matched_venue": "ICML",
+          "matched_th_cpl_level": "A",
+          "matched_th_cpl_area": "Artificial Intelligence and Pattern Recognition",
+          "category": "Efficient Model Design and Optimization",
+          "llm_tags": [],
+          "forced_tags": [],
+          "final_tags": [],
+          "cited_by": 0,
+          "is_preprint_on_arxiv": false,
+          "preprint_source": "",
+          "journal_ref": "",
+          "doi": "",
+          "arxiv_comment": "",
+          "arxiv_id": "2609.08253v1",
+          "raw_venue": "",
+          "venue_source": "",
+          "sort_key": 202600,
+          "download": {
+            "status": "pending",
+            "source": null,
+            "path": null,
+            "last_attempt_at": null
+          }
+        },
+        {
+          "id": "523b2a22d624a1c813633270be0213161ab25dac",
+          "title": "SIDE: Sensor Impersonation Detection at the Edge via Sequence Prediction",
+          "authors": [
+            "Nahom Birhan"
+          ],
+          "year": 2026,
+          "month": 9,
+          "source": "arxiv",
+          "venue": "",
+          "venue_type": "",
+          "abstract": "Some low-cost Internet of Things (IoT) sensor deployments lack device-level source authentication, leaving them vulnerable to impersonation or injected sensor readings. We present a lightweight approach to sensor impersonation detection in a small proof-of-concept study. We formulate detection as a sequence-prediction problem. A model with three LSTM layers and two fully connected layers is trained only on univariate temperature readings from a genuine sensor, and a window of readings is flagged when its mean absolute prediction error exceeds the mean genuine error by more than six standard deviations. The model is converted to TensorFlow Lite in three variants, non-quantized (554 KB), 16-bit weight quantized (298.5 KB), and 8-bit weight quantized (185 KB), targeting an Arduino Nano 33 BLE aggregator. The variants were evaluated with the TensorFlow Lite interpreter on the local server, since on-device execution of LSTM models was not yet supported by TensorFlow Lite for Microcontrollers at the time of the study. On a controlled testbed with the impostor sensor placed in a hotter outdoor location, the three variants reached detection accuracies of 99.980%, 99.972%, and 98.206%, and each flagged the change point when a test sequence switched from genuine to impostor data. Quantization made the model smaller but slower in our measurements. The genuine and impostor distributions were well separated, so these results show detection of a controlled distribution shift and should not be read as evidence of general device authentication.",
+          "urls": {
+            "arxiv": "https://arxiv.org/abs/2609.06271v2",
+            "pdf": "https://arxiv.org/pdf/2609.06271v2",
+            "paper": "https://arxiv.org/abs/2609.06271v2"
+          },
+          "search_sets_raw": [
+            "C"
+          ],
+          "search_sets_final": [
+            "C"
+          ],
+          "filter_bucket": "arxiv",
+          "matched_venue": "",
+          "matched_th_cpl_level": "",
+          "matched_th_cpl_area": "",
+          "category": "Efficient Model Design and Optimization",
+          "llm_tags": [
+            "TinyML"
+          ],
+          "forced_tags": [],
+          "final_tags": [
+            "TinyML"
+          ],
+          "cited_by": 0,
+          "is_preprint_on_arxiv": false,
+          "preprint_source": "",
+          "journal_ref": "",
+          "doi": "",
+          "arxiv_comment": "",
+          "arxiv_id": "2609.06271v2",
+          "raw_venue": "",
+          "venue_source": "",
+          "sort_key": 202600,
+          "download": {
+            "status": "pending",
+            "source": null,
+            "path": null,
+            "last_attempt_at": null
+          }
+        },
         {
           "id": "324fa612dae04181d2f0f7213010dcf4ace233da",
           "title": "An Embedded RISC-V Evaluation of Kolmogorov--Arnold Networks in Hard-Constrained Recurrent Physics-Informed Models",
@@ -17302,8 +17556,67 @@
     {
       "key": "novel_architecture_accelerator",
       "title": "Novel Computing Architectures and Domain-Specific Accelerators",
-      "count": 40,
+      "count": 41,
       "papers": [
+        {
+          "id": "45bfbd4815af31f0cb566f09167d4d8af05148b0",
+          "title": "Para-Pipe: Exploiting Hierarchical Operator Parallelism of ML Computational Graphs on SoCs",
+          "authors": [
+            "Yujie Zhang",
+            "Huiying Lan",
+            "Ehsan Aghapour",
+            "Zhiyuan Ning",
+            "Peng Zan",
+            "Weidong Shao",
+            "Anuj Pathania",
+            "Tulika Mitra"
+          ],
+          "year": 2026,
+          "month": 9,
+          "source": "arxiv",
+          "venue": "IEEE Transactions on Computer-Aided Design of Integrated Circuits and Systems",
+          "venue_type": "journal",
+          "abstract": "As edge-based deep learning applications become more complex, optimizing performance on heterogeneous System-on-Chips (SoCs) presents unique challenges. Traditional pipelining techniques distributing the computation across different on-chip processing units, while effective for throughput, do not address the latency demands posed by modern neural networks with complex interdependencies and extensive operator parallelism. There is a potential in leveraging operator parallelism to enable concurrent execution across multiple processing units, thereby reducing inference latency. However, prioritizing pipelining or parallel execution often necessitates a compromise, where optimizing one performance metric adversely impacts the other. This paper introduces Para-Pipe, a hierarchical mapping framework that integrates intra- and inter-stage operator parallelism within a pipelined architecture. Para-Pipe navigates the trade-off between throughput and latency by selectively fine-tuning parallelism levels within and across pipeline stages. This strategy can significantly reduce inter-processor communication overhead, significantly improving energy efficiency. Our evaluation demonstrates that Para-Pipe generates multiple Pareto-optimal configurations, achieving a balance between throughput and latency on an Amlogic SoC equipped with ARM big.LITTLE CPUs and GPU, as well as the Black Sesame Technology SoC featuring a deep learning accelerator and two DSPs. More importantly, throughput-optimized configurations under Para-Pipe on Amlogic SoC show an average energy efficiency improvement of 11.0% over purely pipelined strategies and 23.3% relative to non-pipelined parallel execution.",
+          "urls": {
+            "arxiv": "https://arxiv.org/abs/2609.04168v1",
+            "pdf": "https://arxiv.org/pdf/2609.04168v1",
+            "paper": "https://arxiv.org/abs/2609.04168v1"
+          },
+          "search_sets_raw": [
+            "B"
+          ],
+          "search_sets_final": [
+            "B"
+          ],
+          "filter_bucket": "th_cpl_ab",
+          "matched_venue": "TCAD",
+          "matched_th_cpl_level": "A",
+          "matched_th_cpl_area": "High Performance Computing",
+          "category": "Novel Computing Architectures and Domain-Specific Accelerators",
+          "llm_tags": [],
+          "forced_tags": [
+            "LP"
+          ],
+          "final_tags": [
+            "LP"
+          ],
+          "cited_by": 0,
+          "is_preprint_on_arxiv": false,
+          "preprint_source": "",
+          "journal_ref": "",
+          "doi": "10.1109/TCAD.2025.3568348",
+          "arxiv_comment": "",
+          "arxiv_id": "2609.04168v1",
+          "raw_venue": "",
+          "venue_source": "",
+          "sort_key": 202600,
+          "download": {
+            "status": "pending",
+            "source": null,
+            "path": null,
+            "last_attempt_at": null
+          }
+        },
         {
           "id": "1c6654f12d5fc88068c191b7ab9738516cb83c2f",
           "title": "Driving up Inference Energy on SNNs: Per-Sample and Universal Sponge Attacks",
@@ -19545,8 +19858,371 @@
     {
       "key": "embedded_ai_applications",
       "title": "Embedded AI Applications",
-      "count": 577,
+      "count": 584,
       "papers": [
+        {
+          "id": "6eaf903e854f0b44fde8cdba61ca2f04d86cd7f9",
+          "title": "A Differentiable Neural Surrogate for Photon Propagation in Neutrino Telescopes",
+          "authors": [
+            "Felix J. Yu",
+            "Berthy T. Feng",
+            "Nicholas Kamp",
+            "Carlos A. Argüelles"
+          ],
+          "year": 2026,
+          "month": 9,
+          "source": "arxiv",
+          "venue": "NeurIPS",
+          "venue_type": "conference",
+          "abstract": "Large-volume neutrino telescopes infer neutrino properties from Cherenkov light, but simulating the transport of billions of photons through highly scattering ice or water is computationally costly. We introduce candela, a differentiable SIREN neural field that learns the photon Green's function of the IceCube Neutrino Observatory, a cubic-kilometer detector embedded in Antarctic glacial ice. Given a point-like energy deposit and sensor, it predicts the expected photon yield and full arrival-time distribution at the sensor. Complete events are simulated by decomposing charged-particle energy deposits into point-like sources and superposing their predicted sensor responses. Trained on Monte-Carlo simulations, candela generates events $50$--$100\\times$ faster than existing methods, with cost scaling only weakly with neutrino energy. It keeps median yields within $2\\%$ of the MC expectation and timing distributions at the MC statistical floor across six photon-count decades. The model also provides end-to-end gradients with respect to event parameters and opens a path toward optimizing scattering-medium properties, which often dominate systematic uncertainties in neutrino telescopes.",
+          "urls": {
+            "arxiv": "https://arxiv.org/abs/2609.04695v1",
+            "pdf": "https://arxiv.org/pdf/2609.04695v1",
+            "paper": "https://arxiv.org/abs/2609.04695v1"
+          },
+          "search_sets_raw": [
+            "A"
+          ],
+          "search_sets_final": [
+            "A"
+          ],
+          "filter_bucket": "th_cpl_a",
+          "matched_venue": "NeurIPS",
+          "matched_th_cpl_level": "A",
+          "matched_th_cpl_area": "Artificial Intelligence and Pattern Recognition",
+          "category": "Embedded AI Applications",
+          "llm_tags": [],
+          "forced_tags": [],
+          "final_tags": [],
+          "cited_by": 0,
+          "is_preprint_on_arxiv": false,
+          "preprint_source": "",
+          "journal_ref": "",
+          "doi": "",
+          "arxiv_comment": "",
+          "arxiv_id": "2609.04695v1",
+          "raw_venue": "",
+          "venue_source": "",
+          "sort_key": 202600,
+          "download": {
+            "status": "pending",
+            "source": null,
+            "path": null,
+            "last_attempt_at": null
+          }
+        },
+        {
+          "id": "0758cdb1706128949d3f2ec947e5aeb99bc02166",
+          "title": "A Game-Theoretic Framework for Incentive-Compatible AI training Under Renewable-Energy Constraints",
+          "authors": [
+            "Konstantinos Varsos",
+            "Ramin Khalili",
+            "Adamantia Stamou",
+            "George D. Stamoulis",
+            "Vasillios A. Siris"
+          ],
+          "year": 2026,
+          "month": 9,
+          "source": "arxiv",
+          "venue": "",
+          "venue_type": "",
+          "abstract": "As artificial intelligence systems increasingly rely on distributed and collaborative training, the energy footprint of these processes becomes a shared responsibility. Modern AI training often unfolds across heterogeneous compute nodes-ranging from cloud clusters to edge devices-whose energy availability is spatially and temporally variable. At the same time, renewable energy grids experience growing levels of excess generation, creating opportunities to align computational workloads with low-carbon energy supply. In this work, we develop a game-theoretic model of carbon-aware AI training in which autonomous agents strategically choose whether to participate and how intensively to train under limited renewable energy availability. Each agent balances diminishing learning returns, rewards for remaining within green-energy budgets, and penalties for grid consumption. While our framework applies broadly to distributed AI training, we examine Federated Learning as a representative case study due to its decentralized structure and flexible scheduling. We analyze equilibrium existence, efficiency, and adaptive dynamics, and provide simulation evidence that appropriately designed incentives can eliminate grid-based energy usage while preserving model performance. Our findings demonstrate how incentive-compatible training mechanisms can enhance energy efficiency and sharply reduce carbon emissions under renewable-energy constraints.",
+          "urls": {
+            "arxiv": "https://arxiv.org/abs/2609.15389v1",
+            "pdf": "https://arxiv.org/pdf/2609.15389v1",
+            "paper": "https://arxiv.org/abs/2609.15389v1"
+          },
+          "search_sets_raw": [
+            "B"
+          ],
+          "search_sets_final": [
+            "B"
+          ],
+          "filter_bucket": "arxiv",
+          "matched_venue": "",
+          "matched_th_cpl_level": "",
+          "matched_th_cpl_area": "",
+          "category": "Embedded AI Applications",
+          "llm_tags": [],
+          "forced_tags": [
+            "LP"
+          ],
+          "final_tags": [
+            "LP"
+          ],
+          "cited_by": 0,
+          "is_preprint_on_arxiv": false,
+          "preprint_source": "",
+          "journal_ref": "",
+          "doi": "",
+          "arxiv_comment": "",
+          "arxiv_id": "2609.15389v1",
+          "raw_venue": "",
+          "venue_source": "",
+          "sort_key": 202600,
+          "download": {
+            "status": "pending",
+            "source": null,
+            "path": null,
+            "last_attempt_at": null
+          }
+        },
+        {
+          "id": "1d4493947c5be4dfb1b4d04aac796c5629d8e26d",
+          "title": "Ambient @ EgoLongQA 2026: Distilling Long-Video perception into a Sub-2B Model",
+          "authors": [
+            "Logesh Kumar Umapathi"
+          ],
+          "year": 2026,
+          "month": 9,
+          "source": "arxiv",
+          "venue": "ECCV",
+          "venue_type": "conference",
+          "abstract": "We describe our entry to the EgoLongQA track of the Wearable-AI Challenge in ECCV 2026, which placed first in the <=2B parameter division with 0.8279 on the held-out test set. Our system is a single 2B vision-language model that answers multiple-choice questions about ten-minute egocentric videos in one greedy forward pass; It is obtained by distilling the junior perception module of a tool-using agentic pipeline, not the agent itself into a small student, using teacher traces filtered to those that answered correctly. it reaches 89% of the accuracy of the large agentic pipeline using 1.1% of its parameters. This raises a 27.1% base model to 81.4% on our held-out questions. The 2B backbone has 2.2132B parameters and therefore over the divisional limit, to make the entry admissable we prune the multilingual embedding table from 248,320 to 143,469 rows, reaching 1.9985B with provably identical logits on retained rows.",
+          "urls": {
+            "arxiv": "https://arxiv.org/abs/2609.07154v2",
+            "pdf": "https://arxiv.org/pdf/2609.07154v2",
+            "paper": "https://arxiv.org/abs/2609.07154v2"
+          },
+          "search_sets_raw": [
+            "A"
+          ],
+          "search_sets_final": [
+            "A"
+          ],
+          "filter_bucket": "th_cpl_a",
+          "matched_venue": "ECCV",
+          "matched_th_cpl_level": "A",
+          "matched_th_cpl_area": "Artificial Intelligence and Pattern Recognition",
+          "category": "Embedded AI Applications",
+          "llm_tags": [],
+          "forced_tags": [],
+          "final_tags": [],
+          "cited_by": 0,
+          "is_preprint_on_arxiv": false,
+          "preprint_source": "",
+          "journal_ref": "",
+          "doi": "",
+          "arxiv_comment": "",
+          "arxiv_id": "2609.07154v2",
+          "raw_venue": "",
+          "venue_source": "",
+          "sort_key": 202600,
+          "download": {
+            "status": "pending",
+            "source": null,
+            "path": null,
+            "last_attempt_at": null
+          }
+        },
+        {
+          "id": "5398aba30cc4c0adc6ee6603ff36c3d24cd825d6",
+          "title": "CoGe-GCD: Reframing Generalized Category Discovery with Compositional Generalization",
+          "authors": [
+            "Luyao Tang",
+            "Jiewei Zheng",
+            "Kunze Huang",
+            "Chaoqi Chen",
+            "Yue Huang",
+            "Cheng Chen"
+          ],
+          "year": 2026,
+          "month": 9,
+          "source": "arxiv",
+          "venue": "ICML",
+          "venue_type": "conference",
+          "abstract": "Generalized Category Discovery (GCD) assigns unlabeled instances, mixed with labeled data, to known or novel categories, requiring human-like compositional reasoning: reusing primitives learned from known classes and deciding when new combinations imply new categories. Existing GCD methods operate on unstructured token features and struggle to extrapolate to novel compositions. We propose CoGe-GCD, which rethinks GCD through compositional generalization with two coupled stages. (i) Compositional Perception structures patch tokens by mapping them to a small vocabulary of primitives and refining token embeddings via competitive token-primitive assignment and information passing, yielding coherent groups for discovery. (ii) Generalizing Induction exploits the induced geometric structure and applies a structure-preserving calibration over spatial relations, maintaining probabilistic semantics while improving extrapolation to unseen primitive combinations. CoGe-GCD is implemented as an inductive-bias module between backbone and projection head, without modifying heads or losses, and can be plugged into diverse GCD frameworks. On standard benchmarks, it consistently improves all-class accuracy, unknown-class number estimation, and geometric quality, with marginal computational overhead. Code is available at https://github.com/lytang63/CoGe-GCD.",
+          "urls": {
+            "arxiv": "https://arxiv.org/abs/2609.10158v1",
+            "pdf": "https://arxiv.org/pdf/2609.10158v1",
+            "paper": "https://arxiv.org/abs/2609.10158v1"
+          },
+          "search_sets_raw": [
+            "A"
+          ],
+          "search_sets_final": [
+            "A"
+          ],
+          "filter_bucket": "th_cpl_a",
+          "matched_venue": "ICML",
+          "matched_th_cpl_level": "A",
+          "matched_th_cpl_area": "Artificial Intelligence and Pattern Recognition",
+          "category": "Embedded AI Applications",
+          "llm_tags": [],
+          "forced_tags": [],
+          "final_tags": [],
+          "cited_by": 0,
+          "is_preprint_on_arxiv": false,
+          "preprint_source": "",
+          "journal_ref": "",
+          "doi": "",
+          "arxiv_comment": "",
+          "arxiv_id": "2609.10158v1",
+          "raw_venue": "",
+          "venue_source": "",
+          "sort_key": 202600,
+          "download": {
+            "status": "pending",
+            "source": null,
+            "path": null,
+            "last_attempt_at": null
+          }
+        },
+        {
+          "id": "592e4f2d6119c5f45c5d0b49e220c993f9751792",
+          "title": "Ctrl-F-Resist. Practices, Challenges, and Technical Needs of Civil Society Organizations Monitoring the Far-Right Online",
+          "authors": [
+            "Elisabeth Steffen",
+            "Helena Mihaljević"
+          ],
+          "year": 2026,
+          "month": 9,
+          "source": "arxiv",
+          "venue": "Accepted for the 29th ACM Conference on Computer-Supported Cooperative Work and Social Computing (CSCW 2026)",
+          "venue_type": "conference",
+          "abstract": "As far-right actors increasingly exploit online platforms to disseminate ideology and mobilize supporters, civil society organizations (CSOs) play a vital yet underrecognized role in monitoring antidemocratic dynamics online. Unlike fact-checkers or content moderators, CSOs engage in long-term, contextualized analysis, often in resource-constrained settings and under precarious conditions. Despite their critical societal role, CSOs face significant barriers to adopting or co-developing technical solutions, including legal uncertainty, limited platform access, and chronic underfunding. Existing research and tool development efforts have largely overlooked these actors in favor of more institutionally embedded stakeholders. This paper addresses this gap through a qualitative study with 15 practitioners from 12 Germany-based CSOs engaged in online monitoring, positioning them as key yet overlooked stakeholders in the governance of digital spaces. We explore their current practices, challenges, and expectations regarding technological support. Our findings show that monitoring remains largely manual due to the lack of tailored tools, with enhanced search capabilities emerging as the most pressing technical need. While participants express openness to AI-supported features such as media processing and content discovery, many remain skeptical of automated classification, citing concerns around trust, legal usability, and professional credibility. Grounded in these findings, we introduce a conceptual monitoring workflow and describe its implementation in an open-source Telegram monitoring prototype designed to flexibly support diverse monitoring goals. We outline concrete design, policy, and research recommendatios, and introduce the manual labor trap as an empirically grounded concept that explains why monitoring CSOs tend to remain locked into labor-intensive, low-capacity arrangements.",
+          "urls": {
+            "arxiv": "https://arxiv.org/abs/2609.00808v1",
+            "pdf": "https://arxiv.org/pdf/2609.00808v1",
+            "paper": "https://arxiv.org/abs/2609.00808v1"
+          },
+          "search_sets_raw": [
+            "A"
+          ],
+          "search_sets_final": [
+            "A"
+          ],
+          "filter_bucket": "th_cpl_a",
+          "matched_venue": "CSCW",
+          "matched_th_cpl_level": "A",
+          "matched_th_cpl_area": "Human-Computer Interaction and Pervasive Computing",
+          "category": "Embedded AI Applications",
+          "llm_tags": [],
+          "forced_tags": [],
+          "final_tags": [],
+          "cited_by": 0,
+          "is_preprint_on_arxiv": false,
+          "preprint_source": "",
+          "journal_ref": "",
+          "doi": "10.1145/3816916",
+          "arxiv_comment": "",
+          "arxiv_id": "2609.00808v1",
+          "raw_venue": "",
+          "venue_source": "",
+          "sort_key": 202600,
+          "download": {
+            "status": "pending",
+            "source": null,
+            "path": null,
+            "last_attempt_at": null
+          }
+        },
+        {
+          "id": "ea748c16648ab0a783d156b0c120eb4cf7da53c4",
+          "title": "RenderFormer-V2: Neural Rendering with Heterogeneous Scene Primitives",
+          "authors": [
+            "Chong Zeng",
+            "Yue Dong",
+            "Pieter Peers",
+            "Lvmin Zhang",
+            "Maneesh Agrawala"
+          ],
+          "year": 2026,
+          "month": 9,
+          "source": "arxiv",
+          "venue": "ECCV",
+          "venue_type": "conference",
+          "abstract": "We present 'RenderFormer-V2', a unified learned transformer-based neural rendering model, complementary to modern physics-based rendering systems, that can handle diverse light-transport effects such as caustics, volumetric scattering, environment lighting, textured and displaced surfaces and out-of-distribution materials without per-scene training or specialized code. RenderFormer-V2 models global light transport as a sequence-to-sequence transformation. Following its predecessor, RenderFormer-V2 also employs a two stage process: a view-independent stage that resolves intra-scene primitive to primitive transport, and a view-dependent stage that transforms the internal neural scene representation into image pixels. Different from RenderFormer, our model employs a novel combined windowed-attention and rendering-informed attention sink in the view-independent stage to improve scalability while maintaining render accuracy. To further improve versatility, RenderFormerV2 supports heterogeneous scene primitives, including environment maps and participating media, and it employs a material encoding independent of the underlying surface reflectance model that encodes material appearance via a novel neural embedding. We demonstrate the versatility of RenderFormer-V2 on a variety of scenes and perform an extensive ablation of the improved attention mechanism.",
+          "urls": {
+            "arxiv": "https://arxiv.org/abs/2609.05738v1",
+            "pdf": "https://arxiv.org/pdf/2609.05738v1",
+            "paper": "https://arxiv.org/abs/2609.05738v1"
+          },
+          "search_sets_raw": [
+            "A"
+          ],
+          "search_sets_final": [
+            "A"
+          ],
+          "filter_bucket": "th_cpl_a",
+          "matched_venue": "ECCV",
+          "matched_th_cpl_level": "A",
+          "matched_th_cpl_area": "Artificial Intelligence and Pattern Recognition",
+          "category": "Embedded AI Applications",
+          "llm_tags": [],
+          "forced_tags": [],
+          "final_tags": [],
+          "cited_by": 0,
+          "is_preprint_on_arxiv": false,
+          "preprint_source": "",
+          "journal_ref": "",
+          "doi": "",
+          "arxiv_comment": "",
+          "arxiv_id": "2609.05738v1",
+          "raw_venue": "",
+          "venue_source": "",
+          "sort_key": 202600,
+          "download": {
+            "status": "pending",
+            "source": null,
+            "path": null,
+            "last_attempt_at": null
+          }
+        },
+        {
+          "id": "f4f4a7e2bf769e7429d1652e67e7beeb599bad60",
+          "title": "UFO: Chain-of-Evaluation for Omni-Condition Alignment in Multi-Modal Image Generation",
+          "authors": [
+            "Danning Zhang",
+            "Yijing Lin",
+            "Shuhan Zhuang",
+            "Mengqi Huang",
+            "Shaojin Wu",
+            "Shancheng Fang",
+            "Zhendong Mao"
+          ],
+          "year": 2026,
+          "month": 9,
+          "source": "arxiv",
+          "venue": "ICML",
+          "venue_type": "conference",
+          "abstract": "Multi-modal image generation, particularly subject-driven customization, has garnered growing attention in recent years. Despite the rapid advancement of generative models, their evaluation remains largely lagging. Existing methods, whether embedding-based or Multi-modal Large Language Model (MLLM)-based, evaluate alignment with each modal condition in isolation, which contradicts the simultaneous condition alignment objective of multi-modal image generation, leading to poor consistency with human judgments. To address this challenge, we propose UFO, the first unified framework for omni-condition alignment simultaneous evaluation. Specifically, UFO introduces a novel Atomized Chain-of-Evaluation paradigm, \\emph{i.e.}, it first decomposes omni-condition alignment into a sequential chain of fine-grained, disentangled Atomic Evaluation Units (AEUs), categorizes them into distinct modality-relevance classes, and then employs general or dedicated functional calls for accurate verification of different AEU types. Experimental results demonstrate that UFO achieves the highest correlation with human evaluation preferences, delivering an average improvement of 15.25\\%. Furthermore, we present UFO-Bench, a dedicated benchmark designed to holistically evaluate the performance of existing customization models under the diverse mutual interactions of textual and visual conditions.",
+          "urls": {
+            "arxiv": "https://arxiv.org/abs/2609.12397v1",
+            "pdf": "https://arxiv.org/pdf/2609.12397v1",
+            "paper": "https://arxiv.org/abs/2609.12397v1"
+          },
+          "search_sets_raw": [
+            "A"
+          ],
+          "search_sets_final": [
+            "A"
+          ],
+          "filter_bucket": "th_cpl_a",
+          "matched_venue": "ICML",
+          "matched_th_cpl_level": "A",
+          "matched_th_cpl_area": "Artificial Intelligence and Pattern Recognition",
+          "category": "Embedded AI Applications",
+          "llm_tags": [],
+          "forced_tags": [],
+          "final_tags": [],
+          "cited_by": 0,
+          "is_preprint_on_arxiv": false,
+          "preprint_source": "",
+          "journal_ref": "",
+          "doi": "",
+          "arxiv_comment": "",
+          "arxiv_id": "2609.12397v1",
+          "raw_venue": "",
+          "venue_source": "",
+          "sort_key": 202600,
+          "download": {
+            "status": "pending",
+            "source": null,
+            "path": null,
+            "last_attempt_at": null
+          }
+        },
         {
           "id": "b20f46545e0fc87b6c14114ce97abde0d7beb2d5",
           "title": "An Open-Source Power Measurement Platform for System-Level Semiconductor Testing",
